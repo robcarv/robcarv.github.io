@@ -380,22 +380,20 @@ fetch('news.json')
       container.innerHTML = '<p class="text-secondary">No recent news.</p>';
       return;
     }
-    container.innerHTML = data.items.map(item => {
+    container.innerHTML = data.items.map((item, idx) => {
       const title = (typeof item === 'string') ? item : (item.title || item.name || 'Article');
       const source = (typeof item === 'object') ? (item.source || item.feed || 'RSS') : 'RSS';
-      const date = (typeof item === 'object') ? (item.date || item.published || '') : '';
-      const desc = (typeof item === 'object') ? (item.description || item.summary || '') : '';
       const link = (typeof item === 'object') ? (item.link || item.url || '') : '';
-      const dateStr = date ? date.replace(/(\d{4})-(\d{2})-(\d{2}).*/, '$3/$2/$1') : '';
+      const colors = ['#915eff', '#6db3f2', '#b2f2bb', '#ffd8a8', '#ffc9c9'];
+      const color = colors[idx % colors.length];
       return `
         <div class="news-item">
           <div class="news-meta">
-            <span class="news-source">${source}</span>
-            ${dateStr ? `<span class="news-date">${dateStr}</span>` : ''}
+            <span class="news-source" style="color:${color}">${source}</span>
+            <span class="news-date">${data.updated ? data.updated.slice(0,10).replace(/-/g,'/') : ''}</span>
           </div>
-          <h4>${title.length > 80 ? title.slice(0,80)+'...' : title}</h4>
-          ${desc ? `<p>${desc.length > 150 ? desc.slice(0,150)+'...' : desc}</p>` : ''}
-          ${link ? `<a class="news-link" href="${link}" target="_blank" rel="noopener">Read article →</a>` : ''}
+          <h4>${title.length > 80 ? title.slice(0,80)+'…' : title}</h4>
+          ${link ? `<a class="news-link" href="${link}" target="_blank" rel="noopener">Open article →</a>` : ''}
         </div>
       `;
     }).join('');
