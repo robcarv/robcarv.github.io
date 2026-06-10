@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robert Carvalho · QA Automation Engineer</title>
+  <meta name="description" content="Robert Carvalho · QA Automation Engineer · Back End · Homelab Architect">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a14;
+      color: #d0d0d0;
+      line-height: 1.6;
+    }
+    .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+    
+    /* Particle canvas background */
+    #particles {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+    
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 6rem 0 3rem;
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #915eff, #6db3f2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+    .hero .title {
+      font-size: 1.2rem;
+      color: #999;
+      margin-bottom: 1.5rem;
+    }
+    .hero .links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .hero .links a {
+      color: #915eff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 0.4rem 1rem;
+      border: 1px solid rgba(145,94,255,0.3);
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .hero .links a:hover {
+      background: rgba(145,94,255,0.1);
+      border-color: #915eff;
+    }
+    
+    /* Section */
+    .section { margin: 4rem 0; position: relative; z-index: 1; }
+    .section h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      padding-left: 1rem;
+      border-left: 3px solid #915eff;
+    }
+    
+    /* About */
+    .about-text {
+      color: #aaa;
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 700px;
+    }
+    .about-text a {
+      color: #915eff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .about-text a:hover { text-decoration: underline; }
+    
+    /* Experience cards */
+    .exp-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.2rem;
+      transition: all 0.2s;
+    }
+    .exp-card:hover {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(145,94,255,0.2);
+    }
+    .exp-card h3 {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .exp-card .company {
+      color: #915eff;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin: 0.3rem 0;
+    }
+    .exp-card .date {
+      color: #666;
+      font-size: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+    .exp-card ul {
+      list-style: none;
+    }
+    .exp-card ul li {
+      color: #aaa;
+      font-size: 0.9rem;
+      padding: 0.2rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .exp-card ul li::before {
+      content: ">";
+      color: #915eff;
+      position: absolute;
+      left: 0;
+    }
+
+    /* Project cards */
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .proj-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.2s;
+    }
+    .proj-card:hover {
+      border-color: rgba(145,94,255,0.2);
+    }
+    .proj-card h3 { color: #fff; font-size: 1rem; font-weight: 600; }
+    .proj-card p {
+      color: #999;
+      font-size: 0.85rem;
+      margin: 0.5rem 0;
+    }
+    .proj-card .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.5rem 0;
+    }
+    .proj-card .tags span {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      background: rgba(145,94,255,0.1);
+      color: #915eff;
+    }
+    .proj-card .proj-link {
+      color: #915eff;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    .proj-card .proj-link:hover { text-decoration: underline; }
+    
+    /* Architecture link */
+    .arch-section {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(145,94,255,0.05);
+      border: 1px solid rgba(145,94,255,0.15);
+      border-radius: 12px;
+      margin: 3rem 0;
+    }
+    .arch-section a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background: linear-gradient(135deg, #915eff, #6b3fcc);
+      border-radius: 10px;
+      transition: transform 0.2s;
+    }
+    .arch-section a:hover { transform: scale(1.05); }
+    .arch-section p {
+      color: #888;
+      font-size: 0.85rem;
+      margin-top: 0.8rem;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: #555;
+      font-size: 0.8rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; }
+      .container { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<canvas id="particles"></canvas>
+
+<div class="container">
+  <!-- Hero -->
+  <div class="hero">
+    <h1>Robert Carvalho</h1>
+    <div class="title">QA Automation Engineer · Back End · Homelab</div>
+    <div class="links">
+      <a href="https://linkedin.com/in/rac-carvalho" target="_blank">LinkedIn</a>
+      <a href="https://github.com/robcarv" target="_blank">GitHub</a>
+      <a href="https://www.instagram.com/robertandersoncarvalho/" target="_blank">Instagram</a>
+      <a href="https://dublincalling.duckdns.org/public/dublincalling" target="_blank">Dublin Calling</a>
+    </div>
+  </div>
+
+  <!-- About -->
+  <div class="section">
+    <h2>About</h2>
+    <p class="about-text">
+      Support engineer with more than 10 years of experience solving problems and creating smart solutions. Currently working as a QA Automation Engineer at IBM, skilled in Python, Playwright, SQL, Docker, and CI/CD pipelines. I also run a full homelab with 3 Raspberry Pis, TrueNAS storage, and 55+ monitored services.
+      <br><br>
+      <a href="/homelab-architecture">View full homelab architecture with diagram →</a>
+    </p>
+  </div>
+
+  <!-- Experience -->
+  <div class="section">
+    <h2>Experience</h2>
+    
+    <div class="exp-card">
+      <h3>QA Automation Engineer</h3>
+      <div class="company">IBM</div>
+      <div class="date">Oct 2021 — Present</div>
+      <ul>
+        <li>Automating E2E tests with Python + Playwright for enterprise web applications</li>
+        <li>Building and maintaining CI/CD pipelines with Azure DevOps</li>
+        <li>Creating test frameworks and reporting tools for QA teams</li>
+        <li>Back-end development for IBM Cloud infrastructure and services</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <h3>Support Engineer</h3>
+      <div class="company">TOTVS</div>
+      <div class="date">Oct 2015 — Oct 2021</div>
+      <ul>
+        <li>Troubleshooting financial and accounting systems using SQL, Oracle, Postgres, Docker</li>
+        <li>Single point of contact for issue resolution across enterprise clients</li>
+        <li>Creating test environments with Docker containers on Windows and Linux</li>
+        <li>Code analysis and refactoring in ADVPL, TSQL, Python, C#, PHP</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <h3>Support Engineer</h3>
+      <div class="company">Avis Budget Group</div>
+      <div class="date">May 2012 — Mar 2015</div>
+      <ul>
+        <li>Support engineer for Brazil and Latin America (LATAM)</li>
+        <li>Troubleshooting with MSSQL, triggers, reports, and queries</li>
+        <li>Configuration and training for Protheus ERP system</li>
+        <li>Integration with IBM Systems and report development in TSQL</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <div class="section">
+    <h2>Projects</h2>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <h3>Homelab Cluster</h3>
+        <p>3 Raspberry Pis, TrueNAS 10.9TB, 55+ Docker services, automated backups with ClamAV. Load-balanced and stress-tested.</p>
+        <div class="tags"><span>docker</span><span>raspberrypi</span><span>truenas</span></div>
+        <a class="proj-link" href="https://github.com/robcarv/backup_raspberry" target="_blank">GitHub →</a>
+      </div>
+
+      <div class="proj-card">
+        <h3>News Collector Bot</h3>
+        <p>RSS aggregator with LLM summarization and TTS audio. Delivers news via Telegram. Auto-pushes to GitHub.</p>
+        <div class="tags"><span>python</span><span>rss</span><span>telegram</span></div>
+        <a class="proj-link" href="https://github.com/robcarv/news_colletector" target="_blank">GitHub →</a>
+      </div>
+
+      <div class="proj-card">
+        <h3>Dublin Calling Radio</h3>
+        <p>Digital radio station on AzuraCast with custom UI, Liquidsoap streaming, and real-time now playing API.</p>
+        <div class="tags"><span>azuracast</span><span>liquidsoap</span><span>radio</span></div>
+      </div>
+
+      <div class="proj-card">
+        <h3>Dashy Dashboard</h3>
+        <p>Central dashboard with 30+ links, status checks, and live radio player. Deployed on 2 Pis with Nginx SSL.</p>
+        <div class="tags"><span>dashy</span><span>nginx</span><span>docker</span></div>
+        <a class="proj-link" href="https://github.com/robcarv/dashy-homelab" target="_blank">GitHub →</a>
+      </div>
+
+      <div class="proj-card">
+        <h3>Media Server</h3>
+        <p>Media pipeline with Prowlarr, download client, ClamAV antivirus, and Jellyfin streaming. Health checks every 2h.</p>
+        <div class="tags"><span>prowlarr</span><span>jellyfin</span><span>clamav</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Architecture diagram link -->
+  <div class="arch-section">
+    <a href="/homelab-architecture">View Full Homelab Architecture →</a>
+    <p>3 Pis · 55+ services · Interactive diagram with Excalidraw</p>
+  </div>
+
+  <footer>
+    Robert Carvalho · 2026
+  </footer>
+</div>
+
+<script>
+// Particle animation
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let particles = [];
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = document.body.scrollHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+class Particle {
+  constructor() { this.reset(); }
+  reset() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.size = Math.random() * 2 + 0.5;
+    this.speedX = (Math.random() - 0.5) * 0.3;
+    this.speedY = (Math.random() - 0.5) * 0.3;
+    this.opacity = Math.random() * 0.3 + 0.1;
+    this.hue = Math.random() * 60 + 240;
+  }
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+    if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+  }
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fillStyle = `hsla(${this.hue}, 70%, 60%, ${this.opacity})`;
+    ctx.fill();
+  }
+}
+for (let i = 0; i < 60; i++) particles.push(new Particle());
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => { p.update(); p.draw(); });
+  particles.forEach((a, i) => {
+    particles.slice(i + 1).forEach(b => {
+      const dx = a.x - b.x;
+      const dy = a.y - b.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 120) {
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.strokeStyle = `hsla(260, 50%, 60%, ${0.06 * (1 - dist / 120)})`;
+        ctx.stroke();
+      }
+    });
+  });
+  requestAnimationFrame(animate);
+}
+animate();
+</script>
+</body>
+</html>
