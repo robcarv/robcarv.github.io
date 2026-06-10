@@ -167,6 +167,138 @@
     .news-item .news-link:hover { text-decoration: underline; }
     .news-updated { color: #555; font-size: 0.8rem; text-align: center; margin-top: 1rem; }
     
+    /* Radio Player */
+    .radio-section {
+      background: rgba(145,94,255,0.05);
+      border: 1px solid rgba(145,94,255,0.12);
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 3rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .radio-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: linear-gradient(90deg, #915eff, #6db3f2, #b2f2bb);
+    }
+    .radio-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .radio-art {
+      width: 100px; height: 100px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 2px solid rgba(145,94,255,0.2);
+      flex-shrink: 0;
+    }
+    .radio-info { flex: 1; min-width: 200px; }
+    .radio-info h3 {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+    .radio-info .artist {
+      color: #915eff;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    .radio-info .meta {
+      color: #888;
+      font-size: 0.75rem;
+      margin-top: 0.3rem;
+    }
+    .radio-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .radio-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.5rem;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .radio-btn-play {
+      background: linear-gradient(135deg, #915eff, #6b3fcc);
+      color: #fff;
+    }
+    .radio-btn-play:hover { transform: scale(1.05); }
+    .radio-btn-stop {
+      background: rgba(255,255,255,0.06);
+      color: #ccc;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .radio-btn-stop:hover { background: rgba(255,255,255,0.1); }
+    .radio-btn-link {
+      background: rgba(145,94,255,0.1);
+      color: #915eff;
+      border: 1px solid rgba(145,94,255,0.2);
+    }
+    .radio-btn-link:hover { background: rgba(145,94,255,0.2); }
+    
+    .radio-history {
+      margin-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 1rem;
+    }
+    .radio-history h4 {
+      color: #888;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.8rem;
+    }
+    .radio-history-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.4rem 0;
+      opacity: 0.6;
+      font-size: 0.8rem;
+    }
+    .radio-history-item:hover { opacity: 0.9; }
+    .radio-history-item .thumb {
+      width: 32px; height: 32px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+    .radio-history-item .h-title { color: #ccc; }
+    .radio-history-item .h-artist { color: #666; }
+    
+    .radio-upcoming {
+      margin-top: 0.8rem;
+    }
+    .radio-upcoming-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.3rem 0;
+      font-size: 0.8rem;
+    }
+    .radio-upcoming-item .u-num {
+      color: #915eff;
+      font-weight: 600;
+      width: 20px;
+    }
+    .radio-upcoming-item .u-title { color: #aaa; }
+    .radio-upcoming-item .u-artist { color: #666; }
+    
     .arch-section {
       text-align: center;
       padding: 2rem;
@@ -257,7 +389,33 @@
     </div>
   </div>
 
-  <!-- RSS News Feed Section -->
+  <!-- Radio Section -->
+  <div class="section">
+    <h2>Dublin Calling</h2>
+    <div id="radio-player" class="radio-section">
+      <div class="radio-header">
+        <img id="radio-art" class="radio-art" src="" alt="Album Art">
+        <div class="radio-info">
+          <h3 id="radio-title">Loading...</h3>
+          <div id="radio-artist" class="artist"></div>
+          <div id="radio-meta" class="meta"></div>
+          <div class="radio-controls">
+            <button id="radio-play-btn" class="radio-btn radio-btn-play" onclick="toggleRadio()">▶ Play</button>
+            <a class="radio-btn radio-btn-link" href="https://dublincalling.duckdns.org/public/dublincalling" target="_blank">Open Player →</a>
+          </div>
+        </div>
+      </div>
+      <div class="radio-history">
+        <h4>Recently Played</h4>
+        <div id="radio-history-list"></div>
+      </div>
+      <div class="radio-history">
+        <h4>Coming Up Next</h4>
+        <div id="radio-upcoming-list" class="radio-upcoming"></div>
+      </div>
+    </div>
+  </div>
+
   <div class="section">
     <h2>Latest News</h2>
     <div id="news-feed" class="news-feed">
@@ -369,6 +527,111 @@ function animate() {
   requestAnimationFrame(animate);
 }
 animate();
+</script>
+<script>
+// Radio Player
+const RADIO_URL = 'https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3';
+const API_URL = 'https://dublincalling.duckdns.org/api/nowplaying/dublincalling';
+let audio = null;
+let isPlaying = false;
+let radioInterval = null;
+
+function updateRadioUI(data) {
+  const np = data.now_playing || {};
+  const song = np.song || {};
+  const station = data.station || {};
+  
+  document.getElementById('radio-title').textContent = song.title || 'Unknown';
+  document.getElementById('radio-artist').textContent = song.artist || '';
+  
+  const art = song.art || '';
+  if (art) {
+    document.getElementById('radio-art').src = art;
+  }
+  
+  const listeners = data.listeners?.current || 0;
+  const elapsed = np.elapsed || 0;
+  const duration = np.duration || 0;
+  const remaining = np.remaining || 0;
+  const mins = Math.floor(elapsed / 60);
+  const secs = elapsed % 60;
+  const totalMins = Math.floor(duration / 60);
+  const totalSecs = duration % 60;
+  document.getElementById('radio-meta').textContent = 
+    `${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')} / ${String(totalMins).padStart(2,'0')}:${String(totalSecs).padStart(2,'0')} · ${listeners} listener${listeners !== 1 ? 's' : ''}`;
+  
+  // History
+  const history = data.song_history || [];
+  const historyList = document.getElementById('radio-history-list');
+  historyList.innerHTML = history.slice(0, 5).map(s => {
+    const title = s.song?.title || 'Unknown';
+    const artist = s.song?.artist || '';
+    const artUrl = s.song?.art || '';
+    return `
+      <div class="radio-history-item">
+        ${artUrl ? `<img class="thumb" src="${artUrl}" alt="">` : ''}
+        <div>
+          <div class="h-title">${title}</div>
+          <div class="h-artist">${artist}</div>
+        </div>
+      </div>
+    `;
+  }).join('');
+  
+  // Upcoming
+  const next = data.playing_next?.song || null;
+  const upcomingList = document.getElementById('radio-upcoming-list');
+  if (next) {
+    upcomingList.innerHTML = `
+      <div class="radio-upcoming-item">
+        <span class="u-num">♪</span>
+        <div>
+          <span class="u-title">${next.title || 'Unknown'}</span>
+          <span class="u-artist"> · ${next.artist || ''}</span>
+        </div>
+      </div>
+    `;
+  } else {
+    upcomingList.innerHTML = '<div class="radio-upcoming-item"><span style="color:#666;font-size:0.8rem;">No upcoming tracks</span></div>';
+  }
+}
+
+function fetchRadioData() {
+  fetch(API_URL)
+    .then(r => r.json())
+    .then(data => {
+      if (Array.isArray(data)) data = data[0];
+      updateRadioUI(data);
+    })
+    .catch(() => {});
+}
+
+function toggleRadio() {
+  const btn = document.getElementById('radio-play-btn');
+  if (!audio) {
+    audio = new Audio(RADIO_URL);
+    audio.addEventListener('ended', () => { isPlaying = false; btn.textContent = '▶ Play'; });
+  }
+  if (isPlaying) {
+    audio.pause();
+    audio = null;
+    isPlaying = false;
+    btn.textContent = '▶ Play';
+    if (radioInterval) clearInterval(radioInterval);
+  } else {
+    audio.play().then(() => {
+      isPlaying = true;
+      btn.textContent = '⏹ Stop';
+      radioInterval = setInterval(fetchRadioData, 5000);
+    }).catch(() => {
+      btn.textContent = '▶ Play';
+    });
+  }
+}
+
+// Initial load
+fetchRadioData();
+setInterval(fetchRadioData, 15000);
 </script>
 <script>
 // Load news feed from news.json
