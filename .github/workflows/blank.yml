@@ -1,0 +1,8 @@
+# Empty workflow to override pages-build-deployment
+name: Blank
+on: workflow_dispatch
+jobs:
+  nothing:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This overrides the default pages workflow"
