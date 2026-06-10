@@ -371,11 +371,11 @@ fetch('news.json')
       return;
     }
     container.innerHTML = data.items.map(item => {
-      const title = item.title || item.name || 'Article';
-      const source = item.source || item.feed || 'RSS';
-      const date = item.date || item.published || '';
-      const desc = item.description || item.summary || '';
-      const link = item.link || item.url || '';
+      const title = (typeof item === 'string') ? item : (item.title || item.name || 'Article');
+      const source = (typeof item === 'object') ? (item.source || item.feed || 'RSS') : 'RSS';
+      const date = (typeof item === 'object') ? (item.date || item.published || '') : '';
+      const desc = (typeof item === 'object') ? (item.description || item.summary || '') : '';
+      const link = (typeof item === 'object') ? (item.link || item.url || '') : '';
       return `
         <div class="news-item">
           <div class="news-source">${source}</div>
