@@ -384,15 +384,19 @@ fetch('news.json')
       const title = (typeof item === 'string') ? item : (item.title || item.name || 'Article');
       const source = (typeof item === 'object') ? (item.source || item.feed || 'RSS') : 'RSS';
       const link = (typeof item === 'object') ? (item.link || item.url || '') : '';
+      const date = (typeof item === 'object') ? (item.date || '') : '';
+      const summary = (typeof item === 'object') ? (item.summary || '') : '';
       const colors = ['#915eff', '#6db3f2', '#b2f2bb', '#ffd8a8', '#ffc9c9'];
       const color = colors[idx % colors.length];
+      const dateStr = date ? date.replace(/(\d{4})-(\d{2})-(\d{2}).*/, '$3/$2/$1') : '';
       return `
         <div class="news-item">
           <div class="news-meta">
             <span class="news-source" style="color:${color}">${source}</span>
-            <span class="news-date">${data.updated ? data.updated.slice(0,10).replace(/-/g,'/') : ''}</span>
+            ${dateStr ? `<span class="news-date">${dateStr}</span>` : ''}
           </div>
           <h4>${title.length > 80 ? title.slice(0,80)+'…' : title}</h4>
+          ${summary ? `<p>${summary.length > 150 ? summary.slice(0,150)+'…' : summary}</p>` : ''}
           ${link ? `<a class="news-link" href="${link}" target="_blank" rel="noopener">Open article →</a>` : ''}
         </div>
       `;
