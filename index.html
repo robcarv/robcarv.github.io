@@ -136,6 +136,27 @@
     .proj-card .proj-link { color: #915eff; text-decoration: none; font-size: 0.8rem; font-weight: 500; }
     .proj-card .proj-link:hover { text-decoration: underline; }
     
+    .news-feed {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .news-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 1.2rem;
+      transition: all 0.2s;
+    }
+    .news-item:hover { border-color: rgba(145,94,255,0.2); }
+    .news-item h4 { color: #fff; font-size: 0.95rem; font-weight: 600; }
+    .news-item .news-source { color: #915eff; font-size: 0.75rem; font-weight: 500; }
+    .news-item .news-date { color: #666; font-size: 0.75rem; }
+    .news-item p { color: #999; font-size: 0.85rem; margin-top: 0.4rem; }
+    .news-item a { color: #6db3f2; text-decoration: none; font-size: 0.8rem; }
+    .news-item a:hover { text-decoration: underline; }
+    .news-updated { color: #555; font-size: 0.8rem; text-align: center; margin-top: 1rem; }
+    
     .arch-section {
       text-align: center;
       padding: 2rem;
@@ -223,6 +244,14 @@
         <li>Configuration and training for Protheus ERP system</li>
         <li>Integration with IBM Systems and report development in TSQL</li>
       </ul>
+    </div>
+  </div>
+
+  <!-- RSS News Feed Section -->
+  <div class="section">
+    <h2>Latest News</h2>
+    <div id="news-feed" class="news-feed">
+      <p class="text-secondary">Loading news...</p>
     </div>
   </div>
 
@@ -330,6 +359,38 @@ function animate() {
   requestAnimationFrame(animate);
 }
 animate();
+</script>
+<script>
+// Load news feed from news.json
+fetch('news.json')
+  .then(r => r.json())
+  .then(data => {
+    const container = document.getElementById('news-feed');
+    if (!data.items || data.items.length === 0) {
+      container.innerHTML = '<p class="text-secondary">No recent news.</p>';
+      return;
+    }
+    container.innerHTML = data.items.map(item => {
+      const title = item.title || item.name || 'Article';
+      const source = item.source || item.feed || 'RSS';
+      const date = item.date || item.published || '';
+      const desc = item.description || item.summary || '';
+      const link = item.link || item.url || '';
+      return `
+        <div class="news-item">
+          <div class="news-source">${source}</div>
+          <h4>${title.length > 60 ? title.slice(0,60)+'...' : title}</h4>
+          ${date ? `<div class="news-date">${date}</div>` : ''}
+          ${desc ? `<p>${desc.length > 120 ? desc.slice(0,120)+'...' : desc}</p>` : ''}
+          ${link ? `<a href="${link}" target="_blank">Read more →</a>` : ''}
+        </div>
+      `;
+    }).join('');
+    container.innerHTML += `<div class="news-updated">Updated: ${data.updated || 'recently'}</div>`;
+  })
+  .catch(() => {
+    document.getElementById('news-feed').innerHTML = '<p class="text-secondary">News feed not available.</p>';
+  });
 </script>
 </body>
 </html>
