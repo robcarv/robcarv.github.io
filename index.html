@@ -372,7 +372,7 @@ animate();
 </script>
 <script>
 // Load news feed from news.json
-fetch('news.json')
+fetch('news.json?v=' + Date.now())
   .then(r => r.json())
   .then(data => {
     const container = document.getElementById('news-feed');
