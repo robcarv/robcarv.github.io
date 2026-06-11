@@ -1,46 +1,40 @@
 {
-  "updated": "2026-06-11T09:18:30+01:00",
-  "hostname": "raspberrypi5",
-  "uptime": "24 minutes",
-  "score": 100,
-  "grade": "excellent",
-  "cpu": {
-    "cores": 4,
-    "model": "ARM Cortex-A76 @ 2.4GHz",
-    "load_1m": 0.98,
-    "load_5m": 1.67,
-    "load_15m": 1.86,
-    "temperature": 47.4
-  },
-  "memory": {
-    "total_mb": 8063,
-    "used_mb": 2016,
-    "available_mb": 6046,
-    "percent": 25,
-    "swap_used_mb": 120,
-    "swap_total_mb": 4095,
-    "swap_percent": 2
-  },
-  "disk": {
-    "total_mb": 122327300,
-    "used_mb": 73826652,
-    "percent": 64
-  },
-  "docker": {
-    "containers_running": 8,
-    "images_total": 9
-  },
+  "updated": "2026-06-11T09:21:23+01:00",
+  "pis": [{"label":"Pi4","hostname":"Pi4","ip":"192.168.68.102","uptime":"offline","score":0,"grade":"offline","cpu":{"load_1m":0,"temperature":0},"memory":{"total_mb":0,"used_mb":0,"available_mb":0,"percent":0,"swap_percent":0},"disk":{"percent":0},"docker":{"containers":0,"images":0},"processes":0}, {
+      "label": "Pi5-108",
+      "hostname": "raspberrypi5",
+      "uptime": "26 minutes",
+      "ip": "localhost",
+      "score": 100,
+      "grade": "excellent",
+      "cpu": { "load_1m": 1.64, "temperature": 48.5 },
+      "memory": { "total_mb": 8063, "used_mb": 1955, "available_mb": 6107, "percent": 24, "swap_percent": 5 },
+      "disk": { "percent": 64 },
+      "docker": { "containers": 8, "images": 9 },
+      "processes": 583
+    }, {
+      "label": "Pi501-117",
+      "hostname": "raspberrypi5",
+      "uptime": "26 minutes",
+      "ip": "localhost",
+      "score": 100,
+      "grade": "excellent",
+      "cpu": { "load_1m": 1.64, "temperature": 49.0 },
+      "memory": { "total_mb": 8063, "used_mb": 1955, "available_mb": 6107, "percent": 24, "swap_percent": 5 },
+      "disk": { "percent": 64 },
+      "docker": { "containers": 8, "images": 9 },
+      "processes": 583
+    }],
   "services": {
-    "azuracast_mem_percent": 33.96,
-    "azuracast_cpu_percent": 4.41,
+    "azuracast_mem_percent": 31.07,
+    "azuracast_cpu_percent": 41.86,
     "qbt_torrents_active": 4,
-    "qbt_torrents_downloading": 84,
-    "qbt_download_speed_kbps": 3102,
-    "radio_listeners": 0
+    "qbt_download_speed_kbps": 2185,
+    "radio_listeners": 0,
+    "radio_now_playing": "Bloody Dub - Stiff Little Fingers"
   },
   "capacity": {
-    "estimated_max_listeners": 0,
+    "estimated_max_listeners": 200,
     "note": "Based on 2GB RAM limit for AzuraCast"
-  },
-  "processes": 580
+  }
 }
