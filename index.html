@@ -1356,17 +1356,24 @@ fetch('news.json?v=' + Date.now())
       const link = (typeof item === 'object') ? (item.link || item.url || '') : '';
       const date = (typeof item === 'object') ? (item.date || '') : '';
       const summary = (typeof item === 'object') ? (item.summary || '') : '';
+      const image = (typeof item === 'object') ? (item.image || '') : '';
       const colors = ['#915eff', '#6db3f2', '#b2f2bb', '#ffd8a8', '#ffc9c9'];
       const color = colors[idx % colors.length];
-      const dateStr = date ? date.replace(/(\d{4})-(\d{2})-(\d{2}).*/, '$3/$2/$1') : '';
+      const dateStr = date ? date.slice(0,10).replace(/-/g,'/') : '';
+      const timeStr = date ? date.slice(11,16) : '';
       return `
         <div class="news-item">
           <div class="news-meta">
             <span class="news-source" style="color:${color}">${source}</span>
-            ${dateStr ? `<span class="news-date">${dateStr}</span>` : ''}
+            ${dateStr ? `<span class="news-date">${dateStr} ${timeStr}</span>` : ''}
           </div>
-          <h4>${title.length > 80 ? title.slice(0,80)+'…' : title}</h4>
-          ${summary ? `<p>${summary.length > 150 ? summary.slice(0,150)+'…' : summary}</p>` : ''}
+          <div style="display:flex;gap:0.8rem;align-items:flex-start;">
+            ${image ? `<img src="${image}" alt="" style="width:60px;height:60px;border-radius:8px;object-fit:cover;flex-shrink:0;border:1px solid rgba(255,255,255,0.06);">` : ''}
+            <div style="flex:1;min-width:0;">
+              <h4>${title.length > 80 ? title.slice(0,80)+'…' : title}</h4>
+              ${summary ? `<p>${summary.length > 150 ? summary.slice(0,150)+'…' : summary}</p>` : ''}
+            </div>
+          </div>
           ${link ? `<a class="news-link" href="${link}" target="_blank" rel="noopener">Open article →</a>` : ''}
         </div>
       `;
