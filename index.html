@@ -710,52 +710,70 @@ fetch('health.json?v=' + Date.now())
   .then(r => r.json())
   .then(data => {
     const container = document.getElementById('health-container');
-    const gradeColors = {excellent: 'h-green', good: 'h-yellow', fair: 'h-red', critical: 'h-red'};
-    const gradeLabels = {excellent: '🟢 Excellent', good: '🟡 Good', fair: '🟠 Fair', critical: '🔴 Critical'};
-    const gc = gradeColors[data.grade] || 'h-green';
-    const gl = gradeLabels[data.grade] || 'Unknown';
+    const gradeColors = {excellent: 'h-green', good: 'h-yellow', fair: 'h-red', critical: 'h-red', offline: 'h-red'};
+    const gradeLabels = {excellent: '🟢 Excellent', good: '🟡 Good', fair: '🟠 Fair', critical: '🔴 Critical', offline: '⚫ Offline'};
     const updated = data.updated ? data.updated.slice(0,10).replace(/-/g,'/') : '';
+    const pis = data.pis || [];
+    const svc = data.services || {};
+    const cap = data.capacity || {};
+    
+    // Overall score (average of all Pis)
+    const totalScore = pis.reduce((s,p) => s + (p.score || 0), 0);
+    const avgScore = pis.length ? Math.round(totalScore / pis.length) : 0;
+    const overallGrade = avgScore >= 80 ? 'excellent' : avgScore >= 60 ? 'good' : 'fair';
+    
+    // Build Pi cards
+    const piCards = pis.map(p => {
+      const gc = gradeColors[p.grade] || 'h-green';
+      const gl = gradeLabels[p.grade] || 'Unknown';
+      const temp = p.cpu?.temperature || 0;
+      const tempColor = temp > 60 ? 'h-yellow' : temp > 0 ? 'h-green' : '';
+      const memPct = p.memory?.percent || 0;
+      const memColor = memPct > 75 ? 'h-red' : memPct > 50 ? 'h-yellow' : 'h-blue';
+      const diskPct = p.disk?.percent || 0;
+      const diskColor = diskPct > 85 ? 'h-red' : diskPct > 70 ? 'h-yellow' : 'h-green';
+      const ip = p.ip && p.ip !== 'local' ? p.ip : '';
+      return `
+        <div class="health-card" style="grid-column: span 1;">
+          <div class="h-value ${gc}">${p.score || '?'}/100</div>
+          <div class="h-label" style="color:#fff;font-size:0.85rem;font-weight:600;">${p.label}</div>
+          <div class="h-sub" style="margin-top:0.2rem;">${gl} · ${p.uptime || '?'} ${ip}</div>
+          <div style="display:flex;justify-content:center;gap:1rem;margin-top:0.8rem;font-size:0.75rem;">
+            <span class="${tempColor}">${temp}°C</span>
+            <span class="${memColor}">${memPct}% RAM</span>
+            <span class="${diskColor}">${diskPct}% disk</span>
+          </div>
+          <div class="h-sub" style="margin-top:0.3rem;">${p.docker?.containers || 0} containers · ${p.processes || 0} procs</div>
+        </div>
+      `;
+    }).join('');
     
     container.innerHTML = `
-      <div class="health-score health-score-${data.grade || 'good'}">
-        <div class="score-num ${gc}">${data.score || '?'}/100</div>
-        <div class="score-label ${gc}">${gl}</div>
+      <div class="health-score health-score-${overallGrade}">
+        <div class="score-num ${gradeColors[overallGrade]}">${avgScore}/100</div>
+        <div class="score-label ${gradeColors[overallGrade]}">${gradeLabels[overallGrade]} · ${pis.length} Pis</div>
         <div class="score-updated">Last check: ${updated}</div>
       </div>
+      ${piCards}
       <div class="health-card">
-        <div class="h-value ${data.cpu?.temperature > 60 ? 'h-yellow' : 'h-green'}">${data.cpu?.temperature || '?'}°C</div>
-        <div class="h-label">CPU Temperature</div>
-        <div class="h-sub">Load: ${data.cpu?.load_1m || '?'} (1m)</div>
-      </div>
-      <div class="health-card">
-        <div class="h-value ${data.memory?.percent > 75 ? 'h-red' : data.memory?.percent > 50 ? 'h-yellow' : 'h-blue'}">${data.memory?.percent || '?'}%</div>
-        <div class="h-label">RAM Usage</div>
-        <div class="h-sub">${Math.round(data.memory?.available_mb/1024) || '?'}GB free of ${Math.round(data.memory?.total_mb/1024) || '?'}GB</div>
-      </div>
-      <div class="health-card">
-        <div class="h-value ${data.disk?.percent > 85 ? 'h-red' : data.disk?.percent > 70 ? 'h-yellow' : 'h-green'}">${data.disk?.percent || '?'}%</div>
-        <div class="h-label">Disk Usage</div>
-        <div class="h-sub">${Math.round((data.disk?.total_mb - data.disk?.used_mb)/1024) || '?'}GB free</div>
-      </div>
-      <div class="health-card">
-        <div class="h-value h-purple">${data.services?.radio_listeners || 0}</div>
+        <div class="h-value h-purple">${svc.radio_listeners || 0}</div>
         <div class="h-label">Radio Listeners</div>
-        <div class="h-sub">Est. capacity: ${data.capacity?.estimated_max_listeners || '?'}</div>
+        <div class="h-sub">Est. capacity: ${cap.estimated_max_listeners || '?'}</div>
       </div>
       <div class="health-card">
-        <div class="h-value h-blue">${data.docker?.containers_running || 0}</div>
-        <div class="h-label">Containers</div>
-        <div class="h-sub">${data.docker?.images_total || 0} images</div>
+        <div class="h-value h-blue">${pis.reduce((s,p) => s + (p.docker?.containers || 0), 0)}</div>
+        <div class="h-label">Total Containers</div>
+        <div class="h-sub">Across all Pis</div>
       </div>
       <div class="health-card">
-        <div class="h-value ${data.services?.qbt_torrents_active > 10 ? 'h-yellow' : 'h-green'}">${data.services?.qbt_torrents_active || 0}</div>
+        <div class="h-value ${svc.qbt_torrents_active > 10 ? 'h-yellow' : 'h-green'}">${svc.qbt_torrents_active || 0}</div>
         <div class="h-label">Active Torrents</div>
-        <div class="h-sub">${data.services?.qbt_download_speed_kbps || 0} KB/s</div>
+        <div class="h-sub">${svc.qbt_download_speed_kbps || 0} KB/s</div>
       </div>
       <div class="health-card">
-        <div class="h-value h-purple">${data.services?.azuracast_mem_percent || '?'}%</div>
+        <div class="h-value h-purple">${svc.azuracast_mem_percent || '?'}%</div>
         <div class="h-label">AzuraCast RAM</div>
-        <div class="h-sub">${data.services?.azuracast_cpu_percent || '?'}% CPU</div>
+        <div class="h-sub">${svc.azuracast_cpu_percent || '?'}% CPU</div>
       </div>
     `;
   })
