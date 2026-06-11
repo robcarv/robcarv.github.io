@@ -1088,8 +1088,13 @@ function updateRadioUI(data) {
   document.getElementById('radio-artist').textContent = song.artist || '';
   
   const art = song.art || '';
+  const img = document.getElementById('radio-art');
   if (art) {
-    document.getElementById('radio-art').src = art;
+    img.src = art;
+    img.style.display = 'block';
+    img.onerror = function() { this.style.display = 'none'; };
+  } else {
+    img.style.display = 'none';
   }
   
   const listeners = data.listeners?.current || 0;

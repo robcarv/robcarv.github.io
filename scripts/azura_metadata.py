@@ -36,6 +36,21 @@ def fetch_json(url, timeout=10):
         logger.warning(f"Erro ao buscar {url}: {e}")
         return None
 
+def resolve_art_url(url):
+    """Segue redirect da arte para pegar a URL final"""
+    if not url:
+        return ""
+    try:
+        req = Request(url, headers={"User-Agent": "DublinCalling/1.0"}, method="HEAD")
+        with urlopen(req, timeout=5) as r:
+            final = r.geturl()
+            # Se for a imagem genérica, retorna vazio (deixa o frontend lidar)
+            if 'generic_song' in final or 'generic' in final:
+                return ""
+            return final
+    except:
+        return url
+
 def search_lastfm(artist, title):
     """Busca metadados no Last.fm"""
     api_key = "aed5cf7a583df575c2c6868b442f1139"
@@ -85,11 +100,11 @@ def get_metadata():
         'listeners': listeners,
         'is_live': live.get('is_live', False),
         'now_playing': {
-            'title': song.get('title', 'Unknown'),
-            'artist': song.get('artist', ''),
-            'album': song.get('album', ''),
-            'art': song.get('art', ''),
-            'genre': song.get('genre', ''),
+                'title': song.get('title', 'Unknown'),
+                'artist': song.get('artist', ''),
+                'album': song.get('album', ''),
+                'art': resolve_art_url(song.get('art', '')),
+                'genre': '',
             'duration': now_playing.get('duration', 0),
             'elapsed': now_playing.get('elapsed', 0),
             'remaining': now_playing.get('remaining', 0),
