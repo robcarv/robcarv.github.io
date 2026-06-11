@@ -299,137 +299,204 @@
     .radio-upcoming-item .u-title { color: #aaa; }
     .radio-upcoming-item .u-artist { color: #666; }
     
-    /* Health Report */
-    .health-pi-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Health Report — Modern Glass Design */
+    .health-wrapper {
+      background: linear-gradient(135deg, rgba(145,94,255,0.03) 0%, rgba(109,179,242,0.03) 100%);
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid rgba(145,94,255,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .health-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #915eff, #6db3f2, transparent);
+    }
+    
+    .health-summary-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.02);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .health-summary-left {
+      display: flex;
+      align-items: center;
       gap: 1.5rem;
+    }
+    .health-summary-score {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .health-summary-info h3 {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+    .health-summary-info p {
+      color: #888;
+      font-size: 0.8rem;
+    }
+    .health-summary-right {
+      text-align: right;
+      font-size: 0.75rem;
+      color: #666;
+      line-height: 1.6;
+    }
+    .health-summary-right .next-run {
+      color: #915eff;
+      font-weight: 500;
+    }
+    .health-summary-right .label {
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      font-size: 0.65rem;
+    }
+    
+    .health-pis {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.2rem;
       margin-bottom: 1.5rem;
     }
-    .health-pi-card {
-      background: rgba(255,255,255,0.03);
+    .health-pi {
+      background: rgba(255,255,255,0.02);
       border: 1px solid rgba(255,255,255,0.06);
       border-radius: 16px;
-      padding: 1.5rem;
-      transition: all 0.2s;
+      padding: 1.3rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
     }
-    .health-pi-card:hover { border-color: rgba(145,94,255,0.2); }
-    .health-pi-header {
+    .health-pi:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(145,94,255,0.08);
+      border-color: rgba(145,94,255,0.15);
+    }
+    .health-pi-top {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       margin-bottom: 1rem;
-      padding-bottom: 0.8rem;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
-    .health-pi-name {
-      font-size: 1.1rem;
-      font-weight: 700;
+    .health-pi-top h4 {
       color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
     }
-    .health-pi-ip {
-      font-size: 0.7rem;
+    .health-pi-top .host {
       color: #555;
+      font-size: 0.65rem;
       font-family: monospace;
+      margin-top: 0.1rem;
     }
-    .health-pi-score {
-      font-size: 1.6rem;
-      font-weight: 700;
-    }
-    .health-pi-label {
+    .health-pi-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
       font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      font-weight: 600;
     }
-    .health-pi-uptime {
-      font-size: 0.75rem;
-      color: #888;
-      margin-bottom: 0.8rem;
-    }
-    .health-metric-grid {
+    .health-pi-badge-excellent { background: rgba(178,242,187,0.12); color: #b2f2bb; }
+    .health-pi-badge-good { background: rgba(255,216,168,0.12); color: #ffd8a8; }
+    .health-pi-badge-fair { background: rgba(255,201,201,0.12); color: #ffc9c9; }
+    .health-pi-badge-critical { background: rgba(255,100,100,0.12); color: #ff6b6b; }
+    .health-pi-badge-offline { background: rgba(102,102,102,0.12); color: #888; }
+    
+    .health-pi-stats {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 0.6rem;
     }
-    .health-metric {
-      background: rgba(255,255,255,0.03);
+    .health-pi-stat {
+      text-align: center;
+      padding: 0.5rem 0;
+      background: rgba(255,255,255,0.02);
       border-radius: 10px;
-      padding: 0.6rem 0.8rem;
     }
-    .health-metric .m-value {
+    .health-pi-stat .val {
       font-size: 1.1rem;
       font-weight: 700;
     }
-    .health-metric .m-label {
-      font-size: 0.65rem;
-      color: #888;
+    .health-pi-stat .lbl {
+      font-size: 0.6rem;
+      color: #666;
       text-transform: uppercase;
       letter-spacing: 0.3px;
       margin-top: 0.1rem;
     }
-    .health-metric .m-bar {
-      height: 3px;
+    .health-pi-stat .mini-bar {
+      height: 2px;
       border-radius: 2px;
-      margin-top: 0.3rem;
-      background: rgba(255,255,255,0.06);
+      margin: 0.3rem auto 0;
+      max-width: 60px;
+      background: rgba(255,255,255,0.04);
       overflow: hidden;
     }
-    .health-metric .m-bar-fill {
+    .health-pi-stat .mini-bar-fill {
       height: 100%;
       border-radius: 2px;
-      transition: width 0.5s;
+      transition: width 0.8s ease;
     }
-    .health-services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-top: 0;
-    }
-    .health-service-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 12px;
-      padding: 1rem 1.2rem;
+    .health-pi-uptime {
+      font-size: 0.65rem;
+      color: #555;
+      margin-top: 0.6rem;
       text-align: center;
-    }
-    .health-service-card .sv-value {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin: 0.2rem 0;
-    }
-    .health-service-card .sv-label {
-      color: #888;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
     }
     
-    .health-summary {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 1.5rem 2rem;
-      border-radius: 16px;
-      border: 1px solid;
-      margin-bottom: 1.5rem;
+    .health-services-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.8rem;
     }
-    .health-summary .sum-score {
-      font-size: 2.2rem;
+    .health-svc {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.04);
+      border-radius: 12px;
+      padding: 0.8rem 1rem;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .health-svc:hover { background: rgba(255,255,255,0.04); }
+    .health-svc .svc-val {
+      font-size: 1.2rem;
       font-weight: 700;
     }
-    .health-summary .sum-label {
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-top: 0.2rem;
-    }
-    .health-summary .sum-updated {
+    .health-svc .svc-lbl {
+      font-size: 0.6rem;
       color: #666;
-      font-size: 0.7rem;
-      margin-top: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-top: 0.1rem;
     }
-    .health-summary-excellent { border-color: rgba(178,242,187,0.3); background: rgba(178,242,187,0.05); }
-    .health-summary-good { border-color: rgba(255,216,168,0.3); background: rgba(255,216,168,0.05); }
-    .health-summary-fair { border-color: rgba(255,201,201,0.3); background: rgba(255,201,201,0.05); }
-    .health-summary-critical { border-color: rgba(255,100,100,0.3); background: rgba(255,100,100,0.05); }
+    .health-svc .svc-sub {
+      font-size: 0.6rem;
+      color: #555;
+      margin-top: 0.15rem;
+    }
+    
+    @media (max-width: 600px) {
+      .health-wrapper { padding: 1rem; }
+      .health-summary-row { flex-direction: column; text-align: center; }
+      .health-summary-left { flex-direction: column; gap: 0.5rem; }
+      .health-summary-right { text-align: center; }
+      .health-pi-stats { grid-template-columns: repeat(3, 1fr); }
+      .health-pis { grid-template-columns: 1fr; }
+    }
     
     .arch-section {
       text-align: center;
@@ -779,17 +846,29 @@ fetch('health.json?v=' + Date.now())
   .then(r => r.json())
   .then(data => {
     const container = document.getElementById('health-container');
-    const gradeColors = {excellent: '#b2f2bb', good: '#ffd8a8', fair: '#ffc9c9', critical: '#ff6b6b', offline: '#666'};
+    const gradeColors = {excellent: '#b2f2bb', good: '#ffd8a8', fair: '#ffc9c9', critical: '#ff6b6b', offline: '#888'};
     const gradeLabels = {excellent: '🟢 Excellent', good: '🟡 Good', fair: '🟠 Fair', critical: '🔴 Critical', offline: '⚫ Offline'};
-    const updated = data.updated ? data.updated.slice(0,10).replace(/-/g,'/') : '';
     const pis = data.pis || [];
     const svc = data.services || {};
-    const cap = data.capacity || {};
+    const updated = data.updated || '';
+    const updatedStr = updated.slice(0,10).replace(/-/g,'/') + ' ' + updated.slice(11,16);
     
-    const totalScore = pis.reduce((s,p) => s + (p.score || 0), 0);
-    const avgScore = pis.length ? Math.round(totalScore / pis.length) : 0;
-    const overallGrade = avgScore >= 80 ? 'excellent' : avgScore >= 60 ? 'good' : 'fair';
-    const overallColor = gradeColors[overallGrade];
+    // Calculate next backup run (Mon/Wed/Fri 03:30)
+    function nextRun() {
+      const now = new Date();
+      const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      for (let d = 0; d < 7; d++) {
+        const dt = new Date(now);
+        dt.setDate(now.getDate() + d);
+        dt.setHours(3, 30, 0, 0);
+        if (dt <= now) continue;
+        const day = dt.getDay();
+        if (day === 1 || day === 3 || day === 5) {
+          return days[day] + ' ' + dt.toLocaleDateString('en-GB') + ' 03:30';
+        }
+      }
+      return 'Mon/Wed/Fri 03:30';
+    }
     
     function barColor(pct) {
       if (pct > 75) return '#ff6b6b';
@@ -798,102 +877,112 @@ fetch('health.json?v=' + Date.now())
       return '#b2f2bb';
     }
     
+    const totalScore = pis.reduce((s,p) => s + (p.score || 0), 0);
+    const avgScore = pis.length ? Math.round(totalScore / pis.length) : 0;
+    const overallGrade = avgScore >= 80 ? 'excellent' : avgScore >= 60 ? 'good' : 'fair';
+    const overallCol = gradeColors[overallGrade];
+    const overallLabel = gradeLabels[overallGrade];
+    
     const piCards = pis.map(p => {
-      const gc = gradeColors[p.grade] || '#666';
+      const cl = 'health-pi-badge-' + (p.grade || 'offline');
       const gl = gradeLabels[p.grade] || '?';
       const temp = p.cpu?.temperature || 0;
       const memPct = p.memory?.percent || 0;
       const memAvail = Math.round((p.memory?.available_mb || 0) / 1024);
-      const memTotal = Math.round((p.memory?.total_mb || 0) / 1024);
       const diskPct = p.disk?.percent || 0;
       const swapPct = p.memory?.swap_percent || 0;
-      const load = p.cpu?.load_1m || 0;
+      const load1 = p.cpu?.load_1m || 0;
       const containers = p.docker?.containers || 0;
-      const images = p.docker?.images || 0;
-      const procs = p.processes || 0;
-      const ip = p.ip && p.ip !== 'local' ? p.ip : '';
       const uptime = p.uptime || '?';
       const hostname = p.hostname || p.label;
-      
+      const ip = p.ip && p.ip !== 'local' ? p.ip : '';
       return `
-        <div class="health-pi-card">
-          <div class="health-pi-header">
+        <div class="health-pi" style="animation:fadeUp 0.5s ease forwards;opacity:0;">
+          <div class="health-pi-top">
             <div>
-              <div class="health-pi-name">${p.label}</div>
-              <div class="health-pi-ip">${hostname} ${ip}</div>
+              <h4>${p.label}</h4>
+              <div class="host">${hostname} ${ip}</div>
             </div>
-            <div style="text-align:right;">
-              <div class="health-pi-score" style="color:${gc}">${p.score || '?'}</div>
-              <div class="health-pi-label" style="color:${gc}">${gl}</div>
+            <span class="health-pi-badge ${cl}">${p.score || '?'} ${gl}</span>
+          </div>
+          <div class="health-pi-stats">
+            <div class="health-pi-stat">
+              <div class="val" style="color:${barColor(temp)}">${temp}°</div>
+              <div class="lbl">CPU Temp</div>
+              <div class="mini-bar"><div class="mini-bar-fill" style="width:${Math.min(temp*1.5,100)}%;background:${barColor(temp)}"></div></div>
+            </div>
+            <div class="health-pi-stat">
+              <div class="val" style="color:${barColor(memPct)}">${memPct}%</div>
+              <div class="lbl">RAM</div>
+              <div class="mini-bar"><div class="mini-bar-fill" style="width:${memPct}%;background:${barColor(memPct)}"></div></div>
+            </div>
+            <div class="health-pi-stat">
+              <div class="val" style="color:${barColor(diskPct)}">${diskPct}%</div>
+              <div class="lbl">Disk</div>
+              <div class="mini-bar"><div class="mini-bar-fill" style="width:${diskPct}%;background:${barColor(diskPct)}"></div></div>
+            </div>
+            <div class="health-pi-stat">
+              <div class="val" style="color:#6db3f2">${load1}</div>
+              <div class="lbl">Load</div>
+            </div>
+            <div class="health-pi-stat">
+              <div class="val" style="color:${swapPct > 10 ? '#ffd8a8' : '#888'}">${swapPct}%</div>
+              <div class="lbl">Swap</div>
+            </div>
+            <div class="health-pi-stat">
+              <div class="val" style="color:#915eff">${containers}</div>
+              <div class="lbl">Containers</div>
             </div>
           </div>
-          <div class="health-pi-uptime">Uptime: ${uptime}</div>
-          <div class="health-metric-grid">
-            <div class="health-metric">
-              <div class="m-value" style="color:${barColor(temp)}">${temp}°C</div>
-              <div class="m-label">Temperature</div>
-              <div class="m-bar"><div class="m-bar-fill" style="width:${Math.min(temp * 1.2, 100)}%;background:${barColor(temp)}"></div></div>
-            </div>
-            <div class="health-metric">
-              <div class="m-value" style="color:${barColor(load * 25)}">${load}</div>
-              <div class="m-label">CPU Load (1m)</div>
-              <div class="m-bar"><div class="m-bar-fill" style="width:${Math.min(load * 12.5, 100)}%;background:${barColor(load * 25)}"></div></div>
-            </div>
-            <div class="health-metric">
-              <div class="m-value" style="color:${barColor(memPct)}">${memPct}%</div>
-              <div class="m-label">RAM (${memAvail}G free / ${memTotal}G)</div>
-              <div class="m-bar"><div class="m-bar-fill" style="width:${memPct}%;background:${barColor(memPct)}"></div></div>
-            </div>
-            <div class="health-metric">
-              <div class="m-value" style="color:${barColor(swapPct)}">${swapPct}%</div>
-              <div class="m-label">Swap Usage</div>
-              <div class="m-bar"><div class="m-bar-fill" style="width:${swapPct}%;background:${barColor(swapPct)}"></div></div>
-            </div>
-            <div class="health-metric">
-              <div class="m-value" style="color:${barColor(diskPct)}">${diskPct}%</div>
-              <div class="m-label">Disk Usage</div>
-              <div class="m-bar"><div class="m-bar-fill" style="width:${diskPct}%;background:${barColor(diskPct)}"></div></div>
-            </div>
-            <div class="health-metric">
-              <div class="m-value" style="color:#915eff">${containers}</div>
-              <div class="m-label">Containers / ${images} images</div>
-            </div>
-          </div>
-          <div style="margin-top:0.6rem;font-size:0.7rem;color:#555;text-align:center;">${procs} processes</div>
+          <div class="health-pi-uptime">↑ ${uptime} · ${memAvail}G RAM free</div>
         </div>
       `;
     }).join('');
     
     container.innerHTML = `
-      <div class="health-summary health-summary-${overallGrade}">
-        <div class="sum-score" style="color:${overallColor}">${avgScore}/100</div>
-        <div class="sum-label" style="color:${overallColor}">${gradeLabels[overallGrade]} · ${pis.length} Raspberry Pis</div>
-        <div class="sum-updated">Last check: ${updated}</div>
-      </div>
-      <div class="health-pi-row">${piCards}</div>
-      <div class="health-services">
-        <div class="health-service-card">
-          <div class="sv-value" style="color:#915eff">${svc.radio_listeners || 0}</div>
-          <div class="sv-label">Radio Listeners</div>
-          <div style="font-size:0.65rem;color:#666;margin-top:0.2rem;">Capacity: ~${cap.estimated_max_listeners || 200}</div>
+      <div class="health-wrapper">
+        <div class="health-summary-row">
+          <div class="health-summary-left">
+            <div class="health-summary-score" style="color:${overallCol}">${avgScore}<span style="font-size:1rem;color:#666;">/100</span></div>
+            <div class="health-summary-info">
+              <h3>${overallLabel} · ${pis.length} Pis</h3>
+              <p>${pis.reduce((s,p) => s + (p.docker?.containers || 0), 0)} containers · ${pis.reduce((s,p) => s + (p.processes || 0), 0)} processes</p>
+            </div>
+          </div>
+          <div class="health-summary-right">
+            <div class="label">last check</div>
+            <div>${updatedStr}</div>
+            <div style="margin-top:0.5rem;">
+              <span class="label">next backup</span><br>
+              <span class="next-run">⏰ ${nextRun()}</span>
+            </div>
+          </div>
         </div>
-        <div class="health-service-card">
-          <div class="sv-value" style="color:#6db3f2">${pis.reduce((s,p) => s + (p.docker?.containers || 0), 0)}</div>
-          <div class="sv-label">Total Containers</div>
-        </div>
-        <div class="health-service-card">
-          <div class="sv-value" style="color:${svc.qbt_torrents_active > 10 ? '#ffd8a8' : '#b2f2bb'}">${svc.qbt_torrents_active || 0}</div>
-          <div class="sv-label">Active Torrents</div>
-          <div style="font-size:0.65rem;color:#666;margin-top:0.2rem;">${svc.qbt_download_speed_kbps || 0} KB/s</div>
-        </div>
-        <div class="health-service-card">
-          <div class="sv-value" style="color:#915eff">${svc.azuracast_mem_percent || '?'}%</div>
-          <div class="sv-label">AzuraCast RAM</div>
-          <div style="font-size:0.65rem;color:#666;margin-top:0.2rem;">${svc.azuracast_cpu_percent || '?'}% CPU</div>
-        </div>
-        <div class="health-service-card">
-          <div class="sv-value" style="color:#b2f2bb">${svc.radio_now_playing || 'offline'}</div>
-          <div class="sv-label">Now Playing</div>
+        <div class="health-pis">${piCards}</div>
+        <div class="health-services-row">
+          <div class="health-svc">
+            <div class="svc-val" style="color:#915eff">${svc.radio_listeners || 0}</div>
+            <div class="svc-lbl">Radio Listeners</div>
+            <div class="svc-sub">~200 capacity</div>
+          </div>
+          <div class="health-svc">
+            <div class="svc-val" style="color:${svc.qbt_torrents_active > 10 ? '#ffd8a8' : '#b2f2bb'}">${svc.qbt_torrents_active || 0}</div>
+            <div class="svc-lbl">Active Torrents</div>
+            <div class="svc-sub">${svc.qbt_download_speed_kbps || 0} KB/s</div>
+          </div>
+          <div class="health-svc">
+            <div class="svc-val" style="color:#915eff">${svc.azuracast_mem_percent || '?'}%</div>
+            <div class="svc-lbl">AzuraCast RAM</div>
+            <div class="svc-sub">${svc.azuracast_cpu_percent || '?'}% CPU</div>
+          </div>
+          <div class="health-svc">
+            <div class="svc-val" style="color:#6db3f2">${pis.reduce((s,p) => s + (p.docker?.containers || 0), 0)}</div>
+            <div class="svc-lbl">Total Containers</div>
+          </div>
+          <div class="health-svc">
+            <div class="svc-val" style="color:#b2f2bb;font-size:0.85rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${svc.radio_now_playing || 'offline'}</div>
+            <div class="svc-lbl">Now Playing</div>
+          </div>
         </div>
       </div>
     `;
@@ -901,6 +990,19 @@ fetch('health.json?v=' + Date.now())
   .catch(() => {
     document.getElementById('health-container').innerHTML = '<p class="text-secondary">Health data not available.</p>';
   });
+
+// Animation keyframes
+const style = document.createElement('style');
+style.textContent = `
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.health-pi:nth-child(1) { animation-delay: 0.05s; }
+.health-pi:nth-child(2) { animation-delay: 0.15s; }
+.health-pi:nth-child(3) { animation-delay: 0.25s; }
+`;
+document.head.appendChild(style);
 </script>
 <script>
 // Load news feed from news.json
