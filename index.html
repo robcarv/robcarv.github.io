@@ -300,67 +300,136 @@
     .radio-upcoming-item .u-artist { color: #666; }
     
     /* Health Report */
-    .health-grid {
+    .health-pi-row {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
     }
-    .health-card {
+    .health-pi-card {
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 12px;
-      padding: 1.2rem;
-      text-align: center;
+      border-radius: 16px;
+      padding: 1.5rem;
       transition: all 0.2s;
     }
-    .health-card:hover { border-color: rgba(145,94,255,0.2); }
-    .health-card .h-value {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin: 0.3rem 0;
+    .health-pi-card:hover { border-color: rgba(145,94,255,0.2); }
+    .health-pi-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
-    .health-card .h-label {
-      color: #888;
-      font-size: 0.75rem;
+    .health-pi-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .health-pi-ip {
+      font-size: 0.7rem;
+      color: #555;
+      font-family: monospace;
+    }
+    .health-pi-score {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+    .health-pi-label {
+      font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-    .health-card .h-sub {
-      color: #666;
-      font-size: 0.7rem;
-      margin-top: 0.2rem;
+    .health-pi-uptime {
+      font-size: 0.75rem;
+      color: #888;
+      margin-bottom: 0.8rem;
     }
-    .h-green { color: #b2f2bb; }
-    .h-yellow { color: #ffd8a8; }
-    .h-red { color: #ffc9c9; }
-    .h-purple { color: #915eff; }
-    .h-blue { color: #6db3f2; }
-    
-    .health-score {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 1.5rem;
-      border-radius: 12px;
-      border: 1px solid;
+    .health-metric-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
     }
-    .health-score .score-num {
-      font-size: 3rem;
+    .health-metric {
+      background: rgba(255,255,255,0.03);
+      border-radius: 10px;
+      padding: 0.6rem 0.8rem;
+    }
+    .health-metric .m-value {
+      font-size: 1.1rem;
       font-weight: 700;
     }
-    .health-score .score-label {
-      font-size: 1rem;
-      font-weight: 600;
+    .health-metric .m-label {
+      font-size: 0.65rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-top: 0.1rem;
+    }
+    .health-metric .m-bar {
+      height: 3px;
+      border-radius: 2px;
       margin-top: 0.3rem;
+      background: rgba(255,255,255,0.06);
+      overflow: hidden;
     }
-    .health-score .score-updated {
+    .health-metric .m-bar-fill {
+      height: 100%;
+      border-radius: 2px;
+      transition: width 0.5s;
+    }
+    .health-services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 0;
+    }
+    .health-service-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      text-align: center;
+    }
+    .health-service-card .sv-value {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0.2rem 0;
+    }
+    .health-service-card .sv-label {
+      color: #888;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .health-summary {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 1.5rem 2rem;
+      border-radius: 16px;
+      border: 1px solid;
+      margin-bottom: 1.5rem;
+    }
+    .health-summary .sum-score {
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+    .health-summary .sum-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-top: 0.2rem;
+    }
+    .health-summary .sum-updated {
       color: #666;
-      font-size: 0.75rem;
-      margin-top: 0.5rem;
+      font-size: 0.7rem;
+      margin-top: 0.4rem;
     }
-    .health-score-excellent { border-color: rgba(178,242,187,0.3); background: rgba(178,242,187,0.05); }
-    .health-score-good { border-color: rgba(255,216,168,0.3); background: rgba(255,216,168,0.05); }
-    .health-score-fair { border-color: rgba(255,201,201,0.3); background: rgba(255,201,201,0.05); }
-    .health-score-critical { border-color: rgba(255,100,100,0.3); background: rgba(255,100,100,0.05); }
+    .health-summary-excellent { border-color: rgba(178,242,187,0.3); background: rgba(178,242,187,0.05); }
+    .health-summary-good { border-color: rgba(255,216,168,0.3); background: rgba(255,216,168,0.05); }
+    .health-summary-fair { border-color: rgba(255,201,201,0.3); background: rgba(255,201,201,0.05); }
+    .health-summary-critical { border-color: rgba(255,100,100,0.3); background: rgba(255,100,100,0.05); }
     
     .arch-section {
       text-align: center;
@@ -710,70 +779,122 @@ fetch('health.json?v=' + Date.now())
   .then(r => r.json())
   .then(data => {
     const container = document.getElementById('health-container');
-    const gradeColors = {excellent: 'h-green', good: 'h-yellow', fair: 'h-red', critical: 'h-red', offline: 'h-red'};
+    const gradeColors = {excellent: '#b2f2bb', good: '#ffd8a8', fair: '#ffc9c9', critical: '#ff6b6b', offline: '#666'};
     const gradeLabels = {excellent: '🟢 Excellent', good: '🟡 Good', fair: '🟠 Fair', critical: '🔴 Critical', offline: '⚫ Offline'};
     const updated = data.updated ? data.updated.slice(0,10).replace(/-/g,'/') : '';
     const pis = data.pis || [];
     const svc = data.services || {};
     const cap = data.capacity || {};
     
-    // Overall score (average of all Pis)
     const totalScore = pis.reduce((s,p) => s + (p.score || 0), 0);
     const avgScore = pis.length ? Math.round(totalScore / pis.length) : 0;
     const overallGrade = avgScore >= 80 ? 'excellent' : avgScore >= 60 ? 'good' : 'fair';
+    const overallColor = gradeColors[overallGrade];
     
-    // Build Pi cards
+    function barColor(pct) {
+      if (pct > 75) return '#ff6b6b';
+      if (pct > 50) return '#ffd8a8';
+      if (pct > 25) return '#6db3f2';
+      return '#b2f2bb';
+    }
+    
     const piCards = pis.map(p => {
-      const gc = gradeColors[p.grade] || 'h-green';
-      const gl = gradeLabels[p.grade] || 'Unknown';
+      const gc = gradeColors[p.grade] || '#666';
+      const gl = gradeLabels[p.grade] || '?';
       const temp = p.cpu?.temperature || 0;
-      const tempColor = temp > 60 ? 'h-yellow' : temp > 0 ? 'h-green' : '';
       const memPct = p.memory?.percent || 0;
-      const memColor = memPct > 75 ? 'h-red' : memPct > 50 ? 'h-yellow' : 'h-blue';
+      const memAvail = Math.round((p.memory?.available_mb || 0) / 1024);
+      const memTotal = Math.round((p.memory?.total_mb || 0) / 1024);
       const diskPct = p.disk?.percent || 0;
-      const diskColor = diskPct > 85 ? 'h-red' : diskPct > 70 ? 'h-yellow' : 'h-green';
+      const swapPct = p.memory?.swap_percent || 0;
+      const load = p.cpu?.load_1m || 0;
+      const containers = p.docker?.containers || 0;
+      const images = p.docker?.images || 0;
+      const procs = p.processes || 0;
       const ip = p.ip && p.ip !== 'local' ? p.ip : '';
+      const uptime = p.uptime || '?';
+      const hostname = p.hostname || p.label;
+      
       return `
-        <div class="health-card" style="grid-column: span 1;">
-          <div class="h-value ${gc}">${p.score || '?'}/100</div>
-          <div class="h-label" style="color:#fff;font-size:0.85rem;font-weight:600;">${p.label}</div>
-          <div class="h-sub" style="margin-top:0.2rem;">${gl} · ${p.uptime || '?'} ${ip}</div>
-          <div style="display:flex;justify-content:center;gap:1rem;margin-top:0.8rem;font-size:0.75rem;">
-            <span class="${tempColor}">${temp}°C</span>
-            <span class="${memColor}">${memPct}% RAM</span>
-            <span class="${diskColor}">${diskPct}% disk</span>
+        <div class="health-pi-card">
+          <div class="health-pi-header">
+            <div>
+              <div class="health-pi-name">${p.label}</div>
+              <div class="health-pi-ip">${hostname} ${ip}</div>
+            </div>
+            <div style="text-align:right;">
+              <div class="health-pi-score" style="color:${gc}">${p.score || '?'}</div>
+              <div class="health-pi-label" style="color:${gc}">${gl}</div>
+            </div>
           </div>
-          <div class="h-sub" style="margin-top:0.3rem;">${p.docker?.containers || 0} containers · ${p.processes || 0} procs</div>
+          <div class="health-pi-uptime">Uptime: ${uptime}</div>
+          <div class="health-metric-grid">
+            <div class="health-metric">
+              <div class="m-value" style="color:${barColor(temp)}">${temp}°C</div>
+              <div class="m-label">Temperature</div>
+              <div class="m-bar"><div class="m-bar-fill" style="width:${Math.min(temp * 1.2, 100)}%;background:${barColor(temp)}"></div></div>
+            </div>
+            <div class="health-metric">
+              <div class="m-value" style="color:${barColor(load * 25)}">${load}</div>
+              <div class="m-label">CPU Load (1m)</div>
+              <div class="m-bar"><div class="m-bar-fill" style="width:${Math.min(load * 12.5, 100)}%;background:${barColor(load * 25)}"></div></div>
+            </div>
+            <div class="health-metric">
+              <div class="m-value" style="color:${barColor(memPct)}">${memPct}%</div>
+              <div class="m-label">RAM (${memAvail}G free / ${memTotal}G)</div>
+              <div class="m-bar"><div class="m-bar-fill" style="width:${memPct}%;background:${barColor(memPct)}"></div></div>
+            </div>
+            <div class="health-metric">
+              <div class="m-value" style="color:${barColor(swapPct)}">${swapPct}%</div>
+              <div class="m-label">Swap Usage</div>
+              <div class="m-bar"><div class="m-bar-fill" style="width:${swapPct}%;background:${barColor(swapPct)}"></div></div>
+            </div>
+            <div class="health-metric">
+              <div class="m-value" style="color:${barColor(diskPct)}">${diskPct}%</div>
+              <div class="m-label">Disk Usage</div>
+              <div class="m-bar"><div class="m-bar-fill" style="width:${diskPct}%;background:${barColor(diskPct)}"></div></div>
+            </div>
+            <div class="health-metric">
+              <div class="m-value" style="color:#915eff">${containers}</div>
+              <div class="m-label">Containers / ${images} images</div>
+            </div>
+          </div>
+          <div style="margin-top:0.6rem;font-size:0.7rem;color:#555;text-align:center;">${procs} processes</div>
         </div>
       `;
     }).join('');
     
     container.innerHTML = `
-      <div class="health-score health-score-${overallGrade}">
-        <div class="score-num ${gradeColors[overallGrade]}">${avgScore}/100</div>
-        <div class="score-label ${gradeColors[overallGrade]}">${gradeLabels[overallGrade]} · ${pis.length} Pis</div>
-        <div class="score-updated">Last check: ${updated}</div>
+      <div class="health-summary health-summary-${overallGrade}">
+        <div class="sum-score" style="color:${overallColor}">${avgScore}/100</div>
+        <div class="sum-label" style="color:${overallColor}">${gradeLabels[overallGrade]} · ${pis.length} Raspberry Pis</div>
+        <div class="sum-updated">Last check: ${updated}</div>
       </div>
-      ${piCards}
-      <div class="health-card">
-        <div class="h-value h-purple">${svc.radio_listeners || 0}</div>
-        <div class="h-label">Radio Listeners</div>
-        <div class="h-sub">Est. capacity: ${cap.estimated_max_listeners || '?'}</div>
-      </div>
-      <div class="health-card">
-        <div class="h-value h-blue">${pis.reduce((s,p) => s + (p.docker?.containers || 0), 0)}</div>
-        <div class="h-label">Total Containers</div>
-        <div class="h-sub">Across all Pis</div>
-      </div>
-      <div class="health-card">
-        <div class="h-value ${svc.qbt_torrents_active > 10 ? 'h-yellow' : 'h-green'}">${svc.qbt_torrents_active || 0}</div>
-        <div class="h-label">Active Torrents</div>
-        <div class="h-sub">${svc.qbt_download_speed_kbps || 0} KB/s</div>
-      </div>
-      <div class="health-card">
-        <div class="h-value h-purple">${svc.azuracast_mem_percent || '?'}%</div>
-        <div class="h-label">AzuraCast RAM</div>
-        <div class="h-sub">${svc.azuracast_cpu_percent || '?'}% CPU</div>
+      <div class="health-pi-row">${piCards}</div>
+      <div class="health-services">
+        <div class="health-service-card">
+          <div class="sv-value" style="color:#915eff">${svc.radio_listeners || 0}</div>
+          <div class="sv-label">Radio Listeners</div>
+          <div style="font-size:0.65rem;color:#666;margin-top:0.2rem;">Capacity: ~${cap.estimated_max_listeners || 200}</div>
+        </div>
+        <div class="health-service-card">
+          <div class="sv-value" style="color:#6db3f2">${pis.reduce((s,p) => s + (p.docker?.containers || 0), 0)}</div>
+          <div class="sv-label">Total Containers</div>
+        </div>
+        <div class="health-service-card">
+          <div class="sv-value" style="color:${svc.qbt_torrents_active > 10 ? '#ffd8a8' : '#b2f2bb'}">${svc.qbt_torrents_active || 0}</div>
+          <div class="sv-label">Active Torrents</div>
+          <div style="font-size:0.65rem;color:#666;margin-top:0.2rem;">${svc.qbt_download_speed_kbps || 0} KB/s</div>
+        </div>
+        <div class="health-service-card">
+          <div class="sv-value" style="color:#915eff">${svc.azuracast_mem_percent || '?'}%</div>
+          <div class="sv-label">AzuraCast RAM</div>
+          <div style="font-size:0.65rem;color:#666;margin-top:0.2rem;">${svc.azuracast_cpu_percent || '?'}% CPU</div>
+        </div>
+        <div class="health-service-card">
+          <div class="sv-value" style="color:#b2f2bb">${svc.radio_now_playing || 'offline'}</div>
+          <div class="sv-label">Now Playing</div>
+        </div>
       </div>
     `;
   })
