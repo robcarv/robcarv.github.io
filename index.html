@@ -299,6 +299,69 @@
     .radio-upcoming-item .u-title { color: #aaa; }
     .radio-upcoming-item .u-artist { color: #666; }
     
+    /* Health Report */
+    .health-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .health-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 1.2rem;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .health-card:hover { border-color: rgba(145,94,255,0.2); }
+    .health-card .h-value {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0.3rem 0;
+    }
+    .health-card .h-label {
+      color: #888;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .health-card .h-sub {
+      color: #666;
+      font-size: 0.7rem;
+      margin-top: 0.2rem;
+    }
+    .h-green { color: #b2f2bb; }
+    .h-yellow { color: #ffd8a8; }
+    .h-red { color: #ffc9c9; }
+    .h-purple { color: #915eff; }
+    .h-blue { color: #6db3f2; }
+    
+    .health-score {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid;
+    }
+    .health-score .score-num {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    .health-score .score-label {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 0.3rem;
+    }
+    .health-score .score-updated {
+      color: #666;
+      font-size: 0.75rem;
+      margin-top: 0.5rem;
+    }
+    .health-score-excellent { border-color: rgba(178,242,187,0.3); background: rgba(178,242,187,0.05); }
+    .health-score-good { border-color: rgba(255,216,168,0.3); background: rgba(255,216,168,0.05); }
+    .health-score-fair { border-color: rgba(255,201,201,0.3); background: rgba(255,201,201,0.05); }
+    .health-score-critical { border-color: rgba(255,100,100,0.3); background: rgba(255,100,100,0.05); }
+    
     .arch-section {
       text-align: center;
       padding: 2rem;
@@ -386,6 +449,14 @@
         <li>Configuration and training for Protheus ERP system</li>
         <li>Integration with IBM Systems and report development in TSQL</li>
       </ul>
+    </div>
+  </div>
+
+  <!-- Health Report Section -->
+  <div class="section">
+    <h2>System Health</h2>
+    <div id="health-container" class="health-grid">
+      <p class="text-secondary">Loading health data...</p>
     </div>
   </div>
 
@@ -632,6 +703,65 @@ function toggleRadio() {
 // Initial load
 fetchRadioData();
 setInterval(fetchRadioData, 15000);
+</script>
+<script>
+// Load health report
+fetch('health.json?v=' + Date.now())
+  .then(r => r.json())
+  .then(data => {
+    const container = document.getElementById('health-container');
+    const gradeColors = {excellent: 'h-green', good: 'h-yellow', fair: 'h-red', critical: 'h-red'};
+    const gradeLabels = {excellent: '🟢 Excellent', good: '🟡 Good', fair: '🟠 Fair', critical: '🔴 Critical'};
+    const gc = gradeColors[data.grade] || 'h-green';
+    const gl = gradeLabels[data.grade] || 'Unknown';
+    const updated = data.updated ? data.updated.slice(0,10).replace(/-/g,'/') : '';
+    
+    container.innerHTML = `
+      <div class="health-score health-score-${data.grade || 'good'}">
+        <div class="score-num ${gc}">${data.score || '?'}/100</div>
+        <div class="score-label ${gc}">${gl}</div>
+        <div class="score-updated">Last check: ${updated}</div>
+      </div>
+      <div class="health-card">
+        <div class="h-value ${data.cpu?.temperature > 60 ? 'h-yellow' : 'h-green'}">${data.cpu?.temperature || '?'}°C</div>
+        <div class="h-label">CPU Temperature</div>
+        <div class="h-sub">Load: ${data.cpu?.load_1m || '?'} (1m)</div>
+      </div>
+      <div class="health-card">
+        <div class="h-value ${data.memory?.percent > 75 ? 'h-red' : data.memory?.percent > 50 ? 'h-yellow' : 'h-blue'}">${data.memory?.percent || '?'}%</div>
+        <div class="h-label">RAM Usage</div>
+        <div class="h-sub">${Math.round(data.memory?.available_mb/1024) || '?'}GB free of ${Math.round(data.memory?.total_mb/1024) || '?'}GB</div>
+      </div>
+      <div class="health-card">
+        <div class="h-value ${data.disk?.percent > 85 ? 'h-red' : data.disk?.percent > 70 ? 'h-yellow' : 'h-green'}">${data.disk?.percent || '?'}%</div>
+        <div class="h-label">Disk Usage</div>
+        <div class="h-sub">${Math.round((data.disk?.total_mb - data.disk?.used_mb)/1024) || '?'}GB free</div>
+      </div>
+      <div class="health-card">
+        <div class="h-value h-purple">${data.services?.radio_listeners || 0}</div>
+        <div class="h-label">Radio Listeners</div>
+        <div class="h-sub">Est. capacity: ${data.capacity?.estimated_max_listeners || '?'}</div>
+      </div>
+      <div class="health-card">
+        <div class="h-value h-blue">${data.docker?.containers_running || 0}</div>
+        <div class="h-label">Containers</div>
+        <div class="h-sub">${data.docker?.images_total || 0} images</div>
+      </div>
+      <div class="health-card">
+        <div class="h-value ${data.services?.qbt_torrents_active > 10 ? 'h-yellow' : 'h-green'}">${data.services?.qbt_torrents_active || 0}</div>
+        <div class="h-label">Active Torrents</div>
+        <div class="h-sub">${data.services?.qbt_download_speed_kbps || 0} KB/s</div>
+      </div>
+      <div class="health-card">
+        <div class="h-value h-purple">${data.services?.azuracast_mem_percent || '?'}%</div>
+        <div class="h-label">AzuraCast RAM</div>
+        <div class="h-sub">${data.services?.azuracast_cpu_percent || '?'}% CPU</div>
+      </div>
+    `;
+  })
+  .catch(() => {
+    document.getElementById('health-container').innerHTML = '<p class="text-secondary">Health data not available.</p>';
+  });
 </script>
 <script>
 // Load news feed from news.json
