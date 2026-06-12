@@ -1,417 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homelab Architecture - Robert Carvalho</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-    
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #0f0f1a;
-      color: #e0e0e0;
-      overflow-x: hidden;
-    }
-    
-    /* Particle background */
-    #particles-canvas {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: 0;
-      pointer-events: none;
-    }
-    
-    .container {
-      position: relative;
-      z-index: 1;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-    
-    header {
-      text-align: center;
-      padding: 3rem 0 2rem;
-    }
-    
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, #915eff, #b2f2bb);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 0.5rem;
-    }
-    
-    header p {
-      color: #888;
-      font-size: 1.1rem;
-    }
-    
-    .section {
-      margin: 3rem 0;
-    }
-    
-    .section-title {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      padding-left: 1rem;
-      border-left: 4px solid #915eff;
-      color: #e0e0e0;
-    }
-    
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.2rem;
-    }
-    
-    .card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 1.5rem;
-      transition: all 0.3s ease;
-      cursor: default;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 4px;
-      height: 100%;
-      background: linear-gradient(180deg, #915eff, #b2f2bb);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    
-    .card:hover {
-      background: rgba(255,255,255,0.07);
-      transform: translateY(-3px);
-      border-color: rgba(145, 94, 255, 0.3);
-    }
-    
-    .card:hover::before {
-      opacity: 1;
-    }
-    
-    .card h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-    
-    .card .host {
-      font-size: 0.8rem;
-      color: #915eff;
-      font-weight: 500;
-      margin-bottom: 0.5rem;
-    }
-    
-    .card p {
-      font-size: 0.9rem;
-      color: #aaa;
-      line-height: 1.5;
-    }
-    
-    .card .tag {
-      display: inline-block;
-      padding: 0.2rem 0.6rem;
-      border-radius: 6px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      margin-top: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    
-    .tag-purple { background: rgba(145,94,255,0.2); color: #915eff; }
-    .tag-green { background: rgba(178,242,187,0.2); color: #b2f2bb; }
-    .tag-blue { background: rgba(165,216,255,0.2); color: #a5d8ff; }
-    .tag-orange { background: rgba(255,216,168,0.2); color: #ffd8a8; }
-    .tag-red { background: rgba(255,201,201,0.2); color: #ffc9c9; }
-    
-    .flow-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.8rem;
-      flex-wrap: wrap;
-      padding: 1.5rem;
-      background: rgba(255,255,255,0.03);
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-    
-    .flow-item {
-      background: rgba(145,94,255,0.1);
-      border: 1px solid rgba(145,94,255,0.2);
-      border-radius: 8px;
-      padding: 0.5rem 1rem;
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-    
-    .flow-arrow {
-      color: #666;
-      font-size: 1.2rem;
-    }
-    
-    .cron-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-    
-    .cron-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 12px;
-      padding: 1rem;
-      text-align: center;
-    }
-    
-    .cron-card .schedule {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #915eff;
-    }
-    
-    .cron-card .task {
-      font-size: 0.8rem;
-      color: #ccc;
-      margin: 0.3rem 0;
-    }
-    
-    .cron-card .host {
-      font-size: 0.7rem;
-      color: #666;
-    }
-    
-    .excalidraw-link {
-      display: inline-block;
-      margin: 2rem auto;
-      padding: 1rem 2rem;
-      background: linear-gradient(135deg, #915eff, #6b3fcc);
-      color: white;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: transform 0.2s;
-    }
-    
-    .excalidraw-link:hover {
-      transform: scale(1.05);
-    }
-    
-    footer {
-      text-align: center;
-      padding: 3rem 0;
-      color: #555;
-      font-size: 0.85rem;
-    }
-    
-    @media (max-width: 768px) {
-      header h1 { font-size: 1.8rem; }
-      .grid { grid-template-columns: 1fr; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homelab Architecture - Robert Carvalho</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0a14;
+    color: #e0e0e0;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+  
+  header {
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+  }
+  header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #915eff, #5eead4, #38bdf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -1px;
+  }
+  header p {
+    color: #666;
+    font-size: 1rem;
+    margin-top: 8px;
+    font-weight: 300;
+  }
+  
+  .section {
+    margin: 40px 0;
+  }
+  .section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #915eff;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, #915eff44, transparent);
+  }
+
+  /* PIS GRID */
+  .pis-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 900px) { .pis-grid { grid-template-columns: 1fr; } }
+  
+  .pi-card {
+    background: linear-gradient(145deg, #12121f, #0d0d18);
+    border: 1px solid #1e1e3a;
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.2s;
+  }
+  .pi-card:hover {
+    border-color: #915eff66;
+    transform: translateY(-2px);
+  }
+  .pi-card .pi-name {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+  .pi-card .pi-ip {
+    font-size: 0.75rem;
+    color: #666;
+    font-weight: 400;
+  }
+  .pi-card .pi-services {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .pi-service {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+  .tag-frontend { background: rgba(56,189,248,0.12); color: #38bdf8; border: 1px solid #38bdf833; }
+  .tag-backend  { background: rgba(52,211,153,0.12); color: #34d399; border: 1px solid #34d39933; }
+  .tag-storage  { background: rgba(145,94,255,0.12); color: #915eff; border: 1px solid #915eff33; }
+  .tag-security { background: rgba(251,113,133,0.12); color: #fb7185; border: 1px solid #fb718533; }
+  .tag-auto     { background: rgba(251,146,60,0.12); color: #fb923c; border: 1px solid #fb923c33; }
+  .tag-ext      { background: rgba(251,191,36,0.12); color: #fbbf24; border: 1px solid #fbbf2433; }
+
+  /* TRUENAS */
+  .truenas-card {
+    background: linear-gradient(145deg, #15102a, #0f0b1f);
+    border: 1px solid #2a1f5a;
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+  }
+  .truenas-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #a78bfa;
+  }
+  .truenas-subtitle {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 2px;
+  }
+  .truenas-items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+  }
+  @media (max-width: 900px) { .truenas-items { grid-template-columns: repeat(2,1fr); } }
+  .tn-item {
+    background: rgba(145,94,255,0.06);
+    border: 1px solid rgba(145,94,255,0.12);
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+  }
+  .tn-item .tn-label { font-size: 0.75rem; font-weight: 600; color: #a78bfa; }
+  .tn-item .tn-desc  { font-size: 0.65rem; color: #666; margin-top: 4px; }
+
+  /* MEDIA PIPELINE */
+  .pipeline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 20px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .pipe-item {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .pipe-arrow { color: #444; font-size: 1rem; font-weight: 300; }
+  @media (max-width: 700px) { .pipeline { flex-direction: column; } .pipe-arrow { transform: rotate(90deg); } }
+
+  /* GALLERY SECTION */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 700px) { .gallery-grid { grid-template-columns: 1fr; } }
+  .gallery-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid #1e1e3a;
+    border-radius: 12px;
+    padding: 18px;
+  }
+  .gallery-card h4 { font-size: 0.85rem; font-weight: 600; color: #38bdf8; margin-bottom: 8px; }
+  .gallery-card ul { list-style: none; }
+  .gallery-card li { font-size: 0.75rem; color: #999; padding: 3px 0; }
+  .gallery-card li::before { content: '› '; color: #555; }
+
+  /* CRON */
+  .cron-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .cron-item {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid #1e1e3a;
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+  }
+  .cron-item .cron-time { font-size: 0.8rem; font-weight: 700; color: #fb923c; }
+  .cron-item .cron-task { font-size: 0.75rem; color: #ccc; margin: 4px 0; }
+  .cron-item .cron-host { font-size: 0.65rem; color: #555; }
+
+  /* LEGEND */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin: 30px 0;
+    padding: 16px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 12px;
+    border: 1px solid #1e1e3a;
+  }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.7rem; color: #888; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 3px; }
+
+  footer {
+    text-align: center;
+    padding: 40px 0;
+    color: #444;
+    font-size: 0.8rem;
+  }
+  footer a { color: #915eff; text-decoration: none; }
+</style>
 </head>
 <body>
-
-<canvas id="particles-canvas"></canvas>
-
 <div class="container">
-  <header>
-    <h1>Homelab Architecture</h1>
-    <p>3 Raspberry Pis · TrueNAS · 25+ Containers · 55+ Monitored Services</p>
-  </header>
 
-  <div class="section">
-    <h2 class="section-title">Infrastructure</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Pi4 (192.168.68.102)</h3>
-        <div class="host">Raspberry Pi 4 · 8GB</div>
-        <p>Pi-hole, Duplicati, Dashy, Backup scripts</p>
-        <span class="tag tag-blue">5 containers</span>
+<header>
+  <h1>Homelab Architecture</h1>
+  <p>3 Raspberry Pis · 25+ Containers · 55+ Services · NVMe Storage</p>
+</header>
+
+<!-- PIS -->
+<div class="section">
+  <div class="section-title">Infrastructure</div>
+  <div class="pis-grid">
+    <div class="pi-card">
+      <div class="pi-name">🍓 Pi 4</div>
+      <div class="pi-ip">192.168.68.102 · 8GB</div>
+      <div class="pi-services">
+        <span class="pi-service tag-frontend">Pi-hole</span>
+        <span class="pi-service tag-backend">Dashy</span>
+        <span class="pi-service tag-backend">NPM</span>
+        <span class="pi-service tag-ext">Wallos</span>
+        <span class="pi-service tag-storage">Duplicati</span>
+        <span class="pi-service tag-security">Pi.Alert</span>
+        <span class="pi-service tag-auto">Glances</span>
       </div>
-      <div class="card">
-        <h3>Pi5-108 (192.168.68.108)</h3>
-        <div class="host">Raspberry Pi 5 · 8GB</div>
-        <p>AzuraCast, qBittorrent, ClamAV, Glances, DuckDNS</p>
-        <span class="tag tag-purple">7 containers</span>
+    </div>
+    <div class="pi-card">
+      <div class="pi-name">🍓 Pi 5</div>
+      <div class="pi-ip">192.168.68.108 · 8GB</div>
+      <div class="pi-services">
+        <span class="pi-service tag-frontend">AzuraCast</span>
+        <span class="pi-service tag-backend">qBittorrent</span>
+        <span class="pi-service tag-security">ClamAV</span>
+        <span class="pi-service tag-auto">Guardian</span>
+        <span class="pi-service tag-ext">DuckDNS</span>
+        <span class="pi-service tag-auto">Glances</span>
       </div>
-      <div class="card">
-        <h3>Pi501-117 (192.168.68.117)</h3>
-        <div class="host">Raspberry Pi 5 · 8GB</div>
-        <p>Dashy, Radarr, Prowlarr, UptimeKuma, NPM, Wallos, Speedtest, ChangeDetection</p>
-        <span class="tag tag-green">12 containers</span>
-      </div>
-      <div class="card">
-        <h3>TrueNAS Scale</h3>
-        <div class="host">192.168.68.124</div>
-        <p>10.9TB NVMe Pool · Jellyfin Media Server · CIFS Shares</p>
-        <span class="tag tag-orange">Storage</span>
+    </div>
+    <div class="pi-card">
+      <div class="pi-name">🍓 Pi 501</div>
+      <div class="pi-ip">192.168.68.117 · 8GB</div>
+      <div class="pi-services">
+        <span class="pi-service tag-frontend">Dashy</span>
+        <span class="pi-service tag-backend">Hermes Agent</span>
+        <span class="pi-service tag-frontend">UptimeKuma</span>
+        <span class="pi-service tag-storage">Prowlarr</span>
+        <span class="pi-service tag-storage">Whisparr</span>
+        <span class="pi-service tag-frontend">Gallery CLI</span>
+        <span class="pi-service tag-auto">NewsBot</span>
+        <span class="pi-service tag-auto">ChangeDetection</span>
+        <span class="pi-service tag-ext">Speedtest</span>
+        <span class="pi-service tag-auto">Glances</span>
       </div>
     </div>
   </div>
-
-  <div class="section">
-    <h2 class="section-title">Media Pipeline</h2>
-    <div class="flow-row">
-      <div class="flow-item">Prowlarr</div>
-      <span class="flow-arrow">→</span>
-      <div class="flow-item">Radarr</div>
-      <span class="flow-arrow">→</span>
-      <div class="flow-item">Download Client</div>
-      <span class="flow-arrow">→</span>
-      <div class="flow-item">incomplete/</div>
-      <span class="flow-arrow">→</span>
-      <div class="flow-item">complete/</div>
-    </div>
-    <div class="flow-row" style="margin-top: 0.8rem;">
-      <div class="flow-item" style="border-color: rgba(178,242,187,0.3); background: rgba(178,242,187,0.08);">ClamAV Scan</div>
-      <span class="flow-arrow">→</span>
-      <div class="flow-item" style="border-color: rgba(255,216,168,0.3); background: rgba(255,216,168,0.08);">library/organized</div>
-      <span class="flow-arrow">→</span>
-      <div class="flow-item" style="border-color: rgba(165,216,255,0.3); background: rgba(165,216,255,0.08);">Jellyfin</div>
-      <span class="flow-arrow">→</span>
-      <div class="flow-item" style="border-color: rgba(255,255,255,0.1);">88 Movies</div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">Cron Jobs</h2>
-    <div class="cron-grid">
-      <div class="cron-card">
-        <div class="schedule">Every 2h</div>
-        <div class="task">Radarr Health</div>
-        <div class="host">Pi501-117</div>
-      </div>
-      <div class="cron-card">
-        <div class="schedule">Every 6h</div>
-        <div class="task">Torrent Recheck</div>
-        <div class="host">Pi5-108</div>
-      </div>
-      <div class="cron-card">
-        <div class="schedule">03:00 daily</div>
-        <div class="task">ClamAV Scan</div>
-        <div class="host">Pi5-108</div>
-      </div>
-      <div class="cron-card">
-        <div class="schedule">03:30 Mon/Wed/Fri</div>
-        <div class="task">Backup Pipeline</div>
-        <div class="host">Pi5-108</div>
-      </div>
-      <div class="cron-card">
-        <div class="schedule">04:00 daily</div>
-        <div class="task">Rsync to TrueNAS</div>
-        <div class="host">Pi5-108</div>
-      </div>
-      <div class="cron-card">
-        <div class="schedule">08:00, 20:00</div>
-        <div class="task">NewsBot RSS</div>
-        <div class="host">Pi501-117</div>
-      </div>
-    </div>
-  </div>
-
-  <div style="text-align: center;">
-    <a class="excalidraw-link" href="homelab-architecture.excalidraw" download>
-      Download Excalidraw Diagram
-    </a>
-    <p style="color: #666; margin-top: 0.5rem; font-size: 0.85rem;">
-      Drag & drop the file onto <a href="https://excalidraw.com" style="color: #915eff;">excalidraw.com</a> to view/edit
-    </p>
-  </div>
-
-  <footer>
-    Robert Carvalho · Homelab · 2026
-  </footer>
 </div>
 
-<script>
-// Particle animation
-const canvas = document.getElementById('particles-canvas');
-const ctx = canvas.getContext('2d');
-let particles = [];
+<!-- TRUENAS -->
+<div class="section">
+  <div class="section-title">Storage</div>
+  <div class="truenas-card">
+    <div class="truenas-title">🖥️ TrueNAS Scale</div>
+    <div class="truenas-subtitle">192.168.68.124 · NVMe 10.9TB Pool · 64GB RAM</div>
+    <div class="truenas-items">
+      <div class="tn-item"><div class="tn-label">Media Share</div><div class="tn-desc">SMB · CIFS mount</div></div>
+      <div class="tn-item"><div class="tn-label">CloudBackup</div><div class="tn-desc">Rsync target</div></div>
+      <div class="tn-item"><div class="tn-label">Jellyfin Library</div><div class="tn-desc">88 Movies</div></div>
+      <div class="tn-item"><div class="tn-label">Gallery Storage</div><div class="tn-desc">src1 + alt</div></div>
+    </div>
+  </div>
+</div>
 
-function resize() {
-  canvas.width = window.innerWidth;
-  canvas.height = document.body.scrollHeight;
-}
-resize();
-window.addEventListener('resize', resize);
+<!-- GALLERY DOWNLOADER -->
+<div class="section">
+  <div class="section-title">Gallery Downloader</div>
+  <div class="gallery-grid">
+    <div class="gallery-card">
+      <h4>Source 1 — Primary Library</h4>
+      <ul>
+        <li>Search by terms (AND)</li>
+        <li>Batch with rate control</li>
+        <li>Auto-deduplication</li>
+        <li>Sort: popular / recent / weekly / monthly</li>
+        <li>Storage: /mnt/truenas_media/src1_manga/</li>
+      </ul>
+    </div>
+    <div class="gallery-card">
+      <h4>Source 2 — Secondary Source</h4>
+      <ul>
+        <li>Search by term or artist</li>
+        <li>Download all / single chapter / full series</li>
+        <li>Browser fingerprint emulation</li>
+        <li>File logging (~/gallery_logs/)</li>
+        <li>Storage: /mnt/truenas_media/alt_manga/</li>
+      </ul>
+    </div>
+  </div>
+</div>
 
-class Particle {
-  constructor() {
-    this.reset();
-  }
-  reset() {
-    this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height;
-    this.size = Math.random() * 2 + 0.5;
-    this.speedX = (Math.random() - 0.5) * 0.5;
-    this.speedY = (Math.random() - 0.5) * 0.5;
-    this.opacity = Math.random() * 0.5 + 0.1;
-    this.hue = Math.random() * 60 + 240; // purple-blue range
-  }
-  update() {
-    this.x += this.speedX;
-    this.y += this.speedY;
-    if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
-      this.reset();
-    }
-  }
-  draw() {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    ctx.fillStyle = `hsla(${this.hue}, 70%, 60%, ${this.opacity})`;
-    ctx.fill();
-  }
-}
+<!-- MEDIA PIPELINE -->
+<div class="section">
+  <div class="section-title">Media Pipeline</div>
+  <div class="pipeline">
+    <span class="pipe-item" style="background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);color:#38bdf8;">Prowlarr</span>
+    <span class="pipe-arrow">→</span>
+    <span class="pipe-item" style="background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.2);color:#34d399;">Whisparr</span>
+    <span class="pipe-arrow">→</span>
+    <span class="pipe-item" style="background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.2);color:#fbbf24;">Downloader</span>
+    <span class="pipe-arrow">→</span>
+    <span class="pipe-item" style="background:rgba(251,113,133,0.1);border:1px solid rgba(251,113,133,0.2);color:#fb7185;">ClamAV</span>
+    <span class="pipe-arrow">→</span>
+    <span class="pipe-item" style="background:rgba(145,94,255,0.1);border:1px solid rgba(145,94,255,0.2);color:#915eff;">Jellyfin</span>
+    <span class="pipe-arrow">→</span>
+    <span class="pipe-item" style="background:rgba(145,94,255,0.15);border:1px solid rgba(145,94,255,0.3);color:#a78bfa;">Gallery DL</span>
+  </div>
+</div>
 
-for (let i = 0; i < 80; i++) {
-  particles.push(new Particle());
-}
+<!-- CORE SERVICES -->
+<div class="section">
+  <div class="section-title">Core Services</div>
+  <div class="gallery-grid">
+    <div class="gallery-card">
+      <h4 style="color:#34d399;">Web UI</h4>
+      <ul>
+        <li>Port 8787 · 192.168.68.117</li>
+        <li>Vue.js SPA + nginx proxy</li>
+        <li>Grid view, tag search, reader</li>
+        <li>Download collections</li>
+      </ul>
+    </div>
+    <div class="gallery-card">
+      <h4 style="color:#fb923c;">API & CLI</h4>
+      <ul>
+        <li>API: Node.js/Express · Port 5173</li>
+        <li>CLI: gallery-cli.sh (interactive)</li>
+        <li>Dual source menu</li>
+        <li>Rate: 3 req/s, batch 10</li>
+      </ul>
+    </div>
+  </div>
+</div>
 
-function animate() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach(p => {
-    p.update();
-    p.draw();
-  });
-  
-  // Draw connections
-  particles.forEach((a, i) => {
-    particles.slice(i + 1).forEach(b => {
-      const dx = a.x - b.x;
-      const dy = a.y - b.y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 150) {
-        ctx.beginPath();
-        ctx.moveTo(a.x, a.y);
-        ctx.lineTo(b.x, b.y);
-        ctx.strokeStyle = `hsla(260, 50%, 60%, ${0.08 * (1 - dist / 150)})`;
-        ctx.stroke();
-      }
-    });
-  });
-  
-  requestAnimationFrame(animate);
-}
+<!-- CRON -->
+<div class="section">
+  <div class="section-title">Automation</div>
+  <div class="cron-grid">
+    <div class="cron-item"><div class="cron-time">Every 5min</div><div class="cron-task">Guardian Check</div><div class="cron-host">Pi 5 (.108)</div></div>
+    <div class="cron-item"><div class="cron-time">Every 5min</div><div class="cron-task">CIFS Remount</div><div class="cron-host">Pi 5 (.108)</div></div>
+    <div class="cron-item"><div class="cron-time">Every 6h</div><div class="cron-task">Torrent Recheck</div><div class="cron-host">Pi 5 (.108)</div></div>
+    <div class="cron-item"><div class="cron-time">03:00 daily</div><div class="cron-task">ClamAV Scan</div><div class="cron-host">Pi 5 (.108)</div></div>
+    <div class="cron-item"><div class="cron-time">03:30 M/W/F</div><div class="cron-task">Backup Pipeline</div><div class="cron-host">Pi 5 (.108)</div></div>
+    <div class="cron-item"><div class="cron-time">04:00 daily</div><div class="cron-task">Rsync to NAS</div><div class="cron-host">Pi 5 (.108)</div></div>
+    <div class="cron-item"><div class="cron-time">08:00, 20:00</div><div class="cron-task">NewsBot RSS</div><div class="cron-host">Pi 501 (.117)</div></div>
+    <div class="cron-item"><div class="cron-time">Every 2h</div><div class="cron-task">Whisparr Health</div><div class="cron-host">Pi 501 (.117)</div></div>
+  </div>
+</div>
 
-animate();
-</script>
+<!-- LEGEND -->
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#38bdf8;"></div> Frontend</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#34d399;"></div> Backend</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#915eff;"></div> Storage/Database</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#fb7185;"></div> Security</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#fb923c;"></div> Automation</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#fbbf24;"></div> External</div>
+</div>
 
+<footer>
+  Robert Carvalho · <a href="https://robcarv.github.io">robcarv.github.io</a> · 2026<br>
+  <span style="font-size:0.7rem;">3 Pis · 55+ Services · 10.9TB NVMe · 0 Threats</span>
+</footer>
+
+</div>
 </body>
 </html>
