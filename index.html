@@ -1194,21 +1194,64 @@ fetch('health.json?v=' + Date.now())
     const updated = data.updated || '';
     const updatedStr = updated.slice(0,10).replace(/-/g,'/') + ' ' + updated.slice(11,16);
     
-    // Calculate next backup run (Mon/Wed/Fri 03:30)
-    function nextRun() {
-      const now = new Date();
-      const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    // Calculate next cron run times
+    const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    function nextDayOfWeek(now, targetDays, hour, minute) {
       for (let d = 0; d < 7; d++) {
         const dt = new Date(now);
         dt.setDate(now.getDate() + d);
-        dt.setHours(3, 30, 0, 0);
+        dt.setHours(hour, minute, 0, 0);
         if (dt <= now) continue;
         const day = dt.getDay();
-        if (day === 1 || day === 3 || day === 5) {
-          return days[day] + ' ' + dt.toLocaleDateString('en-GB') + ' 03:30';
+        if (targetDays.includes(day)) {
+          return days[day] + ' ' + dt.toLocaleDateString('en-GB') + ' ' + 
+            String(hour).padStart(2,'0') + ':' + String(minute).padStart(2,'0');
         }
       }
-      return 'Mon/Wed/Fri 03:30';
+      return 'N/A';
+    }
+    function nextAtHour(now, hour, minute) {
+      const dt = new Date(now);
+      dt.setHours(hour, minute, 0, 0);
+      if (dt <= now) dt.setDate(dt.getDate() + 1);
+      return dt.toLocaleDateString('en-GB') + ' ' + 
+        String(hour).padStart(2,'0') + ':' + String(minute).padStart(2,'0');
+    }
+    function nextRun() {
+      const now = new Date();
+      // Backup: Mon/Wed/Fri at 03:00 (NOT 03:30)
+      return nextDayOfWeek(now, [1,3,5], 3, 0);
+    }
+    function nextNewsBot() {
+      const now = new Date();
+      const hours = [0, 6, 12, 18];
+      for (let h of hours) {
+        const dt = new Date(now);
+        dt.setHours(h, 0, 0, 0);
+        if (dt > now) return dt.toLocaleDateString('en-GB') + ' ' + 
+          String(h).padStart(2,'0') + ':00';
+      }
+      const dt = new Date(now);
+      dt.setDate(dt.getDate() + 1);
+      dt.setHours(0, 0, 0, 0);
+      return dt.toLocaleDateString('en-GB') + ' 00:00';
+    }
+    function nextClamAV() {
+      return nextAtHour(new Date(), 3, 0);
+    }
+    function nextTorrentHealth() {
+      const now = new Date();
+      const hours = [0, 6, 12, 18];
+      for (let h of hours) {
+        const dt = new Date(now);
+        dt.setHours(h, 0, 0, 0);
+        if (dt > now) return dt.toLocaleDateString('en-GB') + ' ' + 
+          String(h).padStart(2,'0') + ':00';
+      }
+      const dt = new Date(now);
+      dt.setDate(dt.getDate() + 1);
+      dt.setHours(0, 0, 0, 0);
+      return dt.toLocaleDateString('en-GB') + ' 00:00';
     }
     
     function barColor(pct) {
@@ -1296,6 +1339,9 @@ fetch('health.json?v=' + Date.now())
             <div style="margin-top:0.5rem;">
               <span class="label">next backup</span><br>
               <span class="next-run">⏰ ${nextRun()}</span>
+              <span style="font-size:0.55rem;color:var(--text-muted);display:block;margin-top:0.15rem;">
+                NewsBot ${nextNewsBot()} · ClamAV ${nextClamAV()} · TorrHlth ${nextTorrentHealth()}
+              </span>
             </div>
           </div>
         </div>
