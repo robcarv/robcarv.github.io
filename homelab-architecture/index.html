@@ -37,9 +37,7 @@
     font-weight: 300;
   }
   
-  .section {
-    margin: 40px 0;
-  }
+  .section { margin: 40px 0; }
   .section-title {
     font-size: 1.1rem;
     font-weight: 600;
@@ -72,28 +70,11 @@
     padding: 24px;
     position: relative;
     overflow: hidden;
-    transition: border-color 0.3s, transform 0.2s;
   }
-  .pi-card:hover {
-    border-color: #915eff66;
-    transform: translateY(-2px);
-  }
-  .pi-card .pi-name {
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 2px;
-  }
-  .pi-card .pi-ip {
-    font-size: 0.75rem;
-    color: #666;
-    font-weight: 400;
-  }
-  .pi-card .pi-services {
-    margin-top: 14px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
+  .pi-card:hover { border-color: #915eff66; transform: translateY(-2px); transition: 0.3s; }
+  .pi-card .pi-name { font-size: 1rem; font-weight: 700; margin-bottom: 2px; }
+  .pi-card .pi-ip { font-size: 0.75rem; color: #666; font-weight: 400; }
+  .pi-card .pi-services { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
   .pi-service {
     font-size: 0.7rem;
     padding: 4px 10px;
@@ -114,18 +95,9 @@
     border: 1px solid #2a1f5a;
     border-radius: 16px;
     padding: 24px;
-    position: relative;
   }
-  .truenas-title {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #a78bfa;
-  }
-  .truenas-subtitle {
-    font-size: 0.8rem;
-    color: #666;
-    margin-top: 2px;
-  }
+  .truenas-title { font-size: 1rem; font-weight: 700; color: #a78bfa; }
+  .truenas-subtitle { font-size: 0.8rem; color: #666; margin-top: 2px; }
   .truenas-items {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -165,23 +137,14 @@
   .pipe-arrow { color: #444; font-size: 1rem; font-weight: 300; }
   @media (max-width: 700px) { .pipeline { flex-direction: column; } .pipe-arrow { transform: rotate(90deg); } }
 
-  /* GALLERY SECTION */
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  @media (max-width: 700px) { .gallery-grid { grid-template-columns: 1fr; } }
-  .gallery-card {
-    background: rgba(255,255,255,0.02);
-    border: 1px solid #1e1e3a;
-    border-radius: 12px;
-    padding: 18px;
-  }
-  .gallery-card h4 { font-size: 0.85rem; font-weight: 600; color: #38bdf8; margin-bottom: 8px; }
-  .gallery-card ul { list-style: none; }
-  .gallery-card li { font-size: 0.75rem; color: #999; padding: 3px 0; }
-  .gallery-card li::before { content: '› '; color: #555; }
+  /* SERVICES TABLE */
+  .svc-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
+  .svc-table th { text-align: left; color: #666; font-weight: 500; padding: 8px 6px; border-bottom: 1px solid #1e1e3a; }
+  .svc-table td { padding: 6px; border-bottom: 1px solid #0d0d1a; color: #aaa; }
+  .svc-table td:first-child { color: #e0e0e0; font-weight: 500; }
+  .svc-table tr:hover td { background: rgba(145,94,255,0.03); }
+  .svc-status-up { color: #34d399; }
+  .svc-status-down { color: #fb7185; }
 
   /* CRON */
   .cron-grid {
@@ -199,6 +162,20 @@
   .cron-item .cron-time { font-size: 0.8rem; font-weight: 700; color: #fb923c; }
   .cron-item .cron-task { font-size: 0.75rem; color: #ccc; margin: 4px 0; }
   .cron-item .cron-host { font-size: 0.65rem; color: #555; }
+
+  /* GALLERY */
+  .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 700px) { .gallery-grid { grid-template-columns: 1fr; } }
+  .gallery-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid #1e1e3a;
+    border-radius: 12px;
+    padding: 18px;
+  }
+  .gallery-card h4 { font-size: 0.85rem; font-weight: 600; color: #38bdf8; margin-bottom: 8px; }
+  .gallery-card ul { list-style: none; }
+  .gallery-card li { font-size: 0.75rem; color: #999; padding: 3px 0; }
+  .gallery-card li::before { content: '› '; color: #555; }
 
   /* LEGEND */
   .legend {
@@ -229,7 +206,7 @@
 
 <header>
   <h1>Homelab Architecture</h1>
-  <p>3 Raspberry Pis · 25+ Containers · 55+ Services · NVMe Storage</p>
+  <p>3 Pis · 14 Containers · 55+ Services · 10.9TB NVMe</p>
 </header>
 
 <!-- PIS -->
@@ -254,7 +231,7 @@
       <div class="pi-ip">192.168.68.108 · 8GB</div>
       <div class="pi-services">
         <span class="pi-service tag-frontend">AzuraCast</span>
-        <span class=\"pi-service tag-backend\">Downloader</span>
+        <span class="pi-service tag-backend">Downloader</span>
         <span class="pi-service tag-security">ClamAV</span>
         <span class="pi-service tag-auto">Guardian</span>
         <span class="pi-service tag-ext">DuckDNS</span>
@@ -266,15 +243,16 @@
       <div class="pi-ip">192.168.68.117 · 8GB</div>
       <div class="pi-services">
         <span class="pi-service tag-frontend">Dashy</span>
-        <span class="pi-service tag-backend">Hermes Agent</span>
+        <span class="pi-service tag-backend">Hermes</span>
         <span class="pi-service tag-frontend">UptimeKuma</span>
-        <span class=\"pi-service tag-storage\">Indexer Mgr</span>
-        <span class=\"pi-service tag-storage\">Media Mgr</span>
-        <span class="pi-service tag-frontend">Gallery CLI</span>
+        <span class="pi-service tag-storage">Indexer Mgr</span>
+        <span class="pi-service tag-storage">Media Mgr</span>
+        <span class="pi-service tag-frontend">Gallery</span>
         <span class="pi-service tag-auto">NewsBot</span>
-        <span class="pi-service tag-auto">ChangeDetection</span>
+        <span class="pi-service tag-auto">ChangeDetect</span>
         <span class="pi-service tag-ext">Speedtest</span>
         <span class="pi-service tag-auto">Glances</span>
+        <span class="pi-service tag-backend">Portainer</span>
       </div>
     </div>
   </div>
@@ -289,35 +267,8 @@
     <div class="truenas-items">
       <div class="tn-item"><div class="tn-label">Media Share</div><div class="tn-desc">SMB · CIFS mount</div></div>
       <div class="tn-item"><div class="tn-label">CloudBackup</div><div class="tn-desc">Rsync target</div></div>
-      <div class="tn-item"><div class="tn-label">Jellyfin Library</div><div class="tn-desc">88 Movies</div></div>
-      <div class="tn-item"><div class="tn-label">Gallery Storage</div><div class="tn-desc">src1 + alt</div></div>
-    </div>
-  </div>
-</div>
-
-<!-- GALLERY DOWNLOADER -->
-<div class="section">
-  <div class="section-title">Gallery Downloader</div>
-  <div class="gallery-grid">
-    <div class="gallery-card">
-      <h4>Source 1 — Primary Library</h4>
-      <ul>
-        <li>Search by terms (AND)</li>
-        <li>Batch with rate control</li>
-        <li>Auto-deduplication</li>
-        <li>Sort: popular / recent / weekly / monthly</li>
-        <li>Storage: /mnt/truenas_media/src1_manga/</li>
-      </ul>
-    </div>
-    <div class="gallery-card">
-      <h4>Source 2 — Secondary Source</h4>
-      <ul>
-        <li>Search by term or artist</li>
-        <li>Download all / single chapter / full series</li>
-        <li>Browser fingerprint emulation</li>
-        <li>File logging (~/gallery_logs/)</li>
-        <li>Storage: /mnt/truenas_media/alt_manga/</li>
-      </ul>
+      <div class="tn-item"><div class="tn-label">Jellyfin Library</div><div class="tn-desc">Streaming Server</div></div>
+      <div class="tn-item"><div class="tn-label">Gallery Storage</div><div class="tn-desc">Source 1 + 2</div></div>
     </div>
   </div>
 </div>
@@ -326,9 +277,9 @@
 <div class="section">
   <div class="section-title">Media Pipeline</div>
   <div class="pipeline">
-    <span class=\"pipe-item\" style=\"background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);color:#38bdf8;\">Indexer Mgr</span>
+    <span class="pipe-item" style="background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);color:#38bdf8;">Indexer Mgr</span>
     <span class="pipe-arrow">→</span>
-    <span class="pipe-item" style="background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.2);color:#34d399;">Media Manager</span>
+    <span class="pipe-item" style="background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.2);color:#34d399;">Media Mgr</span>
     <span class="pipe-arrow">→</span>
     <span class="pipe-item" style="background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.2);color:#fbbf24;">Downloader</span>
     <span class="pipe-arrow">→</span>
@@ -340,26 +291,50 @@
   </div>
 </div>
 
-<!-- CORE SERVICES -->
+<!-- ALL CONTAINERS -->
 <div class="section">
-  <div class="section-title">Core Services</div>
+  <div class="section-title">All Containers (14 running)</div>
+  <table class="svc-table">
+    <tr><th>Service</th><th>Image</th><th>Status</th><th>Port</th><th>Host</th></tr>
+    <tr><td>Dashboard</td><td>lissy93/dashy</td><td class="svc-status-up">Up 3h</td><td>8200</td><td>Pi 4</td></tr>
+    <tr><td>Change Detection</td><td>changedetection</td><td class="svc-status-up">Up 2d</td><td>5500</td><td>Pi 501</td></tr>
+    <tr><td>Glances</td><td>nicolargo/glances</td><td class="svc-status-up">Up 2d</td><td>61208</td><td>All</td></tr>
+    <tr><td>NPM</td><td>jc21/nginx-proxy-manager</td><td class="svc-status-up">Up 2d</td><td>81</td><td>Pi 4</td></tr>
+    <tr><td>Gallery Backend</td><td>nhentai-backend</td><td class="svc-status-up">Up 29m</td><td>5173</td><td>Pi 501</td></tr>
+    <tr><td>Gallery Frontend</td><td>nhentai-frontend</td><td class="svc-status-up">Up 4h</td><td>8787</td><td>Pi 501</td></tr>
+    <tr><td>Portainer Agent</td><td>portainer/agent</td><td class="svc-status-up">Up 2d</td><td>9001</td><td>Pi 501</td></tr>
+    <tr><td>Indexer Manager</td><td>prowlarr/prowlarr</td><td class="svc-status-up">Up 2d</td><td>9696</td><td>Pi 501</td></tr>
+    <tr><td>Speedtest</td><td>speedtest-tracker</td><td class="svc-status-up">Up 2d</td><td>8089</td><td>Pi 501</td></tr>
+    <tr><td>UptimeKuma</td><td>louislam/uptime-kuma</td><td class="svc-status-up">Up 2d</td><td>3001</td><td>Pi 501</td></tr>
+    <tr><td>Wallos</td><td>wallos</td><td class="svc-status-up">Up 2d</td><td>8982</td><td>Pi 501</td></tr>
+    <tr><td>Media Manager</td><td>whisparr</td><td class="svc-status-up">Up 2d</td><td>6969</td><td>Pi 501</td></tr>
+  </table>
+</div>
+
+<!-- GALLERY DOWNLOADER -->
+<div class="section">
+  <div class="section-title">Gallery Downloader</div>
   <div class="gallery-grid">
     <div class="gallery-card">
-      <h4 style="color:#34d399;">Web UI</h4>
+      <h4>Source 1 — Primary Library</h4>
       <ul>
-        <li>Port 8787 · 192.168.68.117</li>
-        <li>Vue.js SPA + nginx proxy</li>
-        <li>Grid view, tag search, reader</li>
-        <li>Download collections</li>
+        <li>Search by terms (AND), full pagination</li>
+        <li>Batch download with rate control (3/s)</li>
+        <li>Auto-deduplication, auto webp→jpg</li>
+        <li>Sort: popular / recent / weekly / monthly</li>
+        <li>CLI: gallery-cli.sh (menu option 1)</li>
+        <li>Storage: /mnt/truenas_media/src1_manga/</li>
       </ul>
     </div>
     <div class="gallery-card">
-      <h4 style="color:#fb923c;">API & CLI</h4>
+      <h4>Source 2 — Secondary Source</h4>
       <ul>
-        <li>API: Node.js/Express · Port 5173</li>
-        <li>CLI: gallery-cli.sh (interactive)</li>
-        <li>Dual source menu</li>
-        <li>Rate: 3 req/s, batch 10</li>
+        <li>Search by term or artist name</li>
+        <li>Download all / chapter / full series</li>
+        <li>Browser fingerprint emulation</li>
+        <li>Artist/Series/Chapter folder structure</li>
+        <li>File logging (~/gallery_logs/)</li>
+        <li>Storage: /mnt/truenas_media/alt_manga/</li>
       </ul>
     </div>
   </div>
@@ -371,11 +346,11 @@
   <div class="cron-grid">
     <div class="cron-item"><div class="cron-time">Every 5min</div><div class="cron-task">Guardian Check</div><div class="cron-host">Pi 5 (.108)</div></div>
     <div class="cron-item"><div class="cron-time">Every 5min</div><div class="cron-task">CIFS Remount</div><div class="cron-host">Pi 5 (.108)</div></div>
-    <div class="cron-item"><div class="cron-time">Every 6h</div><div class="cron-task">Torrent Recheck</div><div class="cron-host">Pi 5 (.108)</div></div>
+    <div class="cron-item"><div class="cron-time">Every 6h</div><div class="cron-task">Download Recheck</div><div class="cron-host">Pi 5 (.108)</div></div>
+    <div class="cron-item"><div class="cron-time">00,06,12,18</div><div class="cron-task">NewsBot RSS</div><div class="cron-host">Pi 501 (.117)</div></div>
     <div class="cron-item"><div class="cron-time">03:00 daily</div><div class="cron-task">ClamAV Scan</div><div class="cron-host">Pi 5 (.108)</div></div>
     <div class="cron-item"><div class="cron-time">03:30 M/W/F</div><div class="cron-task">Backup Pipeline</div><div class="cron-host">Pi 5 (.108)</div></div>
     <div class="cron-item"><div class="cron-time">04:00 daily</div><div class="cron-task">Rsync to NAS</div><div class="cron-host">Pi 5 (.108)</div></div>
-    <div class="cron-item"><div class="cron-time">08:00, 20:00</div><div class="cron-task">NewsBot RSS</div><div class="cron-host">Pi 501 (.117)</div></div>
     <div class="cron-item"><div class="cron-time">Every 2h</div><div class="cron-task">Media Health</div><div class="cron-host">Pi 501 (.117)</div></div>
   </div>
 </div>
@@ -384,7 +359,7 @@
 <div class="legend">
   <div class="legend-item"><div class="legend-dot" style="background:#38bdf8;"></div> Frontend</div>
   <div class="legend-item"><div class="legend-dot" style="background:#34d399;"></div> Backend</div>
-  <div class="legend-item"><div class="legend-dot" style="background:#915eff;"></div> Storage/Database</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#915eff;"></div> Storage</div>
   <div class="legend-item"><div class="legend-dot" style="background:#fb7185;"></div> Security</div>
   <div class="legend-item"><div class="legend-dot" style="background:#fb923c;"></div> Automation</div>
   <div class="legend-item"><div class="legend-dot" style="background:#fbbf24;"></div> External</div>
@@ -392,7 +367,7 @@
 
 <footer>
   Robert Carvalho · <a href="https://robcarv.github.io">robcarv.github.io</a> · 2026<br>
-  <span style="font-size:0.7rem;">3 Pis · 55+ Services · 10.9TB NVMe · 0 Threats</span>
+  <span style="font-size:0.7rem;">3 Pis · 14 Containers · 55+ Services · 10.9TB NVMe · 0 Threats</span>
 </footer>
 
 </div>
