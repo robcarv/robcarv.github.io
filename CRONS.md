@@ -50,8 +50,8 @@
 ```
 0 */6 * * * /home/robert/scripts/torrent_health_cron.sh >> /home/robert/scripts/torrent_health.log 2>&1
 ```
-- **What**: Runs inside qBittorrent container — detects stuck torrents (100% complete but 0 bytes), rechecks them, force-resumes. Logs results
-- **Script**: `/home/robert/scripts/torrent_health_cron.sh` → calls `docker exec qbittorrent python3 /usr/local/bin/torrent_health.py`
+- **What**: Runs inside Downloader container — detects stuck torrents (100% complete but 0 bytes), rechecks them, force-resumes. Logs results
+- **Script**: `/home/robert/scripts/torrent_health_cron.sh` → calls `docker exec downloader python3 /usr/local/bin/torrent_health.py`
 - **Log**: `/home/robert/scripts/torrent_health.log`
 - **Runs**: Every 6 hours (00:00, 06:00, 12:00, 18:00)
 - **Manual**: `bash /home/robert/scripts/torrent_health_cron.sh`
@@ -60,7 +60,7 @@
 ```
 0 3 * * * /home/robert/scripts/torrent_antivirus.sh >> /home/robert/scripts/clamav_scan.log 2>&1
 ```
-- **What**: Scans all completed torrent downloads with ClamAV (inside Docker container). Scans `/mnt/truenas_media/whisparr/downloads/complete`
+- **What**: Scans all completed torrent downloads with ClamAV (inside Docker container). Scans `/mnt/truenas_media/downloads/complete`
 - **Script**: `/home/robert/scripts/torrent_antivirus.sh`
 - **Log**: `/home/robert/scripts/clamav_scan.log`
 - **Runs**: Daily at 03:00
@@ -68,18 +68,18 @@
 
 ### 6. `0 4 * * *` — Daily pipeline backup (rsync)
 ```
-0 4 * * * rsync -avz --delete /mnt/truenas_media/whisparr/downloads/complete/ /mnt/truenas_media/whisparr/downloads/backup/diario/ >> /home/robert/scripts/backup_pipeline.log 2>&1
+0 4 * * * rsync -avz --delete /mnt/truenas_media/downloads/complete/ /mnt/truenas_media/downloads/backup/diario/ >> /home/robert/scripts/backup_pipeline.log 2>&1
 ```
 - **What**: Rsyncs completed torrent downloads to a daily backup folder on the same TrueNAS share. Retention handled by rsync --delete
 - **Log**: `/home/robert/scripts/backup_pipeline.log`
 - **Runs**: Daily at 04:00
-- **Manual**: `rsync -avz --delete /mnt/truenas_media/whisparr/downloads/complete/ /mnt/truenas_media/whisparr/downloads/backup/diario/`
+- **Manual**: `rsync -avz --delete /mnt/truenas_media/downloads/complete/ /mnt/truenas_media/downloads/backup/diario/`
 
 ### 7. `30 3 * * 1,3,5` — Full pipeline config backup
 ```
 30 3 * * 1,3,5 /home/robert/scripts/backup_pipeline.sh >> /home/robert/scripts/backup_pipeline.log 2>&1
 ```
-- **What**: Backs up Whisparr/Prowlarr/qBittorrent configs and scripts. Separate from the rsync data backup above
+- **What**: Backs up Media Mgr/Indexer Mgr/Downloader configs and scripts. Separate from the rsync data backup above
 - **Script**: `/home/robert/scripts/backup_pipeline.sh`
 - **Log**: `/home/robert/scripts/backup_pipeline.log`
 - **Runs**: Mon/Wed/Fri at 03:30
@@ -102,7 +102,7 @@
 0 3 * * 1,3,5 /home/robert/Documents/backup/backup_rpi.sh
 ```
 - **What**: Master backup script. Backs up configs from ALL 3 Pis (Pi4, Pi5-108, Pi501-117) sequentially:
-  - Docker configs (Whisparr, Prowlarr, qBittorrent)
+  - Docker configs (Media Mgr, Indexer Mgr, Downloader)
   - Scripts directories
   - Crontab dumps
   - Dashy conf.yml
@@ -173,7 +173,7 @@ bash /home/robert/scripts/torrent_health_cron.sh
 bash /home/robert/scripts/torrent_antivirus.sh
 
 # Daily pipeline rsync
-rsync -avz --delete /mnt/truenas_media/whisparr/downloads/complete/ /mnt/truenas_media/whisparr/downloads/backup/diario/
+rsync -avz --delete /mnt/truenas_media/downloads/complete/ /mnt/truenas_media/downloads/backup/diario/
 
 # Pipeline config backup
 bash /home/robert/scripts/backup_pipeline.sh
@@ -198,7 +198,7 @@ cd /home/robert/Documents/vscode_projects/news_colletector && bash run_newsbot.s
 ## Environment Variables (from Pi4 backup script)
 
 - **SSH password**: `Totvs@123#456` (used for inter-Pi SSH access)
-- **qBittorrent WebUI**: `admin` / `whisparr2026`
+- **Downloader WebUI**: `admin` / `media2026`
 - **TrueNAS SMB**: `robert` / `Totvs@123#456` (in `/etc/smbcredentials/truenas`)
 - **Telegram**: From `~/backup.env` (TELEGRAM_TOKEN, TELEGRAM_CHAT_ID)
 
