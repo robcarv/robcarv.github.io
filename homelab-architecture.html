@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homelab Architecture</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #020617; color: #e2e8f0; font-family: 'JetBrains Mono', monospace; min-height: 100vh; display: flex; justify-content: center; padding: 20px; }
+.container { max-width: 1200px; width: 100%; }
+.header { text-align: center; padding: 30px 0 20px; }
+.header h1 { font-size: 24px; font-weight: 700; background: linear-gradient(135deg, #22d3ee, #34d399, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.header .dot { display: inline-block; width: 10px; height: 10px; background: #34d399; border-radius: 50%; margin-right: 10px; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+.header .subtitle { font-size: 12px; color: #64748b; margin-top: 5px; }
+.card { background: #0f172a; border: 1px solid #1e293b; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+.card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+.card-dot { width: 8px; height: 8px; border-radius: 50%; }
+.card h3 { font-size: 13px; font-weight: 600; color: #94a3b8; }
+.card ul { list-style: none; }
+.card li { font-size: 11px; color: #64748b; padding: 4px 0; border-bottom: 1px solid #1e293b; }
+.card li:last-child { border: none; }
+.grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+.footer { text-align: center; padding: 20px; font-size: 10px; color: #475569; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1><span class="dot"></span>Homelab Architecture</h1>
+    <div class="subtitle">Robert Carvalho · 3 Pis · 55+ Services · 10.9TB NVMe</div>
+  </div>
+
+  <svg viewBox="0 0 1150 1150" style="width:100%;height:auto;background:#020617;border-radius:12px;border:1px solid #1e293b;">
+    <defs>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+      </pattern>
+      <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 Z" fill="#475569"/>
+      </marker>
+      <marker id="arrow-cyan" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 Z" fill="#22d3ee"/>
+      </marker>
+    </defs>
+    <rect width="1150" height="1150" fill="url(#grid)"/>
+
+    <!-- TITLE -->
+    <text x="575" y="35" text-anchor="middle" font-size="14" font-weight="700" fill="#e2e8f0">Infrastructure Overview</text>
+
+    <!-- PI CARDS -->
+    <!-- Pi 4 -->
+    <rect x="30" y="60" width="350" height="290" rx="12" fill="none" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="8,4"/>
+    <text x="205" y="82" text-anchor="middle" font-size="11" font-weight="600" fill="#fbbf24">🍓 Pi 4 · 192.168.68.102</text>
+    <!-- Services -->
+    <rect x="50" y="100" width="150" height="50" rx="6" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+    <text x="125" y="122" text-anchor="middle" font-size="10" fill="#22d3ee" font-weight="600">Pi-hole</text>
+    <text x="125" y="136" text-anchor="middle" font-size="8" fill="#64748b">DNS Ad Blocker</text>
+    <rect x="50" y="165" width="150" height="50" rx="6" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+    <text x="125" y="187" text-anchor="middle" font-size="10" fill="#22d3ee" font-weight="600">Dashy</text>
+    <text x="125" y="201" text-anchor="middle" font-size="8" fill="#64748b">Dashboard Hub</text>
+    <rect x="50" y="230" width="150" height="50" rx="6" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+    <text x="125" y="252" text-anchor="middle" font-size="10" fill="#34d399" font-weight="600">NPM</text>
+    <text x="125" y="266" text-anchor="middle" font-size="8" fill="#64748b">Reverse Proxy</text>
+    <rect x="215" y="100" width="150" height="50" rx="6" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+    <text x="290" y="122" text-anchor="middle" font-size="10" fill="#34d399" font-weight="600">Wallos</text>
+    <text x="290" y="136" text-anchor="middle" font-size="8" fill="#64748b">Subscriptions</text>
+    <rect x="215" y="165" width="150" height="50" rx="6" fill="rgba(76,29,149,0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="290" y="187" text-anchor="middle" font-size="10" fill="#a78bfa" font-weight="600">Glances</text>
+    <text x="290" y="201" text-anchor="middle" font-size="8" fill="#64748b">Monitoring</text>
+    <rect x="215" y="230" width="150" height="50" rx="6" fill="rgba(136,19,55,0.4)" stroke="#fb7185" stroke-width="1.5"/>
+    <text x="290" y="252" text-anchor="middle" font-size="10" fill="#fb7185" font-weight="600">Pi.Alert</text>
+    <text x="290" y="266" text-anchor="middle" font-size="8" fill="#64748b">Network Scan</text>
+
+    <!-- Pi 5-108 -->
+    <rect x="400" y="60" width="350" height="290" rx="12" fill="none" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="8,4"/>
+    <text x="575" y="82" text-anchor="middle" font-size="11" font-weight="600" fill="#fbbf24">🍓 Pi 5 · 192.168.68.108</text>
+    <rect x="420" y="100" width="150" height="50" rx="6" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+    <text x="495" y="122" text-anchor="middle" font-size="10" fill="#22d3ee" font-weight="600">AzuraCast</text>
+    <text x="495" y="136" text-anchor="middle" font-size="8" fill="#64748b">Web Radio</text>
+    <rect x="420" y="165" width="150" height="50" rx="6" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+    <text x="495" y="187" text-anchor="middle" font-size="10" fill="#34d399" font-weight="600">qBittorrent</text>
+    <text x="495" y="201" text-anchor="middle" font-size="8" fill="#64748b">Download Client</text>
+    <rect x="420" y="230" width="150" height="50" rx="6" fill="rgba(136,19,55,0.4)" stroke="#fb7185" stroke-width="1.5"/>
+    <text x="495" y="252" text-anchor="middle" font-size="10" fill="#fb7185" font-weight="600">ClamAV</text>
+    <text x="495" y="266" text-anchor="middle" font-size="8" fill="#64748b">Antivirus</text>
+    <rect x="585" y="100" width="150" height="50" rx="6" fill="rgba(76,29,149,0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="660" y="122" text-anchor="middle" font-size="10" fill="#a78bfa" font-weight="600">Glances</text>
+    <text x="660" y="136" text-anchor="middle" font-size="8" fill="#64748b">Monitoring</text>
+    <rect x="585" y="165" width="150" height="50" rx="6" fill="rgba(251,146,60,0.3)" stroke="#fb923c" stroke-width="1.5"/>
+    <text x="660" y="187" text-anchor="middle" font-size="10" fill="#fb923c" font-weight="600">DuckDNS</text>
+    <text x="660" y="201" text-anchor="middle" font-size="8" fill="#64748b">Dynamic DNS</text>
+    <rect x="585" y="230" width="150" height="50" rx="6" fill="rgba(120,53,15,0.3)" stroke="#fbbf24" stroke-width="1.5"/>
+    <text x="660" y="252" text-anchor="middle" font-size="10" fill="#fbbf24" font-weight="600">Guardian</text>
+    <text x="660" y="266" text-anchor="middle" font-size="8" fill="#64748b">Health Check</text>
+
+    <!-- Pi 501-117 -->
+    <rect x="770" y="60" width="350" height="290" rx="12" fill="none" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="8,4"/>
+    <text x="945" y="82" text-anchor="middle" font-size="11" font-weight="600" fill="#fbbf24">🍓 Pi 501 · 192.168.68.117</text>
+    <rect x="790" y="100" width="150" height="50" rx="6" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+    <text x="865" y="122" text-anchor="middle" font-size="10" fill="#22d3ee" font-weight="600">Dashy</text>
+    <text x="865" y="136" text-anchor="middle" font-size="8" fill="#64748b">Dashboard</text>
+    <rect x="790" y="165" width="150" height="50" rx="6" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+    <text x="865" y="187" text-anchor="middle" font-size="10" fill="#34d399" font-weight="600">Hermes Agent</text>
+    <text x="865" y="201" text-anchor="middle" font-size="8" fill="#64748b">AI CLI</text>
+    <rect x="790" y="230" width="150" height="50" rx="6" fill="rgba(76,29,149,0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="865" y="252" text-anchor="middle" font-size="10" fill="#a78bfa" font-weight="600">Glances</text>
+    <text x="865" y="266" text-anchor="middle" font-size="8" fill="#64748b">Monitoring</text>
+    <rect x="955" y="100" width="150" height="50" rx="6" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+    <text x="1030" y="122" text-anchor="middle" font-size="10" fill="#34d399" font-weight="600">UptimeKuma</text>
+    <text x="1030" y="136" text-anchor="middle" font-size="8" fill="#64748b">55+ Services</text>
+    <rect x="955" y="165" width="150" height="50" rx="6" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+    <text x="1030" y="187" text-anchor="middle" font-size="10" fill="#22d3ee" font-weight="600">Gallery CLI</text>
+    <text x="1030" y="201" text-anchor="middle" font-size="8" fill="#64748b">Download Manager</text>
+    <rect x="955" y="230" width="150" height="50" rx="6" fill="rgba(251,146,60,0.3)" stroke="#fb923c" stroke-width="1.5"/>
+    <text x="1030" y="252" text-anchor="middle" font-size="10" fill="#fb923c" font-weight="600">NewsBot</text>
+    <text x="1030" y="266" text-anchor="middle" font-size="8" fill="#64748b">RSS Collector</text>
+
+    <!-- DIVIDER -->
+    <line x1="30" y1="370" x2="1120" y2="370" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- MEDIA PIPELINE -->
+    <text x="575" y="395" text-anchor="middle" font-size="12" font-weight="700" fill="#34d399">Media Pipeline</text>
+    <rect x="30" y="410" width="160" height="50" rx="6" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+    <text x="110" y="432" text-anchor="middle" font-size="10" fill="#34d399" font-weight="600">Prowlarr</text>
+    <text x="110" y="446" text-anchor="middle" font-size="8" fill="#64748b">Indexer Manager</text>
+    <rect x="210" y="410" width="160" height="50" rx="6" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+    <text x="290" y="432" text-anchor="middle" font-size="10" fill="#34d399" font-weight="600">Whisparr</text>
+    <text x="290" y="446" text-anchor="middle" font-size="8" fill="#64748b">Content Manager</text>
+    <rect x="390" y="410" width="160" height="50" rx="6" fill="rgba(120,53,15,0.3)" stroke="#fbbf24" stroke-width="1.5"/>
+    <text x="470" y="432" text-anchor="middle" font-size="10" fill="#fbbf24" font-weight="600">qBittorrent</text>
+    <text x="470" y="446" text-anchor="middle" font-size="8" fill="#64748b">Downloads</text>
+    <rect x="570" y="410" width="160" height="50" rx="6" fill="rgba(136,19,55,0.4)" stroke="#fb7185" stroke-width="1.5"/>
+    <text x="650" y="432" text-anchor="middle" font-size="10" fill="#fb7185" font-weight="600">ClamAV</text>
+    <text x="650" y="446" text-anchor="middle" font-size="8" fill="#64748b">Scan</text>
+    <rect x="750" y="410" width="160" height="50" rx="6" fill="rgba(76,29,149,0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="830" y="432" text-anchor="middle" font-size="10" fill="#a78bfa" font-weight="600">Jellyfin</text>
+    <text x="830" y="446" text-anchor="middle" font-size="8" fill="#64748b">Streaming</text>
+    <rect x="930" y="410" width="190" height="50" rx="6" fill="rgba(76,29,149,0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="1025" y="432" text-anchor="middle" font-size="10" fill="#a78bfa" font-weight="600">Gallery Downloader</text>
+    <text x="1025" y="446" text-anchor="middle" font-size="8" fill="#64748b">Dual Source</text>
+
+    <!-- ARROWS -->
+    <line x1="190" y1="435" x2="208" y2="435" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="370" y1="435" x2="388" y2="435" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="550" y1="435" x2="568" y2="435" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="730" y1="435" x2="748" y2="435" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="910" y1="435" x2="928" y2="435" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- TrueNAS -->
+    <rect x="30" y="490" width="1090" height="130" rx="12" fill="none" stroke="#a78bfa" stroke-width="2" stroke-dasharray="8,4"/>
+    <text x="575" y="512" text-anchor="middle" font-size="12" font-weight="700" fill="#a78bfa">🖥️ TrueNAS Scale · 192.168.68.124 · NVMe 10.9TB</text>
+    <rect x="50" y="530" width="200" height="70" rx="6" fill="rgba(76,29,149,0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="150" y="555" text-anchor="middle" font-size="10" fill="#a78bfa" font-weight="600">Media Share</text>
+    <text x="150" y="570" text-anchor="middle" font-size="8" fill="#64748b">SMB · Movies · Gallery</text>
+    <text x="150" y="583" text-anchor="middle" font-size="8" fill="#64748b">CIFS mount</text>
+    <rect x="280" y="530" width="200" height="70" rx="6" fill="rgba(76,29,149,0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="380" y="555" text-anchor="middle" font-size="10" fill="#a78bfa" font-weight="600">CloudBackup</text>
+    <text x="380" y="570" text-anchor="middle" font-size="8" fill="#64748b">SMB Backup Share</text>
+    <rect x="510" y="530" width="200" height="70" rx="6" fill="rgba(76,29,149,0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="610" y="555" text-anchor="middle" font-size="10" fill="#a78bfa" font-weight="600">Jellyfin Library</text>
+    <text x="610" y="570" text-anchor="middle" font-size="8" fill="#64748b">/data/whisparr</text>
+    <rect x="740" y="530" width="200" height="70" rx="6" fill="rgba(76,29,149,0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="840" y="555" text-anchor="middle" font-size="10" fill="#a78bfa" font-weight="600">Apps</text>
+    <text x="840" y="570" text-anchor="middle" font-size="8" fill="#64748b">Jellyfin · Immich</text>
+
+    <!-- SERVICES SECTION -->
+    <text x="575" y="650" text-anchor="middle" font-size="12" font-weight="700" fill="#22d3ee">Core Services</text>
+
+    <rect x="30" y="665" width="250" height="55" rx="6" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+    <text x="155" y="687" text-anchor="middle" font-size="10" fill="#22d3ee" font-weight="600">Web UI · Gallery Manager</text>
+    <text x="155" y="701" text-anchor="middle" font-size="8" fill="#64748b">Port 8787 · Vue.js</text>
+
+    <rect x="300" y="665" width="250" height="55" rx="6" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+    <text x="425" y="687" text-anchor="middle" font-size="10" fill="#22d3ee" font-weight="600">API · Node.js</text>
+    <text x="425" y="701" text-anchor="middle" font-size="8" fill="#64748b">Port 5173 · Express</text>
+
+    <rect x="570" y="665" width="250" height="55" rx="6" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+    <text x="695" y="687" text-anchor="middle" font-size="10" fill="#34d399" font-weight="600">CLI · nhentai-cli.sh</text>
+    <text x="695" y="701" text-anchor="middle" font-size="8" fill="#64748b">Interactive Menu</text>
+
+    <rect x="840" y="665" width="280" height="55" rx="6" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+    <text x="980" y="687" text-anchor="middle" font-size="10" fill="#34d399" font-weight="600">Downloaders</text>
+    <text x="980" y="701" text-anchor="middle" font-size="8" fill="#64748b">nhentai.py + alt_dl.py</text>
+
+    <!-- AUTOMATION -->
+    <text x="575" y="750" text-anchor="middle" font-size="12" font-weight="700" fill="#fb923c">🤖 Automation</text>
+    <rect x="30" y="765" width="320" height="55" rx="6" fill="rgba(251,146,60,0.3)" stroke="#fb923c" stroke-width="1.5"/>
+    <text x="190" y="787" text-anchor="middle" font-size="10" fill="#fb923c" font-weight="600">NewsBot · RSS → Telegram</text>
+    <text x="190" y="801" text-anchor="middle" font-size="8" fill="#64748b">08:00 / 20:00 · 17 Feeds</text>
+    <rect x="370" y="765" width="320" height="55" rx="6" fill="rgba(251,146,60,0.3)" stroke="#fb923c" stroke-width="1.5"/>
+    <text x="530" y="787" text-anchor="middle" font-size="10" fill="#fb923c" font-weight="600">Backup Pipeline</text>
+    <text x="530" y="801" text-anchor="middle" font-size="8" fill="#64748b">ClamAV → Rsync → Git Push</text>
+    <rect x="710" y="765" width="410" height="55" rx="6" fill="rgba(251,146,60,0.3)" stroke="#fb923c" stroke-width="1.5"/>
+    <text x="915" y="787" text-anchor="middle" font-size="10" fill="#fb923c" font-weight="600">Guardian · Health Monitor</text>
+    <text x="915" y="801" text-anchor="middle" font-size="8" fill="#64748b">Every 5min · Load/RAM/Swap</text>
+
+    <!-- LEGEND -->
+    <rect x="360" y="850" width="430" height="100" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+    <text x="575" y="870" text-anchor="middle" font-size="10" font-weight="600" fill="#94a3b8">Legend</text>
+    <rect x="380" y="880" width="12" height="12" rx="2" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+    <text x="400" y="890" font-size="9" fill="#64748b">Frontend</text>
+    <rect x="480" y="880" width="12" height="12" rx="2" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+    <text x="500" y="890" font-size="9" fill="#64748b">Backend</text>
+    <rect x="580" y="880" width="12" height="12" rx="2" fill="rgba(76,29,149,0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="600" y="890" font-size="9" fill="#64748b">Storage</text>
+    <rect x="680" y="880" width="12" height="12" rx="2" fill="rgba(136,19,55,0.4)" stroke="#fb7185" stroke-width="1.5"/>
+    <text x="700" y="890" font-size="9" fill="#64748b">Security</text>
+    <rect x="380" y="900" width="12" height="12" rx="2" fill="rgba(251,146,60,0.3)" stroke="#fb923c" stroke-width="1.5"/>
+    <text x="400" y="910" font-size="9" fill="#64748b">Automation</text>
+    <rect x="500" y="900" width="12" height="12" rx="2" fill="rgba(120,53,15,0.3)" stroke="#fbbf24" stroke-width="1.5"/>
+    <text x="520" y="910" font-size="9" fill="#64748b">External</text>
+    <line x1="610" y1="906" x2="680" y2="906" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="8,4"/>
+    <text x="690" y="910" font-size="9" fill="#64748b">Boundary</text>
+  </svg>
+
+  <div style="margin-top:20px;">
+    <div class="grid">
+      <div class="card">
+        <div class="card-header"><div class="card-dot" style="background:#22d3ee;"></div><h3>Infrastructure</h3></div>
+        <ul>
+          <li>3x Raspberry Pi (4 + 5 + 501)</li>
+          <li>TrueNAS Scale · NVMe 10.9TB</li>
+          <li>Docker + Docker Compose</li>
+          <li>Portainer · Glances</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-dot" style="background:#34d399;"></div><h3>Media Pipeline</h3></div>
+        <ul>
+          <li>Prowlarr → Whisparr → qBittorrent</li>
+          <li>ClamAV → Jellyfin Streaming</li>
+          <li>Gallery Downloader (Dual Source)</li>
+          <li>Web UI: 192.168.68.117:8787</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-dot" style="background:#fb923c;"></div><h3>Automation</h3></div>
+        <ul>
+          <li>NewsBot · 17 RSS feeds</li>
+          <li>Backup Pipeline · Mon/Wed/Fri</li>
+          <li>Guardian · 5min health check</li>
+          <li>Git Push · 3 repos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    robcarv.github.io · Updated June 2026 · 3 Pis · 55+ Services · 0 Threats
+  </div>
+</div>
+</body>
+</html>
