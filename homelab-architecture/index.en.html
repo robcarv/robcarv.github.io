@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewbyt" content="width=device-width, initial-scale=1.0">
 <title>Homelab Architecture - Robert Carvalho</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+  @imbyt url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:'Inter',sans-serif; background:#0a0a14; color:#e0e0e0; overflow-x:hidden; }
   .container { max-width:1300px; margin:0 auto; padding:20px; }
@@ -31,7 +31,7 @@
     pointer-events:none;
   }
 
-  /* Zona = agrupamento por Pi/TrueNAS */
+  /* Zona = agrupamento by Pi/TrueNAS */
   .zone {
     background:rgba(255,255,255,0.02);
     border:1px solid rgba(255,255,255,0.06);
@@ -175,7 +175,7 @@
         <div class="svc-desc">DNS Ad Blocker · Port 53</div>
         <div class="tooltip">
           <div class="tt-title">🛡️ Pi-hole</div>
-          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">53 (DNS)</span></div>
+          <div class="tt-row"><span class="tt-label">Port:</span><span class="tt-desc">53 (DNS)</span></div>
           <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Bloqueia propagandas em toda rede</span></div>
           <div class="tt-row"><span class="tt-label">Comunica:</span><span class="tt-desc">Toda rede → DNS</span></div>
         </div>
@@ -186,7 +186,7 @@
         <div class="svc-desc">Central Dashboard · Port 8200</div>
         <div class="tooltip">
           <div class="tt-title">📊 Dashy</div>
-          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">8200 -> 8080</span></div>
+          <div class="tt-row"><span class="tt-label">Port:</span><span class="tt-desc">8200 -> 8080</span></div>
           <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Dashboard com 30+ servicos</span></div>
           <div class="tt-row"><span class="tt-label">Comunica:</span><span class="tt-desc">Linka todos servicos</span></div>
         </div>
@@ -197,7 +197,7 @@
         <div class="svc-desc">SSL Proxy · Port 81</div>
         <div class="tooltip">
           <div class="tt-title">🔒 Nginx Proxy Manager</div>
-          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">81</span></div>
+          <div class="tt-row"><span class="tt-label">Port:</span><span class="tt-desc">81</span></div>
           <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">SSL reverse proxy</span></div>
           <div class="tt-row"><span class="tt-label">Comunica:</span><span class="tt-desc">Proxy reverso para servicos</span></div>
         </div>
@@ -208,7 +208,7 @@
         <div class="svc-desc">Subscriptions · Port 8982</div>
         <div class="tooltip">
           <div class="tt-title">💳 Wallos</div>
-          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">8982 -> 80</span></div>
+          <div class="tt-row"><span class="tt-label">Port:</span><span class="tt-desc">8982 -> 80</span></div>
           <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Gerenciamento de assinaturas</span></div>
         </div>
       </div>
@@ -228,7 +228,7 @@
         <div class="svc-desc">Network Scanner</div>
         <div class="tooltip">
           <div class="tt-title">🔍 Pi.Alert</div>
-          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Escaneia rede por dispositivos</span></div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Escaneia rede by dispositivos</span></div>
         </div>
       </div>
     </div>
@@ -262,7 +262,7 @@
         <div class="svc-desc">Download Client · Port 8080</div>
         <div class="tooltip">
           <div class="tt-title">⬇️ Downloader</div>
-          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">8080</span></div>
+          <div class="tt-row"><span class="tt-label">Port:</span><span class="tt-desc">8080</span></div>
           <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Cliente de downloads</span></div>
           <div class="tt-row"><span class="tt-label">Comunica:</span><span class="tt-desc">Media Mgr (.501) → ClamAV → TrueNAS</span></div>
         </div>
@@ -294,7 +294,7 @@
         <div class="svc-desc">Dynamic DNS</div>
         <div class="tooltip">
           <div class="tt-title">🌐 DuckDNS</div>
-          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">DNS dinamico para radio e portfolio</span></div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">DNS dinamico para radio e bytfolio</span></div>
         </div>
       </div>
     </div>
@@ -317,7 +317,7 @@
         <div class="svc-desc">Dashboard · Port 8200</div>
         <div class="tooltip">
           <div class="tt-title">📊 Dashy</div>
-          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">8200</span></div>
+          <div class="tt-row"><span class="tt-label">Port:</span><span class="tt-desc">8200</span></div>
           <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Dashboard hub com todos servicos</span></div>
         </div>
       </div>
@@ -337,7 +337,7 @@
         <div class="svc-desc">55+ Monitorados · Port 3001</div>
         <div class="tooltip">
           <div class="tt-title">❤️ UptimeKuma</div>
-          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">3001</span></div>
+          <div class="tt-row"><span class="tt-label">Port:</span><span class="tt-desc">3001</span></div>
           <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Monitora 55+ servicos, alertas</span></div>
           <div class="tt-row"><span class="tt-label">Comunica:</span><span class="tt-desc">HTTP ping todos servicos</span></div>
         </div>
@@ -348,7 +348,7 @@
         <div class="svc-desc">Indexer · Port 9696</div>
         <div class="tooltip">
           <div class="tt-title">🔎 Indexer Mgr</div>
-          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">9696</span></div>
+          <div class="tt-row"><span class="tt-label">Port:</span><span class="tt-desc">9696</span></div>
           <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Gerenciador de indexadores</span></div>
           <div class="tt-row"><span class="tt-label">Comunica:</span><span class="tt-desc">Media Mgr (API) → Downloader (.108)</span></div>
         </div>
@@ -359,7 +359,7 @@
         <div class="svc-desc">Content Manager · Port 6969</div>
         <div class="tooltip">
           <div class="tt-title">📋 Media Mgr</div>
-          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">6969</span></div>
+          <div class="tt-row"><span class="tt-label">Port:</span><span class="tt-desc">6969</span></div>
           <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Gerenciador de midia</span></div>
           <div class="tt-row"><span class="tt-label">Comunica:</span><span class="tt-desc">Indexer → Downloader (.108) → ClamAV</span></div>
         </div>
@@ -393,7 +393,7 @@
         <div class="svc-desc">Web Monitor · Port 5500</div>
         <div class="tooltip">
           <div class="tt-title">🔔 ChangeDetection</div>
-          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">5500</span></div>
+          <div class="tt-row"><span class="tt-label">Port:</span><span class="tt-desc">5500</span></div>
           <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Monitora mudancas em sites</span></div>
         </div>
       </div>
@@ -403,17 +403,17 @@
         <div class="svc-desc">Network Speed · Port 8089</div>
         <div class="tooltip">
           <div class="tt-title">📶 Speedtest Tracker</div>
-          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">8089</span></div>
+          <div class="tt-row"><span class="tt-label">Port:</span><span class="tt-desc">8089</span></div>
           <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Monitora velocidade internet</span></div>
         </div>
       </div>
       <div class="svc-card" style="border-color:rgba(52,211,153,0.2);">
         <div class="svc-icon">🐳</div>
-        <div class="svc-name">Portainer</div>
+        <div class="svc-name">Portiner</div>
         <div class="svc-desc">Docker UI · Port 9001</div>
         <div class="tooltip">
-          <div class="tt-title">🐳 Portainer Agent</div>
-          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">9001</span></div>
+          <div class="tt-title">🐳 Portiner Agent</div>
+          <div class="tt-row"><span class="tt-label">Port:</span><span class="tt-desc">9001</span></div>
           <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Gerenciamento visual Docker</span></div>
         </div>
       </div>
@@ -439,7 +439,7 @@
           <div class="tt-title">📁 Media Share</div>
           <div class="tt-row"><span class="tt-label">Protocolo:</span><span class="tt-desc">SMB/CIFS</span></div>
           <div class="tt-row"><span class="tt-label">Montado em:</span><span class="tt-desc">/mnt/truenas_media/</span></div>
-          <div class="tt-row"><span class="tt-label">Usado por:</span><span class="tt-desc">Gallery, Jellyfin, ClamAV</span></div>
+          <div class="tt-row"><span class="tt-label">Usado by:</span><span class="tt-desc">Gallery, Jellyfin, ClamAV</span></div>
         </div>
       </div>
       <div class="svc-card" style="border-color:rgba(145,94,255,0.2);">
@@ -449,7 +449,7 @@
         <div class="tooltip">
           <div class="tt-title">☁️ CloudBackup</div>
           <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Backup dos scripts e configs</span></div>
-          <div class="tt-row"><span class="tt-label">Usado por:</span><span class="tt-desc">Rsync (cron 04:00)</span></div>
+          <div class="tt-row"><span class="tt-label">Usado by:</span><span class="tt-desc">Rsync (cron 04:00)</span></div>
         </div>
       </div>
       <div class="svc-card" style="border-color:rgba(145,94,255,0.2);">
@@ -522,11 +522,11 @@
     <tr><td>Indexer Mgr</td><td><span class="tag" style="background:rgba(145,94,255,0.12);color:#915eff;border:1px solid #915eff33;">Storage</span></td><td>9696</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
     <tr><td>Media Mgr</td><td><span class="tag" style="background:rgba(145,94,255,0.12);color:#915eff;border:1px solid #915eff33;">Storage</span></td><td>6969</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
     <tr><td>Gallery API</td><td><span class="tag" style="background:rgba(52,211,153,0.12);color:#34d399;border:1px solid #34d39933;">Backend</span></td><td>5173</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
-    <tr><td>Gallery UI</td><td><span class="tag" style="background:rgba(56,189,248,0.12);color:#38bdf8;border:1px solid #38bdf833;">Frontend</span></td><td>8787</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
+    <tr><td>Web UI</td><td><span class="tag" style="background:rgba(56,189,248,0.12);color:#38bdf8;border:1px solid #38bdf833;">Frontend</span></td><td>8787</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
     <tr><td>ChangeDetection</td><td><span class="tag" style="background:rgba(251,146,60,0.12);color:#fb923c;border:1px solid #fb923c33;">Automation</span></td><td>5500</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
     <tr><td>Speedtest</td><td><span class="tag" style="background:rgba(251,191,36,0.12);color:#fbbf24;border:1px solid #fbbf2433;">External</span></td><td>8089</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
     <tr><td>NewsBot</td><td><span class="tag" style="background:rgba(251,146,60,0.12);color:#fb923c;border:1px solid #fb923c33;">Automation</span></td><td>—</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
-    <tr><td>Portainer</td><td><span class="tag" style="background:rgba(52,211,153,0.12);color:#34d399;border:1px solid #34d39933;">Backend</span></td><td>9001</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
+    <tr><td>Portiner</td><td><span class="tag" style="background:rgba(52,211,153,0.12);color:#34d399;border:1px solid #34d39933;">Backend</span></td><td>9001</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
     <tr><td>Glances</td><td><span class="tag" style="background:rgba(251,146,60,0.12);color:#fb923c;border:1px solid #fb923c33;">Automation</span></td><td>61208</td><td class="svc-up">Up</td><td>All 3</td></tr>
   </table>
 </div>
@@ -540,7 +540,7 @@
     <div class="cron-item"><div class="cron-time">Every 6h</div><div class="cron-task">DL Recheck</div><div class="cron-host">Pi 5</div></div>
     <div class="cron-item"><div class="cron-time">00/06/12/18</div><div class="cron-task">NewsBot RSS</div><div class="cron-host">Pi 501</div></div>
     <div class="cron-item"><div class="cron-time">03:00 daily</div><div class="cron-task">ClamAV Scan</div><div class="cron-host">Pi 5</div></div>
-    <div class="cron-item"><div class="cron-time">03:30 M/W/F</div><div class="cron-task">Backup + Report</div><div class="cron-host">Pi 5</div></div>
+    <div class="cron-item"><div class="cron-time">03:30 M/W/F</div><div class="cron-task">Backup + Rebyt</div><div class="cron-host">Pi 5</div></div>
     <div class="cron-item"><div class="cron-time">04:00 daily</div><div class="cron-task">Rsync to NAS</div><div class="cron-host">Pi 5</div></div>
     <div class="cron-item"><div class="cron-time">Every 2h</div><div class="cron-task">Media Health</div><div class="cron-host">Pi 501</div></div>
   </div>
