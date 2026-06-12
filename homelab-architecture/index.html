@@ -5,212 +5,142 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Homelab Architecture - Robert Carvalho</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
   * { margin:0; padding:0; box-sizing:border-box; }
-  
-  body {
-    font-family: 'Inter', sans-serif;
-    background: #0a0a14;
-    color: #e0e0e0;
-    min-height: 100vh;
-    overflow-x: hidden;
+  body { font-family:'Inter',sans-serif; background:#0a0a14; color:#e0e0e0; }
+  .container { max-width:1200px; margin:0 auto; padding:20px; }
+
+  header { text-align:center; padding:40px 20px 20px; }
+  header h1 { font-size:2.5rem; font-weight:800; background:linear-gradient(135deg,#915eff,#5eead4,#38bdf8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  header p { color:#666; margin-top:8px; }
+  header .badges { margin-top:12px; }
+  .badge { display:inline-block; padding:4px 14px; border-radius:20px; font-size:0.7rem; font-weight:500; margin:3px; border:1px solid; }
+
+  .section { margin:40px 0; }
+  .section-title { font-size:1.1rem; font-weight:600; color:#915eff; margin-bottom:16px; display:flex; align-items:center; gap:8px; }
+  .section-title::after { content:''; flex:1; height:1px; background:linear-gradient(90deg,#915eff44,transparent); }
+
+  /* === DIAGRAMA VISUAL === */
+  .arch-diagram {
+    background:#06060e;
+    border:1px solid #1a1a3a;
+    border-radius:20px;
+    padding:40px 30px;
+    position:relative;
+    overflow:hidden;
   }
-  .container { max-width: 1300px; margin: 0 auto; padding: 20px; }
-  
-  header {
-    text-align: center;
-    padding: 40px 20px 20px;
-    position: relative;
+  .arch-diagram::before {
+    content:'';
+    position:absolute;
+    top:0; left:0; right:0; bottom:0;
+    background:radial-gradient(ellipse at 50% 0%, rgba(145,94,255,0.05) 0%, transparent 70%);
+    pointer-events:none;
   }
-  header h1 {
-    font-size: 2.8rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, #915eff, #5eead4, #38bdf8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: -2px;
+  .arch-grid {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    position:relative;
+    z-index:1;
   }
-  header p {
-    color: #666;
-    font-size: 1rem;
-    margin-top: 8px;
-    font-weight: 300;
+  .arch-row {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:16px;
+    flex-wrap:wrap;
   }
-  header .badge {
-    display: inline-block;
-    padding: 4px 14px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    margin: 4px;
-    border: 1px solid #1e1e3a;
+  .arch-box {
+    padding:14px 20px;
+    border-radius:12px;
+    text-align:center;
+    min-width:140px;
+    position:relative;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+  }
+  .arch-box .name { font-size:0.8rem; font-weight:600; }
+  .arch-box .desc { font-size:0.65rem; color:rgba(255,255,255,0.6); margin-top:4px; }
+  .arch-box .tag { font-size:0.55rem; display:inline-block; padding:2px 8px; border-radius:10px; margin-top:6px; }
+
+  /* Cores dos boxes */
+  .box-cyan { background:linear-gradient(145deg,rgba(8,51,68,0.8),rgba(8,51,68,0.3)); border:1px solid rgba(34,211,238,0.3); }
+  .box-cyan .name { color:#22d3ee; }
+  .box-green { background:linear-gradient(145deg,rgba(6,78,59,0.8),rgba(6,78,59,0.3)); border:1px solid rgba(52,211,153,0.3); }
+  .box-green .name { color:#34d399; }
+  .box-purple { background:linear-gradient(145deg,rgba(76,29,149,0.8),rgba(76,29,149,0.3)); border:1px solid rgba(167,139,250,0.3); }
+  .box-purple .name { color:#a78bfa; }
+  .box-amber { background:linear-gradient(145deg,rgba(120,53,15,0.8),rgba(120,53,15,0.3)); border:1px solid rgba(251,191,36,0.3); }
+  .box-amber .name { color:#fbbf24; }
+  .box-rose { background:linear-gradient(145deg,rgba(136,19,55,0.8),rgba(136,19,55,0.3)); border:1px solid rgba(251,113,133,0.3); }
+  .box-rose .name { color:#fb7185; }
+  .box-orange { background:linear-gradient(145deg,rgba(124,45,18,0.8),rgba(124,45,18,0.3)); border:1px solid rgba(251,146,60,0.3); }
+  .box-orange .name { color:#fb923c; }
+
+  .arch-arrow {
+    color:#333;
+    font-size:1.4rem;
+    font-weight:300;
+  }
+  .arch-arrow-down {
+    color:#333;
+    font-size:1.2rem;
+  }
+  .arch-connector {
+    width:2px;
+    height:24px;
+    background:linear-gradient(180deg,#333,#555);
+  }
+  .arch-fork {
+    display:flex;
+    gap:16px;
+    align-items:center;
+  }
+  .arch-fork-line {
+    width:60px;
+    height:2px;
+    background:#333;
   }
 
-  /* DIAGRAMA ASCII */
-  .diagram-section {
-    margin: 20px 0 40px;
-    background: #06060e;
-    border: 1px solid #1a1a3a;
-    border-radius: 16px;
-    padding: 30px;
-    overflow-x: auto;
-  }
-  .diagram-title {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    color: #915eff;
-    margin-bottom: 16px;
-    text-align: center;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-  .diagram {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    line-height: 1.6;
-    white-space: pre;
-    color: #94a3b8;
-    text-align: center;
-  }
-  .diagram .hl-cyan { color: #22d3ee; }
-  .diagram .hl-green { color: #34d399; }
-  .diagram .hl-purple { color: #a78bfa; }
-  .diagram .hl-amber { color: #fbbf24; }
-  .diagram .hl-rose { color: #fb7185; }
-  .diagram .hl-orange { color: #fb923c; }
-  .diagram .hl-slate { color: #64748b; }
-  .diagram .line { display: block; }
+  /* PIS */
+  .pis-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:900px) { .pis-grid { grid-template-columns:1fr; } }
+  .pi-card { background:linear-gradient(145deg,#12121f,#0d0d18); border:1px solid #1e1e3a; border-radius:16px; padding:24px; }
+  .pi-card:hover { border-color:#915eff66; }
+  .pi-card .pi-name { font-size:1rem; font-weight:700; }
+  .pi-card .pi-ip { font-size:0.75rem; color:#666; }
+  .pi-card .pi-services { margin-top:14px; display:flex; flex-wrap:wrap; gap:6px; }
+  .tag { font-size:0.65rem; padding:4px 10px; border-radius:20px; font-weight:500; }
+  .tag-cyan { background:rgba(56,189,248,0.12); color:#38bdf8; border:1px solid #38bdf833; }
+  .tag-green { background:rgba(52,211,153,0.12); color:#34d399; border:1px solid #34d39933; }
+  .tag-purple { background:rgba(145,94,255,0.12); color:#915eff; border:1px solid #915eff33; }
+  .tag-rose { background:rgba(251,113,133,0.12); color:#fb7185; border:1px solid #fb718533; }
+  .tag-orange { background:rgba(251,146,60,0.12); color:#fb923c; border:1px solid #fb923c33; }
+  .tag-amber { background:rgba(251,191,36,0.12); color:#fbbf24; border:1px solid #fbbf2433; }
 
-  /* SECTION */
-  .section { margin: 40px 0; }
-  .section-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #915eff;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .section-title::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, #915eff44, transparent);
-  }
-
-  /* PIS GRID */
-  .pis-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-  @media (max-width: 900px) { .pis-grid { grid-template-columns: 1fr; } }
-  
-  .pi-card {
-    background: linear-gradient(145deg, #12121f, #0d0d18);
-    border: 1px solid #1e1e3a;
-    border-radius: 16px;
-    padding: 24px;
-    transition: border-color 0.3s;
-  }
-  .pi-card:hover { border-color: #915eff66; }
-  .pi-card .pi-name { font-size: 1rem; font-weight: 700; margin-bottom: 2px; }
-  .pi-card .pi-ip { font-size: 0.75rem; color: #666; font-weight: 400; }
-  .pi-card .pi-services { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
-  .pi-service {
-    font-size: 0.7rem;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-  }
-  .tag-frontend { background: rgba(56,189,248,0.12); color: #38bdf8; border: 1px solid #38bdf833; }
-  .tag-backend  { background: rgba(52,211,153,0.12); color: #34d399; border: 1px solid #34d39933; }
-  .tag-storage  { background: rgba(145,94,255,0.12); color: #915eff; border: 1px solid #915eff33; }
-  .tag-security { background: rgba(251,113,133,0.12); color: #fb7185; border: 1px solid #fb718533; }
-  .tag-auto     { background: rgba(251,146,60,0.12); color: #fb923c; border: 1px solid #fb923c33; }
-  .tag-ext      { background: rgba(251,191,36,0.12); color: #fbbf24; border: 1px solid #fbbf2433; }
-
-  /* FLUXO */
-  .flow-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    padding: 30px 20px;
-    background: rgba(255,255,255,0.02);
-    border-radius: 14px;
-    border: 1px solid rgba(255,255,255,0.05);
-  }
-  .flow-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-  .flow-item {
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    white-space: nowrap;
-  }
-  .flow-arrow { color: #444; font-size: 1rem; font-weight: 300; }
-  @media (max-width: 700px) { .flow-row { flex-direction: column; } .flow-arrow { transform: rotate(90deg); } }
+  /* PIPELINE */
+  .pipeline { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:8px; padding:24px; background:rgba(255,255,255,0.02); border-radius:14px; border:1px solid rgba(255,255,255,0.05); }
+  .pipe-item { padding:10px 20px; border-radius:10px; font-size:0.8rem; font-weight:600; white-space:nowrap; }
+  .pipe-arrow { color:#444; font-size:1.2rem; }
+  @media (max-width:700px) { .pipeline { flex-direction:column; } .pipe-arrow { transform:rotate(90deg); } }
 
   /* TABLE */
-  .svc-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
-  .svc-table th { text-align: left; color: #666; font-weight: 500; padding: 8px 6px; border-bottom: 1px solid #1e1e3a; }
-  .svc-table td { padding: 6px; border-bottom: 1px solid #0d0d1a; color: #aaa; }
-  .svc-table td:first-child { color: #e0e0e0; font-weight: 500; }
-  .svc-table tr:hover td { background: rgba(145,94,255,0.03); }
-  .svc-table .tag { font-size: 0.6rem; padding: 2px 6px; border-radius: 10px; }
-  .svc-status-up { color: #34d399; }
-  .svc-status-down { color: #fb7185; }
+  .svc-table { width:100%; border-collapse:collapse; font-size:0.75rem; }
+  .svc-table th { text-align:left; color:#666; font-weight:500; padding:8px 6px; border-bottom:1px solid #1e1e3a; }
+  .svc-table td { padding:6px; border-bottom:1px solid #0d0d1a; color:#aaa; }
+  .svc-table td:first-child { color:#e0e0e0; font-weight:500; }
+  .svc-table tr:hover td { background:rgba(145,94,255,0.03); }
+  .svc-up { color:#34d399; }
 
   /* CRON */
-  .cron-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 12px;
-  }
-  .cron-item {
-    background: rgba(255,255,255,0.02);
-    border: 1px solid #1e1e3a;
-    border-radius: 10px;
-    padding: 14px;
-    text-align: center;
-  }
-  .cron-item .cron-time { font-size: 0.8rem; font-weight: 700; color: #fb923c; }
-  .cron-item .cron-task { font-size: 0.75rem; color: #ccc; margin: 4px 0; }
-  .cron-item .cron-host { font-size: 0.65rem; color: #555; }
+  .cron-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:12px; }
+  .cron-item { background:rgba(255,255,255,0.02); border:1px solid #1e1e3a; border-radius:10px; padding:14px; text-align:center; }
+  .cron-item .cron-time { font-size:0.8rem; font-weight:700; color:#fb923c; }
+  .cron-item .cron-task { font-size:0.75rem; color:#ccc; margin:4px 0; }
+  .cron-item .cron-host { font-size:0.65rem; color:#555; }
 
-  /* LEGEND */
-  .legend {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
-    margin: 30px 0;
-    padding: 16px;
-    background: rgba(255,255,255,0.02);
-    border-radius: 12px;
-    border: 1px solid #1e1e3a;
-  }
-  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.7rem; color: #888; }
-  .legend-dot { width: 10px; height: 10px; border-radius: 3px; }
-
-  footer {
-    text-align: center;
-    padding: 40px 0;
-    color: #444;
-    font-size: 0.8rem;
-  }
-  footer a { color: #915eff; text-decoration: none; }
+  footer { text-align:center; padding:40px 0; color:#444; font-size:0.8rem; }
+  footer a { color:#915eff; text-decoration:none; }
 </style>
 </head>
 <body>
@@ -219,7 +149,7 @@
 <header>
   <h1>Homelab Architecture</h1>
   <p>Robert Carvalho · 3 Raspberry Pis · 14 Containers · 55+ Services · 10.9TB NVMe</p>
-  <div>
+  <div class="badges">
     <span class="badge" style="border-color:#22d3ee33;color:#22d3ee;">🌐 Frontend</span>
     <span class="badge" style="border-color:#34d39933;color:#34d399;">⚙️ Backend</span>
     <span class="badge" style="border-color:#a78bfa33;color:#a78bfa;">💾 Storage</span>
@@ -229,36 +159,98 @@
   </div>
 </header>
 
-<!-- DIAGRAMA ASCII PRINCIPAL -->
-<div class="diagram-section">
-  <div class="diagram-title">⚡ System Architecture</div>
-  <div class="diagram"><span class="line">                        <span class="hl-cyan">┌─────────────────────┐</span></span>
-<span class="line">                        <span class="hl-cyan">│   gallery-cli.sh     │</span></span>
-<span class="line">                        <span class="hl-cyan">│   (Interactive CLI)  │</span></span>
-<span class="line">                        <span class="hl-cyan">└──────────┬──────────┘</span></span>
-<span class="line">                                   <span class="hl-slate">│</span></span>
-<span class="line">          <span class="hl-slate">┌────────────────────┼────────────────────┐</span></span>
-<span class="line">          <span class="hl-slate">▼</span>                    <span class="hl-slate">▼</span>                    <span class="hl-slate">▼</span></span>
-<span class="line"><span class="hl-green">┌──────────────────┐</span> <span class="hl-orange">┌──────────────┐</span> <span class="hl-green">┌──────────────────┐</span></span>
-<span class="line"><span class="hl-green">│   Source 1       │</span> <span class="hl-orange">│  Source 2    │</span> <span class="hl-green">│  API (Node.js)  │</span></span>
-<span class="line"><span class="hl-green">│  Python async    │</span> <span class="hl-orange">│  curl_cffi   │</span> <span class="hl-green">│  Port 5173      │</span></span>
-<span class="line"><span class="hl-green">│  Rate: 3 req/s  │</span> <span class="hl-orange">│  Browser     │</span> <span class="hl-green">│  Express        │</span></span>
-<span class="line"><span class="hl-green">│  Cloud bypass    │</span> <span class="hl-orange">│  Emulation   │</span> <span class="hl-green">│  REST API       │</span></span>
-<span class="line"><span class="hl-green">└────────┬─────────┘</span> <span class="hl-orange">└──────┬───────┘</span> <span class="hl-green">└────────┬─────────┘</span></span>
-<span class="line">         <span class="hl-slate">│</span>                 <span class="hl-slate">│</span>                <span class="hl-slate">│</span></span>
-<span class="line">         <span class="hl-slate">└─────────┬─────────┘</span>                <span class="hl-slate">│</span></span>
-<span class="line">                   <span class="hl-slate">▼</span>                            <span class="hl-slate">▼</span></span>
-<span class="line">        <span class="hl-purple">┌──────────────────────┐</span>  <span class="hl-cyan">┌──────────────────────┐</span></span>
-<span class="line">        <span class="hl-purple">│      TrueNAS         │</span>  <span class="hl-cyan">│  Gallery Web UI     │</span></span>
-<span class="line">        <span class="hl-purple">│   NVMe 10.9TB       │</span>  <span class="hl-cyan">│  Vue.js + nginx     │</span></span>
-<span class="line">        <span class="hl-purple">│   CIFS / SMB        │</span>  <span class="hl-cyan">│  Port 8787          │</span></span>
-<span class="line">        <span class="hl-purple">│   Jellyfin · Backup │</span>  <span class="hl-cyan">│  Grid + Reader      │</span></span>
-<span class="line">        <span class="hl-purple">└──────────────────────┘</span>  <span class="hl-cyan">└──────────────────────┘</span></span>
-<span class="line" style="margin-top:12px;">                            <span class="hl-slate">┌──────────────────────┐</span></span>
-<span class="line">                            <span class="hl-slate">│  Media Pipeline      │</span></span>
-<span class="line">                            <span class="hl-slate">│  Indexer → Mgr → DL  │</span></span>
-<span class="line">                            <span class="hl-slate">│  → ClamAV → Jellyfin │</span></span>
-<span class="line">                            <span class="hl-slate">└──────────────────────┘</span></span></div>
+<!-- DIAGRAMA VISUAL -->
+<div class="section">
+  <div class="section-title">System Architecture</div>
+  <div class="arch-diagram">
+    <div class="arch-grid">
+
+      <!-- LINHA 1: CLI -->
+      <div class="arch-row">
+        <div class="arch-box box-cyan" style="min-width:200px;">
+          <div class="name">🎮 gallery-cli.sh</div>
+          <div class="desc">Interactive Menu</div>
+          <span class="tag tag-cyan">Frontend</span>
+        </div>
+      </div>
+
+      <!-- CONECTOR -->
+      <div class="arch-connector"></div>
+      <div class="arch-arrow-down">▼</div>
+      <div class="arch-connector"></div>
+
+      <!-- LINHA 2: FORK 3 VIAS -->
+      <div class="arch-row" style="gap:0;">
+        <div style="flex:1;text-align:right;padding-right:10px;">
+          <div class="arch-box box-green">
+            <div class="name">📥 Source 1</div>
+            <div class="desc">Python async · 3 req/s</div>
+            <span class="tag tag-green">Backend</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <div class="arch-fork" style="gap:0;">
+            <div class="arch-fork-line" style="width:40px;"></div>
+            <div style="width:2px;height:12px;background:#333;"></div>
+            <div class="arch-fork-line" style="width:40px;"></div>
+          </div>
+          <div class="arch-arrow-down">▼</div>
+          <div class="arch-fork">
+            <div class="arch-fork-line"></div>
+            <div style="width:2px;height:12px;background:#333;"></div>
+            <div class="arch-fork-line"></div>
+          </div>
+        </div>
+        <div style="flex:1;text-align:left;padding-left:10px;">
+          <div class="arch-box box-orange">
+            <div class="name">🔍 Source 2</div>
+            <div class="desc">curl_cffi browser</div>
+            <span class="tag tag-orange">Automation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORK + API -->
+      <div style="display:flex;align-items:center;gap:16px;">
+        <div style="flex:1;text-align:right;">
+          <div class="arch-arrow-down">▼</div>
+        </div>
+        <div style="width:2px;height:16px;background:#333;"></div>
+        <div style="flex:1;text-align:left;">
+          <div class="arch-arrow-down">▼</div>
+        </div>
+      </div>
+
+      <!-- LINHA 3: TRUENAS + API -->
+      <div class="arch-row">
+        <div class="arch-box box-purple" style="min-width:200px;">
+          <div class="name">🖥️ TrueNAS</div>
+          <div class="desc">NVMe 10.9TB · CIFS</div>
+          <span class="tag tag-purple">Storage</span>
+        </div>
+        <div class="arch-box box-green" style="min-width:200px;">
+          <div class="name">⚙️ API</div>
+          <div class="desc">Node.js · Port 5173</div>
+          <span class="tag tag-green">Backend</span>
+        </div>
+      </div>
+
+      <!-- CONECTOR -->
+      <div class="arch-connector"></div>
+      <div class="arch-arrow-down">▼</div>
+      <div class="arch-connector"></div>
+
+      <!-- LINHA 4: UI -->
+      <div class="arch-row">
+        <div class="arch-box box-cyan" style="min-width:200px;">
+          <div class="name">🌐 Gallery UI</div>
+          <div class="desc">Vue.js · Port 8787</div>
+          <span class="tag tag-cyan">Frontend</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 <!-- PIS -->
@@ -267,136 +259,102 @@
   <div class="pis-grid">
     <div class="pi-card">
       <div class="pi-name">🍓 Pi 4</div>
-      <div class="pi-ip">192.168.68.102 · 8GB RAM</div>
+      <div class="pi-ip">192.168.68.102 · 8GB</div>
       <div class="pi-services">
-        <span class="pi-service tag-frontend">Pi-hole</span>
-        <span class="pi-service tag-backend">Dashy</span>
-        <span class="pi-service tag-backend">NPM</span>
-        <span class="pi-service tag-ext">Wallos</span>
-        <span class="pi-service tag-storage">Duplicati</span>
-        <span class="pi-service tag-security">Pi.Alert</span>
-        <span class="pi-service tag-auto">Glances</span>
+        <span class="tag tag-cyan">Pi-hole</span>
+        <span class="tag tag-green">Dashy</span>
+        <span class="tag tag-green">NPM</span>
+        <span class="tag tag-amber">Wallos</span>
+        <span class="tag tag-purple">Duplicati</span>
+        <span class="tag tag-rose">Pi.Alert</span>
+        <span class="tag tag-orange">Glances</span>
       </div>
     </div>
     <div class="pi-card">
       <div class="pi-name">🍓 Pi 5</div>
-      <div class="pi-ip">192.168.68.108 · 8GB RAM</div>
+      <div class="pi-ip">192.168.68.108 · 8GB</div>
       <div class="pi-services">
-        <span class="pi-service tag-frontend">AzuraCast</span>
-        <span class="pi-service tag-backend">Downloader</span>
-        <span class="pi-service tag-security">ClamAV</span>
-        <span class="pi-service tag-auto">Guardian</span>
-        <span class="pi-service tag-ext">DuckDNS</span>
-        <span class="pi-service tag-auto">Glances</span>
+        <span class="tag tag-cyan">AzuraCast</span>
+        <span class="tag tag-green">Downloader</span>
+        <span class="tag tag-rose">ClamAV</span>
+        <span class="tag tag-orange">Guardian</span>
+        <span class="tag tag-amber">DuckDNS</span>
+        <span class="tag tag-orange">Glances</span>
       </div>
     </div>
     <div class="pi-card">
       <div class="pi-name">🍓 Pi 501</div>
-      <div class="pi-ip">192.168.68.117 · 8GB RAM</div>
+      <div class="pi-ip">192.168.68.117 · 8GB</div>
       <div class="pi-services">
-        <span class="pi-service tag-frontend">Dashy</span>
-        <span class="pi-service tag-backend">Hermes</span>
-        <span class="pi-service tag-frontend">UptimeKuma</span>
-        <span class="pi-service tag-storage">Indexer Mgr</span>
-        <span class="pi-service tag-storage">Media Mgr</span>
-        <span class="pi-service tag-frontend">Gallery</span>
-        <span class="pi-service tag-auto">NewsBot</span>
-        <span class="pi-service tag-auto">ChangeDetect</span>
-        <span class="pi-service tag-ext">Speedtest</span>
-        <span class="pi-service tag-auto">Glances</span>
-        <span class="pi-service tag-backend">Portainer</span>
+        <span class="tag tag-cyan">Dashy</span>
+        <span class="tag tag-green">Hermes</span>
+        <span class="tag tag-cyan">UptimeKuma</span>
+        <span class="tag tag-purple">Indexer</span>
+        <span class="tag tag-purple">Media Mgr</span>
+        <span class="tag tag-cyan">Gallery</span>
+        <span class="tag tag-orange">NewsBot</span>
+        <span class="tag tag-orange">ChangeDetect</span>
+        <span class="tag tag-amber">Speedtest</span>
+        <span class="tag tag-orange">Glances</span>
+        <span class="tag tag-green">Portainer</span>
       </div>
     </div>
   </div>
 </div>
 
-<!-- FLUXO MEDIA -->
+<!-- PIPELINE -->
 <div class="section">
   <div class="section-title">Media Pipeline</div>
-  <div class="flow-container">
-    <div class="flow-row">
-      <span class="flow-item" style="background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);color:#38bdf8;">Indexer</span>
-      <span class="flow-arrow">→</span>
-      <span class="flow-item" style="background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.2);color:#34d399;">Media Mgr</span>
-      <span class="flow-arrow">→</span>
-      <span class="flow-item" style="background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.2);color:#fbbf24;">Downloader</span>
-      <span class="flow-arrow">→</span>
-      <span class="flow-item" style="background:rgba(251,113,133,0.1);border:1px solid rgba(251,113,133,0.2);color:#fb7185;">ClamAV</span>
-      <span class="flow-arrow">→</span>
-      <span class="flow-item" style="background:rgba(145,94,255,0.1);border:1px solid rgba(145,94,255,0.2);color:#915eff;">Jellyfin</span>
-      <span class="flow-arrow">→</span>
-      <span class="flow-item" style="background:rgba(145,94,255,0.15);border:1px solid rgba(145,94,255,0.3);color:#a78bfa;">Gallery</span>
-    </div>
-    <div class="flow-row" style="margin-top:10px;">
-      <span class="flow-item" style="background:rgba(145,94,255,0.06);border:1px solid rgba(145,94,255,0.1);color:#666;font-size:0.7rem;">Indexes content</span>
-      <span class="flow-arrow" style="color:#333;">→</span>
-      <span class="flow-item" style="background:rgba(145,94,255,0.06);border:1px solid rgba(145,94,255,0.1);color:#666;font-size:0.7rem;">Manages library</span>
-      <span class="flow-arrow" style="color:#333;">→</span>
-      <span class="flow-item" style="background:rgba(145,94,255,0.06);border:1px solid rgba(145,94,255,0.1);color:#666;font-size:0.7rem;">Downloads</span>
-      <span class="flow-arrow" style="color:#333;">→</span>
-      <span class="flow-item" style="background:rgba(145,94,255,0.06);border:1px solid rgba(145,94,255,0.1);color:#666;font-size:0.7rem;">Scans</span>
-      <span class="flow-arrow" style="color:#333;">→</span>
-      <span class="flow-item" style="background:rgba(145,94,255,0.06);border:1px solid rgba(145,94,255,0.1);color:#666;font-size:0.7rem;">Streams</span>
-      <span class="flow-arrow" style="color:#333;">→</span>
-      <span class="flow-item" style="background:rgba(145,94,255,0.06);border:1px solid rgba(145,94,255,0.1);color:#666;font-size:0.7rem;">Dual Source</span>
-    </div>
+  <div class="pipeline">
+    <span class="pipe-item" style="background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);color:#38bdf8;">🔎 Indexer</span>
+    <span class="pipe-arrow">→</span>
+    <span class="pipe-item" style="background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.2);color:#34d399;">📋 Media Mgr</span>
+    <span class="pipe-arrow">→</span>
+    <span class="pipe-item" style="background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.2);color:#fbbf24;">⬇️ Downloader</span>
+    <span class="pipe-arrow">→</span>
+    <span class="pipe-item" style="background:rgba(251,113,133,0.1);border:1px solid rgba(251,113,133,0.2);color:#fb7185;">🛡️ ClamAV</span>
+    <span class="pipe-arrow">→</span>
+    <span class="pipe-item" style="background:rgba(145,94,255,0.1);border:1px solid rgba(145,94,255,0.2);color:#915eff;">🎬 Jellyfin</span>
+    <span class="pipe-arrow">→</span>
+    <span class="pipe-item" style="background:rgba(145,94,255,0.15);border:1px solid rgba(145,94,255,0.3);color:#a78bfa;">🖼️ Gallery</span>
   </div>
 </div>
 
-<!-- GALLERY DOWNLOADER -->
+<!-- GALLERY -->
 <div class="section">
   <div class="section-title">Gallery Downloader</div>
-  <div class="flow-container">
-    <div class="flow-row">
-      <span class="flow-item" style="background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);color:#38bdf8;">gallery-cli.sh</span>
-      <span class="flow-arrow">→</span>
-      <span class="flow-item" style="background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.2);color:#34d399;">Search/Download</span>
-      <span class="flow-arrow">→</span>
-      <span class="flow-item" style="background:rgba(145,94,255,0.1);border:1px solid rgba(145,94,255,0.2);color:#915eff;">API 5173</span>
-      <span class="flow-arrow">→</span>
-      <span class="flow-item" style="background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.2);color:#fbbf24;">TrueNAS</span>
-      <span class="flow-arrow">→</span>
-      <span class="flow-item" style="background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);color:#38bdf8;">UI 8787</span>
-    </div>
-    <div class="flow-row" style="margin-top:8px;gap:20px;">
-      <div style="text-align:center;">
-        <div style="font-size:0.7rem;color:#38bdf8;font-weight:600;">Source 1</div>
-        <div style="font-size:0.65rem;color:#666;">Python async</div>
-        <div style="font-size:0.65rem;color:#666;">Batch · Rate control</div>
-        <div style="font-size:0.65rem;color:#666;">Webp→JPG auto</div>
-        <div style="font-size:0.65rem;color:#915eff;">src1_manga/</div>
-      </div>
-      <div style="font-size:1.5rem;color:#333;align-self:center;">+</div>
-      <div style="text-align:center;">
-        <div style="font-size:0.7rem;color:#fb923c;font-weight:600;">Source 2</div>
-        <div style="font-size:0.65rem;color:#666;">curl_cffi browser</div>
-        <div style="font-size:0.65rem;color:#666;">Artist/Series/Chapter</div>
-        <div style="font-size:0.65rem;color:#666;">Auto-dedup</div>
-        <div style="font-size:0.65rem;color:#915eff;">alt_manga/</div>
-      </div>
-    </div>
+  <div class="pipeline">
+    <span class="pipe-item" style="background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);color:#38bdf8;">🎮 gallery-cli</span>
+    <span class="pipe-arrow">→</span>
+    <span class="pipe-item" style="background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.2);color:#34d399;">📥 Download</span>
+    <span class="pipe-arrow">→</span>
+    <span class="pipe-item" style="background:rgba(145,94,255,0.1);border:1px solid rgba(145,94,255,0.2);color:#915eff;">⚙️ API 5173</span>
+    <span class="pipe-arrow">→</span>
+    <span class="pipe-item" style="background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.2);color:#fbbf24;">💾 TrueNAS</span>
+    <span class="pipe-arrow">→</span>
+    <span class="pipe-item" style="background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);color:#38bdf8;">🌐 UI 8787</span>
   </div>
 </div>
 
-<!-- ALL CONTAINERS -->
+<!-- TABLE -->
 <div class="section">
   <div class="section-title">All Containers (14 running)</div>
   <table class="svc-table">
     <tr><th>Service</th><th>Type</th><th>Port</th><th>Status</th><th>Host</th></tr>
-    <tr><td>Dashboard</td><td><span class="tag tag-frontend" style="background:rgba(56,189,248,0.12);color:#38bdf8;border:1px solid #38bdf833;padding:2px 8px;border-radius:10px;font-size:0.6rem;">Frontend</span></td><td>8200</td><td class="svc-status-up">Up 3h</td><td>Pi 4</td></tr>
-    <tr><td>Pi-hole</td><td><span class="tag tag-frontend" style="background:rgba(56,189,248,0.12);color:#38bdf8;border:1px solid #38bdf833;padding:2px 8px;border-radius:10px;font-size:0.6rem;">Frontend</span></td><td>53</td><td class="svc-status-up">Up 2d</td><td>Pi 4</td></tr>
-    <tr><td>NPM</td><td><span class="tag tag-backend" style="background:rgba(52,211,153,0.12);color:#34d399;border:1px solid #34d39933;padding:2px 8px;border-radius:10px;font-size:0.6rem;">Backend</span></td><td>81</td><td class="svc-status-up">Up 2d</td><td>Pi 4</td></tr>
-    <tr><td>Wallos</td><td><span class="tag tag-ext" style="background:rgba(251,191,36,0.12);color:#fbbf24;border:1px solid #fbbf2433;padding:2px 8px;border-radius:10px;font-size:0.6rem;">External</span></td><td>8982</td><td class="svc-status-up">Up 2d</td><td>Pi 4</td></tr>
-    <tr><td>AzuraCast</td><td><span class="tag tag-frontend" style="background:rgba(56,189,248,0.12);color:#38bdf8;border:1px solid #38bdf833;padding:2px 8px;border-radius:10px;font-size:0.6rem;">Frontend</span></td><td>—</td><td class="svc-status-up">Up 2d</td><td>Pi 5</td></tr>
-    <tr><td>Downloader</td><td><span class="tag tag-backend" style="background:rgba(52,211,153,0.12);color:#34d399;border:1px solid #34d39933;padding:2px 8px;border-radius:10px;font-size:0.6rem;">Backend</span></td><td>8080</td><td class="svc-status-up">Up 2d</td><td>Pi 5</td></tr>
-    <tr><td>ClamAV</td><td><span class="tag tag-security" style="background:rgba(251,113,133,0.12);color:#fb7185;border:1px solid #fb718533;padding:2px 8px;border-radius:10px;font-size:0.6rem;">Security</span></td><td>—</td><td class="svc-status-up">Up 2d</td><td>Pi 5</td></tr>
-    <tr><td>Duplicati</td><td><span class="tag tag-storage" style="background:rgba(145,94,255,0.12);color:#915eff;border:1px solid #915eff33;padding:2px 8px;border-radius:10px;font-size:0.6rem;">Storage</span></td><td>—</td><td class="svc-status-up">Up 2d</td><td>Pi 4</td></tr>
-    <tr><td>UptimeKuma</td><td><span class="tag tag-frontend" style="background:rgba(56,189,248,0.12);color:#38bdf8;border:1px solid #38bdf833;padding:2px 8px;border-radius:10px;font-size:0.6rem;">Frontend</span></td><td>3001</td><td class="svc-status-up">Up 2d</td><td>Pi 501</td></tr>
-    <tr><td>Indexer Mgr</td><td><span class="tag tag-storage" style="background:rgba(145,94,255,0.12);color:#915eff;border:1px solid #915eff33;padding:2px 8px;border-radius:10px;font-size:0.6rem;">Storage</span></td><td>9696</td><td class="svc-status-up">Up 2d</td><td>Pi 501</td></tr>
-    <tr><td>Media Mgr</td><td><span class="tag tag-storage" style="background:rgba(145,94,255,0.12);color:#915eff;border:1px solid #915eff33;padding:2px 8px;border-radius:10px;font-size:0.6rem;">Storage</span></td><td>6969</td><td class="svc-status-up">Up 2d</td><td>Pi 501</td></tr>
-    <tr><td>Gallery API</td><td><span class="tag tag-backend" style="background:rgba(52,211,153,0.12);color:#34d399;border:1px solid #34d39933;padding:2px 8px;border-radius:10px;font-size:0.6rem;">Backend</span></td><td>5173</td><td class="svc-status-up">Up 30m</td><td>Pi 501</td></tr>
-    <tr><td>Gallery UI</td><td><span class="tag tag-frontend" style="background:rgba(56,189,248,0.12);color:#38bdf8;border:1px solid #38bdf833;padding:2px 8px;border-radius:10px;font-size:0.6rem;">Frontend</span></td><td>8787</td><td class="svc-status-up">Up 4h</td><td>Pi 501</td></tr>
-    <tr><td>Portainer</td><td><span class="tag tag-backend" style="background:rgba(52,211,153,0.12);color:#34d399;border:1px solid #34d39933;padding:2px 8px;border-radius:10px;font-size:0.6rem;">Backend</span></td><td>9001</td><td class="svc-status-up">Up 2d</td><td>Pi 501</td></tr>
+    <tr><td>Dashboard</td><td><span class="tag tag-cyan" style="font-size:0.6rem;">Frontend</span></td><td>8200</td><td class="svc-up">Up</td><td>Pi 4</td></tr>
+    <tr><td>Pi-hole</td><td><span class="tag tag-cyan" style="font-size:0.6rem;">Frontend</span></td><td>53</td><td class="svc-up">Up</td><td>Pi 4</td></tr>
+    <tr><td>NPM</td><td><span class="tag tag-green" style="font-size:0.6rem;">Backend</span></td><td>81</td><td class="svc-up">Up</td><td>Pi 4</td></tr>
+    <tr><td>Wallos</td><td><span class="tag tag-amber" style="font-size:0.6rem;">External</span></td><td>8982</td><td class="svc-up">Up</td><td>Pi 4</td></tr>
+    <tr><td>AzuraCast</td><td><span class="tag tag-cyan" style="font-size:0.6rem;">Frontend</span></td><td>—</td><td class="svc-up">Up</td><td>Pi 5</td></tr>
+    <tr><td>Downloader</td><td><span class="tag tag-green" style="font-size:0.6rem;">Backend</span></td><td>8080</td><td class="svc-up">Up</td><td>Pi 5</td></tr>
+    <tr><td>ClamAV</td><td><span class="tag tag-rose" style="font-size:0.6rem;">Security</span></td><td>—</td><td class="svc-up">Up</td><td>Pi 5</td></tr>
+    <tr><td>Duplicati</td><td><span class="tag tag-purple" style="font-size:0.6rem;">Storage</span></td><td>—</td><td class="svc-up">Up</td><td>Pi 4</td></tr>
+    <tr><td>UptimeKuma</td><td><span class="tag tag-cyan" style="font-size:0.6rem;">Frontend</span></td><td>3001</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
+    <tr><td>Indexer Mgr</td><td><span class="tag tag-purple" style="font-size:0.6rem;">Storage</span></td><td>9696</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
+    <tr><td>Media Mgr</td><td><span class="tag tag-purple" style="font-size:0.6rem;">Storage</span></td><td>6969</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
+    <tr><td>Gallery API</td><td><span class="tag tag-green" style="font-size:0.6rem;">Backend</span></td><td>5173</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
+    <tr><td>Gallery UI</td><td><span class="tag tag-cyan" style="font-size:0.6rem;">Frontend</span></td><td>8787</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
+    <tr><td>Portainer</td><td><span class="tag tag-green" style="font-size:0.6rem;">Backend</span></td><td>9001</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
   </table>
 </div>
 
