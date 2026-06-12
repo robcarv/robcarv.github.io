@@ -7,121 +7,122 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:'Inter',sans-serif; background:#0a0a14; color:#e0e0e0; }
-  .container { max-width:1200px; margin:0 auto; padding:20px; }
+  body { font-family:'Inter',sans-serif; background:#0a0a14; color:#e0e0e0; overflow-x:hidden; }
+  .container { max-width:1300px; margin:0 auto; padding:20px; }
 
-  header { text-align:center; padding:40px 20px 20px; }
+  header { text-align:center; padding:40px 20px; }
   header h1 { font-size:2.5rem; font-weight:800; background:linear-gradient(135deg,#915eff,#5eead4,#38bdf8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
   header p { color:#666; margin-top:8px; }
-  header .badges { margin-top:12px; }
   .badge { display:inline-block; padding:4px 14px; border-radius:20px; font-size:0.7rem; font-weight:500; margin:3px; border:1px solid; }
 
-  .section { margin:40px 0; }
-  .section-title { font-size:1.1rem; font-weight:600; color:#915eff; margin-bottom:16px; display:flex; align-items:center; gap:8px; }
-  .section-title::after { content:''; flex:1; height:1px; background:linear-gradient(90deg,#915eff44,transparent); }
-
-  /* === DIAGRAMA VISUAL === */
-  .arch-diagram {
+  /* ========= DIAGRAMA PRINCIPAL ========= */
+  .arch-container {
     background:#06060e;
     border:1px solid #1a1a3a;
     border-radius:20px;
-    padding:40px 30px;
+    padding:30px;
+    margin:20px 0 40px;
     position:relative;
-    overflow:hidden;
+    overflow:auto;
   }
-  .arch-diagram::before {
-    content:'';
-    position:absolute;
-    top:0; left:0; right:0; bottom:0;
+  .arch-container::before {
+    content:''; position:absolute; top:0; left:0; right:0; bottom:0;
     background:radial-gradient(ellipse at 50% 0%, rgba(145,94,255,0.05) 0%, transparent 70%);
     pointer-events:none;
   }
-  .arch-grid {
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:20px;
+
+  /* Zona = agrupamento por Pi/TrueNAS */
+  .zone {
+    background:rgba(255,255,255,0.02);
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:16px;
+    padding:20px;
+    margin-bottom:20px;
     position:relative;
-    z-index:1;
   }
-  .arch-row {
+  .zone-title {
+    font-size:0.8rem;
+    font-weight:600;
+    color:#666;
+    margin-bottom:12px;
     display:flex;
     align-items:center;
-    justify-content:center;
-    gap:16px;
+    gap:8px;
+  }
+  .zone-title .dot { width:8px; height:8px; border-radius:50%; display:inline-block; }
+
+  /* Grid de servicos dentro da zona */
+  .svc-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
+    gap:10px;
+  }
+
+  /* Card de servico */
+  .svc-card {
+    background:linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:10px;
+    padding:12px;
+    cursor:pointer;
+    position:relative;
+    transition:border-color 0.2s, transform 0.15s;
+  }
+  .svc-card:hover {
+    border-color:rgba(145,94,255,0.4);
+    transform:translateY(-1px);
+    z-index:10;
+  }
+  .svc-card .svc-icon { font-size:1rem; margin-bottom:4px; }
+  .svc-card .svc-name { font-size:0.7rem; font-weight:600; color:#e0e0e0; }
+  .svc-card .svc-desc { font-size:0.6rem; color:#666; margin-top:2px; }
+
+  /* Tooltip no hover */
+  .svc-card .tooltip {
+    display:none;
+    position:absolute;
+    bottom:calc(100% + 8px);
+    left:50%;
+    transform:translateX(-50%);
+    background:#1a1a3a;
+    border:1px solid #2a2a5a;
+    border-radius:10px;
+    padding:12px;
+    width:220px;
+    z-index:100;
+    text-align:left;
+    box-shadow:0 8px 30px rgba(0,0,0,0.5);
+    pointer-events:none;
+  }
+  .svc-card:hover .tooltip { display:block; }
+  .tooltip .tt-title { font-size:0.75rem; font-weight:600; color:#e0e0e0; margin-bottom:6px; }
+  .tooltip .tt-row { font-size:0.65rem; color:#999; padding:2px 0; display:flex; gap:6px; }
+  .tooltip .tt-label { color:#666; min-width:50px; }
+  .tooltip .tt-desc { color:#bbb; }
+
+  /* Setas de conexao */
+  .connections {
+    padding:10px 0;
+    display:flex;
     flex-wrap:wrap;
-  }
-  .arch-box {
-    padding:14px 20px;
-    border-radius:12px;
-    text-align:center;
-    min-width:140px;
-    position:relative;
-    box-shadow:0 0 20px rgba(0,0,0,0.3);
-  }
-  .arch-box .name { font-size:0.8rem; font-weight:600; }
-  .arch-box .desc { font-size:0.65rem; color:rgba(255,255,255,0.6); margin-top:4px; }
-  .arch-box .tag { font-size:0.55rem; display:inline-block; padding:2px 8px; border-radius:10px; margin-top:6px; }
-
-  /* Cores dos boxes */
-  .box-cyan { background:linear-gradient(145deg,rgba(8,51,68,0.8),rgba(8,51,68,0.3)); border:1px solid rgba(34,211,238,0.3); }
-  .box-cyan .name { color:#22d3ee; }
-  .box-green { background:linear-gradient(145deg,rgba(6,78,59,0.8),rgba(6,78,59,0.3)); border:1px solid rgba(52,211,153,0.3); }
-  .box-green .name { color:#34d399; }
-  .box-purple { background:linear-gradient(145deg,rgba(76,29,149,0.8),rgba(76,29,149,0.3)); border:1px solid rgba(167,139,250,0.3); }
-  .box-purple .name { color:#a78bfa; }
-  .box-amber { background:linear-gradient(145deg,rgba(120,53,15,0.8),rgba(120,53,15,0.3)); border:1px solid rgba(251,191,36,0.3); }
-  .box-amber .name { color:#fbbf24; }
-  .box-rose { background:linear-gradient(145deg,rgba(136,19,55,0.8),rgba(136,19,55,0.3)); border:1px solid rgba(251,113,133,0.3); }
-  .box-rose .name { color:#fb7185; }
-  .box-orange { background:linear-gradient(145deg,rgba(124,45,18,0.8),rgba(124,45,18,0.3)); border:1px solid rgba(251,146,60,0.3); }
-  .box-orange .name { color:#fb923c; }
-
-  .arch-arrow {
-    color:#333;
-    font-size:1.4rem;
-    font-weight:300;
-  }
-  .arch-arrow-down {
-    color:#333;
-    font-size:1.2rem;
-  }
-  .arch-connector {
-    width:2px;
-    height:24px;
-    background:linear-gradient(180deg,#333,#555);
-  }
-  .arch-fork {
-    display:flex;
-    gap:16px;
+    gap:6px;
     align-items:center;
   }
-  .arch-fork-line {
-    width:60px;
-    height:2px;
-    background:#333;
+  .conn-arrow {
+    display:flex;
+    align-items:center;
+    gap:4px;
+    font-size:0.6rem;
+    color:#555;
   }
-
-  /* PIS */
-  .pis-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-  @media (max-width:900px) { .pis-grid { grid-template-columns:1fr; } }
-  .pi-card { background:linear-gradient(145deg,#12121f,#0d0d18); border:1px solid #1e1e3a; border-radius:16px; padding:24px; }
-  .pi-card:hover { border-color:#915eff66; }
-  .pi-card .pi-name { font-size:1rem; font-weight:700; }
-  .pi-card .pi-ip { font-size:0.75rem; color:#666; }
-  .pi-card .pi-services { margin-top:14px; display:flex; flex-wrap:wrap; gap:6px; }
-  .tag { font-size:0.65rem; padding:4px 10px; border-radius:20px; font-weight:500; }
-  .tag-cyan { background:rgba(56,189,248,0.12); color:#38bdf8; border:1px solid #38bdf833; }
-  .tag-green { background:rgba(52,211,153,0.12); color:#34d399; border:1px solid #34d39933; }
-  .tag-purple { background:rgba(145,94,255,0.12); color:#915eff; border:1px solid #915eff33; }
-  .tag-rose { background:rgba(251,113,133,0.12); color:#fb7185; border:1px solid #fb718533; }
-  .tag-orange { background:rgba(251,146,60,0.12); color:#fb923c; border:1px solid #fb923c33; }
-  .tag-amber { background:rgba(251,191,36,0.12); color:#fbbf24; border:1px solid #fbbf2433; }
+  .conn-arrow .arrow { color:#444; font-size:0.8rem; }
+  .conn-arrow .conn-label { font-size:0.55rem; color:#555; }
 
   /* PIPELINE */
-  .pipeline { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:8px; padding:24px; background:rgba(255,255,255,0.02); border-radius:14px; border:1px solid rgba(255,255,255,0.05); }
-  .pipe-item { padding:10px 20px; border-radius:10px; font-size:0.8rem; font-weight:600; white-space:nowrap; }
-  .pipe-arrow { color:#444; font-size:1.2rem; }
+  .pipeline { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:6px; padding:24px; background:rgba(255,255,255,0.02); border-radius:14px; border:1px solid rgba(255,255,255,0.05); margin:20px 0; }
+  .pipe-item { padding:8px 16px; border-radius:8px; font-size:0.75rem; font-weight:600; white-space:nowrap; cursor:default; position:relative; }
+  .pipe-item:hover .tooltip { display:block; }
+  .pipe-arrow { color:#444; font-size:1rem; }
   @media (max-width:700px) { .pipeline { flex-direction:column; } .pipe-arrow { transform:rotate(90deg); } }
 
   /* TABLE */
@@ -131,6 +132,8 @@
   .svc-table td:first-child { color:#e0e0e0; font-weight:500; }
   .svc-table tr:hover td { background:rgba(145,94,255,0.03); }
   .svc-up { color:#34d399; }
+
+  .tag { font-size:0.6rem; padding:2px 8px; border-radius:10px; }
 
   /* CRON */
   .cron-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:12px; }
@@ -148,8 +151,8 @@
 
 <header>
   <h1>Homelab Architecture</h1>
-  <p>Robert Carvalho · 3 Raspberry Pis · 14 Containers · 55+ Services · 10.9TB NVMe</p>
-  <div class="badges">
+  <p>Robert Carvalho · 3 Pis · 14 Containers · 55+ Services · 10.9TB NVMe</p>
+  <div>
     <span class="badge" style="border-color:#22d3ee33;color:#22d3ee;">🌐 Frontend</span>
     <span class="badge" style="border-color:#34d39933;color:#34d399;">⚙️ Backend</span>
     <span class="badge" style="border-color:#a78bfa33;color:#a78bfa;">💾 Storage</span>
@@ -159,207 +162,377 @@
   </div>
 </header>
 
-<!-- DIAGRAMA VISUAL -->
-<div class="section">
-  <div class="section-title">System Architecture</div>
-  <div class="arch-diagram">
-    <div class="arch-grid">
+<!-- =================== DIAGRAMA PRINCIPAL =================== -->
+<div class="arch-container">
 
-      <!-- LINHA 1: CLI -->
-      <div class="arch-row">
-        <div class="arch-box box-cyan" style="min-width:200px;">
-          <div class="name">🎮 gallery-cli.sh</div>
-          <div class="desc">Interactive Menu</div>
-          <span class="tag tag-cyan">Frontend</span>
+  <!-- ZONA: PI 4 -->
+  <div class="zone" style="border-color:rgba(145,94,255,0.15);">
+    <div class="zone-title"><span class="dot" style="background:#a78bfa;"></span>🍓 Pi 4 — 192.168.68.102</div>
+    <div class="svc-grid">
+      <div class="svc-card" style="border-color:rgba(56,189,248,0.2);">
+        <div class="svc-icon">🛡️</div>
+        <div class="svc-name">Pi-hole</div>
+        <div class="svc-desc">DNS Ad Blocker · Port 53</div>
+        <div class="tooltip">
+          <div class="tt-title">🛡️ Pi-hole</div>
+          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">53 (DNS)</span></div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Bloqueia propagandas em toda rede</span></div>
+          <div class="tt-row"><span class="tt-label">Comunica:</span><span class="tt-desc">Toda rede → DNS</span></div>
         </div>
       </div>
-
-      <!-- CONECTOR -->
-      <div class="arch-connector"></div>
-      <div class="arch-arrow-down">▼</div>
-      <div class="arch-connector"></div>
-
-      <!-- LINHA 2: FORK 3 VIAS -->
-      <div class="arch-row" style="gap:0;">
-        <div style="flex:1;text-align:right;padding-right:10px;">
-          <div class="arch-box box-green">
-            <div class="name">📥 Source 1</div>
-            <div class="desc">Python async · 3 req/s</div>
-            <span class="tag tag-green">Backend</span>
-          </div>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
-          <div class="arch-fork" style="gap:0;">
-            <div class="arch-fork-line" style="width:40px;"></div>
-            <div style="width:2px;height:12px;background:#333;"></div>
-            <div class="arch-fork-line" style="width:40px;"></div>
-          </div>
-          <div class="arch-arrow-down">▼</div>
-          <div class="arch-fork">
-            <div class="arch-fork-line"></div>
-            <div style="width:2px;height:12px;background:#333;"></div>
-            <div class="arch-fork-line"></div>
-          </div>
-        </div>
-        <div style="flex:1;text-align:left;padding-left:10px;">
-          <div class="arch-box box-orange">
-            <div class="name">🔍 Source 2</div>
-            <div class="desc">curl_cffi browser</div>
-            <span class="tag tag-orange">Automation</span>
-          </div>
+      <div class="svc-card" style="border-color:rgba(56,189,248,0.2);">
+        <div class="svc-icon">📊</div>
+        <div class="svc-name">Dashy</div>
+        <div class="svc-desc">Central Dashboard · Port 8200</div>
+        <div class="tooltip">
+          <div class="tt-title">📊 Dashy</div>
+          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">8200 -> 8080</span></div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Dashboard com 30+ servicos</span></div>
+          <div class="tt-row"><span class="tt-label">Comunica:</span><span class="tt-desc">Linka todos servicos</span></div>
         </div>
       </div>
-
-      <!-- FORK + API -->
-      <div style="display:flex;align-items:center;gap:16px;">
-        <div style="flex:1;text-align:right;">
-          <div class="arch-arrow-down">▼</div>
-        </div>
-        <div style="width:2px;height:16px;background:#333;"></div>
-        <div style="flex:1;text-align:left;">
-          <div class="arch-arrow-down">▼</div>
-        </div>
-      </div>
-
-      <!-- LINHA 3: TRUENAS + API -->
-      <div class="arch-row">
-        <div class="arch-box box-purple" style="min-width:200px;">
-          <div class="name">🖥️ TrueNAS</div>
-          <div class="desc">NVMe 10.9TB · CIFS</div>
-          <span class="tag tag-purple">Storage</span>
-        </div>
-        <div class="arch-box box-green" style="min-width:200px;">
-          <div class="name">⚙️ API</div>
-          <div class="desc">Node.js · Port 5173</div>
-          <span class="tag tag-green">Backend</span>
+      <div class="svc-card" style="border-color:rgba(52,211,153,0.2);">
+        <div class="svc-icon">🔒</div>
+        <div class="svc-name">NPM</div>
+        <div class="svc-desc">SSL Proxy · Port 81</div>
+        <div class="tooltip">
+          <div class="tt-title">🔒 Nginx Proxy Manager</div>
+          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">81</span></div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">SSL reverse proxy</span></div>
+          <div class="tt-row"><span class="tt-label">Comunica:</span><span class="tt-desc">Proxy reverso para servicos</span></div>
         </div>
       </div>
-
-      <!-- CONECTOR -->
-      <div class="arch-connector"></div>
-      <div class="arch-arrow-down">▼</div>
-      <div class="arch-connector"></div>
-
-      <!-- LINHA 4: UI -->
-      <div class="arch-row">
-        <div class="arch-box box-cyan" style="min-width:200px;">
-          <div class="name">🌐 Gallery UI</div>
-          <div class="desc">Vue.js · Port 8787</div>
-          <span class="tag tag-cyan">Frontend</span>
+      <div class="svc-card" style="border-color:rgba(251,191,36,0.2);">
+        <div class="svc-icon">💳</div>
+        <div class="svc-name">Wallos</div>
+        <div class="svc-desc">Subscriptions · Port 8982</div>
+        <div class="tooltip">
+          <div class="tt-title">💳 Wallos</div>
+          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">8982 -> 80</span></div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Gerenciamento de assinaturas</span></div>
         </div>
       </div>
+      <div class="svc-card" style="border-color:rgba(145,94,255,0.2);">
+        <div class="svc-icon">💾</div>
+        <div class="svc-name">Duplicati</div>
+        <div class="svc-desc">Backup Automation</div>
+        <div class="tooltip">
+          <div class="tt-title">💾 Duplicati</div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Backup automatizado</span></div>
+          <div class="tt-row"><span class="tt-label">Comunica:</span><span class="tt-desc">TrueNAS (CIFS)</span></div>
+        </div>
+      </div>
+      <div class="svc-card" style="border-color:rgba(251,113,133,0.2);">
+        <div class="svc-icon">🔍</div>
+        <div class="svc-name">Pi.Alert</div>
+        <div class="svc-desc">Network Scanner</div>
+        <div class="tooltip">
+          <div class="tt-title">🔍 Pi.Alert</div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Escaneia rede por dispositivos</span></div>
+        </div>
+      </div>
+    </div>
+    <!-- Conexoes do Pi4 -->
+    <div class="connections">
+      <span class="conn-arrow"><span class="arrow">→</span> Dashy linka todos servicos <span class="conn-label">(via HTTP)</span></span>
+      <span class="conn-arrow"><span class="arrow">→</span> NPM proxy reverso <span class="conn-label">(SSL)</span></span>
+      <span class="conn-arrow"><span class="arrow">→</span> Pi-hole DNS <span class="conn-label">(UDP 53)</span></span>
+      <span class="conn-arrow"><span class="arrow">→</span> Duplicati → TrueNAS <span class="conn-label">(CIFS)</span></span>
+    </div>
+  </div>
 
+  <!-- ZONA: PI 5 -->
+  <div class="zone" style="border-color:rgba(251,146,60,0.15);">
+    <div class="zone-title"><span class="dot" style="background:#fb923c;"></span>🍓 Pi 5 — 192.168.68.108</div>
+    <div class="svc-grid">
+      <div class="svc-card" style="border-color:rgba(56,189,248,0.2);">
+        <div class="svc-icon">📻</div>
+        <div class="svc-name">AzuraCast</div>
+        <div class="svc-desc">Web Radio · 2GB RAM</div>
+        <div class="tooltip">
+          <div class="tt-title">📻 AzuraCast</div>
+          <div class="tt-row"><span class="tt-label">RAM:</span><span class="tt-desc">2GB limit</span></div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Dublin Calling web radio</span></div>
+          <div class="tt-row"><span class="tt-label">Comunica:</span><span class="tt-desc">DuckDNS (DNS dinamico)</span></div>
+        </div>
+      </div>
+      <div class="svc-card" style="border-color:rgba(52,211,153,0.2);">
+        <div class="svc-icon">⬇️</div>
+        <div class="svc-name">Downloader</div>
+        <div class="svc-desc">Download Client · Port 8080</div>
+        <div class="tooltip">
+          <div class="tt-title">⬇️ Downloader</div>
+          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">8080</span></div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Cliente de downloads</span></div>
+          <div class="tt-row"><span class="tt-label">Comunica:</span><span class="tt-desc">Media Mgr (.501) → ClamAV → TrueNAS</span></div>
+        </div>
+      </div>
+      <div class="svc-card" style="border-color:rgba(251,113,133,0.2);">
+        <div class="svc-icon">🛡️</div>
+        <div class="svc-name">ClamAV</div>
+        <div class="svc-desc">Antivirus · 3GB RAM</div>
+        <div class="tooltip">
+          <div class="tt-title">🛡️ ClamAV</div>
+          <div class="tt-row"><span class="tt-label">RAM:</span><span class="tt-desc">3GB</span></div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Escaneia downloads (cron 03:00)</span></div>
+          <div class="tt-row"><span class="tt-label">Comunica:</span><span class="tt-desc">Le TrueNAS (CIFS)</span></div>
+        </div>
+      </div>
+      <div class="svc-card" style="border-color:rgba(251,146,60,0.2);">
+        <div class="svc-icon">❤️</div>
+        <div class="svc-name">Guardian</div>
+        <div class="svc-desc">Health Check · 5min</div>
+        <div class="tooltip">
+          <div class="tt-title">❤️ Guardian</div>
+          <div class="tt-row"><span class="tt-label">Cron:</span><span class="tt-desc">A cada 5min</span></div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Pausa torrents se load>8 ou RAM>85%</span></div>
+        </div>
+      </div>
+      <div class="svc-card" style="border-color:rgba(251,191,36,0.2);">
+        <div class="svc-icon">🌐</div>
+        <div class="svc-name">DuckDNS</div>
+        <div class="svc-desc">Dynamic DNS</div>
+        <div class="tooltip">
+          <div class="tt-title">🌐 DuckDNS</div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">DNS dinamico para radio e portfolio</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="connections">
+      <span class="conn-arrow"><span class="arrow">→</span> Downloader recebe de Media Mgr (.501) <span class="conn-label">(API)</span></span>
+      <span class="conn-arrow"><span class="arrow">→</span> ClamAV escaneia downloads <span class="conn-label">(CIFS TrueNAS)</span></span>
+      <span class="conn-arrow"><span class="arrow">→</span> Guardian monitora load/RAM/swap <span class="conn-label">(local)</span></span>
+      <span class="conn-arrow"><span class="arrow">→</span> DuckDNS atualiza DNS <span class="conn-label">(API externa)</span></span>
+      <span class="conn-arrow"><span class="arrow">→</span> AzuraCast transmite radio <span class="conn-label">(DuckDNS)</span></span>
+    </div>
+  </div>
+
+  <!-- ZONA: PI 501 -->
+  <div class="zone" style="border-color:rgba(56,189,248,0.15);">
+    <div class="zone-title"><span class="dot" style="background:#22d3ee;"></span>🍓 Pi 501 — 192.168.68.117</div>
+    <div class="svc-grid">
+      <div class="svc-card" style="border-color:rgba(56,189,248,0.2);">
+        <div class="svc-icon">📊</div>
+        <div class="svc-name">Dashy</div>
+        <div class="svc-desc">Dashboard · Port 8200</div>
+        <div class="tooltip">
+          <div class="tt-title">📊 Dashy</div>
+          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">8200</span></div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Dashboard hub com todos servicos</span></div>
+        </div>
+      </div>
+      <div class="svc-card" style="border-color:rgba(52,211,153,0.2);">
+        <div class="svc-icon">🤖</div>
+        <div class="svc-name">Hermes Agent</div>
+        <div class="svc-desc">AI CLI</div>
+        <div class="tooltip">
+          <div class="tt-title">🤖 Hermes Agent</div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Assistente AI via terminal</span></div>
+          <div class="tt-row"><span class="tt-label">Comunica:</span><span class="tt-desc">Todos servicos via SSH/API</span></div>
+        </div>
+      </div>
+      <div class="svc-card" style="border-color:rgba(56,189,248,0.2);">
+        <div class="svc-icon">❤️</div>
+        <div class="svc-name">UptimeKuma</div>
+        <div class="svc-desc">55+ Monitorados · Port 3001</div>
+        <div class="tooltip">
+          <div class="tt-title">❤️ UptimeKuma</div>
+          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">3001</span></div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Monitora 55+ servicos, alertas</span></div>
+          <div class="tt-row"><span class="tt-label">Comunica:</span><span class="tt-desc">HTTP ping todos servicos</span></div>
+        </div>
+      </div>
+      <div class="svc-card" style="border-color:rgba(145,94,255,0.2);">
+        <div class="svc-icon">🔎</div>
+        <div class="svc-name">Indexer Mgr</div>
+        <div class="svc-desc">Indexer · Port 9696</div>
+        <div class="tooltip">
+          <div class="tt-title">🔎 Indexer Mgr</div>
+          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">9696</span></div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Gerenciador de indexadores</span></div>
+          <div class="tt-row"><span class="tt-label">Comunica:</span><span class="tt-desc">Media Mgr (API) → Downloader (.108)</span></div>
+        </div>
+      </div>
+      <div class="svc-card" style="border-color:rgba(145,94,255,0.2);">
+        <div class="svc-icon">📋</div>
+        <div class="svc-name">Media Mgr</div>
+        <div class="svc-desc">Content Manager · Port 6969</div>
+        <div class="tooltip">
+          <div class="tt-title">📋 Media Mgr</div>
+          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">6969</span></div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Gerenciador de midia</span></div>
+          <div class="tt-row"><span class="tt-label">Comunica:</span><span class="tt-desc">Indexer → Downloader (.108) → ClamAV</span></div>
+        </div>
+      </div>
+      <div class="svc-card" style="border-color:rgba(56,189,248,0.2);">
+        <div class="svc-icon">🖼️</div>
+        <div class="svc-name">Gallery</div>
+        <div class="svc-desc">API:5173 / UI:8787</div>
+        <div class="tooltip">
+          <div class="tt-title">🖼️ Gallery Downloader</div>
+          <div class="tt-row"><span class="tt-label">API:</span><span class="tt-desc">Port 5173 (Node.js)</span></div>
+          <div class="tt-row"><span class="tt-label">UI:</span><span class="tt-desc">Port 8787 (Vue.js)</span></div>
+          <div class="tt-row"><span class="tt-label">Dual Source:</span><span class="tt-desc">Python + curl_cffi</span></div>
+          <div class="tt-row"><span class="tt-label">Storage:</span><span class="tt-desc">TrueNAS (CIFS)</span></div>
+        </div>
+      </div>
+      <div class="svc-card" style="border-color:rgba(251,146,60,0.2);">
+        <div class="svc-icon">📰</div>
+        <div class="svc-name">NewsBot</div>
+        <div class="svc-desc">RSS · 00/06/12/18</div>
+        <div class="tooltip">
+          <div class="tt-title">📰 NewsBot</div>
+          <div class="tt-row"><span class="tt-label">Cron:</span><span class="tt-desc">00/06/12/18</span></div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">17 feeds RSS → Telegram → GitHub</span></div>
+          <div class="tt-row"><span class="tt-label">Comunica:</span><span class="tt-desc">Telegram API + GitHub push</span></div>
+        </div>
+      </div>
+      <div class="svc-card" style="border-color:rgba(251,146,60,0.2);">
+        <div class="svc-icon">🔔</div>
+        <div class="svc-name">ChangeDetect</div>
+        <div class="svc-desc">Web Monitor · Port 5500</div>
+        <div class="tooltip">
+          <div class="tt-title">🔔 ChangeDetection</div>
+          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">5500</span></div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Monitora mudancas em sites</span></div>
+        </div>
+      </div>
+      <div class="svc-card" style="border-color:rgba(251,191,36,0.2);">
+        <div class="svc-icon">📶</div>
+        <div class="svc-name">Speedtest</div>
+        <div class="svc-desc">Network Speed · Port 8089</div>
+        <div class="tooltip">
+          <div class="tt-title">📶 Speedtest Tracker</div>
+          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">8089</span></div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Monitora velocidade internet</span></div>
+        </div>
+      </div>
+      <div class="svc-card" style="border-color:rgba(52,211,153,0.2);">
+        <div class="svc-icon">🐳</div>
+        <div class="svc-name">Portainer</div>
+        <div class="svc-desc">Docker UI · Port 9001</div>
+        <div class="tooltip">
+          <div class="tt-title">🐳 Portainer Agent</div>
+          <div class="tt-row"><span class="tt-label">Porta:</span><span class="tt-desc">9001</span></div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Gerenciamento visual Docker</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="connections">
+      <span class="conn-arrow"><span class="arrow">→</span> Indexer → Media Mgr → Downloader (.108) <span class="conn-label">(API)</span></span>
+      <span class="conn-arrow"><span class="arrow">→</span> Gallery API(5173) + UI(8787) ↔ TrueNAS <span class="conn-label">(CIFS)</span></span>
+      <span class="conn-arrow"><span class="arrow">→</span> UptimeKuma ping todos servicos <span class="conn-label">(HTTP)</span></span>
+      <span class="conn-arrow"><span class="arrow">→</span> NewsBot → Telegram + GitHub <span class="conn-label">(API)</span></span>
+      <span class="conn-arrow"><span class="arrow">→</span> Hermes Agent controla servicos <span class="conn-label">(SSH/API)</span></span>
+    </div>
+  </div>
+
+  <!-- ZONA: TRUENAS -->
+  <div class="zone" style="border-color:rgba(167,139,250,0.2);">
+    <div class="zone-title"><span class="dot" style="background:#a78bfa;"></span>🖥️ TrueNAS Scale — 192.168.68.124</div>
+    <div class="svc-grid">
+      <div class="svc-card" style="border-color:rgba(145,94,255,0.2);">
+        <div class="svc-icon">📁</div>
+        <div class="svc-name">Media Share</div>
+        <div class="svc-desc">SMB · CIFS mount</div>
+        <div class="tooltip">
+          <div class="tt-title">📁 Media Share</div>
+          <div class="tt-row"><span class="tt-label">Protocolo:</span><span class="tt-desc">SMB/CIFS</span></div>
+          <div class="tt-row"><span class="tt-label">Montado em:</span><span class="tt-desc">/mnt/truenas_media/</span></div>
+          <div class="tt-row"><span class="tt-label">Usado por:</span><span class="tt-desc">Gallery, Jellyfin, ClamAV</span></div>
+        </div>
+      </div>
+      <div class="svc-card" style="border-color:rgba(145,94,255,0.2);">
+        <div class="svc-icon">☁️</div>
+        <div class="svc-name">CloudBackup</div>
+        <div class="svc-desc">SMB Backup</div>
+        <div class="tooltip">
+          <div class="tt-title">☁️ CloudBackup</div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Backup dos scripts e configs</span></div>
+          <div class="tt-row"><span class="tt-label">Usado por:</span><span class="tt-desc">Rsync (cron 04:00)</span></div>
+        </div>
+      </div>
+      <div class="svc-card" style="border-color:rgba(145,94,255,0.2);">
+        <div class="svc-icon">🎬</div>
+        <div class="svc-name">Jellyfin</div>
+        <div class="svc-desc">Media Streaming</div>
+        <div class="tooltip">
+          <div class="tt-title">🎬 Jellyfin</div>
+          <div class="tt-row"><span class="tt-label">Funcao:</span><span class="tt-desc">Streaming de midia</span></div>
+          <div class="tt-row"><span class="tt-label">Biblioteca:</span><span class="tt-desc">/data/media</span></div>
+          <div class="tt-row"><span class="tt-label">Comunica:</span><span class="tt-desc">ClamAV → Jellyfin</span></div>
+        </div>
+      </div>
+      <div class="svc-card" style="border-color:rgba(145,94,255,0.2);">
+        <div class="svc-icon">🖼️</div>
+        <div class="svc-name">Gallery Storage</div>
+        <div class="svc-desc">src1 + alt</div>
+        <div class="tooltip">
+          <div class="tt-title">🖼️ Gallery Storage</div>
+          <div class="tt-row"><span class="tt-label">Source 1:</span><span class="tt-desc">/mnt/.../src1_manga/</span></div>
+          <div class="tt-row"><span class="tt-label">Source 2:</span><span class="tt-desc">/mnt/.../alt_manga/</span></div>
+          <div class="tt-row"><span class="tt-label">Total:</span><span class="tt-desc">~33 itens, 25k+ imagens</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="connections">
+      <span class="conn-arrow"><span class="arrow">←→</span> Todos Pis montam CIFS <span class="conn-label">(SMB)</span></span>
+      <span class="conn-arrow"><span class="arrow">←</span> ClamAV le arquivos <span class="conn-label">(CIFS)</span></span>
+      <span class="conn-arrow"><span class="arrow">←</span> Gallery escreve downloads <span class="conn-label">(CIFS)</span></span>
+      <span class="conn-arrow"><span class="arrow">→</span> Jellyfin stream <span class="conn-label">(HTTP 30013)</span></span>
     </div>
   </div>
 </div>
 
-<!-- PIS -->
-<div class="section">
-  <div class="section-title">Infrastructure</div>
-  <div class="pis-grid">
-    <div class="pi-card">
-      <div class="pi-name">🍓 Pi 4</div>
-      <div class="pi-ip">192.168.68.102 · 8GB</div>
-      <div class="pi-services">
-        <span class="tag tag-cyan">Pi-hole</span>
-        <span class="tag tag-green">Dashy</span>
-        <span class="tag tag-green">NPM</span>
-        <span class="tag tag-amber">Wallos</span>
-        <span class="tag tag-purple">Duplicati</span>
-        <span class="tag tag-rose">Pi.Alert</span>
-        <span class="tag tag-orange">Glances</span>
-      </div>
-    </div>
-    <div class="pi-card">
-      <div class="pi-name">🍓 Pi 5</div>
-      <div class="pi-ip">192.168.68.108 · 8GB</div>
-      <div class="pi-services">
-        <span class="tag tag-cyan">AzuraCast</span>
-        <span class="tag tag-green">Downloader</span>
-        <span class="tag tag-rose">ClamAV</span>
-        <span class="tag tag-orange">Guardian</span>
-        <span class="tag tag-amber">DuckDNS</span>
-        <span class="tag tag-orange">Glances</span>
-      </div>
-    </div>
-    <div class="pi-card">
-      <div class="pi-name">🍓 Pi 501</div>
-      <div class="pi-ip">192.168.68.117 · 8GB</div>
-      <div class="pi-services">
-        <span class="tag tag-cyan">Dashy</span>
-        <span class="tag tag-green">Hermes</span>
-        <span class="tag tag-cyan">UptimeKuma</span>
-        <span class="tag tag-purple">Indexer</span>
-        <span class="tag tag-purple">Media Mgr</span>
-        <span class="tag tag-cyan">Gallery</span>
-        <span class="tag tag-orange">NewsBot</span>
-        <span class="tag tag-orange">ChangeDetect</span>
-        <span class="tag tag-amber">Speedtest</span>
-        <span class="tag tag-orange">Glances</span>
-        <span class="tag tag-green">Portainer</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- PIPELINE -->
-<div class="section">
-  <div class="section-title">Media Pipeline</div>
+<!-- MEDIA PIPELINE -->
+<div class="section" style="margin:30px 0;">
+  <div class="section-title" style="color:#34d399;">Media Pipeline — Fluxo Completo</div>
   <div class="pipeline">
-    <span class="pipe-item" style="background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);color:#38bdf8;">🔎 Indexer</span>
+    <span class="pipe-item" style="background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);color:#38bdf8;">🔎 Indexer (.501:9696)</span>
     <span class="pipe-arrow">→</span>
-    <span class="pipe-item" style="background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.2);color:#34d399;">📋 Media Mgr</span>
+    <span class="pipe-item" style="background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.2);color:#34d399;">📋 Media Mgr (.501:6969)</span>
     <span class="pipe-arrow">→</span>
-    <span class="pipe-item" style="background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.2);color:#fbbf24;">⬇️ Downloader</span>
+    <span class="pipe-item" style="background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.2);color:#fbbf24;">⬇️ Downloader (.108:8080)</span>
     <span class="pipe-arrow">→</span>
-    <span class="pipe-item" style="background:rgba(251,113,133,0.1);border:1px solid rgba(251,113,133,0.2);color:#fb7185;">🛡️ ClamAV</span>
+    <span class="pipe-item" style="background:rgba(251,113,133,0.1);border:1px solid rgba(251,113,133,0.2);color:#fb7185;">🛡️ ClamAV (.108)</span>
     <span class="pipe-arrow">→</span>
-    <span class="pipe-item" style="background:rgba(145,94,255,0.1);border:1px solid rgba(145,94,255,0.2);color:#915eff;">🎬 Jellyfin</span>
+    <span class="pipe-item" style="background:rgba(145,94,255,0.1);border:1px solid rgba(145,94,255,0.2);color:#915eff;">🎬 Jellyfin (.124)</span>
     <span class="pipe-arrow">→</span>
-    <span class="pipe-item" style="background:rgba(145,94,255,0.15);border:1px solid rgba(145,94,255,0.3);color:#a78bfa;">🖼️ Gallery</span>
+    <span class="pipe-item" style="background:rgba(145,94,255,0.15);border:1px solid rgba(145,94,255,0.3);color:#a78bfa;">🖼️ Gallery (.501:5173)</span>
   </div>
 </div>
 
-<!-- GALLERY -->
-<div class="section">
-  <div class="section-title">Gallery Downloader</div>
-  <div class="pipeline">
-    <span class="pipe-item" style="background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);color:#38bdf8;">🎮 gallery-cli</span>
-    <span class="pipe-arrow">→</span>
-    <span class="pipe-item" style="background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.2);color:#34d399;">📥 Download</span>
-    <span class="pipe-arrow">→</span>
-    <span class="pipe-item" style="background:rgba(145,94,255,0.1);border:1px solid rgba(145,94,255,0.2);color:#915eff;">⚙️ API 5173</span>
-    <span class="pipe-arrow">→</span>
-    <span class="pipe-item" style="background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.2);color:#fbbf24;">💾 TrueNAS</span>
-    <span class="pipe-arrow">→</span>
-    <span class="pipe-item" style="background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);color:#38bdf8;">🌐 UI 8787</span>
-  </div>
-</div>
-
-<!-- TABLE -->
-<div class="section">
+<!-- CONTAINERS TABLE -->
+<div class="section" style="margin:30px 0;">
   <div class="section-title">All Containers (14 running)</div>
   <table class="svc-table">
     <tr><th>Service</th><th>Type</th><th>Port</th><th>Status</th><th>Host</th></tr>
-    <tr><td>Dashboard</td><td><span class="tag tag-cyan" style="font-size:0.6rem;">Frontend</span></td><td>8200</td><td class="svc-up">Up</td><td>Pi 4</td></tr>
-    <tr><td>Pi-hole</td><td><span class="tag tag-cyan" style="font-size:0.6rem;">Frontend</span></td><td>53</td><td class="svc-up">Up</td><td>Pi 4</td></tr>
-    <tr><td>NPM</td><td><span class="tag tag-green" style="font-size:0.6rem;">Backend</span></td><td>81</td><td class="svc-up">Up</td><td>Pi 4</td></tr>
-    <tr><td>Wallos</td><td><span class="tag tag-amber" style="font-size:0.6rem;">External</span></td><td>8982</td><td class="svc-up">Up</td><td>Pi 4</td></tr>
-    <tr><td>AzuraCast</td><td><span class="tag tag-cyan" style="font-size:0.6rem;">Frontend</span></td><td>—</td><td class="svc-up">Up</td><td>Pi 5</td></tr>
-    <tr><td>Downloader</td><td><span class="tag tag-green" style="font-size:0.6rem;">Backend</span></td><td>8080</td><td class="svc-up">Up</td><td>Pi 5</td></tr>
-    <tr><td>ClamAV</td><td><span class="tag tag-rose" style="font-size:0.6rem;">Security</span></td><td>—</td><td class="svc-up">Up</td><td>Pi 5</td></tr>
-    <tr><td>Duplicati</td><td><span class="tag tag-purple" style="font-size:0.6rem;">Storage</span></td><td>—</td><td class="svc-up">Up</td><td>Pi 4</td></tr>
-    <tr><td>UptimeKuma</td><td><span class="tag tag-cyan" style="font-size:0.6rem;">Frontend</span></td><td>3001</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
-    <tr><td>Indexer Mgr</td><td><span class="tag tag-purple" style="font-size:0.6rem;">Storage</span></td><td>9696</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
-    <tr><td>Media Mgr</td><td><span class="tag tag-purple" style="font-size:0.6rem;">Storage</span></td><td>6969</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
-    <tr><td>Gallery API</td><td><span class="tag tag-green" style="font-size:0.6rem;">Backend</span></td><td>5173</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
-    <tr><td>Gallery UI</td><td><span class="tag tag-cyan" style="font-size:0.6rem;">Frontend</span></td><td>8787</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
-    <tr><td>Portainer</td><td><span class="tag tag-green" style="font-size:0.6rem;">Backend</span></td><td>9001</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
+    <tr><td>Dashboard</td><td><span class="tag" style="background:rgba(56,189,248,0.12);color:#38bdf8;border:1px solid #38bdf833;">Frontend</span></td><td>8200</td><td class="svc-up">Up</td><td>Pi 4</td></tr>
+    <tr><td>Pi-hole</td><td><span class="tag" style="background:rgba(56,189,248,0.12);color:#38bdf8;border:1px solid #38bdf833;">Frontend</span></td><td>53</td><td class="svc-up">Up</td><td>Pi 4</td></tr>
+    <tr><td>NPM</td><td><span class="tag" style="background:rgba(52,211,153,0.12);color:#34d399;border:1px solid #34d39933;">Backend</span></td><td>81</td><td class="svc-up">Up</td><td>Pi 4</td></tr>
+    <tr><td>Wallos</td><td><span class="tag" style="background:rgba(251,191,36,0.12);color:#fbbf24;border:1px solid #fbbf2433;">External</span></td><td>8982</td><td class="svc-up">Up</td><td>Pi 4</td></tr>
+    <tr><td>Duplicati</td><td><span class="tag" style="background:rgba(145,94,255,0.12);color:#915eff;border:1px solid #915eff33;">Storage</span></td><td>—</td><td class="svc-up">Up</td><td>Pi 4</td></tr>
+    <tr><td>Pi.Alert</td><td><span class="tag" style="background:rgba(251,113,133,0.12);color:#fb7185;border:1px solid #fb718533;">Security</span></td><td>—</td><td class="svc-up">Up</td><td>Pi 4</td></tr>
+    <tr><td>AzuraCast</td><td><span class="tag" style="background:rgba(56,189,248,0.12);color:#38bdf8;border:1px solid #38bdf833;">Frontend</span></td><td>—</td><td class="svc-up">Up</td><td>Pi 5</td></tr>
+    <tr><td>Downloader</td><td><span class="tag" style="background:rgba(52,211,153,0.12);color:#34d399;border:1px solid #34d39933;">Backend</span></td><td>8080</td><td class="svc-up">Up</td><td>Pi 5</td></tr>
+    <tr><td>ClamAV</td><td><span class="tag" style="background:rgba(251,113,133,0.12);color:#fb7185;border:1px solid #fb718533;">Security</span></td><td>—</td><td class="svc-up">Up</td><td>Pi 5</td></tr>
+    <tr><td>Guardian</td><td><span class="tag" style="background:rgba(251,146,60,0.12);color:#fb923c;border:1px solid #fb923c33;">Automation</span></td><td>—</td><td class="svc-up">Up</td><td>Pi 5</td></tr>
+    <tr><td>DuckDNS</td><td><span class="tag" style="background:rgba(251,191,36,0.12);color:#fbbf24;border:1px solid #fbbf2433;">External</span></td><td>—</td><td class="svc-up">Up</td><td>Pi 5</td></tr>
+    <tr><td>UptimeKuma</td><td><span class="tag" style="background:rgba(56,189,248,0.12);color:#38bdf8;border:1px solid #38bdf833;">Frontend</span></td><td>3001</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
+    <tr><td>Indexer Mgr</td><td><span class="tag" style="background:rgba(145,94,255,0.12);color:#915eff;border:1px solid #915eff33;">Storage</span></td><td>9696</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
+    <tr><td>Media Mgr</td><td><span class="tag" style="background:rgba(145,94,255,0.12);color:#915eff;border:1px solid #915eff33;">Storage</span></td><td>6969</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
+    <tr><td>Gallery API</td><td><span class="tag" style="background:rgba(52,211,153,0.12);color:#34d399;border:1px solid #34d39933;">Backend</span></td><td>5173</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
+    <tr><td>Gallery UI</td><td><span class="tag" style="background:rgba(56,189,248,0.12);color:#38bdf8;border:1px solid #38bdf833;">Frontend</span></td><td>8787</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
+    <tr><td>ChangeDetection</td><td><span class="tag" style="background:rgba(251,146,60,0.12);color:#fb923c;border:1px solid #fb923c33;">Automation</span></td><td>5500</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
+    <tr><td>Speedtest</td><td><span class="tag" style="background:rgba(251,191,36,0.12);color:#fbbf24;border:1px solid #fbbf2433;">External</span></td><td>8089</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
+    <tr><td>NewsBot</td><td><span class="tag" style="background:rgba(251,146,60,0.12);color:#fb923c;border:1px solid #fb923c33;">Automation</span></td><td>—</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
+    <tr><td>Portainer</td><td><span class="tag" style="background:rgba(52,211,153,0.12);color:#34d399;border:1px solid #34d39933;">Backend</span></td><td>9001</td><td class="svc-up">Up</td><td>Pi 501</td></tr>
+    <tr><td>Glances</td><td><span class="tag" style="background:rgba(251,146,60,0.12);color:#fb923c;border:1px solid #fb923c33;">Automation</span></td><td>61208</td><td class="svc-up">Up</td><td>All 3</td></tr>
   </table>
 </div>
 
 <!-- CRON -->
-<div class="section">
+<div class="section" style="margin:30px 0;">
   <div class="section-title">Automation</div>
   <div class="cron-grid">
     <div class="cron-item"><div class="cron-time">Every 5min</div><div class="cron-task">Guardian Check</div><div class="cron-host">Pi 5</div></div>
@@ -375,7 +548,7 @@
 
 <footer>
   Robert Carvalho · <a href="https://robcarv.github.io">robcarv.github.io</a> · 2026<br>
-  <span style="font-size:0.7rem;">3 Pis · 14 Containers · 55+ Services · 10.9TB NVMe · 0 Threats</span>
+  <span style="font-size:0.7rem;">3 Pis · 21 Containers · 55+ Services · 10.9TB NVMe · 0 Threats</span>
 </footer>
 
 </div>
