@@ -5,7 +5,7 @@ import NewsFeed from "@/components/NewsFeed";
 import RadioPlayer from "@/components/RadioPlayer";
 import Projects from "@/components/Projects";
 
-export default function Home() {
+export default function HomePt() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-8 space-y-16">
       <Hero />
