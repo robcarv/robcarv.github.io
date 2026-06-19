@@ -283,34 +283,40 @@ function renderHomelab(nodes, updated, isLive) {
     const n = nodes[pi.name];
     if (!n) return `<div class="card"><div class="card-header"><div class="card-title">${pi.name}</div></div><div class="loading" style="padding:1rem 0;font-size:.75rem">Offline</div></div>`;
 
-    const cpu = parseFloat(n.cpu)||0, ram = parseFloat(n.ram)||0;
-    const ramGb = typeof n.ram_gb==='number' ? n.ram_gb.toFixed(1)+'GB' : (n.ram_gb||'?');
-    const ramTot = typeof n.ram_total==='number' ? n.ram_total.toFixed(1)+'GB' : (n.ram_total||'?');
+    const cpu = typeof n.cpu==='object' ? (n.cpu?.total||0) : (parseFloat(n.cpu)||0);
+    const ram = typeof n.ram==='object' ? (n.ram?.percent||0) : (parseFloat(n.ram)||0);
+    const ramGb = typeof n.ram==='object' ? ((n.ram?.used_gb||0).toFixed(1)+'GB') : (n.ram_gb||'?');
+    const ramTot = typeof n.ram==='object' ? ((n.ram?.total_gb||0).toFixed(1)+'GB') : (n.ram_total||'?');
     return `
     <div class="card" onclick="this.classList.toggle('expanded')">
       <div class="card-header">
         <div>
           <div class="card-title">${pi.name}</div>
-          <div class="card-sub">${n.services||''}</div>
+          <div class="card-sub">${n.services||''} · ${n.temperature_c||'?'}°C</div>
         </div>
         <span class="badge badge-${n.status||'warn'}">
           <span class="dot dot-${n.status||'warn'}"></span> ${n.status}
         </span>
       </div>
       <div class="metric">
-        <div class="metric-label"><span>CPU</span><span>${n.cpu}</span></div>
+        <div class="metric-label"><span>CPU</span><span>${cpu}% (usr ${n.cpu?.user||'?'}% sys ${n.cpu?.system||'?'}%)</span></div>
         <div class="metric-bar"><div class="metric-fill ${cpu>80?'high':cpu>60?'mid':'low'}" style="width:${cpu}%"></div></div>
       </div>
       <div class="metric">
-        <div class="metric-label"><span>RAM</span><span>${n.ram} (${ramGb}/${ramTot})</span></div>
+        <div class="metric-label"><span>RAM</span><span>${ram}% (${ramGb}/${ramTot})</span></div>
         <div class="metric-bar"><div class="metric-fill ${ram>90?'high':ram>70?'mid':'low'}" style="width:${ram}%"></div></div>
       </div>
-      <div style="font-size:.72rem;color:var(--text-muted);margin-top:.5rem">
-        Uptime: ${n.uptime||'N/A'}<br>
-        Load: ${n.load||'N/A'}
-      </div>
+      ${n.swap ? `<div class="metric"><div class="metric-label"><span>Swap</span><span>${n.swap.percent}%</span></div><div class="metric-bar"><div class="metric-fill ${n.swap.percent>80?'high':'low'}" style="width:${n.swap.percent}%"></div></div></div>` : ''}
       <div class="expand-detail">
-        <div style="font-size:.65rem;color:var(--text-muted)">Data source: ${n._source||'cached'}</div>
+        <div style="margin-top:.5rem;font-size:.68rem;color:var(--text-muted);line-height:1.6">
+          Load: ${n.load?.['1min']||'?'}/${n.load?.['5min']||'?'}/${n.load?.['15min']||'?'} (${n.load?.cores||'?'} cores)<br>
+          Procs: ${n.processes?.total||'?'} total, ${n.processes?.running||'?'} running, ${n.processes?.threads||'?'} threads<br>
+          Disk I/O: ${n.disk_io?.read_mb||0}MB read / ${n.disk_io?.write_mb||0}MB write<br>
+          ${n.disks?.map(d=>`${d.mount}: ${d.used_gb}/${d.size_gb}GB (${d.percent}%)`).join('<br>')||''}
+          ${n.network ? Object.entries(n.network).map(([iface, net])=>`${iface}: ${net.recv_mb}MB↓ ${net.sent_mb}MB↑`).join('<br>') : ''}
+          <br>Containers (${n.container_count||0}): ${(n.containers||[]).slice(0,10).map(c=>c.name).join(', ')||'none'}
+          ${n.uptime ? '<br>Uptime: '+n.uptime : ''}
+        </div>
       </div>
     </div>`;
   }).join('');
