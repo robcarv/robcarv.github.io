@@ -18,11 +18,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,15,.85)
 .nav-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px}
 .nav-logo{font-weight:700;font-size:1.25rem;color:#fff;text-decoration:none;display:flex;align-items:center;gap:.5rem}
 .nav-logo .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block}
-.nav-links{display:flex;gap:1.5rem;align-items:center}
-.nav-links a{color:var(--text-muted);text-decoration:none;font-size:.875rem;transition:color .2s}
+.nav-links{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap}
+.nav-links a{color:var(--text-muted);text-decoration:none;font-size:.75rem;transition:color .2s}
 .nav-links a:hover{color:#fff}
 .lang-toggle{display:flex;gap:4px;margin-left:1rem;padding-left:1rem;border-left:1px solid var(--border)}
-.lang-toggle a{font-size:.75rem;padding:3px 8px;border-radius:4px}
+.lang-toggle a{font-size:.65rem;padding:3px 8px;border-radius:4px}
 .lang-toggle a.active{background:#1e1e2a;color:#fff}
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding-top:60px}
 .hero-avatar{width:100px;height:100px;border-radius:50%;border:2px solid var(--border);margin:0 auto 1.5rem;overflow:hidden;background:#1e1e2a;transition:border-color .3s}
@@ -37,28 +37,42 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,15,.85)
 .hero .radio-badge{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,#059669,#047857);color:#fff;padding:.5rem 1.25rem;border-radius:100px;font-size:.875rem;font-weight:500;text-decoration:none;transition:transform .2s}
 .hero .radio-badge:hover{transform:scale(1.05)}
 .section{padding:5rem 0}
-.section-title{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:2rem;display:flex;align-items:center;gap:.75rem}
+.section-title{font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:2rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
 .section-title .icon{font-size:1.5rem}
 .section-sub{font-size:.8rem;color:var(--text-muted);font-weight:400;margin-left:auto;display:flex;align-items:center;gap:.5rem}
 .grid{display:grid;gap:1rem}.grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.grid-2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}.grid-4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:border-color .2s,transform .2s}
 .card:hover{border-color:#2a2a3a}
 .card.expanded{border-color:var(--accent)}
-.card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.card-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1rem;gap:.5rem}
 .card-title{font-weight:600;font-size:.95rem;color:#fff}.card-sub{font-size:.72rem;color:var(--text-muted);margin-top:2px}
 .dot{width:8px;height:8px;border-radius:50%;display:inline-block;animation:pulse-glow 2s ease-in-out infinite}
 .dot-ok{background:var(--green);box-shadow:0 0 6px rgba(34,197,94,.4)}.dot-warn{background:var(--yellow);box-shadow:0 0 6px rgba(234,179,8,.4)}.dot-fail{background:var(--red);box-shadow:0 0 6px rgba(239,68,68,.4)}.dot-loading{background:var(--blue);box-shadow:0 0 6px rgba(59,130,246,.4)}
 @keyframes pulse-glow{0%,100%{opacity:1}50%{opacity:.5}}
 .metric{margin-bottom:.75rem}.metric-label{display:flex;justify-content:space-between;font-size:.75rem;margin-bottom:3px}.metric-label span:first-child{color:var(--text-muted)}.metric-label span:last-child{color:var(--text);font-variant-numeric:tabular-nums}.metric-bar{height:4px;background:#1e1e2a;border-radius:2px;overflow:hidden}.metric-fill{height:100%;border-radius:2px;transition:width .5s ease-out}.metric-fill.low{background:var(--green)}.metric-fill.mid{background:var(--yellow)}.metric-fill.high{background:var(--red)}
 .badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:100px;font-size:.7rem;font-weight:500}.badge-ok{background:rgba(34,197,94,.1);color:var(--green);border:1px solid rgba(34,197,94,.2)}.badge-warn{background:rgba(234,179,8,.1);color:var(--yellow);border:1px solid rgba(234,179,8,.2)}.badge-fail{background:rgba(239,68,68,.1);color:var(--red);border:1px solid rgba(239,68,68,.2)}
+/* Services section */
+.services-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.services-card-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);background:rgba(255,255,255,.02)}
+.services-card-header h3{font-size:1rem;color:#fff;font-weight:600;display:flex;align-items:center;gap:.5rem}
+.services-card-header .svc-count{font-size:.7rem;color:var(--text-muted);background:#1e1e2a;padding:2px 10px;border-radius:100px}
+.services-table{width:100%;border-collapse:collapse;font-size:.8rem}
+.services-table th{text-align:left;padding:.6rem 1.5rem;font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);font-weight:500;background:rgba(0,0,0,.15)}
+.services-table td{padding:.6rem 1.5rem;border-top:1px solid rgba(255,255,255,.03);color:var(--text-muted)}
+.services-table tr:hover td{background:rgba(255,255,255,.015)}
+.status-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;font-size:.68rem;font-weight:500}
+.status-up{background:rgba(34,197,94,.1);color:var(--green);border:1px solid rgba(34,197,94,.2)}
+.status-exited{background:rgba(239,68,68,.1);color:var(--red);border:1px solid rgba(239,68,68,.2)}
+.status-paused{background:rgba(234,179,8,.1);color:var(--yellow);border:1px solid rgba(234,179,8,.2)}
+.status-unknown{background:rgba(148,163,184,.1);color:#94a3b8;border:1px solid rgba(148,163,184,.2)}
+.container-name{color:#e4e4eb;font-weight:500;text-transform:capitalize}
+/* Radio */
 .radio-card{background:linear-gradient(135deg,#111118 0%,#1a1025 50%,#111118 100%);border:1px solid var(--border);border-radius:20px;padding:2rem;position:relative;overflow:hidden}
 .radio-card::before{content:'';position:absolute;top:-50%;right:-50%;width:300px;height:300px;background:radial-gradient(circle,rgba(168,85,247,.06) 0%,transparent 70%);pointer-events:none}
 .radio-now{display:flex;gap:1.5rem;align-items:center}
 .radio-art{width:100px;height:100px;border-radius:12px;background:#1e1e2a;flex-shrink:0;overflow:hidden;position:relative;box-shadow:0 8px 32px rgba(0,0,0,.4)}
-.radio-art.playing{animation:vinyl-spin 4s linear infinite paused}
 .radio-art img{width:100%;height:100%;object-fit:cover}
 .radio-art .fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;background:linear-gradient(135deg,#1e1e2a,#2a1a3a)}
-@keyframes vinyl-spin{to{transform:rotate(360deg)}}
 .radio-info{flex:1;min-width:0}
 .radio-info .now-label{font-size:.6rem;text-transform:uppercase;letter-spacing:.15em;color:var(--accent2);margin-bottom:.35rem;font-weight:600}
 .radio-info h3{font-size:1.15rem;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600;letter-spacing:-.01em}
@@ -80,10 +94,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,15,.85)
 .history-time{color:var(--text-muted);width:42px;flex-shrink:0;font-variant-numeric:tabular-nums}
 .history-song{color:var(--text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .history-song strong{color:#ccc;font-weight:400}
+/* Timeline */
 .timeline{position:relative;padding-left:2rem}.timeline::before{content:'';position:absolute;left:8px;top:8px;bottom:8px;width:1px;background:var(--border)}.timeline-item{position:relative;margin-bottom:2rem}.timeline-item::before{content:'';position:absolute;left:-1.65rem;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}.timeline-role{font-weight:600;color:#fff;font-size:1rem}.timeline-company{color:var(--accent);font-size:.85rem;margin-bottom:.25rem}.timeline-period{color:var(--text-muted);font-size:.75rem;margin-bottom:.5rem}.timeline-items{list-style:none}.timeline-items li{color:var(--text-muted);font-size:.82rem;padding:2px 0;position:relative;padding-left:1rem}.timeline-items li::before{content:'—';position:absolute;left:0;color:var(--border)}
+/* Projects */
 .project-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:border-color .2s}.project-card:hover{border-color:#2a2a3a;transform:translateY(-1px)}.project-card h4{font-size:.95rem;color:#fff;margin-bottom:.5rem}.project-card p{font-size:.8rem;color:var(--text-muted);margin-bottom:.75rem}.project-card .links{display:flex;gap:.75rem}.project-card .links a{font-size:.78rem;color:var(--accent);text-decoration:none;padding:4px 10px;border-radius:6px;border:1px solid var(--border);transition:all .2s}.project-card .links a:hover{border-color:var(--accent);background:rgba(99,102,241,.1)}
-.news-source{font-size:.65rem;padding:2px 8px;border-radius:100px;font-weight:500;white-space:nowrap;cursor:pointer;transition:opacity .2s}.news-source.dimmed{opacity:.4}.news-item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.25rem;transition:border-color .2s,opacity .3s}.news-item:hover{border-color:#2a2a3a}.news-item.hidden{display:none}.news-item h4{font-size:.9rem;color:#fff;margin-bottom:.5rem;line-height:1.4}.news-item .news-meta{display:flex;justify-content:space-between;align-items:center;font-size:.72rem;color:var(--text-muted)}.news-item a{color:var(--accent);text-decoration:none;font-size:.78rem}.news-item a:hover{text-decoration:underline}
+/* News */
+.news-source{font-size:.65rem;padding:2px 8px;border-radius:100px;font-weight:500;white-space:nowrap;cursor:pointer;transition:opacity .2s}.news-source.dimmed{opacity:.4}.news-item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.25rem;transition:border-color .2s,opacity .3s}.news-item:hover{border-color:#2a2a3a}.news-item.hidden{display:none}.news-item h4{font-size:.9rem;color:#fff;margin-bottom:.35rem;line-height:1.4}.news-item .news-summary{font-size:.75rem;color:var(--text-muted);margin:.4rem 0;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.news-item .news-meta{display:flex;justify-content:space-between;align-items:center;font-size:.72rem;color:var(--text-muted)}.news-item a{color:var(--accent);text-decoration:none;font-size:.78rem}.news-item a:hover{text-decoration:underline}
+/* Footer */
 footer{border-top:1px solid var(--border);padding:2rem 0;margin-top:5rem;text-align:center;color:var(--text-muted);font-size:.8rem}footer .socials{display:flex;gap:1.5rem;justify-content:center;margin-top:.75rem}footer .socials a{color:var(--text-muted);text-decoration:none;font-size:.8rem}footer .socials a:hover{color:#fff}
+/* Utilities */
 .loading{text-align:center;padding:2rem;color:var(--text-muted);font-size:.85rem}
 .btn{background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted);padding:6px 14px;border-radius:8px;font-size:.8rem;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:.4rem}
 .btn:hover{border-color:var(--accent);color:#fff}.btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}.btn-sm{padding:4px 10px;font-size:.72rem}
@@ -95,7 +114,13 @@ footer{border-top:1px solid var(--border);padding:2rem 0;margin-top:5rem;text-al
 .expand-detail{font-size:.68rem;color:var(--text-muted);margin-top:.4rem;padding-top:.4rem;border-top:1px solid var(--border);display:none}
 .card.expanded .expand-detail{display:block}
 .noise{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:999;opacity:.015;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-@media(max-width:640px){.hero h1{font-size:1.8rem}.nav-links{display:none}.section{padding:3rem 0}.radio-now{flex-direction:column;text-align:center}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.animate-in{animation:fadeIn .4s ease-out both}
+/* Responsive */
+@media(max-width:768px){
+  .hero h1{font-size:1.8rem}.nav-links{display:none}.section{padding:3rem 0}.radio-now{flex-direction:column;text-align:center}
+  .services-table th,.services-table td{padding:.5rem .75rem;font-size:.7rem}
+}
 </style>
 </head>
 <body>
@@ -105,12 +130,13 @@ footer{border-top:1px solid var(--border);padding:2rem 0;margin-top:5rem;text-al
   <div class="nav-inner">
     <a href="#" class="nav-logo"><span class="logo-dot"></span>RC</a>
     <div class="nav-links">
-      <a href="#about">About</a><a href="#homelab">Homelab</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#news">News</a>
+      <a href="#about">About</a><a href="#homelab">Homelab</a><a href="#services">Services</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#news">News</a>
       <div class="lang-toggle"><a href="index.html" class="active">EN</a><a href="index-pt.html">PT</a></div>
     </div>
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero" id="about"><div>
   <div class="hero-avatar"><img src="avatar.svg" alt="Robert Carvalho" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="avatar-fallback" style="display:none">👨‍💻</div></div>
   <h1>Robert Carvalho</h1>
@@ -123,20 +149,33 @@ footer{border-top:1px solid var(--border);padding:2rem 0;margin-top:5rem;text-al
   <a href="https://dublincalling.ie" target="_blank" class="radio-badge">▶ Dublin Calling</a>
 </div></section>
 
+<!-- HOMELAB -->
 <section class="section" id="homelab"><div class="container">
   <h2 class="section-title"><span class="icon">🖥️</span>Homelab Status
     <span class="section-sub" id="health-updated"></span>
     <button class="btn btn-sm" onclick="refreshAll()" id="refreshBtn">↻ Refresh</button>
-    <label class="refresh-indicator"><input type="checkbox" id="autoRefresh" checked onchange="toggleAutoRefresh()"> Auto <span class="countdown" id="countdown">60s</span></label>
+    <label class="refresh-indicator"><input type="checkbox" id="autoRefresh" onchange="toggleAutoRefresh()"> Auto <span class="countdown" id="countdown">off</span></label>
   </h2>
-  <div class="grid grid-3" id="homelab-nodes"><div class="loading">Loading from Glances API...</div></div>
+  <div class="grid grid-3" id="homelab-nodes"><div class="loading">Loading health data...</div></div>
 </div></section>
 
+<!-- SERVICES -->
+<section class="section" id="services"><div class="container">
+  <h2 class="section-title"><span class="icon">🐳</span>Docker Services
+    <span class="section-sub" id="services-updated"></span>
+  </h2>
+  <div class="grid" style="grid-template-columns:1fr;gap:1.5rem" id="services-container">
+    <div class="loading">Loading service data...</div>
+  </div>
+</div></section>
+
+<!-- RADIO -->
 <section class="section"><div class="container">
   <h2 class="section-title"><span class="icon">🎵</span>Dublin Calling<span class="section-sub" id="radio-status"></span></h2>
-  <div class="radio-card" id="radio-content"><div class="loading">Loading from AzuraCast...</div></div>
+  <div class="radio-card" id="radio-content"><div class="loading">Loading radio data...</div></div>
 </div></section>
 
+<!-- EXPERIENCE -->
 <section class="section" id="experience"><div class="container">
   <h2 class="section-title"><span class="icon">💼</span>Experience</h2>
   <div class="timeline">
@@ -146,6 +185,7 @@ footer{border-top:1px solid var(--border);padding:2rem 0;margin-top:5rem;text-al
   </div>
 </div></section>
 
+<!-- PROJECTS -->
 <section class="section" id="projects"><div class="container">
   <h2 class="section-title"><span class="icon">🚀</span>Projects</h2>
   <div class="grid grid-2">
@@ -156,165 +196,107 @@ footer{border-top:1px solid var(--border);padding:2rem 0;margin-top:5rem;text-al
   </div>
 </div></section>
 
+<!-- NEWS -->
 <section class="section" id="news"><div class="container">
   <h2 class="section-title"><span class="icon">📰</span>Latest News<span class="section-sub" id="news-updated"></span></h2>
   <div class="toolbar" id="news-filters"></div>
   <div class="grid grid-2" id="news-feed"><div class="loading">Loading news...</div></div>
 </div></section>
 
-<footer><p>© 2026 Robert Carvalho</p><div class="socials"><a href="https://linkedin.com/in/robcarv" target="_blank">LinkedIn</a><a href="https://github.com/robcarv" target="_blank">GitHub</a><a href="https://instagram.com/robcarv" target="_blank">Instagram</a></div><p style="margin-top:.5rem">Built with vanilla HTML/CSS/JS · Live data via Glances &amp; AzuraCast APIs</p></footer>
+<!-- FOOTER -->
+<footer><p>© 2026 Robert Carvalho</p><div class="socials"><a href="https://linkedin.com/in/robcarv" target="_blank">LinkedIn</a><a href="https://github.com/robcarv" target="_blank">GitHub</a><a href="https://instagram.com/robcarv" target="_blank">Instagram</a></div><p style="margin-top:.5rem">Built with vanilla HTML/CSS/JS · Data from health.json &amp; news.json</p></footer>
 
 <script>
 // ============================================================
-// CONFIG
+// CONFIG — static files only, NO live API
 // ============================================================
-const PIS = [
-  {name:'Pi501',ip:'192.168.68.117',port:61208,label:'Gallery, Dashy, Hermes'},
-  {name:'Pi5',  ip:'192.168.68.108',port:61208,label:'qBittorrent, AzuraCast, DuckDNS'},
-  {name:'Pi4',  ip:'192.168.68.102',port:61208,label:'Pi-hole, NPM, Wallos'},
-];
-const AZURACAST_URL = 'https://dublincalling.duckdns.org/api/nowplaying';
+const PI_ORDER = ['Pi501','Pi5','Pi4'];
 const REFRESH_INTERVAL = 60;
 let refreshTimer = null;
 let countdownValue = REFRESH_INTERVAL;
+let healthData = null;
+let allNews = [];
+let newsFilter = 'All';
 
 // ============================================================
 // HELPERS
 // ============================================================
-async function fetchJSON(url, timeout=5000) {
-  const controller = new AbortController();
-  const tid = setTimeout(() => controller.abort(), timeout);
-  try {
-    const r = await fetch(url, {signal: controller.signal});
-    clearTimeout(tid);
-    if (!r.ok) throw new Error('HTTP '+r.status);
-    return await r.json();
-  } catch(e) { clearTimeout(tid); return null; }
-}
+function fmtGb(v) { return Number(v||0).toFixed(1) + 'GB'; }
+function fmtPct(v) { return Math.round(v||0) + '%'; }
+function fmtNum1(v) { return Number(v||0).toFixed(1); }
+function fmtInt(v) { return Math.round(v||0); }
 
-function showSpinner(el) {
-  el.innerHTML = '<div class="loading"><span class="spinner" style="display:inline-block;width:16px;height:16px;border:2px solid var(--text-muted);border-top-color:transparent;border-radius:50%;animation:spin .8s linear infinite;vertical-align:middle;margin-right:8px"></span> Updating...</div>';
+function cpuClass(val) { return val>80?'high':val>60?'mid':'low'; }
+function ramClass(val) { return val>90?'high':val>70?'mid':'low'; }
+
+function nodeStatus(n) {
+  const cpu = (n.cpu?.total||0);
+  const ram = (n.ram?.percent||0);
+  if (cpu>80||ram>90) return 'warn';
+  return 'ok';
 }
 
 // ============================================================
-// HOMELAB — Live API + Cached JSON
+// HOMELAB — rendered from health.json nodes
 // ============================================================
-async function fetchHomelabLive() {
-  const nodes = {};
-  for (const pi of PIS) {
-    try {
-      const api = `http://${pi.ip}:${pi.port}/api/4`;
-      const [quick, mem, uptimeR, loadR] = await Promise.all([
-        fetchJSON(`${api}/quicklook`, 3000),
-        fetchJSON(`${api}/mem`, 3000),
-        fetchJSON(`${api}/uptime`, 3000),
-        fetchJSON(`${api}/load`, 3000),
-      ]);
-      if (quick) {
-        const cpu = typeof quick.cpu==='number' ? quick.cpu : (quick.cpu?.user||0);
-        const ram = typeof quick.mem==='number' ? quick.mem : (quick.mem?.percent||0);
-        nodes[pi.name] = {
-          status: cpu<80 && ram<90 ? 'ok' : 'warn',
-          cpu: cpu.toFixed(1)+'%', ram: ram.toFixed(1)+'%',
-          ram_gb: (mem?.used||0)/1024/1024/1024,
-          ram_total: (mem?.total||0)/1024/1024/1024,
-          uptime: typeof uptimeR==='string' ? uptimeR : '?',
-          load: loadR ? `${loadR.min1?.toFixed(1)||0}/${loadR.min5?.toFixed(1)||0}/${loadR.min15?.toFixed(1)||0}` : '-',
-          services: pi.label,
-          _source: 'live'
-        };
-      }
-    } catch(e) { nodes[pi.name] = null; }
-  }
-  return Object.values(nodes).some(n=>n) ? nodes : null;
-}
-
-async function fetchRadioLive() {
-  try {
-    const s = await fetchJSON(AZURACAST_URL, 3000);
-    if (!s || !s[0]) return null;
-    const st = s[0];
-    const np = st.now_playing?.song||{};
-    return {
-      station: st.station?.name||'dublincalling',
-      is_online: st.is_online||false,
-      is_live: st.live?.is_live||false,
-      now_playing: {
-        title:np.title||'', artist:np.artist||'', album:np.album||'',
-        art:np.art||'', text:np.text||'',
-        duration:st.now_playing?.duration||0, elapsed:st.now_playing?.elapsed||0
-      },
-      playing_next: {
-        title:st.playing_next?.song?.title||'',
-        artist:st.playing_next?.song?.artist||''
-      },
-      listeners: st.listeners?.current||0,
-      listen_url: st.station?.listen_url||'',
-      _source:'live'
-    };
-  } catch(e) { return null; }
-}
-
-async function loadAll() {
-  // Try live APIs first
-  const [liveNodes, liveRadio] = await Promise.all([fetchHomelabLive(), fetchRadioLive()]);
-  
-  // Fallback to cached JSONs
-  const cached = await fetchJSON('health.json');
-  const nodes = liveNodes || cached?.nodes || null;
-  const radio = liveRadio || cached?.radio || null;
-  const updated = liveNodes ? new Date().toLocaleTimeString() : (cached?.updated || 'N/A');
-
-  renderHomelab(nodes, updated, !!liveNodes);
-  renderRadio(radio, !!liveRadio);
-}
-
-function renderHomelab(nodes, updated, isLive) {
+function renderHomelab(nodes, updated) {
   const container = document.getElementById('homelab-nodes');
-  document.getElementById('health-updated').textContent = 
-    (isLive ? 'Live ' : 'Updated: ') + updated;
-
   if (!nodes || !Object.keys(nodes).length) {
-    container.innerHTML = '<div class="card loading">No data available</div>';
+    container.innerHTML = '<div class="card loading">No health data available</div>';
     return;
   }
+  document.getElementById('health-updated').textContent = 'Updated: ' + (updated||'N/A');
 
-  container.innerHTML = PIS.map(pi => {
-    const n = nodes[pi.name];
-    if (!n) return `<div class="card"><div class="card-header"><div class="card-title">${pi.name}</div></div><div class="loading" style="padding:1rem 0;font-size:.75rem">Offline</div></div>`;
+  container.innerHTML = PI_ORDER.map(name => {
+    const n = nodes[name];
+    if (!n) return `<div class="card"><div class="card-header"><div class="card-title">${name}</div></div><div class="loading" style="padding:1rem 0;font-size:.75rem">Offline</div></div>`;
 
-    const cpu = typeof n.cpu==='object' ? (n.cpu?.total||0) : (parseFloat(n.cpu)||0);
-    const ram = typeof n.ram==='object' ? (n.ram?.percent||0) : (parseFloat(n.ram)||0);
-    const ramGb = typeof n.ram==='object' ? ((n.ram?.used_gb||0).toFixed(1)+'GB') : (n.ram_gb||'?');
-    const ramTot = typeof n.ram==='object' ? ((n.ram?.total_gb||0).toFixed(1)+'GB') : (n.ram_total||'?');
+    const cpuTotal = n.cpu?.total||0;
+    const cpuUser  = n.cpu?.user||0;
+    const cpuSys   = n.cpu?.system||0;
+    const ramPct   = n.ram?.percent||0;
+    const ramGb    = fmtGb(n.ram?.used_gb);
+    const ramTot   = fmtGb(n.ram?.total_gb);
+    const temp     = n.temperature_c!=null ? n.temperature_c+'°C' : '?°C';
+    const status   = nodeStatus(n);
+    const load     = n.load;
+    const loadStr  = load ? `${fmtNum1(load['1min'])}/${fmtNum1(load['5min'])}/${fmtNum1(load['15min'])}` : '?';
+    const diskInfo = (n.disks||[]).filter((d,i,a)=>a.findIndex(x=>x.device===d.device)===i).map(d =>
+      `${d.device}: ${fmtGb(d.used_gb)} / ${fmtGb(d.size_gb)} (${fmtPct(d.percent)})`
+    ).join('<br>');
+    const netInfo  = n.network ? Object.entries(n.network).map(([iface,net]) =>
+      `${iface}: ${fmtInt(net.recv_mb)}MB↓ ${fmtInt(net.sent_mb)}MB↑`
+    ).join('<br>') : '';
+    const containerPreview = (n.containers||[]).slice(0,8).map(c=>c.name.replace(/_/g,' ')).join(', ');
+
     return `
-    <div class="card" onclick="this.classList.toggle('expanded')">
+    <div class="card animate-in" onclick="this.classList.toggle('expanded')">
       <div class="card-header">
         <div>
-          <div class="card-title">${pi.name}</div>
-          <div class="card-sub">${n.services||''} · ${n.temperature_c||'?'}°C</div>
+          <div class="card-title">${name}</div>
+          <div class="card-sub">${n.services||''} · ${temp}</div>
         </div>
-        <span class="badge badge-${n.status||'warn'}">
-          <span class="dot dot-${n.status||'warn'}"></span> ${n.status}
+        <span class="badge badge-${status}">
+          <span class="dot dot-${status}"></span> ${status}
         </span>
       </div>
       <div class="metric">
-        <div class="metric-label"><span>CPU</span><span>${cpu}% (usr ${n.cpu?.user||'?'}% sys ${n.cpu?.system||'?'}%)</span></div>
-        <div class="metric-bar"><div class="metric-fill ${cpu>80?'high':cpu>60?'mid':'low'}" style="width:${cpu}%"></div></div>
+        <div class="metric-label"><span>CPU</span><span>${fmtPct(cpuTotal)} (usr ${fmtPct(cpuUser)} sys ${fmtPct(cpuSys)})</span></div>
+        <div class="metric-bar"><div class="metric-fill ${cpuClass(cpuTotal)}" style="width:${cpuTotal}%"></div></div>
       </div>
       <div class="metric">
-        <div class="metric-label"><span>RAM</span><span>${ram}% (${ramGb}/${ramTot})</span></div>
-        <div class="metric-bar"><div class="metric-fill ${ram>90?'high':ram>70?'mid':'low'}" style="width:${ram}%"></div></div>
+        <div class="metric-label"><span>RAM</span><span>${fmtPct(ramPct)} (${ramGb} / ${ramTot})</span></div>
+        <div class="metric-bar"><div class="metric-fill ${ramClass(ramPct)}" style="width:${ramPct}%"></div></div>
       </div>
-      ${n.swap ? `<div class="metric"><div class="metric-label"><span>Swap</span><span>${n.swap.percent}%</span></div><div class="metric-bar"><div class="metric-fill ${n.swap.percent>80?'high':'low'}" style="width:${n.swap.percent}%"></div></div></div>` : ''}
+      ${n.swap ? `<div class="metric"><div class="metric-label"><span>Swap</span><span>${fmtPct(n.swap.percent)}</span></div><div class="metric-bar"><div class="metric-fill ${n.swap.percent>80?'high':'low'}" style="width:${n.swap.percent}%"></div></div></div>` : ''}
       <div class="expand-detail">
         <div style="margin-top:.5rem;font-size:.68rem;color:var(--text-muted);line-height:1.6">
-          Load: ${n.load?.['1min']||'?'}/${n.load?.['5min']||'?'}/${n.load?.['15min']||'?'} (${n.load?.cores||'?'} cores)<br>
+          Load: ${loadStr} (${load?.cores||'?'} cores)<br>
           Procs: ${n.processes?.total||'?'} total, ${n.processes?.running||'?'} running, ${n.processes?.threads||'?'} threads<br>
-          Disk I/O: ${n.disk_io?.read_mb||0}MB read / ${n.disk_io?.write_mb||0}MB write<br>
-          ${n.disks?.map(d=>`${d.mount}: ${d.used_gb}/${d.size_gb}GB (${d.percent}%)`).join('<br>')||''}
-          ${n.network ? Object.entries(n.network).map(([iface, net])=>`${iface}: ${net.recv_mb}MB↓ ${net.sent_mb}MB↑`).join('<br>') : ''}
-          <br>Containers (${n.container_count||0}): ${(n.containers||[]).slice(0,10).map(c=>c.name).join(', ')||'none'}
+          Disk I/O: ${fmtInt(n.disk_io?.read_mb||0)}MB read / ${fmtInt(n.disk_io?.write_mb||0)}MB write<br>
+          ${diskInfo ? diskInfo+'<br>' : ''}
+          ${netInfo ? netInfo+'<br>' : ''}
+          Containers (${n.container_count||0}): ${containerPreview||'none'}
           ${n.uptime ? '<br>Uptime: '+n.uptime : ''}
         </div>
       </div>
@@ -323,14 +305,65 @@ function renderHomelab(nodes, updated, isLive) {
 }
 
 // ============================================================
-// RADIO — Live API + Cached
+// SERVICES — Docker containers table per Pi
 // ============================================================
-function renderRadio(radio, isLive) {
+function renderServices(nodes) {
+  const container = document.getElementById('services-container');
+  if (!nodes || !Object.keys(nodes).length) {
+    container.innerHTML = '<div class="loading">No service data available</div>';
+    return;
+  }
+
+  container.innerHTML = PI_ORDER.map(name => {
+    const n = nodes[name];
+    if (!n) return '';
+    const containers = n.containers||[];
+    if (!containers.length) return `<div class="services-card"><div class="services-card-header"><h3>${name}</h3><span class="svc-count">0 containers</span></div><div style="padding:1.5rem;text-align:center;color:var(--text-muted)">No containers running</div></div>`;
+
+    const rows = containers.map(c => {
+      const s = c.status||'';
+      let cls, label;
+      if (/^Up\b/i.test(s)) { cls='status-up'; label='Up'; }
+      else if (/^Exited\b/i.test(s)) { cls='status-exited'; label='Exited'; }
+      else if (/^Paused\b/i.test(s)) { cls='status-paused'; label='Paused'; }
+      else { cls='status-unknown'; label='?'; }
+
+      // Extract readable name (first word is container name, rest is image info)
+      const parts = s.split(/\s+/);
+      const uptimeStr = parts.length>1 ? parts.slice(1).join(' ') : s;
+
+      return `<tr>
+        <td><span class="container-name">${c.name.replace(/_/g,' ')}</span></td>
+        <td><span class="status-badge ${cls}"><span class="dot" style="width:6px;height:6px;animation:none;background:currentColor"></span> ${label}</span></td>
+        <td>${uptimeStr}</td>
+      </tr>`;
+    }).join('');
+
+    return `
+    <div class="services-card animate-in">
+      <div class="services-card-header">
+        <h3><span class="dot dot-ok" style="width:8px;height:8px"></span> ${name}</h3>
+        <span class="svc-count">${containers.length} container${containers.length!==1?'s':''}</span>
+      </div>
+      <div style="overflow-x:auto">
+        <table class="services-table">
+          <thead><tr><th>Container</th><th>Status</th><th>Uptime</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    </div>`;
+  }).filter(Boolean).join('');
+}
+
+// ============================================================
+// RADIO — rendered from health.json radio section
+// ============================================================
+function renderRadio(radio) {
   const container = document.getElementById('radio-content');
   const status = document.getElementById('radio-status');
 
   if (!radio || !radio.is_online) {
-    status.textContent = isLive ? 'Offline' : '';
+    status.textContent = 'Offline';
     container.innerHTML = `<div style="text-align:center;padding:2rem;color:var(--text-muted)">
       <p style="font-size:1.5rem;margin-bottom:.5rem">📻</p>
       <p>Radio offline or data unavailable</p>
@@ -347,11 +380,10 @@ function renderRadio(radio, isLive) {
   const mins = Math.floor(rem/60), secs = String(Math.floor(rem%60)).padStart(2,'0');
   const genre = np.genre ? `<span>🎵 ${np.genre}</span>` : '';
 
-  let artHTML = np.art 
-    ? `<img src="${np.art}" alt="Art" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fallback" style="display:none">🎵</div>`
+  let artHTML = np.art
+    ? `<img src="${np.art}" alt="Album Art" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fallback" style="display:none">🎵</div>`
     : '<div class="fallback">🎵</div>';
 
-  // Build history list
   let historyHTML = '';
   if (radio.history?.length) {
     historyHTML = '<div class="history-list">'+radio.history.slice(0,4).map(h=>{
@@ -387,21 +419,25 @@ function renderRadio(radio, isLive) {
 }
 
 // ============================================================
-// NEWS — Interactive filter
+// NEWS — filterable feed from news.json
 // ============================================================
-let allNews = [];
-let newsFilter = 'All';
-
 async function loadNews() {
-  const news = await fetchJSON('news.json');
-  if (!news?.items?.length) {
-    document.getElementById('news-feed').innerHTML = '<div class="loading">No news available</div>';
-    return;
+  try {
+    const r = await fetch('news.json');
+    if (!r.ok) throw new Error('HTTP '+r.status);
+    const news = await r.json();
+    if (!news?.items?.length) {
+      document.getElementById('news-feed').innerHTML = '<div class="loading">No news available</div>';
+      return;
+    }
+    allNews = news.items;
+    const d = news.updated ? new Date(news.updated) : null;
+    document.getElementById('news-updated').textContent = 'Updated: ' + (d ? d.toLocaleString() : 'N/A');
+    renderNewsFilters();
+    renderNews();
+  } catch(e) {
+    document.getElementById('news-feed').innerHTML = '<div class="loading">Failed to load news</div>';
   }
-  allNews = news.items;
-  document.getElementById('news-updated').textContent = 'Updated: '+(news.updated||'N/A');
-  renderNewsFilters();
-  renderNews();
 }
 
 function renderNewsFilters() {
@@ -409,7 +445,7 @@ function renderNewsFilters() {
   const container = document.getElementById('news-filters');
   container.innerHTML = `
     <button class="btn btn-sm ${newsFilter==='All'?'active':''}" onclick="setNewsFilter('All')">All</button>
-    ${sources.map(s => `<button class="btn btn-sm ${newsFilter===s?'active':''}" onclick="setNewsFilter('${s.replace(/'/g,"\\'")}')">${s}</button>`).join('')}
+    ${sources.map(s => `<button class="btn btn-sm ${newsFilter===s?'active':''}" onclick="setNewsFilter('${s.replace(/'/g,"&#39;")}')">${s}</button>`).join('')}
   `;
 }
 
@@ -424,30 +460,38 @@ function renderNews() {
   const filtered = newsFilter==='All' ? allNews : allNews.filter(i=>i.source===newsFilter);
   const sourceColors = {
     'The Guardian US':'background:rgba(59,130,246,.15);color:#60a5fa',
-    'The Guardian Tech':'background:rgba(59,130,246,.1);color:#93c5fd',
     'BBC News':'background:rgba(239,68,68,.15);color:#f87171',
     'Folha de S.Paulo':'background:rgba(234,179,8,.15);color:#facc15',
     'Irish Independent':'background:rgba(34,197,94,.15);color:#4ade80',
-    'Hot Press (Ireland)':'background:rgba(168,85,247,.15);color:#c084fc',
-    'MusicRadar (UK)':'background:rgba(236,72,153,.15);color:#f472b6',
+    'Consequence of Sound (US)':'background:rgba(168,85,247,.15);color:#c084fc',
+    'Pitchfork':'background:rgba(236,72,153,.15);color:#f472b6',
     'Rolling Stone Music (US)':'background:rgba(249,115,22,.15);color:#fb923c',
+    'Tenho Mais Discos Que Amigos (Brasil)':'background:rgba(34,211,238,.15);color:#22d3ee',
   };
 
-  container.innerHTML = filtered.length
-    ? filtered.slice(0,10).map(i => `
-      <div class="news-item">
-        <h4>${i.title}</h4>
-        <div class="news-meta">
-          <span class="news-source" style="${sourceColors[i.source]||'background:#1e1e2a;color:#888'}">${i.source}</span>
-          <span>${i.published||''}</span>
-        </div>
-        <div style="margin-top:.5rem"><a href="${i.url}" target="_blank">Open article →</a></div>
-      </div>`).join('')
-    : '<div class="loading">No matching articles</div>';
+  if (!filtered.length) {
+    container.innerHTML = '<div class="loading">No matching articles</div>';
+    return;
+  }
+
+  container.innerHTML = filtered.slice(0,12).map((i,idx) => {
+    const dateStr = i.date ? new Date(i.date).toLocaleDateString([],{year:'numeric',month:'short',day:'numeric'}) : '';
+    const style = sourceColors[i.source]||'background:#1e1e2a;color:#888';
+    return `
+    <div class="news-item animate-in" style="animation-delay:${idx*0.05}s">
+      <h4>${i.title}</h4>
+      ${i.summary ? `<div class="news-summary">${i.summary}</div>` : ''}
+      <div class="news-meta">
+        <span class="news-source" style="${style}">${i.source}</span>
+        <span>${dateStr}</span>
+      </div>
+      <div style="margin-top:.5rem"><a href="${i.link}" target="_blank">Open article →</a></div>
+    </div>`;
+  }).join('');
 }
 
 // ============================================================
-// AUTO REFRESH
+// AUTO REFRESH (re-reads health.json + news.json)
 // ============================================================
 function toggleAutoRefresh() {
   const checked = document.getElementById('autoRefresh').checked;
@@ -459,7 +503,6 @@ function startAutoRefresh() {
   stopAutoRefresh();
   countdownValue = REFRESH_INTERVAL;
   document.getElementById('countdown').textContent = countdownValue+'s';
-  
   refreshTimer = setInterval(() => {
     countdownValue--;
     document.getElementById('countdown').textContent = countdownValue+'s';
@@ -479,7 +522,7 @@ async function refreshAll() {
   const btn = document.getElementById('refreshBtn');
   btn.textContent = '⟳ ...';
   btn.disabled = true;
-  await loadAll();
+  await loadHealth();
   await loadNews();
   countdownValue = REFRESH_INTERVAL;
   document.getElementById('countdown').textContent = countdownValue+'s';
@@ -488,12 +531,36 @@ async function refreshAll() {
 }
 
 // ============================================================
+// MAIN — loads health.json, renders all sections
+// ============================================================
+async function loadHealth() {
+  try {
+    const r = await fetch('health.json');
+    if (!r.ok) throw new Error('HTTP '+r.status);
+    healthData = await r.json();
+  } catch(e) {
+    healthData = null;
+    document.getElementById('homelab-nodes').innerHTML = '<div class="card loading">Failed to load health data</div>';
+    document.getElementById('services-container').innerHTML = '<div class="loading">Failed to load health data</div>';
+    return;
+  }
+
+  const nodes = healthData?.nodes;
+  const radio = healthData?.radio;
+  const updated = healthData?.updated||'N/A';
+
+  renderHomelab(nodes, updated);
+  renderServices(nodes);
+  renderRadio(radio);
+}
+
+// ============================================================
 // INIT
 // ============================================================
 (async function init() {
-  await loadAll();
+  await loadHealth();
   await loadNews();
-  if (document.getElementById('autoRefresh').checked) startAutoRefresh();
+  // Auto-refresh defaults to off — user opts in
 })();
 </script>
 </body>
