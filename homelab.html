@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homelab Dashboard · Robert Carvalho</title>
+<style>
+:root{--bg:#0a0a0f;--card:#111118;--border:#1e1e2a;--text:#e4e4eb;--muted:#8888a0;--accent:#6366f1;--purple:#a855f7;--green:#22c55e;--yellow:#eab308;--red:#ef4444;--blue:#3b82f6;--cyan:#06b6d4;--orange:#f97316}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;min-height:100vh;overflow-x:hidden}
+.container{max-width:1400px;margin:0 auto;padding:0 2rem}
+nav{position:sticky;top:0;z-index:50;background:rgba(10,10,15,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-weight:700;font-size:1.1rem;color:#fff;text-decoration:none;display:flex;align-items:center;gap:.5rem}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.85rem;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;animation:pulse 2s infinite}
+.dot-ok{background:var(--green);box-shadow:0 0 8px rgba(34,197,94,.5)}.dot-warn{background:var(--yellow);box-shadow:0 0 8px rgba(234,179,8,.5)}.dot-fail{background:var(--red);box-shadow:0 0 8px rgba(239,68,68,.5)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+.animate-in{animation:fadeIn .5s ease-out forwards}
+.animate-in:nth-child(1){animation-delay:0s}.animate-in:nth-child(2){animation-delay:.1s}.animate-in:nth-child(3){animation-delay:.2s}
+
+.header{text-align:center;padding:3rem 0 2rem}
+.header h1{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:.25rem}
+.header p{color:var(--muted);font-size:.9rem}
+.header .badge-row{display:flex;gap:.5rem;justify-content:center;margin-top:1rem}
+
+.badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:100px;font-size:.72rem;font-weight:600}
+.badge-ok{background:rgba(34,197,94,.1);color:var(--green);border:1px solid rgba(34,197,94,.2)}
+.badge-warn{background:rgba(234,179,8,.1);color:var(--yellow);border:1px solid rgba(234,179,8,.2)}
+
+.pi-section{margin-bottom:3rem}
+.pi-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
+.pi-header h2{font-size:1.4rem;font-weight:700;color:#fff}
+.pi-header .pi-meta{font-size:.78rem;color:var(--muted);margin-left:auto;display:flex;gap:1rem}
+
+.grid{display:grid;gap:.75rem}
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.grid-4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.25rem;transition:border-color .2s,transform .15s}
+.card:hover{border-color:#2a2a3a}
+.card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
+.card-title{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+.card-value{font-size:1.8rem;font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.1}
+.card-sub{font-size:.72rem;color:var(--muted);margin-top:.25rem}
+
+.metric{margin-bottom:.6rem}
+.metric-label{display:flex;justify-content:space-between;font-size:.7rem;margin-bottom:3px}
+.metric-label span:first-child{color:var(--muted)}.metric-label span:last-child{color:var(--text);font-variant-numeric:tabular-nums;font-weight:500}
+.metric-bar{height:5px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden}
+.metric-fill{height:100%;border-radius:3px;transition:width .6s ease-out}
+.metric-fill.green{background:linear-gradient(90deg,var(--green),#16a34a)}
+.metric-fill.yellow{background:linear-gradient(90deg,var(--yellow),#ca8a04)}
+.metric-fill.red{background:linear-gradient(90deg,var(--red),#dc2626)}
+.metric-fill.blue{background:linear-gradient(90deg,var(--blue),#2563eb)}
+.metric-fill.purple{background:linear-gradient(90deg,var(--purple),#7c3aed)}
+
+/* Gauges */
+.gauge{position:relative;width:80px;height:80px;margin:0 auto}
+.gauge svg{transform:rotate(-90deg)}
+.gauge .bg{fill:none;stroke:rgba(255,255,255,.06);stroke-width:6}
+.gauge .fill{fill:none;stroke-width:6;stroke-linecap:round;transition:stroke-dashoffset 1s ease-out}
+.gauge .value{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1rem;font-weight:700;color:#fff}
+.gauge-label{text-align:center;font-size:.7rem;color:var(--muted);margin-top:.35rem}
+
+/* Container table */
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.78rem}
+thead th{text-align:left;padding:.5rem .75rem;color:var(--muted);font-weight:500;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--border)}
+tbody td{padding:.45rem .75rem;border-bottom:1px solid rgba(255,255,255,.03);color:var(--text)}
+.status-tag{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:100px;font-size:.65rem;font-weight:600}
+.status-up{background:rgba(34,197,94,.1);color:var(--green)}.status-exited{background:rgba(239,68,68,.1);color:var(--red)}
+.status-paused{background:rgba(234,179,8,.1);color:var(--yellow)}
+
+/* Refresh bar */
+.refresh-bar{display:flex;align-items:center;justify-content:center;gap:1rem;padding:.75rem;background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:2rem}
+.refresh-bar span{font-size:.78rem;color:var(--muted)}
+.btn{background:var(--card);border:1px solid var(--border);color:var(--muted);padding:6px 14px;border-radius:8px;font-size:.78rem;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:.4rem}
+.btn:hover{border-color:var(--accent);color:#fff}.btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+.chip{display:inline-block;padding:2px 8px;border-radius:6px;font-size:.65rem;font-weight:500;margin:2px}
+.chip-green{background:rgba(34,197,94,.1);color:var(--green)}.chip-red{background:rgba(239,68,68,.1);color:var(--red)}
+.chip-blue{background:rgba(59,130,246,.1);color:var(--blue)}.chip-purple{background:rgba(168,85,247,.1);color:var(--purple)}
+
+/* Mobile */
+@media(max-width:768px){.container{padding:0 1rem}.grid-2{grid-template-columns:1fr}.card-value{font-size:1.4rem}.pi-header{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="dot dot-ok"></span>Robert Carvalho</a>
+    <div class="nav-links">
+      <a href="index.html">← Portfolio</a>
+      <a href="#" onclick="location.reload()">↻ Refresh</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="header">
+    <h1>Homelab Dashboard</h1>
+    <p id="updated-label">Loading...</p>
+    <div class="badge-row" id="overall-badge"></div>
+  </div>
+
+  <div class="refresh-bar">
+    <span id="countdown">Auto-refresh in 60s</span>
+    <button class="btn" onclick="refreshAll()">↻ Refresh Now</button>
+    <label style="display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--muted)">
+      <input type="checkbox" id="autoToggle" checked onchange="toggleAuto()"> Auto
+    </label>
+  </div>
+
+  <div id="dashboard-content">Loading dashboard data...</div>
+
+</div>
+
+<script>
+// ============================================================
+// DATA
+// ============================================================
+let healthData = null;
+let countdown = 60;
+let timer = null;
+
+async function loadData() {
+  try {
+    const r = await fetch('health.json');
+    if (!r.ok) throw new Error('HTTP '+r.status);
+    healthData = await r.json();
+    return true;
+  } catch(e) { return false; }
+}
+
+// ============================================================
+// FORMATTERS
+// ============================================================
+const fmtGb = v => Number(v).toFixed(1)+'GB';
+const fmtPct = v => Math.round(v)+'%';
+const fmtMb = v => Math.round(v)+'MB';
+const fmtTemp = v => v ? v+'°C' : '?°C';
+const colorByPct = (v, hi=80, mid=60) => v>hi?'red':v>mid?'yellow':'green';
+const gaugeOffset = (pct) => { const r=32,c=2*Math.PI*r; return c-(pct/100)*c; }
+
+// ============================================================
+// RENDER
+// ============================================================
+function render() {
+  if (!healthData) return;
+  const d = healthData;
+  
+  document.getElementById('updated-label').textContent = `Last updated: ${d.updated} · ${Object.keys(d.nodes).length} nodes`;
+  document.getElementById('overall-badge').innerHTML = `
+    <span class="badge badge-${d.status}"><span class="dot dot-${d.status}"></span>${d.status.toUpperCase()}</span>
+  `;
+
+  const container = document.getElementById('dashboard-content');
+  let html = '';
+
+  for (const [name, n] of Object.entries(d.nodes)) {
+    if (!n || n.status==='fail') {
+      html += `<div class="pi-section animate-in"><div class="pi-header"><h2>${name}</h2><span class="badge badge-fail"><span class="dot dot-fail"></span>Offline</span></div></div>`;
+      continue;
+    }
+
+    const cpu = n.cpu||{}, ram = n.ram||{}, load = n.load||{};
+    const temp = n.temperature_c;
+    const swap = n.swap;
+    const containers = n.containers||[];
+    const disks = n.disks||[];
+    const net = n.network||{};
+    const diskIO = n.disk_io||{};
+    const procs = n.processes||{};
+
+    html += `
+    <div class="pi-section animate-in">
+      <div class="pi-header">
+        <span class="dot dot-${n.status}"></span>
+        <h2>${name}</h2>
+        <span class="badge badge-${n.status}">${n.status.toUpperCase()}</span>
+        <div class="pi-meta">
+          <span>${n.services||''}</span>
+          <span>Uptime: ${n.uptime||'?'}</span>
+          <span>${fmtTemp(temp)}</span>
+        </div>
+      </div>
+
+      <!-- Key Gauges -->
+      <div class="grid grid-4" style="margin-bottom:1rem">
+        <div class="card" style="text-align:center">
+          <div class="card-title">CPU</div>
+          <div class="gauge">
+            <svg viewBox="0 0 80 80" width="80" height="80">
+              <circle class="bg" cx="40" cy="40" r="32"/>
+              <circle class="fill" cx="40" cy="40" r="32" stroke="var(--${colorByPct(cpu.total)})" stroke-dasharray="201" stroke-dashoffset="${gaugeOffset(cpu.total)}"/>
+            </svg>
+            <div class="value">${Math.round(cpu.total)}%</div>
+          </div>
+          <div class="gauge-label">usr ${Math.round(cpu.user||0)}% · sys ${Math.round(cpu.system||0)}% · idle ${Math.round(cpu.idle||100)}%</div>
+        </div>
+        <div class="card" style="text-align:center">
+          <div class="card-title">RAM</div>
+          <div class="gauge">
+            <svg viewBox="0 0 80 80" width="80" height="80">
+              <circle class="bg" cx="40" cy="40" r="32"/>
+              <circle class="fill" cx="40" cy="40" r="32" stroke="var(--${colorByPct(ram.percent,90,70)})" stroke-dasharray="201" stroke-dashoffset="${gaugeOffset(ram.percent)}"/>
+            </svg>
+            <div class="value">${fmtPct(ram.percent)}</div>
+          </div>
+          <div class="gauge-label">${fmtGb(ram.used_gb)} / ${fmtGb(ram.total_gb)}</div>
+        </div>
+        <div class="card" style="text-align:center">
+          <div class="card-title">Load</div>
+          <div class="card-value">${load['1min']?.toFixed(1)||'?'}</div>
+          <div class="gauge-label">5m: ${load['5min']?.toFixed(1)||'?'} · 15m: ${load['15min']?.toFixed(1)||'?'} · ${load.cores||'?'} cores</div>
+        </div>
+        <div class="card" style="text-align:center">
+          <div class="card-title">Temperature</div>
+          <div class="card-value" style="color:${temp>70?'var(--red)':temp>55?'var(--yellow)':'var(--green)'}">${fmtTemp(temp)}</div>
+          <div class="gauge-label">${temp>55?'⚠ Above normal':'✓ Normal'}</div>
+        </div>
+      </div>
+
+      <!-- Detailed Metrics -->
+      <div class="grid grid-2">
+        <!-- CPU Detail -->
+        <div class="card">
+          <div class="card-title">CPU Breakdown</div>
+          <div class="metric"><div class="metric-label"><span>User</span><span>${Math.round(cpu.user||0)}%</span></div><div class="metric-bar"><div class="metric-fill blue" style="width:${cpu.user||0}%"></div></div></div>
+          <div class="metric"><div class="metric-label"><span>System</span><span>${Math.round(cpu.system||0)}%</span></div><div class="metric-bar"><div class="metric-fill purple" style="width:${cpu.system||0}%"></div></div></div>
+          <div class="metric"><div class="metric-label"><span>I/O Wait</span><span>${Math.round(cpu.iowait||0)}%</span></div><div class="metric-bar"><div class="metric-fill yellow" style="width:${cpu.iowait||0}%"></div></div></div>
+          <div class="metric"><div class="metric-label"><span>Idle</span><span>${Math.round(cpu.idle||100)}%</span></div><div class="metric-bar"><div class="metric-fill green" style="width:${cpu.idle||100}%"></div></div></div>
+        </div>
+
+        <!-- Memory Detail -->
+        <div class="card">
+          <div class="card-title">Memory</div>
+          <div class="metric"><div class="metric-label"><span>Used</span><span>${fmtGb(ram.used_gb)} / ${fmtGb(ram.total_gb)}</span></div><div class="metric-bar"><div class="metric-fill ${colorByPct(ram.percent,90,70)}" style="width:${ram.percent||0}%"></div></div></div>
+          <div class="metric"><div class="metric-label"><span>Available</div><div class="metric-bar"><div class="metric-fill green" style="width:${((ram.available_gb||0)/(ram.total_gb||1)*100).toFixed(0)}%"></div></div></div>
+          ${swap ? `<div class="metric"><div class="metric-label"><span>Swap</span><span>${swap.percent||0}% (${swap.used_mb||0}MB / ${swap.total_mb||0}MB)</span></div><div class="metric-bar"><div class="metric-fill ${swap.percent>50?'yellow':'green'}" style="width:${swap.percent||0}%"></div></div></div>` : ''}
+        </div>
+
+        <!-- Disks -->
+        ${disks.length ? `
+        <div class="card">
+          <div class="card-title">Disks</div>
+          ${disks.map(d=>`
+          <div class="metric">
+            <div class="metric-label"><span>${d.mount} (${d.device})</span><span>${d.used_gb} / ${d.size_gb} GB</span></div>
+            <div class="metric-bar"><div class="metric-fill ${colorByPct(d.percent,90,75)}" style="width:${d.percent||0}%"></div></div>
+          </div>`).join('')}
+          ${diskIO?.read_mb ? `<div style="font-size:.7rem;color:var(--muted);margin-top:.5rem">I/O: ${fmtMb(diskIO.read_mb)} read · ${fmtMb(diskIO.write_mb)} write</div>` : ''}
+        </div>` : ''}
+
+        <!-- Network -->
+        ${Object.keys(net).length ? `
+        <div class="card">
+          <div class="card-title">Network</div>
+          ${Object.entries(net).map(([iface, nw])=>`
+          <div class="metric">
+            <div class="metric-label"><span>${iface}</span><span>↓${fmtMb(nw.recv_mb)} ↑${fmtMb(nw.sent_mb)}</span></div>
+          </div>`).join('')}
+        </div>` : ''}
+
+        <!-- Processes -->
+        ${procs.total ? `
+        <div class="card">
+          <div class="card-title">Processes</div>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap">
+            <div><span class="chip chip-green">${procs.running||0} running</span></div>
+            <div><span class="chip chip-blue">${procs.sleeping||0} sleeping</span></div>
+            <div><span class="chip chip-purple">${procs.threads||0} threads</span></div>
+            <div><span class="chip" style="background:rgba(156,163,175,.1);color:#9ca3af">${procs.total||0} total</span></div>
+          </div>
+        </div>` : ''}
+      </div>
+
+      <!-- Containers Table -->
+      ${containers.length ? `
+      <div class="card" style="margin-top:.75rem">
+        <div class="card-title" style="margin-bottom:.75rem">Docker Containers (${n.container_count||containers.length})</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Container</th><th>Status</th></tr></thead>
+            <tbody>
+              ${containers.map(c=>`
+              <tr>
+                <td style="font-weight:500">${c.name}</td>
+                <td><span class="status-tag ${c.status.toLowerCase().startsWith('up')?'status-up':c.status.toLowerCase().includes('exit')?'status-exited':'status-paused'}">${c.status}</span></td>
+              </tr>`).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>` : ''}
+    </div>`;
+  }
+
+  container.innerHTML = html;
+  countdown = 60;
+  updateCountdown();
+}
+
+function updateCountdown() {
+  document.getElementById('countdown').textContent = `Auto-refresh in ${countdown}s`;
+}
+
+// ============================================================
+// REFRESH LOGIC
+// ============================================================
+async function refreshAll() {
+  document.getElementById('countdown').textContent = 'Refreshing...';
+  await loadData();
+  render();
+  countdown = 60;
+  updateCountdown();
+}
+
+function toggleAuto() {
+  if (document.getElementById('autoToggle').checked) startTimer();
+  else stopTimer();
+}
+
+function startTimer() {
+  stopTimer();
+  timer = setInterval(() => {
+    countdown--;
+    updateCountdown();
+    if (countdown <= 0) { refreshAll(); }
+  }, 1000);
+}
+
+function stopTimer() {
+  if (timer) { clearInterval(timer); timer = null; }
+}
+
+// ============================================================
+// INIT
+// ============================================================
+(async function init() {
+  await loadData();
+  render();
+  startTimer();
+})();
+</script>
+</body>
+</html>
