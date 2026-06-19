@@ -1,20 +1,20 @@
 {
-  "updated": "2026-06-19 11:25",
+  "updated": "2026-06-19 11:58",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 7.7,
-        "user": 6.4,
-        "system": 1.3,
-        "idle": 91.2,
-        "iowait": 1.0
+        "total": 6.0,
+        "user": 4.7,
+        "system": 1.2,
+        "idle": 90.7,
+        "iowait": 3.4
       },
       "ram": {
-        "used_gb": 3.15,
+        "used_gb": 3.16,
         "total_gb": 7.87,
-        "percent": 40.0,
+        "percent": 40.1,
         "available_gb": 4.72
       },
       "swap": {
@@ -23,9 +23,9 @@
         "percent": 100.0
       },
       "load": {
-        "1min": 3.43,
-        "5min": 5.03,
-        "15min": 5.83,
+        "1min": 8.97,
+        "5min": 7.54,
+        "15min": 6.82,
         "cores": 4
       },
       "disks": [
@@ -63,10 +63,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 12.7
+        "read_mb": 0.8,
+        "write_mb": 22.6
       },
-      "temperature_c": 55,
+      "temperature_c": 51,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -75,12 +75,12 @@
         }
       },
       "processes": {
-        "total": 203,
+        "total": 228,
         "running": 0,
-        "sleeping": 145,
-        "threads": 862
+        "sleeping": 144,
+        "threads": 882
       },
-      "uptime": "9 days, 2:15:38",
+      "uptime": "9 days, 2:48:02",
       "containers": [
         {
           "name": "gallery frontend",
@@ -88,15 +88,15 @@
         },
         {
           "name": "gallery backend",
-          "status": "Up 40 hours (healthy) gallery-downloader-backend"
+          "status": "Up 41 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "gallery worker",
-          "status": "Up 42 hours gallery-downloader-worker"
+          "status": "Up 43 hours gallery-downloader-worker"
         },
         {
           "name": "gallery jandapress",
-          "status": "Up 46 hours gallery-jandapress:local-arm64"
+          "status": "Up 47 hours gallery-jandapress:local-arm64"
         },
         {
           "name": "gallery redis",
@@ -132,7 +132,7 @@
         },
         {
           "name": "Dashy",
-          "status": "Up 47 hours (healthy) lissy93/dashy:4.2.4"
+          "status": "Up 2 days (healthy) lissy93/dashy:4.2.4"
         },
         {
           "name": "portainer agent",
@@ -157,17 +157,17 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 9.0,
-        "user": 7.8,
-        "system": 1.2,
-        "idle": 90.4,
-        "iowait": 0.5
+        "total": 6.8,
+        "user": 5.9,
+        "system": 0.9,
+        "idle": 87.9,
+        "iowait": 5.3
       },
       "ram": {
-        "used_gb": 1.89,
+        "used_gb": 1.84,
         "total_gb": 7.87,
-        "percent": 24.1,
-        "available_gb": 5.98
+        "percent": 23.3,
+        "available_gb": 6.04
       },
       "swap": {
         "used_mb": 685.4,
@@ -175,9 +175,9 @@
         "percent": 16.7
       },
       "load": {
-        "1min": 0.21,
-        "5min": 0.49,
-        "15min": 0.53,
+        "1min": 0.59,
+        "5min": 0.95,
+        "15min": 0.73,
         "cores": 4
       },
       "disks": [
@@ -193,32 +193,32 @@
           "mount": "/etc/resolv.conf",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 115.9,
-          "free_gb": 753.3,
-          "percent": 12.7
+          "used_gb": 115.8,
+          "free_gb": 753.4,
+          "percent": 12.6
         },
         {
           "mount": "/etc/hostname",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 115.9,
-          "free_gb": 753.3,
-          "percent": 12.7
+          "used_gb": 115.8,
+          "free_gb": 753.4,
+          "percent": 12.6
         },
         {
           "mount": "/etc/hosts",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 115.9,
-          "free_gb": 753.3,
-          "percent": 12.7
+          "used_gb": 115.8,
+          "free_gb": 753.4,
+          "percent": 12.6
         }
       ],
       "disk_io": {
         "read_mb": 0.0,
-        "write_mb": 0.1
+        "write_mb": 1.0
       },
-      "temperature_c": 50,
+      "temperature_c": 49,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -227,12 +227,12 @@
         }
       },
       "processes": {
-        "total": 560,
-        "running": 0,
-        "sleeping": 466,
-        "threads": 3158
+        "total": 557,
+        "running": 1,
+        "sleeping": 463,
+        "threads": 3155
       },
-      "uptime": "5 days, 0:11:41",
+      "uptime": "5 days, 0:44:06",
       "containers": [
         {
           "name": "qbittorrent",
@@ -269,17 +269,17 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 4.8,
-        "user": 3.2,
-        "system": 1.8,
-        "idle": 94.8,
-        "iowait": 0.1
+        "total": 3.8,
+        "user": 2.5,
+        "system": 1.4,
+        "idle": 95.8,
+        "iowait": 0.2
       },
       "ram": {
         "used_gb": 0.83,
         "total_gb": 7.64,
         "percent": 10.9,
-        "available_gb": 6.8
+        "available_gb": 6.81
       },
       "swap": {
         "used_mb": 0.0,
@@ -288,8 +288,8 @@
       },
       "load": {
         "1min": 0.34,
-        "5min": 0.33,
-        "15min": 0.37,
+        "5min": 0.34,
+        "15min": 0.33,
         "cores": 4
       },
       "disks": [
@@ -328,9 +328,9 @@
       ],
       "disk_io": {
         "read_mb": 0.0,
-        "write_mb": 1.0
+        "write_mb": 5.7
       },
-      "temperature_c": 34,
+      "temperature_c": 33,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -339,12 +339,12 @@
         }
       },
       "processes": {
-        "total": 207,
+        "total": 205,
         "running": 0,
         "sleeping": 117,
-        "threads": 528
+        "threads": 525
       },
-      "uptime": "9 days, 2:15:42",
+      "uptime": "9 days, 2:48:07",
       "containers": [
         {
           "name": "Dashy",
@@ -384,45 +384,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Storm Is Coming",
-      "artist": "Junior Delgado",
-      "album": "Fearless",
-      "genre": "Reggae",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/ef1b523321ee4f99bec72540-1764888046.jpg",
-      "duration": 290,
-      "elapsed": 276
+      "title": "Meltdown 94mation-Salt Tank",
+      "artist": "John Peel",
+      "album": "",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/b3695f22920f35f86ce6a36b",
+      "duration": 663,
+      "elapsed": 5
     },
     "playing_next": {
-      "title": "Moonlight Lover",
-      "artist": "Joya Landis"
+      "title": "Senorita",
+      "artist": "Dennis Brown"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "32nd Floor (John Peel Session 01/90)",
-        "artist": "The House Of Love",
-        "played_at": 1781864227
+        "title": "I'm The One",
+        "artist": "Rancid  NOFX",
+        "played_at": 1781866576
       },
       {
-        "title": "Untouchable",
-        "artist": "The Undertones",
-        "played_at": 1781864024
+        "title": "rasta country",
+        "artist": "keith hudson",
+        "played_at": 1781866353
       },
       {
-        "title": "Covetious Men",
-        "artist": "Vivian Jackson",
-        "played_at": 1781863841
+        "title": "I Don't Wanna Walk Around With You; I Don't Wanna Walk Around With",
+        "artist": "The Ramones",
+        "played_at": 1781866268
       },
       {
-        "title": "take me to the earth",
-        "artist": "b1",
-        "played_at": 1781863635
+        "title": "Give Me a Woman [*]",
+        "artist": "The Cramps",
+        "played_at": 1781866125
       },
       {
-        "title": "Were Marching On To Victory",
-        "artist": "Ras Michael & The Sons Of Negus",
-        "played_at": 1781863359
+        "title": "The Reincarnation Of Benjamin Breeg",
+        "artist": "Iron Maiden",
+        "played_at": 1781865712
       }
     ]
   }

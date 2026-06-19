@@ -485,6 +485,32 @@ async function refreshAll() {
 }
 
 // ============================================================
+// RADIO LIVE POLL — fetches AzuraCast directly every 30s
+// ============================================================
+async function pollRadioLive() {
+  try {
+    const r = await fetch('https://dublincalling.duckdns.org/api/nowplaying');
+    if (!r.ok) return;
+    const stations = await r.json();
+    if (!stations?.length) return;
+    const s = stations[0];
+    const np = s.now_playing?.song;
+    if (!np) return;
+    const radio = {
+      is_online: s.is_online,
+      is_live: s.live?.is_live,
+      now_playing: { artist: np.artist||'', title: np.title||'', album: np.album||'', duration: s.now_playing?.duration||1, elapsed: s.now_playing?.elapsed||0 },
+      playing_next: { artist: s.playing_next?.song?.artist||'', title: s.playing_next?.song?.title||'' },
+      listeners: s.listeners?.current||0,
+      listen_url: s.station?.listen_url||'https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3',
+      history: (s.song_history||[]).slice(0,3).map(h=>({artist:h.song?.artist||'',title:h.song?.title||'',played_at:h.played_at||0})),
+    };
+    renderRadio(radio);
+  } catch(e) {}
+}
+setInterval(pollRadioLive, 30000);
+
+// ============================================================
 // MAIN — loads health.json, renders all sections
 // ============================================================
 async function loadHealth() {
