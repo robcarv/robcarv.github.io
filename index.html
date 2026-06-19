@@ -51,8 +51,35 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,15,.85)
 @keyframes pulse-glow{0%,100%{opacity:1}50%{opacity:.5}}
 .metric{margin-bottom:.75rem}.metric-label{display:flex;justify-content:space-between;font-size:.75rem;margin-bottom:3px}.metric-label span:first-child{color:var(--text-muted)}.metric-label span:last-child{color:var(--text);font-variant-numeric:tabular-nums}.metric-bar{height:4px;background:#1e1e2a;border-radius:2px;overflow:hidden}.metric-fill{height:100%;border-radius:2px;transition:width .5s ease-out}.metric-fill.low{background:var(--green)}.metric-fill.mid{background:var(--yellow)}.metric-fill.high{background:var(--red)}
 .badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:100px;font-size:.7rem;font-weight:500}.badge-ok{background:rgba(34,197,94,.1);color:var(--green);border:1px solid rgba(34,197,94,.2)}.badge-warn{background:rgba(234,179,8,.1);color:var(--yellow);border:1px solid rgba(234,179,8,.2)}.badge-fail{background:rgba(239,68,68,.1);color:var(--red);border:1px solid rgba(239,68,68,.2)}
-.radio-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:1.5rem}.radio-now{display:flex;gap:1rem;align-items:center}.radio-art{width:64px;height:64px;border-radius:8px;background:#1e1e2a;flex-shrink:0;overflow:hidden}.radio-art img{width:100%;height:100%;object-fit:cover}.radio-art .fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:1.5rem}.radio-info{flex:1;min-width:0}.radio-info .now-label{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:.25rem}.radio-info h3{font-size:1rem;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.radio-info .artist{font-size:.85rem;color:var(--text-muted)}.radio-meta{display:flex;gap:1rem;margin-top:.5rem;font-size:.72rem;color:var(--text-muted)}.radio-play{background:var(--accent);color:#fff;padding:.6rem 1.25rem;border-radius:8px;border:none;font-size:.85rem;font-weight:500;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:background .2s,transform .2s;flex-shrink:0}.radio-play:hover{background:#5558e6;transform:scale(1.03)}.radio-play:active{transform:scale(.98)}
-.progress{height:3px;background:#1e1e2a;border-radius:2px;margin-top:.75rem;overflow:hidden}.progress-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 1s linear}
+.radio-card{background:linear-gradient(135deg,#111118 0%,#1a1025 50%,#111118 100%);border:1px solid var(--border);border-radius:20px;padding:2rem;position:relative;overflow:hidden}
+.radio-card::before{content:'';position:absolute;top:-50%;right:-50%;width:300px;height:300px;background:radial-gradient(circle,rgba(168,85,247,.06) 0%,transparent 70%);pointer-events:none}
+.radio-now{display:flex;gap:1.5rem;align-items:center}
+.radio-art{width:100px;height:100px;border-radius:12px;background:#1e1e2a;flex-shrink:0;overflow:hidden;position:relative;box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.radio-art.playing{animation:vinyl-spin 4s linear infinite paused}
+.radio-art img{width:100%;height:100%;object-fit:cover}
+.radio-art .fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;background:linear-gradient(135deg,#1e1e2a,#2a1a3a)}
+@keyframes vinyl-spin{to{transform:rotate(360deg)}}
+.radio-info{flex:1;min-width:0}
+.radio-info .now-label{font-size:.6rem;text-transform:uppercase;letter-spacing:.15em;color:var(--accent2);margin-bottom:.35rem;font-weight:600}
+.radio-info h3{font-size:1.15rem;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600;letter-spacing:-.01em}
+.radio-info .artist{font-size:.9rem;color:var(--text-muted);margin-top:2px}
+.radio-meta{display:flex;gap:1.5rem;margin-top:.6rem;font-size:.72rem;color:var(--text-muted)}
+.radio-meta span{display:flex;align-items:center;gap:4px}
+.radio-meta .dot-live{width:6px;height:6px;border-radius:50%;background:var(--red);animation:pulse-glow 1.5s ease-in-out infinite}
+.radio-play{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;padding:.75rem 1.5rem;border-radius:12px;border:none;font-size:.9rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:all .25s;flex-shrink:0;box-shadow:0 4px 16px rgba(99,102,241,.25)}
+.radio-play:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(99,102,241,.4)}
+.radio-play:active{transform:scale(.97)}
+.radio-progress-bar{height:3px;background:rgba(255,255,255,.06);border-radius:2px;margin-top:1rem;overflow:hidden}
+.radio-progress-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 1s linear}
+.radio-next{border-top:1px solid var(--border);margin-top:1rem;padding-top:1rem;display:flex;align-items:center;gap:.75rem}
+.radio-next-label{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);white-space:nowrap}
+.radio-next-info{font-size:.78rem;color:var(--text-muted)}
+.radio-next-info strong{color:#fff;font-weight:500}
+.history-list{display:flex;flex-direction:column;gap:6px;margin-top:.75rem;border-top:1px solid var(--border);padding-top:.75rem}
+.history-row{display:flex;align-items:center;gap:.5rem;font-size:.7rem}
+.history-time{color:var(--text-muted);width:42px;flex-shrink:0;font-variant-numeric:tabular-nums}
+.history-song{color:var(--text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.history-song strong{color:#ccc;font-weight:400}
 .timeline{position:relative;padding-left:2rem}.timeline::before{content:'';position:absolute;left:8px;top:8px;bottom:8px;width:1px;background:var(--border)}.timeline-item{position:relative;margin-bottom:2rem}.timeline-item::before{content:'';position:absolute;left:-1.65rem;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}.timeline-role{font-weight:600;color:#fff;font-size:1rem}.timeline-company{color:var(--accent);font-size:.85rem;margin-bottom:.25rem}.timeline-period{color:var(--text-muted);font-size:.75rem;margin-bottom:.5rem}.timeline-items{list-style:none}.timeline-items li{color:var(--text-muted);font-size:.82rem;padding:2px 0;position:relative;padding-left:1rem}.timeline-items li::before{content:'—';position:absolute;left:0;color:var(--border)}
 .project-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:border-color .2s}.project-card:hover{border-color:#2a2a3a;transform:translateY(-1px)}.project-card h4{font-size:.95rem;color:#fff;margin-bottom:.5rem}.project-card p{font-size:.8rem;color:var(--text-muted);margin-bottom:.75rem}.project-card .links{display:flex;gap:.75rem}.project-card .links a{font-size:.78rem;color:var(--accent);text-decoration:none;padding:4px 10px;border-radius:6px;border:1px solid var(--border);transition:all .2s}.project-card .links a:hover{border-color:var(--accent);background:rgba(99,102,241,.1)}
 .news-source{font-size:.65rem;padding:2px 8px;border-radius:100px;font-weight:500;white-space:nowrap;cursor:pointer;transition:opacity .2s}.news-source.dimmed{opacity:.4}.news-item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.25rem;transition:border-color .2s,opacity .3s}.news-item:hover{border-color:#2a2a3a}.news-item.hidden{display:none}.news-item h4{font-size:.9rem;color:#fff;margin-bottom:.5rem;line-height:1.4}.news-item .news-meta{display:flex;justify-content:space-between;align-items:center;font-size:.72rem;color:var(--text-muted)}.news-item a{color:var(--accent);text-decoration:none;font-size:.78rem}.news-item a:hover{text-decoration:underline}
@@ -146,7 +173,7 @@ const PIS = [
   {name:'Pi5',  ip:'192.168.68.108',port:61208,label:'qBittorrent, AzuraCast, DuckDNS'},
   {name:'Pi4',  ip:'192.168.68.102',port:61208,label:'Pi-hole, NPM, Wallos'},
 ];
-const AZURACAST_URL = 'http://192.168.68.108/api/nowplaying';
+const AZURACAST_URL = 'https://dublincalling.duckdns.org/api/nowplaying';
 const REFRESH_INTERVAL = 60;
 let refreshTimer = null;
 let countdownValue = REFRESH_INTERVAL;
@@ -299,21 +326,34 @@ function renderRadio(radio, isLive) {
   if (!radio || !radio.is_online) {
     status.textContent = isLive ? 'Offline' : '';
     container.innerHTML = `<div style="text-align:center;padding:2rem;color:var(--text-muted)">
-      <p>📻 Radio offline or data unavailable</p>
-      <a href="https://dublincalling.ie" target="_blank" style="color:var(--accent);font-size:.85rem">Open Dublin Calling →</a>
+      <p style="font-size:1.5rem;margin-bottom:.5rem">📻</p>
+      <p>Radio offline or data unavailable</p>
+      <a href="https://dublincalling.ie" target="_blank" style="color:var(--accent);font-size:.85rem;margin-top:.5rem;display:inline-block">Open Dublin Calling →</a>
     </div>`;
     return;
   }
 
-  status.textContent = `${radio.listeners||0} listener(s) · ${radio.is_live?'LIVE':'Auto'} · ${isLive?'Live':'Cached'}`;
+  status.innerHTML = `${radio.listeners||0} listener(s) · ${radio.is_live ? '<span class="dot-live"></span> LIVE' : 'Auto DJ'}`;
   const np = radio.now_playing||{};
   const elapsed = np.elapsed||0, duration = np.duration||1;
   const pct = Math.min(elapsed/duration*100, 100);
   const rem = Math.max(duration-elapsed, 0);
   const mins = Math.floor(rem/60), secs = String(Math.floor(rem%60)).padStart(2,'0');
-  const artHTML = np.art 
+  const genre = np.genre ? `<span>🎵 ${np.genre}</span>` : '';
+
+  let artHTML = np.art 
     ? `<img src="${np.art}" alt="Art" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="fallback" style="display:none">🎵</div>`
     : '<div class="fallback">🎵</div>';
+
+  // Build history list
+  let historyHTML = '';
+  if (radio.history?.length) {
+    historyHTML = '<div class="history-list">'+radio.history.slice(0,4).map(h=>{
+      const t = new Date((h.played_at||0)*1000);
+      const time = t.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+      return `<div class="history-row"><span class="history-time">${time}</span><span class="history-song"><strong>${h.artist||'?'}</strong> — ${h.title||'?'}</span></div>`;
+    }).join('')+'</div>';
+  }
 
   container.innerHTML = `
     <div class="radio-now">
@@ -321,19 +361,22 @@ function renderRadio(radio, isLive) {
       <div class="radio-info">
         <div class="now-label">Now Playing</div>
         <h3>${np.title||'Unknown'}</h3>
-        <div class="artist">${np.artist||''}${np.album?' · '+np.album:''}</div>
+        <div class="artist">${np.artist||'Unknown Artist'}${np.album?' · '+np.album:''}</div>
         <div class="radio-meta">
-          <span>-${mins}:${secs}</span>
-          <span>${radio.listeners||0} listening</span>
+          <span>⏱ -${mins}:${secs}</span>
+          <span>👥 ${radio.listeners||0} listening</span>
+          ${genre}
         </div>
-        <div class="progress"><div class="progress-fill" style="width:${pct}%"></div></div>
+        <div class="radio-progress-bar"><div class="radio-progress-fill" style="width:${pct}%"></div></div>
       </div>
-      <a href="${radio.listen_url||'https://dublincalling.ie'}" target="_blank" class="radio-play">▶ Listen</a>
+      <a href="${radio.listen_url||'https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3'}" target="_blank" class="radio-play">▶ Listen Live</a>
     </div>
     ${radio.playing_next?.title ? `
-    <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.78rem;color:var(--text-muted)">
-      Coming up: <span style="color:#fff">${radio.playing_next.artist} — ${radio.playing_next.title}</span>
+    <div class="radio-next">
+      <span class="radio-next-label">Up Next</span>
+      <span class="radio-next-info"><strong>${radio.playing_next.artist}</strong> — ${radio.playing_next.title}</span>
     </div>` : ''}
+    ${historyHTML}
   `;
 }
 
