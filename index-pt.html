@@ -152,7 +152,7 @@ footer .socials a:hover{color:#fff}
   <div class="nav-inner">
     <a href="#" class="nav-logo"><span class="logo-dot"></span>RC</a>
     <div class="nav-links">
-      <a href="#about">Sobre</a><a href="#homelab">Homelab</a><a href="#services">Services</a><a href="#experience">Experiência</a><a href="#projects">Projetos</a><a href="#news">Notícias</a>
+      <a href="#about">Sobre</a><a href="#homelab">Homelab</a><a href="#experience">Experiência</a><a href="#projects">Projetos</a><a href="#news">Notícias</a>
       <div class="lang-toggle"><a href="index.html">EN</a><a href="index-pt.html" class="active">PT</a></div>
     </div>
   </div>
@@ -180,16 +180,6 @@ footer .socials a:hover{color:#fff}
     <label class="refresh-indicator"><input type="checkbox" id="autoRefresh" onchange="toggleAutoRefresh()"> Auto <span class="countdown" id="countdown">off</span></label>
   </h2>
   <div class="grid grid-3" id="homelab-nodes"><div class="loading">Loading health data...</div></div>
-</div></section>
-
-<!-- SERVICES -->
-<section class="section" id="services"><div class="container">
-  <h2 class="section-title"><span class="icon">🐳</span>Serviços Docker
-    <span class="section-sub" id="services-updated"></span>
-  </h2>
-  <div class="grid" style="grid-template-columns:1fr;gap:1.5rem" id="services-container">
-    <div class="loading">Loading service data...</div>
-  </div>
 </div></section>
 
 <!-- RADIO -->
@@ -334,57 +324,6 @@ function renderHomelab(nodes, updated) {
 }
 
 // ============================================================
-// SERVICES — Docker containers table per Pi
-// ============================================================
-function renderServices(nodes) {
-  const container = document.getElementById('services-container');
-  if (!nodes || !Object.keys(nodes).length) {
-    container.innerHTML = '<div class="loading">No service data available</div>';
-    return;
-  }
-
-  container.innerHTML = PI_ORDER.map(name => {
-    const n = nodes[name];
-    if (!n) return '';
-    const containers = n.containers||[];
-    if (!containers.length) return `<div class="services-card"><div class="services-card-header"><h3>${name}</h3><span class="svc-count">0 containers</span></div><div style="padding:1.5rem;text-align:center;color:var(--text-muted)">No containers running</div></div>`;
-
-    const rows = containers.map(c => {
-      const s = c.status||'';
-      let cls, label;
-      if (/^Up\b/i.test(s)) { cls='status-up'; label='Up'; }
-      else if (/^Exited\b/i.test(s)) { cls='status-exited'; label='Exited'; }
-      else if (/^Paused\b/i.test(s)) { cls='status-paused'; label='Paused'; }
-      else { cls='status-unknown'; label='?'; }
-
-      // Extract readable name (first word is container name, rest is image info)
-      const parts = s.split(/\s+/);
-      const uptimeStr = parts.length>1 ? parts.slice(1).join(' ') : s;
-
-      return `<tr>
-        <td><span class="container-name">${c.name.replace(/_/g,' ')}</span></td>
-        <td><span class="status-badge ${cls}"><span class="dot" style="width:6px;height:6px;animation:none;background:currentColor"></span> ${label}</span></td>
-        <td>${uptimeStr}</td>
-      </tr>`;
-    }).join('');
-
-    return `
-    <div class="services-card animate-in">
-      <div class="services-card-header">
-        <h3><span class="dot dot-ok" style="width:8px;height:8px"></span> ${name}</h3>
-        <span class="svc-count">${containers.length} container${containers.length!==1?'s':''}</span>
-      </div>
-      <div style="overflow-x:auto">
-        <table class="services-table">
-          <thead><tr><th>Container</th><th>Status</th><th>Uptime</th></tr></thead>
-          <tbody>${rows}</tbody>
-        </table>
-      </div>
-    </div>`;
-  }).filter(Boolean).join('');
-}
-
-// ============================================================
 // RADIO — rendered from health.json radio section
 // ============================================================
 function renderRadio(radio) {
@@ -396,7 +335,7 @@ function renderRadio(radio) {
     container.innerHTML = `<div style="text-align:center;padding:2rem;color:var(--text-muted)">
       <p style="font-size:1.5rem;margin-bottom:.5rem">📻</p>
       <p>Radio offline or data unavailable</p>
-      <a href="https://dublincalling.ie" target="_blank" style="color:var(--accent);font-size:.85rem;margin-top:.5rem;display:inline-block">Abrir Dublin Calling →</a>
+      <a href="https://dublincalling.ie" target="_blank" style="color:var(--accent);font-size:.85rem;margin-top:.5rem;display:inline-block">Open Dublin Calling →</a>
     </div>`;
     return;
   }
@@ -444,7 +383,7 @@ function renderRadio(radio) {
     </div>
     ${radio.playing_next?.title ? `
     <div class="radio-next">
-      <span class="radio-next-label">A Seguir</span>
+      <span class="radio-next-label">Up Next</span>
       <span class="radio-next-info"><strong>${radio.playing_next.artist}</strong> — ${radio.playing_next.title}</span>
     </div>` : ''}
     ${historyHTML}
@@ -606,7 +545,6 @@ async function loadHealth() {
   } catch(e) {
     healthData = null;
     document.getElementById('homelab-nodes').innerHTML = '<div class="card loading">Failed to load health data</div>';
-    document.getElementById('services-container').innerHTML = '<div class="loading">Failed to load health data</div>';
     return;
   }
 
@@ -615,7 +553,6 @@ async function loadHealth() {
   const updated = healthData?.updated||'N/A';
 
   renderHomelab(nodes, updated);
-  renderServices(nodes);
   renderRadio(radio);
 }
 
