@@ -1,21 +1,21 @@
 {
-  "updated": "2026-06-19 10:43",
+  "updated": "2026-06-19 11:25",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 6.0,
-        "user": 4.6,
-        "system": 1.1,
-        "idle": 93.8,
-        "iowait": 0.4
+        "total": 7.7,
+        "user": 6.4,
+        "system": 1.3,
+        "idle": 91.2,
+        "iowait": 1.0
       },
       "ram": {
-        "used_gb": 3.09,
+        "used_gb": 3.15,
         "total_gb": 7.87,
-        "percent": 39.3,
-        "available_gb": 4.78
+        "percent": 40.0,
+        "available_gb": 4.72
       },
       "swap": {
         "used_mb": 199.9,
@@ -23,9 +23,9 @@
         "percent": 100.0
       },
       "load": {
-        "1min": 13.66,
-        "5min": 9.93,
-        "15min": 6.96,
+        "1min": 3.43,
+        "5min": 5.03,
+        "15min": 5.83,
         "cores": 4
       },
       "disks": [
@@ -64,9 +64,9 @@
       ],
       "disk_io": {
         "read_mb": 0.0,
-        "write_mb": 10.8
+        "write_mb": 12.7
       },
-      "temperature_c": 52,
+      "temperature_c": 55,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -75,24 +75,24 @@
         }
       },
       "processes": {
-        "total": 193,
+        "total": 203,
         "running": 0,
-        "sleeping": 143,
-        "threads": 846
+        "sleeping": 145,
+        "threads": 862
       },
-      "uptime": "9 days, 1:32:58",
+      "uptime": "9 days, 2:15:38",
       "containers": [
         {
           "name": "gallery frontend",
-          "status": "Up 39 hours gallery-downloader-frontend"
+          "status": "Up 40 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery backend",
-          "status": "Up 40 hours (unhealthy) gallery-downloader-backend"
+          "status": "Up 40 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "gallery worker",
-          "status": "Up 41 hours gallery-downloader-worker"
+          "status": "Up 42 hours gallery-downloader-worker"
         },
         {
           "name": "gallery jandapress",
@@ -100,11 +100,11 @@
         },
         {
           "name": "gallery redis",
-          "status": "Up 46 hours (healthy) redis:7-alpine"
+          "status": "Up 47 hours (healthy) redis:7-alpine"
         },
         {
           "name": "gallery postgres",
-          "status": "Up 46 hours (healthy) postgres:16-alpine"
+          "status": "Up 47 hours (healthy) postgres:16-alpine"
         },
         {
           "name": "changedetection",
@@ -157,17 +157,17 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 7.1,
-        "user": 3.1,
-        "system": 0.4,
-        "idle": 96.3,
-        "iowait": 0.2
+        "total": 9.0,
+        "user": 7.8,
+        "system": 1.2,
+        "idle": 90.4,
+        "iowait": 0.5
       },
       "ram": {
-        "used_gb": 1.85,
+        "used_gb": 1.89,
         "total_gb": 7.87,
-        "percent": 23.6,
-        "available_gb": 6.02
+        "percent": 24.1,
+        "available_gb": 5.98
       },
       "swap": {
         "used_mb": 685.4,
@@ -175,9 +175,9 @@
         "percent": 16.7
       },
       "load": {
-        "1min": 0.46,
-        "5min": 0.71,
-        "15min": 0.83,
+        "1min": 0.21,
+        "5min": 0.49,
+        "15min": 0.53,
         "cores": 4
       },
       "disks": [
@@ -193,32 +193,32 @@
           "mount": "/etc/resolv.conf",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 115.8,
-          "free_gb": 753.4,
-          "percent": 12.6
+          "used_gb": 115.9,
+          "free_gb": 753.3,
+          "percent": 12.7
         },
         {
           "mount": "/etc/hostname",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 115.8,
-          "free_gb": 753.4,
-          "percent": 12.6
+          "used_gb": 115.9,
+          "free_gb": 753.3,
+          "percent": 12.7
         },
         {
           "mount": "/etc/hosts",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 115.8,
-          "free_gb": 753.4,
-          "percent": 12.6
+          "used_gb": 115.9,
+          "free_gb": 753.3,
+          "percent": 12.7
         }
       ],
       "disk_io": {
         "read_mb": 0.0,
-        "write_mb": 0.8
+        "write_mb": 0.1
       },
-      "temperature_c": 49,
+      "temperature_c": 50,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -227,12 +227,12 @@
         }
       },
       "processes": {
-        "total": 556,
+        "total": 560,
         "running": 0,
-        "sleeping": 462,
-        "threads": 3153
+        "sleeping": 466,
+        "threads": 3158
       },
-      "uptime": "4 days, 23:29:02",
+      "uptime": "5 days, 0:11:41",
       "containers": [
         {
           "name": "qbittorrent",
@@ -240,27 +240,27 @@
         },
         {
           "name": "portainer agent",
-          "status": "Up 4 days portainer/agent:latest"
+          "status": "Up 5 days portainer/agent:latest"
         },
         {
           "name": "azuracast",
-          "status": "Up 4 days ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 5 days ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "azuracast updater",
-          "status": "Up 4 days ghcr.io/azuracast/updater:latest"
+          "status": "Up 5 days ghcr.io/azuracast/updater:latest"
         },
         {
           "name": "IPRoyal01",
-          "status": "Up 4 days iproyal/pawns-cli:latest"
+          "status": "Up 5 days iproyal/pawns-cli:latest"
         },
         {
           "name": "glances monitoring 1",
-          "status": "Up 4 days nicolargo/glances:latest"
+          "status": "Up 5 days nicolargo/glances:latest"
         },
         {
           "name": "duckdns",
-          "status": "Up 4 days lscr.io/linuxserver/duckdns:arm64v8-latest"
+          "status": "Up 5 days lscr.io/linuxserver/duckdns:arm64v8-latest"
         }
       ],
       "container_count": 7,
@@ -269,17 +269,17 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 5.3,
-        "user": 3.3,
-        "system": 2.0,
-        "idle": 94.4,
-        "iowait": 0.2
+        "total": 4.8,
+        "user": 3.2,
+        "system": 1.8,
+        "idle": 94.8,
+        "iowait": 0.1
       },
       "ram": {
         "used_gb": 0.83,
         "total_gb": 7.64,
         "percent": 10.9,
-        "available_gb": 6.81
+        "available_gb": 6.8
       },
       "swap": {
         "used_mb": 0.0,
@@ -287,9 +287,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.4,
+        "1min": 0.34,
         "5min": 0.33,
-        "15min": 0.28,
+        "15min": 0.37,
         "cores": 4
       },
       "disks": [
@@ -328,9 +328,9 @@
       ],
       "disk_io": {
         "read_mb": 0.0,
-        "write_mb": 2.8
+        "write_mb": 1.0
       },
-      "temperature_c": 35,
+      "temperature_c": 34,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -339,12 +339,12 @@
         }
       },
       "processes": {
-        "total": 206,
+        "total": 207,
         "running": 0,
         "sleeping": 117,
-        "threads": 525
+        "threads": 528
       },
-      "uptime": "9 days, 1:33:03",
+      "uptime": "9 days, 2:15:42",
       "containers": [
         {
           "name": "Dashy",
@@ -356,7 +356,7 @@
         },
         {
           "name": "traffmonetizer",
-          "status": "Up About an hour traffmonetizer/cli_v2:latest"
+          "status": "Up 2 hours traffmonetizer/cli_v2:latest"
         },
         {
           "name": "portainer",
@@ -384,45 +384,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "My Back Pages",
-      "artist": "Ramones",
-      "album": "Acid Eaters",
-      "genre": "Punk Rock",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/24ace6fb718bee223f56e0d0-1764889645.jpg",
-      "duration": 147,
-      "elapsed": 124
+      "title": "Storm Is Coming",
+      "artist": "Junior Delgado",
+      "album": "Fearless",
+      "genre": "Reggae",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/ef1b523321ee4f99bec72540-1764888046.jpg",
+      "duration": 290,
+      "elapsed": 276
     },
     "playing_next": {
-      "title": "Bridge over Trouble Waters",
-      "artist": "Jimmy London"
+      "title": "Moonlight Lover",
+      "artist": "Joya Landis"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Absurd-Ditties",
-        "artist": "The Toy Dolls",
-        "played_at": 1781862019
+        "title": "32nd Floor (John Peel Session 01/90)",
+        "artist": "The House Of Love",
+        "played_at": 1781864227
       },
       {
-        "title": "Broadway Jungle",
-        "artist": "Toots & the Maytals",
-        "played_at": 1781861846
+        "title": "Untouchable",
+        "artist": "The Undertones",
+        "played_at": 1781864024
       },
       {
-        "title": "Do You Do You Dig Destruction",
-        "artist": "Turbonegro",
-        "played_at": 1781861622
+        "title": "Covetious Men",
+        "artist": "Vivian Jackson",
+        "played_at": 1781863841
       },
       {
-        "title": "If I Should Fall From Grace With God",
-        "artist": "The Pogues",
-        "played_at": 1781861481
+        "title": "take me to the earth",
+        "artist": "b1",
+        "played_at": 1781863635
       },
       {
-        "title": "Play Nice Kids",
-        "artist": "65daysofstatic",
-        "played_at": 1781861189
+        "title": "Were Marching On To Victory",
+        "artist": "Ras Michael & The Sons Of Negus",
+        "played_at": 1781863359
       }
     ]
   }
