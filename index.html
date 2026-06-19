@@ -536,7 +536,7 @@ function updateTicker() {
   if (allNews.length) {
     allNews.slice(0, 10).forEach(n => {
       const t = n.published||'';
-      items.push(`<span class="ticker-item"><span class="ticker-dot news"></span>📰 <a href="${n.url}" target="_blank" style="color:var(--text);text-decoration:none"><strong>${n.title}</strong></a> <span class="source">${n.source}</span> <span class="ticker-time">${t}</span></span>`);
+      items.push(`<span class="ticker-item"><span class="ticker-dot news"></span>📰 <a href="${n.link||'#'}" target="_blank" style="color:var(--text);text-decoration:none"><strong>${n.title}</strong></a> <span class="source">${n.source}</span> <span class="ticker-time">${t}</span></span>`);
     });
   }
 
