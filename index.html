@@ -202,7 +202,7 @@ footer .socials a:hover{color:#fff}
 </div></section>
 
 <!-- FOOTER -->
-<footer><p>© 2026 Robert Carvalho</p><div class="socials"><a href="https://www.linkedin.com/in/rac-carvalho/" target="_blank">LinkedIn</a><a href="https://github.com/robcarv" target="_blank">GitHub</a><a href="https://www.instagram.com/chch_changes/" target="_blank">Instagram</a></div></footer>
+<footer><p>© 2026 Robert Carvalho</p><div id="footer-status" style="font-size:.68rem;color:var(--muted);margin-top:.4rem"></div><div class="socials"><a href="https://www.linkedin.com/in/rac-carvalho/" target="_blank">LinkedIn</a><a href="https://github.com/robcarv" target="_blank">GitHub</a><a href="https://www.instagram.com/chch_changes/" target="_blank">Instagram</a></div></footer>
 
 <!-- Ticker -->
 <div class="ticker-wrap">
@@ -481,6 +481,7 @@ async function refreshAll() {
   await loadHealth();
   await loadNews();
   updateTicker();
+  updateFooterStatus();
   countdownValue = REFRESH_INTERVAL;
   document.getElementById('countdown').textContent = countdownValue+'s';
   btn.textContent = '↻ Refresh';
@@ -579,7 +580,21 @@ async function init() {
   await loadHealth();
   await loadNews();
   updateTicker();
+  updateFooterStatus();
   if (document.getElementById('autoRefresh').checked) startAutoRefresh();
+}
+
+// Update footer with health report
+function updateFooterStatus() {
+  const el = document.getElementById('footer-status');
+  if (!el || !healthData) return;
+  const nodes = healthData.nodes||{};
+  const total = Object.keys(nodes).length;
+  const ok = Object.values(nodes).filter(n=>n.status==='ok').length;
+  const containers = Object.values(nodes).reduce((sum,n)=>sum+(n.container_count||0),0);
+  const radio = healthData.radio;
+  const song = radio?.now_playing ? `${radio.now_playing.artist} — ${radio.now_playing.title}` : 'offline';
+  el.innerHTML = `Updated: ${healthData.updated||'?'} · ${ok}/${total} nodes healthy · ${containers} containers · 🎵 ${song}`;
 }
 
 // STARTUP
