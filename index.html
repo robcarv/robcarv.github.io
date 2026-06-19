@@ -83,6 +83,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,15,.85)
 .radio-play{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;padding:.75rem 1.5rem;border-radius:12px;border:none;font-size:.9rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:all .25s;flex-shrink:0;box-shadow:0 4px 16px rgba(99,102,241,.25)}
 .radio-play:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(99,102,241,.4)}
 .radio-play:active{transform:scale(.97)}
+.radio-play.playing{background:linear-gradient(135deg,#dc2626,#ef4444);box-shadow:0 4px 16px rgba(239,68,68,.25);animation:pulse-glow 1.5s ease-in-out infinite}
+.radio-audio-bar{display:none;align-items:center;gap:.75rem;margin-top:.75rem;padding:.5rem .75rem;background:rgba(0,0,0,.3);border-radius:8px}
+.radio-audio-bar.visible{display:flex}
+.radio-audio-bar audio{flex:1;height:32px;filter:invert(.85) hue-rotate(180deg)}
+.radio-vol{width:80px}
+@keyframes pulse-glow{0%,100%{box-shadow:0 4px 16px rgba(239,68,68,.25)}50%{box-shadow:0 4px 24px rgba(239,68,68,.5)}}
 .radio-progress-bar{height:3px;background:rgba(255,255,255,.06);border-radius:2px;margin-top:1rem;overflow:hidden}
 .radio-progress-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 1s linear}
 .radio-next{border-top:1px solid var(--border);margin-top:1rem;padding-top:1rem;display:flex;align-items:center;gap:.75rem}
@@ -174,6 +180,7 @@ footer{border-top:1px solid var(--border);padding:2rem 0;margin-top:5rem;text-al
 <section class="section"><div class="container">
   <h2 class="section-title"><span class="icon">🎵</span>Dublin Calling<span class="section-sub" id="radio-status"></span></h2>
   <div class="radio-card" id="radio-content"><div class="loading">Loading radio data...</div></div>
+  <audio id="radioAudio" preload="none" style="display:none"></audio>
 </div></section>
 
 <!-- EXPERIENCE -->
@@ -408,7 +415,11 @@ function renderRadio(radio) {
         </div>
         <div class="radio-progress-bar"><div class="radio-progress-fill" style="width:${pct}%"></div></div>
       </div>
-      <a href="${radio.listen_url||'https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3'}" target="_blank" class="radio-play">▶ Listen Live</a>
+      <button onclick="toggleRadio('${radio.listen_url||'https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3'}', this)" class="radio-play" id="radioPlayBtn">▶ Listen Live</button>
+    </div>
+    <div class="radio-audio-bar" id="radioAudioBar">
+      <button class="btn btn-sm" onclick="stopRadio()" title="Stop">⏹ Stop</button>
+      <input type="range" class="radio-vol" min="0" max="100" value="80" oninput="document.getElementById('radioAudio').volume=this.value/100" title="Volume">
     </div>
     ${radio.playing_next?.title ? `
     <div class="radio-next">
@@ -494,6 +505,37 @@ function renderNews() {
 // ============================================================
 // AUTO REFRESH (re-reads health.json + news.json)
 // ============================================================
+// ============================================================
+// RADIO PLAYER
+// ============================================================
+function toggleRadio(url, btn) {
+  const audio = document.getElementById('radioAudio');
+  const bar = document.getElementById('radioAudioBar');
+  if (audio.src && !audio.paused) {
+    audio.pause();
+    btn.classList.remove('playing');
+    btn.innerHTML = '▶ Listen Live';
+    bar.classList.remove('visible');
+  } else {
+    audio.src = url;
+    audio.load();
+    audio.play().then(() => {
+      btn.classList.add('playing');
+      btn.innerHTML = '⏸ Playing...';
+      bar.classList.add('visible');
+    }).catch(e => { console.warn('Play failed:', e); });
+  }
+}
+function stopRadio() {
+  const audio = document.getElementById('radioAudio');
+  const btn = document.getElementById('radioPlayBtn');
+  const bar = document.getElementById('radioAudioBar');
+  audio.pause();
+  audio.src = '';
+  if (btn) { btn.classList.remove('playing'); btn.innerHTML = '▶ Listen Live'; }
+  if (bar) bar.classList.remove('visible');
+}
+
 function toggleAutoRefresh() {
   const checked = document.getElementById('autoRefresh').checked;
   if (checked) startAutoRefresh();
