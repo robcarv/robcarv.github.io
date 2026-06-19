@@ -100,7 +100,7 @@ footer .socials a:hover{color:#fff}
 .ticker-item .ticker-dot.news{background:var(--blue)}
 .ticker-item .ticker-dot.radio{background:var(--green);animation:pulse 1.5s infinite}
 .ticker-item .ticker-dot.next{background:var(--purple)}
-.ticker-item strong{color:#fff;font-weight:500}
+.ticker-item a strong{color:#fff;font-weight:500}.ticker-item a:hover strong{color:var(--accent)}
 .ticker-item .source{font-size:.6rem;color:var(--muted);opacity:.7}
 .ticker-time{font-size:.6rem;color:var(--muted);opacity:.5}
 @keyframes ticker-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
@@ -516,20 +516,26 @@ function updateTicker() {
   if (!track) return;
   const items = [];
 
-  // Radio: now playing
+  // Radio: now playing + next 2
   const radio = healthData?.radio;
   if (radio?.is_online && radio.now_playing?.artist) {
-    items.push(`<span class="ticker-item"><span class="ticker-dot radio"></span>🎵 <strong>${radio.now_playing.artist} — ${radio.now_playing.title}</strong></span>`);
+    items.push(`<span class="ticker-item"><span class="ticker-dot radio"></span>🎵 Tocando: <strong>${radio.now_playing.artist} — ${radio.now_playing.title}</strong></span>`);
   }
   if (radio?.playing_next?.artist) {
-    items.push(`<span class="ticker-item"><span class="ticker-dot next"></span>⏭ Próxima: <strong>${radio.playing_next.artist} — ${radio.playing_next.title}</strong></span>`);
+    items.push(`<span class="ticker-item"><span class="ticker-dot next"></span>⏭ A seguir: <strong>${radio.playing_next.artist} — ${radio.playing_next.title}</strong></span>`);
+  }
+  // Próximas 2 do histórico
+  if (radio?.history?.length) {
+    radio.history.slice(0, 2).forEach(h => {
+      items.push(`<span class="ticker-item"><span class="ticker-dot next"></span>⏭ Depois: <strong>${h.artist||'?'} — ${h.title||'?'}</strong></span>`);
+    });
   }
 
-  // News headlines
+  // News headlines with clickable links
   if (allNews.length) {
     allNews.slice(0, 10).forEach(n => {
       const t = n.published||'';
-      items.push(`<span class="ticker-item"><span class="ticker-dot news"></span>📰 <strong>${n.title}</strong> <span class="source">${n.source}</span> <span class="ticker-time">${t}</span></span>`);
+      items.push(`<span class="ticker-item"><span class="ticker-dot news"></span>📰 <a href="${n.url}" target="_blank" style="color:var(--text);text-decoration:none"><strong>${n.title}</strong></a> <span class="source">${n.source}</span> <span class="ticker-time">${t}</span></span>`);
     });
   }
 
