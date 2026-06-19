@@ -200,52 +200,7 @@ footer .socials a:hover{color:#fff}
 <!-- EXPERIENCE -->
 <section class="section" id="experience"><div class="container">
   <h2 class="section-title"><span class="icon">💼</span>Experience</h2>
-  <div class="exp-list">
-    <div class="exp-item" onclick="this.classList.toggle('open')">
-      <div class="exp-header">
-        <div>
-          <div class="exp-role">QA Automation Engineer</div>
-          <div class="exp-company">IBM</div>
-          <div class="exp-period">Oct 2021 — Present</div>
-        </div>
-        <span class="exp-arrow">▼</span>
-      </div>
-      <div class="exp-body">
-        <ul><li>Automated testing frameworks with Python, Java, and Playwright</li>
-        <li>CI/CD pipeline management using GitHub Actions and Jenkins</li>
-        <li>API testing, contract testing, and end-to-end test suites</li></ul>
-      </div>
-    </div>
-    <div class="exp-item" onclick="this.classList.toggle('open')">
-      <div class="exp-header">
-        <div>
-          <div class="exp-role">Support Engineer</div>
-          <div class="exp-company">TOTVS</div>
-          <div class="exp-period">Oct 2015 — Oct 2021</div>
-        </div>
-        <span class="exp-arrow">▼</span>
-      </div>
-      <div class="exp-body">
-        <ul><li>Technical support for enterprise ERP systems</li>
-        <li>Database analysis in SQL Server and PostgreSQL</li>
-        <li>Customer-facing incident resolution</li></ul>
-      </div>
-    </div>
-    <div class="exp-item" onclick="this.classList.toggle('open')">
-      <div class="exp-header">
-        <div>
-          <div class="exp-role">Support Engineer</div>
-          <div class="exp-company">Avis Budget Group</div>
-          <div class="exp-period">May 2012 — Mar 2015</div>
-        </div>
-        <span class="exp-arrow">▼</span>
-      </div>
-      <div class="exp-body">
-        <ul><li>IT support for 200+ users across European locations</li>
-        <li>System administration and network maintenance</li></ul>
-      </div>
-    </div>
-  </div>
+  <div class="exp-list" id="exp-list"><div class="loading">Loading experience...</div></div>
 </div></section>
 
 <!-- PROJECTS -->
@@ -441,6 +396,32 @@ function updateNavRadio(radio) {
 }
 
 // ============================================================
+// EXPERIENCE — rendered from experience.json
+// ============================================================
+async function loadExperience() {
+  try {
+    const r = await fetch('experience.json?_='+Date.now());
+    if (!r.ok) throw new Error('HTTP '+r.status);
+    renderExperience(await r.json());
+  } catch(e) {
+    document.getElementById('exp-list').innerHTML = '<div class="loading">Failed to load experience</div>';
+  }
+}
+function renderExperience(items) {
+  const c = document.getElementById('exp-list');
+  if (!items?.length) { c.innerHTML = ''; return; }
+  c.innerHTML = items.map((exp, i) => `
+    <div class="exp-item" onclick="this.classList.toggle('open')">
+      <div class="exp-header"><div>
+        <div class="exp-role">${exp.role||''}</div>
+        <div class="exp-company">${exp.company||''}</div>
+        <div class="exp-period">${exp.period||''}</div>
+      </div><span class="exp-arrow">▼</span></div>
+      <div class="exp-body"><ul>${(exp.items||[]).map(li=>`<li>${li}</li>`).join('')}</ul></div>
+    </div>`).join('');
+}
+
+// ============================================================
 // NEWS — filterable feed from news.json
 // ============================================================
 async function loadNews() {
@@ -583,6 +564,7 @@ async function refreshAll() {
   btn.disabled = true;
   await loadHealth();
   await loadNews();
+  await loadExperience();
   updateTicker();
   updateFooterStatus();
   countdownValue = REFRESH_INTERVAL;
@@ -682,6 +664,7 @@ function updateTicker() {
 async function init() {
   await loadHealth();
   await loadNews();
+  await loadExperience();
   updateTicker();
   updateFooterStatus();
   if (document.getElementById('autoRefresh').checked) startAutoRefresh();
