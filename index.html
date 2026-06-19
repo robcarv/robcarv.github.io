@@ -94,8 +94,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,15,.92)
 .radio-audio-bar .radio-progress-bar{flex:1;height:2px;background:rgba(255,255,255,.06);border-radius:1px;overflow:hidden;margin:0}
 .radio-audio-bar .radio-progress-fill{height:100%;border-radius:1px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 1s linear}
 .radio-vol{width:60px;height:3px;accent-color:var(--accent)}
-/* Timeline */
-.timeline{position:relative;padding-left:2rem}.timeline::before{content:'';position:absolute;left:8px;top:8px;bottom:8px;width:1px;background:var(--border)}.timeline-item{position:relative;margin-bottom:1.25rem}.timeline-item::before{content:'';position:absolute;left:-1.65rem;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}.timeline-role{font-weight:600;color:#fff;font-size:1rem}.timeline-company{color:var(--accent);font-size:.85rem;margin-bottom:.25rem}.timeline-period{color:var(--text-muted);font-size:.75rem;margin-bottom:.5rem}.timeline-items{list-style:none}.timeline-items li{color:var(--text-muted);font-size:.82rem;padding:2px 0;position:relative;padding-left:1rem}.timeline-items li::before{content:'—';position:absolute;left:0;color:var(--border)}
+/* Experience accordion */
+.exp-list{display:flex;flex-direction:column;gap:1px}
+.exp-item{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg-card);cursor:pointer;transition:border-color .2s}
+.exp-item:hover{border-color:#2a2a3a}
+.exp-item:first-child{border-radius:10px 10px 0 0}.exp-item:last-child{border-radius:0 0 10px 10px}.exp-item:only-child{border-radius:10px}
+.exp-header{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.25rem;user-select:none}
+.exp-role{font-weight:600;color:#fff;font-size:.95rem}
+.exp-company{color:var(--accent);font-size:.78rem;margin-top:1px}
+.exp-period{color:var(--muted);font-size:.68rem;margin-top:1px}
+.exp-arrow{color:var(--muted);font-size:.7rem;transition:transform .3s ease;flex-shrink:0}
+.exp-item.open .exp-arrow{transform:rotate(180deg)}
+.exp-body{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;padding:0 1.25rem}
+.exp-item.open .exp-body{max-height:300px;padding:0 1.25rem 1rem}
+.exp-body ul{list-style:none}.exp-body li{color:var(--muted);font-size:.78rem;padding:3px 0 3px 1rem;position:relative}
+.exp-body li::before{content:'—';position:absolute;left:0;color:var(--border)}
 /* Projects */
 .project-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:border-color .2s}.project-card:hover{border-color:#2a2a3a;transform:translateY(-1px)}.project-card h4{font-size:.95rem;color:#fff;margin-bottom:.5rem}.project-card p{font-size:.8rem;color:var(--text-muted);margin-bottom:.75rem}.project-card .links{display:flex;gap:.75rem}.project-card .links a{font-size:.78rem;color:var(--accent);text-decoration:none;padding:4px 10px;border-radius:6px;border:1px solid var(--border);transition:all .2s}.project-card .links a:hover{border-color:var(--accent);background:rgba(99,102,241,.1)}
 /* News */
@@ -187,10 +200,51 @@ footer .socials a:hover{color:#fff}
 <!-- EXPERIENCE -->
 <section class="section" id="experience"><div class="container">
   <h2 class="section-title"><span class="icon">💼</span>Experience</h2>
-  <div class="timeline">
-    <div class="timeline-item"><div class="timeline-role">QA Automation Engineer</div><div class="timeline-company">IBM</div><div class="timeline-period">Oct 2021 — Present</div><ul class="timeline-items"><li>Automated testing frameworks with Python, Java, and Playwright</li><li>CI/CD pipeline management using GitHub Actions and Jenkins</li><li>API testing, contract testing, and end-to-end test suites</li></ul></div>
-    <div class="timeline-item"><div class="timeline-role">Support Engineer</div><div class="timeline-company">TOTVS</div><div class="timeline-period">Oct 2015 — Oct 2021</div><ul class="timeline-items"><li>Technical support for enterprise ERP systems</li><li>Database analysis in SQL Server and PostgreSQL</li><li>Customer-facing incident resolution</li></ul></div>
-    <div class="timeline-item"><div class="timeline-role">Support Engineer</div><div class="timeline-company">Avis Budget Group</div><div class="timeline-period">May 2012 — Mar 2015</div><ul class="timeline-items"><li>IT support for 200+ users across European locations</li><li>System administration and network maintenance</li></ul></div>
+  <div class="exp-list">
+    <div class="exp-item" onclick="this.classList.toggle('open')">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">QA Automation Engineer</div>
+          <div class="exp-company">IBM</div>
+          <div class="exp-period">Oct 2021 — Present</div>
+        </div>
+        <span class="exp-arrow">▼</span>
+      </div>
+      <div class="exp-body">
+        <ul><li>Automated testing frameworks with Python, Java, and Playwright</li>
+        <li>CI/CD pipeline management using GitHub Actions and Jenkins</li>
+        <li>API testing, contract testing, and end-to-end test suites</li></ul>
+      </div>
+    </div>
+    <div class="exp-item" onclick="this.classList.toggle('open')">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">Support Engineer</div>
+          <div class="exp-company">TOTVS</div>
+          <div class="exp-period">Oct 2015 — Oct 2021</div>
+        </div>
+        <span class="exp-arrow">▼</span>
+      </div>
+      <div class="exp-body">
+        <ul><li>Technical support for enterprise ERP systems</li>
+        <li>Database analysis in SQL Server and PostgreSQL</li>
+        <li>Customer-facing incident resolution</li></ul>
+      </div>
+    </div>
+    <div class="exp-item" onclick="this.classList.toggle('open')">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">Support Engineer</div>
+          <div class="exp-company">Avis Budget Group</div>
+          <div class="exp-period">May 2012 — Mar 2015</div>
+        </div>
+        <span class="exp-arrow">▼</span>
+      </div>
+      <div class="exp-body">
+        <ul><li>IT support for 200+ users across European locations</li>
+        <li>System administration and network maintenance</li></ul>
+      </div>
+    </div>
   </div>
 </div></section>
 
