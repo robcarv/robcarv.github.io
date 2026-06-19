@@ -1,31 +1,31 @@
 {
-  "updated": "2026-06-19 22:29",
+  "updated": "2026-06-19 23:21",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 6.8,
-        "user": 5.2,
-        "system": 1.1,
-        "idle": 92.7,
-        "iowait": 0.8
+        "total": 5.2,
+        "user": 4.3,
+        "system": 0.9,
+        "idle": 94.3,
+        "iowait": 0.4
       },
       "ram": {
-        "used_gb": 2.49,
+        "used_gb": 2.5,
         "total_gb": 7.87,
-        "percent": 31.6,
-        "available_gb": 5.38
+        "percent": 31.8,
+        "available_gb": 5.37
       },
       "swap": {
-        "used_mb": 1.0,
+        "used_mb": 174.0,
         "total_mb": 200.0,
-        "percent": 0.5
+        "percent": 87.0
       },
       "load": {
-        "1min": 0.28,
-        "5min": 0.41,
-        "15min": 0.55,
+        "1min": 0.53,
+        "5min": 1.87,
+        "15min": 2.0,
         "cores": 4
       },
       "disks": [
@@ -33,40 +33,40 @@
           "mount": "/etc/os-release",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 45.1,
-          "free_gb": 65.6,
-          "percent": 38.7
+          "used_gb": 47.8,
+          "free_gb": 62.9,
+          "percent": 41.0
         },
         {
           "mount": "/etc/resolv.conf",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 45.1,
-          "free_gb": 65.6,
-          "percent": 38.7
+          "used_gb": 47.8,
+          "free_gb": 62.9,
+          "percent": 41.0
         },
         {
           "mount": "/etc/hostname",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 45.1,
-          "free_gb": 65.6,
-          "percent": 38.7
+          "used_gb": 47.8,
+          "free_gb": 62.9,
+          "percent": 41.0
         },
         {
           "mount": "/etc/hosts",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 45.1,
-          "free_gb": 65.6,
-          "percent": 38.7
+          "used_gb": 47.8,
+          "free_gb": 62.9,
+          "percent": 41.0
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 3.5
+        "read_mb": 7.3,
+        "write_mb": 46.1
       },
-      "temperature_c": 50,
+      "temperature_c": 52,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -75,80 +75,80 @@
         }
       },
       "processes": {
-        "total": 368,
+        "total": 367,
         "running": 1,
         "sleeping": 273,
-        "threads": 1075
+        "threads": 1079
       },
-      "uptime": "2:57:06",
+      "uptime": "3:48:35",
       "containers": [
         {
           "name": "gallery backend",
-          "status": "Up 24 minutes (healthy) gallery-downloader-backend"
+          "status": "Up About an hour (healthy) gallery-downloader-backend"
         },
         {
           "name": "glances monitoring 1",
-          "status": "Up 2 hours nicolargo/glances:3.4.0.5"
+          "status": "Up 3 hours nicolargo/glances:3.4.0.5"
         },
         {
           "name": "changedetection browser chrome 1",
-          "status": "Up 2 hours seleniarm/standalone-chromium:latest"
+          "status": "Up 3 hours seleniarm/standalone-chromium:latest"
         },
         {
           "name": "gallery frontend",
-          "status": "Up 2 hours gallery-downloader-frontend"
+          "status": "Up 3 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery worker",
-          "status": "Up 2 hours gallery-downloader-worker"
+          "status": "Up 3 hours gallery-downloader-worker"
         },
         {
           "name": "gallery jandapress",
-          "status": "Up 26 minutes gallery-jandapress:local-arm64"
+          "status": "Up About an hour gallery-jandapress:local-arm64"
         },
         {
           "name": "gallery redis",
-          "status": "Up 2 hours (healthy) redis:7-alpine"
+          "status": "Up 3 hours (healthy) redis:7-alpine"
         },
         {
           "name": "gallery postgres",
-          "status": "Up 2 hours (healthy) postgres:16-alpine"
+          "status": "Up 3 hours (healthy) postgres:16-alpine"
         },
         {
           "name": "changedetection",
-          "status": "Up 2 hours ghcr.io/dgtlmoon/changedetection.io"
+          "status": "Up 3 hours ghcr.io/dgtlmoon/changedetection.io"
         },
         {
           "name": "changedetection playwright chrome 1",
-          "status": "Up 2 hours browserless/chrome:latest"
+          "status": "Up 3 hours browserless/chrome:latest"
         },
         {
           "name": "uptime kuma",
-          "status": "Up 2 hours (healthy) louislam/uptime-kuma:2"
+          "status": "Up 3 hours (healthy) louislam/uptime-kuma:2"
         },
         {
           "name": "prowlarr",
-          "status": "Up 2 hours lscr.io/linuxserver/prowlarr:latest"
+          "status": "Up 3 hours lscr.io/linuxserver/prowlarr:latest"
         },
         {
           "name": "speedtest tracker",
-          "status": "Up 2 hours lscr.io/linuxserver/speedtest-tracker:latest"
+          "status": "Up 3 hours lscr.io/linuxserver/speedtest-tracker:latest"
         },
         {
           "name": "Dashy",
-          "status": "Up 2 hours (healthy) lissy93/dashy:4.2.4"
+          "status": "Up 3 hours (healthy) lissy93/dashy:4.2.4"
         },
         {
           "name": "portainer agent",
-          "status": "Up 2 hours portainer/agent:latest"
+          "status": "Up 3 hours portainer/agent:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 2 hours bellamy/wallos:latest"
+          "status": "Up 3 hours bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 2 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 3 hours jc21/nginx-proxy-manager:latest"
         }
       ],
       "container_count": 17,
@@ -157,27 +157,27 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 3.2,
-        "user": 3.3,
-        "system": 0.5,
-        "idle": 96.2,
-        "iowait": 0.0
+        "total": 7.7,
+        "user": 6.4,
+        "system": 1.2,
+        "idle": 91.8,
+        "iowait": 0.4
       },
       "ram": {
-        "used_gb": 1.8,
+        "used_gb": 1.77,
         "total_gb": 7.87,
-        "percent": 22.8,
-        "available_gb": 6.08
+        "percent": 22.4,
+        "available_gb": 6.11
       },
       "swap": {
-        "used_mb": 676.4,
+        "used_mb": 724.4,
         "total_mb": 4096.0,
-        "percent": 16.5
+        "percent": 17.7
       },
       "load": {
-        "1min": 0.67,
-        "5min": 0.99,
-        "15min": 0.95,
+        "1min": 0.54,
+        "5min": 0.7,
+        "15min": 0.69,
         "cores": 4
       },
       "disks": [
@@ -185,16 +185,16 @@
           "mount": "/etc/os-release",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 72.8,
-          "free_gb": 37.9,
-          "percent": 62.4
+          "used_gb": 74.1,
+          "free_gb": 36.6,
+          "percent": 63.5
         },
         {
           "mount": "/etc/resolv.conf",
           "device": "/dev/sda1",
           "size_gb": 915.8,
           "used_gb": 115.9,
-          "free_gb": 753.4,
+          "free_gb": 753.3,
           "percent": 12.7
         },
         {
@@ -202,7 +202,7 @@
           "device": "/dev/sda1",
           "size_gb": 915.8,
           "used_gb": 115.9,
-          "free_gb": 753.4,
+          "free_gb": 753.3,
           "percent": 12.7
         },
         {
@@ -210,15 +210,15 @@
           "device": "/dev/sda1",
           "size_gb": 915.8,
           "used_gb": 115.9,
-          "free_gb": 753.4,
+          "free_gb": 753.3,
           "percent": 12.7
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 0.1
+        "read_mb": 0.9,
+        "write_mb": 39.3
       },
-      "temperature_c": 47,
+      "temperature_c": 48,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -227,16 +227,16 @@
         }
       },
       "processes": {
-        "total": 557,
+        "total": 559,
         "running": 1,
-        "sleeping": 461,
-        "threads": 3139
+        "sleeping": 463,
+        "threads": 3143
       },
-      "uptime": "5 days, 11:15:51",
+      "uptime": "5 days, 12:07:20",
       "containers": [
         {
           "name": "glances monitoring 1",
-          "status": "Up 6 hours nicolargo/glances:3.4.0.5"
+          "status": "Up 7 hours nicolargo/glances:3.4.0.5"
         },
         {
           "name": "qbittorrent",
@@ -269,17 +269,17 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 37.6,
-        "user": 20.7,
-        "system": 23.5,
-        "idle": 50.6,
-        "iowait": 5.1
+        "total": 6.4,
+        "user": 4.2,
+        "system": 2.1,
+        "idle": 93.4,
+        "iowait": 0.2
       },
       "ram": {
-        "used_gb": 1.22,
+        "used_gb": 1.13,
         "total_gb": 7.64,
-        "percent": 16.0,
-        "available_gb": 6.42
+        "percent": 14.8,
+        "available_gb": 6.5
       },
       "swap": {
         "used_mb": 0.0,
@@ -287,9 +287,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 4.28,
-        "5min": 4.0,
-        "15min": 3.61,
+        "1min": 0.35,
+        "5min": 0.67,
+        "15min": 0.81,
         "cores": 4
       },
       "disks": [
@@ -297,40 +297,40 @@
           "mount": "/etc/os-release",
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
-          "used_gb": 28.4,
-          "free_gb": 81.1,
-          "percent": 24.6
+          "used_gb": 26.1,
+          "free_gb": 83.4,
+          "percent": 22.6
         },
         {
           "mount": "/etc/resolv.conf",
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
-          "used_gb": 28.4,
-          "free_gb": 81.1,
-          "percent": 24.6
+          "used_gb": 26.1,
+          "free_gb": 83.4,
+          "percent": 22.6
         },
         {
           "mount": "/etc/hostname",
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
-          "used_gb": 28.4,
-          "free_gb": 81.1,
-          "percent": 24.6
+          "used_gb": 26.1,
+          "free_gb": 83.4,
+          "percent": 22.6
         },
         {
           "mount": "/etc/hosts",
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
-          "used_gb": 28.4,
-          "free_gb": 81.1,
-          "percent": 24.6
+          "used_gb": 26.1,
+          "free_gb": 83.4,
+          "percent": 22.6
         }
       ],
       "disk_io": {
-        "read_mb": 89.5,
-        "write_mb": 20.4
+        "read_mb": 0.0,
+        "write_mb": 8.8
       },
-      "temperature_c": 36,
+      "temperature_c": 34,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -339,40 +339,40 @@
         }
       },
       "processes": {
-        "total": 232,
-        "running": 1,
-        "sleeping": 137,
-        "threads": 729
+        "total": 233,
+        "running": 2,
+        "sleeping": 141,
+        "threads": 725
       },
-      "uptime": "9 days, 13:19:51",
+      "uptime": "9 days, 14:11:20",
       "containers": [
         {
-          "name": "lucid chebyshev",
-          "status": "Up 4 minutes aquasec/trivy:latest"
-        },
-        {
-          "name": "cve alertmanager",
-          "status": "Up 47 minutes prom/alertmanager:latest"
-        },
-        {
-          "name": "cve prometheus",
-          "status": "Up 47 minutes prom/prometheus:latest"
+          "name": "cve report",
+          "status": "Up About a minute nginx:alpine"
         },
         {
           "name": "cve grafana",
-          "status": "Up 25 minutes grafana/grafana:latest"
+          "status": "Up 8 minutes grafana/grafana:latest"
+        },
+        {
+          "name": "cve alertmanager",
+          "status": "Up 2 hours prom/alertmanager:latest"
+        },
+        {
+          "name": "cve prometheus",
+          "status": "Up 2 hours prom/prometheus:latest"
         },
         {
           "name": "cve pushgateway",
-          "status": "Up 47 minutes prom/pushgateway:latest"
+          "status": "Up 2 hours prom/pushgateway:latest"
         },
         {
           "name": "glances monitoring 1",
-          "status": "Up 6 hours nicolargo/glances:3.4.0.5"
+          "status": "Up 7 hours nicolargo/glances:3.4.0.5"
         },
         {
           "name": "Dashy",
-          "status": "Up 3 hours (healthy) lissy93/dashy:4.2.4"
+          "status": "Up 4 hours (healthy) lissy93/dashy:4.2.4"
         },
         {
           "name": "pawns",
@@ -380,7 +380,7 @@
         },
         {
           "name": "traffmonetizer",
-          "status": "Up 13 hours traffmonetizer/cli_v2:latest"
+          "status": "Up 14 hours traffmonetizer/cli_v2:latest"
         },
         {
           "name": "portainer",
@@ -410,7 +410,7 @@
       "genre": "",
       "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/8d14d1fefb7caf498bea4188",
       "duration": 7170,
-      "elapsed": 2632
+      "elapsed": 5721
     },
     "playing_next": {
       "title": "Japan",
