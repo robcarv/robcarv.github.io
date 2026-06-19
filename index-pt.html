@@ -244,7 +244,7 @@ function renderHomelab(nodes, updated) {
     container.innerHTML = '<div class="card loading">No health data available</div>';
     return;
   }
-  document.getElementById('health-updated').textContent = 'Atualizado: ' + (updated||'N/A');
+  document.getElementById('health-updated').textContent = 'Updated: ' + (updated||'N/A');
 
   container.innerHTML = PI_ORDER.map(name => {
     const n = nodes[name];
@@ -356,7 +356,7 @@ async function loadNews() {
     }
     allNews = news.items;
     const d = news.updated ? new Date(news.updated) : null;
-    document.getElementById('news-updated').textContent = 'Atualizado: ' + (d ? d.toLocaleString() : 'N/A');
+    document.getElementById('news-updated').textContent = 'Updated: ' + (d ? d.toLocaleString() : 'N/A');
     renderNewsFilters();
     renderNews();
   } catch(e) {
@@ -539,17 +539,14 @@ function updateTicker() {
 
 // Call after data loads
 async function init() {
-  await loadAll();
+  await loadHealth();
   await loadNews();
   updateTicker();
   if (document.getElementById('autoRefresh').checked) startAutoRefresh();
 }
 
-(async function init() {
-  await loadHealth();
-  await loadNews();
-  // Auto-refresh defaults to off — user opts in
-})();
+// STARTUP
+init();
 </script>
 </body>
 </html>

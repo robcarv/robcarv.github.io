@@ -539,17 +539,14 @@ function updateTicker() {
 
 // Call after data loads
 async function init() {
-  await loadAll();
+  await loadHealth();
   await loadNews();
   updateTicker();
   if (document.getElementById('autoRefresh').checked) startAutoRefresh();
 }
 
-(async function init() {
-  await loadHealth();
-  await loadNews();
-  // Auto-refresh defaults to off — user opts in
-})();
+// STARTUP
+init();
 </script>
 </body>
 </html>
