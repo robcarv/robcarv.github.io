@@ -344,6 +344,14 @@ function renderRadio(radio) {
       <input type="range" class="radio-vol" min="0" max="100" value="80" oninput="document.getElementById('radioAudio').volume=this.value/100" title="Volume">
     </div>
   `;
+  // Keep audio bar visible if already playing (survives pollRadioLive re-renders)
+  const audio = document.getElementById('radioAudio');
+  if (audio && !audio.paused && audio.src) {
+    const bar = document.getElementById('radioAudioBar');
+    const btn = document.getElementById('radioPlayBtn');
+    if (bar) bar.classList.add('visible');
+    if (btn) btn.classList.add('playing');
+  }
 }
 
 // ============================================================
