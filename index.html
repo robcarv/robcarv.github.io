@@ -17,17 +17,27 @@
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;overflow-x:hidden}
 .container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
-nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,15,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.nav-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,15,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:52px}
 .nav-logo{font-weight:700;font-size:1.25rem;color:#fff;text-decoration:none;display:flex;align-items:center;gap:.5rem}
 .nav-logo .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block}
 .nav-links{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap}
 .nav-links a{color:var(--text-muted);text-decoration:none;font-size:.75rem;transition:color .2s}
 .nav-links a:hover{color:#fff}
+/* Nav radio bar */
+.nav-radio{max-width:1100px;margin:0 auto;padding:0 1.5rem 5px;display:flex;align-items:center;gap:.6rem;font-size:.7rem;color:var(--muted)}
+.nav-radio-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;background:var(--green)}.nav-radio-dot.live{background:var(--red);animation:pulse 1.5s infinite}
+.nav-radio-text{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--text)}
+.nav-radio-text strong{color:#fff;font-weight:500}
+.nav-radio-time{font-size:.65rem;color:var(--muted);flex-shrink:0}
+.nav-radio-btn{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--accent);background:rgba(99,102,241,.1);color:var(--accent);font-size:.6rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;padding:0}
+.nav-radio-btn:hover{background:rgba(99,102,241,.25)}.nav-radio-btn.playing{background:var(--accent);color:#fff}
+.nav-radio-ctrl{display:none;align-items:center;gap:.3rem;margin-left:.3rem}.nav-radio-ctrl.show{display:flex}
+.nav-radio-vol{width:50px;height:2px;accent-color:var(--accent)}
 .lang-toggle{display:flex;gap:4px;margin-left:1rem;padding-left:1rem;border-left:1px solid var(--border)}
 .lang-toggle a{font-size:.65rem;padding:3px 8px;border-radius:4px}
 .lang-toggle a.active{background:#1e1e2a;color:#fff}
-.hero{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;padding-top:60px}
+.hero{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;padding-top:70px}
 .hero-avatar{width:100px;height:100px;border-radius:50%;border:2px solid var(--border);margin:0 auto 1.5rem;overflow:hidden;background:#1e1e2a;transition:border-color .3s}
 .hero-avatar:hover{border-color:var(--accent)}
 .hero-avatar img{width:100%;height:100%;object-fit:cover}
@@ -140,6 +150,7 @@ footer .socials a:hover{color:#fff}
       <div class="lang-toggle"><a href="index.html" class="active">EN</a><a href="index-pt.html">PT</a></div>
     </div>
   </div>
+  <div class="nav-radio" id="navRadio"><span class="nav-radio-dot"></span><span class="nav-radio-text">Loading...</span></div>
 </nav>
 
 <!-- HERO -->
@@ -344,6 +355,8 @@ function renderRadio(radio) {
       <input type="range" class="radio-vol" min="0" max="100" value="80" oninput="document.getElementById('radioAudio').volume=this.value/100" title="Volume">
     </div>
   `;
+  // Also update the nav radio bar
+  updateNavRadio(radio);
   // Keep audio bar visible if already playing (survives pollRadioLive re-renders)
   const audio = document.getElementById('radioAudio');
   if (audio && !audio.paused && audio.src) {
@@ -352,6 +365,25 @@ function renderRadio(radio) {
     if (bar) bar.classList.add('visible');
     if (btn) btn.classList.add('playing');
   }
+}
+
+function updateNavRadio(radio) {
+  const nav = document.getElementById('navRadio');
+  if (!nav || !radio?.now_playing) return;
+  const np = radio.now_playing;
+  const elapsed = np.elapsed||0, duration = np.duration||1;
+  const rem = Math.max(duration-elapsed, 0);
+  const mins = Math.floor(rem/60), secs = String(Math.floor(rem%60)).padStart(2,'0');
+  nav.innerHTML = `
+    <span class="nav-radio-dot ${radio.is_live?'live':''}"></span>
+    <span class="nav-radio-text"><strong>${np.artist||'?'}</strong> — ${np.title||'?'}</span>
+    <span class="nav-radio-time">-${mins}:${secs}</span>
+    <button onclick="toggleRadio('${radio.listen_url||'https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3'}', this)" class="nav-radio-btn" id="navPlayBtn">▶</button>
+    <span class="nav-radio-ctrl" id="navRadioCtrl">
+      <button class="btn btn-sm" onclick="stopRadio()" title="Stop" style="padding:2px 6px;font-size:.6rem">⏹</button>
+      <input type="range" class="nav-radio-vol" min="0" max="100" value="80" oninput="document.getElementById('radioAudio').volume=this.value/100" title="Vol">
+    </span>
+  `;
 }
 
 // ============================================================
@@ -435,26 +467,35 @@ function renderNews() {
 function toggleRadio(url, btn) {
   const audio = document.getElementById('radioAudio');
   const bar = document.getElementById('radioAudioBar');
+  const navBtn = document.getElementById('navPlayBtn');
+  const navCtrl = document.getElementById('navRadioCtrl');
   if (audio.src && !audio.paused) {
-  audio.pause();
-  btn.classList.remove('playing');
-  bar.classList.remove('visible');
+    audio.pause();
+    if (btn) btn.classList.remove('playing');
+    if (bar) bar.classList.remove('visible');
+    if (navBtn) navBtn.classList.remove('playing');
+    if (navCtrl) navCtrl.classList.remove('show');
   } else {
-  audio.src = url;
-  audio.load();
-  audio.play().then(() => {
-    btn.classList.add('playing');
-    bar.classList.add('visible');
-  }).catch(e => { console.warn('Play failed:', e); });
+    audio.src = url; audio.load();
+    audio.play().then(() => {
+      if (btn) btn.classList.add('playing');
+      if (bar) bar.classList.add('visible');
+      if (navBtn) navBtn.classList.add('playing');
+      if (navCtrl) navCtrl.classList.add('show');
+    }).catch(e => console.warn(e));
   }
 }
 function stopRadio() {
   const audio = document.getElementById('radioAudio');
   const btn = document.getElementById('radioPlayBtn');
   const bar = document.getElementById('radioAudioBar');
+  const navBtn = document.getElementById('navPlayBtn');
+  const navCtrl = document.getElementById('navRadioCtrl');
   audio.pause(); audio.src = '';
   if (btn) btn.classList.remove('playing');
   if (bar) bar.classList.remove('visible');
+  if (navBtn) navBtn.classList.remove('playing');
+  if (navCtrl) navCtrl.classList.remove('show');
 }
 
 function toggleAutoRefresh() {

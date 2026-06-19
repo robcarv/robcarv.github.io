@@ -14,6 +14,15 @@ nav{position:sticky;top:0;z-index:50;background:rgba(10,10,15,.9);backdrop-filte
 .nav-links{display:flex;gap:1.5rem;align-items:center}
 .nav-links a{color:var(--muted);text-decoration:none;font-size:.85rem;transition:color .2s}
 .nav-links a:hover{color:#fff}
+/* Nav radio bar */
+.nav-radio{max-width:1400px;margin:0 auto;padding:0 2rem 5px;display:flex;align-items:center;gap:.6rem;font-size:.7rem;color:var(--muted)}
+.nav-radio-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;background:var(--green)}.nav-radio-dot.live{background:var(--red);animation:pulse 1.5s infinite}
+.nav-radio-text{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.nav-radio-text strong{color:#fff;font-weight:500}
+.nav-radio-time{font-size:.65rem;color:var(--muted);flex-shrink:0}
+.nav-radio-btn{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--accent);background:rgba(99,102,241,.1);color:var(--accent);font-size:.6rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;padding:0}
+.nav-radio-btn:hover{background:rgba(99,102,241,.25)}.nav-radio-btn.playing{background:var(--accent);color:#fff}
+.nav-radio-ctrl{display:none;align-items:center;gap:.3rem;margin-left:.3rem}.nav-radio-ctrl.show{display:flex}
+.nav-radio-vol{width:50px;height:2px;accent-color:var(--accent)}
 .dot{width:8px;height:8px;border-radius:50%;display:inline-block;animation:pulse 2s infinite}
 .dot-ok{background:var(--green);box-shadow:0 0 8px rgba(34,197,94,.5)}.dot-warn{background:var(--yellow);box-shadow:0 0 8px rgba(234,179,8,.5)}.dot-fail{background:var(--red);box-shadow:0 0 8px rgba(239,68,68,.5)}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
@@ -100,7 +109,9 @@ tbody td{padding:.45rem .75rem;border-bottom:1px solid rgba(255,255,255,.03);col
       <a href="#" onclick="location.reload()">↻ Refresh</a>
     </div>
   </div>
+  <div class="nav-radio" id="navRadio"><span class="nav-radio-dot"></span><span class="nav-radio-text">Loading radio...</span></div>
 </nav>
+<audio id="radioAudio" preload="none" style="display:none"></audio>
 
 <div class="container">
 
@@ -341,11 +352,79 @@ function stopTimer() {
 }
 
 // ============================================================
+// ============================================================
+// RADIO PLAYER
+// ============================================================
+function renderNavRadio() {
+  const radio = healthData?.radio;
+  const nav = document.getElementById('navRadio');
+  if (!nav || !radio?.now_playing) return;
+  const np = radio.now_playing;
+  const elapsed = np.elapsed||0, duration = np.duration||1;
+  const rem = Math.max(duration-elapsed, 0);
+  const mins = Math.floor(rem/60), secs = String(Math.floor(rem%60)).padStart(2,'0');
+  nav.innerHTML = `
+    <span class="nav-radio-dot ${radio.is_live?'live':''}"></span>
+    <span class="nav-radio-text"><strong>${np.artist||'?'}</strong> — ${np.title||'?'}</span>
+    <span class="nav-radio-time">-${mins}:${secs}</span>
+    <button onclick="toggleRadio('${radio.listen_url||'https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3'}', this)" class="nav-radio-btn" id="navPlayBtn">▶</button>
+    <span class="nav-radio-ctrl" id="navRadioCtrl">
+      <button class="btn btn-sm" onclick="stopRadio()" title="Stop" style="padding:2px 6px;font-size:.6rem">⏹</button>
+      <input type="range" class="nav-radio-vol" min="0" max="100" value="80" oninput="document.getElementById('radioAudio').volume=this.value/100" title="Vol">
+    </span>
+  `;
+}
+function toggleRadio(url, btn) {
+  const audio = document.getElementById('radioAudio');
+  const navBtn = document.getElementById('navPlayBtn');
+  const navCtrl = document.getElementById('navRadioCtrl');
+  if (audio.src && !audio.paused) {
+    audio.pause();
+    if (btn) btn.classList.remove('playing');
+    if (navBtn) navBtn.classList.remove('playing');
+    if (navCtrl) navCtrl.classList.remove('show');
+  } else {
+    audio.src = url; audio.load();
+    audio.play().then(() => {
+      if (btn) btn.classList.add('playing');
+      if (navBtn) navBtn.classList.add('playing');
+      if (navCtrl) navCtrl.classList.add('show');
+    }).catch(e => console.warn(e));
+  }
+}
+function stopRadio() {
+  const audio = document.getElementById('radioAudio');
+  audio.pause(); audio.src = '';
+  const navBtn = document.getElementById('navPlayBtn');
+  const navCtrl = document.getElementById('navRadioCtrl');
+  if (navBtn) navBtn.classList.remove('playing');
+  if (navCtrl) navCtrl.classList.remove('show');
+}
+async function pollRadio() {
+  try {
+    const r = await fetch('https://dublincalling.duckdns.org/api/nowplaying');
+    if (!r.ok) return;
+    const s = (await r.json())[0];
+    if (!s) return;
+    const np = s.now_playing?.song;
+    if (!np) return;
+    healthData = healthData || {};
+    healthData.radio = {
+      is_online: s.is_online, is_live: s.live?.is_live,
+      now_playing: { artist: np.artist||'?', title: np.title||'?', elapsed: s.now_playing?.elapsed||0, duration: s.now_playing?.duration||1 },
+      listen_url: s.station?.listen_url||'https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3',
+    };
+    renderNavRadio();
+  } catch(e) {}
+}
+setInterval(pollRadio, 30000); setTimeout(pollRadio, 2000);
+
 // INIT
 // ============================================================
 (async function init() {
   await loadData();
   render();
+  renderNavRadio();
   startTimer();
 })();
 </script>
