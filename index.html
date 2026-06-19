@@ -107,7 +107,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,15,.85)
 /* News */
 .news-source{font-size:.65rem;padding:2px 8px;border-radius:100px;font-weight:500;white-space:nowrap;cursor:pointer;transition:opacity .2s}.news-source.dimmed{opacity:.4}.news-item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.25rem;transition:border-color .2s,opacity .3s}.news-item:hover{border-color:#2a2a3a}.news-item.hidden{display:none}.news-item h4{font-size:.9rem;color:#fff;margin-bottom:.35rem;line-height:1.4}.news-item .news-summary{font-size:.75rem;color:var(--text-muted);margin:.4rem 0;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.news-item .news-meta{display:flex;justify-content:space-between;align-items:center;font-size:.72rem;color:var(--text-muted)}.news-item a{color:var(--accent);text-decoration:none;font-size:.78rem}.news-item a:hover{text-decoration:underline}
 /* Footer */
-footer{border-top:1px solid var(--border);padding:2rem 0;margin-top:5rem;text-align:center;color:var(--text-muted);font-size:.8rem}footer .socials{display:flex;gap:1.5rem;justify-content:center;margin-top:.75rem}footer .socials a{color:var(--text-muted);text-decoration:none;font-size:.8rem}footer .socials a:hover{color:#fff}
+footer{padding:2rem 0 4.5rem;margin-top:5rem;text-align:center;color:var(--text-muted);font-size:.8rem;border-top:1px solid var(--border)}
+footer .socials{display:flex;gap:1.5rem;justify-content:center;margin-top:.75rem}
+footer .socials a{color:var(--text-muted);text-decoration:none;font-size:.8rem}
+footer .socials a:hover{color:#fff}
+/* Ticker */
+.ticker-wrap{position:fixed;bottom:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.95);backdrop-filter:blur(8px);border-top:1px solid var(--border);height:38px;overflow:hidden;display:flex;align-items:center}
+.ticker-track{display:flex;gap:3rem;animation:ticker-scroll 120s linear infinite;white-space:nowrap;padding:0 2rem}
+.ticker-track:hover{animation-play-state:paused}
+.ticker-item{display:flex;align-items:center;gap:.5rem;font-size:.72rem;color:var(--text-muted)}
+.ticker-item .ticker-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.ticker-item .ticker-dot.news{background:var(--blue)}
+.ticker-item .ticker-dot.radio{background:var(--green);animation:pulse 1.5s infinite}
+.ticker-item .ticker-dot.next{background:var(--purple)}
+.ticker-item strong{color:#fff;font-weight:500}
+.ticker-item .source{font-size:.6rem;color:var(--muted);opacity:.7}
+.ticker-time{font-size:.6rem;color:var(--muted);opacity:.5}
+@keyframes ticker-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 /* Utilities */
 .loading{text-align:center;padding:2rem;color:var(--text-muted);font-size:.85rem}
 .btn{background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted);padding:6px 14px;border-radius:8px;font-size:.8rem;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:.4rem}
@@ -212,7 +228,12 @@ footer{border-top:1px solid var(--border);padding:2rem 0;margin-top:5rem;text-al
 </div></section>
 
 <!-- FOOTER -->
-<footer><p>© 2026 Robert Carvalho</p><div class="socials"><a href="https://linkedin.com/in/robcarv" target="_blank">LinkedIn</a><a href="https://github.com/robcarv" target="_blank">GitHub</a><a href="https://instagram.com/robcarv" target="_blank">Instagram</a></div><p style="margin-top:.5rem">Built with vanilla HTML/CSS/JS · Data from health.json &amp; news.json</p></footer>
+<footer><p>© 2026 Robert Carvalho</p><div class="socials"><a href="https://linkedin.com/in/robcarv" target="_blank">LinkedIn</a><a href="https://github.com/robcarv" target="_blank">GitHub</a><a href="https://instagram.com/robcarv" target="_blank">Instagram</a></div></footer>
+
+<!-- Ticker -->
+<div class="ticker-wrap">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
 
 <script>
 // ============================================================
@@ -567,6 +588,7 @@ async function refreshAll() {
   btn.disabled = true;
   await loadHealth();
   await loadNews();
+  updateTicker();
   countdownValue = REFRESH_INTERVAL;
   document.getElementById('countdown').textContent = countdownValue+'s';
   btn.textContent = '↻ Refresh';
@@ -600,6 +622,43 @@ async function loadHealth() {
 // ============================================================
 // INIT
 // ============================================================
+// ============================================================
+// TICKER
+// ============================================================
+function updateTicker() {
+  const track = document.getElementById('tickerTrack');
+  if (!track) return;
+  const items = [];
+
+  // Radio: now playing
+  const radio = healthData?.radio;
+  if (radio?.is_online && radio.now_playing?.artist) {
+    items.push(`<span class="ticker-item"><span class="ticker-dot radio"></span>🎵 <strong>${radio.now_playing.artist} — ${radio.now_playing.title}</strong></span>`);
+  }
+  if (radio?.playing_next?.artist) {
+    items.push(`<span class="ticker-item"><span class="ticker-dot next"></span>⏭ Próxima: <strong>${radio.playing_next.artist} — ${radio.playing_next.title}</strong></span>`);
+  }
+
+  // News headlines
+  if (allNews.length) {
+    allNews.slice(0, 10).forEach(n => {
+      const t = n.published||'';
+      items.push(`<span class="ticker-item"><span class="ticker-dot news"></span>📰 <strong>${n.title}</strong> <span class="source">${n.source}</span> <span class="ticker-time">${t}</span></span>`);
+    });
+  }
+
+  // Duplicate for seamless loop
+  track.innerHTML = items.join('') + items.join('');
+}
+
+// Call after data loads
+async function init() {
+  await loadAll();
+  await loadNews();
+  updateTicker();
+  if (document.getElementById('autoRefresh').checked) startAutoRefresh();
+}
+
 (async function init() {
   await loadHealth();
   await loadNews();
