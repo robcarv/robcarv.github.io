@@ -1,31 +1,31 @@
 {
-  "updated": "2026-06-21 20:17",
+  "updated": "2026-06-21 21:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 58.2,
-        "user": 51.0,
-        "system": 5.9,
-        "idle": 41.6,
-        "iowait": 0.9
+        "total": 2.8,
+        "user": 2.0,
+        "system": 0.8,
+        "idle": 64.2,
+        "iowait": 33.0
       },
       "ram": {
-        "used_gb": 4.31,
+        "used_gb": 4.22,
         "total_gb": 7.87,
-        "percent": 54.7,
-        "available_gb": 3.57
+        "percent": 53.5,
+        "available_gb": 3.66
       },
       "swap": {
-        "used_mb": 199.6,
+        "used_mb": 199.7,
         "total_mb": 200.0,
         "percent": 99.8
       },
       "load": {
-        "1min": 3.04,
-        "5min": 2.65,
-        "15min": 2.65,
+        "1min": 1.59,
+        "5min": 0.58,
+        "15min": 0.5,
         "cores": 4
       },
       "disks": [
@@ -33,16 +33,16 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 50.4,
-          "free_gb": 60.3,
-          "percent": 43.2
+          "used_gb": 50.6,
+          "free_gb": 60.1,
+          "percent": 43.4
         }
       ],
       "disk_io": {
-        "read_mb": 7.2,
-        "write_mb": 225.9
+        "read_mb": 344.6,
+        "write_mb": 2225.2
       },
-      "temperature_c": 60,
+      "temperature_c": 50,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -51,24 +51,24 @@
         }
       },
       "processes": {
-        "total": 433,
+        "total": 376,
         "running": 0,
-        "sleeping": 298,
-        "threads": 1348
+        "sleeping": 285,
+        "threads": 1207
       },
-      "uptime": "20:02:22",
+      "uptime": "20:57:27",
       "containers": [
         {
           "name": "gallery backend",
-          "status": "Up 34 minutes (healthy) gallery-downloader-backend"
+          "status": "Up About an hour (healthy) gallery-downloader-backend"
         },
         {
           "name": "gallery frontend",
-          "status": "Up 29 minutes gallery-downloader-frontend"
+          "status": "Up About an hour gallery-downloader-frontend"
         },
         {
           "name": "Dashy",
-          "status": "Up 52 minutes (healthy) lissy93/dashy:4.x"
+          "status": "Up 2 hours (healthy) lissy93/dashy:4.x"
         },
         {
           "name": "glances monitoring 1",
@@ -76,11 +76,11 @@
         },
         {
           "name": "gallery worker",
-          "status": "Up 29 minutes gallery-downloader-worker"
+          "status": "Up About an hour gallery-downloader-worker"
         },
         {
           "name": "kavita",
-          "status": "Up 4 hours linuxserver/kavita:latest"
+          "status": "Up 5 hours linuxserver/kavita:latest"
         },
         {
           "name": "uptime kuma",
@@ -88,19 +88,19 @@
         },
         {
           "name": "changedetection browser chrome 1",
-          "status": "Up 20 hours seleniarm/standalone-chromium:latest"
+          "status": "Up 21 hours seleniarm/standalone-chromium:latest"
         },
         {
           "name": "gallery jandapress",
-          "status": "Up 29 minutes gallery-jandapress:local-arm64"
+          "status": "Up About an hour gallery-jandapress:local-arm64"
         },
         {
           "name": "gallery redis",
-          "status": "Up 29 minutes (healthy) redis:7-alpine"
+          "status": "Up About an hour (healthy) redis:7-alpine"
         },
         {
           "name": "gallery postgres",
-          "status": "Up 29 minutes (healthy) postgres:16-alpine"
+          "status": "Up About an hour (healthy) postgres:16-alpine"
         },
         {
           "name": "changedetection",
@@ -108,19 +108,19 @@
         },
         {
           "name": "changedetection playwright chrome 1",
-          "status": "Up 20 hours browserless/chrome:latest"
+          "status": "Up 21 hours browserless/chrome:latest"
         },
         {
           "name": "prowlarr",
-          "status": "Up 20 hours lscr.io/linuxserver/prowlarr:latest"
+          "status": "Up 21 hours lscr.io/linuxserver/prowlarr:latest"
         },
         {
           "name": "speedtest tracker",
-          "status": "Up 20 hours lscr.io/linuxserver/speedtest-tracker:latest"
+          "status": "Up 21 hours lscr.io/linuxserver/speedtest-tracker:latest"
         },
         {
           "name": "portainer agent",
-          "status": "Up 20 hours portainer/agent:latest"
+          "status": "Up 21 hours portainer/agent:latest"
         },
         {
           "name": "wallos",
@@ -137,17 +137,17 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 4.0,
-        "user": 3.9,
-        "system": 0.6,
-        "idle": 95.4,
+        "total": 3.1,
+        "user": 2.7,
+        "system": 0.4,
+        "idle": 96.7,
         "iowait": 0.2
       },
       "ram": {
-        "used_gb": 2.65,
+        "used_gb": 2.61,
         "total_gb": 7.87,
-        "percent": 33.7,
-        "available_gb": 5.22
+        "percent": 33.2,
+        "available_gb": 5.26
       },
       "swap": {
         "used_mb": 67.4,
@@ -155,9 +155,9 @@
         "percent": 1.6
       },
       "load": {
-        "1min": 0.29,
-        "5min": 0.29,
-        "15min": 0.37,
+        "1min": 0.92,
+        "5min": 0.89,
+        "15min": 0.69,
         "cores": 4
       },
       "disks": [
@@ -173,16 +173,16 @@
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 116.1,
-          "free_gb": 753.1,
+          "used_gb": 115.9,
+          "free_gb": 753.3,
           "percent": 12.7
         }
       ],
       "disk_io": {
-        "read_mb": 20.5,
-        "write_mb": 52.2
+        "read_mb": 928.0,
+        "write_mb": 1310.4
       },
-      "temperature_c": 50,
+      "temperature_c": 49,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -191,12 +191,12 @@
         }
       },
       "processes": {
-        "total": 557,
+        "total": 563,
         "running": 0,
-        "sleeping": 465,
-        "threads": 3168
+        "sleeping": 467,
+        "threads": 3173
       },
-      "uptime": "7 days, 9:03:29",
+      "uptime": "7 days, 9:58:35",
       "containers": [
         {
           "name": "glances monitoring 1",
@@ -212,7 +212,7 @@
         },
         {
           "name": "azuracast",
-          "status": "Up 18 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 19 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "azuracast updater",
@@ -229,17 +229,17 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 4.6,
-        "user": 2.9,
-        "system": 1.8,
-        "idle": 95.1,
-        "iowait": 0.1
+        "total": 5.6,
+        "user": 3.5,
+        "system": 2.1,
+        "idle": 94.3,
+        "iowait": 0.0
       },
       "ram": {
-        "used_gb": 1.12,
+        "used_gb": 1.13,
         "total_gb": 7.64,
         "percent": 14.7,
-        "available_gb": 6.52
+        "available_gb": 6.51
       },
       "swap": {
         "used_mb": 0.0,
@@ -247,9 +247,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.14,
+        "1min": 0.52,
         "5min": 0.39,
-        "15min": 0.48,
+        "15min": 0.37,
         "cores": 4
       },
       "disks": [
@@ -264,7 +264,7 @@
       ],
       "disk_io": {
         "read_mb": 0.0,
-        "write_mb": 19.4
+        "write_mb": 428.6
       },
       "temperature_c": 35,
       "network": {
@@ -275,16 +275,16 @@
         }
       },
       "processes": {
-        "total": 248,
+        "total": 245,
         "running": 0,
-        "sleeping": 149,
-        "threads": 756
+        "sleeping": 148,
+        "threads": 752
       },
-      "uptime": "11 days, 11:07:29",
+      "uptime": "11 days, 12:02:35",
       "containers": [
         {
           "name": "Dashy",
-          "status": "Up 52 minutes (healthy) lissy93/dashy:4.x"
+          "status": "Up 2 hours (healthy) lissy93/dashy:4.x"
         },
         {
           "name": "glances monitoring 1",
@@ -292,23 +292,23 @@
         },
         {
           "name": "cve report",
-          "status": "Up 45 hours nginx:alpine"
+          "status": "Up 46 hours nginx:alpine"
         },
         {
           "name": "cve grafana",
-          "status": "Up 18 hours grafana/grafana:latest"
+          "status": "Up 19 hours grafana/grafana:latest"
         },
         {
           "name": "cve alertmanager",
-          "status": "Up 47 hours prom/alertmanager:latest"
+          "status": "Up 2 days prom/alertmanager:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 18 hours prom/prometheus:latest"
+          "status": "Up 19 hours prom/prometheus:latest"
         },
         {
           "name": "cve pushgateway",
-          "status": "Up 47 hours prom/pushgateway:latest"
+          "status": "Up 2 days prom/pushgateway:latest"
         },
         {
           "name": "portainer",
@@ -328,21 +328,31 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "John Peel 1991-02-10",
-      "artist": "John Peel (R1)",
-      "album": "",
-      "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/85639f00182f981d4a5734f6",
-      "duration": 11071,
-      "elapsed": 7981
+      "title": "Bla Bla Bla",
+      "artist": "Toots and The Maytals",
+      "album": "Anthology 1964 to 2000",
+      "genre": "Reggae",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/f455f0b9e13a6111315072cb-1764888370.jpg",
+      "duration": 164,
+      "elapsed": 34
     },
     "playing_next": {
-      "title": "Dub Angel",
-      "artist": "Horace Andy"
+      "title": "01 jeff mills blues",
+      "artist": ""
     },
     "listeners": 1,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
+      {
+        "title": "Dub Angel",
+        "artist": "Horace Andy",
+        "played_at": 1782072539
+      },
+      {
+        "title": "John Peel 1991-02-10",
+        "artist": "John Peel (R1)",
+        "played_at": 1782061468
+      },
       {
         "title": "No Tarry Yah Version",
         "artist": "Yabby You",
@@ -357,16 +367,6 @@
         "title": "All The Tears That I Cried",
         "artist": "Kirsty MacColl",
         "played_at": 1782060827
-      },
-      {
-        "title": "I Wanted Everything",
-        "artist": "Ramones",
-        "played_at": 1782060631
-      },
-      {
-        "title": "03 No More War",
-        "artist": "Burning Spear - Man In The Hills",
-        "played_at": 1782060452
       }
     ]
   }
