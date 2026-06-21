@@ -34,7 +34,7 @@ robcarv.github.io/
 │  └── portfolio_health_push.sh                                │
 │      ├── Glances API (porta 61208) → CPU, RAM, swap, load,  │
 │      │   disks, network, processes, temp (13 endpoints/Pi)   │
-│      ├── SSH docker ps → container names (filtro NSFW)       │
+│      ├── SSH docker ps → container names (filtro sensível)    │
 │      ├── AzuraCast API → now playing, listeners, history     │
 │      ├── Copia news.json + avatar.svg                        │
 │      └── git push → GitHub Pages                             │
@@ -200,10 +200,10 @@ REFRESH (every 60s)
 |-------------|--------|
 | Senhas / tokens no repo | ✅ Nenhum |
 | IPs privados | ✅ 131 artefatos Next.js removidos |
-| Conteúdo adulto/NSFW | ✅ Filtro no script de coleta |
+| Conteúdo sensível | ✅ Filtro no script de coleta |
 | Emails expostos | ✅ Nenhum |
 | `.gitignore` bloqueia `*.json` | ✅ Exceto health/news/experience |
-| Container names filtrados | ✅ nhentai, hentai, whisparr, etc. |
+| Container names filtrados | ✅ nomes sensíveis excluídos |
 
 ---
 
