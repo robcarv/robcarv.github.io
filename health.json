@@ -1,31 +1,31 @@
 {
-  "updated": "2026-06-21 16:10",
+  "updated": "2026-06-21 17:10",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 3.8,
-        "user": 3.1,
-        "system": 0.6,
-        "idle": 96.2,
-        "iowait": 0.1
+        "total": 2.7,
+        "user": 2.0,
+        "system": 0.7,
+        "idle": 97.0,
+        "iowait": 0.3
       },
       "ram": {
-        "used_gb": 3.28,
+        "used_gb": 3.59,
         "total_gb": 7.87,
-        "percent": 41.7,
-        "available_gb": 4.59
+        "percent": 45.6,
+        "available_gb": 4.28
       },
       "swap": {
-        "used_mb": 199.5,
+        "used_mb": 199.1,
         "total_mb": 200.0,
-        "percent": 99.8
+        "percent": 99.6
       },
       "load": {
-        "1min": 0.5,
-        "5min": 0.61,
-        "15min": 1.18,
+        "1min": 0.28,
+        "5min": 0.26,
+        "15min": 0.27,
         "cores": 4
       },
       "disks": [
@@ -34,7 +34,7 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 47.3,
-          "free_gb": 63.5,
+          "free_gb": 63.4,
           "percent": 40.5
         },
         {
@@ -42,7 +42,7 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 47.3,
-          "free_gb": 63.5,
+          "free_gb": 63.4,
           "percent": 40.5
         },
         {
@@ -50,7 +50,7 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 47.3,
-          "free_gb": 63.5,
+          "free_gb": 63.4,
           "percent": 40.5
         },
         {
@@ -58,13 +58,13 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 47.3,
-          "free_gb": 63.5,
+          "free_gb": 63.4,
           "percent": 40.5
         }
       ],
       "disk_io": {
-        "read_mb": 0.2,
-        "write_mb": 55.3
+        "read_mb": 51.7,
+        "write_mb": 1691.1
       },
       "temperature_c": 55,
       "network": {
@@ -75,99 +75,103 @@
         }
       },
       "processes": {
-        "total": 373,
-        "running": 2,
-        "sleeping": 279,
-        "threads": 1126
+        "total": 387,
+        "running": 1,
+        "sleeping": 292,
+        "threads": 1207
       },
-      "uptime": "15:55:08",
+      "uptime": "16:55:08",
       "containers": [
         {
           "name": "gallery worker",
-          "status": "Up About an hour gallery-downloader-worker"
+          "status": "Up 2 hours gallery-downloader-worker"
+        },
+        {
+          "name": "kavita",
+          "status": "Up 59 minutes linuxserver/kavita:latest"
         },
         {
           "name": "gallery frontend",
-          "status": "Up 14 hours gallery-downloader-frontend"
+          "status": "Up 15 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery backend",
-          "status": "Up 16 hours (healthy) gallery-downloader-backend"
+          "status": "Up 17 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "uptime kuma",
-          "status": "Up 13 hours (healthy) louislam/uptime-kuma:2"
+          "status": "Up 14 hours (healthy) louislam/uptime-kuma:2"
         },
         {
           "name": "glances monitoring 1",
-          "status": "Up 16 hours nicolargo/glances:3.4.0.5"
+          "status": "Up 17 hours nicolargo/glances:3.4.0.5"
         },
         {
           "name": "changedetection browser chrome 1",
-          "status": "Up 16 hours seleniarm/standalone-chromium:latest"
+          "status": "Up 17 hours seleniarm/standalone-chromium:latest"
         },
         {
           "name": "gallery jandapress",
-          "status": "Up 16 hours gallery-jandapress:local-arm64"
+          "status": "Up 17 hours gallery-jandapress:local-arm64"
         },
         {
           "name": "gallery redis",
-          "status": "Up 16 hours (healthy) redis:7-alpine"
+          "status": "Up 17 hours (healthy) redis:7-alpine"
         },
         {
           "name": "gallery postgres",
-          "status": "Up 16 hours (healthy) postgres:16-alpine"
+          "status": "Up 17 hours (healthy) postgres:16-alpine"
         },
         {
           "name": "changedetection",
-          "status": "Up 13 hours ghcr.io/dgtlmoon/changedetection.io"
+          "status": "Up 14 hours ghcr.io/dgtlmoon/changedetection.io"
         },
         {
           "name": "changedetection playwright chrome 1",
-          "status": "Up 16 hours browserless/chrome:latest"
+          "status": "Up 17 hours browserless/chrome:latest"
         },
         {
           "name": "prowlarr",
-          "status": "Up 16 hours lscr.io/linuxserver/prowlarr:latest"
+          "status": "Up 17 hours lscr.io/linuxserver/prowlarr:latest"
         },
         {
           "name": "speedtest tracker",
-          "status": "Up 16 hours lscr.io/linuxserver/speedtest-tracker:latest"
+          "status": "Up 17 hours lscr.io/linuxserver/speedtest-tracker:latest"
         },
         {
           "name": "Dashy",
-          "status": "Up 3 hours (healthy) lissy93/dashy:4.2.4"
+          "status": "Up 4 hours (healthy) lissy93/dashy:4.2.4"
         },
         {
           "name": "portainer agent",
-          "status": "Up 16 hours portainer/agent:latest"
+          "status": "Up 17 hours portainer/agent:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 13 hours bellamy/wallos:latest"
+          "status": "Up 14 hours bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 13 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 14 hours jc21/nginx-proxy-manager:latest"
         }
       ],
-      "container_count": 17,
+      "container_count": 18,
       "services": "Gallery, Dashy, Hermes, NewsBot"
     },
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 7.0,
-        "user": 6.1,
-        "system": 0.9,
-        "idle": 78.5,
-        "iowait": 14.5
+        "total": 5.9,
+        "user": 5.1,
+        "system": 0.7,
+        "idle": 91.8,
+        "iowait": 2.3
       },
       "ram": {
-        "used_gb": 2.61,
+        "used_gb": 2.57,
         "total_gb": 7.87,
-        "percent": 33.1,
-        "available_gb": 5.27
+        "percent": 32.7,
+        "available_gb": 5.3
       },
       "swap": {
         "used_mb": 68.4,
@@ -175,9 +179,9 @@
         "percent": 1.7
       },
       "load": {
-        "1min": 1.63,
-        "5min": 1.2,
-        "15min": 0.9,
+        "1min": 0.61,
+        "5min": 0.34,
+        "15min": 0.37,
         "cores": 4
       },
       "disks": [
@@ -215,8 +219,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 36.7,
-        "write_mb": 15.2
+        "read_mb": 963.6,
+        "write_mb": 1433.4
       },
       "temperature_c": 51,
       "network": {
@@ -227,12 +231,12 @@
         }
       },
       "processes": {
-        "total": 563,
-        "running": 2,
-        "sleeping": 462,
-        "threads": 3161
+        "total": 555,
+        "running": 3,
+        "sleeping": 461,
+        "threads": 3152
       },
-      "uptime": "7 days, 4:56:16",
+      "uptime": "7 days, 5:56:16",
       "containers": [
         {
           "name": "glances monitoring 1",
@@ -248,7 +252,7 @@
         },
         {
           "name": "azuracast",
-          "status": "Up 14 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 15 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "azuracast updater",
@@ -269,17 +273,17 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 4.7,
-        "user": 3.1,
-        "system": 1.8,
-        "idle": 94.8,
+        "total": 4.6,
+        "user": 2.8,
+        "system": 1.7,
+        "idle": 95.2,
         "iowait": 0.2
       },
       "ram": {
         "used_gb": 1.07,
         "total_gb": 7.64,
-        "percent": 14.1,
-        "available_gb": 6.56
+        "percent": 14.0,
+        "available_gb": 6.57
       },
       "swap": {
         "used_mb": 0.0,
@@ -287,9 +291,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.47,
-        "5min": 0.41,
-        "15min": 0.32,
+        "1min": 0.67,
+        "5min": 0.46,
+        "15min": 0.34,
         "cores": 4
       },
       "disks": [
@@ -328,7 +332,7 @@
       ],
       "disk_io": {
         "read_mb": 0.0,
-        "write_mb": 13.4
+        "write_mb": 451.4
       },
       "temperature_c": 34,
       "network": {
@@ -339,32 +343,32 @@
         }
       },
       "processes": {
-        "total": 249,
+        "total": 247,
         "running": 1,
         "sleeping": 150,
-        "threads": 758
+        "threads": 755
       },
-      "uptime": "11 days, 7:00:16",
+      "uptime": "11 days, 8:00:17",
       "containers": [
         {
           "name": "cve report",
-          "status": "Up 41 hours nginx:alpine"
+          "status": "Up 42 hours nginx:alpine"
         },
         {
           "name": "cve grafana",
-          "status": "Up 14 hours grafana/grafana:latest"
+          "status": "Up 15 hours grafana/grafana:latest"
         },
         {
           "name": "cve alertmanager",
-          "status": "Up 42 hours prom/alertmanager:latest"
+          "status": "Up 43 hours prom/alertmanager:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 14 hours prom/prometheus:latest"
+          "status": "Up 15 hours prom/prometheus:latest"
         },
         {
           "name": "cve pushgateway",
-          "status": "Up 42 hours prom/pushgateway:latest"
+          "status": "Up 43 hours prom/pushgateway:latest"
         },
         {
           "name": "glances monitoring 1",
@@ -372,7 +376,7 @@
         },
         {
           "name": "Dashy",
-          "status": "Up 41 hours (healthy) lissy93/dashy:4.2.4"
+          "status": "Up 42 hours (healthy) lissy93/dashy:4.2.4"
         },
         {
           "name": "pawns",
@@ -404,45 +408,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Ride The Rough Escalator",
-      "artist": "The Undertones",
-      "album": "Get What You Need",
-      "genre": "Alternrock",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/ade77f7303f9c5591295c4b2-1764889558.jpg",
-      "duration": 207,
-      "elapsed": 198
+      "title": "Humorless Journalist Works to Rules",
+      "artist": "Dub Syndicate",
+      "album": "Pounding System",
+      "genre": "Dub",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/9a4c8671409c710ebd988f2b-1764888551.jpg",
+      "duration": 235,
+      "elapsed": 182
     },
     "playing_next": {
-      "title": "Get It On",
-      "artist": "Turbonegro"
+      "title": "15. #56 - Billy Bragg - Days Like These.mp3",
+      "artist": "John Peel Festive Fifty 1985"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Streams Of Whiskey",
-        "artist": "The Pogues",
-        "played_at": 1782054268
+        "title": "Falling Away (Bonus Track)",
+        "artist": "Good Charlotte",
+        "played_at": 1782057164
       },
       {
-        "title": "Walk about",
-        "artist": "Orbital",
-        "played_at": 1782053804
+        "title": "Soldiers Take Over",
+        "artist": "The Rio Grandes",
+        "played_at": 1782057007
       },
       {
-        "title": "Commercial Break",
-        "artist": "The Toy Dolls",
-        "played_at": 1782053701
+        "title": "Walked in Line",
+        "artist": "The Aislers Set",
+        "played_at": 1782056824
       },
       {
-        "title": "47.Beautiful Son-Hole",
-        "artist": "John Peel Festive Fifty 1993",
-        "played_at": 1782053533
+        "title": "Dub Guidance",
+        "artist": "Horace Andy",
+        "played_at": 1782056543
       },
       {
-        "title": "10 Pick The Beam",
-        "artist": "Yabby You",
-        "played_at": 1782053366
+        "title": "step by step",
+        "artist": "mikey dread",
+        "played_at": 1782056245
       }
     ]
   }
