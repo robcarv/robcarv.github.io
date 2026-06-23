@@ -1,31 +1,31 @@
 {
-  "updated": "2026-06-23 20:12",
+  "updated": "2026-06-23 21:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 2.2,
-        "user": 1.6,
-        "system": 0.7,
-        "idle": 97.5,
-        "iowait": 0.1
+        "total": 35.0,
+        "user": 30.9,
+        "system": 3.5,
+        "idle": 55.3,
+        "iowait": 9.6
       },
       "ram": {
-        "used_gb": 3.02,
+        "used_gb": 3.06,
         "total_gb": 7.87,
-        "percent": 38.4,
-        "available_gb": 4.85
+        "percent": 38.9,
+        "available_gb": 4.81
       },
       "swap": {
-        "used_mb": 818.8,
+        "used_mb": 780.8,
         "total_mb": 2048.0,
-        "percent": 40.0
+        "percent": 38.1
       },
       "load": {
-        "1min": 0.62,
-        "5min": 0.41,
-        "15min": 0.3,
+        "1min": 3.07,
+        "5min": 2.52,
+        "15min": 1.82,
         "cores": 4
       },
       "disks": [
@@ -39,10 +39,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 1538.6
+        "read_mb": 220.9,
+        "write_mb": 3045.1
       },
-      "temperature_c": 51,
+      "temperature_c": 59,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -51,32 +51,32 @@
         }
       },
       "processes": {
-        "total": 328,
+        "total": 375,
         "running": 0,
-        "sleeping": 236,
-        "threads": 1041
+        "sleeping": 231,
+        "threads": 1071
       },
-      "uptime": "2 days, 19:57:42",
+      "uptime": "2 days, 20:57:43",
       "containers": [
         {
           "name": "gallery frontend",
-          "status": "Up 23 hours gallery-downloader-frontend"
+          "status": "Up 24 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery backend",
-          "status": "Up 23 hours (healthy) gallery-downloader-backend"
+          "status": "Up 24 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "glances monitoring 1",
-          "status": "Up 31 hours nicolargo/glances:latest"
+          "status": "Up 32 hours nicolargo/glances:latest"
         },
         {
           "name": "gallery jandapress",
-          "status": "Up 30 hours gallery-jandapress:local-arm64"
+          "status": "Up 31 hours gallery-jandapress:local-arm64"
         },
         {
           "name": "Dashy",
-          "status": "Up 31 hours (healthy) lissy93/dashy:4.x"
+          "status": "Up 32 hours (healthy) lissy93/dashy:4.x"
         },
         {
           "name": "gallery worker",
@@ -88,7 +88,7 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 2 days (healthy) louislam/uptime-kuma:2"
+          "status": "Restarting (1) 15 seconds ago louislam/uptime-kuma:2"
         },
         {
           "name": "gallery redis",
@@ -121,27 +121,27 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 2.9,
-        "user": 2.8,
+        "total": 2.2,
+        "user": 2.4,
         "system": 0.4,
-        "idle": 96.6,
+        "idle": 96.9,
         "iowait": 0.2
       },
       "ram": {
         "used_gb": 2.71,
         "total_gb": 7.87,
-        "percent": 34.5,
-        "available_gb": 5.16
+        "percent": 34.4,
+        "available_gb": 5.17
       },
       "swap": {
-        "used_mb": 83.7,
+        "used_mb": 110.9,
         "total_mb": 4096.0,
-        "percent": 2.0
+        "percent": 2.7
       },
       "load": {
-        "1min": 0.94,
-        "5min": 1.29,
-        "15min": 1.04,
+        "1min": 0.25,
+        "5min": 0.34,
+        "15min": 0.46,
         "cores": 4
       },
       "disks": [
@@ -158,15 +158,15 @@
           "device": "/dev/sda1",
           "size_gb": 915.8,
           "used_gb": 115.9,
-          "free_gb": 753.4,
+          "free_gb": 753.3,
           "percent": 12.7
         }
       ],
       "disk_io": {
-        "read_mb": 702.2,
-        "write_mb": 1385.3
+        "read_mb": 1085.1,
+        "write_mb": 1799.7
       },
-      "temperature_c": 52,
+      "temperature_c": 50,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -175,12 +175,12 @@
         }
       },
       "processes": {
-        "total": 554,
+        "total": 556,
         "running": 0,
-        "sleeping": 461,
-        "threads": 3166
+        "sleeping": 465,
+        "threads": 3168
       },
-      "uptime": "9 days, 8:58:50",
+      "uptime": "9 days, 9:58:51",
       "containers": [
         {
           "name": "glances monitoring 1",
@@ -213,17 +213,17 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 4.8,
-        "user": 3.2,
-        "system": 1.8,
-        "idle": 94.7,
-        "iowait": 0.1
+        "total": 5.4,
+        "user": 8.0,
+        "system": 3.1,
+        "idle": 88.5,
+        "iowait": 0.0
       },
       "ram": {
-        "used_gb": 1.82,
+        "used_gb": 1.77,
         "total_gb": 7.64,
-        "percent": 23.9,
-        "available_gb": 5.81
+        "percent": 23.2,
+        "available_gb": 5.87
       },
       "swap": {
         "used_mb": 1.0,
@@ -231,9 +231,9 @@
         "percent": 0.2
       },
       "load": {
-        "1min": 0.12,
-        "5min": 0.57,
-        "15min": 0.64,
+        "1min": 0.52,
+        "5min": 0.64,
+        "15min": 0.57,
         "cores": 4
       },
       "disks": [
@@ -241,16 +241,16 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
-          "used_gb": 34.2,
+          "used_gb": 34.3,
           "free_gb": 75.2,
           "percent": 29.7
         }
       ],
       "disk_io": {
-        "read_mb": 979.1,
-        "write_mb": 4345.3
+        "read_mb": 2.4,
+        "write_mb": 456.3
       },
-      "temperature_c": 40,
+      "temperature_c": 37,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -259,28 +259,28 @@
         }
       },
       "processes": {
-        "total": 265,
+        "total": 263,
         "running": 0,
         "sleeping": 167,
-        "threads": 889
+        "threads": 888
       },
-      "uptime": "13 days, 11:02:50",
+      "uptime": "13 days, 12:02:51",
       "containers": [
         {
           "name": "changedetection",
-          "status": "Up 31 hours ghcr.io/dgtlmoon/changedetection.io"
+          "status": "Up 32 hours ghcr.io/dgtlmoon/changedetection.io"
         },
         {
           "name": "changedetection browser chrome 1",
-          "status": "Up 31 hours seleniarm/standalone-chromium:latest"
+          "status": "Up 32 hours seleniarm/standalone-chromium:latest"
         },
         {
           "name": "changedetection playwright chrome 1",
-          "status": "Up 31 hours browserless/chrome:latest"
+          "status": "Up 32 hours browserless/chrome:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 34 hours prom/prometheus:latest"
+          "status": "Up 35 hours prom/prometheus:latest"
         },
         {
           "name": "Dashy",
@@ -296,15 +296,15 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 23 hours grafana/grafana:latest"
+          "status": "Up 24 hours grafana/grafana:latest"
         },
         {
           "name": "cve alertmanager",
-          "status": "Up 3 days prom/alertmanager:latest"
+          "status": "Up 4 days prom/alertmanager:latest"
         },
         {
           "name": "cve pushgateway",
-          "status": "Up 3 days prom/pushgateway:latest"
+          "status": "Up 4 days prom/pushgateway:latest"
         },
         {
           "name": "portainer",
@@ -324,45 +324,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Surfin' Dead [*]",
-      "artist": "The Cramps",
-      "album": "Smell of Female",
-      "genre": "Rock",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/0d951cae50fda99ddde29ebf-1764890848.jpg",
-      "duration": 252,
-      "elapsed": 118
+      "title": "John Peel 2003-01-16",
+      "artist": "John Peel (R1)",
+      "album": "from RA",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/2b7e05493884d91db1f66cb0",
+      "duration": 7083,
+      "elapsed": 359
     },
     "playing_next": {
-      "title": "Jah Say",
-      "artist": "Burning Spear"
+      "title": "news jingle en",
+      "artist": ""
     },
     "listeners": 1,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "The Brews",
-        "artist": "Rancid  NOFX",
-        "played_at": 1782241726
-      },
-      {
-        "title": "(I've Got) Dreams To Remember",
-        "artist": "Toots & The Maytals",
-        "played_at": 1782241519
-      },
-      {
-        "title": "Youth of Eglington",
-        "artist": "Black Uhuru",
-        "played_at": 1782241192
-      },
-      {
-        "title": "news jingle pt",
-        "artist": "",
-        "played_at": 1782241162
+        "title": "love me the way i am",
+        "artist": "Lucky Dube",
+        "played_at": 1782244894
       },
       {
         "title": "JIngleradio",
         "artist": "",
-        "played_at": 1782241153
+        "played_at": 1782244889
+      },
+      {
+        "title": "news jingle en",
+        "artist": "",
+        "played_at": 1782244854
+      },
+      {
+        "title": "news jingle",
+        "artist": "",
+        "played_at": 1782244794
+      },
+      {
+        "title": "news jingle pt",
+        "artist": "",
+        "played_at": 1782244735
       }
     ]
   }
