@@ -1,15 +1,15 @@
 {
-  "updated": "2026-06-23 19:12",
+  "updated": "2026-06-23 20:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 2.4,
-        "user": 1.7,
+        "total": 2.2,
+        "user": 1.6,
         "system": 0.7,
-        "idle": 96.6,
-        "iowait": 1.0
+        "idle": 97.5,
+        "iowait": 0.1
       },
       "ram": {
         "used_gb": 3.02,
@@ -23,9 +23,9 @@
         "percent": 40.0
       },
       "load": {
-        "1min": 0.35,
-        "5min": 0.38,
-        "15min": 0.4,
+        "1min": 0.62,
+        "5min": 0.41,
+        "15min": 0.3,
         "cores": 4
       },
       "disks": [
@@ -39,8 +39,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 3.6,
-        "write_mb": 1849.9
+        "read_mb": 0.0,
+        "write_mb": 1538.6
       },
       "temperature_c": 51,
       "network": {
@@ -51,36 +51,36 @@
         }
       },
       "processes": {
-        "total": 329,
+        "total": 328,
         "running": 0,
         "sleeping": 236,
-        "threads": 1043
+        "threads": 1041
       },
-      "uptime": "2 days, 18:57:41",
+      "uptime": "2 days, 19:57:42",
       "containers": [
         {
           "name": "gallery frontend",
-          "status": "Up 22 hours gallery-downloader-frontend"
+          "status": "Up 23 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery backend",
-          "status": "Up 22 hours (healthy) gallery-downloader-backend"
+          "status": "Up 23 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "glances monitoring 1",
-          "status": "Up 30 hours nicolargo/glances:latest"
+          "status": "Up 31 hours nicolargo/glances:latest"
         },
         {
           "name": "gallery jandapress",
-          "status": "Up 29 hours gallery-jandapress:local-arm64"
+          "status": "Up 30 hours gallery-jandapress:local-arm64"
         },
         {
           "name": "Dashy",
-          "status": "Up 30 hours (healthy) lissy93/dashy:4.x"
+          "status": "Up 31 hours (healthy) lissy93/dashy:4.x"
         },
         {
           "name": "gallery worker",
-          "status": "Up 47 hours gallery-downloader-worker"
+          "status": "Up 2 days gallery-downloader-worker"
         },
         {
           "name": "kavita",
@@ -92,11 +92,11 @@
         },
         {
           "name": "gallery redis",
-          "status": "Up 47 hours (healthy) redis:7-alpine"
+          "status": "Up 2 days (healthy) redis:7-alpine"
         },
         {
           "name": "gallery postgres",
-          "status": "Up 47 hours (healthy) postgres:16-alpine"
+          "status": "Up 2 days (healthy) postgres:16-alpine"
         },
         {
           "name": "prowlarr",
@@ -121,27 +121,27 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 6.0,
-        "user": 5.1,
-        "system": 0.8,
-        "idle": 93.7,
-        "iowait": 0.3
+        "total": 2.9,
+        "user": 2.8,
+        "system": 0.4,
+        "idle": 96.6,
+        "iowait": 0.2
       },
       "ram": {
         "used_gb": 2.71,
         "total_gb": 7.87,
-        "percent": 34.4,
+        "percent": 34.5,
         "available_gb": 5.16
       },
       "swap": {
-        "used_mb": 78.7,
+        "used_mb": 83.7,
         "total_mb": 4096.0,
-        "percent": 1.9
+        "percent": 2.0
       },
       "load": {
-        "1min": 0.29,
-        "5min": 0.38,
-        "15min": 0.55,
+        "1min": 0.94,
+        "5min": 1.29,
+        "15min": 1.04,
         "cores": 4
       },
       "disks": [
@@ -163,10 +163,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 905.6,
-        "write_mb": 1644.6
+        "read_mb": 702.2,
+        "write_mb": 1385.3
       },
-      "temperature_c": 51,
+      "temperature_c": 52,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -175,12 +175,12 @@
         }
       },
       "processes": {
-        "total": 557,
+        "total": 554,
         "running": 0,
-        "sleeping": 463,
-        "threads": 3169
+        "sleeping": 461,
+        "threads": 3166
       },
-      "uptime": "9 days, 7:58:49",
+      "uptime": "9 days, 8:58:50",
       "containers": [
         {
           "name": "glances monitoring 1",
@@ -213,17 +213,17 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 5.4,
-        "user": 3.4,
-        "system": 1.9,
-        "idle": 94.4,
-        "iowait": 0.2
+        "total": 4.8,
+        "user": 3.2,
+        "system": 1.8,
+        "idle": 94.7,
+        "iowait": 0.1
       },
       "ram": {
-        "used_gb": 1.53,
+        "used_gb": 1.82,
         "total_gb": 7.64,
-        "percent": 20.1,
-        "available_gb": 6.1
+        "percent": 23.9,
+        "available_gb": 5.81
       },
       "swap": {
         "used_mb": 1.0,
@@ -231,9 +231,9 @@
         "percent": 0.2
       },
       "load": {
-        "1min": 0.44,
-        "5min": 0.48,
-        "15min": 0.43,
+        "1min": 0.12,
+        "5min": 0.57,
+        "15min": 0.64,
         "cores": 4
       },
       "disks": [
@@ -241,14 +241,14 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
-          "used_gb": 33.3,
-          "free_gb": 76.1,
-          "percent": 28.9
+          "used_gb": 34.2,
+          "free_gb": 75.2,
+          "percent": 29.7
         }
       ],
       "disk_io": {
-        "read_mb": 1.0,
-        "write_mb": 509.9
+        "read_mb": 979.1,
+        "write_mb": 4345.3
       },
       "temperature_c": 40,
       "network": {
@@ -259,28 +259,28 @@
         }
       },
       "processes": {
-        "total": 264,
-        "running": 1,
-        "sleeping": 165,
-        "threads": 888
+        "total": 265,
+        "running": 0,
+        "sleeping": 167,
+        "threads": 889
       },
-      "uptime": "13 days, 10:02:49",
+      "uptime": "13 days, 11:02:50",
       "containers": [
         {
           "name": "changedetection",
-          "status": "Up 30 hours ghcr.io/dgtlmoon/changedetection.io"
+          "status": "Up 31 hours ghcr.io/dgtlmoon/changedetection.io"
         },
         {
           "name": "changedetection browser chrome 1",
-          "status": "Up 30 hours seleniarm/standalone-chromium:latest"
+          "status": "Up 31 hours seleniarm/standalone-chromium:latest"
         },
         {
           "name": "changedetection playwright chrome 1",
-          "status": "Up 30 hours browserless/chrome:latest"
+          "status": "Up 31 hours browserless/chrome:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 33 hours prom/prometheus:latest"
+          "status": "Up 34 hours prom/prometheus:latest"
         },
         {
           "name": "Dashy",
@@ -296,7 +296,7 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 22 hours grafana/grafana:latest"
+          "status": "Up 23 hours grafana/grafana:latest"
         },
         {
           "name": "cve alertmanager",
@@ -324,45 +324,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Appreciate Nature",
-      "artist": "Dennis Brown",
-      "album": "Inseparable",
-      "genre": "Reggae",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/70f9172038c6709c24a586f8-1764887870.jpg",
-      "duration": 220,
-      "elapsed": 213
+      "title": "Surfin' Dead [*]",
+      "artist": "The Cramps",
+      "album": "Smell of Female",
+      "genre": "Rock",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/0d951cae50fda99ddde29ebf-1764890848.jpg",
+      "duration": 252,
+      "elapsed": 118
     },
     "playing_next": {
-      "title": "21.Hung Over as the Oven in Maida Vale-Godspeed You Black Emperor",
-      "artist": "John Peel Festive Fifty 1999"
+      "title": "Jah Say",
+      "artist": "Burning Spear"
     },
-    "listeners": 0,
+    "listeners": 1,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Rebel Girl",
-        "artist": "Bikini Kill",
-        "played_at": 1782238001
+        "title": "The Brews",
+        "artist": "Rancid  NOFX",
+        "played_at": 1782241726
       },
       {
-        "title": "Stuck In A Hole",
-        "artist": "Caravan",
-        "played_at": 1782237806
+        "title": "(I've Got) Dreams To Remember",
+        "artist": "Toots & The Maytals",
+        "played_at": 1782241519
       },
       {
-        "title": "Salsa Y Ketchup",
-        "artist": "Zander Schloss",
-        "played_at": 1782237646
+        "title": "Youth of Eglington",
+        "artist": "Black Uhuru",
+        "played_at": 1782241192
       },
       {
-        "title": "A Real Cool Time",
-        "artist": "Ramones",
-        "played_at": 1782237490
+        "title": "news jingle pt",
+        "artist": "",
+        "played_at": 1782241162
       },
       {
-        "title": "The Rocky Road To Dublin",
-        "artist": "The Pogues",
-        "played_at": 1782237307
+        "title": "JIngleradio",
+        "artist": "",
+        "played_at": 1782241153
       }
     ]
   }
