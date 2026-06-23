@@ -1,31 +1,31 @@
 {
-  "updated": "2026-06-23 04:12",
+  "updated": "2026-06-23 05:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 3.6,
+        "total": 3.2,
         "user": 2.2,
-        "system": 1.1,
-        "idle": 96.0,
+        "system": 0.8,
+        "idle": 96.4,
         "iowait": 0.4
       },
       "ram": {
-        "used_gb": 3.82,
+        "used_gb": 3.84,
         "total_gb": 7.87,
-        "percent": 48.6,
-        "available_gb": 4.05
+        "percent": 48.7,
+        "available_gb": 4.04
       },
       "swap": {
-        "used_mb": 1155.4,
+        "used_mb": 1147.4,
         "total_mb": 2048.0,
-        "percent": 56.4
+        "percent": 56.0
       },
       "load": {
-        "1min": 0.37,
-        "5min": 0.59,
-        "15min": 0.6,
+        "1min": 0.42,
+        "5min": 0.44,
+        "15min": 0.4,
         "cores": 4
       },
       "disks": [
@@ -39,10 +39,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1097.3,
-        "write_mb": 2370.3
+        "read_mb": 26.7,
+        "write_mb": 1652.8
       },
-      "temperature_c": 49,
+      "temperature_c": 47,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -51,40 +51,40 @@
         }
       },
       "processes": {
-        "total": 343,
+        "total": 345,
         "running": 0,
-        "sleeping": 253,
-        "threads": 1126
+        "sleeping": 252,
+        "threads": 1127
       },
-      "uptime": "2 days, 3:57:27",
+      "uptime": "2 days, 4:57:28",
       "containers": [
         {
           "name": "gallery frontend",
-          "status": "Up 7 hours gallery-downloader-frontend"
+          "status": "Up 8 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery backend",
-          "status": "Up 7 hours (healthy) gallery-downloader-backend"
+          "status": "Up 8 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "glances monitoring 1",
-          "status": "Up 15 hours nicolargo/glances:latest"
+          "status": "Up 16 hours nicolargo/glances:latest"
         },
         {
           "name": "gallery jandapress",
-          "status": "Up 14 hours gallery-jandapress:local-arm64"
+          "status": "Up 15 hours gallery-jandapress:local-arm64"
         },
         {
           "name": "Dashy",
-          "status": "Up 15 hours (healthy) lissy93/dashy:4.x"
+          "status": "Up 16 hours (healthy) lissy93/dashy:4.x"
         },
         {
           "name": "gallery worker",
-          "status": "Up 32 hours gallery-downloader-worker"
+          "status": "Up 33 hours gallery-downloader-worker"
         },
         {
           "name": "kavita",
-          "status": "Up 36 hours d91bc69aa67d"
+          "status": "Up 37 hours d91bc69aa67d"
         },
         {
           "name": "uptime kuma",
@@ -92,11 +92,11 @@
         },
         {
           "name": "gallery redis",
-          "status": "Up 32 hours (healthy) redis:7-alpine"
+          "status": "Up 33 hours (healthy) redis:7-alpine"
         },
         {
           "name": "gallery postgres",
-          "status": "Up 32 hours (healthy) postgres:16-alpine"
+          "status": "Up 33 hours (healthy) postgres:16-alpine"
         },
         {
           "name": "prowlarr",
@@ -121,17 +121,17 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 5.8,
-        "user": 5.0,
+        "total": 5.7,
+        "user": 4.9,
         "system": 0.8,
-        "idle": 93.8,
+        "idle": 93.9,
         "iowait": 0.4
       },
       "ram": {
-        "used_gb": 2.57,
+        "used_gb": 2.6,
         "total_gb": 7.87,
-        "percent": 32.7,
-        "available_gb": 5.3
+        "percent": 33.0,
+        "available_gb": 5.27
       },
       "swap": {
         "used_mb": 67.4,
@@ -139,9 +139,9 @@
         "percent": 1.6
       },
       "load": {
-        "1min": 0.24,
-        "5min": 0.27,
-        "15min": 0.32,
+        "1min": 0.34,
+        "5min": 0.58,
+        "15min": 0.72,
         "cores": 4
       },
       "disks": [
@@ -163,10 +163,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 835.4,
-        "write_mb": 1608.5
+        "read_mb": 959.7,
+        "write_mb": 1695.8
       },
-      "temperature_c": 49,
+      "temperature_c": 50,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -175,16 +175,16 @@
         }
       },
       "processes": {
-        "total": 554,
+        "total": 558,
         "running": 0,
         "sleeping": 461,
-        "threads": 3167
+        "threads": 3170
       },
-      "uptime": "8 days, 16:58:35",
+      "uptime": "8 days, 17:58:35",
       "containers": [
         {
           "name": "glances monitoring 1",
-          "status": "Up 34 hours nicolargo/glances:latest"
+          "status": "Up 35 hours nicolargo/glances:latest"
         },
         {
           "name": "qbittorrent",
@@ -213,10 +213,10 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 5.1,
-        "user": 3.2,
-        "system": 1.8,
-        "idle": 94.6,
+        "total": 5.8,
+        "user": 3.6,
+        "system": 2.1,
+        "idle": 93.9,
         "iowait": 0.3
       },
       "ram": {
@@ -231,9 +231,9 @@
         "percent": 0.2
       },
       "load": {
-        "1min": 0.49,
+        "1min": 0.26,
         "5min": 0.49,
-        "15min": 0.43,
+        "15min": 0.44,
         "cores": 4
       },
       "disks": [
@@ -247,8 +247,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 18.1,
-        "write_mb": 532.6
+        "read_mb": 0.4,
+        "write_mb": 512.9
       },
       "temperature_c": 36,
       "network": {
@@ -259,36 +259,36 @@
         }
       },
       "processes": {
-        "total": 263,
+        "total": 264,
         "running": 0,
         "sleeping": 167,
-        "threads": 882
+        "threads": 884
       },
-      "uptime": "12 days, 19:02:35",
+      "uptime": "12 days, 20:02:36",
       "containers": [
         {
           "name": "changedetection",
-          "status": "Up 14 hours ghcr.io/dgtlmoon/changedetection.io"
+          "status": "Up 15 hours ghcr.io/dgtlmoon/changedetection.io"
         },
         {
           "name": "changedetection browser chrome 1",
-          "status": "Up 14 hours seleniarm/standalone-chromium:latest"
+          "status": "Up 15 hours seleniarm/standalone-chromium:latest"
         },
         {
           "name": "changedetection playwright chrome 1",
-          "status": "Up 14 hours browserless/chrome:latest"
+          "status": "Up 15 hours browserless/chrome:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 18 hours prom/prometheus:latest"
+          "status": "Up 19 hours prom/prometheus:latest"
         },
         {
           "name": "Dashy",
-          "status": "Up 33 hours (healthy) lissy93/dashy:4.x"
+          "status": "Up 34 hours (healthy) lissy93/dashy:4.x"
         },
         {
           "name": "glances monitoring 1",
-          "status": "Up 34 hours nicolargo/glances:latest"
+          "status": "Up 35 hours nicolargo/glances:latest"
         },
         {
           "name": "cve report",
@@ -296,7 +296,7 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 7 hours grafana/grafana:latest"
+          "status": "Up 8 hours grafana/grafana:latest"
         },
         {
           "name": "cve alertmanager",
@@ -324,45 +324,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Take me home country roads",
-      "artist": "Toots and the Maytals",
-      "album": "Live in London (disc 2)",
-      "genre": "Reggae",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/5e41335855e838b3d29cc509-1764893237.jpg",
-      "duration": 802,
-      "elapsed": 706
+      "title": "04.We'll Get What We Deserve",
+      "artist": "Gene",
+      "album": "Peel Sessions 19/9/01",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/0c930630005236d4a691f899",
+      "duration": 322,
+      "elapsed": 225
     },
     "playing_next": {
-      "title": "Beautiful Woman",
-      "artist": "Toots & The Maytals"
+      "title": "Everything Goes [#]",
+      "artist": "The Cramps"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "At The Edge",
-        "artist": "Stiff Little Fingers",
-        "played_at": 1782183493
+        "title": "natty dont fear",
+        "artist": "u roy",
+        "played_at": 1782187584
       },
       {
         "title": "news jingle",
         "artist": "",
-        "played_at": 1782183464
+        "played_at": 1782187524
       },
       {
-        "title": "JIngleradio",
+        "title": "news jingle en",
         "artist": "",
-        "played_at": 1782183455
-      },
-      {
-        "title": "news jingle",
-        "artist": "",
-        "played_at": 1782183426
+        "played_at": 1782187489
       },
       {
         "title": "news jingle pt",
         "artist": "",
-        "played_at": 1782183396
+        "played_at": 1782187459
+      },
+      {
+        "title": "JIngleradio",
+        "artist": "",
+        "played_at": 1782187451
       }
     ]
   }
