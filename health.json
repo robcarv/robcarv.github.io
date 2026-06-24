@@ -1,21 +1,21 @@
 {
-  "updated": "2026-06-24 13:12",
+  "updated": "2026-06-24 14:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 2.2,
+        "total": 2.3,
         "user": 2.1,
-        "system": 0.8,
-        "idle": 97.0,
-        "iowait": 0.2
+        "system": 0.7,
+        "idle": 97.1,
+        "iowait": 0.1
       },
       "ram": {
-        "used_gb": 2.84,
+        "used_gb": 2.85,
         "total_gb": 7.87,
-        "percent": 36.1,
-        "available_gb": 5.03
+        "percent": 36.3,
+        "available_gb": 5.02
       },
       "swap": {
         "used_mb": 1140.0,
@@ -23,9 +23,9 @@
         "percent": 55.7
       },
       "load": {
-        "1min": 0.98,
-        "5min": 0.5,
-        "15min": 0.44,
+        "1min": 0.19,
+        "5min": 0.23,
+        "15min": 0.25,
         "cores": 4
       },
       "disks": [
@@ -39,10 +39,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 404.1,
-        "write_mb": 2015.9
+        "read_mb": 5.5,
+        "write_mb": 1919.1
       },
-      "temperature_c": 51,
+      "temperature_c": 52,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -51,20 +51,20 @@
         }
       },
       "processes": {
-        "total": 330,
+        "total": 328,
         "running": 0,
         "sleeping": 237,
-        "threads": 1053
+        "threads": 1051
       },
-      "uptime": "3 days, 12:57:24",
+      "uptime": "3 days, 13:57:25",
       "containers": [
         {
           "name": "gallery frontend",
-          "status": "Up 40 hours gallery-downloader-frontend"
+          "status": "Up 41 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery backend",
-          "status": "Up 40 hours (healthy) gallery-downloader-backend"
+          "status": "Up 41 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "glances monitoring 1",
@@ -72,7 +72,7 @@
         },
         {
           "name": "gallery jandapress",
-          "status": "Up 47 hours gallery-jandapress:local-arm64"
+          "status": "Up 2 days gallery-jandapress:local-arm64"
         },
         {
           "name": "Dashy",
@@ -88,7 +88,7 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 6 hours (healthy) louislam/uptime-kuma:2"
+          "status": "Up 7 hours (healthy) louislam/uptime-kuma:2"
         },
         {
           "name": "gallery redis",
@@ -108,11 +108,11 @@
         },
         {
           "name": "wallos",
-          "status": "Up 6 hours bellamy/wallos:latest"
+          "status": "Up 7 hours bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 6 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 7 hours jc21/nginx-proxy-manager:latest"
         }
       ],
       "container_count": 14,
@@ -121,17 +121,17 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 7.2,
-        "user": 5.2,
+        "total": 7.0,
+        "user": 5.1,
         "system": 0.9,
-        "idle": 93.3,
-        "iowait": 0.6
+        "idle": 81.9,
+        "iowait": 12.1
       },
       "ram": {
-        "used_gb": 2.66,
+        "used_gb": 2.62,
         "total_gb": 7.87,
-        "percent": 33.7,
-        "available_gb": 5.22
+        "percent": 33.3,
+        "available_gb": 5.25
       },
       "swap": {
         "used_mb": 72.8,
@@ -139,9 +139,9 @@
         "percent": 1.8
       },
       "load": {
-        "1min": 0.28,
-        "5min": 0.33,
-        "15min": 0.46,
+        "1min": 1.44,
+        "5min": 1.09,
+        "15min": 0.91,
         "cores": 4
       },
       "disks": [
@@ -157,14 +157,14 @@
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 116.0,
+          "used_gb": 115.9,
           "free_gb": 753.3,
           "percent": 12.7
         }
       ],
       "disk_io": {
-        "read_mb": 674.7,
-        "write_mb": 1334.7
+        "read_mb": 798.5,
+        "write_mb": 1431.0
       },
       "temperature_c": 51,
       "network": {
@@ -175,12 +175,12 @@
         }
       },
       "processes": {
-        "total": 558,
+        "total": 556,
         "running": 0,
-        "sleeping": 465,
+        "sleeping": 462,
         "threads": 3175
       },
-      "uptime": "10 days, 1:58:31",
+      "uptime": "10 days, 2:58:32",
       "containers": [
         {
           "name": "glances monitoring 1",
@@ -196,7 +196,7 @@
         },
         {
           "name": "azuracast",
-          "status": "Up 6 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 7 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "azuracast updater",
@@ -213,11 +213,11 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 5.1,
-        "user": 3.7,
+        "total": 5.4,
+        "user": 3.8,
         "system": 2.1,
         "idle": 93.7,
-        "iowait": 0.3
+        "iowait": 0.2
       },
       "ram": {
         "used_gb": 1.55,
@@ -231,9 +231,9 @@
         "percent": 0.3
       },
       "load": {
-        "1min": 0.27,
-        "5min": 0.37,
-        "15min": 0.42,
+        "1min": 0.54,
+        "5min": 0.55,
+        "15min": 0.63,
         "cores": 4
       },
       "disks": [
@@ -241,14 +241,14 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
-          "used_gb": 35.6,
-          "free_gb": 73.9,
-          "percent": 30.8
+          "used_gb": 36.2,
+          "free_gb": 73.3,
+          "percent": 31.4
         }
       ],
       "disk_io": {
-        "read_mb": 0.1,
-        "write_mb": 529.6
+        "read_mb": 1596.3,
+        "write_mb": 3754.0
       },
       "temperature_c": 37,
       "network": {
@@ -259,28 +259,28 @@
         }
       },
       "processes": {
-        "total": 264,
+        "total": 265,
         "running": 0,
-        "sleeping": 166,
-        "threads": 890
+        "sleeping": 167,
+        "threads": 891
       },
-      "uptime": "14 days, 4:02:32",
+      "uptime": "14 days, 5:02:32",
       "containers": [
         {
           "name": "cve prometheus",
-          "status": "Up 6 hours prom/prometheus:latest"
+          "status": "Up 7 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
-          "status": "Up 47 hours ghcr.io/dgtlmoon/changedetection.io"
+          "status": "Up 2 days ghcr.io/dgtlmoon/changedetection.io"
         },
         {
           "name": "changedetection browser chrome 1",
-          "status": "Up 47 hours seleniarm/standalone-chromium:latest"
+          "status": "Up 2 days seleniarm/standalone-chromium:latest"
         },
         {
           "name": "changedetection playwright chrome 1",
-          "status": "Up 47 hours browserless/chrome:latest"
+          "status": "Up 2 days browserless/chrome:latest"
         },
         {
           "name": "Dashy",
@@ -296,7 +296,7 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 6 hours grafana/grafana:latest"
+          "status": "Up 7 hours grafana/grafana:latest"
         },
         {
           "name": "cve alertmanager",
@@ -320,50 +320,6 @@
     }
   },
   "radio": {
-    "station": "dublincalling",
-    "is_online": true,
-    "is_live": false,
-    "now_playing": {
-      "title": "John Peel 2004-06-30",
-      "artist": "John Peel (R1)",
-      "album": "from Sky+",
-      "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/c9b34554a7fd114b61db8944",
-      "duration": 7174,
-      "elapsed": 2989
-    },
-    "playing_next": {
-      "title": "news jingle pt",
-      "artist": ""
-    },
-    "listeners": 0,
-    "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
-    "history": [
-      {
-        "title": "Black Rabbit",
-        "artist": "Turbonegro",
-        "played_at": 1782300063
-      },
-      {
-        "title": "03 five words",
-        "artist": "",
-        "played_at": 1782299844
-      },
-      {
-        "title": "Carry Go Bring Come",
-        "artist": "Justin Hinds & The Dominoes",
-        "played_at": 1782299677
-      },
-      {
-        "title": "I'm Your Witch Doctor",
-        "artist": "Motorhead",
-        "played_at": 1782299503
-      },
-      {
-        "title": "06 - 55 - No Government-Anti-Pasti",
-        "artist": "John Peel Festive Fifty 1981",
-        "played_at": 1782299376
-      }
-    ]
+    "error": "The read operation timed out"
   }
 }
