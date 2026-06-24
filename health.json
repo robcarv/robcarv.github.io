@@ -1,31 +1,31 @@
 {
-  "updated": "2026-06-24 09:12",
+  "updated": "2026-06-24 10:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
         "total": 2.4,
-        "user": 2.0,
+        "user": 2.1,
         "system": 0.7,
-        "idle": 97.1,
-        "iowait": 0.1
+        "idle": 96.5,
+        "iowait": 0.7
       },
       "ram": {
-        "used_gb": 2.81,
+        "used_gb": 2.82,
         "total_gb": 7.87,
-        "percent": 35.7,
-        "available_gb": 5.07
+        "percent": 35.9,
+        "available_gb": 5.05
       },
       "swap": {
-        "used_mb": 1155.0,
+        "used_mb": 1153.0,
         "total_mb": 2048.0,
-        "percent": 56.4
+        "percent": 56.3
       },
       "load": {
-        "1min": 0.86,
-        "5min": 0.41,
-        "15min": 0.38,
+        "1min": 0.5,
+        "5min": 0.39,
+        "15min": 0.35,
         "cores": 4
       },
       "disks": [
@@ -34,15 +34,15 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 44.6,
-          "free_gb": 66.2,
+          "free_gb": 66.1,
           "percent": 38.2
         }
       ],
       "disk_io": {
-        "read_mb": 372.6,
-        "write_mb": 1990.9
+        "read_mb": 23.3,
+        "write_mb": 1801.0
       },
-      "temperature_c": 52,
+      "temperature_c": 51,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -51,32 +51,32 @@
         }
       },
       "processes": {
-        "total": 329,
+        "total": 327,
         "running": 0,
         "sleeping": 237,
-        "threads": 1050
+        "threads": 1049
       },
-      "uptime": "3 days, 8:57:21",
+      "uptime": "3 days, 9:57:22",
       "containers": [
         {
           "name": "gallery frontend",
-          "status": "Up 36 hours gallery-downloader-frontend"
+          "status": "Up 37 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery backend",
-          "status": "Up 36 hours (healthy) gallery-downloader-backend"
+          "status": "Up 37 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "glances monitoring 1",
-          "status": "Up 44 hours nicolargo/glances:latest"
+          "status": "Up 45 hours nicolargo/glances:latest"
         },
         {
           "name": "gallery jandapress",
-          "status": "Up 43 hours gallery-jandapress:local-arm64"
+          "status": "Up 44 hours gallery-jandapress:local-arm64"
         },
         {
           "name": "Dashy",
-          "status": "Up 44 hours (healthy) lissy93/dashy:4.x"
+          "status": "Up 45 hours (healthy) lissy93/dashy:4.x"
         },
         {
           "name": "gallery worker",
@@ -88,7 +88,7 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 2 hours (healthy) louislam/uptime-kuma:2"
+          "status": "Up 3 hours (healthy) louislam/uptime-kuma:2"
         },
         {
           "name": "gallery redis",
@@ -108,11 +108,11 @@
         },
         {
           "name": "wallos",
-          "status": "Up 2 hours bellamy/wallos:latest"
+          "status": "Up 3 hours bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 2 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 3 hours jc21/nginx-proxy-manager:latest"
         }
       ],
       "container_count": 14,
@@ -121,17 +121,17 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 7.0,
-        "user": 5.2,
+        "total": 8.7,
+        "user": 5.4,
         "system": 0.9,
-        "idle": 78.4,
-        "iowait": 15.6
+        "idle": 76.7,
+        "iowait": 16.9
       },
       "ram": {
-        "used_gb": 2.62,
+        "used_gb": 2.59,
         "total_gb": 7.87,
-        "percent": 33.2,
-        "available_gb": 5.26
+        "percent": 32.9,
+        "available_gb": 5.29
       },
       "swap": {
         "used_mb": 71.8,
@@ -139,9 +139,9 @@
         "percent": 1.8
       },
       "load": {
-        "1min": 1.4,
-        "5min": 1.03,
-        "15min": 0.76,
+        "1min": 1.62,
+        "5min": 1.37,
+        "15min": 0.93,
         "cores": 4
       },
       "disks": [
@@ -158,15 +158,15 @@
           "device": "/dev/sda1",
           "size_gb": 915.8,
           "used_gb": 115.9,
-          "free_gb": 753.3,
+          "free_gb": 753.4,
           "percent": 12.7
         }
       ],
       "disk_io": {
-        "read_mb": 426.7,
-        "write_mb": 1112.0
+        "read_mb": 871.9,
+        "write_mb": 1631.9
       },
-      "temperature_c": 52,
+      "temperature_c": 50,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -175,12 +175,12 @@
         }
       },
       "processes": {
-        "total": 562,
+        "total": 560,
         "running": 0,
-        "sleeping": 467,
-        "threads": 3179
+        "sleeping": 465,
+        "threads": 3178
       },
-      "uptime": "9 days, 21:58:29",
+      "uptime": "9 days, 22:58:29",
       "containers": [
         {
           "name": "glances monitoring 1",
@@ -196,7 +196,7 @@
         },
         {
           "name": "azuracast",
-          "status": "Up 2 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 3 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "azuracast updater",
@@ -213,11 +213,11 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 5.5,
+        "total": 4.7,
         "user": 3.7,
-        "system": 2.1,
-        "idle": 93.8,
-        "iowait": 0.3
+        "system": 2.2,
+        "idle": 93.7,
+        "iowait": 0.2
       },
       "ram": {
         "used_gb": 1.55,
@@ -231,9 +231,9 @@
         "percent": 0.3
       },
       "load": {
-        "1min": 0.47,
-        "5min": 0.3,
-        "15min": 0.48,
+        "1min": 0.27,
+        "5min": 0.34,
+        "15min": 0.35,
         "cores": 4
       },
       "disks": [
@@ -248,7 +248,7 @@
       ],
       "disk_io": {
         "read_mb": 0.5,
-        "write_mb": 479.9
+        "write_mb": 530.4
       },
       "temperature_c": 37,
       "network": {
@@ -259,28 +259,28 @@
         }
       },
       "processes": {
-        "total": 264,
+        "total": 265,
         "running": 0,
-        "sleeping": 166,
-        "threads": 889
+        "sleeping": 167,
+        "threads": 893
       },
-      "uptime": "14 days, 0:02:29",
+      "uptime": "14 days, 1:02:30",
       "containers": [
         {
           "name": "cve prometheus",
-          "status": "Up 2 hours prom/prometheus:latest"
+          "status": "Up 3 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
-          "status": "Up 43 hours ghcr.io/dgtlmoon/changedetection.io"
+          "status": "Up 44 hours ghcr.io/dgtlmoon/changedetection.io"
         },
         {
           "name": "changedetection browser chrome 1",
-          "status": "Up 43 hours seleniarm/standalone-chromium:latest"
+          "status": "Up 44 hours seleniarm/standalone-chromium:latest"
         },
         {
           "name": "changedetection playwright chrome 1",
-          "status": "Up 43 hours browserless/chrome:latest"
+          "status": "Up 44 hours browserless/chrome:latest"
         },
         {
           "name": "Dashy",
@@ -296,7 +296,7 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 2 hours grafana/grafana:latest"
+          "status": "Up 3 hours grafana/grafana:latest"
         },
         {
           "name": "cve alertmanager",
@@ -324,45 +324,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Summer In Siam",
-      "artist": "The Pogues",
-      "album": "Streams Of Whiskey - Live In Leysin, Switzerland 1991",
-      "genre": "Folk Rock",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/cd867e3ed7a1044a74951d3f-1765890073.jpg",
-      "duration": 230,
-      "elapsed": 48
+      "title": "Get Off the Internet",
+      "artist": "Le Tigre",
+      "album": "From The Desk Of Mr. Lady",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/3eb5c72598998db1b0322f12-1764887248.jpg",
+      "duration": 212,
+      "elapsed": 199
     },
     "playing_next": {
-      "title": "news jingle pt",
-      "artist": ""
+      "title": "Ina Your Rights",
+      "artist": "Aswad"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Fred Olivier",
-        "artist": "The Toy Dolls",
-        "played_at": 1782288541
+        "title": "Sour Cherry",
+        "artist": "The Kills",
+        "played_at": 1782291965
       },
       {
-        "title": "Johnny B. Goode",
-        "artist": "Peter Tosh",
-        "played_at": 1782288224
+        "title": "In The Year Of The Wolf",
+        "artist": "Motorhead",
+        "played_at": 1782291707
       },
       {
-        "title": "Backout",
-        "artist": "Roots Radics",
-        "played_at": 1782287973
+        "title": "Total War",
+        "artist": "The Comsat Angels",
+        "played_at": 1782291412
       },
       {
-        "title": "Ramona",
-        "artist": "Ramones",
-        "played_at": 1782287818
+        "title": "i won't compromise",
+        "artist": "keith hudson",
+        "played_at": 1782291247
       },
       {
-        "title": "Punk Pals",
-        "artist": "Turbonegro",
-        "played_at": 1782287735
+        "title": "Heavy Cross",
+        "artist": "Gossip",
+        "played_at": 1782291004
       }
     ]
   }
