@@ -1,31 +1,31 @@
 {
-  "updated": "2026-06-24 14:12",
+  "updated": "2026-06-24 15:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 2.3,
+        "total": 2.2,
         "user": 2.1,
         "system": 0.7,
         "idle": 97.1,
         "iowait": 0.1
       },
       "ram": {
-        "used_gb": 2.85,
+        "used_gb": 2.86,
         "total_gb": 7.87,
         "percent": 36.3,
-        "available_gb": 5.02
+        "available_gb": 5.01
       },
       "swap": {
-        "used_mb": 1140.0,
+        "used_mb": 1119.0,
         "total_mb": 2048.0,
-        "percent": 55.7
+        "percent": 54.6
       },
       "load": {
-        "1min": 0.19,
-        "5min": 0.23,
-        "15min": 0.25,
+        "1min": 0.32,
+        "5min": 0.37,
+        "15min": 0.34,
         "cores": 4
       },
       "disks": [
@@ -39,8 +39,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 5.5,
-        "write_mb": 1919.1
+        "read_mb": 549.2,
+        "write_mb": 2119.5
       },
       "temperature_c": 52,
       "network": {
@@ -51,20 +51,20 @@
         }
       },
       "processes": {
-        "total": 328,
+        "total": 331,
         "running": 0,
         "sleeping": 237,
-        "threads": 1051
+        "threads": 1058
       },
-      "uptime": "3 days, 13:57:25",
+      "uptime": "3 days, 14:57:25",
       "containers": [
         {
           "name": "gallery frontend",
-          "status": "Up 41 hours gallery-downloader-frontend"
+          "status": "Up 42 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery backend",
-          "status": "Up 41 hours (healthy) gallery-downloader-backend"
+          "status": "Up 42 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "glances monitoring 1",
@@ -88,7 +88,7 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 7 hours (healthy) louislam/uptime-kuma:2"
+          "status": "Up 8 hours (healthy) louislam/uptime-kuma:2"
         },
         {
           "name": "gallery redis",
@@ -108,11 +108,11 @@
         },
         {
           "name": "wallos",
-          "status": "Up 7 hours bellamy/wallos:latest"
+          "status": "Up 8 hours bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 7 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 8 hours jc21/nginx-proxy-manager:latest"
         }
       ],
       "container_count": 14,
@@ -121,17 +121,17 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 7.0,
-        "user": 5.1,
+        "total": 7.1,
+        "user": 5.4,
         "system": 0.9,
-        "idle": 81.9,
-        "iowait": 12.1
+        "idle": 93.2,
+        "iowait": 0.4
       },
       "ram": {
-        "used_gb": 2.62,
+        "used_gb": 2.56,
         "total_gb": 7.87,
-        "percent": 33.3,
-        "available_gb": 5.25
+        "percent": 32.5,
+        "available_gb": 5.31
       },
       "swap": {
         "used_mb": 72.8,
@@ -139,9 +139,9 @@
         "percent": 1.8
       },
       "load": {
-        "1min": 1.44,
-        "5min": 1.09,
-        "15min": 0.91,
+        "1min": 1.04,
+        "5min": 0.6,
+        "15min": 0.51,
         "cores": 4
       },
       "disks": [
@@ -163,10 +163,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 798.5,
-        "write_mb": 1431.0
+        "read_mb": 675.8,
+        "write_mb": 1413.9
       },
-      "temperature_c": 51,
+      "temperature_c": 52,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -175,12 +175,12 @@
         }
       },
       "processes": {
-        "total": 556,
+        "total": 557,
         "running": 0,
-        "sleeping": 462,
-        "threads": 3175
+        "sleeping": 465,
+        "threads": 3177
       },
-      "uptime": "10 days, 2:58:32",
+      "uptime": "10 days, 3:58:33",
       "containers": [
         {
           "name": "glances monitoring 1",
@@ -196,7 +196,7 @@
         },
         {
           "name": "azuracast",
-          "status": "Up 7 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 8 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "azuracast updater",
@@ -213,11 +213,11 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 5.4,
+        "total": 5.7,
         "user": 3.8,
-        "system": 2.1,
-        "idle": 93.7,
-        "iowait": 0.2
+        "system": 2.2,
+        "idle": 93.5,
+        "iowait": 0.3
       },
       "ram": {
         "used_gb": 1.55,
@@ -231,9 +231,9 @@
         "percent": 0.3
       },
       "load": {
-        "1min": 0.54,
-        "5min": 0.55,
-        "15min": 0.63,
+        "1min": 0.24,
+        "5min": 0.37,
+        "15min": 0.38,
         "cores": 4
       },
       "disks": [
@@ -242,15 +242,15 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
           "used_gb": 36.2,
-          "free_gb": 73.3,
+          "free_gb": 73.2,
           "percent": 31.4
         }
       ],
       "disk_io": {
-        "read_mb": 1596.3,
-        "write_mb": 3754.0
+        "read_mb": 10.3,
+        "write_mb": 528.6
       },
-      "temperature_c": 37,
+      "temperature_c": 38,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -259,16 +259,16 @@
         }
       },
       "processes": {
-        "total": 265,
+        "total": 263,
         "running": 0,
-        "sleeping": 167,
-        "threads": 891
+        "sleeping": 166,
+        "threads": 889
       },
-      "uptime": "14 days, 5:02:32",
+      "uptime": "14 days, 6:02:33",
       "containers": [
         {
           "name": "cve prometheus",
-          "status": "Up 7 hours prom/prometheus:latest"
+          "status": "Up 8 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -296,7 +296,7 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 7 hours grafana/grafana:latest"
+          "status": "Up 8 hours grafana/grafana:latest"
         },
         {
           "name": "cve alertmanager",
@@ -320,6 +320,50 @@
     }
   },
   "radio": {
-    "error": "The read operation timed out"
+    "station": "dublincalling",
+    "is_online": true,
+    "is_live": false,
+    "now_playing": {
+      "title": "112 - Black Sunday",
+      "artist": "The Skatalites",
+      "album": "",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/6552b36ef4abbb9a3ac65178",
+      "duration": 176,
+      "elapsed": 96
+    },
+    "playing_next": {
+      "title": "oo Many Rules",
+      "artist": "Mikey Dread - 17"
+    },
+    "listeners": 0,
+    "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
+    "history": [
+      {
+        "title": "Toots & The Maytals - Just Like That",
+        "artist": "04",
+        "played_at": 1782309961
+      },
+      {
+        "title": "Nincompoop",
+        "artist": "Desmond Dekker & the Aces",
+        "played_at": 1782309835
+      },
+      {
+        "title": "Golden Gate Fields",
+        "artist": "Rancid",
+        "played_at": 1782309618
+      },
+      {
+        "title": "Claw (Alternative Version)",
+        "artist": "Motorhead",
+        "played_at": 1782309406
+      },
+      {
+        "title": "news jingle en",
+        "artist": "",
+        "played_at": 1782309371
+      }
+    ]
   }
 }
