@@ -1,21 +1,21 @@
 {
-  "updated": "2026-06-30 21:12",
+  "updated": "2026-06-30 22:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 4.3,
-        "user": 2.6,
+        "total": 6.2,
+        "user": 2.7,
         "system": 0.9,
-        "idle": 96.2,
-        "iowait": 0.2
+        "idle": 96.1,
+        "iowait": 0.3
       },
       "ram": {
-        "used_gb": 3.26,
+        "used_gb": 3.25,
         "total_gb": 7.87,
-        "percent": 41.4,
-        "available_gb": 4.61
+        "percent": 41.3,
+        "available_gb": 4.62
       },
       "swap": {
         "used_mb": 902.9,
@@ -23,9 +23,9 @@
         "percent": 44.1
       },
       "load": {
-        "1min": 0.27,
-        "5min": 0.42,
-        "15min": 0.51,
+        "1min": 0.71,
+        "5min": 0.47,
+        "15min": 0.4,
         "cores": 4
       },
       "disks": [
@@ -39,8 +39,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1.4,
-        "write_mb": 1901.3
+        "read_mb": 0.4,
+        "write_mb": 1884.4
       },
       "temperature_c": 50,
       "network": {
@@ -54,45 +54,45 @@
         "total": 343,
         "running": 0,
         "sleeping": 250,
-        "threads": 1115
+        "threads": 1116
       },
-      "uptime": "2 days, 0:33:56",
+      "uptime": "2 days, 1:34:02",
       "containers": [
         {
           "name": "subscription bot",
-          "status": "Up 28 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 29 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "gallery frontend",
-          "status": "Up 30 hours gallery-downloader-frontend"
+          "status": "Up 31 hours gallery-downloader-frontend"
         },
         {
           "name": "glances monitoring 1",
-          "status": "Up 33 hours nicolargo/glances:latest"
+          "status": "Up 34 hours nicolargo/glances:latest"
         },
         {
           "name": "gallery backend",
-          "status": "Up 47 hours (healthy) gallery-downloader-backend"
+          "status": "Up 2 days (healthy) gallery-downloader-backend"
         },
         {
           "name": "gallery worker",
-          "status": "Up 47 hours gallery-downloader-worker"
+          "status": "Up 2 days gallery-downloader-worker"
         },
         {
           "name": "uptime kuma",
-          "status": "Up 20 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 21 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 20 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 21 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 20 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 21 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
-          "status": "Up 30 hours gallery-jandapress:local-arm64"
+          "status": "Up 31 hours gallery-jandapress:local-arm64"
         },
         {
           "name": "Dashy",
@@ -104,11 +104,11 @@
         },
         {
           "name": "gallery redis",
-          "status": "Up 47 hours (healthy) redis:7-alpine"
+          "status": "Up 2 days (healthy) redis:7-alpine"
         },
         {
           "name": "gallery postgres",
-          "status": "Up 47 hours (healthy) postgres:16-alpine"
+          "status": "Up 2 days (healthy) postgres:16-alpine"
         },
         {
           "name": "prowlarr",
@@ -125,27 +125,27 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 4.9,
-        "user": 5.6,
-        "system": 1.2,
-        "idle": 79.9,
-        "iowait": 13.3
+        "total": 4.8,
+        "user": 5.2,
+        "system": 1.0,
+        "idle": 93.2,
+        "iowait": 0.4
       },
       "ram": {
-        "used_gb": 3.1,
+        "used_gb": 3.04,
         "total_gb": 7.87,
-        "percent": 39.4,
-        "available_gb": 4.77
+        "percent": 38.6,
+        "available_gb": 4.84
       },
       "swap": {
-        "used_mb": 1212.4,
+        "used_mb": 1211.4,
         "total_mb": 4096.0,
         "percent": 29.6
       },
       "load": {
-        "1min": 2.23,
-        "5min": 0.95,
-        "15min": 0.56,
+        "1min": 0.26,
+        "5min": 0.39,
+        "15min": 0.6,
         "cores": 4
       },
       "disks": [
@@ -167,8 +167,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1057.6,
-        "write_mb": 1633.4
+        "read_mb": 499.0,
+        "write_mb": 1092.8
       },
       "temperature_c": 51,
       "network": {
@@ -179,16 +179,16 @@
         }
       },
       "processes": {
-        "total": 597,
+        "total": 599,
         "running": 0,
         "sleeping": 499,
-        "threads": 3409
+        "threads": 3412
       },
-      "uptime": "2 days, 23:16:31",
+      "uptime": "3 days, 0:16:36",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 20 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 21 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -241,10 +241,10 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 6.0,
-        "user": 4.3,
+        "total": 6.3,
+        "user": 4.4,
         "system": 2.4,
-        "idle": 93.2,
+        "idle": 93.0,
         "iowait": 0.1
       },
       "ram": {
@@ -259,9 +259,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.21,
-        "5min": 0.41,
-        "15min": 0.44,
+        "1min": 0.4,
+        "5min": 0.45,
+        "15min": 0.45,
         "cores": 4
       },
       "disks": [
@@ -275,8 +275,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1.5,
-        "write_mb": 443.2
+        "read_mb": 0.2,
+        "write_mb": 436.4
       },
       "temperature_c": 34,
       "network": {
@@ -292,15 +292,15 @@
         "sleeping": 166,
         "threads": 903
       },
-      "uptime": "2 days, 0:38:50",
+      "uptime": "2 days, 1:38:56",
       "containers": [
         {
           "name": "cve grafana",
-          "status": "Up 20 hours grafana/grafana:latest"
+          "status": "Up 21 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 20 hours prom/prometheus:latest"
+          "status": "Up 21 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -358,7 +358,7 @@
       "genre": "",
       "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/1100b21afca637d99ab4de47",
       "duration": 6999,
-      "elapsed": 2062
+      "elapsed": 5668
     },
     "playing_next": {
       "title": "Born To Die In Berlin",
