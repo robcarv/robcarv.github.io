@@ -1,31 +1,31 @@
 {
-  "updated": "2026-06-30 22:12",
+  "updated": "2026-06-30 23:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 6.2,
-        "user": 2.7,
+        "total": 3.4,
+        "user": 2.5,
         "system": 0.9,
-        "idle": 96.1,
-        "iowait": 0.3
+        "idle": 96.4,
+        "iowait": 0.2
       },
       "ram": {
-        "used_gb": 3.25,
+        "used_gb": 3.29,
         "total_gb": 7.87,
-        "percent": 41.3,
-        "available_gb": 4.62
+        "percent": 41.8,
+        "available_gb": 4.58
       },
       "swap": {
-        "used_mb": 902.9,
+        "used_mb": 864.9,
         "total_mb": 2048.0,
-        "percent": 44.1
+        "percent": 42.2
       },
       "load": {
-        "1min": 0.71,
-        "5min": 0.47,
-        "15min": 0.4,
+        "1min": 0.36,
+        "5min": 0.3,
+        "15min": 0.33,
         "cores": 4
       },
       "disks": [
@@ -39,8 +39,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.4,
-        "write_mb": 1884.4
+        "read_mb": 84.5,
+        "write_mb": 2036.9
       },
       "temperature_c": 50,
       "network": {
@@ -51,24 +51,24 @@
         }
       },
       "processes": {
-        "total": 343,
+        "total": 340,
         "running": 0,
         "sleeping": 250,
         "threads": 1116
       },
-      "uptime": "2 days, 1:34:02",
+      "uptime": "2 days, 2:34:06",
       "containers": [
         {
           "name": "subscription bot",
-          "status": "Up 29 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 30 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "gallery frontend",
-          "status": "Up 31 hours gallery-downloader-frontend"
+          "status": "Up 32 hours gallery-downloader-frontend"
         },
         {
           "name": "glances monitoring 1",
-          "status": "Up 34 hours nicolargo/glances:latest"
+          "status": "Up 35 hours nicolargo/glances:latest"
         },
         {
           "name": "gallery backend",
@@ -80,19 +80,19 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 21 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 22 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 21 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 22 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 21 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 22 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
-          "status": "Up 31 hours gallery-jandapress:local-arm64"
+          "status": "Up 32 hours gallery-jandapress:local-arm64"
         },
         {
           "name": "Dashy",
@@ -125,17 +125,17 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 4.8,
-        "user": 5.2,
-        "system": 1.0,
-        "idle": 93.2,
-        "iowait": 0.4
+        "total": 5.6,
+        "user": 5.6,
+        "system": 1.2,
+        "idle": 92.7,
+        "iowait": 0.5
       },
       "ram": {
-        "used_gb": 3.04,
+        "used_gb": 3.0,
         "total_gb": 7.87,
-        "percent": 38.6,
-        "available_gb": 4.84
+        "percent": 38.1,
+        "available_gb": 4.87
       },
       "swap": {
         "used_mb": 1211.4,
@@ -143,9 +143,9 @@
         "percent": 29.6
       },
       "load": {
-        "1min": 0.26,
-        "5min": 0.39,
-        "15min": 0.6,
+        "1min": 1.33,
+        "5min": 1.34,
+        "15min": 1.14,
         "cores": 4
       },
       "disks": [
@@ -153,22 +153,22 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 72.5,
-          "free_gb": 38.2,
-          "percent": 62.2
+          "used_gb": 72.7,
+          "free_gb": 38.1,
+          "percent": 62.3
         },
         {
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.7,
-          "free_gb": 747.5,
+          "used_gb": 121.6,
+          "free_gb": 747.6,
           "percent": 13.3
         }
       ],
       "disk_io": {
-        "read_mb": 499.0,
-        "write_mb": 1092.8
+        "read_mb": 1278.9,
+        "write_mb": 1896.6
       },
       "temperature_c": 51,
       "network": {
@@ -179,16 +179,16 @@
         }
       },
       "processes": {
-        "total": 599,
+        "total": 598,
         "running": 0,
         "sleeping": 499,
-        "threads": 3412
+        "threads": 3413
       },
-      "uptime": "3 days, 0:16:36",
+      "uptime": "3 days, 1:16:41",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 21 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 22 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -241,10 +241,10 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 6.3,
-        "user": 4.4,
-        "system": 2.4,
-        "idle": 93.0,
+        "total": 5.8,
+        "user": 4.3,
+        "system": 2.3,
+        "idle": 93.3,
         "iowait": 0.1
       },
       "ram": {
@@ -259,9 +259,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.4,
-        "5min": 0.45,
-        "15min": 0.45,
+        "1min": 0.52,
+        "5min": 0.53,
+        "15min": 0.48,
         "cores": 4
       },
       "disks": [
@@ -275,10 +275,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.2,
-        "write_mb": 436.4
+        "read_mb": 0.5,
+        "write_mb": 443.3
       },
-      "temperature_c": 34,
+      "temperature_c": 33,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -287,20 +287,20 @@
         }
       },
       "processes": {
-        "total": 263,
+        "total": 264,
         "running": 0,
         "sleeping": 166,
-        "threads": 903
+        "threads": 902
       },
-      "uptime": "2 days, 1:38:56",
+      "uptime": "2 days, 2:39:00",
       "containers": [
         {
           "name": "cve grafana",
-          "status": "Up 21 hours grafana/grafana:latest"
+          "status": "Up 22 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 21 hours prom/prometheus:latest"
+          "status": "Up 22 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -352,45 +352,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "John Peel 2004-06-22",
-      "artist": "John Peel (R1)",
-      "album": "from Sky+",
-      "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/1100b21afca637d99ab4de47",
-      "duration": 6999,
-      "elapsed": 5668
+      "title": "Mean Machine",
+      "artist": "Motorhead",
+      "album": "Orgasmatron (1997 Uk Reissue)",
+      "genre": "Heavy Metal",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/e90b8944dfee7009687a7cc7-1782762447.jpg",
+      "duration": 177,
+      "elapsed": 6
     },
     "playing_next": {
-      "title": "Born To Die In Berlin",
-      "artist": "Ramones"
+      "title": "Put Yourself in My Place",
+      "artist": "Delroy Wilson"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Never You Change (take 1)",
-        "artist": "The Maytals",
-        "played_at": 1782848113
+        "title": "Dash Wey The Vial",
+        "artist": "Bunny Wailer",
+        "played_at": 1782857266
       },
       {
-        "title": "Country Ska Roads Medley",
-        "artist": "Toots & The Maytalls",
-        "played_at": 1782847479
+        "title": "Turbonegro Must Be Destroyed",
+        "artist": "Turbonegro",
+        "played_at": 1782857079
       },
       {
-        "title": "Infinite Dreams",
-        "artist": "Iron Maiden",
-        "played_at": 1782847126
+        "title": "Testing My Faith",
+        "artist": "Keith Hudson",
+        "played_at": 1782856926
       },
       {
-        "title": "John Peel 20030227",
-        "artist": "",
-        "played_at": 1782839872
+        "title": "54-46 Thats My Number",
+        "artist": "Toots",
+        "played_at": 1782856379
       },
       {
-        "title": "Congoman Chant",
-        "artist": "The Congos",
-        "played_at": 1782839497
+        "title": "Lord Dub",
+        "artist": "Yabby You & King Tubby",
+        "played_at": 1782856184
       }
     ]
   }
