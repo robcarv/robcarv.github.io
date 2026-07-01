@@ -1,21 +1,21 @@
 {
-  "updated": "2026-07-01 15:05",
+  "updated": "2026-07-01 15:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 10.0,
-        "user": 7.1,
-        "system": 1.9,
-        "idle": 90.6,
-        "iowait": 0.3
+        "total": 5.1,
+        "user": 4.0,
+        "system": 1.1,
+        "idle": 94.0,
+        "iowait": 0.9
       },
       "ram": {
-        "used_gb": 2.46,
+        "used_gb": 2.51,
         "total_gb": 7.87,
-        "percent": 31.2,
-        "available_gb": 5.41
+        "percent": 31.8,
+        "available_gb": 5.37
       },
       "swap": {
         "used_mb": 5.0,
@@ -23,9 +23,9 @@
         "percent": 0.2
       },
       "load": {
-        "1min": 0.5,
-        "5min": 0.44,
-        "15min": 0.45,
+        "1min": 0.68,
+        "5min": 0.57,
+        "15min": 0.5,
         "cores": 4
       },
       "disks": [
@@ -39,10 +39,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1.1,
-        "write_mb": 714.9
+        "read_mb": 0.0,
+        "write_mb": 396.3
       },
-      "temperature_c": 53,
+      "temperature_c": 52,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -51,16 +51,16 @@
         }
       },
       "processes": {
-        "total": 323,
-        "running": 0,
+        "total": 324,
+        "running": 1,
         "sleeping": 229,
-        "threads": 942
+        "threads": 944
       },
-      "uptime": "14:18:01",
+      "uptime": "14:24:45",
       "containers": [
         {
           "name": "subscription bot",
-          "status": "Up 39 minutes (healthy) subscription-bot-subscription-bot"
+          "status": "Up 46 minutes (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "gallery worker",
@@ -121,17 +121,17 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 10.5,
-        "user": 9.0,
-        "system": 1.4,
-        "idle": 88.9,
-        "iowait": 0.7
+        "total": 6.7,
+        "user": 6.0,
+        "system": 0.9,
+        "idle": 92.7,
+        "iowait": 0.4
       },
       "ram": {
-        "used_gb": 2.75,
+        "used_gb": 2.9,
         "total_gb": 7.87,
-        "percent": 34.9,
-        "available_gb": 5.13
+        "percent": 36.8,
+        "available_gb": 4.98
       },
       "swap": {
         "used_mb": 1.0,
@@ -139,9 +139,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.73,
-        "5min": 0.58,
-        "15min": 0.64,
+        "1min": 0.43,
+        "5min": 0.42,
+        "15min": 0.53,
         "cores": 4
       },
       "disks": [
@@ -157,14 +157,14 @@
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.1,
-          "free_gb": 748.1,
+          "used_gb": 121.3,
+          "free_gb": 747.9,
           "percent": 13.2
         }
       ],
       "disk_io": {
-        "read_mb": 152.4,
-        "write_mb": 306.1
+        "read_mb": 452.6,
+        "write_mb": 557.6
       },
       "temperature_c": 51,
       "network": {
@@ -177,10 +177,10 @@
       "processes": {
         "total": 579,
         "running": 0,
-        "sleeping": 483,
-        "threads": 3312
+        "sleeping": 482,
+        "threads": 3310
       },
-      "uptime": "14:18:02",
+      "uptime": "14:24:45",
       "containers": [
         {
           "name": "azuracast",
@@ -229,17 +229,17 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 5.9,
-        "user": 3.7,
-        "system": 2.1,
-        "idle": 94.0,
+        "total": 4.2,
+        "user": 2.8,
+        "system": 1.5,
+        "idle": 95.6,
         "iowait": 0.0
       },
       "ram": {
         "used_gb": 1.43,
         "total_gb": 7.64,
-        "percent": 18.8,
-        "available_gb": 6.2
+        "percent": 18.7,
+        "available_gb": 6.21
       },
       "swap": {
         "used_mb": 0.0,
@@ -247,9 +247,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.53,
-        "5min": 0.43,
-        "15min": 0.34,
+        "1min": 0.09,
+        "5min": 0.31,
+        "15min": 0.33,
         "cores": 4
       },
       "disks": [
@@ -264,9 +264,9 @@
       ],
       "disk_io": {
         "read_mb": 0.1,
-        "write_mb": 103.5
+        "write_mb": 53.1
       },
-      "temperature_c": 36,
+      "temperature_c": 37,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -278,9 +278,9 @@
         "total": 271,
         "running": 0,
         "sleeping": 174,
-        "threads": 896
+        "threads": 898
       },
-      "uptime": "14:18:05",
+      "uptime": "14:24:48",
       "containers": [
         {
           "name": "cve grafana",
@@ -340,21 +340,31 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Angel Sigh (From Medication EP); 02 - Angel Sigh",
-      "artist": "Spiritualized - Peel Session",
-      "album": "The Complete Works Volume One",
-      "genre": "Indie",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/150bf8390bcda78a54d12e41",
-      "duration": 283,
-      "elapsed": 246
+      "title": "A Dread Dub",
+      "artist": "The Agrovators",
+      "album": "Kaya Dub",
+      "genre": "Reggae",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/6a5dc3234e9abc783b8b59df",
+      "duration": 181,
+      "elapsed": 103
     },
     "playing_next": {
-      "title": "My Favourite Game",
-      "artist": "The Cardigans"
+      "title": "John Peel 20030325",
+      "artist": ""
     },
     "listeners": 1,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
+      {
+        "title": "My Favourite Game",
+        "artist": "The Cardigans",
+        "played_at": 1782914766
+      },
+      {
+        "title": "Angel Sigh (From Medication EP); 02 - Angel Sigh",
+        "artist": "Spiritualized - Peel Session",
+        "played_at": 1782914482
+      },
       {
         "title": "man of steel",
         "artist": "02",
@@ -369,16 +379,6 @@
         "title": "Tearproof",
         "artist": "The Undertones",
         "played_at": 1782914099
-      },
-      {
-        "title": "Mighty Diamonds - Painted In Red - 01 - Putting On The Ritz",
-        "artist": "Mighty Diamonds",
-        "played_at": 1782914068
-      },
-      {
-        "title": "Press Along",
-        "artist": "A3",
-        "played_at": 1782913998
       }
     ]
   }
