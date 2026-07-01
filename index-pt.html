@@ -610,17 +610,6 @@ async function refreshAll() {
 // RADIO LIVE POLL — fetches AzuraCast directly every 30s
 // ============================================================
 async function pollRadioLive() {
-  // 1st: live endpoint (Pi501, Last.fm-enriched, real-time, no deploy needed)
-  try {
-    const r = await fetch('http://192.168.68.117:8788/radio.json');
-    if (r.ok) { const rj = await r.json(); if (rj?.now_playing) { renderRadio(rj); return; } }
-  } catch(e) {}
-  // 2nd: GitHub Pages CDN (public fallback)
-  try {
-    const r = await fetch('radio.json?_='+Date.now());
-    if (r.ok) { const rj = await r.json(); if (rj?.now_playing) { renderRadio(rj); return; } }
-  } catch(e) {}
-  // 3rd: direct AzuraCast (basic data, no Last.fm enrichment)
   try {
     const r = await fetch('https://dublincalling.duckdns.org/api/nowplaying');
     if (!r.ok) return;
@@ -629,14 +618,13 @@ async function pollRadioLive() {
     const s = stations[0];
     const song = s.now_playing?.song;
     if (!song) return;
-    const radio = {
+    renderRadio({
       is_online: s.is_online, is_live: s.live?.is_live,
       now_playing: { artist: song.artist||'', title: song.title||'', album: song.album||'', art: song.art||'', genre: song.genre||'', duration: s.now_playing?.duration||1, elapsed: s.now_playing?.elapsed||0 },
-      playing_next: s.playing_next?.song ? { artist: s.playing_next.song.artist||'', title: s.playing_next.song.title||'', art: s.playing_next.song.art||'' } : null,
+      playing_next: s.playing_next?.song ? { artist: s.playing_next.song.artist||'', title: s.playing_next.song.title||'' } : null,
       listeners: s.listeners?.current||0,
       listen_url: s.station?.listen_url||'https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3',
-    };
-    renderRadio(radio);
+    });
   } catch(e) {}
 }
 setInterval(pollRadioLive, 30000);
@@ -658,17 +646,6 @@ async function loadHealth() {
   const nodes = healthData?.nodes;
   const updated = healthData?.updated||'N/A';
   renderHomelab(nodes, updated);
-
-  // Try radio.json first (Last.fm-enhanced art), fallback to health.json radio
-  try {
-    const rr = await fetch('http://192.168.68.117:8788/radio.json');
-    if (rr.ok) { const rj = await rr.json(); if (rj?.now_playing) { renderRadio(rj); return; } }
-  } catch(e) {}
-  try {
-    const rr = await fetch('radio.json?_='+Date.now());
-    if (rr.ok) { const rj = await rr.json(); if (rj?.now_playing) { renderRadio(rj); return; } }
-  } catch(e) {}
-  // Fallback: use health.json radio section
   if (healthData?.radio) renderRadio(healthData.radio);
 }
 
