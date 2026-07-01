@@ -100,6 +100,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,15,.92)
 .radio-album{font-size:.72rem;color:var(--muted)}
 .radio-next{font-size:.72rem;color:var(--muted);padding:.3rem .5rem;background:rgba(255,255,255,.03);border-radius:6px}
 .radio-next-label{color:var(--accent);font-weight:500}
+.radio-tags{display:flex;flex-wrap:wrap;gap:.25rem;margin-top:.2rem}
+.radio-tag{font-size:.65rem;padding:1px 8px;border-radius:100px;background:rgba(99,102,241,.15);color:var(--accent);white-space:nowrap}
+.radio-bio{font-size:.68rem;color:var(--muted);line-height:1.4;max-height:3.5em;overflow:hidden}
+.radio-similar{font-size:.68rem;color:var(--muted)}
+.radio-lfm-link{font-size:.7rem;color:var(--muted);text-decoration:none;padding:0 4px;flex-shrink:0}.radio-lfm-link:hover{color:var(--accent)}
 @media(max-width:500px){.radio-player-card{flex-direction:column}.radio-art{width:64px;height:64px}}
 .radio-vol{width:60px;height:3px;accent-color:var(--accent)}
 /* Experience accordion */
@@ -350,14 +355,18 @@ function renderRadio(radio) {
     return;
   }
 
-  status.textContent = `${radio.listeners||0} listener${radio.listeners!==1?'s':''} · ${radio.is_live?'LIVE':'Auto DJ'}`;
+  const lfm = radio.lastfm||{};
+  status.textContent = `${radio.listeners||0} listener${radio.listeners!==1?'s':''} · ${radio.is_live?'LIVE':'Auto DJ'}${lfm.playcount ? ' · '+Number(lfm.playcount).toLocaleString()+' plays' : ''}`;
   const np = radio.now_playing||{};
   const elapsed = np.elapsed||0, duration = np.duration||1;
   const pct = Math.min(elapsed/duration*100, 100);
   const artist = np.artist||'Unknown';
   const title = np.title||'Unknown';
-  const art = np.art||'';
+  const art = np.art||lfm.art||'';
   const nxt = radio.playing_next;
+  const tags = lfm.tags||[];
+  const bio = lfm.bio||'';
+  const similar = lfm.similar||[];
 
   container.innerHTML = `
     <div class="radio-player-card">
@@ -377,11 +386,15 @@ function renderRadio(radio) {
             <button onclick="toggleRadio('${radio.listen_url||'https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3'}', this)" class="radio-play-btn" id="radioPlayBtn">▶</button>
           </div>
         </div>
+        ${tags.length ? `<div class="radio-tags">${tags.slice(0,4).map(t=>'<span class="radio-tag">'+t+'</span>').join('')}</div>` : ''}
         ${nxt ? `<div class="radio-next"><span class="radio-next-label">Next:</span> <strong>${nxt.artist}</strong> — ${nxt.title}</div>` : ''}
+        ${bio ? `<div class="radio-bio">${bio}</div>` : ''}
+        ${similar.length ? `<div class="radio-similar"><span class="radio-next-label">Similar:</span> ${similar.join(' · ')}</div>` : ''}
         <div class="radio-audio-bar" id="radioAudioBar">
           <button class="btn btn-sm" onclick="stopRadio()" title="Stop">⏹</button>
           <div class="radio-progress-bar" style="flex:1"><div class="radio-progress-fill" style="width:${pct}%"></div></div>
           <input type="range" class="radio-vol" min="0" max="100" value="80" oninput="document.getElementById('radioAudio').volume=this.value/100" title="Volume">
+          ${lfm.url ? `<a href="${lfm.url}" target="_blank" class="radio-lfm-link" title="Last.fm">🌐</a>` : ''}
         </div>
       </div>
     </div>
