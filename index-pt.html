@@ -93,6 +93,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,15,.92)
 .radio-audio-bar.visible{display:flex}
 .radio-audio-bar .radio-progress-bar{flex:1;height:2px;background:rgba(255,255,255,.06);border-radius:1px;overflow:hidden;margin:0}
 .radio-audio-bar .radio-progress-fill{height:100%;border-radius:1px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 1s linear}
+.radio-player-card{display:flex;gap:1rem;background:linear-gradient(135deg,#111118,#1a1025);border:1px solid var(--border);border-radius:12px;padding:1rem;align-items:flex-start}
+.radio-art{width:96px;height:96px;border-radius:8px;object-fit:cover;flex-shrink:0;border:1px solid var(--border)}
+.radio-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:.5rem}
+.radio-track{font-size:.9rem;color:var(--text)}.radio-track strong{color:#fff}
+.radio-album{font-size:.72rem;color:var(--muted)}
+.radio-next{font-size:.72rem;color:var(--muted);padding:.3rem .5rem;background:rgba(255,255,255,.03);border-radius:6px}
+.radio-next-label{color:var(--accent);font-weight:500}
+@media(max-width:500px){.radio-player-card{flex-direction:column}.radio-art{width:64px;height:64px}}
 .radio-vol{width:60px;height:3px;accent-color:var(--accent)}
 /* Experience accordion */
 .exp-list{display:flex;flex-direction:column;gap:1px}
@@ -218,7 +226,7 @@ footer .footer-links a:hover{color:#fff}
 
 <!-- NEWS -->
 <section class="section" id="news"><div class="container">
-  <h2 class="section-title"><span class="icon">📰</span>Últimas Notícias<span class="section-sub" id="news-updated"></span></h2>
+  <h2 class="section-title"><span class="icon">📰</span>Latest News<span class="section-sub" id="news-updated"></span></h2>
   <div class="toolbar" id="news-filters"></div>
   <div class="grid grid-2" id="news-feed"><div class="loading">Loading news...</div></div>
 </div></section>
@@ -338,37 +346,47 @@ function renderRadio(radio) {
 
   if (!radio || !radio.is_online) {
     status.textContent = '';
-    container.innerHTML = `<div class="radio-bar"><span>📻 Dublin Calling offline</span><a href="https://dublincalling.duckdns.org/public/dublincalling" target="_blank" style="color:var(--accent);font-size:.75rem">open →</a></div>`;
+    container.innerHTML = '<div class="radio-bar"><span>📻 Dublin Calling offline</span><a href="https://dublincalling.duckdns.org/public/dublincalling" target="_blank" style="color:var(--accent);font-size:.75rem">open →</a></div>';
     return;
   }
 
-  status.textContent = `${radio.listeners||0} · ${radio.is_live?'LIVE':'Auto'}`;
+  status.textContent = `${radio.listeners||0} listener${radio.listeners!==1?'s':''} · ${radio.is_live?'LIVE':'Auto DJ'}`;
   const np = radio.now_playing||{};
   const elapsed = np.elapsed||0, duration = np.duration||1;
   const pct = Math.min(elapsed/duration*100, 100);
   const artist = np.artist||'Unknown';
   const title = np.title||'Unknown';
+  const art = np.art||'';
+  const nxt = radio.playing_next;
 
   container.innerHTML = `
-    <div class="radio-bar">
-      <div class="radio-bar-left">
-        <span class="radio-bar-dot ${radio.is_live?'live':''}"></span>
-        <span class="radio-bar-text"><strong>${artist}</strong> — ${title}</span>
-        <span class="radio-bar-time">-${Math.floor((duration-elapsed)/60)}:${String(Math.floor((duration-elapsed)%60)).padStart(2,'0')}</span>
+    <div class="radio-player-card">
+      ${art ? `<img src="${art}" class="radio-art" alt="${title}" onerror="this.style.display='none'">` : ''}
+      <div class="radio-info">
+        <div class="radio-now">
+          <div class="radio-track"><strong>${artist}</strong> — ${title}</div>
+          ${np.album ? `<div class="radio-album">${np.album}${np.genre ? ' · '+np.genre : ''}</div>` : ''}
+        </div>
+        <div class="radio-bar">
+          <div class="radio-bar-left">
+            <span class="radio-bar-dot ${radio.is_live?'live':''}"></span>
+            <span class="radio-bar-text">${radio.listeners||0} listening · ${radio.is_live?'LIVE':'Auto DJ'}</span>
+            <span class="radio-bar-time">-${Math.floor((duration-elapsed)/60)}:${String(Math.floor((duration-elapsed)%60)).padStart(2,'0')}</span>
+          </div>
+          <div class="radio-bar-right">
+            <button onclick="toggleRadio('${radio.listen_url||'https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3'}', this)" class="radio-play-btn" id="radioPlayBtn">▶</button>
+          </div>
+        </div>
+        ${nxt ? `<div class="radio-next"><span class="radio-next-label">Next:</span> <strong>${nxt.artist}</strong> — ${nxt.title}</div>` : ''}
+        <div class="radio-audio-bar" id="radioAudioBar">
+          <button class="btn btn-sm" onclick="stopRadio()" title="Stop">⏹</button>
+          <div class="radio-progress-bar" style="flex:1"><div class="radio-progress-fill" style="width:${pct}%"></div></div>
+          <input type="range" class="radio-vol" min="0" max="100" value="80" oninput="document.getElementById('radioAudio').volume=this.value/100" title="Volume">
+        </div>
       </div>
-      <div class="radio-bar-right">
-        <button onclick="toggleRadio('${radio.listen_url||'https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3'}', this)" class="radio-play-btn" id="radioPlayBtn">▶</button>
-      </div>
-    </div>
-    <div class="radio-audio-bar" id="radioAudioBar">
-      <button class="btn btn-sm" onclick="stopRadio()" title="Stop">⏹</button>
-      <div class="radio-progress-bar" style="flex:1"><div class="radio-progress-fill" style="width:${pct}%"></div></div>
-      <input type="range" class="radio-vol" min="0" max="100" value="80" oninput="document.getElementById('radioAudio').volume=this.value/100" title="Volume">
     </div>
   `;
-  // Also update the nav radio bar
   updateNavRadio(radio);
-  // Keep audio bar visible if already playing (survives pollRadioLive re-renders)
   const audio = document.getElementById('radioAudio');
   if (audio && !audio.paused && audio.src) {
     const bar = document.getElementById('radioAudioBar');
@@ -490,7 +508,7 @@ function renderNews() {
         <span class="news-source" style="${style}">${i.source}</span>
         <span>${dateStr}</span>
       </div>
-      <div style="margin-top:.5rem"><a href="${i.link}" target="_blank">Open article →</a></div>
+      <div style="margin-top:.5rem"><a href="${i.link}" target="_blank">Abrir artigo →</a></div>
     </div>`;
   }).join('');
 }
@@ -585,13 +603,20 @@ async function pollRadioLive() {
     const stations = await r.json();
     if (!stations?.length) return;
     const s = stations[0];
-    const np = s.now_playing?.song;
-    if (!np) return;
+    const song = s.now_playing?.song;
+    if (!song) return;
     const radio = {
       is_online: s.is_online,
       is_live: s.live?.is_live,
-      now_playing: { artist: np.artist||'', title: np.title||'', album: np.album||'', duration: s.now_playing?.duration||1, elapsed: s.now_playing?.elapsed||0 },
-      playing_next: { artist: s.playing_next?.song?.artist||'', title: s.playing_next?.song?.title||'' },
+      now_playing: {
+        artist: song.artist||'', title: song.title||'', album: song.album||'',
+        art: song.art||'', genre: song.genre||'',
+        duration: s.now_playing?.duration||1, elapsed: s.now_playing?.elapsed||0
+      },
+      playing_next: s.playing_next?.song ? {
+        artist: s.playing_next.song.artist||'', title: s.playing_next.song.title||'',
+        art: s.playing_next.song.art||''
+      } : null,
       listeners: s.listeners?.current||0,
       listen_url: s.station?.listen_url||'https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3',
       history: (s.song_history||[]).slice(0,3).map(h=>({artist:h.song?.artist||'',title:h.song?.title||'',played_at:h.played_at||0})),
