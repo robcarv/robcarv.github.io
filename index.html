@@ -611,6 +611,14 @@ async function refreshAll() {
 // ============================================================
 async function pollRadioLive() {
   try {
+    const r = await fetch('radio.json?_='+Date.now());
+    if (r.ok) {
+      const rj = await r.json();
+      if (rj?.now_playing) { renderRadio(rj); return; }
+    }
+  } catch(e) {}
+  // Fallback: direct AzuraCast (no Last.fm enrichment)
+  try {
     const r = await fetch('https://dublincalling.duckdns.org/api/nowplaying');
     if (!r.ok) return;
     const stations = await r.json();
@@ -619,20 +627,11 @@ async function pollRadioLive() {
     const song = s.now_playing?.song;
     if (!song) return;
     const radio = {
-      is_online: s.is_online,
-      is_live: s.live?.is_live,
-      now_playing: {
-        artist: song.artist||'', title: song.title||'', album: song.album||'',
-        art: song.art||'', genre: song.genre||'',
-        duration: s.now_playing?.duration||1, elapsed: s.now_playing?.elapsed||0
-      },
-      playing_next: s.playing_next?.song ? {
-        artist: s.playing_next.song.artist||'', title: s.playing_next.song.title||'',
-        art: s.playing_next.song.art||''
-      } : null,
+      is_online: s.is_online, is_live: s.live?.is_live,
+      now_playing: { artist: song.artist||'', title: song.title||'', album: song.album||'', art: song.art||'', genre: song.genre||'', duration: s.now_playing?.duration||1, elapsed: s.now_playing?.elapsed||0 },
+      playing_next: s.playing_next?.song ? { artist: s.playing_next.song.artist||'', title: s.playing_next.song.title||'', art: s.playing_next.song.art||'' } : null,
       listeners: s.listeners?.current||0,
       listen_url: s.station?.listen_url||'https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3',
-      history: (s.song_history||[]).slice(0,3).map(h=>({artist:h.song?.artist||'',title:h.song?.title||'',played_at:h.played_at||0})),
     };
     renderRadio(radio);
   } catch(e) {}
