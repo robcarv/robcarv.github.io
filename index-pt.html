@@ -638,15 +638,22 @@ async function loadHealth() {
   } catch(e) {
     healthData = null;
     document.getElementById('homelab-nodes').innerHTML = '<div class="card loading">Failed to load health data</div>';
-    return;
   }
 
   const nodes = healthData?.nodes;
-  const radio = healthData?.radio;
   const updated = healthData?.updated||'N/A';
-
   renderHomelab(nodes, updated);
-  renderRadio(radio);
+
+  // Try radio.json first (Last.fm-enhanced art), fallback to health.json radio
+  try {
+    const rr = await fetch('radio.json?_='+Date.now());
+    if (rr.ok) {
+      const rj = await rr.json();
+      if (rj?.now_playing) { renderRadio(rj); return; }
+    }
+  } catch(e) {}
+  // Fallback: use health.json radio section
+  if (healthData?.radio) renderRadio(healthData.radio);
 }
 
 // ============================================================
