@@ -1,13 +1,13 @@
 {
-  "updated": "2026-07-03 08:12",
+  "updated": "2026-07-03 09:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 2.8,
+        "total": 2.4,
         "user": 2.3,
-        "system": 0.8,
+        "system": 0.9,
         "idle": 96.6,
         "iowait": 0.2
       },
@@ -23,9 +23,9 @@
         "percent": 20.3
       },
       "load": {
-        "1min": 0.22,
-        "5min": 0.33,
-        "15min": 0.37,
+        "1min": 0.18,
+        "5min": 0.27,
+        "15min": 0.32,
         "cores": 4
       },
       "disks": [
@@ -39,10 +39,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 5.2,
-        "write_mb": 1895.1
+        "read_mb": 299.1,
+        "write_mb": 2049.1
       },
-      "temperature_c": 50,
+      "temperature_c": 52,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -51,28 +51,28 @@
         }
       },
       "processes": {
-        "total": 317,
-        "running": 1,
-        "sleeping": 223,
-        "threads": 965
+        "total": 318,
+        "running": 0,
+        "sleeping": 224,
+        "threads": 966
       },
-      "uptime": "2 days, 7:25:31",
+      "uptime": "2 days, 8:25:34",
       "containers": [
         {
           "name": "subscription bot",
-          "status": "Up 13 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 14 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "gallery frontend",
-          "status": "Up 14 hours gallery-downloader-frontend"
+          "status": "Up 15 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery worker",
-          "status": "Up 44 hours gallery-downloader-worker"
+          "status": "Up 45 hours gallery-downloader-worker"
         },
         {
           "name": "gallery backend",
-          "status": "Up 46 hours (healthy) gallery-downloader-backend"
+          "status": "Up 47 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "glances monitoring 1",
@@ -80,19 +80,19 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 7 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 8 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 7 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 8 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 7 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 8 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
-          "status": "Up 45 hours gallery-jandapress:local-arm64"
+          "status": "Up 46 hours gallery-jandapress:local-arm64"
         },
         {
           "name": "Dashy",
@@ -100,11 +100,11 @@
         },
         {
           "name": "gallery redis",
-          "status": "Up 45 hours (healthy) redis:7-alpine"
+          "status": "Up 46 hours (healthy) redis:7-alpine"
         },
         {
           "name": "gallery postgres",
-          "status": "Up 45 hours (healthy) postgres:16-alpine"
+          "status": "Up 46 hours (healthy) postgres:16-alpine"
         },
         {
           "name": "prowlarr",
@@ -121,27 +121,27 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 5.9,
+        "total": 4.2,
         "user": 6.2,
         "system": 1.1,
-        "idle": 92.3,
-        "iowait": 0.4
+        "idle": 92.1,
+        "iowait": 0.6
       },
       "ram": {
         "used_gb": 2.93,
         "total_gb": 7.87,
         "percent": 37.2,
-        "available_gb": 4.94
+        "available_gb": 4.95
       },
       "swap": {
-        "used_mb": 21.2,
+        "used_mb": 24.2,
         "total_mb": 4096.0,
-        "percent": 0.5
+        "percent": 0.6
       },
       "load": {
-        "1min": 0.23,
-        "5min": 0.52,
-        "15min": 0.59,
+        "1min": 0.59,
+        "5min": 0.77,
+        "15min": 0.67,
         "cores": 4
       },
       "disks": [
@@ -157,14 +157,14 @@
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.1,
-          "free_gb": 748.1,
+          "used_gb": 121.3,
+          "free_gb": 748.0,
           "percent": 13.2
         }
       ],
       "disk_io": {
-        "read_mb": 751.5,
-        "write_mb": 1193.5
+        "read_mb": 890.1,
+        "write_mb": 1455.4
       },
       "temperature_c": 50,
       "network": {
@@ -175,16 +175,16 @@
         }
       },
       "processes": {
-        "total": 570,
+        "total": 575,
         "running": 0,
         "sleeping": 479,
-        "threads": 3326
+        "threads": 3331
       },
-      "uptime": "2 days, 7:25:32",
+      "uptime": "2 days, 8:25:35",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 7 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 8 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -229,10 +229,10 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 5.4,
-        "user": 4.1,
-        "system": 2.1,
-        "idle": 93.7,
+        "total": 7.4,
+        "user": 4.4,
+        "system": 2.2,
+        "idle": 93.3,
         "iowait": 0.0
       },
       "ram": {
@@ -247,9 +247,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 1.04,
-        "5min": 0.59,
-        "15min": 0.48,
+        "1min": 0.18,
+        "5min": 0.33,
+        "15min": 0.39,
         "cores": 4
       },
       "disks": [
@@ -264,9 +264,9 @@
       ],
       "disk_io": {
         "read_mb": 1.6,
-        "write_mb": 424.3
+        "write_mb": 438.0
       },
-      "temperature_c": 34,
+      "temperature_c": 33,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -278,17 +278,17 @@
         "total": 263,
         "running": 0,
         "sleeping": 167,
-        "threads": 905
+        "threads": 902
       },
-      "uptime": "2 days, 7:25:35",
+      "uptime": "2 days, 8:25:38",
       "containers": [
         {
           "name": "cve grafana",
-          "status": "Up 7 hours grafana/grafana:latest"
+          "status": "Up 8 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 7 hours prom/prometheus:latest"
+          "status": "Up 8 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -340,45 +340,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Reggae With the Birds",
-      "artist": "Bongo Herman / Harry J All Stars",
-      "album": "Trojan Box Set: Nyahbinghi (2 of 3)",
-      "genre": "Reggae",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/ab0f3cf3917f0567da2a9f43-1782763396.jpg",
-      "duration": 191,
-      "elapsed": 56
+      "title": "The Sin Of Pride",
+      "artist": "The Undertones",
+      "album": "The Sin Of Pride",
+      "genre": "New Wave",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/381e5e95a627126fa35af986-1782759629.jpg",
+      "duration": 280,
+      "elapsed": 230
     },
     "playing_next": {
-      "title": "Fever",
-      "artist": "Toots and The Maytals"
+      "title": "Tin Soldiers",
+      "artist": "Stiff Little Fingers"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "03 - Invasion",
-        "artist": "Burning Spear",
-        "played_at": 1783062520
+        "title": "Any Way You Want It",
+        "artist": "Ramones",
+        "played_at": 1783065962
       },
       {
-        "title": "Toots & the Maytals - Just got to Be",
-        "artist": "07",
-        "played_at": 1783062378
+        "title": "Searching for Heaven",
+        "artist": "Pauline Murray and the Invisible Girls",
+        "played_at": 1783065768
       },
       {
-        "title": "wild honey pie (bbc)",
-        "artist": "pixies",
-        "played_at": 1783062263
+        "title": "Chapter 2",
+        "artist": "Augustus Pablo",
+        "played_at": 1783065515
       },
       {
-        "title": "what have i done now",
-        "artist": "John Peel Festive Fifty 1989",
-        "played_at": 1783061925
+        "title": "Meteor Of War",
+        "artist": "Rancid",
+        "played_at": 1783065434
       },
       {
-        "title": "Fast And Loose",
-        "artist": "Motorhead",
-        "played_at": 1783061741
+        "title": "Monkey Man",
+        "artist": "Toots & the Maytals",
+        "played_at": 1783065212
       }
     ]
   }
