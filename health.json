@@ -1,21 +1,21 @@
 {
-  "updated": "2026-07-03 06:12",
+  "updated": "2026-07-03 07:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 4.1,
-        "user": 2.7,
-        "system": 1.5,
-        "idle": 95.0,
-        "iowait": 0.6
+        "total": 2.6,
+        "user": 2.2,
+        "system": 0.7,
+        "idle": 95.1,
+        "iowait": 1.9
       },
       "ram": {
-        "used_gb": 2.41,
+        "used_gb": 2.43,
         "total_gb": 7.87,
-        "percent": 30.6,
-        "available_gb": 5.46
+        "percent": 30.8,
+        "available_gb": 5.45
       },
       "swap": {
         "used_mb": 416.7,
@@ -23,9 +23,9 @@
         "percent": 20.3
       },
       "load": {
-        "1min": 0.52,
-        "5min": 0.45,
-        "15min": 0.45,
+        "1min": 0.8,
+        "5min": 0.49,
+        "15min": 0.39,
         "cores": 4
       },
       "disks": [
@@ -39,10 +39,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1.1,
-        "write_mb": 1779.1
+        "read_mb": 143.4,
+        "write_mb": 1843.9
       },
-      "temperature_c": 48,
+      "temperature_c": 50,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -51,28 +51,28 @@
         }
       },
       "processes": {
-        "total": 321,
+        "total": 320,
         "running": 0,
-        "sleeping": 223,
-        "threads": 969
+        "sleeping": 222,
+        "threads": 968
       },
-      "uptime": "2 days, 5:25:23",
+      "uptime": "2 days, 6:25:28",
       "containers": [
         {
           "name": "subscription bot",
-          "status": "Up 11 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 12 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "gallery frontend",
-          "status": "Up 12 hours gallery-downloader-frontend"
+          "status": "Up 13 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery worker",
-          "status": "Up 42 hours gallery-downloader-worker"
+          "status": "Up 43 hours gallery-downloader-worker"
         },
         {
           "name": "gallery backend",
-          "status": "Up 44 hours (healthy) gallery-downloader-backend"
+          "status": "Up 45 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "glances monitoring 1",
@@ -80,19 +80,19 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 5 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 6 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 5 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 6 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 5 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 6 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
-          "status": "Up 43 hours gallery-jandapress:local-arm64"
+          "status": "Up 44 hours gallery-jandapress:local-arm64"
         },
         {
           "name": "Dashy",
@@ -100,11 +100,11 @@
         },
         {
           "name": "gallery redis",
-          "status": "Up 43 hours (healthy) redis:7-alpine"
+          "status": "Up 44 hours (healthy) redis:7-alpine"
         },
         {
           "name": "gallery postgres",
-          "status": "Up 43 hours (healthy) postgres:16-alpine"
+          "status": "Up 44 hours (healthy) postgres:16-alpine"
         },
         {
           "name": "prowlarr",
@@ -121,17 +121,17 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 5.9,
+        "total": 6.1,
         "user": 6.2,
         "system": 1.0,
-        "idle": 68.7,
-        "iowait": 24.0
+        "idle": 92.4,
+        "iowait": 0.3
       },
       "ram": {
-        "used_gb": 2.9,
+        "used_gb": 2.93,
         "total_gb": 7.87,
-        "percent": 36.8,
-        "available_gb": 4.97
+        "percent": 37.2,
+        "available_gb": 4.95
       },
       "swap": {
         "used_mb": 21.2,
@@ -139,9 +139,9 @@
         "percent": 0.5
       },
       "load": {
-        "1min": 2.5,
-        "5min": 1.09,
-        "15min": 0.72,
+        "1min": 0.36,
+        "5min": 0.37,
+        "15min": 0.53,
         "cores": 4
       },
       "disks": [
@@ -163,10 +163,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 895.2,
-        "write_mb": 1559.2
+        "read_mb": 1070.0,
+        "write_mb": 1712.3
       },
-      "temperature_c": 49,
+      "temperature_c": 50,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -175,16 +175,16 @@
         }
       },
       "processes": {
-        "total": 575,
+        "total": 570,
         "running": 0,
-        "sleeping": 477,
-        "threads": 3330
+        "sleeping": 479,
+        "threads": 3325
       },
-      "uptime": "2 days, 5:25:23",
+      "uptime": "2 days, 6:25:28",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 5 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 6 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -229,10 +229,10 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 5.8,
-        "user": 3.8,
-        "system": 2.0,
-        "idle": 94.1,
+        "total": 5.6,
+        "user": 4.0,
+        "system": 2.1,
+        "idle": 93.7,
         "iowait": 0.1
       },
       "ram": {
@@ -247,9 +247,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.13,
-        "5min": 0.29,
-        "15min": 0.34,
+        "1min": 0.38,
+        "5min": 0.42,
+        "15min": 0.39,
         "cores": 4
       },
       "disks": [
@@ -257,14 +257,14 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
-          "used_gb": 29.9,
+          "used_gb": 30.0,
           "free_gb": 79.5,
           "percent": 26.0
         }
       ],
       "disk_io": {
-        "read_mb": 0.2,
-        "write_mb": 486.5
+        "read_mb": 0.5,
+        "write_mb": 411.5
       },
       "temperature_c": 33,
       "network": {
@@ -275,20 +275,20 @@
         }
       },
       "processes": {
-        "total": 264,
+        "total": 263,
         "running": 0,
         "sleeping": 167,
-        "threads": 906
+        "threads": 905
       },
-      "uptime": "2 days, 5:25:27",
+      "uptime": "2 days, 6:25:32",
       "containers": [
         {
           "name": "cve grafana",
-          "status": "Up 5 hours grafana/grafana:latest"
+          "status": "Up 6 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 5 hours prom/prometheus:latest"
+          "status": "Up 6 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -340,45 +340,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Rita's Innocent",
-      "artist": "The Toy Dolls",
-      "album": "Our Last Album",
-      "genre": "Oi!",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/99a742bb967d1946a356250c-1782761565.jpg",
-      "duration": 185,
-      "elapsed": 67
+      "title": "Rise And Shine",
+      "artist": "Bunny Wailer",
+      "album": "Liberation",
+      "genre": "genre",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/52c82dbbc5c426ee95023341-1782756787.jpg",
+      "duration": 320,
+      "elapsed": 313
     },
     "playing_next": {
-      "title": "Toots & the Maytals - My Destination",
-      "artist": "05"
+      "title": "Spoils",
+      "artist": "Pray For Rain"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Watch And Pray",
-        "artist": "The Congos",
-        "played_at": 1783055303
+        "title": "203 - Old Rocking Chair",
+        "artist": "The Skatalites",
+        "played_at": 1783058674
       },
       {
-        "title": "feel free",
-        "artist": "Toots and the Maytals",
-        "played_at": 1783055003
+        "title": "Thank You For Letting Me",
+        "artist": "Magazine",
+        "played_at": 1783058440
       },
       {
-        "title": "01 - Marcus Garvey",
-        "artist": "Burning Spear",
-        "played_at": 1783054797
+        "title": "Upfull Living",
+        "artist": "Augustus Pablo",
+        "played_at": 1783058150
       },
       {
-        "title": "Wicked Got To Go",
-        "artist": "A4",
-        "played_at": 1783054532
+        "title": "Alidina",
+        "artist": "Toots & The Maytals",
+        "played_at": 1783057963
       },
       {
-        "title": "Ballroom Floor",
-        "artist": "07",
-        "played_at": 1783054200
+        "title": "Big City Night",
+        "artist": "Stiff Little Fingers",
+        "played_at": 1783057728
       }
     ]
   }
