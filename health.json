@@ -1,31 +1,31 @@
 {
-  "updated": "2026-07-03 23:12",
+  "updated": "2026-07-04 00:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 2.4,
-        "user": 2.2,
-        "system": 0.8,
-        "idle": 96.7,
-        "iowait": 0.3
+        "total": 5.2,
+        "user": 2.9,
+        "system": 1.7,
+        "idle": 95.1,
+        "iowait": 0.1
       },
       "ram": {
-        "used_gb": 2.55,
+        "used_gb": 2.89,
         "total_gb": 7.87,
-        "percent": 32.3,
-        "available_gb": 5.33
+        "percent": 36.7,
+        "available_gb": 4.98
       },
       "swap": {
-        "used_mb": 414.7,
+        "used_mb": 412.7,
         "total_mb": 2048.0,
-        "percent": 20.3
+        "percent": 20.2
       },
       "load": {
-        "1min": 0.34,
-        "5min": 0.33,
-        "15min": 0.4,
+        "1min": 0.62,
+        "5min": 0.88,
+        "15min": 0.83,
         "cores": 4
       },
       "disks": [
@@ -33,16 +33,16 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 46.2,
-          "free_gb": 64.5,
-          "percent": 39.6
+          "used_gb": 46.4,
+          "free_gb": 64.3,
+          "percent": 39.8
         }
       ],
       "disk_io": {
-        "read_mb": 1.3,
-        "write_mb": 1819.0
+        "read_mb": 823.0,
+        "write_mb": 2714.2
       },
-      "temperature_c": 48,
+      "temperature_c": 50,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -51,20 +51,28 @@
         }
       },
       "processes": {
-        "total": 317,
+        "total": 325,
         "running": 0,
-        "sleeping": 222,
-        "threads": 968
+        "sleeping": 232,
+        "threads": 1011
       },
-      "uptime": "2 days, 22:24:56",
+      "uptime": "2 days, 23:25:01",
       "containers": [
         {
+          "name": "watchtower",
+          "status": "Up 14 minutes (healthy) containrrr/watchtower"
+        },
+        {
+          "name": "psclient",
+          "status": "Up 14 minutes packetstream/psclient:latest"
+        },
+        {
           "name": "subscription bot",
-          "status": "Up 28 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 29 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "gallery frontend",
-          "status": "Up 29 hours gallery-downloader-frontend"
+          "status": "Up 30 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery worker",
@@ -80,15 +88,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 22 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 7 minutes (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 22 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 23 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 22 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 23 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -115,33 +123,33 @@
           "status": "Up 2 days portainer/agent:latest"
         }
       ],
-      "container_count": 14,
+      "container_count": 16,
       "services": "Gallery, Dashy, Hermes, NewsBot"
     },
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 10.1,
-        "user": 5.8,
+        "total": 7.3,
+        "user": 6.0,
         "system": 1.0,
-        "idle": 72.6,
-        "iowait": 20.5
+        "idle": 78.4,
+        "iowait": 14.5
       },
       "ram": {
-        "used_gb": 2.85,
+        "used_gb": 2.92,
         "total_gb": 7.87,
-        "percent": 36.2,
-        "available_gb": 5.02
+        "percent": 37.1,
+        "available_gb": 4.95
       },
       "swap": {
-        "used_mb": 170.4,
+        "used_mb": 168.4,
         "total_mb": 4096.0,
-        "percent": 4.2
+        "percent": 4.1
       },
       "load": {
-        "1min": 1.03,
-        "5min": 1.09,
-        "15min": 0.97,
+        "1min": 3.01,
+        "5min": 1.54,
+        "15min": 1.15,
         "cores": 4
       },
       "disks": [
@@ -163,10 +171,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 688.0,
-        "write_mb": 1278.0
+        "read_mb": 773.9,
+        "write_mb": 1354.1
       },
-      "temperature_c": 50,
+      "temperature_c": 47,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -175,16 +183,16 @@
         }
       },
       "processes": {
-        "total": 576,
+        "total": 575,
         "running": 0,
-        "sleeping": 480,
-        "threads": 3335
+        "sleeping": 478,
+        "threads": 3334
       },
-      "uptime": "2 days, 22:24:57",
+      "uptime": "2 days, 23:25:02",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 22 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 23 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -229,17 +237,17 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 6.8,
-        "user": 4.5,
-        "system": 2.2,
-        "idle": 93.2,
-        "iowait": 0.0
+        "total": 6.1,
+        "user": 4.3,
+        "system": 2.1,
+        "idle": 93.4,
+        "iowait": 0.1
       },
       "ram": {
         "used_gb": 1.46,
         "total_gb": 7.64,
-        "percent": 19.2,
-        "available_gb": 6.17
+        "percent": 19.1,
+        "available_gb": 6.18
       },
       "swap": {
         "used_mb": 0.0,
@@ -247,9 +255,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.19,
-        "5min": 0.42,
-        "15min": 0.43,
+        "1min": 0.33,
+        "5min": 0.53,
+        "15min": 0.49,
         "cores": 4
       },
       "disks": [
@@ -263,10 +271,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.5,
-        "write_mb": 440.5
+        "read_mb": 133.1,
+        "write_mb": 650.4
       },
-      "temperature_c": 34,
+      "temperature_c": 33,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -275,20 +283,20 @@
         }
       },
       "processes": {
-        "total": 263,
+        "total": 261,
         "running": 0,
-        "sleeping": 167,
-        "threads": 908
+        "sleeping": 165,
+        "threads": 882
       },
-      "uptime": "2 days, 22:25:00",
+      "uptime": "2 days, 23:25:05",
       "containers": [
         {
           "name": "cve grafana",
-          "status": "Up 22 hours grafana/grafana:latest"
+          "status": "Up 23 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 22 hours prom/prometheus:latest"
+          "status": "Up 23 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -336,50 +344,6 @@
     }
   },
   "radio": {
-    "station": "dublincalling",
-    "is_online": true,
-    "is_live": false,
-    "now_playing": {
-      "title": "John Peel 2003-05-06",
-      "artist": "John Peel (R1)",
-      "album": "from RA",
-      "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/2462c6d1f29d1e8096b07a15",
-      "duration": 7172,
-      "elapsed": 2014
-    },
-    "playing_next": {
-      "title": "15 - human error",
-      "artist": "extreme noise terror"
-    },
-    "listeners": 0,
-    "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
-    "history": [
-      {
-        "title": "saturday night style",
-        "artist": "Mikey Dread",
-        "played_at": 1783114453
-      },
-      {
-        "title": "Do You Wanna Be Like Dougy Bell",
-        "artist": "The Toy Dolls",
-        "played_at": 1783114294
-      },
-      {
-        "title": "Bammie Blow",
-        "artist": "Aswad",
-        "played_at": 1783114049
-      },
-      {
-        "title": "The Crusher",
-        "artist": "Ramones",
-        "played_at": 1783113905
-      },
-      {
-        "title": "Red Hot Moon",
-        "artist": "Rancid",
-        "played_at": 1783113689
-      }
-    ]
+    "error": "The read operation timed out"
   }
 }
