@@ -1,21 +1,21 @@
 {
-  "updated": "2026-07-04 03:12",
+  "updated": "2026-07-04 04:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 3.9,
-        "user": 3.7,
-        "system": 1.2,
-        "idle": 94.6,
-        "iowait": 0.3
+        "total": 4.2,
+        "user": 3.6,
+        "system": 1.1,
+        "idle": 94.9,
+        "iowait": 0.2
       },
       "ram": {
-        "used_gb": 2.71,
+        "used_gb": 2.69,
         "total_gb": 7.87,
-        "percent": 34.4,
-        "available_gb": 5.17
+        "percent": 34.1,
+        "available_gb": 5.19
       },
       "swap": {
         "used_mb": 538.7,
@@ -23,9 +23,9 @@
         "percent": 26.3
       },
       "load": {
-        "1min": 0.99,
-        "5min": 0.83,
-        "15min": 0.72,
+        "1min": 0.31,
+        "5min": 0.38,
+        "15min": 0.46,
         "cores": 4
       },
       "disks": [
@@ -39,10 +39,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 5.3,
-        "write_mb": 1983.4
+        "read_mb": 30.6,
+        "write_mb": 2017.9
       },
-      "temperature_c": 51,
+      "temperature_c": 50,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -51,32 +51,32 @@
         }
       },
       "processes": {
-        "total": 328,
-        "running": 1,
-        "sleeping": 234,
-        "threads": 1054
+        "total": 325,
+        "running": 0,
+        "sleeping": 232,
+        "threads": 1050
       },
-      "uptime": "3 days, 2:25:18",
+      "uptime": "3 days, 3:25:21",
       "containers": [
         {
           "name": "cadvisor",
-          "status": "Up 3 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 4 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "watchtower",
-          "status": "Up 3 hours (healthy) containrrr/watchtower"
+          "status": "Up 4 hours (healthy) containrrr/watchtower"
         },
         {
           "name": "psclient",
-          "status": "Up 3 hours packetstream/psclient:latest"
+          "status": "Up 4 hours packetstream/psclient:latest"
         },
         {
           "name": "subscription bot",
-          "status": "Up 32 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 33 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "gallery frontend",
-          "status": "Up 33 hours gallery-downloader-frontend"
+          "status": "Up 34 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery worker",
@@ -92,15 +92,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 2 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 3 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 2 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 3 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 2 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 3 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -133,17 +133,17 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 3.7,
-        "user": 5.8,
-        "system": 1.1,
-        "idle": 92.6,
-        "iowait": 0.5
+        "total": 3.8,
+        "user": 5.6,
+        "system": 1.0,
+        "idle": 75.2,
+        "iowait": 18.2
       },
       "ram": {
-        "used_gb": 2.92,
+        "used_gb": 2.94,
         "total_gb": 7.87,
-        "percent": 37.1,
-        "available_gb": 4.95
+        "percent": 37.3,
+        "available_gb": 4.94
       },
       "swap": {
         "used_mb": 75.5,
@@ -151,9 +151,9 @@
         "percent": 1.8
       },
       "load": {
-        "1min": 0.19,
-        "5min": 0.42,
-        "15min": 0.56,
+        "1min": 0.85,
+        "5min": 0.7,
+        "15min": 0.79,
         "cores": 4
       },
       "disks": [
@@ -169,14 +169,14 @@
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.1,
-          "free_gb": 748.1,
+          "used_gb": 121.3,
+          "free_gb": 748.0,
           "percent": 13.2
         }
       ],
       "disk_io": {
-        "read_mb": 426.5,
-        "write_mb": 911.0
+        "read_mb": 1042.4,
+        "write_mb": 1609.9
       },
       "temperature_c": 50,
       "network": {
@@ -187,16 +187,16 @@
         }
       },
       "processes": {
-        "total": 573,
-        "running": 0,
+        "total": 574,
+        "running": 1,
         "sleeping": 479,
-        "threads": 3327
+        "threads": 3329
       },
-      "uptime": "3 days, 2:25:18",
+      "uptime": "3 days, 3:25:22",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 2 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 3 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -241,17 +241,17 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 11.5,
-        "user": 8.7,
-        "system": 3.6,
+        "total": 10.7,
+        "user": 8.8,
+        "system": 3.5,
         "idle": 87.5,
         "iowait": 0.1
       },
       "ram": {
-        "used_gb": 1.67,
+        "used_gb": 1.7,
         "total_gb": 7.64,
-        "percent": 21.9,
-        "available_gb": 5.96
+        "percent": 22.2,
+        "available_gb": 5.94
       },
       "swap": {
         "used_mb": 0.0,
@@ -259,9 +259,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 1.47,
-        "5min": 1.2,
-        "15min": 1.07,
+        "1min": 0.29,
+        "5min": 0.52,
+        "15min": 0.7,
         "cores": 4
       },
       "disks": [
@@ -275,10 +275,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.6,
-        "write_mb": 488.2
+        "read_mb": 16.6,
+        "write_mb": 487.5
       },
-      "temperature_c": 34,
+      "temperature_c": 36,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -287,24 +287,24 @@
         }
       },
       "processes": {
-        "total": 264,
+        "total": 268,
         "running": 0,
         "sleeping": 169,
-        "threads": 916
+        "threads": 922
       },
-      "uptime": "3 days, 2:25:22",
+      "uptime": "3 days, 3:25:25",
       "containers": [
         {
           "name": "cadvisor",
-          "status": "Up 3 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 4 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "cve grafana",
-          "status": "Up 2 hours grafana/grafana:latest"
+          "status": "Up 3 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 2 hours prom/prometheus:latest"
+          "status": "Up 3 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -356,45 +356,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "The Hardest Button to Button",
-      "artist": "The White Stripes",
-      "album": "Elephant",
+      "title": "John Peel 20030204",
+      "artist": "",
+      "album": "",
       "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/aedfe068773df69868a3238e-1782759869.jpg",
-      "duration": 218,
-      "elapsed": 211
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/0fec0af299d4c1ad1c5b544a",
+      "duration": 7230,
+      "elapsed": 778
     },
     "playing_next": {
-      "title": "Allegiance _ Bursting-Intense Degree",
-      "artist": "John Peel"
+      "title": "Thanks And Praise",
+      "artist": "A1"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "207 - Nimrod",
-        "artist": "The Skatalites",
-        "played_at": 1783130789
+        "title": "As Soft As Fire (John Peel Session 10/88)",
+        "artist": "The House Of Love",
+        "played_at": 1783133804
       },
       {
-        "title": "John Peel 20030226",
-        "artist": "",
-        "played_at": 1783123559
+        "title": "Requiem for a Hit",
+        "artist": "Miss Kittin/Laurence Williams",
+        "played_at": 1783133490
       },
       {
-        "title": "war cry",
-        "artist": "mad professor",
-        "played_at": 1783123393
+        "title": "Natty Dread Rise Again",
+        "artist": "The Congos",
+        "played_at": 1783133212
       },
       {
-        "title": "03-not for us",
-        "artist": "wailing souls",
-        "played_at": 1783123102
+        "title": "Here Comes The Rain",
+        "artist": "The Undertones",
+        "played_at": 1783133086
       },
       {
-        "title": "Declaration Of Dub",
-        "artist": "King Tubby",
-        "played_at": 1783122887
+        "title": "Maga Dog",
+        "artist": "Peter Tosh (featuring the Skatalites, the Upsetters)",
+        "played_at": 1783132906
       }
     ]
   }
