@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04 11:12",
+  "updated": "2026-07-04 12:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
@@ -7,25 +7,25 @@
       "cpu": {
         "total": 4.5,
         "user": 3.8,
-        "system": 1.1,
-        "idle": 94.0,
-        "iowait": 1.0
+        "system": 1.2,
+        "idle": 94.8,
+        "iowait": 0.2
       },
       "ram": {
-        "used_gb": 2.73,
+        "used_gb": 2.74,
         "total_gb": 7.87,
-        "percent": 34.6,
-        "available_gb": 5.15
+        "percent": 34.8,
+        "available_gb": 5.14
       },
       "swap": {
-        "used_mb": 536.7,
+        "used_mb": 535.7,
         "total_mb": 2048.0,
         "percent": 26.2
       },
       "load": {
-        "1min": 1.43,
-        "5min": 0.77,
-        "15min": 0.63,
+        "1min": 0.38,
+        "5min": 0.55,
+        "15min": 0.66,
         "cores": 4
       },
       "disks": [
@@ -34,15 +34,15 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 46.6,
-          "free_gb": 64.2,
+          "free_gb": 64.1,
           "percent": 39.9
         }
       ],
       "disk_io": {
-        "read_mb": 19.0,
-        "write_mb": 1686.0
+        "read_mb": 6.1,
+        "write_mb": 1665.9
       },
-      "temperature_c": 52,
+      "temperature_c": 50,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -51,36 +51,36 @@
         }
       },
       "processes": {
-        "total": 328,
+        "total": 325,
         "running": 0,
         "sleeping": 232,
-        "threads": 1055
+        "threads": 1051
       },
-      "uptime": "3 days, 10:25:04",
+      "uptime": "3 days, 11:25:08",
       "containers": [
         {
           "name": "cadvisor",
-          "status": "Up 11 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 12 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "watchtower",
-          "status": "Up 11 hours (healthy) containrrr/watchtower"
+          "status": "Up 12 hours (healthy) containrrr/watchtower"
         },
         {
           "name": "psclient",
-          "status": "Up 11 hours packetstream/psclient:latest"
+          "status": "Up 12 hours packetstream/psclient:latest"
         },
         {
           "name": "subscription bot",
-          "status": "Up 40 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 41 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "gallery frontend",
-          "status": "Up 41 hours gallery-downloader-frontend"
+          "status": "Up 42 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery worker",
-          "status": "Up 2 days gallery-downloader-worker"
+          "status": "Up 3 days gallery-downloader-worker"
         },
         {
           "name": "gallery backend",
@@ -92,15 +92,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 10 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 11 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 10 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 11 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 10 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 11 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -133,17 +133,17 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 6.5,
-        "user": 5.8,
+        "total": 6.3,
+        "user": 5.4,
         "system": 1.1,
-        "idle": 92.5,
-        "iowait": 0.5
+        "idle": 64.4,
+        "iowait": 29.1
       },
       "ram": {
-        "used_gb": 2.95,
+        "used_gb": 2.98,
         "total_gb": 7.87,
-        "percent": 37.4,
-        "available_gb": 4.93
+        "percent": 37.9,
+        "available_gb": 4.89
       },
       "swap": {
         "used_mb": 109.3,
@@ -151,9 +151,9 @@
         "percent": 2.7
       },
       "load": {
-        "1min": 0.28,
-        "5min": 0.48,
-        "15min": 0.71,
+        "1min": 3.95,
+        "5min": 1.99,
+        "15min": 1.34,
         "cores": 4
       },
       "disks": [
@@ -175,10 +175,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 609.0,
-        "write_mb": 1239.7
+        "read_mb": 1053.0,
+        "write_mb": 1698.2
       },
-      "temperature_c": 51,
+      "temperature_c": 50,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -187,16 +187,16 @@
         }
       },
       "processes": {
-        "total": 574,
+        "total": 578,
         "running": 0,
-        "sleeping": 478,
-        "threads": 3331
+        "sleeping": 474,
+        "threads": 3335
       },
-      "uptime": "3 days, 10:25:05",
+      "uptime": "3 days, 11:25:08",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 10 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 11 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -241,17 +241,17 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 12.4,
+        "total": 14.3,
         "user": 9.0,
-        "system": 3.7,
-        "idle": 87.1,
+        "system": 3.6,
+        "idle": 87.2,
         "iowait": 0.1
       },
       "ram": {
-        "used_gb": 1.73,
+        "used_gb": 1.76,
         "total_gb": 7.64,
-        "percent": 22.6,
-        "available_gb": 5.91
+        "percent": 23.0,
+        "available_gb": 5.88
       },
       "swap": {
         "used_mb": 0.0,
@@ -259,9 +259,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.67,
-        "5min": 0.75,
-        "15min": 0.75,
+        "1min": 1.04,
+        "5min": 0.92,
+        "15min": 0.95,
         "cores": 4
       },
       "disks": [
@@ -275,10 +275,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 15.2,
-        "write_mb": 485.8
+        "read_mb": 28.8,
+        "write_mb": 556.1
       },
-      "temperature_c": 35,
+      "temperature_c": 36,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -287,24 +287,24 @@
         }
       },
       "processes": {
-        "total": 265,
+        "total": 266,
         "running": 0,
         "sleeping": 169,
-        "threads": 919
+        "threads": 923
       },
-      "uptime": "3 days, 10:25:08",
+      "uptime": "3 days, 11:25:12",
       "containers": [
         {
           "name": "cadvisor",
-          "status": "Up 11 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 12 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "cve grafana",
-          "status": "Up 10 hours grafana/grafana:latest"
+          "status": "Up 11 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 10 hours prom/prometheus:latest"
+          "status": "Up 11 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -356,45 +356,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Left With A Broken Heart",
-      "artist": "Johnny Clarke",
-      "album": "Enter In To HisGatesWithPraise",
-      "genre": "Reggae",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/43e5eae25cb1778da63af960-1782758017.jpg",
-      "duration": 194,
-      "elapsed": 109
+      "title": "John_Peel_1978_1",
+      "artist": "BBC Radio One",
+      "album": "15 May 1978",
+      "genre": "Punk/Reggae",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/c38246211cf1f348211e4b32",
+      "duration": 898,
+      "elapsed": 282
     },
     "playing_next": {
-      "title": "Stroke The Shaft",
-      "artist": "Turbonegro"
+      "title": "You're Gonna Kill That Girl",
+      "artist": "The Ramones"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "No Time To Gaze",
-        "artist": "Sizzla",
-        "played_at": 1783159624
+        "title": "Six Different Ways",
+        "artist": "The Cure",
+        "played_at": 1783163078
       },
       {
-        "title": "You Won't Be Merry On A North Sea Ferry",
-        "artist": "The Toy Dolls",
-        "played_at": 1783159412
+        "title": "54 46 Was My Number",
+        "artist": "toots and the maytals",
+        "played_at": 1783162885
       },
       {
-        "title": "When One Gone",
-        "artist": "Half Pint",
-        "played_at": 1783159193
+        "title": "Prisoner",
+        "artist": "Lucky Dube",
+        "played_at": 1783162666
       },
       {
-        "title": "Night Train To Lorca",
-        "artist": "The Pogues",
-        "played_at": 1783159026
+        "title": "bill is dead",
+        "artist": "John Peel Festive Fifty 1990",
+        "played_at": 1783162349
       },
       {
-        "title": "Ain't No Sunshine",
-        "artist": "Ken Boothe",
-        "played_at": 1783158891
+        "title": "Touch Me In The Morning",
+        "artist": "John Holt",
+        "played_at": 1783162119
       }
     ]
   }
