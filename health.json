@@ -1,21 +1,21 @@
 {
-  "updated": "2026-07-04 10:12",
+  "updated": "2026-07-04 11:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 4.6,
+        "total": 4.5,
         "user": 3.8,
         "system": 1.1,
-        "idle": 94.9,
-        "iowait": 0.1
+        "idle": 94.0,
+        "iowait": 1.0
       },
       "ram": {
-        "used_gb": 2.71,
+        "used_gb": 2.73,
         "total_gb": 7.87,
-        "percent": 34.4,
-        "available_gb": 5.17
+        "percent": 34.6,
+        "available_gb": 5.15
       },
       "swap": {
         "used_mb": 536.7,
@@ -23,9 +23,9 @@
         "percent": 26.2
       },
       "load": {
-        "1min": 0.34,
-        "5min": 0.52,
-        "15min": 0.54,
+        "1min": 1.43,
+        "5min": 0.77,
+        "15min": 0.63,
         "cores": 4
       },
       "disks": [
@@ -39,10 +39,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 7.0,
-        "write_mb": 1421.0
+        "read_mb": 19.0,
+        "write_mb": 1686.0
       },
-      "temperature_c": 51,
+      "temperature_c": 52,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -51,32 +51,32 @@
         }
       },
       "processes": {
-        "total": 324,
+        "total": 328,
         "running": 0,
         "sleeping": 232,
-        "threads": 1051
+        "threads": 1055
       },
-      "uptime": "3 days, 9:25:01",
+      "uptime": "3 days, 10:25:04",
       "containers": [
         {
           "name": "cadvisor",
-          "status": "Up 10 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 11 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "watchtower",
-          "status": "Up 10 hours (healthy) containrrr/watchtower"
+          "status": "Up 11 hours (healthy) containrrr/watchtower"
         },
         {
           "name": "psclient",
-          "status": "Up 10 hours packetstream/psclient:latest"
+          "status": "Up 11 hours packetstream/psclient:latest"
         },
         {
           "name": "subscription bot",
-          "status": "Up 39 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 40 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "gallery frontend",
-          "status": "Up 40 hours gallery-downloader-frontend"
+          "status": "Up 41 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery worker",
@@ -92,19 +92,19 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 9 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 10 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 9 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 10 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 9 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 10 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
-          "status": "Up 2 days gallery-jandapress:local-arm64"
+          "status": "Up 3 days gallery-jandapress:local-arm64"
         },
         {
           "name": "Dashy",
@@ -112,11 +112,11 @@
         },
         {
           "name": "gallery redis",
-          "status": "Up 2 days (healthy) redis:7-alpine"
+          "status": "Up 3 days (healthy) redis:7-alpine"
         },
         {
           "name": "gallery postgres",
-          "status": "Up 2 days (healthy) postgres:16-alpine"
+          "status": "Up 3 days (healthy) postgres:16-alpine"
         },
         {
           "name": "prowlarr",
@@ -133,27 +133,27 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 7.0,
-        "user": 6.0,
+        "total": 6.5,
+        "user": 5.8,
         "system": 1.1,
         "idle": 92.5,
-        "iowait": 0.4
+        "iowait": 0.5
       },
       "ram": {
-        "used_gb": 2.96,
+        "used_gb": 2.95,
         "total_gb": 7.87,
-        "percent": 37.5,
-        "available_gb": 4.92
+        "percent": 37.4,
+        "available_gb": 4.93
       },
       "swap": {
-        "used_mb": 110.3,
+        "used_mb": 109.3,
         "total_mb": 4096.0,
         "percent": 2.7
       },
       "load": {
-        "1min": 0.42,
-        "5min": 0.57,
-        "15min": 0.59,
+        "1min": 0.28,
+        "5min": 0.48,
+        "15min": 0.71,
         "cores": 4
       },
       "disks": [
@@ -169,16 +169,16 @@
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.2,
+          "used_gb": 121.1,
           "free_gb": 748.1,
           "percent": 13.2
         }
       ],
       "disk_io": {
-        "read_mb": 865.6,
-        "write_mb": 1481.8
+        "read_mb": 609.0,
+        "write_mb": 1239.7
       },
-      "temperature_c": 52,
+      "temperature_c": 51,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -187,16 +187,16 @@
         }
       },
       "processes": {
-        "total": 572,
+        "total": 574,
         "running": 0,
-        "sleeping": 480,
-        "threads": 3329
+        "sleeping": 478,
+        "threads": 3331
       },
-      "uptime": "3 days, 9:25:01",
+      "uptime": "3 days, 10:25:05",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 9 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 10 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -241,11 +241,11 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 11.0,
-        "user": 10.0,
-        "system": 4.0,
-        "idle": 85.4,
-        "iowait": 0.0
+        "total": 12.4,
+        "user": 9.0,
+        "system": 3.7,
+        "idle": 87.1,
+        "iowait": 0.1
       },
       "ram": {
         "used_gb": 1.73,
@@ -259,9 +259,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.95,
-        "5min": 1.13,
-        "15min": 0.91,
+        "1min": 0.67,
+        "5min": 0.75,
+        "15min": 0.75,
         "cores": 4
       },
       "disks": [
@@ -275,10 +275,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.2,
-        "write_mb": 501.0
+        "read_mb": 15.2,
+        "write_mb": 485.8
       },
-      "temperature_c": 36,
+      "temperature_c": 35,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -287,24 +287,24 @@
         }
       },
       "processes": {
-        "total": 266,
+        "total": 265,
         "running": 0,
         "sleeping": 169,
         "threads": 919
       },
-      "uptime": "3 days, 9:25:05",
+      "uptime": "3 days, 10:25:08",
       "containers": [
         {
           "name": "cadvisor",
-          "status": "Up 10 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 11 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "cve grafana",
-          "status": "Up 9 hours grafana/grafana:latest"
+          "status": "Up 10 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 9 hours prom/prometheus:latest"
+          "status": "Up 10 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -356,45 +356,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "The Roots Is There",
-      "artist": "The Mighty Diamonds",
-      "album": "Roots Is There",
+      "title": "Left With A Broken Heart",
+      "artist": "Johnny Clarke",
+      "album": "Enter In To HisGatesWithPraise",
       "genre": "Reggae",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/d017ffc53390a0a940c905a6-1782756150.jpg",
-      "duration": 263,
-      "elapsed": 175
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/43e5eae25cb1778da63af960-1782758017.jpg",
+      "duration": 194,
+      "elapsed": 109
     },
     "playing_next": {
-      "title": "Watch And Pray",
-      "artist": "The Congos"
+      "title": "Stroke The Shaft",
+      "artist": "Turbonegro"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "07.Soul And Fire-Sebadoh",
-        "artist": "John Peel Festive Fifty 1993",
-        "played_at": 1783155948
+        "title": "No Time To Gaze",
+        "artist": "Sizzla",
+        "played_at": 1783159624
       },
       {
-        "title": "Daddy's Home",
-        "artist": "Toots and the Maytals",
-        "played_at": 1783155551
+        "title": "You Won't Be Merry On A North Sea Ferry",
+        "artist": "The Toy Dolls",
+        "played_at": 1783159412
       },
       {
-        "title": "Screaming in the Darkness",
-        "artist": "Pauline Murray and the Invisible Girls",
-        "played_at": 1783155338
+        "title": "When One Gone",
+        "artist": "Half Pint",
+        "played_at": 1783159193
       },
       {
-        "title": "My Eyes Are Red Dub",
-        "artist": "Keith Hudson",
-        "played_at": 1783155176
+        "title": "Night Train To Lorca",
+        "artist": "The Pogues",
+        "played_at": 1783159026
       },
       {
-        "title": "Darkness",
-        "artist": "Black Uhuru",
-        "played_at": 1783154936
+        "title": "Ain't No Sunshine",
+        "artist": "Ken Boothe",
+        "played_at": 1783158891
       }
     ]
   }
