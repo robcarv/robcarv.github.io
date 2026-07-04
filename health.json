@@ -1,31 +1,31 @@
 {
-  "updated": "2026-07-04 06:12",
+  "updated": "2026-07-04 07:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 7.3,
-        "user": 4.4,
+        "total": 6.5,
+        "user": 3.9,
         "system": 1.9,
-        "idle": 92.5,
-        "iowait": 0.8
+        "idle": 93.0,
+        "iowait": 0.9
       },
       "ram": {
-        "used_gb": 2.72,
+        "used_gb": 2.71,
         "total_gb": 7.87,
-        "percent": 34.6,
-        "available_gb": 5.15
+        "percent": 34.4,
+        "available_gb": 5.17
       },
       "swap": {
-        "used_mb": 537.7,
+        "used_mb": 536.7,
         "total_mb": 2048.0,
-        "percent": 26.3
+        "percent": 26.2
       },
       "load": {
-        "1min": 0.73,
-        "5min": 0.73,
-        "15min": 0.57,
+        "1min": 1.36,
+        "5min": 1.01,
+        "15min": 0.95,
         "cores": 4
       },
       "disks": [
@@ -39,10 +39,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.3,
-        "write_mb": 2037.7
+        "read_mb": 66.9,
+        "write_mb": 2045.3
       },
-      "temperature_c": 52,
+      "temperature_c": 54,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -51,32 +51,32 @@
         }
       },
       "processes": {
-        "total": 363,
-        "running": 0,
-        "sleeping": 237,
-        "threads": 1088
+        "total": 328,
+        "running": 1,
+        "sleeping": 232,
+        "threads": 1053
       },
-      "uptime": "3 days, 5:25:31",
+      "uptime": "3 days, 6:25:36",
       "containers": [
         {
           "name": "cadvisor",
-          "status": "Up 6 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 7 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "watchtower",
-          "status": "Up 6 hours (healthy) containrrr/watchtower"
+          "status": "Up 7 hours (healthy) containrrr/watchtower"
         },
         {
           "name": "psclient",
-          "status": "Up 6 hours packetstream/psclient:latest"
+          "status": "Up 7 hours packetstream/psclient:latest"
         },
         {
           "name": "subscription bot",
-          "status": "Up 35 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 36 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "gallery frontend",
-          "status": "Up 36 hours gallery-downloader-frontend"
+          "status": "Up 37 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery worker",
@@ -92,15 +92,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 5 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 6 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 5 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 6 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 5 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 6 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -133,27 +133,27 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 4.1,
-        "user": 5.9,
-        "system": 1.0,
+        "total": 4.0,
+        "user": 5.8,
+        "system": 1.1,
         "idle": 92.7,
         "iowait": 0.4
       },
       "ram": {
-        "used_gb": 2.94,
+        "used_gb": 2.9,
         "total_gb": 7.87,
-        "percent": 37.3,
-        "available_gb": 4.94
+        "percent": 36.8,
+        "available_gb": 4.97
       },
       "swap": {
-        "used_mb": 76.5,
+        "used_mb": 77.5,
         "total_mb": 4096.0,
         "percent": 1.9
       },
       "load": {
-        "1min": 0.37,
-        "5min": 0.42,
-        "15min": 0.56,
+        "1min": 0.66,
+        "5min": 1.07,
+        "15min": 0.94,
         "cores": 4
       },
       "disks": [
@@ -161,7 +161,7 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 72.6,
+          "used_gb": 72.7,
           "free_gb": 38.1,
           "percent": 62.3
         },
@@ -175,8 +175,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 753.3,
-        "write_mb": 1384.2
+        "read_mb": 1294.9,
+        "write_mb": 2082.2
       },
       "temperature_c": 51,
       "network": {
@@ -187,16 +187,16 @@
         }
       },
       "processes": {
-        "total": 576,
-        "running": 1,
+        "total": 574,
+        "running": 0,
         "sleeping": 480,
         "threads": 3331
       },
-      "uptime": "3 days, 5:25:32",
+      "uptime": "3 days, 6:25:36",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 5 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 6 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -241,17 +241,17 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 10.7,
-        "user": 9.1,
-        "system": 3.7,
-        "idle": 87.0,
+        "total": 12.2,
+        "user": 8.8,
+        "system": 3.6,
+        "idle": 87.4,
         "iowait": 0.0
       },
       "ram": {
-        "used_gb": 1.71,
+        "used_gb": 1.72,
         "total_gb": 7.64,
-        "percent": 22.4,
-        "available_gb": 5.93
+        "percent": 22.5,
+        "available_gb": 5.92
       },
       "swap": {
         "used_mb": 0.0,
@@ -259,9 +259,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.26,
-        "5min": 0.63,
-        "15min": 0.69,
+        "1min": 0.48,
+        "5min": 0.77,
+        "15min": 0.8,
         "cores": 4
       },
       "disks": [
@@ -275,8 +275,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.2,
-        "write_mb": 485.5
+        "read_mb": 0.5,
+        "write_mb": 486.6
       },
       "temperature_c": 36,
       "network": {
@@ -287,24 +287,24 @@
         }
       },
       "processes": {
-        "total": 266,
+        "total": 263,
         "running": 0,
         "sleeping": 169,
-        "threads": 918
+        "threads": 917
       },
-      "uptime": "3 days, 5:25:35",
+      "uptime": "3 days, 6:25:40",
       "containers": [
         {
           "name": "cadvisor",
-          "status": "Up 6 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 7 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "cve grafana",
-          "status": "Up 5 hours grafana/grafana:latest"
+          "status": "Up 6 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 5 hours prom/prometheus:latest"
+          "status": "Up 6 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -356,45 +356,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "The Angel And The Gambler",
-      "artist": "Iron Maiden",
-      "album": "Virtual XI",
-      "genre": "Heavy Metal",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/6a724a572ecf3577a16b8055-1782761082.jpg",
-      "duration": 592,
-      "elapsed": 417
+      "title": "40 #11.Dinosaur Act-Low",
+      "artist": "John Peel Festive Fifty 2000",
+      "album": "John Peel Festive Fifty 2000",
+      "genre": "genre",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/f37b06b6594f290ab806443c-1782767020.jpg",
+      "duration": 251,
+      "elapsed": 122
     },
     "playing_next": {
-      "title": "Slow Coach (Dub)",
-      "artist": "Wailing Souls"
+      "title": "Hazel",
+      "artist": "Cocteau Twins"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Buried Alive",
-        "artist": "Turbonegro",
-        "played_at": 1783141409
+        "title": "Standing Ovation",
+        "artist": "Good Charlotte",
+        "played_at": 1783145245
       },
       {
-        "title": "Thanks And Praise",
-        "artist": "A1",
-        "played_at": 1783141221
+        "title": "48. #13. Scritti Politti - Faithless.mp3",
+        "artist": "John Peel Festive Fifty 1982",
+        "played_at": 1783144978
       },
       {
-        "title": "John Peel 20030204",
-        "artist": "",
-        "played_at": 1783133991
+        "title": "Boom Swagger Boom",
+        "artist": "The Murder City Devils",
+        "played_at": 1783144814
       },
       {
-        "title": "As Soft As Fire (John Peel Session 10/88)",
-        "artist": "The House Of Love",
-        "played_at": 1783133804
+        "title": "Six Times",
+        "artist": "The Skids",
+        "played_at": 1783144689
       },
       {
-        "title": "Requiem for a Hit",
-        "artist": "Miss Kittin/Laurence Williams",
-        "played_at": 1783133490
+        "title": "The Magnificent Seven (Remastered)",
+        "artist": "The Clash",
+        "played_at": 1783144359
       }
     ]
   }
