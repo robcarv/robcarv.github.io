@@ -1,21 +1,21 @@
 {
-  "updated": "2026-07-05 02:12",
+  "updated": "2026-07-05 03:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 5.2,
-        "user": 3.7,
+        "total": 5.6,
+        "user": 4.1,
         "system": 1.7,
-        "idle": 93.7,
-        "iowait": 0.7
+        "idle": 93.8,
+        "iowait": 0.1
       },
       "ram": {
-        "used_gb": 2.34,
+        "used_gb": 2.35,
         "total_gb": 7.87,
-        "percent": 29.7,
-        "available_gb": 5.53
+        "percent": 29.9,
+        "available_gb": 5.52
       },
       "swap": {
         "used_mb": 775.7,
@@ -23,9 +23,9 @@
         "percent": 37.9
       },
       "load": {
-        "1min": 0.68,
-        "5min": 0.73,
-        "15min": 1.23,
+        "1min": 1.25,
+        "5min": 0.61,
+        "15min": 0.51,
         "cores": 4
       },
       "disks": [
@@ -33,16 +33,16 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 46.7,
+          "used_gb": 46.8,
           "free_gb": 64.0,
           "percent": 40.1
         }
       ],
       "disk_io": {
-        "read_mb": 72762.1,
-        "write_mb": 44564.5
+        "read_mb": 4.1,
+        "write_mb": 1607.7
       },
-      "temperature_c": 51,
+      "temperature_c": 49,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -51,24 +51,24 @@
         }
       },
       "processes": {
-        "total": 329,
+        "total": 330,
         "running": 1,
-        "sleeping": 232,
-        "threads": 1062
+        "sleeping": 233,
+        "threads": 1066
       },
-      "uptime": "4 days, 1:24:42",
+      "uptime": "4 days, 2:24:46",
       "containers": [
         {
           "name": "cadvisor",
-          "status": "Up 26 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 27 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "watchtower",
-          "status": "Up 26 hours (healthy) containrrr/watchtower"
+          "status": "Up 27 hours (healthy) containrrr/watchtower"
         },
         {
           "name": "psclient",
-          "status": "Up 26 hours packetstream/psclient:latest"
+          "status": "Up 27 hours packetstream/psclient:latest"
         },
         {
           "name": "subscription bot",
@@ -92,15 +92,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 41 minutes (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 2 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 40 minutes (healthy) bellamy/wallos:latest"
+          "status": "Up 2 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 40 minutes jc21/nginx-proxy-manager:latest"
+          "status": "Up 2 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -133,17 +133,17 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 7.7,
+        "total": 7.2,
         "user": 7.0,
-        "system": 1.2,
-        "idle": 73.4,
-        "iowait": 18.4
+        "system": 1.5,
+        "idle": 76.7,
+        "iowait": 14.7
       },
       "ram": {
-        "used_gb": 3.11,
+        "used_gb": 3.04,
         "total_gb": 7.87,
-        "percent": 39.5,
-        "available_gb": 4.76
+        "percent": 38.6,
+        "available_gb": 4.83
       },
       "swap": {
         "used_mb": 85.2,
@@ -151,9 +151,9 @@
         "percent": 2.1
       },
       "load": {
-        "1min": 2.63,
-        "5min": 1.72,
-        "15min": 1.08,
+        "1min": 1.92,
+        "5min": 1.2,
+        "15min": 0.82,
         "cores": 4
       },
       "disks": [
@@ -161,9 +161,9 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 72.7,
-          "free_gb": 38.1,
-          "percent": 62.3
+          "used_gb": 72.5,
+          "free_gb": 38.2,
+          "percent": 62.2
         },
         {
           "mount": "/",
@@ -175,8 +175,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1423.8,
-        "write_mb": 1853.3
+        "read_mb": 738.9,
+        "write_mb": 1222.1
       },
       "temperature_c": 49,
       "network": {
@@ -187,16 +187,16 @@
         }
       },
       "processes": {
-        "total": 576,
-        "running": 0,
-        "sleeping": 477,
-        "threads": 3328
+        "total": 573,
+        "running": 1,
+        "sleeping": 479,
+        "threads": 3326
       },
-      "uptime": "4 days, 1:24:42",
+      "uptime": "4 days, 2:24:46",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up About an hour ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 2 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -241,17 +241,17 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 35.3,
-        "user": 24.4,
-        "system": 6.7,
-        "idle": 65.5,
-        "iowait": 0.0
+        "total": 22.7,
+        "user": 19.4,
+        "system": 5.4,
+        "idle": 73.9,
+        "iowait": 1.2
       },
       "ram": {
-        "used_gb": 1.85,
+        "used_gb": 1.79,
         "total_gb": 7.64,
-        "percent": 24.2,
-        "available_gb": 5.79
+        "percent": 23.5,
+        "available_gb": 5.85
       },
       "swap": {
         "used_mb": 0.8,
@@ -260,8 +260,8 @@
       },
       "load": {
         "1min": 2.02,
-        "5min": 2.16,
-        "15min": 2.14,
+        "5min": 1.32,
+        "15min": 1.04,
         "cores": 4
       },
       "disks": [
@@ -269,16 +269,16 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
-          "used_gb": 30.4,
-          "free_gb": 79.1,
-          "percent": 26.3
+          "used_gb": 30.5,
+          "free_gb": 79.0,
+          "percent": 26.4
         }
       ],
       "disk_io": {
-        "read_mb": 2388.9,
-        "write_mb": 2345.4
+        "read_mb": 739.2,
+        "write_mb": 1636.7
       },
-      "temperature_c": 36,
+      "temperature_c": 35,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -287,24 +287,24 @@
         }
       },
       "processes": {
-        "total": 270,
+        "total": 268,
         "running": 0,
-        "sleeping": 172,
-        "threads": 938
+        "sleeping": 169,
+        "threads": 925
       },
-      "uptime": "4 days, 1:24:46",
+      "uptime": "4 days, 2:24:50",
       "containers": [
         {
           "name": "cadvisor",
-          "status": "Up 26 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 27 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "cve grafana",
-          "status": "Up 56 minutes grafana/grafana:latest"
+          "status": "Up 2 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 56 minutes prom/prometheus:latest"
+          "status": "Up 2 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -362,7 +362,7 @@
       "genre": "Blues",
       "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/a40fecf426138d3e69dd7bbd",
       "duration": 7224,
-      "elapsed": 1101
+      "elapsed": 4705
     },
     "playing_next": {
       "title": "The Voice Came Out Of The Box And Dropped Into The Ocean-Movietone",
