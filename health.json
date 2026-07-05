@@ -1,21 +1,21 @@
 {
-  "updated": "2026-07-05 05:12",
+  "updated": "2026-07-05 06:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 4.8,
+        "total": 5.0,
         "user": 3.6,
-        "system": 1.3,
+        "system": 1.2,
         "idle": 94.9,
-        "iowait": 0.1
+        "iowait": 0.3
       },
       "ram": {
-        "used_gb": 2.33,
+        "used_gb": 2.34,
         "total_gb": 7.87,
-        "percent": 29.6,
-        "available_gb": 5.55
+        "percent": 29.7,
+        "available_gb": 5.54
       },
       "swap": {
         "used_mb": 772.7,
@@ -23,9 +23,9 @@
         "percent": 37.7
       },
       "load": {
-        "1min": 0.35,
-        "5min": 0.8,
-        "15min": 0.78,
+        "1min": 0.4,
+        "5min": 0.5,
+        "15min": 0.58,
         "cores": 4
       },
       "disks": [
@@ -39,8 +39,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 20.2,
-        "write_mb": 1706.4
+        "read_mb": 57.8,
+        "write_mb": 1706.8
       },
       "temperature_c": 49,
       "network": {
@@ -51,24 +51,24 @@
         }
       },
       "processes": {
-        "total": 324,
-        "running": 0,
+        "total": 325,
+        "running": 1,
         "sleeping": 229,
-        "threads": 1059
+        "threads": 1061
       },
-      "uptime": "4 days, 4:24:53",
+      "uptime": "4 days, 5:24:56",
       "containers": [
         {
           "name": "cadvisor",
-          "status": "Up 29 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 30 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "watchtower",
-          "status": "Up 29 hours (healthy) containrrr/watchtower"
+          "status": "Up 30 hours (healthy) containrrr/watchtower"
         },
         {
           "name": "psclient",
-          "status": "Up 29 hours packetstream/psclient:latest"
+          "status": "Up 30 hours packetstream/psclient:latest"
         },
         {
           "name": "subscription bot",
@@ -92,15 +92,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 4 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 5 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 4 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 5 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 4 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 5 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -133,27 +133,27 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 7.5,
-        "user": 5.4,
-        "system": 1.1,
-        "idle": 77.3,
-        "iowait": 16.3
+        "total": 7.2,
+        "user": 5.5,
+        "system": 1.0,
+        "idle": 75.8,
+        "iowait": 17.7
       },
       "ram": {
-        "used_gb": 2.99,
+        "used_gb": 2.98,
         "total_gb": 7.87,
-        "percent": 38.0,
+        "percent": 37.9,
         "available_gb": 4.89
       },
       "swap": {
-        "used_mb": 86.2,
+        "used_mb": 87.2,
         "total_mb": 4096.0,
         "percent": 2.1
       },
       "load": {
-        "1min": 0.95,
-        "5min": 0.83,
-        "15min": 0.6,
+        "1min": 1.19,
+        "5min": 1.43,
+        "15min": 1.25,
         "cores": 4
       },
       "disks": [
@@ -161,24 +161,24 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 72.5,
-          "free_gb": 38.2,
-          "percent": 62.2
+          "used_gb": 72.7,
+          "free_gb": 38.1,
+          "percent": 62.3
         },
         {
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.2,
-          "free_gb": 748.0,
+          "used_gb": 121.3,
+          "free_gb": 747.9,
           "percent": 13.2
         }
       ],
       "disk_io": {
-        "read_mb": 625.4,
-        "write_mb": 1313.2
+        "read_mb": 1496.3,
+        "write_mb": 2172.8
       },
-      "temperature_c": 49,
+      "temperature_c": 51,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -187,16 +187,16 @@
         }
       },
       "processes": {
-        "total": 576,
-        "running": 0,
+        "total": 578,
+        "running": 1,
         "sleeping": 479,
-        "threads": 3329
+        "threads": 3332
       },
-      "uptime": "4 days, 4:24:53",
+      "uptime": "4 days, 5:24:57",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 4 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 5 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -241,14 +241,14 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 11.3,
-        "user": 8.6,
+        "total": 9.1,
+        "user": 8.2,
         "system": 3.4,
-        "idle": 87.9,
-        "iowait": 0.0
+        "idle": 88.2,
+        "iowait": 0.1
       },
       "ram": {
-        "used_gb": 1.76,
+        "used_gb": 1.75,
         "total_gb": 7.64,
         "percent": 23.0,
         "available_gb": 5.88
@@ -259,9 +259,9 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 1.01,
-        "5min": 1.04,
-        "15min": 0.88,
+        "1min": 1.21,
+        "5min": 1.12,
+        "15min": 0.9,
         "cores": 4
       },
       "disks": [
@@ -275,10 +275,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.1,
-        "write_mb": 462.5
+        "read_mb": 2.8,
+        "write_mb": 508.2
       },
-      "temperature_c": 32,
+      "temperature_c": 33,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -287,24 +287,24 @@
         }
       },
       "processes": {
-        "total": 265,
-        "running": 0,
-        "sleeping": 169,
+        "total": 263,
+        "running": 1,
+        "sleeping": 168,
         "threads": 921
       },
-      "uptime": "4 days, 4:24:56",
+      "uptime": "4 days, 5:25:00",
       "containers": [
         {
           "name": "cadvisor",
-          "status": "Up 29 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 30 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "cve grafana",
-          "status": "Up 4 hours grafana/grafana:latest"
+          "status": "Up 5 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 4 hours prom/prometheus:latest"
+          "status": "Up 5 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -356,45 +356,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Radio Havana",
-      "artist": "Rancid",
-      "album": "Rancid [2000]",
-      "genre": "Punk",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/d1cc42370025f61580291e0b-1782760772.jpg",
-      "duration": 222,
-      "elapsed": 175
+      "title": "get ready",
+      "artist": "the mighty diamonds",
+      "album": "get ready",
+      "genre": "Reggae",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/4490a0d47c1167fea4deefbc-1782756597.jpg",
+      "duration": 219,
+      "elapsed": 187
     },
     "playing_next": {
-      "title": "Fuck The World (F.T.W.)",
-      "artist": "Turbonegro"
+      "title": "Funky Kingston",
+      "artist": "Toots"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Without You",
-        "artist": "The Wailing Souls",
-        "played_at": 1783224419
+        "title": "Just One Of Those Things",
+        "artist": "Miss Otis Regrets",
+        "played_at": 1783227879
       },
       {
-        "title": "In Paradise",
-        "artist": "Johnny Clarke",
-        "played_at": 1783224223
+        "title": "Boat Train",
+        "artist": "The Pogues",
+        "played_at": 1783227693
       },
       {
-        "title": "Double Dare Ya",
-        "artist": "Bikini Kill",
-        "played_at": 1783224062
+        "title": "Burial / Speech",
+        "artist": "Peter Tosh",
+        "played_at": 1783226956
       },
       {
-        "title": "Black Heart",
-        "artist": "2nd Street Dreads",
-        "played_at": 1783223902
+        "title": "Ska-talites - 13 - The Vow.mp",
+        "artist": "The Skatalites",
+        "played_at": 1783226828
       },
       {
-        "title": "02 - the fall - theme from sparta f.c.",
-        "artist": "John Peel Festive Fifty 2003",
-        "played_at": 1783223666
+        "title": "Sugar And Spice",
+        "artist": "John Holt",
+        "played_at": 1783226604
       }
     ]
   }
