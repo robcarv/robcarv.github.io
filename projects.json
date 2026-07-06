@@ -1,31 +1,37 @@
 [
   {
     "name": "Gallery Downloader",
-    "description": "Self-hosted media downloader with Go backend, React frontend, PostgreSQL + Redis queue, gallery-dl engine",
-    "tags": ["Go", "React", "PostgreSQL", "Redis", "Docker"],
+    "description": "Self-hosted media downloader — Go/Gin backend, React frontend, PostgreSQL + Redis queue with gallery-dl engine. Supports multi-source search jobs, scheduled downloads, min-video filtering, and 429 rate-limit retry with exponential backoff.",
+    "tags": ["Go", "React", "PostgreSQL", "Redis", "Docker", "gallery-dl"],
     "link": "https://github.com/robcarv/backup_raspberry"
   },
   {
     "name": "Subscription Bot",
-    "description": "Telegram bot with Mercado Pago PIX payments, subscription management, multi-channel content delivery",
-    "tags": ["Python", "Flask", "SQLite", "Docker", "Telegram API"],
+    "description": "Telegram bot with Mercado Pago PIX payment integration. Multi-plan subscription management, preview-to-VIP funnel, per-channel content delivery, auto-tagging, and scheduled distribution. Production with real payments.",
+    "tags": ["Python", "Flask", "SQLite", "Docker", "Telegram API", "PIX"],
     "link": "https://github.com/robcarv/backup_raspberry"
   },
   {
-    "name": "Homelab Docs",
-    "description": "Complete documentation for 3-node Raspberry Pi homelab with 55+ Docker services and automated pipelines",
-    "tags": ["Documentation", "Docker", "Linux", "Markdown"],
-    "link": "https://github.com/robcarv/homelab-docs"
+    "name": "News Collector",
+    "description": "Automated RSS news aggregator — collects from 20+ sources (BBC, Guardian, Folha, Billboard, Pitchfork), AI-powered summarization, Edge-TTS neural voice synthesis, and Telegram delivery. Runs every 6h via Hermes cron.",
+    "tags": ["Python", "RSS", "TTS", "Telegram API", "Docker"],
+    "link": "https://github.com/robcarv/news_colletector"
   },
   {
     "name": "Dublin Calling Radio",
-    "description": "Self-hosted internet radio station on AzuraCast with automated playlist, news integration and live streaming",
-    "tags": ["AzuraCast", "Docker", "Icecast", "Raspberry Pi"],
+    "description": "Self-hosted 24/7 internet radio station on AzuraCast. Auto-DJ with 500+ track library, live streaming via Icecast, public now-playing API, listener stats, and Last.fm metadata enrichment for artist bios and tags.",
+    "tags": ["AzuraCast", "Docker", "Icecast", "Raspberry Pi", "Last.fm"],
     "link": "https://dublincalling.duckdns.org"
   },
   {
+    "name": "Homelab Infrastructure",
+    "description": "3-node Raspberry Pi cluster (2x Pi5 8GB + Pi4 4GB) with TrueNAS storage. 55+ Docker services including Prometheus, Grafana, CVE monitoring, Uptime Kuma, Nginx Proxy Manager, and automated backup pipeline to OneDrive.",
+    "tags": ["Docker", "Prometheus", "Grafana", "Trivy", "TrueNAS", "CIFS"],
+    "link": "https://github.com/robcarv/homelab-docs"
+  },
+  {
     "name": "Portfolio Website",
-    "description": "Personal portfolio with live homelab monitoring, radio player, and RSS news feed — zero dependencies",
+    "description": "Personal portfolio with live homelab monitoring (CPU/RAM/Temp per Pi), AzuraCast radio player with live polling, RSS news feed with source filters, scrolling ticker, weather widget via geolocation, and contact form — all vanilla HTML/CSS/JS, zero dependencies.",
     "tags": ["HTML", "CSS", "JavaScript", "GitHub Pages"],
     "link": "https://github.com/robcarv/robcarv.github.io"
   }
