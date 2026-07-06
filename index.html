@@ -251,6 +251,53 @@ main{margin-left:var(--sidebar-w);min-height:100vh;padding-bottom:60px}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
 
 /* ============================================================
+   FLOATING RADIO POPUP
+   ============================================================ */
+.radio-overlay{
+  position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.7);
+  display:none;align-items:center;justify-content:center;
+  backdrop-filter:blur(4px)
+}
+.radio-overlay.show{display:flex}
+.radio-popup{
+  background:linear-gradient(135deg,#111118,#1a1025);border:1px solid var(--border);
+  border-radius:16px;padding:1.5rem;max-width:420px;width:90%;
+  box-shadow:0 20px 60px rgba(0,0,0,.5);animation:fadeIn .3s ease-out
+}
+.radio-popup-close{
+  position:absolute;top:.75rem;right:.75rem;
+  background:none;border:none;color:var(--muted);font-size:1.2rem;
+  cursor:pointer;width:28px;height:28px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;transition:all .2s
+}
+.radio-popup-close:hover{background:rgba(255,255,255,.08);color:#fff}
+.radio-popup{position:relative}
+.radio-popup-art{width:100%;border-radius:10px;margin-bottom:.75rem;max-height:200px;object-fit:cover;border:1px solid var(--border)}
+.radio-popup-track{font-size:1rem;color:#fff;font-weight:600;margin-bottom:.15rem}
+.radio-popup-artist{color:var(--accent);font-size:.85rem;margin-bottom:.75rem}
+.radio-popup-bar{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.radio-popup-progress{flex:1;height:3px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden}
+.radio-popup-progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 1s linear}
+.radio-popup-time{font-size:.65rem;color:var(--muted);font-variant-numeric:tabular-nums;min-width:40px;text-align:right}
+.radio-popup-actions{display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem}
+.radio-popup-play{
+  width:40px;height:40px;border-radius:50%;border:2px solid var(--accent);
+  background:rgba(99,102,241,.1);color:var(--accent);font-size:.9rem;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s
+}
+.radio-popup-play:hover{background:rgba(99,102,241,.2)}
+.radio-popup-play.on{background:var(--accent);color:#fff}
+.radio-popup-vol{width:80px;accent-color:var(--accent)}
+.radio-popup-info{font-size:.72rem;color:var(--muted);line-height:1.5}
+.radio-popup-info strong{color:var(--text)}
+.radio-popup-tags{display:flex;flex-wrap:wrap;gap:.25rem;margin:.4rem 0}
+.radio-popup-tag{font-size:.62rem;padding:1px 7px;border-radius:100px;background:rgba(99,102,241,.15);color:var(--accent)}
+.radio-popup-listeners{font-size:.68rem;color:var(--muted);margin-bottom:.3rem}
+.radio-popup-section{margin-top:.5rem}
+.radio-popup-section .label{font-size:.62rem;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:.2rem}
+.radio-popup-loading{color:var(--muted);font-size:.7rem;font-style:italic}
+
+/* ============================================================
    NEWS — filterable grid (existing code preserved)
    ============================================================ */
 .news-item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.25rem;transition:border-color .2s}
@@ -575,6 +622,28 @@ main{margin-left:var(--sidebar-w);min-height:100vh;padding-bottom:60px}
 
 </main>
 
+<!-- ============================================================
+     FLOATING RADIO POPUP
+     ============================================================ -->
+<div class="radio-overlay" id="radioOverlay" onclick="if(event.target===this)closeRadioPopup()">
+  <div class="radio-popup">
+    <button class="radio-popup-close" onclick="closeRadioPopup()" title="Close">✕</button>
+    <img class="radio-popup-art" id="popupArt" src="" alt="" onerror="this.style.display='none'">
+    <div class="radio-popup-track" id="popupTrack">—</div>
+    <div class="radio-popup-artist" id="popupArtist">—</div>
+    <div class="radio-popup-bar">
+      <div class="radio-popup-progress"><div class="radio-popup-progress-fill" id="popupProgress" style="width:0%"></div></div>
+      <span class="radio-popup-time" id="popupTime">-0:00</span>
+    </div>
+    <div class="radio-popup-actions">
+      <button class="radio-popup-play" id="popupPlayBtn" onclick="popupToggleRadio()" title="Play/Pause">▶</button>
+      <input type="range" class="radio-popup-vol" min="0" max="100" value="80" oninput="document.getElementById('radioAudio').volume=this.value/100" title="Volume">
+      <span class="radio-popup-listeners" id="popupListeners"></span>
+    </div>
+    <div class="radio-popup-info" id="popupInfo"><span class="radio-popup-loading">Loading Last.fm info...</span></div>
+  </div>
+</div>
+
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track" id="tickerTrack"></div>
@@ -728,8 +797,11 @@ function renderRadio(radio) {
 }
 
 // ============================================================
-// RADIO PLAYER CONTROLS (PRESERVED)
+// RADIO PLAYER CONTROLS + FLOATING POPUP
 // ============================================================
+let currentRadio = null; // stores current track info for popup
+let popupTimer = null;
+
 function toggleRadio(url, btn) {
   const audio = document.getElementById('radioAudio');
   const bar = document.getElementById('radioAudioBar');
@@ -745,6 +817,8 @@ function toggleRadio(url, btn) {
       if (btn) btn.classList.add('playing');
       if (bar) bar.classList.add('visible');
       if (sBtn) sBtn.classList.add('on');
+      showRadioPopup();
+      startPopupProgress();
     }).catch(e => console.warn(e));
   }
 }
@@ -757,6 +831,112 @@ function stopRadio() {
   if (btn) btn.classList.remove('playing');
   if (bar) bar.classList.remove('visible');
   if (sBtn) sBtn.classList.remove('on');
+  closeRadioPopup();
+}
+
+function showRadioPopup() {
+  const overlay = document.getElementById('radioOverlay');
+  if (!overlay) return;
+  overlay.classList.add('show');
+  updatePopupUI();
+}
+function closeRadioPopup() {
+  document.getElementById('radioOverlay').classList.remove('show');
+  if (popupTimer) { clearInterval(popupTimer); popupTimer = null; }
+}
+function popupToggleRadio() {
+  const audio = document.getElementById('radioAudio');
+  const btn = document.getElementById('popupPlayBtn');
+  if (audio.paused) {
+    audio.play().then(() => { if (btn) btn.classList.add('on'); startPopupProgress(); });
+  } else {
+    audio.pause();
+    if (btn) btn.classList.remove('on');
+    if (popupTimer) { clearInterval(popupTimer); popupTimer = null; }
+  }
+}
+
+// Update the popup with current radio state from pollRadioLive
+function updatePopupWithRadio(radio) {
+  if (!radio) return;
+  currentRadio = radio;
+  updatePopupUI();
+  loadLastFM(radio.now_playing?.artist, radio.now_playing?.title);
+}
+
+function updatePopupUI() {
+  if (!currentRadio) return;
+  const np = currentRadio.now_playing||{};
+  const elapsed = np.elapsed||0, duration = np.duration||1;
+  const pct = Math.min(elapsed/duration*100, 100);
+  const rem = Math.max(duration-elapsed, 0);
+  const mins = Math.floor(rem/60), secs = String(Math.floor(rem%60)).padStart(2,'0');
+
+  document.getElementById('popupTrack').textContent = np.title||'—';
+  document.getElementById('popupArtist').textContent = np.artist||'—';
+  document.getElementById('popupTime').textContent = `-${mins}:${secs}`;
+  document.getElementById('popupProgress').style.width = pct+'%';
+  document.getElementById('popupListeners').textContent = (currentRadio.listeners||0)+' listening';
+
+  const art = np.art||'';
+  const artEl = document.getElementById('popupArt');
+  if (art) { artEl.src = art; artEl.style.display = ''; }
+  else artEl.style.display = 'none';
+
+  // Keep play button in sync
+  const audio = document.getElementById('radioAudio');
+  const pBtn = document.getElementById('popupPlayBtn');
+  if (pBtn) {
+    if (audio && !audio.paused) pBtn.classList.add('on');
+    else pBtn.classList.remove('on');
+  }
+}
+
+function startPopupProgress() {
+  if (popupTimer) clearInterval(popupTimer);
+  popupTimer = setInterval(() => {
+    if (!currentRadio) return;
+    const np = currentRadio.now_playing||{};
+    np.elapsed = (np.elapsed||0) + 1;
+    updatePopupUI();
+  }, 1000);
+}
+
+// ============================================================
+// LAST.FM — fetch artist info directly (public API)
+// ============================================================
+const LF_KEY = '2c71b434f3f01b114f3b3dc1c4b14e49'; // public demo key
+let lastLfmArtist = '';
+
+async function loadLastFM(artist, title) {
+  const info = document.getElementById('popupInfo');
+  if (!artist || artist === lastLfmArtist) return;
+  lastLfmArtist = artist;
+  info.innerHTML = '<span class="radio-popup-loading">Loading Last.fm info...</span>';
+
+  try {
+    const r = await fetch(`https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${encodeURIComponent(artist)}&api_key=${LF_KEY}&format=json`);
+    const d = await r.json();
+    const a = d.artist;
+    if (!a) { info.innerHTML = ''; return; }
+
+    let html = '';
+    if (a.bio?.summary) {
+      const bio = a.bio.summary.replace(/<a href="[^"]*">/g,'').replace(/<\/a>/g,'').replace(/Read more.*/,'').trim();
+      if (bio.length > 300) html += '<div class="radio-popup-section"><div class="label">Bio</div>'+bio.substring(0,300)+'...</div>';
+      else if (bio) html += '<div class="radio-popup-section"><div class="label">Bio</div>'+bio+'</div>';
+    }
+    if (a.tags?.tag?.length) {
+      html += '<div class="radio-popup-tags">'+a.tags.tag.slice(0,8).map(t=>'<span class="radio-popup-tag">'+t.name+'</span>').join('')+'</div>';
+    }
+    if (a.similar?.artist?.length) {
+      html += '<div class="radio-popup-section"><div class="label">Similar Artists</div>'+a.similar.artist.slice(0,5).map(s=>s.name).join(', ')+'</div>';
+    }
+    if (a.stats) {
+      html += `<div class="radio-popup-section"><div class="label">Stats</div>Listeners: ${Number(a.stats.listeners||0).toLocaleString()} · Plays: ${Number(a.stats.playcount||0).toLocaleString()}</div>`;
+    }
+    info.innerHTML = html || '';
+  } catch(e) { info.innerHTML = ''; }
 }
 
 // ============================================================
@@ -939,6 +1119,12 @@ async function pollRadioLive() {
       playing_next:s.playing_next?.song?{artist:s.playing_next.song.artist||'',title:s.playing_next.song.title||''}:null,
       listeners:s.listeners?.current||0,
       listen_url:s.station?.listen_url||'https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3'
+    });
+    // Keep popup in sync if visible
+    updatePopupWithRadio({
+      is_online:s.is_online,is_live:s.live?.is_live,
+      now_playing:{artist:song.artist||'',title:song.title||'',album:song.album||'',art:song.art||'',genre:song.genre||'',duration:s.now_playing?.duration||1,elapsed:s.now_playing?.elapsed||0},
+      listeners:s.listeners?.current||0
     });
   } catch(e) {}
 }
