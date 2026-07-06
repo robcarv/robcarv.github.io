@@ -1032,7 +1032,7 @@ function renderSkills(items) {
   c.innerHTML = items.map(s => `
     <div class="skill-item">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${s.icon}/${s.icon}-original.svg"
-           alt="${s.name}" onerror="this.outerHTML='<span style=font-size:2rem>🔧</span>'">
+           alt="" onerror="this.outerHTML='<span style=font-size:2rem>🔧</span>'">
       <span class="skill-name">${s.name}</span>
     </div>`).join('');
 }
