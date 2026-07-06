@@ -1,21 +1,21 @@
 {
-  "updated": "2026-07-06 19:12",
+  "updated": "2026-07-06 20:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 4.5,
-        "user": 3.8,
-        "system": 1.1,
-        "idle": 95.0,
+        "total": 4.9,
+        "user": 4.9,
+        "system": 1.3,
+        "idle": 93.7,
         "iowait": 0.1
       },
       "ram": {
-        "used_gb": 2.96,
+        "used_gb": 3.22,
         "total_gb": 7.87,
-        "percent": 37.5,
-        "available_gb": 4.92
+        "percent": 40.9,
+        "available_gb": 4.65
       },
       "swap": {
         "used_mb": 928.9,
@@ -23,9 +23,9 @@
         "percent": 45.4
       },
       "load": {
-        "1min": 0.38,
-        "5min": 0.48,
-        "15min": 0.61,
+        "1min": 0.41,
+        "5min": 0.85,
+        "15min": 0.98,
         "cores": 4
       },
       "disks": [
@@ -33,14 +33,14 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 47.8,
+          "used_gb": 47.9,
           "free_gb": 62.9,
           "percent": 41.0
         }
       ],
       "disk_io": {
-        "read_mb": 23.5,
-        "write_mb": 1853.6
+        "read_mb": 481.8,
+        "write_mb": 2104.4
       },
       "temperature_c": 55,
       "network": {
@@ -51,24 +51,24 @@
         }
       },
       "processes": {
-        "total": 346,
-        "running": 1,
+        "total": 347,
+        "running": 0,
         "sleeping": 250,
-        "threads": 1162
+        "threads": 1169
       },
-      "uptime": "5 days, 18:25:36",
+      "uptime": "5 days, 19:24:40",
       "containers": [
         {
           "name": "gallery backend",
-          "status": "Up 6 hours (healthy) gallery-downloader-backend"
+          "status": "Up 7 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "kavita",
-          "status": "Up 21 hours lscr.io/linuxserver/kavita:latest"
+          "status": "Up 22 hours lscr.io/linuxserver/kavita:latest"
         },
         {
           "name": "subscription bot",
-          "status": "Up 21 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 22 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "cadvisor",
@@ -96,15 +96,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 18 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 19 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 18 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 19 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 18 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 19 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -137,17 +137,17 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 3.6,
-        "user": 5.6,
-        "system": 1.1,
-        "idle": 92.9,
-        "iowait": 0.4
+        "total": 4.3,
+        "user": 5.5,
+        "system": 1.2,
+        "idle": 58.1,
+        "iowait": 35.1
       },
       "ram": {
-        "used_gb": 2.87,
+        "used_gb": 3.07,
         "total_gb": 7.87,
-        "percent": 36.4,
-        "available_gb": 5.01
+        "percent": 39.0,
+        "available_gb": 4.8
       },
       "swap": {
         "used_mb": 199.5,
@@ -155,9 +155,9 @@
         "percent": 4.9
       },
       "load": {
-        "1min": 0.23,
-        "5min": 0.47,
-        "15min": 0.64,
+        "1min": 2.13,
+        "5min": 1.26,
+        "15min": 1.11,
         "cores": 4
       },
       "disks": [
@@ -179,8 +179,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 982.2,
-        "write_mb": 1662.5
+        "read_mb": 1208.2,
+        "write_mb": 1664.6
       },
       "temperature_c": 55,
       "network": {
@@ -191,16 +191,16 @@
         }
       },
       "processes": {
-        "total": 570,
-        "running": 0,
-        "sleeping": 478,
-        "threads": 3350
+        "total": 585,
+        "running": 9,
+        "sleeping": 481,
+        "threads": 3366
       },
-      "uptime": "5 days, 18:25:37",
+      "uptime": "5 days, 19:24:41",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 18 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 19 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -245,17 +245,17 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 15.5,
-        "user": 9.3,
+        "total": 13.5,
+        "user": 9.6,
         "system": 3.8,
-        "idle": 86.8,
-        "iowait": 0.0
+        "idle": 86.4,
+        "iowait": 0.1
       },
       "ram": {
-        "used_gb": 1.78,
+        "used_gb": 1.8,
         "total_gb": 7.64,
-        "percent": 23.3,
-        "available_gb": 5.86
+        "percent": 23.5,
+        "available_gb": 5.84
       },
       "swap": {
         "used_mb": 0.8,
@@ -263,9 +263,9 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 0.51,
-        "5min": 0.6,
-        "15min": 0.66,
+        "1min": 0.72,
+        "5min": 0.76,
+        "15min": 0.81,
         "cores": 4
       },
       "disks": [
@@ -273,14 +273,14 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
-          "used_gb": 30.8,
+          "used_gb": 30.9,
           "free_gb": 78.6,
-          "percent": 26.7
+          "percent": 26.8
         }
       ],
       "disk_io": {
-        "read_mb": 2.7,
-        "write_mb": 470.9
+        "read_mb": 29.4,
+        "write_mb": 476.1
       },
       "temperature_c": 36,
       "network": {
@@ -291,12 +291,12 @@
         }
       },
       "processes": {
-        "total": 264,
+        "total": 267,
         "running": 0,
         "sleeping": 169,
-        "threads": 928
+        "threads": 931
       },
-      "uptime": "5 days, 18:25:40",
+      "uptime": "5 days, 19:24:44",
       "containers": [
         {
           "name": "cadvisor",
@@ -304,11 +304,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 18 hours grafana/grafana:latest"
+          "status": "Up 19 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 18 hours prom/prometheus:latest"
+          "status": "Up 19 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -360,45 +360,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "08-down on your knees",
-      "artist": "wailing souls",
-      "album": "equality",
-      "genre": "Reggae",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/9a8c8638c85aca1bbd63b2c1-1782757094.jpg",
-      "duration": 228,
-      "elapsed": 134
+      "title": "Drifter",
+      "artist": "Iron Maiden",
+      "album": "Maiden Japan",
+      "genre": "Heavy Metal",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/a8a19cb6adaa67e35d1d6a23-1782761273.jpg",
+      "duration": 486,
+      "elapsed": 128
     },
     "playing_next": {
-      "title": "10. at the feast",
-      "artist": ""
+      "title": "More Songs About Chocolate And Girls",
+      "artist": "The Undertones"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Secrets (Peel session)",
-        "artist": "Strawberry Switchblade",
-        "played_at": 1783361311
+        "title": "Pack Up",
+        "artist": "The Wailing Souls",
+        "played_at": 1783364808
       },
       {
-        "title": "Radio",
-        "artist": "Rancid  NOFX",
-        "played_at": 1783361142
+        "title": "The Force",
+        "artist": "Burning Spear",
+        "played_at": 1783364578
       },
       {
-        "title": "Deceptacon",
-        "artist": "Le Tigre",
-        "played_at": 1783360938
+        "title": "Rastafari -02- Glory Dawn",
+        "artist": "Ras Michael",
+        "played_at": 1783364308
       },
       {
-        "title": "Rudi Got Married",
-        "artist": "Laurel Aitken",
-        "played_at": 1783360712
+        "title": "Way Over In Dub",
+        "artist": "Tappa Zukie",
+        "played_at": 1783364130
       },
       {
-        "title": "Proud Mary",
-        "artist": "Ike & Tina Turner",
-        "played_at": 1783360350
+        "title": "09 Door Peep",
+        "artist": "Burning Spear - Man In The Hills",
+        "played_at": 1783363970
       }
     ]
   }
