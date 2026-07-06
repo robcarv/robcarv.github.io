@@ -1,31 +1,31 @@
 {
-  "updated": "2026-07-06 21:12",
+  "updated": "2026-07-06 22:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 8.5,
-        "user": 5.4,
+        "total": 6.5,
+        "user": 4.6,
         "system": 2.2,
-        "idle": 91.7,
+        "idle": 92.5,
         "iowait": 0.4
       },
       "ram": {
-        "used_gb": 3.13,
+        "used_gb": 3.83,
         "total_gb": 7.87,
-        "percent": 39.8,
-        "available_gb": 4.74
+        "percent": 48.6,
+        "available_gb": 4.05
       },
       "swap": {
-        "used_mb": 960.9,
+        "used_mb": 952.9,
         "total_mb": 2048.0,
-        "percent": 46.9
+        "percent": 46.5
       },
       "load": {
-        "1min": 1.01,
-        "5min": 1.16,
-        "15min": 1.0,
+        "1min": 1.37,
+        "5min": 1.17,
+        "15min": 0.96,
         "cores": 4
       },
       "disks": [
@@ -39,10 +39,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 2972.3,
-        "write_mb": 3211.5
+        "read_mb": 2754.1,
+        "write_mb": 2496.1
       },
-      "temperature_c": 56,
+      "temperature_c": 51,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -51,24 +51,24 @@
         }
       },
       "processes": {
-        "total": 350,
-        "running": 0,
-        "sleeping": 252,
-        "threads": 1172
+        "total": 351,
+        "running": 1,
+        "sleeping": 256,
+        "threads": 1204
       },
-      "uptime": "5 days, 20:24:46",
+      "uptime": "5 days, 21:24:52",
       "containers": [
         {
           "name": "gallery backend",
-          "status": "Up 8 hours (healthy) gallery-downloader-backend"
+          "status": "Up 9 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "kavita",
-          "status": "Up 23 hours lscr.io/linuxserver/kavita:latest"
+          "status": "Up 24 hours lscr.io/linuxserver/kavita:latest"
         },
         {
           "name": "subscription bot",
-          "status": "Up 23 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 24 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "cadvisor",
@@ -96,15 +96,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 20 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 21 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 20 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 21 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 20 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 21 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -137,27 +137,27 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 7.3,
-        "user": 6.6,
-        "system": 1.3,
-        "idle": 91.0,
-        "iowait": 1.0
+        "total": 6.8,
+        "user": 5.4,
+        "system": 1.0,
+        "idle": 93.2,
+        "iowait": 0.4
       },
       "ram": {
-        "used_gb": 2.97,
+        "used_gb": 2.92,
         "total_gb": 7.87,
-        "percent": 37.7,
-        "available_gb": 4.9
+        "percent": 37.0,
+        "available_gb": 4.96
       },
       "swap": {
-        "used_mb": 199.5,
+        "used_mb": 198.5,
         "total_mb": 4096.0,
-        "percent": 4.9
+        "percent": 4.8
       },
       "load": {
-        "1min": 0.44,
-        "5min": 0.73,
-        "15min": 0.9,
+        "1min": 0.46,
+        "5min": 0.59,
+        "15min": 0.8,
         "cores": 4
       },
       "disks": [
@@ -173,16 +173,16 @@
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.3,
-          "free_gb": 747.9,
+          "used_gb": 121.2,
+          "free_gb": 748.0,
           "percent": 13.2
         }
       ],
       "disk_io": {
-        "read_mb": 1015.0,
-        "write_mb": 1621.9
+        "read_mb": 903.8,
+        "write_mb": 1571.5
       },
-      "temperature_c": 53,
+      "temperature_c": 51,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -191,16 +191,16 @@
         }
       },
       "processes": {
-        "total": 573,
+        "total": 574,
         "running": 0,
-        "sleeping": 480,
-        "threads": 3354
+        "sleeping": 479,
+        "threads": 3355
       },
-      "uptime": "5 days, 20:24:47",
+      "uptime": "5 days, 21:24:53",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 20 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 21 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -245,17 +245,17 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 13.4,
+        "total": 12.1,
         "user": 9.0,
-        "system": 3.6,
+        "system": 3.5,
         "idle": 87.3,
         "iowait": 0.0
       },
       "ram": {
-        "used_gb": 1.76,
+        "used_gb": 1.78,
         "total_gb": 7.64,
-        "percent": 23.1,
-        "available_gb": 5.87
+        "percent": 23.3,
+        "available_gb": 5.86
       },
       "swap": {
         "used_mb": 0.8,
@@ -263,9 +263,9 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 1.81,
-        "5min": 1.3,
-        "15min": 1.04,
+        "1min": 0.46,
+        "5min": 0.68,
+        "15min": 0.79,
         "cores": 4
       },
       "disks": [
@@ -279,10 +279,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1.3,
-        "write_mb": 491.6
+        "read_mb": 1.4,
+        "write_mb": 509.1
       },
-      "temperature_c": 34,
+      "temperature_c": 32,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -292,11 +292,11 @@
       },
       "processes": {
         "total": 264,
-        "running": 0,
+        "running": 1,
         "sleeping": 169,
         "threads": 926
       },
-      "uptime": "5 days, 20:24:50",
+      "uptime": "5 days, 21:24:56",
       "containers": [
         {
           "name": "cadvisor",
@@ -304,11 +304,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 20 hours grafana/grafana:latest"
+          "status": "Up 21 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 20 hours prom/prometheus:latest"
+          "status": "Up 21 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -360,45 +360,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Big Trombone",
-      "artist": "Skatalites (The)",
-      "album": "Stretching Out - CD 1",
-      "genre": "Reggae",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/4446e0a08d7dbea74e364af5",
-      "duration": 251,
-      "elapsed": 173
+      "title": "John Peel 2003-08-28",
+      "artist": "John Peel (R1)",
+      "album": "from RA",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/df7302a34b3dff0c62016e43",
+      "duration": 7082,
+      "elapsed": 540
     },
     "playing_next": {
-      "title": "We're Gonna Drop The Atom Bomb",
-      "artist": "Turbonegro"
+      "title": "at1692-Peel BFBS Oldtape 01",
+      "artist": "John Peel"
     },
-    "listeners": 1,
+    "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "She's My Scorcher",
-        "artist": "toots and the maytals",
-        "played_at": 1783368385
+        "title": "Free Chant (Churchical Chant Of The Iyabinghi)",
+        "artist": "African Head Charge",
+        "played_at": 1783371588
       },
       {
-        "title": "The Pioneer of Jamaican Music - 15 - Judgement Day",
-        "artist": "Laurel Aitken",
-        "played_at": 1783368213
+        "title": "First Big Weekend",
+        "artist": "John Peel Festive Fifty 1996",
+        "played_at": 1783371301
       },
       {
-        "title": "\"Terry Talking\"",
-        "artist": "The Toy Dolls",
-        "played_at": 1783368057
+        "title": "I'm The One",
+        "artist": "Rancid  NOFX",
+        "played_at": 1783371190
       },
       {
-        "title": "Young Generation Dub",
-        "artist": "Augustus Pablo",
-        "played_at": 1783367904
+        "title": "Pharaoh Hiding",
+        "artist": "Junior Byles",
+        "played_at": 1783371018
       },
       {
-        "title": "Rare breed",
-        "artist": "The Go-Betweens",
-        "played_at": 1783367701
+        "title": "What' D Ya Do?",
+        "artist": "Ramones",
+        "played_at": 1783370876
       }
     ]
   }
