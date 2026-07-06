@@ -251,51 +251,65 @@ main{margin-left:var(--sidebar-w);min-height:100vh;padding-bottom:60px}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
 
 /* ============================================================
-   FLOATING RADIO POPUP
+   FLOATING RADIO WIDGET — draggable, non-blocking
    ============================================================ */
-.radio-overlay{
-  position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.7);
-  display:none;align-items:center;justify-content:center;
-  backdrop-filter:blur(4px)
+.radio-float{
+  position:fixed;bottom:60px;right:20px;z-index:1500;
+  background:linear-gradient(135deg,#111118,#1a1025);
+  border:1px solid var(--border);border-radius:14px;
+  box-shadow:0 8px 32px rgba(0,0,0,.5);
+  display:none;overflow:hidden;
+  transition:width .25s ease,height .25s ease;
+  width:280px;user-select:none
 }
-.radio-overlay.show{display:flex}
-.radio-popup{
-  background:linear-gradient(135deg,#111118,#1a1025);border:1px solid var(--border);
-  border-radius:16px;padding:1.5rem;max-width:420px;width:90%;
-  box-shadow:0 20px 60px rgba(0,0,0,.5);animation:fadeIn .3s ease-out
+.radio-float.show{display:block}
+.radio-float.collapsed{width:260px}
+.radio-float.collapsed .radio-float-body,.radio-float.collapsed .radio-float-lfm{display:none}
+.radio-float-header{
+  display:flex;align-items:center;gap:.5rem;padding:.5rem .75rem;
+  cursor:grab;background:rgba(255,255,255,.03);border-bottom:1px solid var(--border)
 }
-.radio-popup-close{
-  position:absolute;top:.75rem;right:.75rem;
-  background:none;border:none;color:var(--muted);font-size:1.2rem;
-  cursor:pointer;width:28px;height:28px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;transition:all .2s
+.radio-float-header:active{cursor:grabbing}
+.radio-float-drag{color:var(--muted);font-size:.55rem;letter-spacing:1px}
+.radio-float-track{flex:1;font-size:.72rem;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.radio-float-toggle{
+  background:none;border:none;color:var(--muted);cursor:pointer;
+  font-size:.7rem;padding:2px 4px;transition:color .2s
 }
-.radio-popup-close:hover{background:rgba(255,255,255,.08);color:#fff}
-.radio-popup{position:relative}
-.radio-popup-art{width:100%;border-radius:10px;margin-bottom:.75rem;max-height:200px;object-fit:cover;border:1px solid var(--border)}
-.radio-popup-track{font-size:1rem;color:#fff;font-weight:600;margin-bottom:.15rem}
-.radio-popup-artist{color:var(--accent);font-size:.85rem;margin-bottom:.75rem}
-.radio-popup-bar{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
-.radio-popup-progress{flex:1;height:3px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden}
-.radio-popup-progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 1s linear}
-.radio-popup-time{font-size:.65rem;color:var(--muted);font-variant-numeric:tabular-nums;min-width:40px;text-align:right}
-.radio-popup-actions{display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem}
-.radio-popup-play{
-  width:40px;height:40px;border-radius:50%;border:2px solid var(--accent);
-  background:rgba(99,102,241,.1);color:var(--accent);font-size:.9rem;
+.radio-float-toggle:hover{color:#fff}
+.radio-float-close{
+  background:none;border:none;color:var(--muted);cursor:pointer;
+  font-size:.9rem;padding:0 2px;transition:color .2s
+}
+.radio-float-close:hover{color:var(--red)}
+.radio-float-body{padding:.6rem .75rem}
+.radio-float-art-row{display:flex;gap:.6rem;align-items:center;margin-bottom:.5rem}
+.radio-float-art{width:48px;height:48px;border-radius:8px;object-fit:cover;border:1px solid var(--border);flex-shrink:0}
+.radio-float-artist{color:var(--accent);font-size:.75rem;font-weight:500}
+.radio-float-song{color:#fff;font-size:.82rem;font-weight:600}
+.radio-float-bar{display:flex;align-items:center;gap:.5rem;margin-bottom:.4rem}
+.radio-float-progress{flex:1;height:2px;background:rgba(255,255,255,.08);border-radius:1px;overflow:hidden}
+.radio-float-progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 1s linear}
+.radio-float-time{font-size:.6rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.radio-float-actions{display:flex;align-items:center;gap:.4rem}
+.radio-float-play{
+  width:30px;height:30px;border-radius:50%;border:1.5px solid var(--accent);
+  background:rgba(99,102,241,.1);color:var(--accent);font-size:.65rem;
   cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s
 }
-.radio-popup-play:hover{background:rgba(99,102,241,.2)}
-.radio-popup-play.on{background:var(--accent);color:#fff}
-.radio-popup-vol{width:80px;accent-color:var(--accent)}
-.radio-popup-info{font-size:.72rem;color:var(--muted);line-height:1.5}
-.radio-popup-info strong{color:var(--text)}
-.radio-popup-tags{display:flex;flex-wrap:wrap;gap:.25rem;margin:.4rem 0}
-.radio-popup-tag{font-size:.62rem;padding:1px 7px;border-radius:100px;background:rgba(99,102,241,.15);color:var(--accent)}
-.radio-popup-listeners{font-size:.68rem;color:var(--muted);margin-bottom:.3rem}
-.radio-popup-section{margin-top:.5rem}
-.radio-popup-section .label{font-size:.62rem;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:.2rem}
-.radio-popup-loading{color:var(--muted);font-size:.7rem;font-style:italic}
+.radio-float-play:hover{background:rgba(99,102,241,.2)}
+.radio-float-play.on{background:var(--accent);color:#fff;animation:pulse 1.5s infinite}
+.radio-float-vol{width:60px;height:3px;accent-color:var(--accent)}
+.radio-float-listeners{font-size:.62rem;color:var(--muted);margin-left:auto}
+.radio-float-lfm{padding:.4rem .75rem .6rem;border-top:1px solid var(--border);max-height:160px;overflow-y:auto}
+.radio-float-lfm .lfm-tags{display:flex;flex-wrap:wrap;gap:.2rem;margin:.3rem 0}
+.radio-float-lfm .lfm-tag{font-size:.58rem;padding:1px 6px;border-radius:100px;background:rgba(99,102,241,.15);color:var(--accent)}
+.radio-float-lfm .lfm-section{margin-top:.3rem;font-size:.62rem;color:var(--muted);line-height:1.4}
+.radio-float-lfm .lfm-section .lfm-label{font-size:.55rem;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:.1rem}
+.radio-float-lfm .lfm-loading{color:var(--muted);font-size:.6rem;font-style:italic}
+@media(max-width:768px){
+  .radio-float{right:8px;bottom:50px;width:260px}
+}
 
 /* ============================================================
    NEWS — filterable grid (existing code preserved)
@@ -623,25 +637,34 @@ main{margin-left:var(--sidebar-w);min-height:100vh;padding-bottom:60px}
 </main>
 
 <!-- ============================================================
-     FLOATING RADIO POPUP
+     FLOATING RADIO WIDGET — draggable, non-blocking
      ============================================================ -->
-<div class="radio-overlay" id="radioOverlay" onclick="if(event.target===this)closeRadioPopup()">
-  <div class="radio-popup">
-    <button class="radio-popup-close" onclick="closeRadioPopup()" title="Close">✕</button>
-    <img class="radio-popup-art" id="popupArt" src="" alt="" onerror="this.style.display='none'">
-    <div class="radio-popup-track" id="popupTrack">—</div>
-    <div class="radio-popup-artist" id="popupArtist">—</div>
-    <div class="radio-popup-bar">
-      <div class="radio-popup-progress"><div class="radio-popup-progress-fill" id="popupProgress" style="width:0%"></div></div>
-      <span class="radio-popup-time" id="popupTime">-0:00</span>
-    </div>
-    <div class="radio-popup-actions">
-      <button class="radio-popup-play" id="popupPlayBtn" onclick="popupToggleRadio()" title="Play/Pause">▶</button>
-      <input type="range" class="radio-popup-vol" min="0" max="100" value="80" oninput="document.getElementById('radioAudio').volume=this.value/100" title="Volume">
-      <span class="radio-popup-listeners" id="popupListeners"></span>
-    </div>
-    <div class="radio-popup-info" id="popupInfo"><span class="radio-popup-loading">Loading Last.fm info...</span></div>
+<div class="radio-float" id="radioFloat">
+  <div class="radio-float-header" id="radioFloatHeader">
+    <span class="radio-float-drag">⋮⋮</span>
+    <span class="radio-float-track" id="floatTrack">Not playing</span>
+    <button class="radio-float-toggle" id="floatToggle" onclick="toggleFloatExpand()" title="Expand">▲</button>
+    <button class="radio-float-close" onclick="closeRadioFloat()" title="Close">✕</button>
   </div>
+  <div class="radio-float-body">
+    <div class="radio-float-art-row">
+      <img class="radio-float-art" id="floatArt" src="" alt="" onerror="this.style.display='none'">
+      <div>
+        <div class="radio-float-song" id="floatSong">—</div>
+        <div class="radio-float-artist" id="floatArtist">—</div>
+      </div>
+    </div>
+    <div class="radio-float-bar">
+      <div class="radio-float-progress"><div class="radio-float-progress-fill" id="floatProgress" style="width:0%"></div></div>
+      <span class="radio-float-time" id="floatTime">-0:00</span>
+    </div>
+    <div class="radio-float-actions">
+      <button class="radio-float-play" id="floatPlayBtn" onclick="floatToggleRadio()">▶</button>
+      <input type="range" class="radio-float-vol" min="0" max="100" value="80" oninput="document.getElementById('radioAudio').volume=this.value/100">
+      <span class="radio-float-listeners" id="floatListeners"></span>
+    </div>
+  </div>
+  <div class="radio-float-lfm" id="floatLfm"><span class="lfm-loading">Loading Last.fm...</span></div>
 </div>
 
 <!-- TICKER -->
@@ -797,10 +820,10 @@ function renderRadio(radio) {
 }
 
 // ============================================================
-// RADIO PLAYER CONTROLS + FLOATING POPUP
+// RADIO PLAYER CONTROLS + FLOATING WIDGET
 // ============================================================
-let currentRadio = null; // stores current track info for popup
-let popupTimer = null;
+let currentRadio = null;
+let floatTimer = null;
 
 function toggleRadio(url, btn) {
   const audio = document.getElementById('radioAudio');
@@ -817,8 +840,8 @@ function toggleRadio(url, btn) {
       if (btn) btn.classList.add('playing');
       if (bar) bar.classList.add('visible');
       if (sBtn) sBtn.classList.add('on');
-      showRadioPopup();
-      startPopupProgress();
+      showRadioFloat();
+      startFloatProgress();
     }).catch(e => console.warn(e));
   }
 }
@@ -831,88 +854,117 @@ function stopRadio() {
   if (btn) btn.classList.remove('playing');
   if (bar) bar.classList.remove('visible');
   if (sBtn) sBtn.classList.remove('on');
-  closeRadioPopup();
+  closeRadioFloat();
 }
-
-function showRadioPopup() {
-  const overlay = document.getElementById('radioOverlay');
-  if (!overlay) return;
-  overlay.classList.add('show');
-  updatePopupUI();
+function showRadioFloat() {
+  document.getElementById('radioFloat').classList.add('show');
+  updateFloatUI();
 }
-function closeRadioPopup() {
-  document.getElementById('radioOverlay').classList.remove('show');
-  if (popupTimer) { clearInterval(popupTimer); popupTimer = null; }
+function closeRadioFloat() {
+  document.getElementById('radioFloat').classList.remove('show');
+  if (floatTimer) { clearInterval(floatTimer); floatTimer = null; }
 }
-function popupToggleRadio() {
+function toggleFloatExpand() {
+  const w = document.getElementById('radioFloat');
+  const btn = document.getElementById('floatToggle');
+  w.classList.toggle('collapsed');
+  btn.textContent = w.classList.contains('collapsed') ? '▼' : '▲';
+}
+function floatToggleRadio() {
   const audio = document.getElementById('radioAudio');
-  const btn = document.getElementById('popupPlayBtn');
-  if (audio.paused) {
-    audio.play().then(() => { if (btn) btn.classList.add('on'); startPopupProgress(); });
-  } else {
-    audio.pause();
-    if (btn) btn.classList.remove('on');
-    if (popupTimer) { clearInterval(popupTimer); popupTimer = null; }
-  }
+  const btn = document.getElementById('floatPlayBtn');
+  if (audio.paused) { audio.play().then(() => { if(btn)btn.classList.add('on'); startFloatProgress(); }); }
+  else { audio.pause(); if(btn)btn.classList.remove('on'); if(floatTimer){clearInterval(floatTimer);floatTimer=null;} }
 }
 
-// Update the popup with current radio state from pollRadioLive
-function updatePopupWithRadio(radio) {
+function updateFloatWithRadio(radio) {
   if (!radio) return;
   currentRadio = radio;
-  updatePopupUI();
+  updateFloatUI();
   loadLastFM(radio.now_playing?.artist, radio.now_playing?.title);
 }
 
-function updatePopupUI() {
+function updateFloatUI() {
   if (!currentRadio) return;
-  const np = currentRadio.now_playing||{};
-  const elapsed = np.elapsed||0, duration = np.duration||1;
-  const pct = Math.min(elapsed/duration*100, 100);
-  const rem = Math.max(duration-elapsed, 0);
-  const mins = Math.floor(rem/60), secs = String(Math.floor(rem%60)).padStart(2,'0');
+  const np=currentRadio.now_playing||{}, elapsed=np.elapsed||0, duration=np.duration||1;
+  const pct=Math.min(elapsed/duration*100,100);
+  const rem=Math.max(duration-elapsed,0);
+  const mins=Math.floor(rem/60), secs=String(Math.floor(rem%60)).padStart(2,'0');
 
-  document.getElementById('popupTrack').textContent = np.title||'—';
-  document.getElementById('popupArtist').textContent = np.artist||'—';
-  document.getElementById('popupTime').textContent = `-${mins}:${secs}`;
-  document.getElementById('popupProgress').style.width = pct+'%';
-  document.getElementById('popupListeners').textContent = (currentRadio.listeners||0)+' listening';
+  document.getElementById('floatTrack').textContent = (np.artist||'')+' — '+(np.title||'');
+  document.getElementById('floatSong').textContent = np.title||'—';
+  document.getElementById('floatArtist').textContent = np.artist||'—';
+  document.getElementById('floatTime').textContent = `-${mins}:${secs}`;
+  document.getElementById('floatProgress').style.width = pct+'%';
+  document.getElementById('floatListeners').textContent = (currentRadio.listeners||0)+' listening';
 
-  const art = np.art||'';
-  const artEl = document.getElementById('popupArt');
-  if (art) { artEl.src = art; artEl.style.display = ''; }
-  else artEl.style.display = 'none';
+  const art=np.art||'';
+  const artEl=document.getElementById('floatArt');
+  if(art){artEl.src=art;artEl.style.display='';}else artEl.style.display='none';
 
-  // Keep play button in sync
-  const audio = document.getElementById('radioAudio');
-  const pBtn = document.getElementById('popupPlayBtn');
-  if (pBtn) {
-    if (audio && !audio.paused) pBtn.classList.add('on');
-    else pBtn.classList.remove('on');
-  }
+  const audio=document.getElementById('radioAudio');
+  const pBtn=document.getElementById('floatPlayBtn');
+  if(pBtn){if(audio&&!audio.paused)pBtn.classList.add('on');else pBtn.classList.remove('on');}
 }
 
-function startPopupProgress() {
-  if (popupTimer) clearInterval(popupTimer);
-  popupTimer = setInterval(() => {
-    if (!currentRadio) return;
-    const np = currentRadio.now_playing||{};
-    np.elapsed = (np.elapsed||0) + 1;
-    updatePopupUI();
-  }, 1000);
+function startFloatProgress() {
+  if(floatTimer)clearInterval(floatTimer);
+  floatTimer=setInterval(()=>{if(!currentRadio)return;currentRadio.now_playing.elapsed=(currentRadio.now_playing.elapsed||0)+1;updateFloatUI();},1000);
 }
+
+// ============================================================
+// DRAG — make the float widget draggable
+// ============================================================
+(function(){
+  const w=document.getElementById('radioFloat');
+  const h=document.getElementById('radioFloatHeader');
+  if(!w||!h)return;
+  let dragging=false, startX,startY,startLeft,startTop;
+  h.addEventListener('mousedown',e=>{
+    if(e.target.tagName==='BUTTON'||e.target.tagName==='INPUT')return;
+    dragging=true;startX=e.clientX;startY=e.clientY;
+    const r=w.getBoundingClientRect();
+    startLeft=r.left;startTop=r.top;
+    w.style.right='auto';w.style.bottom='auto';
+    w.style.left=startLeft+'px';w.style.top=startTop+'px';
+    e.preventDefault();
+  });
+  document.addEventListener('mousemove',e=>{
+    if(!dragging)return;
+    w.style.left=(startLeft+e.clientX-startX)+'px';
+    w.style.top=(startTop+e.clientY-startY)+'px';
+  });
+  document.addEventListener('mouseup',()=>{dragging=false;});
+  // Touch support
+  h.addEventListener('touchstart',e=>{
+    if(e.target.tagName==='BUTTON'||e.target.tagName==='INPUT')return;
+    dragging=true;const t=e.touches[0];
+    startX=t.clientX;startY=t.clientY;
+    const r=w.getBoundingClientRect();
+    startLeft=r.left;startTop=r.top;
+    w.style.right='auto';w.style.bottom='auto';
+    w.style.left=startLeft+'px';w.style.top=startTop+'px';
+  },{passive:false});
+  document.addEventListener('touchmove',e=>{
+    if(!dragging)return;
+    const t=e.touches[0];
+    w.style.left=(startLeft+t.clientX-startX)+'px';
+    w.style.top=(startTop+t.clientY-startY)+'px';
+  },{passive:false});
+  document.addEventListener('touchend',()=>{dragging=false;});
+})();
 
 // ============================================================
 // LAST.FM — fetch artist info directly (public API)
 // ============================================================
-const LF_KEY = '2c71b434f3f01b114f3b3dc1c4b14e49'; // public demo key
+const LF_KEY = '2c71b434f3f01b114f3b3dc1c4b14e49';
 let lastLfmArtist = '';
 
 async function loadLastFM(artist, title) {
-  const info = document.getElementById('popupInfo');
+  const info = document.getElementById('floatLfm');
   if (!artist || artist === lastLfmArtist) return;
   lastLfmArtist = artist;
-  info.innerHTML = '<span class="radio-popup-loading">Loading Last.fm info...</span>';
+  info.innerHTML = '<span class="lfm-loading">Loading Last.fm...</span>';
 
   try {
     const r = await fetch(`https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${encodeURIComponent(artist)}&api_key=${LF_KEY}&format=json`);
@@ -923,17 +975,17 @@ async function loadLastFM(artist, title) {
     let html = '';
     if (a.bio?.summary) {
       const bio = a.bio.summary.replace(/<a href="[^"]*">/g,'').replace(/<\/a>/g,'').replace(/Read more.*/,'').trim();
-      if (bio.length > 300) html += '<div class="radio-popup-section"><div class="label">Bio</div>'+bio.substring(0,300)+'...</div>';
-      else if (bio) html += '<div class="radio-popup-section"><div class="label">Bio</div>'+bio+'</div>';
+      if (bio.length > 250) html += '<div class="lfm-section"><div class="lfm-label">Bio</div>'+bio.substring(0,250)+'...</div>';
+      else if (bio) html += '<div class="lfm-section"><div class="lfm-label">Bio</div>'+bio+'</div>';
     }
     if (a.tags?.tag?.length) {
-      html += '<div class="radio-popup-tags">'+a.tags.tag.slice(0,8).map(t=>'<span class="radio-popup-tag">'+t.name+'</span>').join('')+'</div>';
+      html += '<div class="lfm-tags">'+a.tags.tag.slice(0,6).map(t=>'<span class="lfm-tag">'+t.name+'</span>').join('')+'</div>';
     }
     if (a.similar?.artist?.length) {
-      html += '<div class="radio-popup-section"><div class="label">Similar Artists</div>'+a.similar.artist.slice(0,5).map(s=>s.name).join(', ')+'</div>';
+      html += '<div class="lfm-section"><div class="lfm-label">Similar</div>'+a.similar.artist.slice(0,5).map(s=>s.name).join(', ')+'</div>';
     }
     if (a.stats) {
-      html += `<div class="radio-popup-section"><div class="label">Stats</div>Listeners: ${Number(a.stats.listeners||0).toLocaleString()} · Plays: ${Number(a.stats.playcount||0).toLocaleString()}</div>`;
+      html += '<div class="lfm-section"><div class="lfm-label">Stats</div>'+Number(a.stats.listeners||0).toLocaleString()+' listeners · '+Number(a.stats.playcount||0).toLocaleString()+' plays</div>';
     }
     info.innerHTML = html || '';
   } catch(e) { info.innerHTML = ''; }
@@ -1120,8 +1172,8 @@ async function pollRadioLive() {
       listeners:s.listeners?.current||0,
       listen_url:s.station?.listen_url||'https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3'
     });
-    // Keep popup in sync if visible
-    updatePopupWithRadio({
+    // Keep float widget in sync if visible
+    updateFloatWithRadio({
       is_online:s.is_online,is_live:s.live?.is_live,
       now_playing:{artist:song.artist||'',title:song.title||'',album:song.album||'',art:song.art||'',genre:song.genre||'',duration:s.now_playing?.duration||1,elapsed:s.now_playing?.elapsed||0},
       listeners:s.listeners?.current||0
