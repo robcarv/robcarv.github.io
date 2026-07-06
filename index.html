@@ -59,6 +59,12 @@ body{
 .sidebar-label{opacity:0;transition:opacity .2s;font-size:.78rem}
 .sidebar:hover .sidebar-label{opacity:1}
 .sidebar-footer{display:flex;flex-direction:column;align-items:center;gap:.5rem;width:100%;padding:0 .5rem}
+.sidebar-time{font-size:.6rem;color:var(--muted);font-variant-numeric:tabular-nums;text-align:center;line-height:1.3;white-space:nowrap}
+.sidebar-weather{display:flex;align-items:center;gap:.2rem;font-size:.6rem;color:var(--muted);cursor:default}
+.sidebar-weather .weather-icon{font-size:.9rem}
+.sidebar-weather .weather-temp{font-weight:500;color:var(--text)}
+.sidebar:hover .sidebar-time,.sidebar:hover .sidebar-weather{opacity:1}
+@media(max-width:768px){.sidebar-time,.sidebar-weather{display:none}}
 .lang-switch{font-size:.65rem;color:var(--muted);text-decoration:none;padding:3px 0}
 .lang-switch:hover{color:var(--accent)}
 .sidebar-play-btn{
@@ -279,7 +285,7 @@ main{margin-left:var(--sidebar-w);min-height:100vh;padding-bottom:60px}
   background:rgba(10,10,15,.95);backdrop-filter:blur(8px);
   border-top:1px solid var(--border);height:36px;overflow:hidden;display:flex;align-items:center
 }
-.ticker-track{display:flex;gap:2.5rem;animation:ticker-scroll 25s linear infinite;white-space:nowrap;padding:0 2rem}
+.ticker-track{display:flex;gap:2.5rem;animation:ticker-scroll 60s linear infinite;white-space:nowrap;padding:0 2rem}
 .ticker-track:hover{animation-play-state:paused}
 .ticker-item{display:flex;align-items:center;gap:.4rem;font-size:.7rem;color:var(--muted)}
 .ticker-item .ticker-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
@@ -357,6 +363,11 @@ main{margin-left:var(--sidebar-w);min-height:100vh;padding-bottom:60px}
   </nav>
   <div class="sidebar-footer">
     <a href="index-pt.html" class="lang-switch" title="Português">PT</a>
+    <div class="sidebar-time" id="sidebarTime" title="Dublin time"></div>
+    <div class="sidebar-weather" id="sidebarWeather" title="Loading weather...">
+      <span class="weather-icon">☁️</span>
+      <span class="weather-temp">--°</span>
+    </div>
     <button class="sidebar-play-btn" id="sidebarPlayBtn" onclick="sidebarToggleRadio()" title="Play Radio">▶</button>
   </div>
 </aside>
@@ -381,7 +392,7 @@ main{margin-left:var(--sidebar-w);min-height:100vh;padding-bottom:60px}
           <p class="hero-subtitle">Building reliable automation and self-hosted infrastructure</p>
           <div class="hero-details">
             <span class="hero-detail"><i class="las la-map-marker"></i> Dublin, Ireland</span>
-            <span class="hero-detail"><i class="las la-envelope"></i> contact@robcarv.dev</span>
+            <span class="hero-detail"><i class="las la-envelope"></i> robert_carvalho@hotmail.com</span>
           </div>
           <div class="hero-stats">
             <div class="hero-stat"><span class="hero-stat-num">10+</span><span class="hero-stat-label">Years of<br>Experience</span></div>
@@ -866,7 +877,7 @@ function handleContact(e) {
   e.preventDefault();
   const f = new FormData(e.target);
   const body=`Name: ${f.get('name')}%0D%0AEmail: ${f.get('email')}%0D%0A%0D%0A${f.get('message')}`;
-  window.location.href = `mailto:contact@robcarv.dev?subject=Portfolio Contact&body=${body}`;
+  window.location.href = `mailto:robert_carvalho@hotmail.com?subject=Portfolio Contact&body=${body}`;
   document.getElementById('contactStatus').textContent = 'Opening email client...';
 }
 
@@ -946,6 +957,59 @@ function updateFooterStatus() {
   const containers = Object.values(nodes).reduce((sum,n)=>sum+(n.container_count||0),0);
   el.innerHTML = `Updated: ${healthData.updated||'?'} · ${ok}/${total} nodes healthy · ${containers} containers`;
 }
+
+// ============================================================
+// DUBLIN TIME — live clock in sidebar
+// ============================================================
+function updateTime() {
+  const el = document.getElementById('sidebarTime');
+  if (!el) return;
+  const now = new Date();
+  const dublin = new Date(now.toLocaleString('en-US', {timeZone:'Europe/Dublin'}));
+  const h = String(dublin.getHours()).padStart(2,'0');
+  const m = String(dublin.getMinutes()).padStart(2,'0');
+  el.textContent = `Dublin ${h}:${m}`;
+}
+setInterval(updateTime, 30000);
+updateTime();
+
+// ============================================================
+// WEATHER — Open-Meteo (free, no API key) via geolocation
+// ============================================================
+async function loadWeather() {
+  const el = document.getElementById('sidebarWeather');
+  if (!el) return;
+  try {
+    let lat, lon;
+    // Try browser geolocation first
+    if (navigator.geolocation) {
+      const pos = await new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(resolve, reject, {timeout:5000, maximumAge:600000});
+      });
+      lat = pos.coords.latitude;
+      lon = pos.coords.longitude;
+    }
+    // Fallback to Dublin
+    if (!lat) { lat = 53.3498; lon = -6.2603; }
+
+    const r = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat.toFixed(2)}&longitude=${lon.toFixed(2)}&current=temperature_2m,weather_code&timezone=auto`);
+    const d = await r.json();
+    const temp = Math.round(d.current.temperature_2m);
+    const code = d.current.weather_code;
+
+    // Map weather codes to emojis
+    const icons = {0:'☀️',1:'🌤️',2:'⛅',3:'☁️',45:'🌫️',48:'🌫️',51:'🌦️',53:'🌦️',55:'🌧️',61:'🌧️',63:'🌧️',65:'🌧️',71:'🌨️',73:'🌨️',75:'🌨️',80:'🌧️',95:'⛈️',96:'⛈️',97:'⛈️'};
+    const icon = icons[code] || '☁️';
+    const city = lat===53.3498&&lon===-6.2603?'Dublin':'';
+
+    el.innerHTML = `<span class="weather-icon">${icon}</span><span class="weather-temp">${temp}°</span>`;
+    el.title = `Weather: ${temp}°C${city?' in '+city:''} (via Open-Meteo)`;
+  } catch(e) {
+    el.innerHTML = '<span class="weather-icon">☁️</span><span class="weather-temp">--°</span>';
+  }
+}
+loadWeather();
+setInterval(loadWeather, 900000); // refresh every 15 min
 
 // ============================================================
 // INIT
