@@ -8,250 +8,604 @@
 <meta http-equiv="Expires" content="0">
 <title>Robert Carvalho · QA Automation Engineer</title>
 <meta name="description" content="QA Automation Engineer at IBM. Homelab enthusiast with 3 Raspberry Pis, TrueNAS storage, and 55+ Docker services.">
-<meta property="og:title" content="Robert Carvalho · QA Automation Engineer">
-<meta property="og:description" content="QA Automation Engineer at IBM. Homelab enthusiast.">
+<meta property="og:title" content="Robert Carvalho · Portfolio">
+<meta property="og:description" content="QA Automation Engineer | Homelab | Open Source">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="icon" href="avatar.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 <style>
-:root{--bg:#0a0a0f;--bg-card:#111118;--border:#1e1e2a;--text:#e4e4eb;--text-muted:#8888a0;--accent:#6366f1;--accent2:#a855f7;--green:#22c55e;--yellow:#eab308;--red:#ef4444;--blue:#3b82f6}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;overflow-x:hidden}
-.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
-nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,15,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.nav-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:52px}
-.nav-logo{font-weight:700;font-size:1.25rem;color:#fff;text-decoration:none;display:flex;align-items:center;gap:.5rem}
-.nav-logo .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block}
-.nav-links{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap}
-.nav-links a{color:var(--text-muted);text-decoration:none;font-size:.75rem;transition:color .2s}
-.nav-links a:hover{color:#fff}
-/* Nav radio bar */
-.nav-radio{max-width:1100px;margin:0 auto;padding:0 1.5rem 5px;display:flex;align-items:center;gap:.6rem;font-size:.7rem;color:var(--muted)}
-.nav-radio-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;background:var(--green)}.nav-radio-dot.live{background:var(--red);animation:pulse 1.5s infinite}
-.nav-radio-text{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--text)}
-.nav-radio-text strong{color:#fff;font-weight:500}
-.nav-radio-time{font-size:.65rem;color:var(--muted);flex-shrink:0}
-.nav-radio-btn{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--accent);background:rgba(99,102,241,.1);color:var(--accent);font-size:.6rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;padding:0}
-.nav-radio-btn:hover{background:rgba(99,102,241,.25)}.nav-radio-btn.playing{background:var(--accent);color:#fff}
-.nav-radio-ctrl{display:none;align-items:center;gap:.3rem;margin-left:.3rem}.nav-radio-ctrl.show{display:flex}
-.nav-radio-vol{width:50px;height:2px;accent-color:var(--accent)}
-.lang-toggle{display:flex;gap:4px;margin-left:1rem;padding-left:1rem;border-left:1px solid var(--border)}
-.lang-toggle a{font-size:.65rem;padding:3px 8px;border-radius:4px}
-.lang-toggle a.active{background:#1e1e2a;color:#fff}
-.hero{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;padding-top:70px}
-.hero-avatar{width:100px;height:100px;border-radius:50%;border:2px solid var(--border);margin:0 auto 1.5rem;overflow:hidden;background:#1e1e2a;transition:border-color .3s}
-.hero-avatar:hover{border-color:var(--accent)}
-.hero-avatar img{width:100%;height:100%;object-fit:cover}
-.hero-avatar .avatar-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2.5rem}
-.hero h1{font-size:2.5rem;font-weight:800;color:#fff;margin-bottom:.5rem;letter-spacing:-.02em}
-.hero .subtitle{font-size:1.1rem;color:var(--text-muted);margin-bottom:1.5rem}
-.hero .socials{display:flex;gap:1rem;justify-content:center;margin-bottom:1.5rem}
-.hero .socials a{color:var(--text-muted);text-decoration:none;padding:8px 14px;border-radius:8px;border:1px solid var(--border);font-size:.8rem;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
-.hero .socials a svg{width:14px;height:14px;opacity:.6;transition:opacity .2s}
-.hero .socials a:hover{border-color:var(--accent);color:#fff;background:rgba(99,102,241,.08)}.hero .socials a:hover svg{opacity:1}
-.hero .radio-badge{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,#059669,#047857);color:#fff;padding:.5rem 1.25rem;border-radius:100px;font-size:.875rem;font-weight:500;text-decoration:none;transition:transform .2s}
-.hero .radio-badge:hover{transform:scale(1.05)}
-.section{padding:2rem 0}
-.section-title{font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
-.section-title .icon{font-size:1.2rem}
-.section-sub{font-size:.8rem;color:var(--text-muted);font-weight:400;margin-left:auto;display:flex;align-items:center;gap:.5rem}
-.grid{display:grid;gap:1rem}.grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.grid-2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}.grid-4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-.card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:border-color .2s,transform .2s}
-.card:hover{border-color:#2a2a3a}
-.card.expanded{border-color:var(--accent)}
+/* ============================================================
+   DESIGN TOKENS — dark theme
+   ============================================================ */
+:root{
+  --bg:#0a0a0f;--bg-card:#111118;--bg-sidebar:#0d0d14;
+  --border:#1e1e2a;--text:#e4e4eb;--muted:#8888a0;
+  --accent:#6366f1;--accent2:#a855f7;
+  --green:#22c55e;--yellow:#eab308;--red:#ef4444;--blue:#3b82f6;
+  --sidebar-w:70px;--sidebar-w-exp:180px;--radius:12px
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh
+}
+
+/* ============================================================
+   SIDEBAR — fixed left, icon nav, expands on hover
+   ============================================================ */
+.sidebar{
+  position:fixed;left:0;top:0;bottom:0;width:var(--sidebar-w);
+  background:var(--bg-sidebar);border-right:1px solid var(--border);
+  display:flex;flex-direction:column;align-items:center;
+  padding:1.2rem 0;z-index:1000;transition:width .3s ease;overflow:hidden
+}
+.sidebar:hover{width:var(--sidebar-w-exp)}
+.sidebar-logo{margin-bottom:.8rem}
+.sidebar-avatar{width:36px;height:36px;border-radius:50%;border:2px solid var(--accent)}
+.sidebar-nav{flex:1;display:flex;flex-direction:column;gap:.3rem;margin-top:1rem;width:100%}
+.sidebar-link{
+  display:flex;align-items:center;gap:1rem;padding:.65rem 1.25rem;
+  color:var(--muted);text-decoration:none;white-space:nowrap;
+  border-left:3px solid transparent;transition:all .2s;font-size:.8rem
+}
+.sidebar-link i{font-size:1.2rem;min-width:24px;text-align:center}
+.sidebar-link:hover,.sidebar-link.active{
+  color:var(--text);background:rgba(99,102,241,.1);border-left-color:var(--accent)
+}
+.sidebar-label{opacity:0;transition:opacity .2s;font-size:.78rem}
+.sidebar:hover .sidebar-label{opacity:1}
+.sidebar-footer{display:flex;flex-direction:column;align-items:center;gap:.5rem;width:100%;padding:0 .5rem}
+.lang-switch{font-size:.65rem;color:var(--muted);text-decoration:none;padding:3px 0}
+.lang-switch:hover{color:var(--accent)}
+.sidebar-play-btn{
+  width:32px;height:32px;border-radius:50%;border:1.5px solid var(--accent);
+  background:rgba(99,102,241,.1);color:var(--accent);font-size:.7rem;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s
+}
+.sidebar-play-btn:hover{background:rgba(99,102,241,.2)}
+.sidebar-play-btn.on{background:var(--accent);color:#fff;animation:pulse 1.5s infinite}
+
+/* ============================================================
+   MAIN CONTENT — offset by sidebar
+   ============================================================ */
+main{margin-left:var(--sidebar-w);min-height:100vh;padding-bottom:60px}
+.container{max-width:900px;margin:0 auto;padding:0 2rem}
+
+/* ============================================================
+   SECTION HEADERS
+   ============================================================ */
+.section{padding:3rem 0}
+.section-header{display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem}
+.section-icon{font-size:1.5rem;color:var(--accent)}
+.section-tag{font-size:.65rem;color:var(--accent);text-transform:uppercase;letter-spacing:2px;font-weight:600}
+.section-title{font-size:2rem;font-weight:700;color:#fff;margin-bottom:2rem;line-height:1.2}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero-section{min-height:100vh;display:flex;align-items:center}
+.hero-grid{display:flex;gap:3rem;align-items:center}
+.hero-avatar-col{flex-shrink:0}
+.hero-avatar-frame{position:relative;width:200px;height:200px}
+.hero-avatar-frame::before{
+  content:'';position:absolute;inset:-8px;border-radius:50%;
+  border:2px solid rgba(99,102,241,.25)
+}
+.hero-avatar{
+  width:200px;height:200px;border-radius:50%;object-fit:cover;
+  border:3px solid var(--accent)
+}
+.hero-info-col{flex:1}
+.hero-overline{color:var(--accent);font-size:.85rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:.5rem}
+.hero-title{font-size:3rem;font-weight:700;margin:.3rem 0;line-height:1.1}
+.hero-subtitle{color:var(--muted);font-size:1.05rem;margin-bottom:1.5rem}
+.hero-details{display:flex;gap:1.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.hero-detail{color:var(--muted);font-size:.85rem}
+.hero-detail i{color:var(--accent);margin-right:.3rem}
+.hero-stats{display:flex;gap:2rem;margin-bottom:2rem}
+.hero-stat-num{font-size:2.5rem;font-weight:700;color:var(--accent);display:block;line-height:1}
+.hero-stat-label{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.hero-actions{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.hero-social-link{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;border:1px solid var(--border);font-size:.8rem;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+.hero-social-link svg{width:16px;height:16px;opacity:.7;transition:opacity .2s}
+.hero-social-link:hover{border-color:var(--accent);color:#fff;background:rgba(99,102,241,.08)}
+.hero-social-link:hover svg{opacity:1}
+.hero-cta-btn{
+  background:var(--accent);color:#fff;border:none;padding:.65rem 1.5rem;
+  border-radius:8px;font-weight:600;cursor:pointer;text-decoration:none;
+  font-size:.9rem;transition:background .2s;margin-left:.5rem
+}
+.hero-cta-btn:hover{background:var(--accent2)}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about-content{max-width:700px}
+.about-content p{color:#aaa;line-height:1.8;margin-bottom:1rem;font-size:.9rem}
+
+/* ============================================================
+   RESUME — Timeline
+   ============================================================ */
+.timeline{position:relative;padding-left:2rem;border-left:2px solid var(--border);max-width:650px}
+.timeline-item{position:relative;margin-bottom:2rem}
+.timeline-item::before{
+  content:'';position:absolute;left:-2.45rem;top:.45rem;
+  width:12px;height:12px;border-radius:50%;
+  background:var(--accent);border:2px solid var(--bg)
+}
+.timeline-period{
+  display:inline-block;background:rgba(99,102,241,.15);color:var(--accent);
+  padding:.2rem .7rem;border-radius:20px;font-size:.75rem;margin-bottom:.4rem;font-weight:500
+}
+.timeline-role{font-size:1.05rem;font-weight:600;color:#fff;margin-bottom:.15rem}
+.timeline-company{color:var(--muted);font-size:.85rem;margin-bottom:.5rem}
+.timeline-items{list-style:none;padding:0}
+.timeline-items li{color:#aaa;font-size:.8rem;padding:.15rem 0;position:relative;padding-left:1rem}
+.timeline-items li::before{content:'—';position:absolute;left:0;color:var(--accent)}
+
+/* ============================================================
+   EXPERTISES
+   ============================================================ */
+.expertise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.expertise-card{
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1.75rem;text-align:center;transition:border-color .2s
+}
+.expertise-card:hover{border-color:var(--accent)}
+.expertise-card i{font-size:2.5rem;color:var(--accent);display:block;margin-bottom:.75rem}
+.expertise-card h3{font-size:1.05rem;margin-bottom:.5rem;color:#fff}
+.expertise-card p{color:var(--muted);font-size:.8rem;line-height:1.5}
+
+/* ============================================================
+   SKILLS — Grid with devicon
+   ============================================================ */
+.skills-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(95px,1fr));gap:.75rem
+}
+.skill-item{
+  display:flex;flex-direction:column;align-items:center;gap:.4rem;
+  padding:.75rem .5rem;background:var(--bg-card);border:1px solid var(--border);
+  border-radius:10px;transition:all .2s
+}
+.skill-item:hover{border-color:var(--accent);transform:translateY(-2px)}
+.skill-item img{width:36px;height:36px}
+.skill-name{font-size:.68rem;color:var(--muted)}
+
+/* ============================================================
+   PORTFOLIO — Project cards
+   ============================================================ */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem}
+.project-card{
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1.5rem;transition:all .2s
+}
+.project-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.project-card h3{font-size:1.05rem;color:#fff;margin-bottom:.4rem}
+.project-card p{color:var(--muted);font-size:.8rem;margin-bottom:.75rem;line-height:1.5}
+.project-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.75rem}
+.project-tag{
+  background:rgba(99,102,241,.12);color:var(--accent);
+  padding:.15rem .55rem;border-radius:4px;font-size:.65rem;font-weight:500
+}
+.project-link{color:var(--accent);text-decoration:none;font-size:.8rem;font-weight:500}
+.project-link:hover{text-decoration:underline}
+
+/* ============================================================
+   HOMELAB — 3 Pi cards (existing code preserved)
+   ============================================================ */
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:border-color .2s}
+.card:hover{border-color:#2a2a3a}.card.expanded{border-color:var(--accent)}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}
 .card-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1rem;gap:.5rem}
-.card-title{font-weight:600;font-size:.95rem;color:#fff}.card-sub{font-size:.72rem;color:var(--text-muted);margin-top:2px}
+.card-title{font-weight:600;font-size:.95rem;color:#fff}.card-sub{font-size:.72rem;color:var(--muted);margin-top:2px}
 .dot{width:8px;height:8px;border-radius:50%;display:inline-block;animation:pulse-glow 2s ease-in-out infinite}
-.dot-ok{background:var(--green);box-shadow:0 0 6px rgba(34,197,94,.4)}.dot-warn{background:var(--yellow);box-shadow:0 0 6px rgba(234,179,8,.4)}.dot-fail{background:var(--red);box-shadow:0 0 6px rgba(239,68,68,.4)}.dot-loading{background:var(--blue);box-shadow:0 0 6px rgba(59,130,246,.4)}
+.dot-ok{background:var(--green);box-shadow:0 0 6px rgba(34,197,94,.4)}
+.dot-warn{background:var(--yellow);box-shadow:0 0 6px rgba(234,179,8,.4)}
+.dot-fail{background:var(--red);box-shadow:0 0 6px rgba(239,68,68,.4)}
 @keyframes pulse-glow{0%,100%{opacity:1}50%{opacity:.5}}
-.metric{margin-bottom:.75rem}.metric-label{display:flex;justify-content:space-between;font-size:.75rem;margin-bottom:3px}.metric-label span:first-child{color:var(--text-muted)}.metric-label span:last-child{color:var(--text);font-variant-numeric:tabular-nums}.metric-bar{height:4px;background:#1e1e2a;border-radius:2px;overflow:hidden}.metric-fill{height:100%;border-radius:2px;transition:width .5s ease-out}.metric-fill.low{background:var(--green)}.metric-fill.mid{background:var(--yellow)}.metric-fill.high{background:var(--red)}
-.badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:100px;font-size:.7rem;font-weight:500}.badge-ok{background:rgba(34,197,94,.1);color:var(--green);border:1px solid rgba(34,197,94,.2)}.badge-warn{background:rgba(234,179,8,.1);color:var(--yellow);border:1px solid rgba(234,179,8,.2)}.badge-fail{background:rgba(239,68,68,.1);color:var(--red);border:1px solid rgba(239,68,68,.2)}
-/* Services section */
-.services-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
-.services-card-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);background:rgba(255,255,255,.02)}
-.services-card-header h3{font-size:1rem;color:#fff;font-weight:600;display:flex;align-items:center;gap:.5rem}
-.services-card-header .svc-count{font-size:.7rem;color:var(--text-muted);background:#1e1e2a;padding:2px 10px;border-radius:100px}
-.services-table{width:100%;border-collapse:collapse;font-size:.8rem}
-.services-table th{text-align:left;padding:.6rem 1.5rem;font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);font-weight:500;background:rgba(0,0,0,.15)}
-.services-table td{padding:.6rem 1.5rem;border-top:1px solid rgba(255,255,255,.03);color:var(--text-muted)}
-.services-table tr:hover td{background:rgba(255,255,255,.015)}
-.status-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;font-size:.68rem;font-weight:500}
-.status-up{background:rgba(34,197,94,.1);color:var(--green);border:1px solid rgba(34,197,94,.2)}
-.status-exited{background:rgba(239,68,68,.1);color:var(--red);border:1px solid rgba(239,68,68,.2)}
-.status-paused{background:rgba(234,179,8,.1);color:var(--yellow);border:1px solid rgba(234,179,8,.2)}
-.status-unknown{background:rgba(148,163,184,.1);color:#94a3b8;border:1px solid rgba(148,163,184,.2)}
-/* Radio slim bar */
-.radio-bar{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,#111118,#1a1025);border:1px solid var(--border);border-radius:10px;padding:.5rem 1rem;gap:.75rem}
-.radio-bar-left{display:flex;align-items:center;gap:.6rem;min-width:0;flex:1}
-.radio-bar-dot{width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0}.radio-bar-dot.live{background:var(--red);animation:pulse 1.5s infinite}
-.radio-bar-text{font-size:.78rem;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.radio-bar-text strong{color:#fff;font-weight:500}
-.radio-bar-time{font-size:.68rem;color:var(--muted);font-variant-numeric:tabular-nums;flex-shrink:0}
-.radio-bar-right{flex-shrink:0}
-.radio-play-btn{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--accent);background:rgba(99,102,241,.1);color:var(--accent);font-size:.8rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
-.radio-play-btn:hover{background:rgba(99,102,241,.25);transform:scale(1.05)}
-.radio-play-btn.playing{background:var(--accent);color:#fff;border-color:var(--accent);animation:pulse 1.5s infinite}
-.radio-audio-bar{display:none;align-items:center;gap:.5rem;margin-top:.4rem;padding:0 .5rem}
-.radio-audio-bar.visible{display:flex}
-.radio-audio-bar .radio-progress-bar{flex:1;height:2px;background:rgba(255,255,255,.06);border-radius:1px;overflow:hidden;margin:0}
-.radio-audio-bar .radio-progress-fill{height:100%;border-radius:1px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 1s linear}
+.metric{margin-bottom:.75rem}.metric-label{display:flex;justify-content:space-between;font-size:.75rem;margin-bottom:3px}
+.metric-label span:first-child{color:var(--muted)}.metric-label span:last-child{color:var(--text);font-variant-numeric:tabular-nums}
+.metric-bar{height:4px;background:#1e1e2a;border-radius:2px;overflow:hidden}
+.metric-fill{height:100%;border-radius:2px;transition:width .5s ease-out}
+.metric-fill.low{background:var(--green)}.metric-fill.mid{background:var(--yellow)}.metric-fill.high{background:var(--red)}
+.badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:100px;font-size:.7rem;font-weight:500}
+.badge-ok{background:rgba(34,197,94,.1);color:var(--green);border:1px solid rgba(34,197,94,.2)}
+.badge-warn{background:rgba(234,179,8,.1);color:var(--yellow);border:1px solid rgba(234,179,8,.2)}
+.expand-detail{font-size:.68rem;color:var(--muted);margin-top:.4rem;padding-top:.4rem;border-top:1px solid var(--border);display:none}
+.card.expanded .expand-detail{display:block}
+
+/* ============================================================
+   RADIO — player section + slim bar (existing code preserved)
+   ============================================================ */
 .radio-player-card{display:flex;gap:1rem;background:linear-gradient(135deg,#111118,#1a1025);border:1px solid var(--border);border-radius:12px;padding:1rem;align-items:flex-start}
 .radio-art{width:96px;height:96px;border-radius:8px;object-fit:cover;flex-shrink:0;border:1px solid var(--border)}
 .radio-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:.5rem}
 .radio-track{font-size:.9rem;color:var(--text)}.radio-track strong{color:#fff}
 .radio-album{font-size:.72rem;color:var(--muted)}
+.radio-bar{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,#111118,#1a1025);border:1px solid var(--border);border-radius:10px;padding:.5rem 1rem;gap:.75rem}
+.radio-bar-left{display:flex;align-items:center;gap:.6rem;min-width:0;flex:1}
+.radio-bar-dot{width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0}.radio-bar-dot.live{background:var(--red);animation:pulse 1.5s infinite}
+.radio-bar-text{font-size:.78rem;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.radio-bar-time{font-size:.68rem;color:var(--muted);font-variant-numeric:tabular-nums;flex-shrink:0}
+.radio-play-btn{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--accent);background:rgba(99,102,241,.1);color:var(--accent);font-size:.8rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.radio-play-btn:hover{background:rgba(99,102,241,.25)}.radio-play-btn.playing{background:var(--accent);color:#fff;animation:pulse 1.5s infinite}
+.radio-audio-bar{display:none;align-items:center;gap:.5rem;margin-top:.4rem}.radio-audio-bar.visible{display:flex}
+.radio-audio-bar .radio-progress-bar{flex:1;height:2px;background:rgba(255,255,255,.06);border-radius:1px;overflow:hidden}
+.radio-audio-bar .radio-progress-fill{height:100%;border-radius:1px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
 .radio-next{font-size:.72rem;color:var(--muted);padding:.3rem .5rem;background:rgba(255,255,255,.03);border-radius:6px}
 .radio-next-label{color:var(--accent);font-weight:500}
 .radio-tags{display:flex;flex-wrap:wrap;gap:.25rem;margin-top:.2rem}
 .radio-tag{font-size:.65rem;padding:1px 8px;border-radius:100px;background:rgba(99,102,241,.15);color:var(--accent);white-space:nowrap}
 .radio-bio{font-size:.68rem;color:var(--muted);line-height:1.4;max-height:3.5em;overflow:hidden}
-.radio-similar{font-size:.68rem;color:var(--muted)}
-.radio-lfm-link{font-size:.7rem;color:var(--muted);text-decoration:none;padding:0 4px;flex-shrink:0}.radio-lfm-link:hover{color:var(--accent)}
-@media(max-width:500px){.radio-player-card{flex-direction:column}.radio-art{width:64px;height:64px}}
-.radio-vol{width:60px;height:3px;accent-color:var(--accent)}
-/* Experience accordion */
-.exp-list{display:flex;flex-direction:column;gap:1px}
-.exp-item{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg-card);cursor:pointer;transition:border-color .2s}
-.exp-item:hover{border-color:#2a2a3a}
-.exp-item:first-child{border-radius:10px 10px 0 0}.exp-item:last-child{border-radius:0 0 10px 10px}.exp-item:only-child{border-radius:10px}
-.exp-header{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.25rem;user-select:none}
-.exp-role{font-weight:600;color:#fff;font-size:.95rem}
-.exp-company{color:var(--accent);font-size:.78rem;margin-top:1px}
-.exp-period{color:var(--muted);font-size:.68rem;margin-top:1px}
-.exp-arrow{color:var(--muted);font-size:.7rem;transition:transform .3s ease;flex-shrink:0}
-.exp-item.open .exp-arrow{transform:rotate(180deg)}
-.exp-body{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;padding:0 1.25rem}
-.exp-item.open .exp-body{max-height:300px;padding:0 1.25rem 1rem}
-.exp-body ul{list-style:none}.exp-body li{color:var(--muted);font-size:.78rem;padding:3px 0 3px 1rem;position:relative}
-.exp-body li::before{content:'—';position:absolute;left:0;color:var(--border)}
-/* Projects */
-.project-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:border-color .2s}.project-card:hover{border-color:#2a2a3a;transform:translateY(-1px)}.project-card h4{font-size:.95rem;color:#fff;margin-bottom:.5rem}.project-card p{font-size:.8rem;color:var(--text-muted);margin-bottom:.75rem}.project-card .links{display:flex;gap:.75rem}.project-card .links a{font-size:.78rem;color:var(--accent);text-decoration:none;padding:4px 10px;border-radius:6px;border:1px solid var(--border);transition:all .2s}.project-card .links a:hover{border-color:var(--accent);background:rgba(99,102,241,.1)}
-/* News */
-.news-source{font-size:.65rem;padding:2px 8px;border-radius:100px;font-weight:500;white-space:nowrap;cursor:pointer;transition:opacity .2s}.news-source.dimmed{opacity:.4}.news-item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.25rem;transition:border-color .2s,opacity .3s}.news-item:hover{border-color:#2a2a3a}.news-item.hidden{display:none}.news-item h4{font-size:.9rem;color:#fff;margin-bottom:.35rem;line-height:1.4}.news-item .news-summary{font-size:.75rem;color:var(--text-muted);margin:.4rem 0;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.news-item .news-meta{display:flex;justify-content:space-between;align-items:center;font-size:.72rem;color:var(--text-muted)}.news-item a{color:var(--accent);text-decoration:none;font-size:.78rem}.news-item a:hover{text-decoration:underline}
-/* Footer */
-footer{padding:1.5rem 0 4rem;margin-top:3rem;text-align:center;border-top:1px solid var(--border)}
-footer p{color:var(--muted);font-size:.7rem;margin:0}
-footer .footer-status{font-size:.65rem;color:var(--muted);margin:.3rem 0 .6rem;opacity:.7}
-footer .footer-links{display:flex;gap:1.25rem;justify-content:center;margin-top:.25rem}
-footer .footer-links a{color:var(--muted);text-decoration:none;font-size:.7rem;transition:color .2s}
-footer .footer-links a:hover{color:#fff}
-/* Ticker */
-.ticker-wrap{position:fixed;bottom:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.95);backdrop-filter:blur(8px);border-top:1px solid var(--border);height:38px;overflow:hidden;display:flex;align-items:center}
-.ticker-track{display:flex;gap:3rem;animation:ticker-scroll 120s linear infinite;white-space:nowrap;padding:0 2rem}
-.ticker-track:hover{animation-play-state:paused}
-.ticker-item{display:flex;align-items:center;gap:.5rem;font-size:.72rem;color:var(--text-muted)}
-.ticker-item .ticker-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
-.ticker-item .ticker-dot.news{background:var(--blue)}
-.ticker-item .ticker-dot.radio{background:var(--green);animation:pulse 1.5s infinite}
-.ticker-item .ticker-dot.next{background:var(--purple)}
-.ticker-item a strong{color:#fff;font-weight:500}.ticker-item a:hover strong{color:var(--accent)}
-.ticker-item .source{font-size:.6rem;color:var(--muted);opacity:.7}
-.ticker-time{font-size:.6rem;color:var(--muted);opacity:.5}
-@keyframes ticker-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-/* Utilities */
-.loading{text-align:center;padding:2rem;color:var(--text-muted);font-size:.85rem}
-.btn{background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted);padding:6px 14px;border-radius:8px;font-size:.8rem;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:.4rem}
+.radio-similar{font-size:.68rem;color:var(--muted)}.radio-vol{width:60px;height:3px;accent-color:var(--accent)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+
+/* ============================================================
+   NEWS — filterable grid (existing code preserved)
+   ============================================================ */
+.news-item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.25rem;transition:border-color .2s}
+.news-item:hover{border-color:#2a2a3a}.news-item.hidden{display:none}
+.news-item h4{font-size:.9rem;color:#fff;margin-bottom:.35rem;line-height:1.4}
+.news-item .news-summary{font-size:.75rem;color:var(--muted);margin:.4rem 0;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.news-item .news-meta{display:flex;justify-content:space-between;align-items:center;font-size:.72rem;color:var(--muted)}
+.news-item a{color:var(--accent);text-decoration:none;font-size:.78rem}.news-item a:hover{text-decoration:underline}
+.news-source{font-size:.65rem;padding:2px 8px;border-radius:100px;font-weight:500;white-space:nowrap}
+.btn{background:var(--bg-card);border:1px solid var(--border);color:var(--muted);padding:6px 14px;border-radius:8px;font-size:.8rem;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:.4rem}
 .btn:hover{border-color:var(--accent);color:#fff}.btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}.btn-sm{padding:4px 10px;font-size:.72rem}
 .toolbar{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin-bottom:1rem}
-.refresh-indicator{font-size:.7rem;color:var(--text-muted);display:flex;align-items:center;gap:.3rem}
-.refresh-indicator .spinner{width:10px;height:10px;border:1.5px solid var(--text-muted);border-top-color:transparent;border-radius:50%;animation:spin .6s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.countdown{font-variant-numeric:tabular-nums;min-width:20px;text-align:right}
-.expand-detail{font-size:.68rem;color:var(--text-muted);margin-top:.4rem;padding-top:.4rem;border-top:1px solid var(--border);display:none}
-.card.expanded .expand-detail{display:block}
-.noise{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:999;opacity:.015;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ============================================================
+   CONTACT FORM
+   ============================================================ */
+.contact-form{max-width:550px;display:flex;flex-direction:column;gap:.75rem}
+.form-input{
+  background:var(--bg-card);border:1px solid var(--border);border-radius:8px;
+  padding:.7rem 1rem;color:var(--text);font-family:inherit;font-size:.85rem;
+  outline:none;transition:border-color .2s;resize:vertical
+}
+.form-input:focus{border-color:var(--accent)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.contact-status{font-size:.8rem;color:var(--green);margin-top:.5rem}
+
+/* ============================================================
+   TICKER — bottom bar
+   ============================================================ */
+.ticker-wrap{
+  position:fixed;bottom:0;left:0;right:0;z-index:100;
+  background:rgba(10,10,15,.95);backdrop-filter:blur(8px);
+  border-top:1px solid var(--border);height:36px;overflow:hidden;display:flex;align-items:center
+}
+.ticker-track{display:flex;gap:2.5rem;animation:ticker-scroll 25s linear infinite;white-space:nowrap;padding:0 2rem}
+.ticker-track:hover{animation-play-state:paused}
+.ticker-item{display:flex;align-items:center;gap:.4rem;font-size:.7rem;color:var(--muted)}
+.ticker-item .ticker-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.ticker-item .ticker-dot.news{background:var(--blue)}.ticker-item .ticker-dot.radio{background:var(--green);animation:pulse 1.5s infinite}.ticker-item .ticker-dot.next{background:var(--accent2)}
+.ticker-item a strong{color:#fff;font-weight:500}.ticker-item a:hover strong{color:var(--accent)}
+.ticker-item .source{font-size:.6rem;color:var(--muted);opacity:.7}
+@keyframes ticker-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ============================================================
+   UTILITIES & RESPONSIVE
+   ============================================================ */
+.loading{text-align:center;padding:2rem;color:var(--muted);font-size:.85rem}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .animate-in{animation:fadeIn .4s ease-out both}
-/* Responsive */
+.footer-links{display:flex;gap:1rem;justify-content:center;margin-top:.5rem}
+.footer-links a{color:var(--muted);text-decoration:none;font-size:.7rem;transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-status{font-size:.65rem;color:var(--muted);margin:.2rem 0 .5rem;opacity:.7}
 @media(max-width:768px){
-  .hero h1{font-size:1.8rem}.nav-links{display:none}.section{padding:3rem 0}.radio-now{flex-direction:column;text-align:center}
-  .services-table th,.services-table td{padding:.5rem .75rem;font-size:.7rem}
+  .sidebar{position:fixed;top:0;left:0;right:0;bottom:auto;width:100%;height:48px;flex-direction:row;padding:0 .5rem;overflow-x:auto}
+  .sidebar-nav{flex-direction:row;margin:0;gap:0}
+  .sidebar-label{display:none}.sidebar:hover{width:100%}
+  .sidebar-link{padding:.6rem .5rem;border-left:none;border-bottom:2px solid transparent}
+  .sidebar-link.active{border-left:none;border-bottom-color:var(--accent)}
+  .sidebar-logo{margin:0 .3rem}.sidebar-footer{display:none}
+  main{margin-left:0;margin-top:48px}
+  .hero-grid{flex-direction:column;text-align:center}
+  .hero-actions{justify-content:center}
+  .hero-stats{justify-content:center}
+  .hero-title{font-size:2rem}
+  .hero-avatar,.hero-avatar-frame{width:140px;height:140px}
+  .expertise-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .section-title{font-size:1.5rem}
 }
 </style>
 </head>
 <body>
-<div class="noise"></div>
 
-<nav>
-  <div class="nav-inner">
-    <a href="#" class="nav-logo"><span class="logo-dot"></span>RC</a>
-    <div class="nav-links">
-      <a href="#about">About</a><a href="#homelab">Homelab</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#news">News</a>
-      <div class="lang-toggle"><a href="index.html" class="active">EN</a><a href="index-pt.html">PT</a></div>
+<!-- ============================================================
+     SIDEBAR
+     ============================================================ -->
+<aside class="sidebar" id="sidebar">
+  <a href="#home" class="sidebar-logo" title="Robert Carvalho">
+    <img src="avatar.svg" alt="RC" class="sidebar-avatar">
+  </a>
+  <nav class="sidebar-nav">
+    <a href="#home" class="sidebar-link active" onclick="scrollToSection('home')" title="Home">
+      <i class="las la-home"></i><span class="sidebar-label">Home</span>
+    </a>
+    <a href="#about" class="sidebar-link" onclick="scrollToSection('about')" title="About">
+      <i class="las la-user"></i><span class="sidebar-label">About</span>
+    </a>
+    <a href="#resume" class="sidebar-link" onclick="scrollToSection('resume')" title="Resume">
+      <i class="las la-briefcase"></i><span class="sidebar-label">Resume</span>
+    </a>
+    <a href="#expertises" class="sidebar-link" onclick="scrollToSection('expertises')" title="Expertises">
+      <i class="las la-clock"></i><span class="sidebar-label">Expertises</span>
+    </a>
+    <a href="#skills" class="sidebar-link" onclick="scrollToSection('skills')" title="Skills">
+      <i class="las la-code"></i><span class="sidebar-label">Skills</span>
+    </a>
+    <a href="#portfolio" class="sidebar-link" onclick="scrollToSection('portfolio')" title="Portfolio">
+      <i class="las la-laptop"></i><span class="sidebar-label">Portfolio</span>
+    </a>
+    <a href="#homelab" class="sidebar-link" onclick="scrollToSection('homelab')" title="Homelab">
+      <i class="las la-server"></i><span class="sidebar-label">Homelab</span>
+    </a>
+    <a href="#news" class="sidebar-link" onclick="scrollToSection('news')" title="News">
+      <i class="las la-newspaper"></i><span class="sidebar-label">News</span>
+    </a>
+    <a href="#contact" class="sidebar-link" onclick="scrollToSection('contact')" title="Contact">
+      <i class="las la-envelope"></i><span class="sidebar-label">Contact</span>
+    </a>
+  </nav>
+  <div class="sidebar-footer">
+    <a href="index-pt.html" class="lang-switch" title="Português">PT</a>
+    <button class="sidebar-play-btn" id="sidebarPlayBtn" onclick="sidebarToggleRadio()" title="Play Radio">▶</button>
+  </div>
+</aside>
+
+<!-- ============================================================
+     MAIN CONTENT
+     ============================================================ -->
+<main>
+
+  <!-- HOME / HERO -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-avatar-col">
+          <div class="hero-avatar-frame">
+            <img src="avatar.svg" alt="Robert Carvalho" class="hero-avatar">
+          </div>
+        </div>
+        <div class="hero-info-col">
+          <p class="hero-overline">QA Automation Engineer / DevOps Enthusiast</p>
+          <h1 class="hero-title">Robert Carvalho</h1>
+          <p class="hero-subtitle">Building reliable automation and self-hosted infrastructure</p>
+          <div class="hero-details">
+            <span class="hero-detail"><i class="las la-map-marker"></i> Dublin, Ireland</span>
+            <span class="hero-detail"><i class="las la-envelope"></i> contact@robcarv.dev</span>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat"><span class="hero-stat-num">10+</span><span class="hero-stat-label">Years of<br>Experience</span></div>
+            <div class="hero-stat"><span class="hero-stat-num">50+</span><span class="hero-stat-label">Projects<br>Completed</span></div>
+            <div class="hero-stat"><span class="hero-stat-num">2</span><span class="hero-stat-label">Countries</span></div>
+          </div>
+          <div class="hero-actions">
+            <a href="https://github.com/robcarv" target="_blank" class="hero-social-link" title="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/rac-carvalho/" target="_blank" class="hero-social-link" title="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://www.instagram.com/chch_changes/" target="_blank" class="hero-social-link" title="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              Instagram
+            </a>
+            <a href="#contact" class="hero-cta-btn" onclick="scrollToSection('contact')">Contact Me</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="nav-radio" id="navRadio"><span class="nav-radio-dot"></span><span class="nav-radio-text">Loading...</span></div>
-</nav>
+  </section>
 
-<!-- HERO -->
-<section class="hero" id="about"><div>
-  <div class="hero-avatar"><img src="avatar.svg" alt="Robert Carvalho" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="avatar-fallback" style="display:none">👨‍💻</div></div>
-  <h1>Robert Carvalho</h1>
-  <p class="subtitle">QA Automation Engineer · Back End · Homelab</p>
-  <div class="socials">
-    <a href="https://www.linkedin.com/in/rac-carvalho/" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
-    <a href="https://github.com/robcarv" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>GitHub</a>
-    <a href="https://www.instagram.com/chch_changes/" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>Instagram</a>
-  </div>
-  <a href="https://dublincalling.duckdns.org/public/dublincalling" target="_blank" class="radio-badge">▶ Dublin Calling</a>
-</div></section>
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <i class="las la-user section-icon"></i>
+        <span class="section-tag">ABOUT</span>
+      </div>
+      <h2 class="section-title">Learn a bit more<br>about me</h2>
+      <div class="about-content">
+        <p>QA Automation Engineer at IBM with 10+ years of experience across IT support, ERP systems, and test automation. I'm passionate about self-hosted infrastructure, running a 3-node Raspberry Pi homelab with 55+ Docker services including monitoring (Prometheus/Grafana), media streaming, and internet radio (AzuraCast).</p>
+        <p>When not automating tests or tinkering with containers, you'll find me building Telegram bots, managing subscription-based platforms with Mercado Pago PIX, and contributing to open-source. I believe in simplicity — every tool should do one thing well, and every line of code should earn its place.</p>
+      </div>
+    </div>
+  </section>
 
-<!-- HOMELAB -->
-<section class="section" id="homelab"><div class="container">
-  <h2 class="section-title"><span class="icon">🖥️</span>Homelab Status
-    <a href="homelab.html" class="btn btn-sm" style="margin-left:.5rem">📊 Full Dashboard →</a>
-    <span class="section-sub" id="health-updated"></span>
-    <button class="btn btn-sm" onclick="refreshAll()" id="refreshBtn">↻ Refresh</button>
-    <label class="refresh-indicator"><input type="checkbox" id="autoRefresh" onchange="toggleAutoRefresh()"> Auto <span class="countdown" id="countdown">off</span></label>
-  </h2>
-  <div class="grid grid-3" id="homelab-nodes"><div class="loading">Loading health data...</div></div>
-</div></section>
+  <!-- RESUME -->
+  <section id="resume" class="section">
+    <div class="container">
+      <div class="section-header">
+        <i class="las la-briefcase section-icon"></i>
+        <span class="section-tag">RESUME</span>
+      </div>
+      <h2 class="section-title">Education &amp;<br>Experience</h2>
+      <div class="timeline" id="timeline"><div class="loading">Loading experience...</div></div>
+    </div>
+  </section>
 
-<!-- RADIO -->
-<section class="section"><div class="container">
-  <h2 class="section-title"><span class="icon">🎵</span>Dublin Calling<span class="section-sub" id="radio-status"></span></h2>
-  <div id="radio-content"><div class="loading">Loading radio data...</div></div>
-  <audio id="radioAudio" preload="none" style="display:none"></audio>
-</div></section>
+  <!-- EXPERTISES -->
+  <section id="expertises" class="section">
+    <div class="container">
+      <div class="section-header">
+        <i class="las la-clock section-icon"></i>
+        <span class="section-tag">EXPERTISES</span>
+      </div>
+      <h2 class="section-title">My Specializations</h2>
+      <div class="expertise-grid">
+        <div class="expertise-card">
+          <i class="las la-code"></i>
+          <h3>Test Automation</h3>
+          <p>Building reliable E2E, API, and integration test suites with Playwright, Selenium, and Python. CI/CD pipeline integration with Jenkins and OpenShift.</p>
+        </div>
+        <div class="expertise-card">
+          <i class="las la-server"></i>
+          <h3>Infrastructure &amp; DevOps</h3>
+          <p>Self-hosted homelab with Docker, Kubernetes, Prometheus, Grafana. 55+ services across 3 Raspberry Pi nodes. TrueNAS storage and automated pipelines.</p>
+        </div>
+        <div class="expertise-card">
+          <i class="las la-cog"></i>
+          <h3>Backend Development</h3>
+          <p>Python Flask/Gunicorn, Go/Gin APIs, PostgreSQL + Redis. Telegram bots, subscription systems with Mercado Pago PIX, and content delivery platforms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- EXPERIENCE -->
-<section class="section" id="experience"><div class="container">
-  <h2 class="section-title"><span class="icon">💼</span>Experience</h2>
-  <div class="exp-list" id="exp-list"><div class="loading">Loading experience...</div></div>
-</div></section>
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-header">
+        <i class="las la-code section-icon"></i>
+        <span class="section-tag">MY SKILLS</span>
+      </div>
+      <h2 class="section-title">My Skillset</h2>
+      <div class="skills-grid" id="skillsGrid"><div class="loading">Loading skills...</div></div>
+    </div>
+  </section>
 
-<!-- PROJECTS -->
-<section class="section" id="projects"><div class="container">
-  <h2 class="section-title"><span class="icon">🚀</span>Projects</h2>
-  <div class="grid grid-2">
-    <div class="project-card"><h4>Homelab Cluster</h4><p>3 Raspberry Pis + TrueNAS, 55+ Docker services, automated CI/CD</p><div class="links"><a href="https://github.com/robcarv/backup_raspberry" target="_blank">GitHub</a></div></div>
-    <div class="project-card"><h4>Gallery Downloader</h4><p>Self-hosted media downloader with Go backend + React frontend</p><div class="links"><a href="https://github.com/robcarv/backup_raspberry/tree/mangadownloader-v4" target="_blank">GitHub</a></div></div>
-    <div class="project-card"><h4>News Collector Bot</h4><p>Automated RSS news collection, summarization and portfolio publishing</p><div class="links"><a href="https://github.com/robcarv/news_colletector" target="_blank">GitHub</a></div></div>
-    <div class="project-card"><h4>Dashy Dashboard</h4><p>Self-hosted service dashboard for homelab monitoring</p><div class="links"><a href="https://github.com/robcarv/dashy-config" target="_blank">GitHub</a></div></div>
-  </div>
-</div></section>
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="section">
+    <div class="container">
+      <div class="section-header">
+        <i class="las la-laptop section-icon"></i>
+        <span class="section-tag">PORTFOLIO</span>
+      </div>
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid" id="projectsGrid"><div class="loading">Loading projects...</div></div>
+    </div>
+  </section>
 
-<!-- NEWS -->
-<section class="section" id="news"><div class="container">
-  <h2 class="section-title"><span class="icon">📰</span>Latest News<span class="section-sub" id="news-updated"></span></h2>
-  <div class="toolbar" id="news-filters"></div>
-  <div class="grid grid-2" id="news-feed"><div class="loading">Loading news...</div></div>
-</div></section>
+  <!-- HOMELAB -->
+  <section id="homelab" class="section">
+    <div class="container">
+      <div class="section-header">
+        <i class="las la-server section-icon"></i>
+        <span class="section-tag">HOMELAB</span>
+      </div>
+      <h2 class="section-title">Homelab Status
+        <a href="homelab.html" class="btn btn-sm" style="margin-left:.75rem;vertical-align:middle">Full Dashboard →</a>
+      </h2>
+      <p class="section-tag" style="margin-bottom:1rem" id="health-updated"></p>
+      <div class="grid-3" id="homelab-nodes"><div class="loading">Loading health data...</div></div>
+    </div>
+  </section>
 
-<!-- FOOTER -->
-<footer><p>© 2026 Robert Carvalho</p><div class="footer-status" id="footer-status"></div><div class="footer-links"><a href="https://www.linkedin.com/in/rac-carvalho/" target="_blank">LinkedIn</a><a href="https://github.com/robcarv" target="_blank">GitHub</a><a href="https://www.instagram.com/chch_changes/" target="_blank">Instagram</a></div></footer>
+  <!-- RADIO -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <i class="las la-music section-icon"></i>
+        <span class="section-tag">RADIO</span>
+      </div>
+      <h2 class="section-title">Dublin Calling<span class="section-tag" style="margin-left:1rem" id="radio-status"></span></h2>
+      <div id="radio-content"><div class="loading">Loading radio data...</div></div>
+      <audio id="radioAudio" preload="none" style="display:none"></audio>
+    </div>
+  </section>
 
-<!-- Ticker -->
+  <!-- NEWS -->
+  <section id="news" class="section">
+    <div class="container">
+      <div class="section-header">
+        <i class="las la-newspaper section-icon"></i>
+        <span class="section-tag">NEWS</span>
+      </div>
+      <h2 class="section-title">Latest News<span class="section-tag" style="margin-left:1rem" id="news-updated"></span></h2>
+      <div class="toolbar" id="news-filters"></div>
+      <div class="grid-3" id="news-feed"><div class="loading">Loading news...</div></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header">
+        <i class="las la-envelope section-icon"></i>
+        <span class="section-tag">CONTACT</span>
+      </div>
+      <h2 class="section-title">Get in Touch</h2>
+      <form class="contact-form" id="contactForm" onsubmit="handleContact(event)">
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Your Name" required class="form-input">
+          <input type="email" name="email" placeholder="Your Email" required class="form-input">
+        </div>
+        <textarea name="message" placeholder="Your Message" rows="4" required class="form-input"></textarea>
+        <button type="submit" class="hero-cta-btn" style="align-self:flex-start">Send Message</button>
+      </form>
+      <p id="contactStatus" class="contact-status"></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="text-align:center;padding:1.5rem 0;border-top:1px solid var(--border);margin-top:2rem">
+    <div class="container">
+      <p class="footer-status" id="footer-status"></p>
+      <p style="color:var(--muted);font-size:.7rem;margin:0 0 .5rem">© 2026 Robert Carvalho</p>
+      <div class="footer-links">
+        <a href="https://github.com/robcarv" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/rac-carvalho/" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/chch_changes/" target="_blank">Instagram</a>
+        <a href="https://dublincalling.duckdns.org" target="_blank">Dublin Calling</a>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track" id="tickerTrack"></div>
 </div>
 
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
 <script>
 // ============================================================
-// CONFIG — static files only, NO live API
+// SCROLL TO SECTION
+// ============================================================
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+// ============================================================
+// INTERSECTION OBSERVER — active nav tracking
+// ============================================================
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+      const link = document.querySelector(`.sidebar-link[href="#${entry.target.id}"]`);
+      if (link) link.classList.add('active');
+    }
+  });
+}, {threshold:0.4, rootMargin:'-70px 0px 0px 0px'});
+document.querySelectorAll('section[id]').forEach(s => observer.observe(s));
+
+// ============================================================
+// SIDEBAR RADIO
+// ============================================================
+function sidebarToggleRadio() {
+  const url = 'https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3';
+  toggleRadio(url, document.getElementById('sidebarPlayBtn'));
+}
+
+// ============================================================
+// CONFIG — static files only
 // ============================================================
 const PI_ORDER = ['Pi501','Pi5','Pi4'];
-const REFRESH_INTERVAL = 60;
-let refreshTimer = null;
-let countdownValue = REFRESH_INTERVAL;
 let healthData = null;
 let allNews = [];
 let newsFilter = 'All';
@@ -263,119 +617,77 @@ function fmtGb(v) { return Number(v||0).toFixed(1) + 'GB'; }
 function fmtPct(v) { return Math.round(v||0) + '%'; }
 function fmtNum1(v) { return Number(v||0).toFixed(1); }
 function fmtInt(v) { return Math.round(v||0); }
-
 function cpuClass(val) { return val>80?'high':val>60?'mid':'low'; }
 function ramClass(val) { return val>90?'high':val>70?'mid':'low'; }
-
 function nodeStatus(n) {
-  const cpu = (n.cpu?.total||0);
-  const ram = (n.ram?.percent||0);
-  if (cpu>80||ram>90) return 'warn';
-  return 'ok';
+  const cpu = (n.cpu?.total||0), ram = (n.ram?.percent||0);
+  if (cpu>80||ram>90) return 'warn'; return 'ok';
 }
 
 // ============================================================
-// HOMELAB — rendered from health.json nodes
+// HOMELAB — rendered from health.json nodes (PRESERVED)
 // ============================================================
 function renderHomelab(nodes, updated) {
   const container = document.getElementById('homelab-nodes');
   if (!nodes || !Object.keys(nodes).length) {
-    container.innerHTML = '<div class="card loading">No health data available</div>';
-    return;
+    container.innerHTML = '<div class="card loading">No health data available</div>'; return;
   }
   document.getElementById('health-updated').textContent = 'Updated: ' + (updated||'N/A');
 
   container.innerHTML = PI_ORDER.map(name => {
     const n = nodes[name];
     if (!n) return `<div class="card"><div class="card-header"><div class="card-title">${name}</div></div><div class="loading" style="padding:1rem 0;font-size:.75rem">Offline</div></div>`;
-
-    const cpuTotal = n.cpu?.total||0;
-    const cpuUser  = n.cpu?.user||0;
-    const cpuSys   = n.cpu?.system||0;
-    const ramPct   = n.ram?.percent||0;
-    const ramGb    = fmtGb(n.ram?.used_gb);
-    const ramTot   = fmtGb(n.ram?.total_gb);
-    const temp     = n.temperature_c!=null ? n.temperature_c+'°C' : '?°C';
-    const status   = nodeStatus(n);
-    const load     = n.load;
-    const loadStr  = load ? `${fmtNum1(load['1min'])}/${fmtNum1(load['5min'])}/${fmtNum1(load['15min'])}` : '?';
-    const diskInfo = (n.disks||[]).filter((d,i,a)=>a.findIndex(x=>x.device===d.device)===i).map(d =>
-      `${d.device}: ${fmtGb(d.used_gb)} / ${fmtGb(d.size_gb)} (${fmtPct(d.percent)})`
-    ).join('<br>');
-    const netInfo  = n.network ? Object.entries(n.network).map(([iface,net]) =>
-      `${iface}: ${fmtInt(net.recv_mb)}MB↓ ${fmtInt(net.sent_mb)}MB↑`
-    ).join('<br>') : '';
-    const containerPreview = (n.containers||[]).slice(0,8).map(c=>c.name.replace(/_/g,' ')).join(', ');
-
-    return `
-    <div class="card animate-in" onclick="this.classList.toggle('expanded')">
-      <div class="card-header">
-        <div>
-          <div class="card-title">${name}</div>
-          <div class="card-sub">${n.services||''} · ${temp}</div>
-        </div>
-        <span class="badge badge-${status}">
-          <span class="dot dot-${status}"></span> ${status}
-        </span>
-      </div>
-      <div class="metric">
-        <div class="metric-label"><span>CPU</span><span>${fmtPct(cpuTotal)} (usr ${fmtPct(cpuUser)} sys ${fmtPct(cpuSys)})</span></div>
-        <div class="metric-bar"><div class="metric-fill ${cpuClass(cpuTotal)}" style="width:${cpuTotal}%"></div></div>
-      </div>
-      <div class="metric">
-        <div class="metric-label"><span>RAM</span><span>${fmtPct(ramPct)} (${ramGb} / ${ramTot})</span></div>
-        <div class="metric-bar"><div class="metric-fill ${ramClass(ramPct)}" style="width:${ramPct}%"></div></div>
-      </div>
-      ${n.swap ? `<div class="metric"><div class="metric-label"><span>Swap</span><span>${fmtPct(n.swap.percent)}</span></div><div class="metric-bar"><div class="metric-fill ${n.swap.percent>80?'high':'low'}" style="width:${n.swap.percent}%"></div></div></div>` : ''}
-      <div class="expand-detail">
-        <div style="margin-top:.5rem;font-size:.68rem;color:var(--text-muted);line-height:1.6">
-          Load: ${loadStr} (${load?.cores||'?'} cores)<br>
-          Procs: ${n.processes?.total||'?'} total, ${n.processes?.running||'?'} running, ${n.processes?.threads||'?'} threads<br>
-          Disk I/O: ${fmtInt(n.disk_io?.read_mb||0)}MB read / ${fmtInt(n.disk_io?.write_mb||0)}MB write<br>
-          ${diskInfo ? diskInfo+'<br>' : ''}
-          ${netInfo ? netInfo+'<br>' : ''}
-          Containers (${n.container_count||0}): ${containerPreview||'none'}
-          ${n.uptime ? '<br>Uptime: '+n.uptime : ''}
-        </div>
-      </div>
-    </div>`;
+    const cpuTotal=n.cpu?.total||0, cpuUser=n.cpu?.user||0, cpuSys=n.cpu?.system||0;
+    const ramPct=n.ram?.percent||0, ramGb=fmtGb(n.ram?.used_gb), ramTot=fmtGb(n.ram?.total_gb);
+    const temp=n.temperature_c!=null?n.temperature_c+'°C':'?°C';
+    const status=nodeStatus(n);
+    const load=n.load, loadStr=load?`${fmtNum1(load['1min'])}/${fmtNum1(load['5min'])}/${fmtNum1(load['15min'])}`:'?';
+    const diskInfo=(n.disks||[]).filter((d,i,a)=>a.findIndex(x=>x.device===d.device)===i).map(d=>`${d.device}: ${fmtGb(d.used_gb)} / ${fmtGb(d.size_gb)} (${fmtPct(d.percent)})`).join('<br>');
+    const netInfo=n.network?Object.entries(n.network).map(([iface,net])=>`${iface}: ${fmtInt(net.recv_mb)}MB↓ ${fmtInt(net.sent_mb)}MB↑`).join('<br>'):'';
+    const containerPreview=(n.containers||[]).slice(0,8).map(c=>c.name.replace(/_/g,' ')).join(', ');
+    return `<div class="card animate-in" onclick="this.classList.toggle('expanded')">
+      <div class="card-header"><div><div class="card-title">${name}</div><div class="card-sub">${n.services||''} · ${temp}</div></div>
+      <span class="badge badge-${status}"><span class="dot dot-${status}"></span> ${status}</span></div>
+      <div class="metric"><div class="metric-label"><span>CPU</span><span>${fmtPct(cpuTotal)} (usr ${fmtPct(cpuUser)} sys ${fmtPct(cpuSys)})</span></div>
+      <div class="metric-bar"><div class="metric-fill ${cpuClass(cpuTotal)}" style="width:${cpuTotal}%"></div></div></div>
+      <div class="metric"><div class="metric-label"><span>RAM</span><span>${fmtPct(ramPct)} (${ramGb} / ${ramTot})</span></div>
+      <div class="metric-bar"><div class="metric-fill ${ramClass(ramPct)}" style="width:${ramPct}%"></div></div></div>
+      ${n.swap?`<div class="metric"><div class="metric-label"><span>Swap</span><span>${fmtPct(n.swap.percent)}</span></div><div class="metric-bar"><div class="metric-fill ${n.swap.percent>80?'high':'low'}" style="width:${n.swap.percent}%"></div></div></div>`:''}
+      <div class="expand-detail"><div style="margin-top:.5rem;font-size:.68rem;color:var(--muted);line-height:1.6">
+      Load: ${loadStr} (${load?.cores||'?'} cores)<br>
+      Procs: ${n.processes?.total||'?'} total, ${n.processes?.running||'?'} running, ${n.processes?.threads||'?'} threads<br>
+      Disk I/O: ${fmtInt(n.disk_io?.read_mb||0)}MB read / ${fmtInt(n.disk_io?.write_mb||0)}MB write<br>
+      ${diskInfo?diskInfo+'<br>':''}${netInfo?netInfo+'<br>':''}
+      Containers (${n.container_count||0}): ${containerPreview||'none'}
+      ${n.uptime?'<br>Uptime: '+n.uptime:''}
+      </div></div></div>`;
   }).join('');
 }
 
 // ============================================================
-// RADIO — rendered from health.json radio section
+// RADIO — rendered from health.json radio section (PRESERVED)
 // ============================================================
 function renderRadio(radio) {
   const container = document.getElementById('radio-content');
   const status = document.getElementById('radio-status');
-
   if (!radio || !radio.is_online) {
     status.textContent = '';
-    container.innerHTML = '<div class="radio-bar"><span>📻 Dublin Calling offline</span><a href="https://dublincalling.duckdns.org/public/dublincalling" target="_blank" style="color:var(--accent);font-size:.75rem">open →</a></div>';
+    container.innerHTML = '<div class="radio-bar"><span class="radio-bar-dot"></span><span class="radio-bar-text">Dublin Calling offline</span><a href="https://dublincalling.duckdns.org/public/dublincalling" target="_blank" style="color:var(--accent);font-size:.75rem;margin-left:auto">open →</a></div>';
     return;
   }
-
   const lfm = radio.lastfm||{};
-  status.textContent = `${radio.listeners||0} listener${radio.listeners!==1?'s':''} · ${radio.is_live?'LIVE':'Auto DJ'}${lfm.playcount ? ' · '+Number(lfm.playcount).toLocaleString()+' plays' : ''}`;
-  const np = radio.now_playing||{};
-  const elapsed = np.elapsed||0, duration = np.duration||1;
-  const pct = Math.min(elapsed/duration*100, 100);
-  const artist = np.artist||'Unknown';
-  const title = np.title||'Unknown';
-  const art = np.art||lfm.art||'';
-  const nxt = radio.playing_next;
-  const tags = lfm.tags||[];
-  const bio = lfm.bio||'';
-  const similar = lfm.similar||[];
-
+  status.textContent = `${radio.listeners||0} listener${radio.listeners!==1?'s':''} · ${radio.is_live?'LIVE':'Auto DJ'}${lfm.playcount?' · '+Number(lfm.playcount).toLocaleString()+' plays':''}`;
+  const np=radio.now_playing||{}, elapsed=np.elapsed||0, duration=np.duration||1;
+  const pct=Math.min(elapsed/duration*100,100);
+  const artist=np.artist||'Unknown', title=np.title||'Unknown';
+  const art=np.art||lfm.art||'';
+  const nxt=radio.playing_next, tags=lfm.tags||[], bio=lfm.bio||'', similar=lfm.similar||[];
   container.innerHTML = `
     <div class="radio-player-card">
-      ${art ? `<img src="${art}" class="radio-art" alt="${title}" onerror="this.style.display='none'">` : ''}
+      ${art?`<img src="${art}" class="radio-art" alt="${title}" onerror="this.style.display='none'">`:''}
       <div class="radio-info">
-        <div class="radio-now">
-          <div class="radio-track"><strong>${artist}</strong> — ${title}</div>
-          ${np.album ? `<div class="radio-album">${np.album}${np.genre ? ' · '+np.genre : ''}</div>` : ''}
-        </div>
+        <div class="radio-track"><strong>${artist}</strong> — ${title}</div>
+        ${np.album?`<div class="radio-album">${np.album}${np.genre?' · '+np.genre:''}</div>`:''}
         <div class="radio-bar">
           <div class="radio-bar-left">
             <span class="radio-bar-dot ${radio.is_live?'live':''}"></span>
@@ -386,170 +698,42 @@ function renderRadio(radio) {
             <button onclick="toggleRadio('${radio.listen_url||'https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3'}', this)" class="radio-play-btn" id="radioPlayBtn">▶</button>
           </div>
         </div>
-        ${tags.length ? `<div class="radio-tags">${tags.slice(0,4).map(t=>'<span class="radio-tag">'+t+'</span>').join('')}</div>` : ''}
-        ${nxt ? `<div class="radio-next"><span class="radio-next-label">Next:</span> <strong>${nxt.artist}</strong> — ${nxt.title}</div>` : ''}
-        ${bio ? `<div class="radio-bio">${bio}</div>` : ''}
-        ${similar.length ? `<div class="radio-similar"><span class="radio-next-label">Similar:</span> ${similar.join(' · ')}</div>` : ''}
+        ${tags.length?`<div class="radio-tags">${tags.slice(0,4).map(t=>'<span class="radio-tag">'+t+'</span>').join('')}</div>`:''}
+        ${nxt?`<div class="radio-next"><span class="radio-next-label">Next:</span> <strong>${nxt.artist}</strong> — ${nxt.title}</div>`:''}
+        ${bio?`<div class="radio-bio">${bio}</div>`:''}
+        ${similar.length?`<div class="radio-similar"><span class="radio-next-label">Similar:</span> ${similar.join(' · ')}</div>`:''}
         <div class="radio-audio-bar" id="radioAudioBar">
           <button class="btn btn-sm" onclick="stopRadio()" title="Stop">⏹</button>
-          <div class="radio-progress-bar" style="flex:1"><div class="radio-progress-fill" style="width:${pct}%"></div></div>
+          <div class="radio-progress-bar"><div class="radio-progress-fill" style="width:${pct}%"></div></div>
           <input type="range" class="radio-vol" min="0" max="100" value="80" oninput="document.getElementById('radioAudio').volume=this.value/100" title="Volume">
-          ${lfm.url ? `<a href="${lfm.url}" target="_blank" class="radio-lfm-link" title="Last.fm">🌐</a>` : ''}
         </div>
       </div>
-    </div>
-  `;
-  updateNavRadio(radio);
+    </div>`;
   const audio = document.getElementById('radioAudio');
   if (audio && !audio.paused && audio.src) {
-    const bar = document.getElementById('radioAudioBar');
-    const btn = document.getElementById('radioPlayBtn');
-    if (bar) bar.classList.add('visible');
-    if (btn) btn.classList.add('playing');
+    const bar=document.getElementById('radioAudioBar'), btn=document.getElementById('radioPlayBtn');
+    if (bar) bar.classList.add('visible'); if (btn) btn.classList.add('playing');
   }
 }
 
-function updateNavRadio(radio) {
-  const nav = document.getElementById('navRadio');
-  if (!nav || !radio?.now_playing) return;
-  const np = radio.now_playing;
-  const elapsed = np.elapsed||0, duration = np.duration||1;
-  const rem = Math.max(duration-elapsed, 0);
-  const mins = Math.floor(rem/60), secs = String(Math.floor(rem%60)).padStart(2,'0');
-  nav.innerHTML = `
-    <span class="nav-radio-dot ${radio.is_live?'live':''}"></span>
-    <span class="nav-radio-text"><strong>${np.artist||'?'}</strong> — ${np.title||'?'}</span>
-    <span class="nav-radio-time">-${mins}:${secs}</span>
-    <button onclick="toggleRadio('${radio.listen_url||'https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3'}', this)" class="nav-radio-btn" id="navPlayBtn">▶</button>
-    <span class="nav-radio-ctrl" id="navRadioCtrl">
-      <button class="btn btn-sm" onclick="stopRadio()" title="Stop" style="padding:2px 6px;font-size:.6rem">⏹</button>
-      <input type="range" class="nav-radio-vol" min="0" max="100" value="80" oninput="document.getElementById('radioAudio').volume=this.value/100" title="Vol">
-    </span>
-  `;
-}
-
 // ============================================================
-// EXPERIENCE — rendered from experience.json
-// ============================================================
-async function loadExperience() {
-  try {
-    const r = await fetch('experience.json?_='+Date.now());
-    if (!r.ok) throw new Error('HTTP '+r.status);
-    renderExperience(await r.json());
-  } catch(e) {
-    document.getElementById('exp-list').innerHTML = '<div class="loading">Failed to load experience</div>';
-  }
-}
-function renderExperience(items) {
-  const c = document.getElementById('exp-list');
-  if (!items?.length) { c.innerHTML = ''; return; }
-  c.innerHTML = items.map((exp, i) => `
-    <div class="exp-item" onclick="this.classList.toggle('open')">
-      <div class="exp-header"><div>
-        <div class="exp-role">${exp.role||''}</div>
-        <div class="exp-company">${exp.company||''}</div>
-        <div class="exp-period">${exp.period||''}</div>
-      </div><span class="exp-arrow">▼</span></div>
-      <div class="exp-body"><ul>${(exp.items||[]).map(li=>`<li>${li}</li>`).join('')}</ul></div>
-    </div>`).join('');
-}
-
-// ============================================================
-// NEWS — filterable feed from news.json
-// ============================================================
-async function loadNews() {
-  try {
-    const r = await fetch('news.json?_='+Date.now());
-    if (!r.ok) throw new Error('HTTP '+r.status);
-    const news = await r.json();
-    if (!news?.items?.length) {
-      document.getElementById('news-feed').innerHTML = '<div class="loading">No news available</div>';
-      return;
-    }
-    allNews = news.items;
-    const d = news.updated ? new Date(news.updated) : null;
-    document.getElementById('news-updated').textContent = 'Updated: ' + (d ? d.toLocaleString() : 'N/A');
-    renderNewsFilters();
-    renderNews();
-  } catch(e) {
-    document.getElementById('news-feed').innerHTML = '<div class="loading">Failed to load news</div>';
-  }
-}
-
-function renderNewsFilters() {
-  const sources = [...new Set(allNews.map(i=>i.source))];
-  const container = document.getElementById('news-filters');
-  container.innerHTML = `
-    <button class="btn btn-sm ${newsFilter==='All'?'active':''}" onclick="setNewsFilter('All')">All</button>
-    ${sources.map(s => `<button class="btn btn-sm ${newsFilter===s?'active':''}" onclick="setNewsFilter('${s.replace(/'/g,"&#39;")}')">${s}</button>`).join('')}
-  `;
-}
-
-function setNewsFilter(source) {
-  newsFilter = source;
-  renderNewsFilters();
-  renderNews();
-}
-
-function renderNews() {
-  const container = document.getElementById('news-feed');
-  const filtered = newsFilter==='All' ? allNews : allNews.filter(i=>i.source===newsFilter);
-  const sourceColors = {
-    'The Guardian US':'background:rgba(59,130,246,.15);color:#60a5fa',
-    'BBC News':'background:rgba(239,68,68,.15);color:#f87171',
-    'Folha de S.Paulo':'background:rgba(234,179,8,.15);color:#facc15',
-    'Irish Independent':'background:rgba(34,197,94,.15);color:#4ade80',
-    'Consequence of Sound (US)':'background:rgba(168,85,247,.15);color:#c084fc',
-    'Pitchfork':'background:rgba(236,72,153,.15);color:#f472b6',
-    'Rolling Stone Music (US)':'background:rgba(249,115,22,.15);color:#fb923c',
-    'Tenho Mais Discos Que Amigos (Brasil)':'background:rgba(34,211,238,.15);color:#22d3ee',
-  };
-
-  if (!filtered.length) {
-    container.innerHTML = '<div class="loading">No matching articles</div>';
-    return;
-  }
-
-  container.innerHTML = filtered.slice(0,12).map((i,idx) => {
-    const dateStr = i.date ? new Date(i.date).toLocaleDateString([],{year:'numeric',month:'short',day:'numeric'}) : '';
-    const style = sourceColors[i.source]||'background:#1e1e2a;color:#888';
-    return `
-    <div class="news-item animate-in" style="animation-delay:${idx*0.05}s">
-      <h4>${i.title}</h4>
-      ${i.summary ? `<div class="news-summary">${i.summary}</div>` : ''}
-      <div class="news-meta">
-        <span class="news-source" style="${style}">${i.source}</span>
-        <span>${dateStr}</span>
-      </div>
-      <div style="margin-top:.5rem"><a href="${i.link}" target="_blank">Open article →</a></div>
-    </div>`;
-  }).join('');
-}
-
-// ============================================================
-// AUTO REFRESH (re-reads health.json + news.json)
-// ============================================================
-// ============================================================
-// RADIO PLAYER
+// RADIO PLAYER CONTROLS (PRESERVED)
 // ============================================================
 function toggleRadio(url, btn) {
   const audio = document.getElementById('radioAudio');
   const bar = document.getElementById('radioAudioBar');
-  const navBtn = document.getElementById('navPlayBtn');
-  const navCtrl = document.getElementById('navRadioCtrl');
+  const sBtn = document.getElementById('sidebarPlayBtn');
   if (audio.src && !audio.paused) {
     audio.pause();
     if (btn) btn.classList.remove('playing');
     if (bar) bar.classList.remove('visible');
-    if (navBtn) navBtn.classList.remove('playing');
-    if (navCtrl) navCtrl.classList.remove('show');
+    if (sBtn) sBtn.classList.remove('on');
   } else {
     audio.src = url; audio.load();
     audio.play().then(() => {
       if (btn) btn.classList.add('playing');
       if (bar) bar.classList.add('visible');
-      if (navBtn) navBtn.classList.add('playing');
-      if (navCtrl) navCtrl.classList.add('show');
+      if (sBtn) sBtn.classList.add('on');
     }).catch(e => console.warn(e));
   }
 }
@@ -557,57 +741,177 @@ function stopRadio() {
   const audio = document.getElementById('radioAudio');
   const btn = document.getElementById('radioPlayBtn');
   const bar = document.getElementById('radioAudioBar');
-  const navBtn = document.getElementById('navPlayBtn');
-  const navCtrl = document.getElementById('navRadioCtrl');
+  const sBtn = document.getElementById('sidebarPlayBtn');
   audio.pause(); audio.src = '';
   if (btn) btn.classList.remove('playing');
   if (bar) bar.classList.remove('visible');
-  if (navBtn) navBtn.classList.remove('playing');
-  if (navCtrl) navCtrl.classList.remove('show');
-}
-
-function toggleAutoRefresh() {
-  const checked = document.getElementById('autoRefresh').checked;
-  if (checked) startAutoRefresh();
-  else stopAutoRefresh();
-}
-
-function startAutoRefresh() {
-  stopAutoRefresh();
-  countdownValue = REFRESH_INTERVAL;
-  document.getElementById('countdown').textContent = countdownValue+'s';
-  refreshTimer = setInterval(() => {
-    countdownValue--;
-    document.getElementById('countdown').textContent = countdownValue+'s';
-    if (countdownValue <= 0) {
-      refreshAll();
-      countdownValue = REFRESH_INTERVAL;
-    }
-  }, 1000);
-}
-
-function stopAutoRefresh() {
-  if (refreshTimer) { clearInterval(refreshTimer); refreshTimer = null; }
-  document.getElementById('countdown').textContent = 'off';
-}
-
-async function refreshAll() {
-  const btn = document.getElementById('refreshBtn');
-  btn.textContent = '⟳ ...';
-  btn.disabled = true;
-  await loadHealth();
-  await loadNews();
-  await loadExperience();
-  updateTicker();
-  updateFooterStatus();
-  countdownValue = REFRESH_INTERVAL;
-  document.getElementById('countdown').textContent = countdownValue+'s';
-  btn.textContent = '↻ Refresh';
-  btn.disabled = false;
+  if (sBtn) sBtn.classList.remove('on');
 }
 
 // ============================================================
-// RADIO LIVE POLL — fetches AzuraCast directly every 30s
+// EXPERIENCE — timeline from experience.json
+// ============================================================
+async function loadExperience() {
+  try {
+    const r = await fetch('experience.json?_='+Date.now());
+    if (!r.ok) throw new Error('HTTP '+r.status);
+    renderTimeline(await r.json());
+  } catch(e) {
+    document.getElementById('timeline').innerHTML = '<div class="loading">Failed to load experience</div>';
+  }
+}
+function renderTimeline(items) {
+  const c = document.getElementById('timeline');
+  if (!items?.length) { c.innerHTML = ''; return; }
+  c.innerHTML = items.map(exp => `
+    <div class="timeline-item">
+      <span class="timeline-period">${exp.period||''}</span>
+      <h3 class="timeline-role">${exp.role||''}</h3>
+      <p class="timeline-company">${exp.company||''}</p>
+      <ul class="timeline-items">${(exp.items||[]).map(i=>`<li>${i}</li>`).join('')}</ul>
+    </div>`).join('');
+}
+
+// ============================================================
+// SKILLS — grid from skills.json
+// ============================================================
+async function loadSkills() {
+  try {
+    const r = await fetch('skills.json?_='+Date.now());
+    if (!r.ok) throw new Error('HTTP '+r.status);
+    renderSkills(await r.json());
+  } catch(e) {
+    document.getElementById('skillsGrid').innerHTML = '<div class="loading">Failed to load skills</div>';
+  }
+}
+function renderSkills(items) {
+  const c = document.getElementById('skillsGrid');
+  c.innerHTML = items.map(s => `
+    <div class="skill-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${s.icon}/${s.icon}-original.svg"
+           alt="${s.name}" onerror="this.outerHTML='<span style=font-size:2rem>🔧</span>'">
+      <span class="skill-name">${s.name}</span>
+    </div>`).join('');
+}
+
+// ============================================================
+// PROJECTS — cards from projects.json
+// ============================================================
+async function loadProjects() {
+  try {
+    const r = await fetch('projects.json?_='+Date.now());
+    if (!r.ok) throw new Error('HTTP '+r.status);
+    renderProjects(await r.json());
+  } catch(e) {
+    document.getElementById('projectsGrid').innerHTML = '<div class="loading">Failed to load projects</div>';
+  }
+}
+function renderProjects(items) {
+  const c = document.getElementById('projectsGrid');
+  c.innerHTML = items.map(p => `
+    <div class="project-card">
+      <h3>${p.name}</h3>
+      <p>${p.description}</p>
+      <div class="project-tags">${(p.tags||[]).map(t=>`<span class="project-tag">${t}</span>`).join('')}</div>
+      <a href="${p.link}" target="_blank" class="project-link">View Project →</a>
+    </div>`).join('');
+}
+
+// ============================================================
+// NEWS — filterable feed from news.json (PRESERVED)
+// ============================================================
+async function loadNews() {
+  try {
+    const r = await fetch('news.json?_='+Date.now());
+    if (!r.ok) throw new Error('HTTP '+r.status);
+    const news = await r.json();
+    if (!news?.items?.length) {
+      document.getElementById('news-feed').innerHTML = '<div class="loading">No news available</div>'; return;
+    }
+    allNews = news.items;
+    const d = news.updated ? new Date(news.updated) : null;
+    document.getElementById('news-updated').textContent = 'Updated: ' + (d ? d.toLocaleString() : 'N/A');
+    renderNewsFilters(); renderNews();
+  } catch(e) { document.getElementById('news-feed').innerHTML = '<div class="loading">Failed to load news</div>'; }
+}
+function renderNewsFilters() {
+  const sources = [...new Set(allNews.map(i=>i.source))];
+  document.getElementById('news-filters').innerHTML =
+    `<button class="btn btn-sm ${newsFilter==='All'?'active':''}" onclick="setNewsFilter('All')">All</button>` +
+    sources.map(s => `<button class="btn btn-sm ${newsFilter===s?'active':''}" onclick="setNewsFilter('${s.replace(/'/g,"&#39;")}')">${s}</button>`).join('');
+}
+function setNewsFilter(source) { newsFilter = source; renderNewsFilters(); renderNews(); }
+function renderNews() {
+  const container = document.getElementById('news-feed');
+  const filtered = newsFilter==='All' ? allNews : allNews.filter(i=>i.source===newsFilter);
+  const sourceColors = {
+    'The Guardian US':'background:rgba(59,130,246,.15);color:#60a5fa','BBC News':'background:rgba(239,68,68,.15);color:#f87171',
+    'Folha de S.Paulo':'background:rgba(234,179,8,.15);color:#facc15','Irish Independent':'background:rgba(34,197,94,.15);color:#4ade80'
+  };
+  if (!filtered.length) { container.innerHTML = '<div class="loading">No matching articles</div>'; return; }
+  container.innerHTML = filtered.slice(0,12).map((i,idx) => {
+    const dateStr=i.date?new Date(i.date).toLocaleDateString([],{year:'numeric',month:'short',day:'numeric'}):'';
+    const style=sourceColors[i.source]||'background:#1e1e2a;color:#888';
+    return `<div class="news-item animate-in" style="animation-delay:${idx*0.05}s">
+      <h4>${i.title}</h4>${i.summary?`<div class="news-summary">${i.summary}</div>`:''}
+      <div class="news-meta"><span class="news-source" style="${style}">${i.source}</span><span>${dateStr}</span></div>
+      <div style="margin-top:.5rem"><a href="${i.link}" target="_blank">Open article →</a></div></div>`;
+  }).join('');
+}
+
+// ============================================================
+// CONTACT
+// ============================================================
+function handleContact(e) {
+  e.preventDefault();
+  const f = new FormData(e.target);
+  const body=`Name: ${f.get('name')}%0D%0AEmail: ${f.get('email')}%0D%0A%0D%0A${f.get('message')}`;
+  window.location.href = `mailto:contact@robcarv.dev?subject=Portfolio Contact&body=${body}`;
+  document.getElementById('contactStatus').textContent = 'Opening email client...';
+}
+
+// ============================================================
+// TICKER — bottom bar (PRESERVED)
+// ============================================================
+function updateTicker() {
+  const track = document.getElementById('tickerTrack');
+  if (!track) return;
+  const items = [];
+  const radio = healthData?.radio;
+  if (radio?.is_online && radio.now_playing?.artist) {
+    items.push(`<span class="ticker-item"><span class="ticker-dot radio"></span>🎵 <strong>${radio.now_playing.artist} — ${radio.now_playing.title}</strong></span>`);
+  }
+  if (radio?.playing_next?.artist) {
+    items.push(`<span class="ticker-item"><span class="ticker-dot next"></span>⏭ Next: <strong>${radio.playing_next.artist} — ${radio.playing_next.title}</strong></span>`);
+  }
+  if (allNews.length) {
+    allNews.slice(0,10).forEach(n => {
+      items.push(`<span class="ticker-item"><span class="ticker-dot news"></span>📰 <a href="${n.link||'#'}" target="_blank" style="color:var(--text);text-decoration:none"><strong>${n.title}</strong></a> <span class="source">${n.source}</span></span>`);
+    });
+  }
+  track.innerHTML = items.join('') + items.join('');
+}
+
+// ============================================================
+// HEALTH LOAD
+// ============================================================
+async function loadHealth() {
+  try {
+    const r = await fetch('health.json?_='+Date.now());
+    if (!r.ok) throw new Error('HTTP '+r.status);
+    healthData = await r.json();
+  } catch(e) {
+    healthData = null;
+    document.getElementById('homelab-nodes').innerHTML = '<div class="card loading">Failed to load health data</div>';
+  }
+  const nodes = healthData?.nodes;
+  const updated = healthData?.updated||'N/A';
+  renderHomelab(nodes, updated);
+  if (healthData?.radio) renderRadio(healthData.radio);
+}
+
+// ============================================================
+// RADIO LIVE POLL (PRESERVED)
 // ============================================================
 async function pollRadioLive() {
   try {
@@ -619,98 +923,42 @@ async function pollRadioLive() {
     const song = s.now_playing?.song;
     if (!song) return;
     renderRadio({
-      is_online: s.is_online, is_live: s.live?.is_live,
-      now_playing: { artist: song.artist||'', title: song.title||'', album: song.album||'', art: song.art||'', genre: song.genre||'', duration: s.now_playing?.duration||1, elapsed: s.now_playing?.elapsed||0 },
-      playing_next: s.playing_next?.song ? { artist: s.playing_next.song.artist||'', title: s.playing_next.song.title||'' } : null,
-      listeners: s.listeners?.current||0,
-      listen_url: s.station?.listen_url||'https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3',
+      is_online:s.is_online,is_live:s.live?.is_live,
+      now_playing:{artist:song.artist||'',title:song.title||'',album:song.album||'',art:song.art||'',genre:song.genre||'',duration:s.now_playing?.duration||1,elapsed:s.now_playing?.elapsed||0},
+      playing_next:s.playing_next?.song?{artist:s.playing_next.song.artist||'',title:s.playing_next.song.title||''}:null,
+      listeners:s.listeners?.current||0,
+      listen_url:s.station?.listen_url||'https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3'
     });
   } catch(e) {}
 }
 setInterval(pollRadioLive, 30000);
-setTimeout(pollRadioLive, 2000); // first poll after 2s
+setTimeout(pollRadioLive, 2000);
 
 // ============================================================
-// MAIN — loads health.json, renders all sections
+// FOOTER
 // ============================================================
-async function loadHealth() {
-  try {
-    const r = await fetch('health.json?_='+Date.now());
-    if (!r.ok) throw new Error('HTTP '+r.status);
-    healthData = await r.json();
-  } catch(e) {
-    healthData = null;
-    document.getElementById('homelab-nodes').innerHTML = '<div class="card loading">Failed to load health data</div>';
-  }
-
-  const nodes = healthData?.nodes;
-  const updated = healthData?.updated||'N/A';
-  renderHomelab(nodes, updated);
-  if (healthData?.radio) renderRadio(healthData.radio);
-}
-
-// ============================================================
-// INIT
-// ============================================================
-// ============================================================
-// TICKER
-// ============================================================
-function updateTicker() {
-  const track = document.getElementById('tickerTrack');
-  if (!track) return;
-  const items = [];
-
-  // Radio: now playing + next 2
-  const radio = healthData?.radio;
-  if (radio?.is_online && radio.now_playing?.artist) {
-    items.push(`<span class="ticker-item"><span class="ticker-dot radio"></span>🎵 Tocando: <strong>${radio.now_playing.artist} — ${radio.now_playing.title}</strong></span>`);
-  }
-  if (radio?.playing_next?.artist) {
-    items.push(`<span class="ticker-item"><span class="ticker-dot next"></span>⏭ A seguir: <strong>${radio.playing_next.artist} — ${radio.playing_next.title}</strong></span>`);
-  }
-  // Próximas 2 do histórico
-  if (radio?.history?.length) {
-    radio.history.slice(0, 2).forEach(h => {
-      items.push(`<span class="ticker-item"><span class="ticker-dot next"></span>⏭ Depois: <strong>${h.artist||'?'} — ${h.title||'?'}</strong></span>`);
-    });
-  }
-
-  // News headlines with clickable links
-  if (allNews.length) {
-    allNews.slice(0, 10).forEach(n => {
-      const t = n.published||'';
-      items.push(`<span class="ticker-item"><span class="ticker-dot news"></span>📰 <a href="${n.link||'#'}" target="_blank" style="color:var(--text);text-decoration:none"><strong>${n.title}</strong></a> <span class="source">${n.source}</span> <span class="ticker-time">${t}</span></span>`);
-    });
-  }
-
-  // Duplicate for seamless loop
-  track.innerHTML = items.join('') + items.join('');
-}
-
-// Call after data loads
-async function init() {
-  await loadHealth();
-  await loadNews();
-  await loadExperience();
-  updateTicker();
-  updateFooterStatus();
-  if (document.getElementById('autoRefresh').checked) startAutoRefresh();
-}
-
-// Update footer with health report
 function updateFooterStatus() {
   const el = document.getElementById('footer-status');
   if (!el || !healthData) return;
   const nodes = healthData.nodes||{};
   const total = Object.keys(nodes).length;
-  const ok = Object.values(nodes).filter(n=>n.status==='ok').length;
+  const ok = Object.values(nodes).filter(n=>n.status!=='error').length;
   const containers = Object.values(nodes).reduce((sum,n)=>sum+(n.container_count||0),0);
-  const radio = healthData.radio;
-  const song = radio?.now_playing ? `${radio.now_playing.artist} — ${radio.now_playing.title}` : 'offline';
   el.innerHTML = `Updated: ${healthData.updated||'?'} · ${ok}/${total} nodes healthy · ${containers} containers`;
 }
 
-// STARTUP
+// ============================================================
+// INIT
+// ============================================================
+async function init() {
+  await loadHealth();
+  await loadNews();
+  await loadExperience();
+  await loadSkills();
+  await loadProjects();
+  updateTicker();
+  updateFooterStatus();
+}
 init();
 </script>
 </body>
