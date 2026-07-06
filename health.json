@@ -1,31 +1,31 @@
 {
-  "updated": "2026-07-06 13:12",
+  "updated": "2026-07-06 14:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 6.3,
-        "user": 5.9,
+        "total": 4.4,
+        "user": 4.2,
         "system": 1.2,
-        "idle": 92.6,
-        "iowait": 0.2
+        "idle": 94.5,
+        "iowait": 0.1
       },
       "ram": {
-        "used_gb": 3.18,
+        "used_gb": 2.92,
         "total_gb": 7.87,
-        "percent": 40.3,
-        "available_gb": 4.7
+        "percent": 37.1,
+        "available_gb": 4.95
       },
       "swap": {
-        "used_mb": 915.9,
+        "used_mb": 928.9,
         "total_mb": 2048.0,
-        "percent": 44.7
+        "percent": 45.4
       },
       "load": {
-        "1min": 1.02,
-        "5min": 0.76,
-        "15min": 0.71,
+        "1min": 0.52,
+        "5min": 0.81,
+        "15min": 0.91,
         "cores": 4
       },
       "disks": [
@@ -33,16 +33,16 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 47.0,
-          "free_gb": 63.7,
-          "percent": 40.3
+          "used_gb": 47.9,
+          "free_gb": 62.9,
+          "percent": 41.0
         }
       ],
       "disk_io": {
-        "read_mb": 212.5,
-        "write_mb": 1663.5
+        "read_mb": 391.7,
+        "write_mb": 6845.4
       },
-      "temperature_c": 58,
+      "temperature_c": 56,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -52,19 +52,23 @@
       },
       "processes": {
         "total": 344,
-        "running": 0,
-        "sleeping": 251,
-        "threads": 1165
+        "running": 1,
+        "sleeping": 250,
+        "threads": 1159
       },
-      "uptime": "5 days, 12:24:52",
+      "uptime": "5 days, 13:25:14",
       "containers": [
         {
+          "name": "gallery backend",
+          "status": "Up 58 minutes (healthy) gallery-downloader-backend"
+        },
+        {
           "name": "kavita",
-          "status": "Up 15 hours lscr.io/linuxserver/kavita:latest"
+          "status": "Up 16 hours lscr.io/linuxserver/kavita:latest"
         },
         {
           "name": "subscription bot",
-          "status": "Up 15 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 16 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "cadvisor",
@@ -87,24 +91,20 @@
           "status": "Up 5 days gallery-downloader-worker"
         },
         {
-          "name": "gallery backend",
-          "status": "Up 5 days (healthy) gallery-downloader-backend"
-        },
-        {
           "name": "glances monitoring 1",
           "status": "Up 5 days nicolargo/glances:latest"
         },
         {
           "name": "uptime kuma",
-          "status": "Up 12 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 13 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 12 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 13 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 12 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 13 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -137,27 +137,27 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 4.2,
-        "user": 3.7,
-        "system": 0.7,
-        "idle": 95.1,
-        "iowait": 0.5
+        "total": 6.7,
+        "user": 5.7,
+        "system": 0.9,
+        "idle": 92.7,
+        "iowait": 0.6
       },
       "ram": {
-        "used_gb": 2.99,
+        "used_gb": 2.87,
         "total_gb": 7.87,
-        "percent": 38.0,
-        "available_gb": 4.88
+        "percent": 36.5,
+        "available_gb": 5.0
       },
       "swap": {
-        "used_mb": 98.2,
+        "used_mb": 194.5,
         "total_mb": 4096.0,
-        "percent": 2.4
+        "percent": 4.7
       },
       "load": {
-        "1min": 0.29,
-        "5min": 0.6,
-        "15min": 0.72,
+        "1min": 0.3,
+        "5min": 0.43,
+        "15min": 0.57,
         "cores": 4
       },
       "disks": [
@@ -173,14 +173,14 @@
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.3,
-          "free_gb": 748.0,
+          "used_gb": 121.1,
+          "free_gb": 748.1,
           "percent": 13.2
         }
       ],
       "disk_io": {
-        "read_mb": 765.2,
-        "write_mb": 1403.7
+        "read_mb": 1163.0,
+        "write_mb": 4466.3
       },
       "temperature_c": 55,
       "network": {
@@ -191,16 +191,16 @@
         }
       },
       "processes": {
-        "total": 574,
+        "total": 579,
         "running": 0,
-        "sleeping": 478,
-        "threads": 3355
+        "sleeping": 481,
+        "threads": 3361
       },
-      "uptime": "5 days, 12:24:53",
+      "uptime": "5 days, 13:25:14",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 12 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 13 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -245,17 +245,17 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 10.8,
-        "user": 7.2,
-        "system": 3.1,
-        "idle": 89.5,
-        "iowait": 0.0
+        "total": 13.2,
+        "user": 8.6,
+        "system": 3.9,
+        "idle": 87.2,
+        "iowait": 0.2
       },
       "ram": {
-        "used_gb": 1.84,
+        "used_gb": 1.83,
         "total_gb": 7.64,
-        "percent": 24.0,
-        "available_gb": 5.8
+        "percent": 23.9,
+        "available_gb": 5.81
       },
       "swap": {
         "used_mb": 0.8,
@@ -263,9 +263,9 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 1.0,
-        "5min": 0.83,
-        "15min": 0.82,
+        "1min": 0.7,
+        "5min": 1.01,
+        "15min": 0.94,
         "cores": 4
       },
       "disks": [
@@ -279,8 +279,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 6.3,
-        "write_mb": 450.2
+        "read_mb": 4.6,
+        "write_mb": 3122.8
       },
       "temperature_c": 36,
       "network": {
@@ -294,9 +294,9 @@
         "total": 265,
         "running": 0,
         "sleeping": 169,
-        "threads": 929
+        "threads": 928
       },
-      "uptime": "5 days, 12:24:56",
+      "uptime": "5 days, 13:25:18",
       "containers": [
         {
           "name": "cadvisor",
@@ -304,11 +304,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 12 hours grafana/grafana:latest"
+          "status": "Up 13 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 12 hours prom/prometheus:latest"
+          "status": "Up 13 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -360,45 +360,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "John Peel 20030326",
-      "artist": "",
-      "album": "",
-      "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/8a89d1efdfd7f71e1dd3e58a",
-      "duration": 7230,
-      "elapsed": 5377
+      "title": "Stealing",
+      "artist": "King Tubby",
+      "album": "The Roots Of Dub & Dub From Th",
+      "genre": "Reggae",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/2c90e0309de1b4f596bcd74c-1782758373.jpg",
+      "duration": 169,
+      "elapsed": 14
     },
     "playing_next": {
-      "title": "Do Good",
-      "artist": "Freddie McGregor"
+      "title": "Ernie Had A Hernia",
+      "artist": "The Toy Dolls"
     },
     "listeners": 1,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Victims",
-        "artist": "Lucky Dube",
-        "played_at": 1783334308
+        "title": "The Wake Of The Medusa",
+        "artist": "The Pogues",
+        "played_at": 1783343356
       },
       {
-        "title": "pull up",
-        "artist": "01",
-        "played_at": 1783334037
+        "title": "Isle Of Avalon",
+        "artist": "Iron Maiden",
+        "played_at": 1783342769
       },
       {
-        "title": "The Train Kept A-Rollin'",
-        "artist": "Motorhead",
-        "played_at": 1783333844
+        "title": "Life's Too Easy",
+        "artist": "The Undertones",
+        "played_at": 1783342621
       },
       {
-        "title": "Let There Be Light",
-        "artist": "Dennis Brown",
-        "played_at": 1783333619
+        "title": "You Really Got Me",
+        "artist": "Toots and the Maytals",
+        "played_at": 1783342436
       },
       {
-        "title": "202 - Occupation Ska",
-        "artist": "The Skatalites",
-        "played_at": 1783333441
+        "title": "Mad About You",
+        "artist": "Bruce Ruffin",
+        "played_at": 1783342231
       }
     ]
   }
