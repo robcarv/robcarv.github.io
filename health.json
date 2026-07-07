@@ -1,21 +1,21 @@
 {
-  "updated": "2026-07-07 17:12",
+  "updated": "2026-07-07 18:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
         "total": 5.1,
-        "user": 4.1,
+        "user": 4.2,
         "system": 1.3,
         "idle": 94.3,
-        "iowait": 0.1
+        "iowait": 0.2
       },
       "percpu": [
-        4.6,
         4.5,
-        6.9,
-        4.7
+        6.5,
+        4.5,
+        5.2
       ],
       "ram": {
         "used_gb": 3.82,
@@ -29,9 +29,9 @@
         "percent": 50.4
       },
       "load": {
-        "1min": 0.51,
-        "5min": 0.68,
-        "15min": 0.84,
+        "1min": 0.36,
+        "5min": 0.41,
+        "15min": 0.52,
         "cores": 4
       },
       "disks": [
@@ -45,10 +45,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 2.8,
-        "write_mb": 2050.1
+        "read_mb": 0.2,
+        "write_mb": 1968.9
       },
-      "temperature_c": 56,
+      "temperature_c": 53,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -57,24 +57,24 @@
         }
       },
       "processes": {
-        "total": 349,
-        "running": 1,
-        "sleeping": 254,
-        "threads": 1206
+        "total": 348,
+        "running": 0,
+        "sleeping": 255,
+        "threads": 1205
       },
-      "uptime": "6 days, 16:25:29",
+      "uptime": "6 days, 17:25:33",
       "containers": [
         {
           "name": "gallery backend",
-          "status": "Up 28 hours (healthy) gallery-downloader-backend"
+          "status": "Up 29 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "kavita",
-          "status": "Up 43 hours lscr.io/linuxserver/kavita:latest"
+          "status": "Up 44 hours lscr.io/linuxserver/kavita:latest"
         },
         {
           "name": "subscription bot",
-          "status": "Up 43 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 44 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "cadvisor",
@@ -90,7 +90,7 @@
         },
         {
           "name": "gallery frontend",
-          "status": "Up 4 days gallery-downloader-frontend"
+          "status": "Up 5 days gallery-downloader-frontend"
         },
         {
           "name": "gallery worker",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 16 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 17 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 16 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 17 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 16 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 17 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,33 +143,33 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 5.7,
-        "user": 5.7,
+        "total": 3.8,
+        "user": 6.0,
         "system": 1.1,
-        "idle": 92.9,
-        "iowait": 0.3
+        "idle": 92.5,
+        "iowait": 0.4
       },
       "percpu": [
-        6.6,
-        6.6,
-        5.4,
-        5.6
+        4.5,
+        4.2,
+        2.9,
+        4.6
       ],
       "ram": {
-        "used_gb": 2.91,
+        "used_gb": 2.89,
         "total_gb": 7.87,
-        "percent": 37.0,
-        "available_gb": 4.96
+        "percent": 36.7,
+        "available_gb": 4.98
       },
       "swap": {
-        "used_mb": 251.5,
+        "used_mb": 250.5,
         "total_mb": 4096.0,
         "percent": 6.1
       },
       "load": {
-        "1min": 0.31,
-        "5min": 0.51,
-        "15min": 0.74,
+        "1min": 0.48,
+        "5min": 0.6,
+        "15min": 0.52,
         "cores": 4
       },
       "disks": [
@@ -178,21 +178,21 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 72.7,
-          "free_gb": 38.1,
+          "free_gb": 38.0,
           "percent": 62.3
         },
         {
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.2,
+          "used_gb": 121.1,
           "free_gb": 748.1,
           "percent": 13.2
         }
       ],
       "disk_io": {
-        "read_mb": 596.8,
-        "write_mb": 1271.9
+        "read_mb": 643.1,
+        "write_mb": 1272.1
       },
       "temperature_c": 54,
       "network": {
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 571,
+        "total": 580,
         "running": 0,
-        "sleeping": 478,
-        "threads": 3306
+        "sleeping": 481,
+        "threads": 3317
       },
-      "uptime": "6 days, 16:25:30",
+      "uptime": "6 days, 17:25:33",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 16 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 17 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 11.3,
+        "total": 13.9,
         "user": 9.1,
-        "system": 3.5,
-        "idle": 87.3,
+        "system": 3.7,
+        "idle": 87.0,
         "iowait": 0.0
       },
       "percpu": [
-        11.5,
-        10.4,
-        11.9,
-        11.6
+        15.0,
+        13.0,
+        14.6,
+        13.3
       ],
       "ram": {
-        "used_gb": 1.8,
+        "used_gb": 1.76,
         "total_gb": 7.64,
-        "percent": 23.5,
-        "available_gb": 5.84
+        "percent": 23.0,
+        "available_gb": 5.88
       },
       "swap": {
         "used_mb": 0.8,
@@ -281,9 +281,9 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 0.35,
-        "5min": 0.71,
-        "15min": 0.81,
+        "1min": 1.39,
+        "5min": 1.11,
+        "15min": 0.95,
         "cores": 4
       },
       "disks": [
@@ -297,10 +297,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.6,
-        "write_mb": 476.3
+        "read_mb": 2.5,
+        "write_mb": 891.9
       },
-      "temperature_c": 36,
+      "temperature_c": 37,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -312,9 +312,9 @@
         "total": 265,
         "running": 0,
         "sleeping": 169,
-        "threads": 924
+        "threads": 925
       },
-      "uptime": "6 days, 16:25:33",
+      "uptime": "6 days, 17:25:37",
       "containers": [
         {
           "name": "cadvisor",
@@ -322,11 +322,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 16 hours grafana/grafana:latest"
+          "status": "Up 17 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 16 hours prom/prometheus:latest"
+          "status": "Up 17 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -378,45 +378,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "John Peel Festive Fifty 1985 Part 2 44_16",
-      "artist": "Niag  ",
-      "album": "",
-      "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/12b85b49f95e3aa70e178bb7",
-      "duration": 2806,
-      "elapsed": 248
+      "title": "Stay Clean",
+      "artist": "Motorhead",
+      "album": "The World Is Ours - Vol.1",
+      "genre": "Heavy Metal",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/04b4734f4e1a10bbe4dc5ff8-1782762472.jpg",
+      "duration": 186,
+      "elapsed": 59
     },
     "playing_next": {
-      "title": "Everything Goes",
-      "artist": "The Cramps"
+      "title": "Tear Up",
+      "artist": "Skatalites (The)"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Toots & The Maytals - Israel Children",
-        "artist": "09",
-        "played_at": 1783440332
+        "title": "She's A Run Around",
+        "artist": "The Undertones",
+        "played_at": 1783444211
       },
       {
-        "title": "21 - system shit",
-        "artist": "extreme noise terror",
-        "played_at": 1783440279
+        "title": "Don't Bust My Chops",
+        "artist": "Ramones",
+        "played_at": 1783444063
       },
       {
-        "title": "Intro",
-        "artist": "Jack Rose",
-        "played_at": 1783440224
+        "title": "Engine 54",
+        "artist": "The Ethiopians",
+        "played_at": 1783443906
       },
       {
-        "title": "No More Lies",
-        "artist": "Iron Maiden",
-        "played_at": 1783439785
+        "title": "Ice Cream",
+        "artist": "New Young Pony Club",
+        "played_at": 1783443697
       },
       {
-        "title": "Inchpinchers",
-        "artist": "Wailing Souls",
-        "played_at": 1783439619
+        "title": "Beat Down Babylon",
+        "artist": "Junior Byles",
+        "played_at": 1783443540
       }
     ]
   }
