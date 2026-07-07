@@ -1,21 +1,21 @@
 {
-  "updated": "2026-07-07 23:12",
+  "updated": "2026-07-08 00:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 5.8,
-        "user": 4.5,
-        "system": 2.1,
-        "idle": 92.4,
-        "iowait": 0.6
+        "total": 6.0,
+        "user": 4.0,
+        "system": 1.8,
+        "idle": 93.7,
+        "iowait": 0.2
       },
       "percpu": [
-        6.3,
-        7.8,
-        6.9,
-        3.2
+        6.5,
+        4.8,
+        9.7,
+        4.0
       ],
       "ram": {
         "used_gb": 3.49,
@@ -29,9 +29,9 @@
         "percent": 49.8
       },
       "load": {
-        "1min": 0.95,
-        "5min": 0.86,
-        "15min": 0.83,
+        "1min": 1.04,
+        "5min": 0.56,
+        "15min": 0.61,
         "cores": 4
       },
       "disks": [
@@ -45,10 +45,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 2.9,
-        "write_mb": 1415.2
+        "read_mb": 7.8,
+        "write_mb": 1596.2
       },
-      "temperature_c": 56,
+      "temperature_c": 54,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -57,16 +57,16 @@
         }
       },
       "processes": {
-        "total": 364,
-        "running": 1,
+        "total": 351,
+        "running": 0,
         "sleeping": 248,
-        "threads": 1215
+        "threads": 1205
       },
-      "uptime": "6 days, 22:24:59",
+      "uptime": "6 days, 23:25:03",
       "containers": [
         {
           "name": "gallery backend",
-          "status": "Up 34 hours (healthy) gallery-downloader-backend"
+          "status": "Up 35 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "kavita",
@@ -78,15 +78,15 @@
         },
         {
           "name": "cadvisor",
-          "status": "Up 3 days (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 4 days (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "watchtower",
-          "status": "Up 3 days (healthy) containrrr/watchtower"
+          "status": "Up 4 days (healthy) containrrr/watchtower"
         },
         {
           "name": "psclient",
-          "status": "Up 3 days packetstream/psclient:latest"
+          "status": "Up 4 days packetstream/psclient:latest"
         },
         {
           "name": "gallery frontend",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 22 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 23 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 22 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 23 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 22 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 23 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,33 +143,33 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 6.0,
-        "user": 5.7,
+        "total": 5.6,
+        "user": 5.6,
         "system": 1.1,
         "idle": 92.8,
-        "iowait": 0.4
+        "iowait": 0.5
       },
       "percpu": [
-        7.1,
-        6.2,
         6.7,
-        5.2
+        5.5,
+        7.5,
+        4.5
       ],
       "ram": {
-        "used_gb": 2.95,
+        "used_gb": 2.97,
         "total_gb": 7.87,
-        "percent": 37.5,
-        "available_gb": 4.92
+        "percent": 37.7,
+        "available_gb": 4.9
       },
       "swap": {
-        "used_mb": 243.5,
+        "used_mb": 241.3,
         "total_mb": 4096.0,
         "percent": 5.9
       },
       "load": {
-        "1min": 0.32,
-        "5min": 0.31,
-        "15min": 0.36,
+        "1min": 0.37,
+        "5min": 0.51,
+        "15min": 0.69,
         "cores": 4
       },
       "disks": [
@@ -178,7 +178,7 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 72.7,
-          "free_gb": 38.0,
+          "free_gb": 38.1,
           "percent": 62.3
         },
         {
@@ -191,8 +191,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 635.2,
-        "write_mb": 1325.1
+        "read_mb": 527.6,
+        "write_mb": 1173.6
       },
       "temperature_c": 54,
       "network": {
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 572,
+        "total": 573,
         "running": 0,
-        "sleeping": 477,
+        "sleeping": 479,
         "threads": 3308
       },
-      "uptime": "6 days, 22:25:00",
+      "uptime": "6 days, 23:25:03",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 22 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 23 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 12.0,
+        "total": 12.7,
         "user": 9.1,
-        "system": 3.8,
-        "idle": 87.0,
-        "iowait": 0.1
+        "system": 3.7,
+        "idle": 87.1,
+        "iowait": 0.0
       },
       "percpu": [
-        12.2,
-        11.3,
-        12.1,
-        12.6
+        11.2,
+        12.9,
+        13.3,
+        13.5
       ],
       "ram": {
-        "used_gb": 1.77,
+        "used_gb": 1.79,
         "total_gb": 7.64,
-        "percent": 23.2,
-        "available_gb": 5.87
+        "percent": 23.5,
+        "available_gb": 5.84
       },
       "swap": {
         "used_mb": 0.8,
@@ -281,8 +281,8 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 1.0,
-        "5min": 0.76,
+        "1min": 0.45,
+        "5min": 0.59,
         "15min": 0.64,
         "cores": 4
       },
@@ -292,13 +292,13 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
           "used_gb": 31.0,
-          "free_gb": 78.4,
+          "free_gb": 78.5,
           "percent": 26.9
         }
       ],
       "disk_io": {
-        "read_mb": 1.0,
-        "write_mb": 480.2
+        "read_mb": 94.4,
+        "write_mb": 622.6
       },
       "temperature_c": 36,
       "network": {
@@ -309,24 +309,24 @@
         }
       },
       "processes": {
-        "total": 268,
+        "total": 266,
         "running": 0,
         "sleeping": 169,
-        "threads": 927
+        "threads": 924
       },
-      "uptime": "6 days, 22:25:03",
+      "uptime": "6 days, 23:25:07",
       "containers": [
         {
           "name": "cadvisor",
-          "status": "Up 3 days (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 4 days (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "cve grafana",
-          "status": "Up 22 hours grafana/grafana:latest"
+          "status": "Up 23 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 22 hours prom/prometheus:latest"
+          "status": "Up 23 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -384,7 +384,7 @@
       "genre": "",
       "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/df7302a34b3dff0c62016e43",
       "duration": 7082,
-      "elapsed": 1613
+      "elapsed": 5217
     },
     "playing_next": {
       "title": "The Fallen Angel",
