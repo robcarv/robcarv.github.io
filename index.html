@@ -735,6 +735,7 @@ main{margin-left:var(--sidebar-w);min-height:100vh;padding-bottom:60px}
     <div class="container">
       <p class="footer-status" id="footer-status"></p>
       <p style="color:var(--muted);font-size:.7rem;margin:0 0 .5rem">© 2026 Robert Carvalho</p>
+      <p style="color:var(--muted);font-size:.65rem;margin:0 0 .5rem" id="visitorCount">👁 visitors: ...</p>
       <div class="footer-links">
         <a href="https://github.com/robcarv" target="_blank">GitHub</a>
         <a href="https://www.linkedin.com/in/rac-carvalho/" target="_blank">LinkedIn</a>
@@ -1304,6 +1305,21 @@ async function pollRadioLive() {
 }
 setInterval(pollRadioLive, 30000);
 setTimeout(pollRadioLive, 2000);
+
+// ============================================================
+// VISITOR COUNTER — persistent via countapi.xyz
+// ============================================================
+async function loadVisitorCount() {
+  try {
+    // Hit returns {value: N} — increments on each page load
+    const r = await fetch('https://api.countapi.xyz/hit/robcarv.github.io/visits');
+    const d = await r.json();
+    document.getElementById('visitorCount').textContent = `👁 ${Number(d.value).toLocaleString()} visitors`;
+  } catch(e) {
+    document.getElementById('visitorCount').textContent = '👁 visitors: ...';
+  }
+}
+loadVisitorCount();
 
 // ============================================================
 // FOOTER
