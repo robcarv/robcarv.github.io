@@ -1,21 +1,27 @@
 {
-  "updated": "2026-07-07 16:12",
+  "updated": "2026-07-07 17:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 5.4,
-        "user": 4.3,
-        "system": 2.1,
-        "idle": 93.2,
-        "iowait": 0.2
+        "total": 5.1,
+        "user": 4.1,
+        "system": 1.3,
+        "idle": 94.3,
+        "iowait": 0.1
       },
+      "percpu": [
+        4.6,
+        4.5,
+        6.9,
+        4.7
+      ],
       "ram": {
-        "used_gb": 3.81,
+        "used_gb": 3.82,
         "total_gb": 7.87,
-        "percent": 48.3,
-        "available_gb": 4.07
+        "percent": 48.5,
+        "available_gb": 4.05
       },
       "swap": {
         "used_mb": 1031.7,
@@ -23,9 +29,9 @@
         "percent": 50.4
       },
       "load": {
-        "1min": 0.7,
-        "5min": 0.9,
-        "15min": 0.9,
+        "1min": 0.51,
+        "5min": 0.68,
+        "15min": 0.84,
         "cores": 4
       },
       "disks": [
@@ -39,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 29.6,
-        "write_mb": 1971.9
+        "read_mb": 2.8,
+        "write_mb": 2050.1
       },
       "temperature_c": 56,
       "network": {
@@ -54,21 +60,21 @@
         "total": 349,
         "running": 1,
         "sleeping": 254,
-        "threads": 1207
+        "threads": 1206
       },
-      "uptime": "6 days, 15:25:26",
+      "uptime": "6 days, 16:25:29",
       "containers": [
         {
           "name": "gallery backend",
-          "status": "Up 27 hours (healthy) gallery-downloader-backend"
+          "status": "Up 28 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "kavita",
-          "status": "Up 42 hours lscr.io/linuxserver/kavita:latest"
+          "status": "Up 43 hours lscr.io/linuxserver/kavita:latest"
         },
         {
           "name": "subscription bot",
-          "status": "Up 42 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 43 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "cadvisor",
@@ -96,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 15 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 16 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 15 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 16 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 15 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 16 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -137,17 +143,23 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 5.5,
-        "user": 5.6,
-        "system": 1.0,
+        "total": 5.7,
+        "user": 5.7,
+        "system": 1.1,
         "idle": 92.9,
-        "iowait": 0.4
+        "iowait": 0.3
       },
+      "percpu": [
+        6.6,
+        6.6,
+        5.4,
+        5.6
+      ],
       "ram": {
-        "used_gb": 2.92,
+        "used_gb": 2.91,
         "total_gb": 7.87,
-        "percent": 37.1,
-        "available_gb": 4.95
+        "percent": 37.0,
+        "available_gb": 4.96
       },
       "swap": {
         "used_mb": 251.5,
@@ -155,9 +167,9 @@
         "percent": 6.1
       },
       "load": {
-        "1min": 0.28,
-        "5min": 0.43,
-        "15min": 0.52,
+        "1min": 0.31,
+        "5min": 0.51,
+        "15min": 0.74,
         "cores": 4
       },
       "disks": [
@@ -174,13 +186,13 @@
           "device": "/dev/sda1",
           "size_gb": 915.8,
           "used_gb": 121.2,
-          "free_gb": 748.0,
+          "free_gb": 748.1,
           "percent": 13.2
         }
       ],
       "disk_io": {
-        "read_mb": 440.2,
-        "write_mb": 1015.3
+        "read_mb": 596.8,
+        "write_mb": 1271.9
       },
       "temperature_c": 54,
       "network": {
@@ -196,11 +208,11 @@
         "sleeping": 478,
         "threads": 3306
       },
-      "uptime": "6 days, 15:25:27",
+      "uptime": "6 days, 16:25:30",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 15 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 16 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -245,17 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 10.3,
-        "user": 8.9,
+        "total": 11.3,
+        "user": 9.1,
         "system": 3.5,
-        "idle": 87.5,
-        "iowait": 0.1
+        "idle": 87.3,
+        "iowait": 0.0
       },
+      "percpu": [
+        11.5,
+        10.4,
+        11.9,
+        11.6
+      ],
       "ram": {
-        "used_gb": 1.81,
+        "used_gb": 1.8,
         "total_gb": 7.64,
-        "percent": 23.8,
-        "available_gb": 5.82
+        "percent": 23.5,
+        "available_gb": 5.84
       },
       "swap": {
         "used_mb": 0.8,
@@ -263,9 +281,9 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 0.83,
-        "5min": 0.67,
-        "15min": 0.68,
+        "1min": 0.35,
+        "5min": 0.71,
+        "15min": 0.81,
         "cores": 4
       },
       "disks": [
@@ -275,12 +293,12 @@
           "size_gb": 115.3,
           "used_gb": 31.0,
           "free_gb": 78.5,
-          "percent": 26.8
+          "percent": 26.9
         }
       ],
       "disk_io": {
-        "read_mb": 0.5,
-        "write_mb": 465.4
+        "read_mb": 0.6,
+        "write_mb": 476.3
       },
       "temperature_c": 36,
       "network": {
@@ -291,12 +309,12 @@
         }
       },
       "processes": {
-        "total": 266,
+        "total": 265,
         "running": 0,
         "sleeping": 169,
         "threads": 924
       },
-      "uptime": "6 days, 15:25:30",
+      "uptime": "6 days, 16:25:33",
       "containers": [
         {
           "name": "cadvisor",
@@ -304,11 +322,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 15 hours grafana/grafana:latest"
+          "status": "Up 16 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 15 hours prom/prometheus:latest"
+          "status": "Up 16 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -360,45 +378,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "John Peel 2003-09-19",
-      "artist": "John Peel (R1)",
-      "album": "from RA",
+      "title": "John Peel Festive Fifty 1985 Part 2 44_16",
+      "artist": "Niag  ",
+      "album": "",
       "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/c9d445a129d6905990b5f9a2",
-      "duration": 7082,
-      "elapsed": 6480
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/12b85b49f95e3aa70e178bb7",
+      "duration": 2806,
+      "elapsed": 248
     },
     "playing_next": {
-      "title": "camera obscura - sun on his back",
-      "artist": "John Peel"
+      "title": "Everything Goes",
+      "artist": "The Cramps"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Welcome To The Whole Week",
-        "artist": "Stiff Little Fingers",
-        "played_at": 1783430488
+        "title": "Toots & The Maytals - Israel Children",
+        "artist": "09",
+        "played_at": 1783440332
       },
       {
-        "title": "Pure sorrow",
-        "artist": "The Heptones",
-        "played_at": 1783430344
+        "title": "21 - system shit",
+        "artist": "extreme noise terror",
+        "played_at": 1783440279
       },
       {
-        "title": "Jesse (session)",
-        "artist": "DICK DALE",
-        "played_at": 1783430188
+        "title": "Intro",
+        "artist": "Jack Rose",
+        "played_at": 1783440224
       },
       {
-        "title": "Dirty Old Town",
-        "artist": "The Pogues",
-        "played_at": 1783429964
+        "title": "No More Lies",
+        "artist": "Iron Maiden",
+        "played_at": 1783439785
       },
       {
-        "title": "Otherside",
-        "artist": "Rancid",
-        "played_at": 1783429854
+        "title": "Inchpinchers",
+        "artist": "Wailing Souls",
+        "played_at": 1783439619
       }
     ]
   }
