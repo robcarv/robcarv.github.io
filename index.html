@@ -1307,16 +1307,20 @@ setInterval(pollRadioLive, 30000);
 setTimeout(pollRadioLive, 2000);
 
 // ============================================================
-// VISITOR COUNTER — persistent via countapi.xyz
+// VISITOR COUNTER — localStorage based, always works
 // ============================================================
-async function loadVisitorCount() {
+function loadVisitorCount() {
   try {
-    // Hit returns {value: N} — increments on each page load
-    const r = await fetch('https://api.countapi.xyz/hit/robcarv.github.io/visits');
-    const d = await r.json();
-    document.getElementById('visitorCount').textContent = `👁 ${Number(d.value).toLocaleString()} visitors`;
+    let count = parseInt(localStorage.getItem('visit_count')||'0');
+    // Only count once per session
+    if (!sessionStorage.getItem('visit_counted')) {
+      count++;
+      localStorage.setItem('visit_count', count);
+      sessionStorage.setItem('visit_counted', '1');
+    }
+    document.getElementById('visitorCount').textContent = `👁 ${count.toLocaleString()} visits`;
   } catch(e) {
-    document.getElementById('visitorCount').textContent = '👁 visitors: ...';
+    document.getElementById('visitorCount').textContent = '👁 welcome!';
   }
 }
 loadVisitorCount();
