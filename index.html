@@ -735,7 +735,7 @@ main{margin-left:var(--sidebar-w);min-height:100vh;padding-bottom:60px}
     <div class="container">
       <p class="footer-status" id="footer-status"></p>
       <p style="color:var(--muted);font-size:.7rem;margin:0 0 .5rem">© 2026 Robert Carvalho</p>
-      <p style="color:var(--muted);font-size:.65rem;margin:0 0 .5rem" id="visitorCount">👁 visitors: ...</p>
+      <p style="color:var(--muted);font-size:.65rem;margin:0 0 .5rem"><span id="visitorCount">👁 loading...</span> · <span id="onlineNow" style="color:var(--green)">● online</span></p>
       <div class="footer-links">
         <a href="https://github.com/robcarv" target="_blank">GitHub</a>
         <a href="https://www.linkedin.com/in/rac-carvalho/" target="_blank">LinkedIn</a>
@@ -1307,21 +1307,31 @@ setInterval(pollRadioLive, 30000);
 setTimeout(pollRadioLive, 2000);
 
 // ============================================================
-// VISITOR COUNTER — localStorage based, always works
+// VISITOR COUNTER — total via counterapi.dev, online indicator
 // ============================================================
-function loadVisitorCount() {
+async function loadVisitorCount() {
+  const totalEl = document.getElementById('visitorCount');
   try {
-    let count = parseInt(localStorage.getItem('visit_count')||'0');
-    // Only count once per session
-    if (!sessionStorage.getItem('visit_counted')) {
-      count++;
-      localStorage.setItem('visit_count', count);
-      sessionStorage.setItem('visit_counted', '1');
-    }
-    document.getElementById('visitorCount').textContent = `👁 ${count.toLocaleString()} visits`;
+    const r = await fetch('https://api.counterapi.dev/v1/robcarv/visits/up');
+    const d = await r.json();
+    totalEl.textContent = `👁 ${Number(d.count).toLocaleString()} visits`;
   } catch(e) {
-    document.getElementById('visitorCount').textContent = '👁 welcome!';
+    // Fallback to localStorage
+    let c = parseInt(localStorage.getItem('visit_count')||'0');
+    if (!sessionStorage.getItem('vc')) { c++; localStorage.setItem('visit_count',c); sessionStorage.setItem('vc','1'); }
+    totalEl.textContent = `👁 ~${c.toLocaleString()} visits`;
   }
+
+  // Online indicator — green dot while page is active
+  const onlineEl = document.getElementById('onlineNow');
+  document.addEventListener('visibilitychange', () => {
+    onlineEl.style.color = document.hidden ? 'var(--muted)' : 'var(--green)';
+    onlineEl.textContent = document.hidden ? '● away' : '● online';
+  });
+  // Heartbeat every 30s to keep session alive
+  setInterval(() => {
+    localStorage.setItem('last_seen', Date.now());
+  }, 30000);
 }
 loadVisitorCount();
 
