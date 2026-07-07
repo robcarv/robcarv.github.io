@@ -1311,14 +1311,21 @@ setTimeout(pollRadioLive, 2000);
 // ============================================================
 async function loadVisitorCount() {
   const totalEl = document.getElementById('visitorCount');
+  const counted = sessionStorage.getItem('vc');
   try {
-    const r = await fetch('https://api.counterapi.dev/v1/robcarv/visits/up');
-    const d = await r.json();
-    totalEl.textContent = `👁 ${Number(d.count).toLocaleString()} visits`;
+    if (!counted) {
+      // First visit this session — increment
+      const r = await fetch('https://api.counterapi.dev/v1/robcarv/visits/up');
+      const d = await r.json();
+      totalEl.textContent = `👁 ${Number(d.count).toLocaleString()} visits`;
+      sessionStorage.setItem('vc', d.count);
+    } else {
+      // Already counted — just display
+      totalEl.textContent = `👁 ${Number(counted).toLocaleString()} visits`;
+    }
   } catch(e) {
-    // Fallback to localStorage
     let c = parseInt(localStorage.getItem('visit_count')||'0');
-    if (!sessionStorage.getItem('vc')) { c++; localStorage.setItem('visit_count',c); sessionStorage.setItem('vc','1'); }
+    if (!counted) { c++; localStorage.setItem('visit_count',c); sessionStorage.setItem('vc',c); }
     totalEl.textContent = `👁 ~${c.toLocaleString()} visits`;
   }
 
