@@ -1,31 +1,31 @@
 {
-  "updated": "2026-07-07 02:12",
+  "updated": "2026-07-07 03:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 4.0,
-        "user": 4.0,
-        "system": 1.3,
-        "idle": 94.4,
-        "iowait": 0.2
+        "total": 6.6,
+        "user": 4.4,
+        "system": 2.0,
+        "idle": 92.9,
+        "iowait": 0.4
       },
       "ram": {
-        "used_gb": 3.42,
+        "used_gb": 3.41,
         "total_gb": 7.87,
         "percent": 43.4,
-        "available_gb": 4.45
+        "available_gb": 4.46
       },
       "swap": {
-        "used_mb": 1061.7,
+        "used_mb": 1059.7,
         "total_mb": 2048.0,
-        "percent": 51.8
+        "percent": 51.7
       },
       "load": {
-        "1min": 0.48,
-        "5min": 0.55,
-        "15min": 0.86,
+        "1min": 0.54,
+        "5min": 0.7,
+        "15min": 0.78,
         "cores": 4
       },
       "disks": [
@@ -35,14 +35,14 @@
           "size_gb": 116.7,
           "used_gb": 47.9,
           "free_gb": 62.8,
-          "percent": 41.0
+          "percent": 41.1
         }
       ],
       "disk_io": {
-        "read_mb": 73857.1,
-        "write_mb": 45941.8
+        "read_mb": 176.3,
+        "write_mb": 2027.4
       },
-      "temperature_c": 50,
+      "temperature_c": 52,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -52,23 +52,23 @@
       },
       "processes": {
         "total": 350,
-        "running": 1,
-        "sleeping": 254,
+        "running": 0,
+        "sleeping": 255,
         "threads": 1196
       },
-      "uptime": "6 days, 1:25:28",
+      "uptime": "6 days, 2:25:34",
       "containers": [
         {
           "name": "gallery backend",
-          "status": "Up 13 hours (healthy) gallery-downloader-backend"
+          "status": "Up 14 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "kavita",
-          "status": "Up 28 hours lscr.io/linuxserver/kavita:latest"
+          "status": "Up 29 hours lscr.io/linuxserver/kavita:latest"
         },
         {
           "name": "subscription bot",
-          "status": "Up 28 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 29 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "cadvisor",
@@ -96,15 +96,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 41 minutes (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 2 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 40 minutes (healthy) bellamy/wallos:latest"
+          "status": "Up 2 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 40 minutes jc21/nginx-proxy-manager:latest"
+          "status": "Up 2 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -137,16 +137,16 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 3.4,
-        "user": 5.6,
+        "total": 3.3,
+        "user": 5.5,
         "system": 1.0,
-        "idle": 72.6,
-        "iowait": 20.8
+        "idle": 92.9,
+        "iowait": 0.6
       },
       "ram": {
-        "used_gb": 2.85,
+        "used_gb": 2.86,
         "total_gb": 7.87,
-        "percent": 36.2,
+        "percent": 36.3,
         "available_gb": 5.02
       },
       "swap": {
@@ -155,9 +155,9 @@
         "percent": 2.7
       },
       "load": {
-        "1min": 3.13,
-        "5min": 1.44,
-        "15min": 0.98,
+        "1min": 0.31,
+        "5min": 1.1,
+        "15min": 1.23,
         "cores": 4
       },
       "disks": [
@@ -173,14 +173,14 @@
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.1,
-          "free_gb": 748.1,
+          "used_gb": 121.3,
+          "free_gb": 747.9,
           "percent": 13.2
         }
       ],
       "disk_io": {
-        "read_mb": 1360.8,
-        "write_mb": 1865.0
+        "read_mb": 1203.1,
+        "write_mb": 1831.1
       },
       "temperature_c": 51,
       "network": {
@@ -191,16 +191,16 @@
         }
       },
       "processes": {
-        "total": 574,
+        "total": 577,
         "running": 0,
-        "sleeping": 477,
-        "threads": 3303
+        "sleeping": 479,
+        "threads": 3309
       },
-      "uptime": "6 days, 1:25:29",
+      "uptime": "6 days, 2:25:35",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up About an hour ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 2 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -245,17 +245,17 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 19.8,
-        "user": 16.7,
-        "system": 5.2,
-        "idle": 76.0,
+        "total": 26.9,
+        "user": 8.7,
+        "system": 3.6,
+        "idle": 87.6,
         "iowait": 0.1
       },
       "ram": {
-        "used_gb": 1.89,
+        "used_gb": 1.79,
         "total_gb": 7.64,
-        "percent": 24.7,
-        "available_gb": 5.75
+        "percent": 23.4,
+        "available_gb": 5.85
       },
       "swap": {
         "used_mb": 0.8,
@@ -263,9 +263,9 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 0.84,
-        "5min": 1.2,
-        "15min": 1.34,
+        "1min": 1.12,
+        "5min": 1.05,
+        "15min": 1.29,
         "cores": 4
       },
       "disks": [
@@ -274,13 +274,13 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
           "used_gb": 30.8,
-          "free_gb": 78.7,
+          "free_gb": 78.6,
           "percent": 26.7
         }
       ],
       "disk_io": {
-        "read_mb": 1898.7,
-        "write_mb": 3533.2
+        "read_mb": 0.7,
+        "write_mb": 459.2
       },
       "temperature_c": 34,
       "network": {
@@ -291,12 +291,12 @@
         }
       },
       "processes": {
-        "total": 269,
+        "total": 267,
         "running": 0,
-        "sleeping": 172,
-        "threads": 933
+        "sleeping": 169,
+        "threads": 920
       },
-      "uptime": "6 days, 1:25:33",
+      "uptime": "6 days, 2:25:38",
       "containers": [
         {
           "name": "cadvisor",
@@ -304,11 +304,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 56 minutes grafana/grafana:latest"
+          "status": "Up 2 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 56 minutes prom/prometheus:latest"
+          "status": "Up 2 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -360,45 +360,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Hi-Fi Gets a Pounding, Pts. 1 & 2",
-      "artist": "Dub Syndicate",
-      "album": "Pounding System",
-      "genre": "Dub",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/6e2713758ebded3e49ae4588-1782757039.jpg",
-      "duration": 329,
-      "elapsed": 144
+      "title": "Blue Heaven",
+      "artist": "The Pogues",
+      "album": "Peace And Love (2005 Remastered & Expanded)",
+      "genre": "Folk Rock",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/261e3a653e8608e7e44d6ce4-1782776205.jpg",
+      "duration": 216,
+      "elapsed": 105
     },
     "playing_next": {
-      "title": "13 the bride stripped bare by 'the batchelors' (top gear 20-10-1968)",
-      "artist": "The Bonzo Dog Doo-Dah Band"
+      "title": "Louie Louie",
+      "artist": "Toots & The Maytals"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Forward Revolution",
-        "artist": "Junior Delgado",
-        "played_at": 1783386326
+        "title": "Brixton",
+        "artist": "Rancid",
+        "played_at": 1783390131
       },
       {
-        "title": "400 Years",
-        "artist": "Peter Tosh (featuring the Skatalites, the Upsetters)",
-        "played_at": 1783386158
+        "title": "Bridge View",
+        "artist": "Skatalites (The)",
+        "played_at": 1783389933
       },
       {
-        "title": "Blitzkrieg Bop",
-        "artist": "The Ramones",
-        "played_at": 1783386031
+        "title": "napalm death - (1988.03.08.) - the peel sessions ii - 09 - c.s.",
+        "artist": "Napalm Death",
+        "played_at": 1783389837
       },
       {
-        "title": "Chicken",
-        "artist": "The Cramps",
-        "played_at": 1783385934
+        "title": "Psalm of Bob Marley",
+        "artist": "Culture",
+        "played_at": 1783389601
       },
       {
-        "title": "Cherry Bomb",
-        "artist": "The Runaways",
-        "played_at": 1783385797
+        "title": "Men We Yadd",
+        "artist": "Burning Spear",
+        "played_at": 1783389388
       }
     ]
   }
