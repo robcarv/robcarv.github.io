@@ -170,12 +170,13 @@ main{margin-left:var(--sidebar-w);min-height:100vh;padding-bottom:60px}
    SKILLS — Grid with devicon
    ============================================================ */
 .skills-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:.85rem;max-width:1100px
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:.85rem;max-width:1100px;
+  justify-content:center
 }
 .skill-item{
   display:flex;flex-direction:column;align-items:center;gap:.4rem;
   padding:.75rem .5rem;background:var(--bg-card);border:1px solid var(--border);
-  border-radius:10px;transition:all .2s
+  border-radius:10px;transition:all .2s;text-align:center
 }
 .skill-item:hover{border-color:var(--accent);transform:translateY(-2px)}
 .skill-item img{width:36px;height:36px}
@@ -396,39 +397,56 @@ main{margin-left:var(--sidebar-w);min-height:100vh;padding-bottom:60px}
   .section-title{font-size:1.3rem}
 }
 /* ============================================================
-   4K / LARGE SCREENS — scale up for 2560px+
+   4K / LARGE SCREENS — centered layout, big typography
    ============================================================ */
 @media(min-width:2000px){
-  body{font-size:1.15rem}
-  .container{max-width:1800px;padding:0 4rem}
-  .hero-title{font-size:4rem}
-  .hero-subtitle{font-size:1.3rem}
-  .hero-avatar,.hero-avatar-frame{width:280px;height:280px}
-  .hero-overline{font-size:1rem}
-  .section-title{font-size:2.5rem}
-  .section{padding:4rem 0}
-  .sidebar{width:90px}.sidebar:hover{width:220px}
-  .sidebar-link i{font-size:1.5rem}
-  .sidebar-link{font-size:.9rem;padding:.8rem 1.5rem}
-  .sidebar-avatar{width:48px;height:48px}
-  main{margin-left:90px}
-  .about-content p,.timeline-items li{font-size:.95rem}
-  .expertise-card p{font-size:.88rem}
-  .skill-name{font-size:.75rem}
-  .skill-item img{width:44px;height:44px}
-  .project-card p{font-size:.88rem}
-  .project-tag{font-size:.7rem}
-  .news-item h4{font-size:1rem}
-  .news-item .news-summary{font-size:.82rem}
-  .ticker-wrap{height:44px}
-  .ticker-item{font-size:.82rem}
-  footer p,footer a{font-size:.78rem}
+  body{font-size:1.2rem;display:flex;justify-content:center}
+  .sidebar{position:relative;flex-shrink:0;width:90px}
+  .sidebar:hover{width:240px}
+  .sidebar-link i{font-size:1.6rem}
+  .sidebar-link{font-size:.95rem;padding:.85rem 1.5rem}
+  .sidebar-avatar{width:52px;height:52px}
+  main{margin-left:0;flex:1;max-width:1800px}
+  .container{max-width:1600px;padding:0 4rem}
+  .hero-title{font-size:4.5rem}
+  .hero-subtitle{font-size:1.4rem}
+  .hero-avatar,.hero-avatar-frame{width:300px;height:300px}
+  .hero-overline{font-size:1.05rem}
+  .hero-detail{font-size:.95rem}
+  .hero-social-link{font-size:.9rem;padding:10px 16px}
+  .hero-social-link svg{width:18px;height:18px}
+  .section-title{font-size:2.8rem}
+  .section{padding:5rem 0}
+  .about-content p{font-size:1.05rem;line-height:1.9}
+  .timeline-role{font-size:1.2rem}
+  .timeline-company{font-size:.95rem}
+  .timeline-items li{font-size:.9rem}
+  .expertise-card{padding:2.5rem}
+  .expertise-card i{font-size:3rem}
+  .expertise-card h3{font-size:1.2rem}
+  .expertise-card p{font-size:.95rem}
+  .skill-item{padding:1rem}
+  .skill-item img{width:48px;height:48px}
+  .skill-name{font-size:.8rem}
+  .project-card h3{font-size:1.15rem}
+  .project-card p{font-size:.95rem}
+  .project-tag{font-size:.75rem}
+  .news-item h4{font-size:1.05rem}
+  .news-item .news-summary{font-size:.88rem}
+  .ticker-wrap{height:48px}
+  .ticker-item{font-size:.88rem}
+  footer p,footer a,.footer-status{font-size:.82rem}
+  .skills-grid{justify-content:center}
+  .projects-grid{justify-content:center}
+  .grid-3{justify-content:center}
 }
 @media(min-width:3000px){
-  .container{max-width:2200px}
-  .hero-title{font-size:5rem}
-  .hero-avatar,.hero-avatar-frame{width:340px;height:340px}
-  .section-title{font-size:3rem}
+  body{font-size:1.35rem}
+  main{max-width:2400px}
+  .container{max-width:2000px;padding:0 6rem}
+  .hero-title{font-size:6rem}
+  .hero-avatar,.hero-avatar-frame{width:380px;height:380px}
+  .section-title{font-size:3.5rem}
 }
 </style>
 </head>
