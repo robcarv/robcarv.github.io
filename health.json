@@ -1,27 +1,27 @@
 {
-  "updated": "2026-07-07 22:12",
+  "updated": "2026-07-07 23:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 6.2,
-        "user": 4.4,
-        "system": 2.0,
-        "idle": 93.1,
-        "iowait": 0.2
+        "total": 5.8,
+        "user": 4.5,
+        "system": 2.1,
+        "idle": 92.4,
+        "iowait": 0.6
       },
       "percpu": [
-        6.0,
-        6.8,
-        6.6,
-        6.5
+        6.3,
+        7.8,
+        6.9,
+        3.2
       ],
       "ram": {
-        "used_gb": 3.5,
+        "used_gb": 3.49,
         "total_gb": 7.87,
-        "percent": 44.4,
-        "available_gb": 4.38
+        "percent": 44.3,
+        "available_gb": 4.39
       },
       "swap": {
         "used_mb": 1020.7,
@@ -29,9 +29,9 @@
         "percent": 49.8
       },
       "load": {
-        "1min": 0.82,
-        "5min": 0.88,
-        "15min": 0.81,
+        "1min": 0.95,
+        "5min": 0.86,
+        "15min": 0.83,
         "cores": 4
       },
       "disks": [
@@ -45,10 +45,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 2.1,
-        "write_mb": 1575.2
+        "read_mb": 2.9,
+        "write_mb": 1415.2
       },
-      "temperature_c": 54,
+      "temperature_c": 56,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -57,16 +57,16 @@
         }
       },
       "processes": {
-        "total": 401,
-        "running": 0,
+        "total": 364,
+        "running": 1,
         "sleeping": 248,
-        "threads": 1250
+        "threads": 1215
       },
-      "uptime": "6 days, 21:24:56",
+      "uptime": "6 days, 22:24:59",
       "containers": [
         {
           "name": "gallery backend",
-          "status": "Up 33 hours (healthy) gallery-downloader-backend"
+          "status": "Up 34 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "kavita",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 21 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 22 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 21 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 22 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 21 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 22 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,22 +143,22 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 5.8,
-        "user": 6.0,
-        "system": 1.0,
-        "idle": 92.0,
-        "iowait": 0.9
+        "total": 6.0,
+        "user": 5.7,
+        "system": 1.1,
+        "idle": 92.8,
+        "iowait": 0.4
       },
       "percpu": [
-        6.9,
-        4.6,
-        9.0,
-        4.5
+        7.1,
+        6.2,
+        6.7,
+        5.2
       ],
       "ram": {
-        "used_gb": 2.96,
+        "used_gb": 2.95,
         "total_gb": 7.87,
-        "percent": 37.6,
+        "percent": 37.5,
         "available_gb": 4.92
       },
       "swap": {
@@ -167,9 +167,9 @@
         "percent": 5.9
       },
       "load": {
-        "1min": 0.47,
-        "5min": 0.8,
-        "15min": 0.97,
+        "1min": 0.32,
+        "5min": 0.31,
+        "15min": 0.36,
         "cores": 4
       },
       "disks": [
@@ -178,21 +178,21 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 72.7,
-          "free_gb": 38.1,
+          "free_gb": 38.0,
           "percent": 62.3
         },
         {
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.1,
-          "free_gb": 748.1,
+          "used_gb": 121.2,
+          "free_gb": 748.0,
           "percent": 13.2
         }
       ],
       "disk_io": {
-        "read_mb": 849.4,
-        "write_mb": 1542.7
+        "read_mb": 635.2,
+        "write_mb": 1325.1
       },
       "temperature_c": 54,
       "network": {
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 573,
-        "running": 1,
-        "sleeping": 478,
+        "total": 572,
+        "running": 0,
+        "sleeping": 477,
         "threads": 3308
       },
-      "uptime": "6 days, 21:24:56",
+      "uptime": "6 days, 22:25:00",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 21 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 22 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 11.1,
-        "user": 9.2,
-        "system": 3.7,
-        "idle": 86.9,
-        "iowait": 0.0
+        "total": 12.0,
+        "user": 9.1,
+        "system": 3.8,
+        "idle": 87.0,
+        "iowait": 0.1
       },
       "percpu": [
-        10.8,
-        10.9,
-        11.8,
-        11.3
+        12.2,
+        11.3,
+        12.1,
+        12.6
       ],
       "ram": {
-        "used_gb": 1.78,
+        "used_gb": 1.77,
         "total_gb": 7.64,
-        "percent": 23.3,
-        "available_gb": 5.86
+        "percent": 23.2,
+        "available_gb": 5.87
       },
       "swap": {
         "used_mb": 0.8,
@@ -281,9 +281,9 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 0.95,
-        "5min": 0.77,
-        "15min": 0.8,
+        "1min": 1.0,
+        "5min": 0.76,
+        "15min": 0.64,
         "cores": 4
       },
       "disks": [
@@ -297,8 +297,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.8,
-        "write_mb": 492.5
+        "read_mb": 1.0,
+        "write_mb": 480.2
       },
       "temperature_c": 36,
       "network": {
@@ -309,12 +309,12 @@
         }
       },
       "processes": {
-        "total": 264,
+        "total": 268,
         "running": 0,
         "sleeping": 169,
-        "threads": 922
+        "threads": 927
       },
-      "uptime": "6 days, 21:25:00",
+      "uptime": "6 days, 22:25:03",
       "containers": [
         {
           "name": "cadvisor",
@@ -322,11 +322,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 21 hours grafana/grafana:latest"
+          "status": "Up 22 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 21 hours prom/prometheus:latest"
+          "status": "Up 22 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -378,45 +378,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Jah Light",
-      "artist": "Augustus Pablo",
-      "album": "East of the River Nile",
-      "genre": "Reggae",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/edf0be9226f19a3541576ba4-1782756863.jpg",
-      "duration": 136,
-      "elapsed": 119
+      "title": "John Peel 2003-08-28",
+      "artist": "John Peel (R1)",
+      "album": "from RA",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/df7302a34b3dff0c62016e43",
+      "duration": 7082,
+      "elapsed": 1613
     },
     "playing_next": {
-      "title": "10. #41 - Leftfield - Afro Left.mp3",
-      "artist": "John Peel Festive Fifty 1995"
+      "title": "The Fallen Angel",
+      "artist": "Iron Maiden"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Igziabeher",
-        "artist": "Peter Tosh",
-        "played_at": 1783458366
+        "title": "204 - Thrid Man Ska",
+        "artist": "The Skatalites",
+        "played_at": 1783460575
       },
       {
-        "title": "Gate 49",
-        "artist": "Stiff Little Fingers",
-        "played_at": 1783458205
+        "title": "Do You Remember Rock 'N' Roll Radio; Do You Remember Rock 'N' Roll",
+        "artist": "Ramones",
+        "played_at": 1783460346
       },
       {
-        "title": "Zambia Dub feat Jah Walton",
-        "artist": "Yabby You",
-        "played_at": 1783457998
+        "title": "Jah Pretty Face",
+        "artist": "Culture",
+        "played_at": 1783460125
       },
       {
-        "title": "Wipe It 'Til It Bleeds",
-        "artist": "Turbonegro",
-        "played_at": 1783457778
+        "title": "Love Her Madly",
+        "artist": "Wailing Souls",
+        "played_at": 1783459898
       },
       {
-        "title": "Little David",
-        "artist": "B1",
-        "played_at": 1783457409
+        "title": "It´s all the same",
+        "artist": "Fu Manchu",
+        "played_at": 1783459688
       }
     ]
   }
