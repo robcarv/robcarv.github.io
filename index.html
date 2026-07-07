@@ -623,6 +623,7 @@ main{margin-left:var(--sidebar-w);min-height:100vh;padding-bottom:60px}
         <span class="section-tag">MY SKILLS</span>
       </div>
       <h2 class="section-title">My Skillset</h2>
+      <div class="toolbar" id="skills-filters"></div>
       <div class="skills-grid" id="skillsGrid"><div class="loading">Loading skills...</div></div>
     </div>
   </section>
@@ -1127,19 +1128,32 @@ function renderTimeline(items) {
 }
 
 // ============================================================
-// SKILLS — grid from skills.json
+// SKILLS — grid from skills.json with category filters
 // ============================================================
+let allSkills = [];
+let skillFilter = 'All';
+
 async function loadSkills() {
   try {
     const r = await fetch('skills.json?_='+Date.now());
     if (!r.ok) throw new Error('HTTP '+r.status);
-    renderSkills(await r.json());
+    allSkills = await r.json();
+    renderSkillFilters();
+    renderSkills();
   } catch(e) {
     document.getElementById('skillsGrid').innerHTML = '<div class="loading">Failed to load skills</div>';
   }
 }
-function renderSkills(items) {
+function renderSkillFilters() {
+  const cats = ['All', ...new Set(allSkills.map(s => s.category))];
+  document.getElementById('skills-filters').innerHTML = cats.map(c =>
+    `<button class="btn btn-sm ${skillFilter===c?'active':''}" onclick="setSkillFilter('${c}')">${c}</button>`
+  ).join('');
+}
+function setSkillFilter(cat) { skillFilter = cat; renderSkillFilters(); renderSkills(); }
+function renderSkills() {
   const c = document.getElementById('skillsGrid');
+  const items = skillFilter === 'All' ? allSkills : allSkills.filter(s => s.category === skillFilter);
   c.innerHTML = items.map(s => `
     <div class="skill-item">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${s.icon}/${s.icon}-original.svg"
