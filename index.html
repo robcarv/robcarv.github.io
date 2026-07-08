@@ -1234,7 +1234,7 @@ function renderNews() {
       <h4>${i.title}</h4>${i.summary?`<div class="news-summary">${i.summary}</div>`:''}
       <div class="news-meta"><span class="news-source" style="${style}">${i.source}</span><span>${dateStr}</span></div>
       <div style="margin-top:.5rem;display:flex;align-items:center">
-        ${i.audio?`<button class="news-audio-btn" onclick="toggleNewsAudio(this,'${i.audio.replace(/'/g,\"\\\\'\")}')" data-idx="${idx}">🔊 Listen</button><audio class="news-audio" id="newsAudio${idx}" preload="none"></audio>`:''}
+        ${i.audio?`<button class="news-audio-btn" data-audio="${i.audio.replace(/"/g,'&quot;')}" data-idx="${idx}" onclick="toggleNewsAudio(this)">🔊 Listen</button><audio class="news-audio" id="newsAudio${idx}" preload="none"></audio>`:''}
         <a href="${i.link}" target="_blank">Open article →</a>
       </div></div>`;
   }).join('');
@@ -1245,8 +1245,9 @@ function renderNews() {
 // ============================================================
 // News audio player
 let currentNewsAudio = null;
-function toggleNewsAudio(btn, url) {
+function toggleNewsAudio(btn) {
   const idx = btn.dataset.idx;
+  const url = btn.dataset.audio;
   const audio = document.getElementById('newsAudio'+idx);
   if (!audio) return;
   // Stop any currently playing news audio
