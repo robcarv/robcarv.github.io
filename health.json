@@ -1,37 +1,37 @@
 {
-  "updated": "2026-07-08 11:12",
+  "updated": "2026-07-08 12:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 6.9,
+        "total": 12.3,
         "user": 4.7,
-        "system": 2.2,
-        "idle": 92.5,
-        "iowait": 0.2
+        "system": 2.3,
+        "idle": 92.6,
+        "iowait": 0.1
       },
       "percpu": [
-        9.7,
-        6.1,
+        8.3,
         5.9,
-        6.4
+        29.0,
+        8.4
       ],
       "ram": {
-        "used_gb": 3.35,
+        "used_gb": 3.36,
         "total_gb": 7.87,
-        "percent": 42.5,
-        "available_gb": 4.53
+        "percent": 42.7,
+        "available_gb": 4.51
       },
       "swap": {
-        "used_mb": 1288.7,
+        "used_mb": 1287.7,
         "total_mb": 2048.0,
         "percent": 62.9
       },
       "load": {
-        "1min": 0.62,
-        "5min": 0.72,
-        "15min": 0.71,
+        "1min": 0.96,
+        "5min": 1.05,
+        "15min": 1.04,
         "cores": 4
       },
       "disks": [
@@ -45,10 +45,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 22.8,
-        "write_mb": 1952.4
+        "read_mb": 3.9,
+        "write_mb": 1943.4
       },
-      "temperature_c": 56,
+      "temperature_c": 58,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -58,15 +58,15 @@
       },
       "processes": {
         "total": 348,
-        "running": 0,
-        "sleeping": 254,
-        "threads": 1205
+        "running": 2,
+        "sleeping": 253,
+        "threads": 1204
       },
-      "uptime": "7 days, 10:24:40",
+      "uptime": "7 days, 11:24:44",
       "containers": [
         {
           "name": "gallery backend",
-          "status": "Up 46 hours (healthy) gallery-downloader-backend"
+          "status": "Up 47 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "kavita",
@@ -94,7 +94,7 @@
         },
         {
           "name": "gallery worker",
-          "status": "Up 6 days gallery-downloader-worker"
+          "status": "Up 7 days gallery-downloader-worker"
         },
         {
           "name": "glances monitoring 1",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 10 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 11 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 10 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 11 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 10 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 11 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,33 +143,33 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 6.2,
-        "user": 7.6,
-        "system": 1.3,
-        "idle": 90.6,
-        "iowait": 0.5
+        "total": 8.7,
+        "user": 6.6,
+        "system": 1.2,
+        "idle": 91.5,
+        "iowait": 0.6
       },
       "percpu": [
-        3.8,
-        5.9,
-        9.9,
-        6.2
+        11.7,
+        9.8,
+        8.4,
+        7.0
       ],
       "ram": {
-        "used_gb": 3.28,
+        "used_gb": 3.17,
         "total_gb": 7.87,
-        "percent": 41.6,
-        "available_gb": 4.6
+        "percent": 40.2,
+        "available_gb": 4.71
       },
       "swap": {
-        "used_mb": 159.3,
+        "used_mb": 158.3,
         "total_mb": 4096.0,
         "percent": 3.9
       },
       "load": {
-        "1min": 0.29,
-        "5min": 0.36,
-        "15min": 0.56,
+        "1min": 0.35,
+        "5min": 0.48,
+        "15min": 0.73,
         "cores": 4
       },
       "disks": [
@@ -178,23 +178,23 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 72.7,
-          "free_gb": 38.1,
+          "free_gb": 38.0,
           "percent": 62.3
         },
         {
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.1,
+          "used_gb": 121.2,
           "free_gb": 748.1,
           "percent": 13.2
         }
       ],
       "disk_io": {
-        "read_mb": 1299.3,
-        "write_mb": 2010.2
+        "read_mb": 778.5,
+        "write_mb": 1511.5
       },
-      "temperature_c": 60,
+      "temperature_c": 57,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 582,
-        "running": 5,
-        "sleeping": 480,
-        "threads": 3337
+        "total": 575,
+        "running": 0,
+        "sleeping": 477,
+        "threads": 3329
       },
-      "uptime": "7 days, 10:24:41",
+      "uptime": "7 days, 11:24:44",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 10 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 11 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 13.2,
-        "user": 9.1,
-        "system": 3.7,
-        "idle": 87.0,
+        "total": 12.2,
+        "user": 9.2,
+        "system": 3.8,
+        "idle": 86.8,
         "iowait": 0.1
       },
       "percpu": [
+        12.2,
         12.8,
-        13.8,
-        12.9,
-        13.7
+        13.0,
+        11.8
       ],
       "ram": {
-        "used_gb": 1.83,
+        "used_gb": 1.82,
         "total_gb": 7.64,
-        "percent": 23.9,
-        "available_gb": 5.81
+        "percent": 23.8,
+        "available_gb": 5.82
       },
       "swap": {
         "used_mb": 0.8,
@@ -281,9 +281,9 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 0.68,
-        "5min": 0.72,
-        "15min": 0.7,
+        "1min": 0.53,
+        "5min": 0.77,
+        "15min": 0.79,
         "cores": 4
       },
       "disks": [
@@ -297,8 +297,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1.4,
-        "write_mb": 468.1
+        "read_mb": 1.1,
+        "write_mb": 610.3
       },
       "temperature_c": 36,
       "network": {
@@ -309,12 +309,12 @@
         }
       },
       "processes": {
-        "total": 267,
+        "total": 266,
         "running": 0,
         "sleeping": 169,
         "threads": 926
       },
-      "uptime": "7 days, 10:24:44",
+      "uptime": "7 days, 11:24:48",
       "containers": [
         {
           "name": "cadvisor",
@@ -322,11 +322,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 10 hours grafana/grafana:latest"
+          "status": "Up 11 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 10 hours prom/prometheus:latest"
+          "status": "Up 11 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -378,45 +378,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "California Sun",
-      "artist": "The Ramones",
-      "album": "It's Alive",
-      "genre": "Punk",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/3317b02fe14200cfa4f25ca8-1782759923.jpg",
-      "duration": 105,
-      "elapsed": 50
+      "title": "AudioTrack 08",
+      "artist": "no artist",
+      "album": "no title",
+      "genre": "Rock",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/387d12d6b43fbb9dd4399c61",
+      "duration": 186,
+      "elapsed": 114
     },
     "playing_next": {
-      "title": "jar of sand (with cynthia dall)",
-      "artist": ""
+      "title": "Ship To Wreck",
+      "artist": "Florence + The Machine"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "legalise it",
-        "artist": "johnny clarke",
-        "played_at": 1783505251
+        "title": "Mighty Diamonds - Painted In Red - 01 - Putting On The Ritz",
+        "artist": "Mighty Diamonds",
+        "played_at": 1783508775
       },
       {
-        "title": "Tied Up in Nottz",
-        "artist": "Sleaford Mods, Jason Williamson, Andrew Fearn",
-        "played_at": 1783505092
+        "title": "Can't Stop Thinking About It (Peel Session Nov01)",
+        "artist": "The Dirtbombs",
+        "played_at": 1783508581
       },
       {
-        "title": "Bim Today (Bam Tomorrow)",
-        "artist": "Toots and The Maytals",
-        "played_at": 1783504922
+        "title": "Return to Stage One",
+        "artist": "Dub Syndicate",
+        "played_at": 1783508393
       },
       {
-        "title": "Who Cares",
-        "artist": "Delroy Wilson",
-        "played_at": 1783504722
+        "title": "23rd Psalm",
+        "artist": "Junior Delgado",
+        "played_at": 1783508014
       },
       {
-        "title": "Suburban Anti-Christ",
-        "artist": "Turbonegro",
-        "played_at": 1783504637
+        "title": "Those Tricks",
+        "artist": "Sly & Robbie",
+        "played_at": 1783507818
       }
     ]
   }
