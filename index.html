@@ -1121,6 +1121,7 @@ async function loadExperience() {
     if (!r.ok) throw new Error('HTTP '+r.status);
     renderTimeline(await r.json());
   } catch(e) {
+    console.warn('loadExperience failed:', e);
     document.getElementById('timeline').innerHTML = '<div class="loading">Failed to load experience</div>';
   }
 }
@@ -1470,7 +1471,7 @@ async function init() {
   updateTicker();
   updateFooterStatus();
 }
-init();
+document.addEventListener('DOMContentLoaded', () => { init(); });
 </script>
 </body>
 </html>
