@@ -322,6 +322,15 @@ main{margin-left:var(--sidebar-w);min-height:100vh;padding-bottom:60px}
 .news-item .news-summary{font-size:.75rem;color:var(--muted);margin:.4rem 0;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .news-item .news-meta{display:flex;justify-content:space-between;align-items:center;font-size:.72rem;color:var(--muted)}
 .news-item a{color:var(--accent);text-decoration:none;font-size:.78rem}.news-item a:hover{text-decoration:underline}
+.news-audio-btn{
+  display:inline-flex;align-items:center;gap:4px;
+  background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.3);
+  color:var(--accent);padding:3px 10px;border-radius:6px;
+  font-size:.7rem;cursor:pointer;transition:all .2s;margin-right:.5rem
+}
+.news-audio-btn:hover{background:rgba(99,102,241,.2)}
+.news-audio-btn.playing{background:var(--accent);color:#fff;border-color:var(--accent)}
+.news-audio{display:none}
 .news-source{font-size:.65rem;padding:2px 8px;border-radius:100px;font-weight:500;white-space:nowrap}
 .btn{background:var(--bg-card);border:1px solid var(--border);color:var(--muted);padding:6px 14px;border-radius:8px;font-size:.8rem;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:.4rem}
 .btn:hover{border-color:var(--accent);color:#fff}.btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}.btn-sm{padding:4px 10px;font-size:.72rem}
@@ -1223,12 +1232,39 @@ function renderNews() {
     return `<div class="news-item animate-in" style="animation-delay:${idx*0.05}s">
       <h4>${i.title}</h4>${i.summary?`<div class="news-summary">${i.summary}</div>`:''}
       <div class="news-meta"><span class="news-source" style="${style}">${i.source}</span><span>${dateStr}</span></div>
-      <div style="margin-top:.5rem"><a href="${i.link}" target="_blank">Open article →</a></div></div>`;
+      <div style="margin-top:.5rem;display:flex;align-items:center">
+        ${i.audio?`<button class="news-audio-btn" onclick="toggleNewsAudio(this,'${i.audio.replace(/'/g,\"\\\\'\")}')" data-idx="${idx}">🔊 Listen</button><audio class="news-audio" id="newsAudio${idx}" preload="none"></audio>`:''}
+        <a href="${i.link}" target="_blank">Open article →</a>
+      </div></div>`;
   }).join('');
 }
 
 // ============================================================
 // SUPPORT — PIX copy
+// ============================================================
+// News audio player
+let currentNewsAudio = null;
+function toggleNewsAudio(btn, url) {
+  const idx = btn.dataset.idx;
+  const audio = document.getElementById('newsAudio'+idx);
+  if (!audio) return;
+  // Stop any currently playing news audio
+  if (currentNewsAudio && currentNewsAudio !== audio) {
+    currentNewsAudio.pause();
+    const oldBtn = document.querySelector('.news-audio-btn.playing');
+    if (oldBtn) oldBtn.classList.remove('playing');
+  }
+  if (audio.paused) {
+    audio.src = url;
+    audio.play().then(() => { btn.classList.add('playing'); currentNewsAudio = audio; })
+      .catch(() => { btn.textContent = '⚠ Error'; });
+  } else {
+    audio.pause();
+    btn.classList.remove('playing');
+    currentNewsAudio = null;
+  }
+}
+
 // ============================================================
 function copyPix() {
   const key = document.getElementById('pixKey').textContent;
