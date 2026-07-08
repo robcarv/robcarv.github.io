@@ -1,339 +1,423 @@
 {
-  "updated": "2026-06-21T20:20:01.508140+01:00",
+  "updated": "2026-07-08 13:12",
+  "status": "ok",
   "nodes": {
-    "Pi4": {
-      "hostname": "raspberrypieth0",
-      "cpu": {
-        "total": 4.9,
-        "user": 2.9,
-        "system": 1.8
-      },
-      "ram": {
-        "total_gb": 7.6,
-        "used_gb": 1.1,
-        "percent": 14.7
-      },
-      "swap": {
-        "total_mb": 0,
-        "used_mb": 0,
-        "free_mb": 0,
-        "percent": 0
-      },
-      "temperature_c": 34,
-      "load": {
-        "1min": 0.15,
-        "5min": 0.28,
-        "15min": 0.42,
-        "cores": 4
-      },
-      "disks": [
-        {
-          "device": "/dev/mmcblk0p2",
-          "size_gb": 115.3,
-          "used_gb": 22.9,
-          "percent": 20.9
-        },
-        {
-          "device": "/dev/mmcblk0p2",
-          "size_gb": 115.3,
-          "used_gb": 22.9,
-          "percent": 20.9
-        },
-        {
-          "device": "/dev/mmcblk0p2",
-          "size_gb": 115.3,
-          "used_gb": 22.9,
-          "percent": 20.9
-        },
-        {
-          "device": "/dev/mmcblk0p2",
-          "size_gb": 115.3,
-          "used_gb": 22.9,
-          "percent": 20.9
-        }
-      ],
-      "network": {
-        "lo": {
-          "recv_mb": 0,
-          "sent_mb": 0
-        },
-        "eth0": {
-          "recv_mb": 0,
-          "sent_mb": 0
-        }
-      },
-      "containers": [
-        {
-          "name": "glances-monitoring-1",
-          "status": "running"
-        },
-        {
-          "name": "cve-grafana",
-          "status": "running"
-        },
-        {
-          "name": "cve-alertmanager",
-          "status": "running"
-        },
-        {
-          "name": "honeygainrasp4",
-          "status": "running"
-        },
-        {
-          "name": "duplicati_241",
-          "status": "running"
-        },
-        {
-          "name": "Dashy",
-          "status": "healthy"
-        },
-        {
-          "name": "cve-report",
-          "status": "running"
-        },
-        {
-          "name": "cve-prometheus",
-          "status": "running"
-        },
-        {
-          "name": "cve-pushgateway",
-          "status": "running"
-        },
-        {
-          "name": "pawns",
-          "status": "running"
-        },
-        {
-          "name": "traffmonetizer",
-          "status": "running"
-        },
-        {
-          "name": "portainer",
-          "status": "running"
-        }
-      ],
-      "score": 98,
-      "services": "12 containers"
-    },
-    "Pi5": {
-      "hostname": "raspberrypieth0",
-      "cpu": {
-        "total": 6.5,
-        "user": 5.7,
-        "system": 0.8
-      },
-      "ram": {
-        "total_gb": 7.9,
-        "used_gb": 2.8,
-        "percent": 36.1
-      },
-      "swap": {
-        "total_mb": 0,
-        "used_mb": 0,
-        "free_mb": 0,
-        "percent": 0
-      },
-      "temperature_c": 54,
-      "load": {
-        "1min": 0.18,
-        "5min": 0.24,
-        "15min": 0.34,
-        "cores": 4
-      },
-      "disks": [
-        {
-          "device": "/dev/mmcblk0p2",
-          "size_gb": 116.7,
-          "used_gb": 74.2,
-          "percent": 67.0
-        },
-        {
-          "device": "/dev/sda1",
-          "size_gb": 915.8,
-          "used_gb": 116.1,
-          "percent": 13.4
-        },
-        {
-          "device": "/dev/sda1",
-          "size_gb": 915.8,
-          "used_gb": 116.1,
-          "percent": 13.4
-        },
-        {
-          "device": "/dev/sda1",
-          "size_gb": 915.8,
-          "used_gb": 116.1,
-          "percent": 13.4
-        }
-      ],
-      "network": {
-        "lo": {
-          "recv_mb": 0,
-          "sent_mb": 0
-        },
-        "eth0": {
-          "recv_mb": 0,
-          "sent_mb": 0
-        }
-      },
-      "containers": [
-        {
-          "name": "azuracast",
-          "status": "running"
-        },
-        {
-          "name": "glances-monitoring-1",
-          "status": "running"
-        },
-        {
-          "name": "qbittorrent",
-          "status": "running"
-        },
-        {
-          "name": "portainer_agent",
-          "status": "running"
-        },
-        {
-          "name": "IPRoyal01",
-          "status": "running"
-        },
-        {
-          "name": "duckdns",
-          "status": "running"
-        },
-        {
-          "name": "azuracast_updater",
-          "status": "running"
-        }
-      ],
-      "score": 97,
-      "services": "7 containers"
-    },
     "Pi501": {
-      "hostname": "raspberrypieth0",
+      "status": "ok",
       "cpu": {
-        "total": 8.1,
-        "user": 6.7,
-        "system": 1.1
+        "total": 5.7,
+        "user": 4.6,
+        "system": 2.2,
+        "idle": 90.0,
+        "iowait": 2.8
       },
+      "percpu": [
+        7.7,
+        4.3,
+        5.0,
+        6.6
+      ],
       "ram": {
-        "total_gb": 7.9,
-        "used_gb": 4.1,
-        "percent": 51.6
+        "used_gb": 3.54,
+        "total_gb": 7.87,
+        "percent": 45.0,
+        "available_gb": 4.33
       },
       "swap": {
-        "total_mb": 0,
-        "used_mb": 0,
-        "free_mb": 0,
-        "percent": 0
+        "used_mb": 1287.7,
+        "total_mb": 2048.0,
+        "percent": 62.9
       },
-      "temperature_c": 55,
       "load": {
-        "1min": 1.44,
-        "5min": 2.37,
-        "15min": 2.56,
+        "1min": 1.24,
+        "5min": 0.92,
+        "15min": 0.81,
         "cores": 4
       },
       "disks": [
         {
+          "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 50.4,
-          "percent": 45.5
-        },
-        {
-          "device": "/dev/mmcblk0p2",
-          "size_gb": 116.7,
-          "used_gb": 50.4,
-          "percent": 45.5
-        },
-        {
-          "device": "/dev/mmcblk0p2",
-          "size_gb": 116.7,
-          "used_gb": 50.4,
-          "percent": 45.5
-        },
-        {
-          "device": "/dev/mmcblk0p2",
-          "size_gb": 116.7,
-          "used_gb": 50.4,
-          "percent": 45.5
+          "used_gb": 47.1,
+          "free_gb": 63.6,
+          "percent": 40.4
         }
       ],
+      "disk_io": {
+        "read_mb": 165.8,
+        "write_mb": 2013.5
+      },
+      "temperature_c": 56,
       "network": {
-        "lo": {
-          "recv_mb": 0,
-          "sent_mb": 0
-        },
         "eth0": {
-          "recv_mb": 0,
-          "sent_mb": 0
+          "sent_mb": 0.0,
+          "recv_mb": 0.0,
+          "speed_kbps": 10240000.0
         }
       },
+      "processes": {
+        "total": 347,
+        "running": 1,
+        "sleeping": 254,
+        "threads": 1209
+      },
+      "uptime": "7 days, 12:24:51",
       "containers": [
         {
-          "name": "glances-monitoring-1",
-          "status": "running"
-        },
-        {
-          "name": "gallery-redis",
-          "status": "healthy"
+          "name": "gallery backend",
+          "status": "Up 2 days (healthy) gallery-downloader-backend"
         },
         {
           "name": "kavita",
-          "status": "running"
+          "status": "Up 2 days lscr.io/linuxserver/kavita:latest"
         },
         {
-          "name": "changedetection-browser-chrome-1",
-          "status": "running"
+          "name": "subscription bot",
+          "status": "Up 2 days (healthy) subscription-bot-subscription-bot"
         },
         {
-          "name": "changedetection",
-          "status": "running"
+          "name": "cadvisor",
+          "status": "Up 4 days (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
-          "name": "gallery-jandapress",
-          "status": "running"
+          "name": "watchtower",
+          "status": "Up 4 days (healthy) containrrr/watchtower"
         },
         {
-          "name": "speedtest-tracker",
-          "status": "running"
+          "name": "psclient",
+          "status": "Up 4 days packetstream/psclient:latest"
         },
         {
-          "name": "changedetection-playwright-chrome-1",
-          "status": "running"
+          "name": "gallery frontend",
+          "status": "Up 5 days gallery-downloader-frontend"
         },
         {
-          "name": "prowlarr",
-          "status": "running"
+          "name": "gallery worker",
+          "status": "Up 7 days gallery-downloader-worker"
         },
         {
-          "name": "gallery-worker",
-          "status": "running"
+          "name": "glances monitoring 1",
+          "status": "Up 7 days nicolargo/glances:latest"
         },
         {
-          "name": "ngninx-app-1",
-          "status": "running"
-        },
-        {
-          "name": "whisparr",
-          "status": "running"
+          "name": "uptime kuma",
+          "status": "Up 12 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "running"
+          "status": "Up 12 hours (healthy) bellamy/wallos:latest"
+        },
+        {
+          "name": "ngninx app 1",
+          "status": "Up 12 hours jc21/nginx-proxy-manager:latest"
+        },
+        {
+          "name": "gallery jandapress",
+          "status": "Up 7 days gallery-jandapress:local-arm64"
         },
         {
           "name": "Dashy",
-          "status": "healthy"
+          "status": "Up 7 days (healthy) lissy93/dashy:4.x"
         },
         {
-          "name": "gallery-backend",
-          "status": "healthy"
+          "name": "gallery redis",
+          "status": "Up 7 days (healthy) redis:7-alpine"
+        },
+        {
+          "name": "gallery postgres",
+          "status": "Up 7 days (healthy) postgres:16-alpine"
+        },
+        {
+          "name": "prowlarr",
+          "status": "Up 7 days lscr.io/linuxserver/prowlarr:latest"
+        },
+        {
+          "name": "portainer agent",
+          "status": "Up 7 days portainer/agent:latest"
         }
       ],
-      "score": 96,
-      "services": "15 containers"
+      "container_count": 18,
+      "services": "Gallery, Dashy, Hermes, NewsBot"
+    },
+    "Pi5": {
+      "status": "ok",
+      "cpu": {
+        "total": 8.9,
+        "user": 5.6,
+        "system": 1.1,
+        "idle": 78.4,
+        "iowait": 14.9
+      },
+      "percpu": [
+        6.8,
+        8.8,
+        12.8,
+        9.1
+      ],
+      "ram": {
+        "used_gb": 3.07,
+        "total_gb": 7.87,
+        "percent": 39.0,
+        "available_gb": 4.8
+      },
+      "swap": {
+        "used_mb": 157.3,
+        "total_mb": 4096.0,
+        "percent": 3.8
+      },
+      "load": {
+        "1min": 1.41,
+        "5min": 0.92,
+        "15min": 0.64,
+        "cores": 4
+      },
+      "disks": [
+        {
+          "mount": "/",
+          "device": "/dev/mmcblk0p2",
+          "size_gb": 116.7,
+          "used_gb": 72.7,
+          "free_gb": 38.1,
+          "percent": 62.3
+        },
+        {
+          "mount": "/",
+          "device": "/dev/sda1",
+          "size_gb": 915.8,
+          "used_gb": 121.2,
+          "free_gb": 748.1,
+          "percent": 13.2
+        }
+      ],
+      "disk_io": {
+        "read_mb": 780.6,
+        "write_mb": 1340.6
+      },
+      "temperature_c": 56,
+      "network": {
+        "eth0": {
+          "sent_mb": 0.0,
+          "recv_mb": 0.0,
+          "speed_kbps": 10240000.0
+        }
+      },
+      "processes": {
+        "total": 579,
+        "running": 0,
+        "sleeping": 482,
+        "threads": 3334
+      },
+      "uptime": "7 days, 12:24:52",
+      "containers": [
+        {
+          "name": "azuracast",
+          "status": "Up 12 hours ghcr.io/azuracast/azuracast:stable"
+        },
+        {
+          "name": "duckdns",
+          "status": "Up 7 days lscr.io/linuxserver/duckdns:arm64v8-latest"
+        },
+        {
+          "name": "uptime kuma",
+          "status": "Up 7 days (healthy) louislam/uptime-kuma:2"
+        },
+        {
+          "name": "duplicati 241",
+          "status": "Up 7 days duplicati/duplicati"
+        },
+        {
+          "name": "changedetection browser chrome 1",
+          "status": "Up 7 days seleniarm/standalone-chromium:4.0.0-20211213"
+        },
+        {
+          "name": "changedetection playwright chrome 1",
+          "status": "Up 7 days browserless/chrome:latest"
+        },
+        {
+          "name": "changedetection",
+          "status": "Up 7 days ghcr.io/dgtlmoon/changedetection.io"
+        },
+        {
+          "name": "glances monitoring 1",
+          "status": "Up 7 days nicolargo/glances:latest"
+        },
+        {
+          "name": "portainer agent",
+          "status": "Up 7 days portainer/agent:latest"
+        },
+        {
+          "name": "azuracast updater",
+          "status": "Up 7 days ghcr.io/azuracast/updater:latest"
+        }
+      ],
+      "container_count": 10,
+      "services": "AzuraCast, DuckDNS, Media Server"
+    },
+    "Pi4": {
+      "status": "ok",
+      "cpu": {
+        "total": 13.0,
+        "user": 9.2,
+        "system": 3.8,
+        "idle": 86.9,
+        "iowait": 0.0
+      },
+      "percpu": [
+        12.7,
+        13.0,
+        12.0,
+        14.4
+      ],
+      "ram": {
+        "used_gb": 1.81,
+        "total_gb": 7.64,
+        "percent": 23.7,
+        "available_gb": 5.83
+      },
+      "swap": {
+        "used_mb": 0.8,
+        "total_mb": 512.0,
+        "percent": 0.1
+      },
+      "load": {
+        "1min": 1.16,
+        "5min": 1.24,
+        "15min": 0.99,
+        "cores": 4
+      },
+      "disks": [
+        {
+          "mount": "/",
+          "device": "/dev/mmcblk0p2",
+          "size_gb": 115.3,
+          "used_gb": 31.1,
+          "free_gb": 78.4,
+          "percent": 27.0
+        }
+      ],
+      "disk_io": {
+        "read_mb": 0.4,
+        "write_mb": 463.8
+      },
+      "temperature_c": 36,
+      "network": {
+        "eth0": {
+          "sent_mb": 0.0,
+          "recv_mb": 0.0,
+          "speed_kbps": 10240000.0
+        }
+      },
+      "processes": {
+        "total": 265,
+        "running": 0,
+        "sleeping": 169,
+        "threads": 927
+      },
+      "uptime": "7 days, 12:24:55",
+      "containers": [
+        {
+          "name": "cadvisor",
+          "status": "Up 4 days (healthy) gcr.io/cadvisor/cadvisor:latest"
+        },
+        {
+          "name": "cve grafana",
+          "status": "Up 12 hours grafana/grafana:latest"
+        },
+        {
+          "name": "cve prometheus",
+          "status": "Up 12 hours prom/prometheus:latest"
+        },
+        {
+          "name": "changedetection",
+          "status": "Up 7 days ghcr.io/dgtlmoon/changedetection.io"
+        },
+        {
+          "name": "changedetection browser chrome 1",
+          "status": "Up 7 days seleniarm/standalone-chromium:latest"
+        },
+        {
+          "name": "changedetection playwright chrome 1",
+          "status": "Up 7 days browserless/chrome:latest"
+        },
+        {
+          "name": "Dashy",
+          "status": "Up 7 days (healthy) lissy93/dashy:4.x"
+        },
+        {
+          "name": "glances monitoring 1",
+          "status": "Up 7 days nicolargo/glances:latest"
+        },
+        {
+          "name": "cve report",
+          "status": "Up 7 days nginx:alpine"
+        },
+        {
+          "name": "cve alertmanager",
+          "status": "Up 7 days prom/alertmanager:latest"
+        },
+        {
+          "name": "cve pushgateway",
+          "status": "Up 7 days prom/pushgateway:latest"
+        },
+        {
+          "name": "portainer",
+          "status": "Up 7 days portainer/portainer-ce:lts"
+        },
+        {
+          "name": "duplicati 241",
+          "status": "Up 7 days duplicati/duplicati"
+        }
+      ],
+      "container_count": 13,
+      "services": "Pi-hole, NPM, Wallos, Pi.Alert"
     }
+  },
+  "radio": {
+    "station": "dublincalling",
+    "is_online": true,
+    "is_live": false,
+    "now_playing": {
+      "title": "No Dont Follow Fashion",
+      "artist": "African Head Charge",
+      "album": "In Pursuit Of Shashamane Land",
+      "genre": "Reggae",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/51e0c4a66ba191bd680224b2-1782764979.jpg",
+      "duration": 348,
+      "elapsed": 38
+    },
+    "playing_next": {
+      "title": "mogwai - my father, my king",
+      "artist": "John Peel Festive Fifty 2001"
+    },
+    "listeners": 0,
+    "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
+    "history": [
+      {
+        "title": "Losing Today",
+        "artist": "Slowdive",
+        "played_at": 1783512402
+      },
+      {
+        "title": "12.Keep A Cool Head",
+        "artist": "",
+        "played_at": 1783512245
+      },
+      {
+        "title": "Stroke The Shaft",
+        "artist": "Turbonegro",
+        "played_at": 1783512048
+      },
+      {
+        "title": "Reality",
+        "artist": "John Holt",
+        "played_at": 1783511818
+      },
+      {
+        "title": "04. Jig A Jag",
+        "artist": "The Bhundu Boys",
+        "played_at": 1783511576
+      }
+    ]
   }
 }
