@@ -129,6 +129,9 @@ tbody td{padding:.45rem .75rem;border-bottom:1px solid rgba(255,255,255,.03);col
     </label>
   </div>
 
+  <!-- Summary Row -->
+  <div class="grid grid-4" id="summary-row" style="margin-bottom:1.5rem"></div>
+
   <div id="dashboard-content">Loading dashboard data...</div>
 
 </div>
@@ -170,6 +173,36 @@ function render() {
   document.getElementById('updated-label').textContent = `Last updated: ${d.updated} · ${Object.keys(d.nodes).length} nodes`;
   document.getElementById('overall-badge').innerHTML = `
     <span class="badge badge-${d.status}"><span class="dot dot-${d.status}"></span>${d.status.toUpperCase()}</span>
+  `;
+
+  // --- Summary Row ---
+  const nodes = Object.values(d.nodes).filter(n => n && n.status !== 'fail');
+  const totalContainers = nodes.reduce((s, n) => s + (n.container_count || 0), 0);
+  const totalRAM = nodes.reduce((s, n) => s + (n.ram?.used_gb || 0), 0);
+  const totalRAMTotal = nodes.reduce((s, n) => s + (n.ram?.total_gb || 0), 0);
+  const avgCPU = nodes.length ? Math.round(nodes.reduce((s, n) => s + (n.cpu?.total || 0), 0) / nodes.length) : 0;
+  const onlineNodes = nodes.length;
+  document.getElementById('summary-row').innerHTML = `
+    <div class="card animate-in" style="text-align:center">
+      <div class="card-title">Nodes Online</div>
+      <div class="card-value" style="color:var(--green)">${onlineNodes}/${Object.keys(d.nodes).length}</div>
+      <div class="card-sub">Raspberry Pis</div>
+    </div>
+    <div class="card animate-in" style="text-align:center">
+      <div class="card-title">Total Containers</div>
+      <div class="card-value">${totalContainers}</div>
+      <div class="card-sub">Docker services</div>
+    </div>
+    <div class="card animate-in" style="text-align:center">
+      <div class="card-title">Total RAM Used</div>
+      <div class="card-value">${totalRAM.toFixed(1)}<span style="font-size:1rem;color:var(--muted)"> / ${totalRAMTotal.toFixed(0)} GB</span></div>
+      <div class="card-sub">${Math.round(totalRAM/totalRAMTotal*100)}% across all nodes</div>
+    </div>
+    <div class="card animate-in" style="text-align:center">
+      <div class="card-title">Avg CPU</div>
+      <div class="card-value" style="color:${avgCPU>80?'var(--red)':avgCPU>60?'var(--yellow)':'var(--green)'}">${avgCPU}%</div>
+      <div class="card-sub">All nodes combined</div>
+    </div>
   `;
 
   const container = document.getElementById('dashboard-content');
@@ -236,6 +269,39 @@ function render() {
           <div class="card-title">Temperature</div>
           <div class="card-value" style="color:${temp>70?'var(--red)':temp>55?'var(--yellow)':'var(--green)'}">${fmtTemp(temp)}</div>
           <div class="gauge-label">${temp>55?'⚠ Above normal':'✓ Normal'}</div>
+        </div>
+      </div>
+
+      <!-- Per-Core CPU + Swap + Container Stats -->
+      <div class="grid grid-3" style="margin-bottom:1rem">
+        ${n.percpu?.length ? `
+        <div class="card">
+          <div class="card-title">Per-Core CPU</div>
+          ${n.percpu.map((c,i) => `
+          <div class="metric">
+            <div class="metric-label"><span>Core ${i}</span><span>${c}%</span></div>
+            <div class="metric-bar"><div class="metric-fill ${colorByPct(c,85,65)}" style="width:${c}%"></div></div>
+          </div>`).join('')}
+        </div>` : ''}
+        ${swap ? `
+        <div class="card">
+          <div class="card-title">Swap</div>
+          <div class="gauge" style="margin:0 auto 0">
+            <svg viewBox="0 0 80 80" width="60" height="60">
+              <circle class="bg" cx="40" cy="40" r="25"/>
+              <circle class="fill" cx="40" cy="40" r="25" stroke="var(--${swap.percent>50?'yellow':'green'})" stroke-dasharray="157" stroke-dashoffset="${gaugeOffset(swap.percent)*157/201}"/>
+            </svg>
+            <div class="value" style="font-size:.8rem">${swap.percent||0}%</div>
+          </div>
+          <div class="gauge-label">${swap.used_mb||0}MB / ${swap.total_mb||0}MB</div>
+        </div>` : ''}
+        <div class="card">
+          <div class="card-title">Container Status</div>
+          <div style="font-size:.75rem;color:var(--muted)">
+            <div style="margin-bottom:.3rem"><span class="chip chip-green">${containers.filter(c=>c.status.toLowerCase().includes('up')).length} Up</span></div>
+            <div><span class="chip chip-red">${containers.filter(c=>!c.status.toLowerCase().includes('up')).length} Other</span></div>
+          </div>
+          <div class="gauge-label" style="margin-top:.5rem">${n.container_count||0} total</div>
         </div>
       </div>
 
