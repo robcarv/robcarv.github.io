@@ -1,27 +1,27 @@
 {
-  "updated": "2026-07-09 19:12",
+  "updated": "2026-07-09 20:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 13.9,
-        "user": 11.9,
-        "system": 1.4,
-        "idle": 85.5,
-        "iowait": 1.2
+        "total": 15.8,
+        "user": 13.4,
+        "system": 2.8,
+        "idle": 82.8,
+        "iowait": 0.5
       },
       "percpu": [
+        13.1,
         18.4,
-        16.0,
-        16.4,
-        20.3
+        11.5,
+        20.7
       ],
       "ram": {
-        "used_gb": 3.44,
+        "used_gb": 3.17,
         "total_gb": 7.87,
-        "percent": 43.7,
-        "available_gb": 4.44
+        "percent": 40.2,
+        "available_gb": 4.7
       },
       "swap": {
         "used_mb": 1328.4,
@@ -29,9 +29,9 @@
         "percent": 64.9
       },
       "load": {
-        "1min": 1.22,
-        "5min": 1.0,
-        "15min": 1.03,
+        "1min": 1.37,
+        "5min": 1.36,
+        "15min": 1.15,
         "cores": 4
       },
       "disks": [
@@ -45,10 +45,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 12.0,
-        "write_mb": 2025.1
+        "read_mb": 23.1,
+        "write_mb": 2052.8
       },
-      "temperature_c": 60,
+      "temperature_c": 56,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 345,
-        "running": 2,
-        "sleeping": 250,
-        "threads": 1202
+        "total": 411,
+        "running": 0,
+        "sleeping": 254,
+        "threads": 1259
       },
-      "uptime": "8 days, 18:24:41",
+      "uptime": "8 days, 19:24:44",
       "containers": [
         {
           "name": "gallery backend",
@@ -74,7 +74,7 @@
         },
         {
           "name": "subscription bot",
-          "status": "Up 21 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 22 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "cadvisor",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 18 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 19 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 18 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 19 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 18 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 19 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,33 +143,33 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 8.0,
-        "user": 8.1,
-        "system": 1.4,
-        "idle": 89.7,
-        "iowait": 0.7
+        "total": 8.1,
+        "user": 6.2,
+        "system": 1.0,
+        "idle": 92.4,
+        "iowait": 0.4
       },
       "percpu": [
-        7.0,
-        7.3,
-        11.8,
-        7.1
+        8.0,
+        9.4,
+        6.1,
+        10.7
       ],
       "ram": {
-        "used_gb": 3.21,
+        "used_gb": 3.05,
         "total_gb": 7.87,
-        "percent": 40.8,
-        "available_gb": 4.66
+        "percent": 38.7,
+        "available_gb": 4.82
       },
       "swap": {
-        "used_mb": 211.7,
+        "used_mb": 212.7,
         "total_mb": 4096.0,
         "percent": 5.2
       },
       "load": {
-        "1min": 1.44,
-        "5min": 1.06,
-        "15min": 0.84,
+        "1min": 0.25,
+        "5min": 0.45,
+        "15min": 0.57,
         "cores": 4
       },
       "disks": [
@@ -178,23 +178,23 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 72.7,
-          "free_gb": 38.0,
+          "free_gb": 38.1,
           "percent": 62.3
         },
         {
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.3,
-          "free_gb": 747.9,
+          "used_gb": 121.2,
+          "free_gb": 748.0,
           "percent": 13.2
         }
       ],
       "disk_io": {
-        "read_mb": 805.6,
-        "write_mb": 1659.8
+        "read_mb": 798.1,
+        "write_mb": 1317.1
       },
-      "temperature_c": 58,
+      "temperature_c": 56,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 575,
+        "total": 576,
         "running": 0,
-        "sleeping": 482,
-        "threads": 3344
+        "sleeping": 479,
+        "threads": 3345
       },
-      "uptime": "8 days, 18:24:41",
+      "uptime": "8 days, 19:24:45",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 18 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 19 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 13.5,
-        "user": 9.3,
-        "system": 3.6,
-        "idle": 86.9,
-        "iowait": 0.1
+        "total": 12.8,
+        "user": 9.2,
+        "system": 3.8,
+        "idle": 87.0,
+        "iowait": 0.0
       },
       "percpu": [
-        13.0,
-        13.3,
-        13.5,
-        14.2
+        13.6,
+        11.8,
+        13.7,
+        12.5
       ],
       "ram": {
-        "used_gb": 1.77,
+        "used_gb": 1.79,
         "total_gb": 7.64,
-        "percent": 23.2,
-        "available_gb": 5.87
+        "percent": 23.5,
+        "available_gb": 5.84
       },
       "swap": {
         "used_mb": 2.5,
@@ -281,9 +281,9 @@
         "percent": 0.5
       },
       "load": {
-        "1min": 0.33,
-        "5min": 0.67,
-        "15min": 0.86,
+        "1min": 0.9,
+        "5min": 0.8,
+        "15min": 0.75,
         "cores": 4
       },
       "disks": [
@@ -291,16 +291,16 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
-          "used_gb": 31.3,
+          "used_gb": 31.4,
           "free_gb": 78.1,
           "percent": 27.2
         }
       ],
       "disk_io": {
-        "read_mb": 0.5,
-        "write_mb": 454.2
+        "read_mb": 2.3,
+        "write_mb": 475.8
       },
-      "temperature_c": 38,
+      "temperature_c": 39,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -312,9 +312,9 @@
         "total": 266,
         "running": 0,
         "sleeping": 169,
-        "threads": 926
+        "threads": 928
       },
-      "uptime": "8 days, 18:24:45",
+      "uptime": "8 days, 19:24:49",
       "containers": [
         {
           "name": "cadvisor",
@@ -322,11 +322,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 18 hours grafana/grafana:latest"
+          "status": "Up 19 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 18 hours prom/prometheus:latest"
+          "status": "Up 19 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -378,45 +378,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Evil Darling",
-      "artist": "Joe Strummer",
-      "album": "Straight To Hell...Returns - Straight To Hell OST",
-      "genre": "Folk Rock",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/958d916d7cce43dfeb6a8a2c-1782776213.jpg",
-      "duration": 305,
-      "elapsed": 215
+      "title": "John Peel 2003-05-08",
+      "artist": "John Peel (R1)",
+      "album": "from RA",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/526edbfb519b15308d470014",
+      "duration": 7083,
+      "elapsed": 2703
     },
     "playing_next": {
-      "title": "Straight to the head",
-      "artist": "The Upsetters"
+      "title": "John James",
+      "artist": "Toots & the Maytals"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
+        "title": "Igziabeher",
+        "artist": "Peter Tosh",
+        "played_at": 1783621371
+      },
+      {
+        "title": "On The Road (Live)",
+        "artist": "Motorhead",
+        "played_at": 1783621073
+      },
+      {
+        "title": "Straight to the head",
+        "artist": "The Upsetters",
+        "played_at": 1783620815
+      },
+      {
+        "title": "Evil Darling",
+        "artist": "Joe Strummer",
+        "played_at": 1783620513
+      },
+      {
         "title": "Fabienne",
         "artist": "Miguel Sandoval",
         "played_at": 1783620480
-      },
-      {
-        "title": "Desmond Dekker Came First [#]",
-        "artist": "Toots & the Maytals",
-        "played_at": 1783620223
-      },
-      {
-        "title": "High Fives",
-        "artist": "Zander Schloss",
-        "played_at": 1783620174
-      },
-      {
-        "title": "I Wanna Be Sedated",
-        "artist": "Ramones",
-        "played_at": 1783620024
-      },
-      {
-        "title": "Roll Jordan Roll",
-        "artist": "Laurel Aitken",
-        "played_at": 1783619730
       }
     ]
   }
