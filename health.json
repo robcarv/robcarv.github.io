@@ -1,37 +1,37 @@
 {
-  "updated": "2026-07-09 08:12",
+  "updated": "2026-07-09 09:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 5.1,
-        "user": 4.0,
-        "system": 1.3,
-        "idle": 94.2,
-        "iowait": 0.4
+        "total": 6.0,
+        "user": 4.2,
+        "system": 2.1,
+        "idle": 93.4,
+        "iowait": 0.1
       },
       "percpu": [
-        4.9,
+        8.0,
+        6.2,
         4.1,
-        4.7,
-        9.9
+        5.8
       ],
       "ram": {
-        "used_gb": 3.08,
+        "used_gb": 3.13,
         "total_gb": 7.87,
-        "percent": 39.2,
-        "available_gb": 4.79
+        "percent": 39.7,
+        "available_gb": 4.75
       },
       "swap": {
-        "used_mb": 1398.1,
+        "used_mb": 1397.1,
         "total_mb": 2048.0,
-        "percent": 68.3
+        "percent": 68.2
       },
       "load": {
-        "1min": 0.85,
-        "5min": 0.71,
-        "15min": 0.8,
+        "1min": 0.67,
+        "5min": 0.81,
+        "15min": 0.79,
         "cores": 4
       },
       "disks": [
@@ -39,14 +39,14 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 47.3,
-          "free_gb": 63.5,
-          "percent": 40.5
+          "used_gb": 47.2,
+          "free_gb": 63.6,
+          "percent": 40.4
         }
       ],
       "disk_io": {
-        "read_mb": 12.9,
-        "write_mb": 2080.8
+        "read_mb": 286.2,
+        "write_mb": 1600.1
       },
       "temperature_c": 54,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 339,
-        "running": 1,
+        "total": 342,
+        "running": 0,
         "sleeping": 247,
-        "threads": 1184
+        "threads": 1187
       },
-      "uptime": "8 days, 7:25:36",
+      "uptime": "8 days, 8:24:41",
       "containers": [
         {
           "name": "gallery backend",
@@ -74,7 +74,7 @@
         },
         {
           "name": "subscription bot",
-          "status": "Up 10 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 11 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "cadvisor",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 7 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 8 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 7 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 8 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 7 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 8 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,33 +143,33 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 3.8,
-        "user": 5.8,
-        "system": 1.0,
-        "idle": 92.8,
-        "iowait": 0.3
+        "total": 7.4,
+        "user": 7.8,
+        "system": 1.3,
+        "idle": 90.3,
+        "iowait": 0.5
       },
       "percpu": [
-        5.7,
-        2.7,
-        2.1,
-        5.6
+        8.6,
+        5.5,
+        8.3,
+        8.4
       ],
       "ram": {
-        "used_gb": 3.05,
+        "used_gb": 3.3,
         "total_gb": 7.87,
-        "percent": 38.8,
-        "available_gb": 4.82
+        "percent": 41.9,
+        "available_gb": 4.57
       },
       "swap": {
-        "used_mb": 158.3,
+        "used_mb": 154.3,
         "total_mb": 4096.0,
-        "percent": 3.9
+        "percent": 3.8
       },
       "load": {
-        "1min": 0.28,
-        "5min": 0.35,
-        "15min": 0.45,
+        "1min": 0.58,
+        "5min": 0.89,
+        "15min": 0.96,
         "cores": 4
       },
       "disks": [
@@ -185,16 +185,16 @@
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.2,
-          "free_gb": 748.1,
+          "used_gb": 121.3,
+          "free_gb": 748.0,
           "percent": 13.2
         }
       ],
       "disk_io": {
-        "read_mb": 687.1,
-        "write_mb": 1273.5
+        "read_mb": 980.8,
+        "write_mb": 1591.6
       },
-      "temperature_c": 52,
+      "temperature_c": 55,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 571,
-        "running": 0,
-        "sleeping": 477,
-        "threads": 3340
+        "total": 579,
+        "running": 1,
+        "sleeping": 480,
+        "threads": 3348
       },
-      "uptime": "8 days, 7:25:36",
+      "uptime": "8 days, 8:24:41",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 7 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 8 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 17.8,
-        "user": 8.5,
-        "system": 3.4,
-        "idle": 88.0,
-        "iowait": 0.0
+        "total": 12.1,
+        "user": 8.9,
+        "system": 3.6,
+        "idle": 87.3,
+        "iowait": 0.1
       },
       "percpu": [
-        17.0,
-        17.0,
-        17.1,
-        20.5
+        11.0,
+        12.3,
+        12.4,
+        13.0
       ],
       "ram": {
-        "used_gb": 1.77,
+        "used_gb": 1.75,
         "total_gb": 7.64,
-        "percent": 23.2,
-        "available_gb": 5.87
+        "percent": 22.9,
+        "available_gb": 5.89
       },
       "swap": {
         "used_mb": 2.5,
@@ -281,9 +281,9 @@
         "percent": 0.5
       },
       "load": {
-        "1min": 0.91,
-        "5min": 0.99,
-        "15min": 0.84,
+        "1min": 0.11,
+        "5min": 0.48,
+        "15min": 0.63,
         "cores": 4
       },
       "disks": [
@@ -292,13 +292,13 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
           "used_gb": 31.2,
-          "free_gb": 78.3,
+          "free_gb": 78.2,
           "percent": 27.1
         }
       ],
       "disk_io": {
-        "read_mb": 5.2,
-        "write_mb": 477.5
+        "read_mb": 1.3,
+        "write_mb": 452.4
       },
       "temperature_c": 35,
       "network": {
@@ -309,12 +309,12 @@
         }
       },
       "processes": {
-        "total": 266,
+        "total": 265,
         "running": 0,
         "sleeping": 169,
-        "threads": 926
+        "threads": 924
       },
-      "uptime": "8 days, 7:25:40",
+      "uptime": "8 days, 8:24:45",
       "containers": [
         {
           "name": "cadvisor",
@@ -322,11 +322,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 7 hours grafana/grafana:latest"
+          "status": "Up 8 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 7 hours prom/prometheus:latest"
+          "status": "Up 8 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -378,45 +378,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Dialogue - Ras Marcus",
-      "artist": "Rastafari elders",
-      "album": "Rastafari elders",
-      "genre": "Nyahbinghi",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/e22e6e9e352b99b8982dffef-1782763741.jpg",
-      "duration": 296,
-      "elapsed": 122
+      "title": "John Peel 20020507",
+      "artist": "",
+      "album": "",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/3bf30980334dc4aff05a5fc8",
+      "duration": 7230,
+      "elapsed": 669
     },
     "playing_next": {
-      "title": "Pretty Little Face",
-      "artist": "Ras Michael & The Sons Of Negus"
+      "title": "Stealing",
+      "artist": "King Tubby"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Crosseyed and Painless (2005 Remaster)",
-        "artist": "Talking Heads",
-        "played_at": 1783580778
+        "title": "One Night Stand",
+        "artist": "Motorhead",
+        "played_at": 1783583873
       },
       {
-        "title": "Joe Strummer And The Astro-Physicians/Afro-Cuban-Be-Bop (Alt. Mix)",
-        "artist": "The Pogues",
-        "played_at": 1783580594
+        "title": "My Favourite Game",
+        "artist": "The Cardigans",
+        "played_at": 1783583611
       },
       {
-        "title": "11-bandits",
-        "artist": "wailing souls",
-        "played_at": 1783580368
+        "title": "03 - mogwai - hunted by a freak",
+        "artist": "John Peel Festive Fifty 2003",
+        "played_at": 1783583319
       },
       {
-        "title": "(Take Me Home)Country Roads",
-        "artist": "Toots and The Maytals",
-        "played_at": 1783580168
+        "title": "California Sun",
+        "artist": "The Ramones",
+        "played_at": 1783583214
       },
       {
-        "title": "You Make Me Feel Brand New",
-        "artist": "Boris Gardiner",
-        "played_at": 1783579948
+        "title": "Corazon De Oro",
+        "artist": "Rancid  NOFX",
+        "played_at": 1783583024
       }
     ]
   }
