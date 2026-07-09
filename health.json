@@ -1,37 +1,37 @@
 {
-  "updated": "2026-07-09 01:12",
-  "status": "warn",
+  "updated": "2026-07-09 02:12",
+  "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 8.6,
-        "user": 5.2,
-        "system": 2.7,
-        "idle": 76.3,
-        "iowait": 15.3
+        "total": 5.7,
+        "user": 4.0,
+        "system": 2.2,
+        "idle": 93.3,
+        "iowait": 0.3
       },
       "percpu": [
-        35.6,
-        32.8,
-        11.9,
-        19.6
+        5.6,
+        6.1,
+        6.0,
+        5.5
       ],
       "ram": {
-        "used_gb": 2.76,
+        "used_gb": 3.09,
         "total_gb": 7.87,
-        "percent": 35.0,
-        "available_gb": 5.12
+        "percent": 39.3,
+        "available_gb": 4.78
       },
       "swap": {
-        "used_mb": 1406.0,
+        "used_mb": 1399.1,
         "total_mb": 2048.0,
-        "percent": 68.7
+        "percent": 68.3
       },
       "load": {
-        "1min": 3.08,
-        "5min": 3.12,
-        "15min": 2.53,
+        "1min": 1.4,
+        "5min": 0.94,
+        "15min": 1.27,
         "cores": 4
       },
       "disks": [
@@ -39,16 +39,16 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 51.6,
-          "free_gb": 59.1,
-          "percent": 44.2
+          "used_gb": 47.2,
+          "free_gb": 63.5,
+          "percent": 40.5
         }
       ],
       "disk_io": {
-        "read_mb": 790.9,
-        "write_mb": 15490.9
+        "read_mb": 74028.2,
+        "write_mb": 46542.9
       },
-      "temperature_c": 57,
+      "temperature_c": 56,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 360,
+        "total": 346,
         "running": 1,
-        "sleeping": 255,
-        "threads": 1215
+        "sleeping": 253,
+        "threads": 1187
       },
-      "uptime": "8 days, 0:25:24",
+      "uptime": "8 days, 1:24:52",
       "containers": [
         {
           "name": "gallery backend",
@@ -74,7 +74,7 @@
         },
         {
           "name": "subscription bot",
-          "status": "Up 3 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 4 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "cadvisor",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 24 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 39 minutes (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 24 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 38 minutes (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 24 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 38 minutes jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,23 +143,23 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 4.5,
-        "user": 6.1,
+        "total": 8.1,
+        "user": 5.5,
         "system": 1.0,
-        "idle": 92.4,
-        "iowait": 0.5
+        "idle": 74.4,
+        "iowait": 19.1
       },
       "percpu": [
-        7.5,
-        4.0,
-        4.2,
-        3.7
+        10.3,
+        8.1,
+        6.6,
+        9.3
       ],
       "ram": {
-        "used_gb": 2.99,
+        "used_gb": 3.05,
         "total_gb": 7.87,
-        "percent": 37.9,
-        "available_gb": 4.89
+        "percent": 38.8,
+        "available_gb": 4.82
       },
       "swap": {
         "used_mb": 159.3,
@@ -167,9 +167,9 @@
         "percent": 3.9
       },
       "load": {
-        "1min": 0.31,
-        "5min": 0.63,
-        "15min": 0.83,
+        "1min": 1.55,
+        "5min": 1.56,
+        "15min": 1.3,
         "cores": 4
       },
       "disks": [
@@ -191,10 +191,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 4817.7,
-        "write_mb": 2245.3
+        "read_mb": 996.4,
+        "write_mb": 1513.7
       },
-      "temperature_c": 54,
+      "temperature_c": 53,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 573,
+        "total": 575,
         "running": 0,
-        "sleeping": 479,
-        "threads": 3338
+        "sleeping": 478,
+        "threads": 3343
       },
-      "uptime": "8 days, 0:25:24",
+      "uptime": "8 days, 1:24:52",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 10 minutes ghcr.io/azuracast/azuracast:stable"
+          "status": "Up About an hour ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -255,25 +255,25 @@
       "services": "AzuraCast, DuckDNS, Media Server"
     },
     "Pi4": {
-      "status": "warn",
+      "status": "ok",
       "cpu": {
-        "total": 96.9,
-        "user": 69.7,
-        "system": 14.5,
-        "idle": 13.7,
-        "iowait": 0.0
+        "total": 35.3,
+        "user": 24.7,
+        "system": 6.7,
+        "idle": 64.8,
+        "iowait": 0.1
       },
       "percpu": [
-        90.5,
-        99.3,
-        98.6,
-        94.7
+        39.1,
+        36.0,
+        37.3,
+        29.0
       ],
       "ram": {
-        "used_gb": 1.79,
+        "used_gb": 1.87,
         "total_gb": 7.64,
-        "percent": 23.4,
-        "available_gb": 5.85
+        "percent": 24.5,
+        "available_gb": 5.77
       },
       "swap": {
         "used_mb": 2.5,
@@ -281,9 +281,9 @@
         "percent": 0.5
       },
       "load": {
-        "1min": 7.48,
-        "5min": 6.3,
-        "15min": 3.7,
+        "1min": 1.24,
+        "5min": 1.9,
+        "15min": 1.92,
         "cores": 4
       },
       "disks": [
@@ -291,16 +291,16 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
-          "used_gb": 31.2,
+          "used_gb": 31.1,
           "free_gb": 78.3,
           "percent": 27.0
         }
       ],
       "disk_io": {
-        "read_mb": 7375.8,
-        "write_mb": 463.8
+        "read_mb": 3304.5,
+        "write_mb": 4568.0
       },
-      "temperature_c": 44,
+      "temperature_c": 36,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -309,12 +309,12 @@
         }
       },
       "processes": {
-        "total": 272,
-        "running": 1,
-        "sleeping": 173,
-        "threads": 943
+        "total": 268,
+        "running": 0,
+        "sleeping": 172,
+        "threads": 937
       },
-      "uptime": "8 days, 0:25:29",
+      "uptime": "8 days, 1:24:57",
       "containers": [
         {
           "name": "cadvisor",
@@ -322,11 +322,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 24 hours grafana/grafana:latest"
+          "status": "Up 54 minutes grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 24 hours prom/prometheus:latest"
+          "status": "Up 54 minutes prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -378,45 +378,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "15 #36.Fresher Than The Sweetness In Water-Gorky's Zygotic Mynci",
-      "artist": "John Peel Festive Fifty 2000",
-      "album": "John Peel Festive Fifty 2000",
-      "genre": "Rock; Pop",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/fa19d5830ff716189233447b-1782766987.jpg",
-      "duration": 141,
-      "elapsed": 56
+      "title": "Because the Night",
+      "artist": "Patti Smith",
+      "album": "Outside Society",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/97b35f85e68c06cd50d2688d-1782759884.jpg",
+      "duration": 207,
+      "elapsed": 163
     },
     "playing_next": {
-      "title": "shadow of a doubt",
-      "artist": "Barbel"
+      "title": "Red Shoes",
+      "artist": "Elvis Costello"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "TRACK 02",
-        "artist": "",
-        "played_at": 1783555684
+        "title": "Rude Boy Dub",
+        "artist": "King Tubby",
+        "played_at": 1783559181
       },
       {
-        "title": "Hell Toupee",
-        "artist": "Turbonegro",
-        "played_at": 1783555477
+        "title": "Radio",
+        "artist": "Rancid  NOFX",
+        "played_at": 1783558988
       },
       {
-        "title": "The Wars End",
+        "title": "07 - ketchy shuby",
+        "artist": "peter tosh",
+        "played_at": 1783558689
+      },
+      {
+        "title": "Up To No Good",
         "artist": "Rancid",
-        "played_at": 1783555366
+        "played_at": 1783558529
       },
       {
-        "title": "Pressure Drop",
-        "artist": "Toots & the Maytals",
-        "played_at": 1783555208
-      },
-      {
-        "title": "Rub Dub",
-        "artist": "Keith Hudson",
-        "played_at": 1783554950
+        "title": "Take It To The Max",
+        "artist": "The Congos",
+        "played_at": 1783558361
       }
     ]
   }
