@@ -1,27 +1,27 @@
 {
-  "updated": "2026-07-09 15:12",
+  "updated": "2026-07-09 16:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 14.1,
-        "user": 12.6,
-        "system": 2.3,
-        "idle": 84.7,
+        "total": 15.0,
+        "user": 11.8,
+        "system": 1.3,
+        "idle": 86.7,
         "iowait": 0.1
       },
       "percpu": [
-        7.3,
-        24.2,
-        9.4,
-        16.3
+        7.1,
+        16.4,
+        13.3,
+        23.6
       ],
       "ram": {
-        "used_gb": 3.27,
+        "used_gb": 3.3,
         "total_gb": 7.87,
-        "percent": 41.6,
-        "available_gb": 4.6
+        "percent": 41.9,
+        "available_gb": 4.57
       },
       "swap": {
         "used_mb": 1329.4,
@@ -29,9 +29,9 @@
         "percent": 64.9
       },
       "load": {
-        "1min": 1.81,
-        "5min": 1.42,
-        "15min": 1.17,
+        "1min": 0.78,
+        "5min": 0.91,
+        "15min": 0.97,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 216.5,
-        "write_mb": 2166.2
+        "read_mb": 3.4,
+        "write_mb": 1875.4
       },
       "temperature_c": 57,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 346,
+        "total": 344,
         "running": 0,
-        "sleeping": 255,
-        "threads": 1203
+        "sleeping": 252,
+        "threads": 1201
       },
-      "uptime": "8 days, 14:25:14",
+      "uptime": "8 days, 15:25:22",
       "containers": [
         {
           "name": "gallery backend",
@@ -74,7 +74,7 @@
         },
         {
           "name": "subscription bot",
-          "status": "Up 17 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 18 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "cadvisor",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 14 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 15 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 14 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 15 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 14 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 15 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,33 +143,33 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 3.6,
-        "user": 6.0,
+        "total": 3.5,
+        "user": 5.7,
         "system": 1.1,
-        "idle": 92.5,
-        "iowait": 0.4
+        "idle": 74.4,
+        "iowait": 18.8
       },
       "percpu": [
-        1.9,
-        7.6,
+        3.4,
+        6.7,
         2.0,
-        4.1
+        3.0
       ],
       "ram": {
-        "used_gb": 3.05,
+        "used_gb": 3.04,
         "total_gb": 7.87,
-        "percent": 38.8,
-        "available_gb": 4.82
+        "percent": 38.7,
+        "available_gb": 4.83
       },
       "swap": {
-        "used_mb": 199.7,
+        "used_mb": 207.7,
         "total_mb": 4096.0,
-        "percent": 4.9
+        "percent": 5.1
       },
       "load": {
-        "1min": 0.53,
-        "5min": 0.62,
-        "15min": 0.67,
+        "1min": 1.98,
+        "5min": 1.55,
+        "15min": 1.0,
         "cores": 4
       },
       "disks": [
@@ -178,7 +178,7 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 72.7,
-          "free_gb": 38.0,
+          "free_gb": 38.1,
           "percent": 62.3
         },
         {
@@ -191,8 +191,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 535.6,
-        "write_mb": 1176.8
+        "read_mb": 902.3,
+        "write_mb": 1456.9
       },
       "temperature_c": 55,
       "network": {
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 577,
+        "total": 580,
         "running": 0,
-        "sleeping": 482,
-        "threads": 3345
+        "sleeping": 483,
+        "threads": 3350
       },
-      "uptime": "8 days, 14:25:15",
+      "uptime": "8 days, 15:25:22",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 14 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 15 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 11.7,
-        "user": 9.1,
+        "total": 11.5,
+        "user": 8.8,
         "system": 3.5,
-        "idle": 87.3,
+        "idle": 87.6,
         "iowait": 0.0
       },
       "percpu": [
-        11.5,
-        11.8,
-        11.1,
-        12.3
+        10.2,
+        12.6,
+        12.3,
+        11.1
       ],
       "ram": {
-        "used_gb": 1.76,
+        "used_gb": 1.78,
         "total_gb": 7.64,
-        "percent": 23.1,
-        "available_gb": 5.88
+        "percent": 23.3,
+        "available_gb": 5.86
       },
       "swap": {
         "used_mb": 2.5,
@@ -281,9 +281,9 @@
         "percent": 0.5
       },
       "load": {
-        "1min": 1.28,
-        "5min": 1.17,
-        "15min": 0.92,
+        "1min": 0.6,
+        "5min": 0.77,
+        "15min": 0.76,
         "cores": 4
       },
       "disks": [
@@ -297,10 +297,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.7,
-        "write_mb": 477.7
+        "read_mb": 0.6,
+        "write_mb": 489.8
       },
-      "temperature_c": 36,
+      "temperature_c": 37,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -309,12 +309,12 @@
         }
       },
       "processes": {
-        "total": 265,
+        "total": 266,
         "running": 0,
         "sleeping": 169,
         "threads": 926
       },
-      "uptime": "8 days, 14:25:18",
+      "uptime": "8 days, 15:25:26",
       "containers": [
         {
           "name": "cadvisor",
@@ -322,11 +322,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 14 hours grafana/grafana:latest"
+          "status": "Up 15 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 14 hours prom/prometheus:latest"
+          "status": "Up 15 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -378,45 +378,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Gospel Train",
-      "artist": "African Head Charge",
-      "album": "Songs Of Praise",
-      "genre": "General Reggae",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/369c47196278a4e7942fd1f3-1782764955.jpg",
-      "duration": 183,
-      "elapsed": 50
+      "title": "08.Where Are They Now?",
+      "artist": "Gene",
+      "album": "Peel Sessions 19/9/01",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/6b2116d2733d4171d96d553d",
+      "duration": 284,
+      "elapsed": 60
     },
     "playing_next": {
-      "title": "Honey Dub",
-      "artist": "Yabby You & King Tubby"
+      "title": "serpent's kiss",
+      "artist": "John Peel Festive Fifty 1986"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "08.pre-down dub-rac",
-        "artist": "",
-        "played_at": 1783606197
+        "title": "43 #23.Pretty Vacant-Sex Pistols",
+        "artist": "John Peel Festive Fifty 1980",
+        "played_at": 1783609666
       },
       {
-        "title": "SIOUXSIE AND THE BANSHEES - PEEL SESSIONS #8 04 Something Blue",
-        "artist": "no artist",
-        "played_at": 1783606125
+        "title": "27.Siva-Smashing Pumpkins",
+        "artist": "John Peel Festive Fifty 1991",
+        "played_at": 1783609397
       },
       {
-        "title": "The Mistle Thrush",
-        "artist": "The Pogues",
-        "played_at": 1783605963
+        "title": "Do The Reggae",
+        "artist": "Toots And The Maytals",
+        "played_at": 1783609211
       },
       {
-        "title": "In Another Time",
-        "artist": "Motorhead",
-        "played_at": 1783605774
+        "title": "Do You Wanna Touch Me (Oh Yeah)",
+        "artist": "Joan Jett & the Blackhearts",
+        "played_at": 1783609008
       },
       {
-        "title": "21 - pulp - common people",
-        "artist": "John Peel Festive Fifty 1994",
-        "played_at": 1783605431
+        "title": "andy kershaw introduction",
+        "artist": "01",
+        "played_at": 1783608971
       }
     ]
   }
