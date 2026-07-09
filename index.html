@@ -536,12 +536,12 @@ main{margin-left:var(--sidebar-w);min-height:100vh;padding-bottom:60px}
           </div>
         </div>
         <div class="hero-info-col">
-          <p class="hero-overline">QA Automation Engineer / DevOps Enthusiast</p>
-          <h1 class="hero-title">Robert Carvalho</h1>
-          <p class="hero-subtitle">Building reliable automation and self-hosted infrastructure</p>
+          <p class="hero-overline" id="heroTagline">QA Automation Engineer / DevOps Enthusiast</p>
+          <h1 class="hero-title" id="heroName">Robert Carvalho</h1>
+          <p class="hero-subtitle" id="heroSubtitle">Building reliable automation and self-hosted infrastructure</p>
           <div class="hero-details">
-            <span class="hero-detail"><i class="las la-map-marker"></i> Dublin, Ireland</span>
-            <span class="hero-detail"><i class="las la-briefcase"></i> IBM — QA Automation Engineer</span>
+            <span class="hero-detail"><i class="las la-map-marker"></i> <span id="heroLocation">Dublin, Ireland</span></span>
+            <span class="hero-detail"><i class="las la-briefcase"></i> <span id="heroCompany">IBM — QA Automation Engineer</span></span>
           </div>
           <div class="hero-actions">
             <a href="https://github.com/robcarv" target="_blank" class="hero-social-link" title="GitHub">
@@ -577,10 +577,7 @@ main{margin-left:var(--sidebar-w);min-height:100vh;padding-bottom:60px}
         <span class="section-tag">ABOUT</span>
       </div>
       <h2 class="section-title">Learn a bit more<br>about me</h2>
-      <div class="about-content">
-        <p>QA Automation Engineer at IBM with 10+ years of experience across IT support, ERP systems, and test automation. I'm passionate about self-hosted infrastructure, running a 3-node Raspberry Pi homelab with 55+ Docker services including monitoring (Prometheus/Grafana), media streaming, and internet radio (AzuraCast).</p>
-        <p>When not automating tests or tinkering with containers, you'll find me building Telegram bots, managing subscription-based platforms with Mercado Pago PIX, and contributing to open-source. I believe in simplicity — every tool should do one thing well, and every line of code should earn its place.</p>
-      </div>
+      <div class="about-content" id="aboutContent"><div class="loading">Loading about...</div></div>
     </div>
   </section>
 
@@ -604,23 +601,7 @@ main{margin-left:var(--sidebar-w);min-height:100vh;padding-bottom:60px}
         <span class="section-tag">EXPERTISES</span>
       </div>
       <h2 class="section-title">My Specializations</h2>
-      <div class="expertise-grid">
-        <div class="expertise-card">
-          <i class="las la-code"></i>
-          <h3>Test Automation</h3>
-          <p>Building reliable E2E, API, and integration test suites with Playwright, Selenium, and Python. CI/CD pipeline integration with Jenkins and OpenShift.</p>
-        </div>
-        <div class="expertise-card">
-          <i class="las la-server"></i>
-          <h3>Infrastructure &amp; DevOps</h3>
-          <p>Self-hosted homelab with Docker, Kubernetes, Prometheus, Grafana. 55+ services across 3 Raspberry Pi nodes. TrueNAS storage and automated pipelines.</p>
-        </div>
-        <div class="expertise-card">
-          <i class="las la-cog"></i>
-          <h3>Backend Development</h3>
-          <p>Python Flask/Gunicorn, Go/Gin APIs, PostgreSQL + Redis. Telegram bots, subscription systems with Mercado Pago PIX, and content delivery platforms.</p>
-        </div>
-      </div>
+      <div class="expertise-grid" id="expertiseGrid"><div class="loading">Loading expertises...</div></div>
     </div>
   </section>
 
@@ -1113,6 +1094,54 @@ async function loadLastFM(artist, title) {
 }
 
 // ============================================================
+// ABOUT — from about.json
+// ============================================================
+async function loadAbout() {
+  try {
+    const r = await fetch('about.json?_='+Date.now());
+    if (!r.ok) throw new Error('HTTP '+r.status);
+    renderAbout(await r.json());
+  } catch(e) {
+    document.getElementById('aboutContent').innerHTML = '<div class="loading">Failed to load about</div>';
+  }
+}
+function renderAbout(data) {
+  const c = document.getElementById('aboutContent');
+  if (!data?.bio?.length) { c.innerHTML = ''; return; }
+  c.innerHTML = data.bio.map(p => `<p>${p}</p>`).join('');
+
+  // Also update hero dynamic fields
+  if (data.name) document.getElementById('heroName').textContent = data.name;
+  if (data.tagline) document.getElementById('heroTagline').textContent = data.tagline;
+  if (data.subtitle) document.getElementById('heroSubtitle').textContent = data.subtitle;
+  if (data.location) document.getElementById('heroLocation').textContent = data.location;
+  if (data.company) document.getElementById('heroCompany').textContent = data.company;
+}
+
+// ============================================================
+// EXPERTISES — cards from expertises.json
+// ============================================================
+async function loadExpertises() {
+  try {
+    const r = await fetch('expertises.json?_='+Date.now());
+    if (!r.ok) throw new Error('HTTP '+r.status);
+    renderExpertises(await r.json());
+  } catch(e) {
+    document.getElementById('expertiseGrid').innerHTML = '<div class="loading">Failed to load expertises</div>';
+  }
+}
+function renderExpertises(items) {
+  const c = document.getElementById('expertiseGrid');
+  if (!items?.length) { c.innerHTML = ''; return; }
+  c.innerHTML = items.map(e => `
+    <div class="expertise-card">
+      <i class="las ${e.icon||'la-star'}"></i>
+      <h3>${e.title||''}</h3>
+      <p>${e.description||''}</p>
+    </div>`).join('');
+}
+
+// ============================================================
 // EXPERIENCE — timeline from experience.json
 // ============================================================
 async function loadExperience() {
@@ -1466,7 +1495,9 @@ setInterval(loadWeather, 900000); // refresh every 15 min
 async function init() {
   await loadHealth();
   await loadNews();
+  await loadAbout();
   await loadExperience();
+  await loadExpertises();
   await loadSkills();
   await loadProjects();
   updateTicker();
