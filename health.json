@@ -1,27 +1,27 @@
 {
-  "updated": "2026-07-10 20:12",
+  "updated": "2026-07-10 21:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 17.9,
-        "user": 12.2,
-        "system": 2.2,
-        "idle": 85.1,
-        "iowait": 0.3
+        "total": 14.2,
+        "user": 11.8,
+        "system": 1.3,
+        "idle": 86.8,
+        "iowait": 0.1
       },
       "percpu": [
-        10.6,
-        24.3,
-        22.4,
-        14.6
+        16.0,
+        17.2,
+        10.5,
+        13.6
       ],
       "ram": {
-        "used_gb": 3.09,
+        "used_gb": 3.07,
         "total_gb": 7.87,
-        "percent": 39.2,
-        "available_gb": 4.79
+        "percent": 39.0,
+        "available_gb": 4.8
       },
       "swap": {
         "used_mb": 1566.1,
@@ -29,9 +29,9 @@
         "percent": 76.5
       },
       "load": {
-        "1min": 1.06,
-        "5min": 1.27,
-        "15min": 1.28,
+        "1min": 0.44,
+        "5min": 0.74,
+        "15min": 0.99,
         "cores": 4
       },
       "disks": [
@@ -39,14 +39,14 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 47.5,
+          "used_gb": 47.6,
           "free_gb": 63.2,
-          "percent": 40.7
+          "percent": 40.8
         }
       ],
       "disk_io": {
-        "read_mb": 1.8,
-        "write_mb": 1629.6
+        "read_mb": 9.1,
+        "write_mb": 1708.9
       },
       "temperature_c": 58,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 346,
-        "running": 1,
-        "sleeping": 251,
-        "threads": 1201
+        "total": 339,
+        "running": 0,
+        "sleeping": 249,
+        "threads": 1193
       },
-      "uptime": "9 days, 19:24:49",
+      "uptime": "9 days, 20:24:59",
       "containers": [
         {
           "name": "gallery backend",
@@ -74,7 +74,7 @@
         },
         {
           "name": "subscription bot",
-          "status": "Up 46 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 47 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "cadvisor",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 19 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 20 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 19 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 20 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 19 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 20 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,23 +143,23 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 11.3,
-        "user": 5.4,
-        "system": 1.0,
-        "idle": 83.8,
-        "iowait": 9.8
+        "total": 3.3,
+        "user": 5.1,
+        "system": 0.8,
+        "idle": 93.6,
+        "iowait": 0.4
       },
       "percpu": [
-        100.0,
-        100.0,
-        9.7,
-        100.0
+        6.6,
+        1.7,
+        2.3,
+        3.9
       ],
       "ram": {
-        "used_gb": 3.24,
+        "used_gb": 3.13,
         "total_gb": 7.87,
-        "percent": 41.1,
-        "available_gb": 4.64
+        "percent": 39.8,
+        "available_gb": 4.74
       },
       "swap": {
         "used_mb": 164.2,
@@ -167,9 +167,9 @@
         "percent": 4.0
       },
       "load": {
-        "1min": 1.51,
-        "5min": 0.72,
-        "15min": 0.7,
+        "1min": 1.18,
+        "5min": 1.01,
+        "15min": 0.79,
         "cores": 4
       },
       "disks": [
@@ -178,7 +178,7 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 72.7,
-          "free_gb": 38.0,
+          "free_gb": 38.1,
           "percent": 62.3
         },
         {
@@ -191,10 +191,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 533.4,
-        "write_mb": 1149.4
+        "read_mb": 728.3,
+        "write_mb": 1189.7
       },
-      "temperature_c": 56,
+      "temperature_c": 57,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 582,
+        "total": 576,
         "running": 0,
-        "sleeping": 481,
-        "threads": 3350
+        "sleeping": 482,
+        "threads": 3345
       },
-      "uptime": "9 days, 19:24:49",
+      "uptime": "9 days, 20:24:59",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 19 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 20 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 11.6,
-        "user": 9.0,
-        "system": 3.6,
-        "idle": 87.3,
-        "iowait": 0.1
+        "total": 11.9,
+        "user": 8.8,
+        "system": 3.5,
+        "idle": 87.6,
+        "iowait": 0.0
       },
       "percpu": [
-        11.2,
         12.0,
-        11.5,
-        11.9
+        12.5,
+        11.6,
+        11.8
       ],
       "ram": {
-        "used_gb": 1.8,
+        "used_gb": 1.88,
         "total_gb": 7.64,
-        "percent": 23.6,
-        "available_gb": 5.84
+        "percent": 24.6,
+        "available_gb": 5.76
       },
       "swap": {
         "used_mb": 3.2,
@@ -281,9 +281,9 @@
         "percent": 0.6
       },
       "load": {
-        "1min": 0.4,
-        "5min": 0.6,
-        "15min": 0.7,
+        "1min": 1.77,
+        "5min": 1.16,
+        "15min": 0.93,
         "cores": 4
       },
       "disks": [
@@ -292,13 +292,13 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
           "used_gb": 31.4,
-          "free_gb": 78.1,
+          "free_gb": 78.0,
           "percent": 27.2
         }
       ],
       "disk_io": {
-        "read_mb": 3.0,
-        "write_mb": 473.0
+        "read_mb": 0.6,
+        "write_mb": 486.1
       },
       "temperature_c": 41,
       "network": {
@@ -309,12 +309,12 @@
         }
       },
       "processes": {
-        "total": 264,
+        "total": 265,
         "running": 0,
         "sleeping": 169,
-        "threads": 932
+        "threads": 933
       },
-      "uptime": "9 days, 19:24:53",
+      "uptime": "9 days, 20:25:03",
       "containers": [
         {
           "name": "cadvisor",
@@ -322,11 +322,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 19 hours grafana/grafana:latest"
+          "status": "Up 20 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 19 hours prom/prometheus:latest"
+          "status": "Up 20 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -374,6 +374,50 @@
     }
   },
   "radio": {
-    "error": "The read operation timed out"
+    "station": "dublincalling",
+    "is_online": true,
+    "is_live": false,
+    "now_playing": {
+      "title": "My Eyes Are Red (Previously Un",
+      "artist": "Keith Hudson",
+      "album": "Brand",
+      "genre": "Reggae",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/70ad4c48ec30631b58538ef9-1782763826.jpg",
+      "duration": 258,
+      "elapsed": 22
+    },
+    "playing_next": {
+      "title": "Victory",
+      "artist": "Half Pint"
+    },
+    "listeners": 1,
+    "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
+    "history": [
+      {
+        "title": "Natty Rebel - 01 - Babylon Burning",
+        "artist": "U-Roy",
+        "played_at": 1783714165
+      },
+      {
+        "title": "I hold the handle",
+        "artist": "The Heptones",
+        "played_at": 1783714018
+      },
+      {
+        "title": "When I Was Young",
+        "artist": "Ramones",
+        "played_at": 1783713795
+      },
+      {
+        "title": "New Dress",
+        "artist": "Rancid",
+        "played_at": 1783713624
+      },
+      {
+        "title": "A Truthful Dub",
+        "artist": "King Tubby",
+        "played_at": 1783713457
+      }
+    ]
   }
 }
