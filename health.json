@@ -1,21 +1,21 @@
 {
-  "updated": "2026-07-10 23:12",
+  "updated": "2026-07-11 00:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 13.1,
-        "user": 12.1,
-        "system": 1.0,
-        "idle": 86.7,
-        "iowait": 0.2
+        "total": 13.3,
+        "user": 12.2,
+        "system": 2.2,
+        "idle": 85.3,
+        "iowait": 0.1
       },
       "percpu": [
-        24.7,
-        7.2,
-        14.7,
-        9.1
+        8.6,
+        18.3,
+        12.5,
+        13.9
       ],
       "ram": {
         "used_gb": 3.11,
@@ -24,14 +24,14 @@
         "available_gb": 4.76
       },
       "swap": {
-        "used_mb": 1562.1,
+        "used_mb": 1561.1,
         "total_mb": 2048.0,
-        "percent": 76.3
+        "percent": 76.2
       },
       "load": {
-        "1min": 0.75,
-        "5min": 0.81,
-        "15min": 0.94,
+        "1min": 1.27,
+        "5min": 1.38,
+        "15min": 1.13,
         "cores": 4
       },
       "disks": [
@@ -39,14 +39,14 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 47.7,
-          "free_gb": 63.0,
-          "percent": 40.9
+          "used_gb": 47.4,
+          "free_gb": 63.3,
+          "percent": 40.6
         }
       ],
       "disk_io": {
-        "read_mb": 2.1,
-        "write_mb": 1845.6
+        "read_mb": 12.1,
+        "write_mb": 1860.4
       },
       "temperature_c": 56,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 343,
+        "total": 359,
         "running": 1,
-        "sleeping": 249,
-        "threads": 1198
+        "sleeping": 248,
+        "threads": 1212
       },
-      "uptime": "9 days, 22:25:08",
+      "uptime": "9 days, 23:25:14",
       "containers": [
         {
           "name": "gallery backend",
@@ -78,15 +78,15 @@
         },
         {
           "name": "cadvisor",
-          "status": "Up 6 days (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 7 days (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "watchtower",
-          "status": "Up 6 days (healthy) containrrr/watchtower"
+          "status": "Up 7 days (healthy) containrrr/watchtower"
         },
         {
           "name": "psclient",
-          "status": "Up 6 days packetstream/psclient:latest"
+          "status": "Up 7 days packetstream/psclient:latest"
         },
         {
           "name": "gallery frontend",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 22 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 23 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 22 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 23 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 22 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 23 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,23 +143,23 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 4.6,
-        "user": 3.9,
-        "system": 0.6,
-        "idle": 95.2,
-        "iowait": 0.3
+        "total": 2.8,
+        "user": 5.9,
+        "system": 1.0,
+        "idle": 92.6,
+        "iowait": 0.4
       },
       "percpu": [
-        6.8,
-        3.4,
-        6.7,
-        2.7
+        3.3,
+        3.8,
+        2.7,
+        1.9
       ],
       "ram": {
-        "used_gb": 3.1,
+        "used_gb": 3.08,
         "total_gb": 7.87,
-        "percent": 39.4,
-        "available_gb": 4.77
+        "percent": 39.1,
+        "available_gb": 4.79
       },
       "swap": {
         "used_mb": 163.2,
@@ -167,9 +167,9 @@
         "percent": 4.0
       },
       "load": {
-        "1min": 0.19,
-        "5min": 0.63,
-        "15min": 0.91,
+        "1min": 0.53,
+        "5min": 0.83,
+        "15min": 0.64,
         "cores": 4
       },
       "disks": [
@@ -185,16 +185,16 @@
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.3,
-          "free_gb": 747.9,
+          "used_gb": 121.2,
+          "free_gb": 748.0,
           "percent": 13.2
         }
       ],
       "disk_io": {
-        "read_mb": 886.7,
-        "write_mb": 1488.3
+        "read_mb": 694.6,
+        "write_mb": 1301.0
       },
-      "temperature_c": 57,
+      "temperature_c": 55,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 571,
+        "total": 577,
         "running": 0,
-        "sleeping": 477,
-        "threads": 3340
+        "sleeping": 479,
+        "threads": 3345
       },
-      "uptime": "9 days, 22:25:08",
+      "uptime": "9 days, 23:25:15",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 22 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 23 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 13.3,
-        "user": 15.4,
-        "system": 4.1,
-        "idle": 80.3,
-        "iowait": 0.0
+        "total": 12.2,
+        "user": 9.0,
+        "system": 3.5,
+        "idle": 87.2,
+        "iowait": 0.1
       },
       "percpu": [
-        13.3,
-        13.3,
-        13.4,
-        13.3
+        11.9,
+        11.9,
+        12.1,
+        12.9
       ],
       "ram": {
-        "used_gb": 1.85,
+        "used_gb": 1.77,
         "total_gb": 7.64,
-        "percent": 24.3,
-        "available_gb": 5.78
+        "percent": 23.1,
+        "available_gb": 5.87
       },
       "swap": {
         "used_mb": 3.2,
@@ -281,9 +281,9 @@
         "percent": 0.6
       },
       "load": {
-        "1min": 1.06,
-        "5min": 1.14,
-        "15min": 0.99,
+        "1min": 0.7,
+        "5min": 0.85,
+        "15min": 0.81,
         "cores": 4
       },
       "disks": [
@@ -292,15 +292,15 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
           "used_gb": 31.4,
-          "free_gb": 78.0,
-          "percent": 27.3
+          "free_gb": 78.1,
+          "percent": 27.2
         }
       ],
       "disk_io": {
-        "read_mb": 0.5,
-        "write_mb": 482.6
+        "read_mb": 194.2,
+        "write_mb": 679.5
       },
-      "temperature_c": 39,
+      "temperature_c": 37,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -309,24 +309,24 @@
         }
       },
       "processes": {
-        "total": 265,
+        "total": 268,
         "running": 0,
         "sleeping": 169,
-        "threads": 932
+        "threads": 936
       },
-      "uptime": "9 days, 22:25:12",
+      "uptime": "9 days, 23:25:18",
       "containers": [
         {
           "name": "cadvisor",
-          "status": "Up 6 days (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 7 days (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "cve grafana",
-          "status": "Up 22 hours grafana/grafana:latest"
+          "status": "Up 23 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 22 hours prom/prometheus:latest"
+          "status": "Up 23 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -378,45 +378,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "John Peel 2003-07-03",
-      "artist": "John Peel (R1)",
-      "album": "from RA",
-      "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/26d7a5e21324b08475ec8d12",
-      "duration": 7083,
-      "elapsed": 4082
+      "title": "Desmond Dekker Came First [#]",
+      "artist": "Toots & the Maytals",
+      "album": "Time Tough: The Anthology Disc 1",
+      "genre": "Reggae",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/aed54d86d41fddd49b0d1ba1",
+      "duration": 228,
+      "elapsed": 118
     },
     "playing_next": {
-      "title": "Sea Shanty",
-      "artist": "The Pogues"
+      "title": "Bomber",
+      "artist": "Motorhead"
     },
-    "listeners": 1,
+    "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
+      {
+        "title": "Zonked Out (On Hashish)",
+        "artist": "Turbonegro",
+        "played_at": 1783724920
+      },
+      {
+        "title": "Take Me Home Country Roads",
+        "artist": "Toots and the Maytals",
+        "played_at": 1783724721
+      },
+      {
+        "title": "Sea Shanty",
+        "artist": "The Pogues",
+        "played_at": 1783724552
+      },
+      {
+        "title": "John Peel 2003-07-03",
+        "artist": "John Peel (R1)",
+        "played_at": 1783717471
+      },
       {
         "title": "Baby I Love You",
         "artist": "Carl Dawkins",
         "played_at": 1783717301
-      },
-      {
-        "title": "Struggle",
-        "artist": "Toots and The Maytals",
-        "played_at": 1783717087
-      },
-      {
-        "title": "Hail To Power",
-        "artist": "Junior Byles",
-        "played_at": 1783716960
-      },
-      {
-        "title": "I Want To Wake Up With You",
-        "artist": "Boris Gardiner",
-        "played_at": 1783716784
-      },
-      {
-        "title": "Wiseman",
-        "artist": "Desmond Dekker & The Aces",
-        "played_at": 1783716647
       }
     ]
   }
