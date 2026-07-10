@@ -1,27 +1,27 @@
 {
-  "updated": "2026-07-10 19:12",
+  "updated": "2026-07-10 20:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 14.1,
-        "user": 12.5,
+        "total": 17.9,
+        "user": 12.2,
         "system": 2.2,
-        "idle": 84.9,
-        "iowait": 0.1
+        "idle": 85.1,
+        "iowait": 0.3
       },
       "percpu": [
-        11.8,
-        14.7,
-        18.8,
-        11.6
+        10.6,
+        24.3,
+        22.4,
+        14.6
       ],
       "ram": {
-        "used_gb": 3.07,
+        "used_gb": 3.09,
         "total_gb": 7.87,
-        "percent": 39.0,
-        "available_gb": 4.8
+        "percent": 39.2,
+        "available_gb": 4.79
       },
       "swap": {
         "used_mb": 1566.1,
@@ -29,9 +29,9 @@
         "percent": 76.5
       },
       "load": {
-        "1min": 1.43,
-        "5min": 1.34,
-        "15min": 1.3,
+        "1min": 1.06,
+        "5min": 1.27,
+        "15min": 1.28,
         "cores": 4
       },
       "disks": [
@@ -39,14 +39,14 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 47.4,
-          "free_gb": 63.3,
+          "used_gb": 47.5,
+          "free_gb": 63.2,
           "percent": 40.7
         }
       ],
       "disk_io": {
-        "read_mb": 5.7,
-        "write_mb": 1825.0
+        "read_mb": 1.8,
+        "write_mb": 1629.6
       },
       "temperature_c": 58,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 340,
+        "total": 346,
         "running": 1,
-        "sleeping": 249,
-        "threads": 1194
+        "sleeping": 251,
+        "threads": 1201
       },
-      "uptime": "9 days, 18:24:43",
+      "uptime": "9 days, 19:24:49",
       "containers": [
         {
           "name": "gallery backend",
@@ -74,7 +74,7 @@
         },
         {
           "name": "subscription bot",
-          "status": "Up 45 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 46 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "cadvisor",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 18 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 19 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 18 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 19 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 18 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 19 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,23 +143,23 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 11.2,
-        "user": 4.9,
-        "system": 0.7,
-        "idle": 93.8,
-        "iowait": 0.5
+        "total": 11.3,
+        "user": 5.4,
+        "system": 1.0,
+        "idle": 83.8,
+        "iowait": 9.8
       },
       "percpu": [
-        9.4,
-        13.8,
-        9.9,
-        13.6
+        100.0,
+        100.0,
+        9.7,
+        100.0
       ],
       "ram": {
-        "used_gb": 3.18,
+        "used_gb": 3.24,
         "total_gb": 7.87,
-        "percent": 40.4,
-        "available_gb": 4.69
+        "percent": 41.1,
+        "available_gb": 4.64
       },
       "swap": {
         "used_mb": 164.2,
@@ -167,9 +167,9 @@
         "percent": 4.0
       },
       "load": {
-        "1min": 0.35,
-        "5min": 0.7,
-        "15min": 0.89,
+        "1min": 1.51,
+        "5min": 0.72,
+        "15min": 0.7,
         "cores": 4
       },
       "disks": [
@@ -178,21 +178,21 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 72.7,
-          "free_gb": 38.1,
+          "free_gb": 38.0,
           "percent": 62.3
         },
         {
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.3,
+          "used_gb": 121.2,
           "free_gb": 748.0,
           "percent": 13.2
         }
       ],
       "disk_io": {
-        "read_mb": 921.5,
-        "write_mb": 1699.7
+        "read_mb": 533.4,
+        "write_mb": 1149.4
       },
       "temperature_c": 56,
       "network": {
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 573,
+        "total": 582,
         "running": 0,
-        "sleeping": 479,
-        "threads": 3341
+        "sleeping": 481,
+        "threads": 3350
       },
-      "uptime": "9 days, 18:24:43",
+      "uptime": "9 days, 19:24:49",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 18 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 19 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 13.6,
-        "user": 9.8,
-        "system": 3.7,
-        "idle": 86.4,
-        "iowait": 0.0
+        "total": 11.6,
+        "user": 9.0,
+        "system": 3.6,
+        "idle": 87.3,
+        "iowait": 0.1
       },
       "percpu": [
-        13.0,
-        13.0,
-        14.4,
-        13.9
+        11.2,
+        12.0,
+        11.5,
+        11.9
       ],
       "ram": {
-        "used_gb": 1.88,
+        "used_gb": 1.8,
         "total_gb": 7.64,
-        "percent": 24.6,
-        "available_gb": 5.76
+        "percent": 23.6,
+        "available_gb": 5.84
       },
       "swap": {
         "used_mb": 3.2,
@@ -281,9 +281,9 @@
         "percent": 0.6
       },
       "load": {
-        "1min": 0.63,
-        "5min": 1.15,
-        "15min": 1.07,
+        "1min": 0.4,
+        "5min": 0.6,
+        "15min": 0.7,
         "cores": 4
       },
       "disks": [
@@ -297,10 +297,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.5,
-        "write_mb": 455.2
+        "read_mb": 3.0,
+        "write_mb": 473.0
       },
-      "temperature_c": 39,
+      "temperature_c": 41,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -309,12 +309,12 @@
         }
       },
       "processes": {
-        "total": 263,
+        "total": 264,
         "running": 0,
         "sleeping": 169,
-        "threads": 930
+        "threads": 932
       },
-      "uptime": "9 days, 18:24:47",
+      "uptime": "9 days, 19:24:53",
       "containers": [
         {
           "name": "cadvisor",
@@ -322,11 +322,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 18 hours grafana/grafana:latest"
+          "status": "Up 19 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 18 hours prom/prometheus:latest"
+          "status": "Up 19 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -374,50 +374,6 @@
     }
   },
   "radio": {
-    "station": "dublincalling",
-    "is_online": true,
-    "is_live": false,
-    "now_playing": {
-      "title": "Kids In Tyne & Wear",
-      "artist": "The Toy Dolls",
-      "album": "Fat Bob's Feet!",
-      "genre": "Oi!",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/3abca54eaf1ea66e7c66b005-1782761530.jpg",
-      "duration": 195,
-      "elapsed": 120
-    },
-    "playing_next": {
-      "title": "Sex & Death",
-      "artist": "Motorhead"
-    },
-    "listeners": 1,
-    "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
-    "history": [
-      {
-        "title": "Rock My Boat Dub",
-        "artist": "The Agrovators",
-        "played_at": 1783706778
-      },
-      {
-        "title": "05-take a look in the mirror",
-        "artist": "",
-        "played_at": 1783706566
-      },
-      {
-        "title": "Tilt",
-        "artist": "Fu Manchu",
-        "played_at": 1783706393
-      },
-      {
-        "title": "Hope That It Is For Real",
-        "artist": "Junior Delgado",
-        "played_at": 1783706172
-      },
-      {
-        "title": "The Pioneer of Jamaican Music - 15 - Judgement Day",
-        "artist": "Laurel Aitken",
-        "played_at": 1783706000
-      }
-    ]
+    "error": "The read operation timed out"
   }
 }
