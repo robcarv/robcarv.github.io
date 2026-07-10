@@ -1,27 +1,27 @@
 {
-  "updated": "2026-07-10 15:12",
+  "updated": "2026-07-10 16:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 12.5,
-        "user": 11.9,
-        "system": 1.3,
-        "idle": 86.1,
-        "iowait": 0.6
+        "total": 20.0,
+        "user": 11.5,
+        "system": 2.0,
+        "idle": 86.0,
+        "iowait": 0.1
       },
       "percpu": [
-        12.6,
-        10.3,
-        11.6,
-        16.4
+        25.3,
+        13.0,
+        20.0,
+        24.4
       ],
       "ram": {
         "used_gb": 3.06,
         "total_gb": 7.87,
-        "percent": 38.8,
-        "available_gb": 4.82
+        "percent": 38.9,
+        "available_gb": 4.81
       },
       "swap": {
         "used_mb": 1570.1,
@@ -29,9 +29,9 @@
         "percent": 76.7
       },
       "load": {
-        "1min": 0.97,
-        "5min": 0.88,
-        "15min": 0.91,
+        "1min": 1.0,
+        "5min": 1.24,
+        "15min": 1.28,
         "cores": 4
       },
       "disks": [
@@ -39,16 +39,16 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 47.4,
+          "used_gb": 47.5,
           "free_gb": 63.3,
           "percent": 40.7
         }
       ],
       "disk_io": {
-        "read_mb": 72.9,
-        "write_mb": 2021.9
+        "read_mb": 0.2,
+        "write_mb": 2021.6
       },
-      "temperature_c": 56,
+      "temperature_c": 59,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 347,
-        "running": 1,
-        "sleeping": 252,
-        "threads": 1198
+        "total": 345,
+        "running": 3,
+        "sleeping": 249,
+        "threads": 1197
       },
-      "uptime": "9 days, 14:25:21",
+      "uptime": "9 days, 15:25:25",
       "containers": [
         {
           "name": "gallery backend",
@@ -74,7 +74,7 @@
         },
         {
           "name": "subscription bot",
-          "status": "Up 41 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 42 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "cadvisor",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 14 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 15 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 14 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 15 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 14 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 15 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,33 +143,33 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 3.7,
-        "user": 5.5,
+        "total": 3.9,
+        "user": 5.6,
         "system": 1.0,
-        "idle": 93.1,
-        "iowait": 0.4
+        "idle": 93.0,
+        "iowait": 0.3
       },
       "percpu": [
-        7.5,
-        2.0,
-        4.9,
-        1.7
+        7.1,
+        2.6,
+        5.9,
+        1.1
       ],
       "ram": {
-        "used_gb": 3.04,
+        "used_gb": 3.02,
         "total_gb": 7.87,
-        "percent": 38.6,
-        "available_gb": 4.84
+        "percent": 38.4,
+        "available_gb": 4.85
       },
       "swap": {
-        "used_mb": 161.2,
+        "used_mb": 163.2,
         "total_mb": 4096.0,
-        "percent": 3.9
+        "percent": 4.0
       },
       "load": {
-        "1min": 0.55,
-        "5min": 0.49,
-        "15min": 0.61,
+        "1min": 0.35,
+        "5min": 0.81,
+        "15min": 0.91,
         "cores": 4
       },
       "disks": [
@@ -178,7 +178,7 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 72.7,
-          "free_gb": 38.0,
+          "free_gb": 38.1,
           "percent": 62.3
         },
         {
@@ -191,10 +191,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 872.5,
-        "write_mb": 1530.8
+        "read_mb": 818.6,
+        "write_mb": 1377.8
       },
-      "temperature_c": 57,
+      "temperature_c": 56,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 571,
+        "total": 572,
         "running": 0,
-        "sleeping": 479,
+        "sleeping": 477,
         "threads": 3339
       },
-      "uptime": "9 days, 14:25:22",
+      "uptime": "9 days, 15:25:25",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 14 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 15 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,20 +257,20 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 11.8,
-        "user": 8.8,
+        "total": 12.5,
+        "user": 9.0,
         "system": 3.6,
-        "idle": 87.6,
+        "idle": 87.3,
         "iowait": 0.1
       },
       "percpu": [
-        11.7,
-        11.8,
-        12.1,
-        11.6
+        13.0,
+        12.5,
+        11.5,
+        13.2
       ],
       "ram": {
-        "used_gb": 1.78,
+        "used_gb": 1.79,
         "total_gb": 7.64,
         "percent": 23.4,
         "available_gb": 5.85
@@ -281,9 +281,9 @@
         "percent": 0.6
       },
       "load": {
-        "1min": 0.85,
-        "5min": 0.6,
-        "15min": 0.56,
+        "1min": 0.45,
+        "5min": 0.64,
+        "15min": 0.8,
         "cores": 4
       },
       "disks": [
@@ -298,9 +298,9 @@
       ],
       "disk_io": {
         "read_mb": 0.1,
-        "write_mb": 438.2
+        "write_mb": 447.0
       },
-      "temperature_c": 38,
+      "temperature_c": 39,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -309,12 +309,12 @@
         }
       },
       "processes": {
-        "total": 265,
-        "running": 1,
-        "sleeping": 168,
-        "threads": 930
+        "total": 266,
+        "running": 0,
+        "sleeping": 169,
+        "threads": 934
       },
-      "uptime": "9 days, 14:25:25",
+      "uptime": "9 days, 15:25:29",
       "containers": [
         {
           "name": "cadvisor",
@@ -322,11 +322,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 14 hours grafana/grafana:latest"
+          "status": "Up 15 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 14 hours prom/prometheus:latest"
+          "status": "Up 15 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -378,45 +378,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Feel No Way",
-      "artist": "Peter Tosh",
-      "album": "Mama Africa",
-      "genre": "Reggae",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/72c286bf1ca530448b0dacdb-1782757619.jpg",
-      "duration": 206,
-      "elapsed": 122
+      "title": "prophesy",
+      "artist": "abyssinians",
+      "album": "forward",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/602d58bf77785f6448ee7d8f-1782757234.jpg",
+      "duration": 204,
+      "elapsed": 161
     },
     "playing_next": {
-      "title": "DeceiverLucid FairytaleIn Extr",
-      "artist": "Napalm Death"
+      "title": "Get Off the Internet",
+      "artist": "Le Tigre"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Education of Brainwashing",
-        "artist": "",
-        "played_at": 1783692446
+        "title": "I Don't Want You",
+        "artist": "Ramones",
+        "played_at": 1783696092
       },
       {
-        "title": "17.All That Ever Mattered-Shop Assistants",
-        "artist": "John Peel Festive Fifty 1985",
-        "played_at": 1783692313
+        "title": "Track 12",
+        "artist": "Man or Astro-Man?",
+        "played_at": 1783695868
       },
       {
-        "title": "Black Sunday",
-        "artist": "Skatalites (The)",
-        "played_at": 1783691558
+        "title": "Ice Cream",
+        "artist": "New Young Pony Club",
+        "played_at": 1783695673
       },
       {
-        "title": "firestarter",
-        "artist": "John Peel Festive Fifty 1996",
-        "played_at": 1783691197
+        "title": "Coming Home",
+        "artist": "Junior Byles",
+        "played_at": 1783695521
       },
       {
-        "title": "216 - Naked City",
-        "artist": "The Skatalites",
-        "played_at": 1783691013
+        "title": "Pot Belly Bill",
+        "artist": "The Toy Dolls",
+        "played_at": 1783695334
       }
     ]
   }
