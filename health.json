@@ -1,37 +1,37 @@
 {
-  "updated": "2026-07-11 01:12",
-  "status": "warn",
+  "updated": "2026-07-11 02:12",
+  "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 16.7,
-        "user": 13.2,
-        "system": 2.9,
-        "idle": 82.5,
-        "iowait": 0.8
+        "total": 13.6,
+        "user": 11.7,
+        "system": 1.7,
+        "idle": 86.3,
+        "iowait": 0.1
       },
       "percpu": [
-        15.3,
-        12.4,
-        19.2,
-        23.6
+        9.5,
+        9.2,
+        18.1,
+        18.2
       ],
       "ram": {
-        "used_gb": 3.07,
+        "used_gb": 2.72,
         "total_gb": 7.87,
-        "percent": 39.0,
-        "available_gb": 4.8
+        "percent": 34.5,
+        "available_gb": 5.15
       },
       "swap": {
-        "used_mb": 1561.1,
+        "used_mb": 1566.3,
         "total_mb": 2048.0,
-        "percent": 76.2
+        "percent": 76.5
       },
       "load": {
-        "1min": 2.05,
-        "5min": 2.72,
-        "15min": 2.28,
+        "1min": 1.25,
+        "5min": 1.44,
+        "15min": 1.92,
         "cores": 4
       },
       "disks": [
@@ -39,16 +39,16 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 51.3,
-          "free_gb": 59.5,
-          "percent": 43.9
+          "used_gb": 47.5,
+          "free_gb": 63.3,
+          "percent": 40.7
         }
       ],
       "disk_io": {
-        "read_mb": 991.4,
-        "write_mb": 14850.9
+        "read_mb": 72841.3,
+        "write_mb": 48044.3
       },
-      "temperature_c": 57,
+      "temperature_c": 56,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -58,11 +58,11 @@
       },
       "processes": {
         "total": 347,
-        "running": 1,
+        "running": 2,
         "sleeping": 250,
-        "threads": 1200
+        "threads": 1199
       },
-      "uptime": "10 days, 0:24:42",
+      "uptime": "10 days, 1:25:17",
       "containers": [
         {
           "name": "gallery backend",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 24 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 39 minutes (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 24 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 38 minutes (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 24 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 38 minutes jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,23 +143,23 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 7.8,
-        "user": 5.1,
-        "system": 0.8,
-        "idle": 93.7,
-        "iowait": 0.4
+        "total": 3.6,
+        "user": 2.9,
+        "system": 0.6,
+        "idle": 96.2,
+        "iowait": 0.3
       },
       "percpu": [
-        11.6,
-        6.4,
-        9.4,
-        5.3
+        2.4,
+        5.6,
+        5.5,
+        1.9
       ],
       "ram": {
-        "used_gb": 3.12,
+        "used_gb": 2.95,
         "total_gb": 7.87,
-        "percent": 39.7,
-        "available_gb": 4.75
+        "percent": 37.5,
+        "available_gb": 4.92
       },
       "swap": {
         "used_mb": 164.2,
@@ -167,9 +167,9 @@
         "percent": 4.0
       },
       "load": {
-        "1min": 0.5,
-        "5min": 1.1,
-        "15min": 1.1,
+        "1min": 0.21,
+        "5min": 0.39,
+        "15min": 0.43,
         "cores": 4
       },
       "disks": [
@@ -191,10 +191,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 5015.4,
-        "write_mb": 2207.0
+        "read_mb": 485.3,
+        "write_mb": 935.5
       },
-      "temperature_c": 56,
+      "temperature_c": 55,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 571,
+        "total": 572,
         "running": 0,
         "sleeping": 478,
-        "threads": 3319
+        "threads": 3321
       },
-      "uptime": "10 days, 0:24:43",
+      "uptime": "10 days, 1:25:17",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 9 minutes ghcr.io/azuracast/azuracast:stable"
+          "status": "Up About an hour ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -255,25 +255,25 @@
       "services": "AzuraCast, DuckDNS, Media Server"
     },
     "Pi4": {
-      "status": "warn",
+      "status": "ok",
       "cpu": {
-        "total": 96.6,
-        "user": 78.8,
-        "system": 15.8,
-        "idle": 3.3,
-        "iowait": 0.0
+        "total": 32.9,
+        "user": 22.7,
+        "system": 5.9,
+        "idle": 68.1,
+        "iowait": 0.2
       },
       "percpu": [
-        98.1,
-        94.3,
-        99.3,
-        99.8
+        35.4,
+        31.3,
+        36.5,
+        29.0
       ],
       "ram": {
-        "used_gb": 1.9,
+        "used_gb": 1.96,
         "total_gb": 7.64,
-        "percent": 24.9,
-        "available_gb": 5.73
+        "percent": 25.6,
+        "available_gb": 5.68
       },
       "swap": {
         "used_mb": 3.2,
@@ -281,9 +281,9 @@
         "percent": 0.6
       },
       "load": {
-        "1min": 8.17,
-        "5min": 6.31,
-        "15min": 3.58,
+        "1min": 1.91,
+        "5min": 2.04,
+        "15min": 2.01,
         "cores": 4
       },
       "disks": [
@@ -297,10 +297,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 7186.2,
-        "write_mb": 477.4
+        "read_mb": 3494.3,
+        "write_mb": 4328.6
       },
-      "temperature_c": 45,
+      "temperature_c": 40,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -309,12 +309,12 @@
         }
       },
       "processes": {
-        "total": 271,
-        "running": 1,
-        "sleeping": 173,
-        "threads": 943
+        "total": 268,
+        "running": 0,
+        "sleeping": 172,
+        "threads": 942
       },
-      "uptime": "10 days, 0:24:47",
+      "uptime": "10 days, 1:25:21",
       "containers": [
         {
           "name": "cadvisor",
@@ -322,11 +322,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 24 hours grafana/grafana:latest"
+          "status": "Up 55 minutes grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 24 hours prom/prometheus:latest"
+          "status": "Up 55 minutes prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -378,21 +378,26 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Hot Kiss",
-      "artist": "Juliette & The Licks",
-      "album": "Four On The Floor",
-      "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/12be823ec7ab0c07892a99ff-1782759862.jpg",
-      "duration": 167,
-      "elapsed": 40
+      "title": "John Peel 010719 128K",
+      "artist": "Niag",
+      "album": "",
+      "genre": "Blues",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/b340818f358424f8d1f56b6f",
+      "duration": 7219,
+      "elapsed": 3503
     },
     "playing_next": {
-      "title": "John Peel 010719 128K",
-      "artist": "Niag"
+      "title": "Heading To Glory",
+      "artist": "African Head Charge"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
+      {
+        "title": "Hot Kiss",
+        "artist": "Juliette & The Licks",
+        "played_at": 1783728692
+      },
       {
         "title": "Monkey Spanner",
         "artist": "Dave & Ansel Collins",
@@ -412,11 +417,6 @@
         "title": "I Don't Want To Be Friends With You (J.Peel Session 1986)",
         "artist": "The Shop Assistants",
         "played_at": 1783728173
-      },
-      {
-        "title": "10 Groovy",
-        "artist": "Burning Spear - Man In The Hills",
-        "played_at": 1783727931
       }
     ]
   }
