@@ -1,21 +1,21 @@
 {
-  "updated": "2026-07-11 22:12",
+  "updated": "2026-07-11 23:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 11.9,
-        "user": 11.9,
-        "system": 1.3,
-        "idle": 86.3,
-        "iowait": 0.3
+        "total": 14.8,
+        "user": 12.5,
+        "system": 2.2,
+        "idle": 83.8,
+        "iowait": 1.1
       },
       "percpu": [
-        7.6,
-        12.9,
-        11.4,
-        15.9
+        16.2,
+        8.9,
+        17.1,
+        17.2
       ],
       "ram": {
         "used_gb": 2.8,
@@ -29,9 +29,9 @@
         "percent": 75.8
       },
       "load": {
-        "1min": 0.59,
-        "5min": 1.05,
-        "15min": 1.22,
+        "1min": 1.1,
+        "5min": 1.23,
+        "15min": 1.27,
         "cores": 4
       },
       "disks": [
@@ -45,10 +45,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.2,
-        "write_mb": 1969.6
+        "read_mb": 0.7,
+        "write_mb": 2000.7
       },
-      "temperature_c": 58,
+      "temperature_c": 57,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 342,
-        "running": 2,
-        "sleeping": 247,
+        "total": 343,
+        "running": 0,
+        "sleeping": 248,
         "threads": 1198
       },
-      "uptime": "10 days, 21:25:14",
+      "uptime": "10 days, 22:25:29",
       "containers": [
         {
           "name": "gallery backend",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 21 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 22 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 21 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 22 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 21 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 22 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,23 +143,23 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 4.1,
-        "user": 5.7,
+        "total": 3.9,
+        "user": 5.8,
         "system": 1.1,
-        "idle": 92.8,
+        "idle": 92.7,
         "iowait": 0.4
       },
       "percpu": [
-        6.8,
-        5.4,
-        2.4,
-        3.0
+        3.8,
+        1.9,
+        6.0,
+        5.0
       ],
       "ram": {
-        "used_gb": 3.1,
+        "used_gb": 3.12,
         "total_gb": 7.87,
-        "percent": 39.3,
-        "available_gb": 4.78
+        "percent": 39.7,
+        "available_gb": 4.75
       },
       "swap": {
         "used_mb": 164.2,
@@ -167,9 +167,9 @@
         "percent": 4.0
       },
       "load": {
-        "1min": 0.24,
-        "5min": 0.53,
-        "15min": 0.59,
+        "1min": 0.78,
+        "5min": 0.88,
+        "15min": 0.8,
         "cores": 4
       },
       "disks": [
@@ -185,16 +185,16 @@
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.2,
-          "free_gb": 748.0,
-          "percent": 13.2
+          "used_gb": 121.4,
+          "free_gb": 747.8,
+          "percent": 13.3
         }
       ],
       "disk_io": {
-        "read_mb": 1002.4,
-        "write_mb": 1547.8
+        "read_mb": 1110.2,
+        "write_mb": 1635.9
       },
-      "temperature_c": 55,
+      "temperature_c": 57,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 569,
+        "total": 573,
         "running": 0,
-        "sleeping": 477,
-        "threads": 3321
+        "sleeping": 479,
+        "threads": 3326
       },
-      "uptime": "10 days, 21:25:14",
+      "uptime": "10 days, 22:25:30",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 21 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 22 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 10.6,
-        "user": 9.1,
+        "total": 12.2,
+        "user": 9.2,
         "system": 3.8,
         "idle": 86.9,
-        "iowait": 0.1
+        "iowait": 0.0
       },
       "percpu": [
-        9.9,
-        9.4,
         11.9,
-        11.2
+        11.8,
+        11.8,
+        13.3
       ],
       "ram": {
-        "used_gb": 1.83,
+        "used_gb": 1.8,
         "total_gb": 7.64,
-        "percent": 24.0,
-        "available_gb": 5.81
+        "percent": 23.6,
+        "available_gb": 5.84
       },
       "swap": {
         "used_mb": 3.2,
@@ -281,9 +281,9 @@
         "percent": 0.6
       },
       "load": {
-        "1min": 0.31,
-        "5min": 0.49,
-        "15min": 0.6,
+        "1min": 0.8,
+        "5min": 0.85,
+        "15min": 0.92,
         "cores": 4
       },
       "disks": [
@@ -297,10 +297,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1.2,
-        "write_mb": 478.8
+        "read_mb": 2.0,
+        "write_mb": 480.5
       },
-      "temperature_c": 38,
+      "temperature_c": 40,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -314,7 +314,7 @@
         "sleeping": 169,
         "threads": 940
       },
-      "uptime": "10 days, 21:25:18",
+      "uptime": "10 days, 22:25:33",
       "containers": [
         {
           "name": "cadvisor",
@@ -322,11 +322,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 21 hours grafana/grafana:latest"
+          "status": "Up 22 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 21 hours prom/prometheus:latest"
+          "status": "Up 22 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -378,45 +378,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Chasing A Girl (Inside A Car) (Peel Session)",
-      "artist": "Mercury Rev",
-      "album": "Lego My Ego",
-      "genre": "Rock",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/32f387d98d94432700b51d59-1782770890.jpg",
-      "duration": 609,
-      "elapsed": 338
+      "title": "John Peel 20021114",
+      "artist": "",
+      "album": "",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/55640b5820268275f8433b2b",
+      "duration": 7230,
+      "elapsed": 1819
     },
     "playing_next": {
-      "title": "Mighty Diamonds - Reggaeman",
-      "artist": "Mighty Diamonds"
+      "title": "John Peel 2004-07-15",
+      "artist": "John Peel (R1)"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Wait And See",
-        "artist": "Stiff Little Fingers",
-        "played_at": 1783803729
+        "title": "07-fever",
+        "artist": "",
+        "played_at": 1783806006
       },
       {
-        "title": "Back In Denim",
-        "artist": "Turbonegro",
-        "played_at": 1783803482
+        "title": "Soul Inside",
+        "artist": "Soft Cell",
+        "played_at": 1783805695
       },
       {
-        "title": "Howza Bouta Kiss Babe??!",
-        "artist": "The Toy Dolls",
-        "played_at": 1783803311
+        "title": "The Pilgrim",
+        "artist": "Iron Maiden",
+        "played_at": 1783805392
       },
       {
-        "title": "Teenage Lobotomy",
-        "artist": "Ramones",
-        "played_at": 1783803190
+        "title": "Pulp-Godflesh",
+        "artist": "John Peel",
+        "played_at": 1783805026
       },
       {
-        "title": "Garden Song",
-        "artist": "Herman Dune",
-        "played_at": 1783802944
+        "title": "Peel Session - 2 Skanking Queens",
+        "artist": "Bodines",
+        "played_at": 1783804849
       }
     ]
   }
