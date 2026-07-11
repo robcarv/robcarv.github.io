@@ -1,27 +1,27 @@
 {
-  "updated": "2026-07-11 06:12",
+  "updated": "2026-07-11 07:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 11.9,
-        "user": 11.4,
-        "system": 1.2,
-        "idle": 87.0,
-        "iowait": 0.3
+        "total": 13.6,
+        "user": 11.7,
+        "system": 1.3,
+        "idle": 86.1,
+        "iowait": 0.9
       },
       "percpu": [
-        11.3,
-        17.0,
-        7.7,
-        12.0
+        13.7,
+        8.2,
+        16.5,
+        16.3
       ],
       "ram": {
-        "used_gb": 2.69,
+        "used_gb": 2.7,
         "total_gb": 7.87,
-        "percent": 34.2,
-        "available_gb": 5.18
+        "percent": 34.3,
+        "available_gb": 5.17
       },
       "swap": {
         "used_mb": 1565.3,
@@ -29,9 +29,9 @@
         "percent": 76.4
       },
       "load": {
-        "1min": 0.75,
-        "5min": 0.84,
-        "15min": 0.95,
+        "1min": 1.1,
+        "5min": 0.97,
+        "15min": 0.94,
         "cores": 4
       },
       "disks": [
@@ -45,10 +45,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 33.9,
-        "write_mb": 1988.6
+        "read_mb": 36.9,
+        "write_mb": 1999.5
       },
-      "temperature_c": 58,
+      "temperature_c": 57,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -58,11 +58,11 @@
       },
       "processes": {
         "total": 341,
-        "running": 0,
-        "sleeping": 249,
-        "threads": 1197
+        "running": 1,
+        "sleeping": 247,
+        "threads": 1195
       },
-      "uptime": "10 days, 5:25:32",
+      "uptime": "10 days, 6:25:35",
       "containers": [
         {
           "name": "gallery backend",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 5 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 6 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 5 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 6 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 5 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 6 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,23 +143,23 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 3.2,
+        "total": 3.9,
         "user": 5.3,
         "system": 1.0,
-        "idle": 93.4,
-        "iowait": 0.4
+        "idle": 74.4,
+        "iowait": 19.3
       },
       "percpu": [
-        4.7,
-        1.8,
         5.3,
-        2.5
+        3.3,
+        2.3,
+        5.6
       ],
       "ram": {
-        "used_gb": 3.02,
+        "used_gb": 3.0,
         "total_gb": 7.87,
-        "percent": 38.3,
-        "available_gb": 4.86
+        "percent": 38.1,
+        "available_gb": 4.87
       },
       "swap": {
         "used_mb": 164.2,
@@ -167,9 +167,9 @@
         "percent": 4.0
       },
       "load": {
-        "1min": 0.13,
-        "5min": 0.37,
-        "15min": 0.64,
+        "1min": 1.41,
+        "5min": 0.89,
+        "15min": 0.78,
         "cores": 4
       },
       "disks": [
@@ -178,23 +178,23 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 72.7,
-          "free_gb": 38.0,
+          "free_gb": 38.1,
           "percent": 62.3
         },
         {
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.4,
+          "used_gb": 121.3,
           "free_gb": 747.9,
-          "percent": 13.3
+          "percent": 13.2
         }
       ],
       "disk_io": {
-        "read_mb": 499.9,
-        "write_mb": 1163.4
+        "read_mb": 644.7,
+        "write_mb": 1264.9
       },
-      "temperature_c": 52,
+      "temperature_c": 51,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 573,
+        "total": 574,
         "running": 0,
         "sleeping": 477,
-        "threads": 3321
+        "threads": 3324
       },
-      "uptime": "10 days, 5:25:32",
+      "uptime": "10 days, 6:25:36",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 5 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 6 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 11.1,
-        "user": 8.6,
+        "total": 20.1,
+        "user": 8.7,
         "system": 3.5,
-        "idle": 87.8,
+        "idle": 87.6,
         "iowait": 0.0
       },
       "percpu": [
-        12.8,
-        10.7,
-        10.4,
-        10.3
+        19.6,
+        15.8,
+        22.6,
+        22.6
       ],
       "ram": {
-        "used_gb": 1.81,
+        "used_gb": 1.79,
         "total_gb": 7.64,
-        "percent": 23.7,
-        "available_gb": 5.83
+        "percent": 23.4,
+        "available_gb": 5.85
       },
       "swap": {
         "used_mb": 3.2,
@@ -281,9 +281,9 @@
         "percent": 0.6
       },
       "load": {
-        "1min": 0.85,
-        "5min": 0.93,
-        "15min": 0.84,
+        "1min": 1.23,
+        "5min": 0.96,
+        "15min": 0.87,
         "cores": 4
       },
       "disks": [
@@ -293,12 +293,12 @@
           "size_gb": 115.3,
           "used_gb": 31.4,
           "free_gb": 78.0,
-          "percent": 27.2
+          "percent": 27.3
         }
       ],
       "disk_io": {
-        "read_mb": 0.3,
-        "write_mb": 519.8
+        "read_mb": 0.4,
+        "write_mb": 480.5
       },
       "temperature_c": 35,
       "network": {
@@ -309,12 +309,12 @@
         }
       },
       "processes": {
-        "total": 264,
+        "total": 265,
         "running": 0,
         "sleeping": 169,
-        "threads": 930
+        "threads": 935
       },
-      "uptime": "10 days, 5:25:36",
+      "uptime": "10 days, 6:25:40",
       "containers": [
         {
           "name": "cadvisor",
@@ -322,11 +322,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 5 hours grafana/grafana:latest"
+          "status": "Up 6 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 5 hours prom/prometheus:latest"
+          "status": "Up 6 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -378,21 +378,31 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "John Peel 2003-10-02",
-      "artist": "John Peel (R1)",
-      "album": "from RA",
+      "title": "peel030398pt1",
+      "artist": "John Peel",
+      "album": "",
       "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/a3c3d8806eb7a1a1efa94bd7",
-      "duration": 7082,
-      "elapsed": 5280
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/93aa775d0f736749f58e6232",
+      "duration": 2806,
+      "elapsed": 1624
     },
     "playing_next": {
-      "title": "Misty Morning, Albert Bridge",
-      "artist": "The Pogues"
+      "title": "Storm Cloud",
+      "artist": "The Heptones"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
+      {
+        "title": "Misty Morning, Albert Bridge",
+        "artist": "The Pogues",
+        "played_at": 1783748570
+      },
+      {
+        "title": "John Peel 2003-10-02",
+        "artist": "John Peel (R1)",
+        "played_at": 1783741491
+      },
       {
         "title": "She's My Scorcher",
         "artist": "toots and the maytals",
@@ -407,16 +417,6 @@
         "title": "I Wanna Get in Your Pants",
         "artist": "The Cramps",
         "played_at": 1783740879
-      },
-      {
-        "title": "a design for life",
-        "artist": "John Peel Festive Fifty 1996",
-        "played_at": 1783740614
-      },
-      {
-        "title": "Rendevouz With Anus",
-        "artist": "Turbonegro",
-        "played_at": 1783740495
       }
     ]
   }
