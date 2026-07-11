@@ -1,21 +1,21 @@
 {
-  "updated": "2026-07-11 16:12",
+  "updated": "2026-07-11 17:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 17.8,
-        "user": 12.0,
-        "system": 1.3,
-        "idle": 86.2,
-        "iowait": 0.4
+        "total": 11.9,
+        "user": 11.6,
+        "system": 1.1,
+        "idle": 87.1,
+        "iowait": 0.2
       },
       "percpu": [
-        11.3,
-        19.4,
-        29.4,
-        11.6
+        6.2,
+        16.7,
+        12.9,
+        12.1
       ],
       "ram": {
         "used_gb": 2.8,
@@ -29,9 +29,9 @@
         "percent": 75.8
       },
       "load": {
-        "1min": 0.74,
-        "5min": 0.76,
-        "15min": 0.92,
+        "1min": 0.62,
+        "5min": 0.85,
+        "15min": 0.99,
         "cores": 4
       },
       "disks": [
@@ -40,13 +40,13 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 47.5,
-          "free_gb": 63.3,
+          "free_gb": 63.2,
           "percent": 40.7
         }
       ],
       "disk_io": {
-        "read_mb": 0.1,
-        "write_mb": 1663.9
+        "read_mb": 0.3,
+        "write_mb": 1713.9
       },
       "temperature_c": 57,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 343,
+        "total": 342,
         "running": 0,
-        "sleeping": 251,
-        "threads": 1198
+        "sleeping": 248,
+        "threads": 1199
       },
-      "uptime": "10 days, 15:24:40",
+      "uptime": "10 days, 16:24:47",
       "containers": [
         {
           "name": "gallery backend",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 15 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 16 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 15 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 16 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 15 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 16 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,23 +143,23 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 7.4,
-        "user": 7.3,
-        "system": 1.3,
-        "idle": 90.8,
+        "total": 9.0,
+        "user": 5.6,
+        "system": 1.1,
+        "idle": 92.7,
         "iowait": 0.5
       },
       "percpu": [
-        5.0,
         8.6,
-        9.6,
-        7.7
+        8.4,
+        11.5,
+        9.1
       ],
       "ram": {
-        "used_gb": 3.37,
+        "used_gb": 3.19,
         "total_gb": 7.87,
-        "percent": 42.8,
-        "available_gb": 4.51
+        "percent": 40.6,
+        "available_gb": 4.68
       },
       "swap": {
         "used_mb": 164.2,
@@ -167,9 +167,9 @@
         "percent": 4.0
       },
       "load": {
-        "1min": 1.48,
-        "5min": 0.88,
-        "15min": 0.77,
+        "1min": 0.43,
+        "5min": 0.4,
+        "15min": 0.55,
         "cores": 4
       },
       "disks": [
@@ -178,7 +178,7 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 72.7,
-          "free_gb": 38.0,
+          "free_gb": 38.1,
           "percent": 62.3
         },
         {
@@ -191,10 +191,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 844.3,
-        "write_mb": 1508.6
+        "read_mb": 637.7,
+        "write_mb": 1169.7
       },
-      "temperature_c": 58,
+      "temperature_c": 56,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -204,15 +204,15 @@
       },
       "processes": {
         "total": 575,
-        "running": 4,
+        "running": 0,
         "sleeping": 479,
         "threads": 3328
       },
-      "uptime": "10 days, 15:24:41",
+      "uptime": "10 days, 16:24:48",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 15 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 16 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 13.3,
-        "user": 9.4,
-        "system": 3.8,
-        "idle": 86.6,
-        "iowait": 0.1
+        "total": 14.2,
+        "user": 9.6,
+        "system": 3.9,
+        "idle": 86.3,
+        "iowait": 0.0
       },
       "percpu": [
-        13.2,
+        14.5,
         13.5,
-        13.9,
-        12.7
+        15.4,
+        13.5
       ],
       "ram": {
-        "used_gb": 1.82,
+        "used_gb": 1.8,
         "total_gb": 7.64,
-        "percent": 23.9,
-        "available_gb": 5.81
+        "percent": 23.6,
+        "available_gb": 5.84
       },
       "swap": {
         "used_mb": 3.2,
@@ -281,9 +281,9 @@
         "percent": 0.6
       },
       "load": {
-        "1min": 0.59,
-        "5min": 0.89,
-        "15min": 0.95,
+        "1min": 0.83,
+        "5min": 0.68,
+        "15min": 0.7,
         "cores": 4
       },
       "disks": [
@@ -298,7 +298,7 @@
       ],
       "disk_io": {
         "read_mb": 1.4,
-        "write_mb": 463.0
+        "write_mb": 470.9
       },
       "temperature_c": 39,
       "network": {
@@ -310,11 +310,11 @@
       },
       "processes": {
         "total": 268,
-        "running": 2,
-        "sleeping": 167,
+        "running": 0,
+        "sleeping": 169,
         "threads": 941
       },
-      "uptime": "10 days, 15:24:45",
+      "uptime": "10 days, 16:24:51",
       "containers": [
         {
           "name": "cadvisor",
@@ -322,11 +322,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 15 hours grafana/grafana:latest"
+          "status": "Up 16 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 15 hours prom/prometheus:latest"
+          "status": "Up 16 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -384,7 +384,7 @@
       "genre": "Blues",
       "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/499308a6f08979b8a4f43b95",
       "duration": 4970,
-      "elapsed": 970
+      "elapsed": 4577
     },
     "playing_next": {
       "title": "Broadway Jungle (2000)",
