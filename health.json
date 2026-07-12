@@ -1,27 +1,27 @@
 {
-  "updated": "2026-07-12 16:12",
+  "updated": "2026-07-12 17:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 12.8,
-        "user": 11.9,
-        "system": 1.5,
-        "idle": 86.3,
+        "total": 13.3,
+        "user": 12.3,
+        "system": 2.2,
+        "idle": 85.0,
         "iowait": 0.2
       },
       "percpu": [
-        8.9,
-        17.8,
-        16.7,
+        9.6,
+        23.9,
+        11.6,
         8.7
       ],
       "ram": {
-        "used_gb": 3.2,
+        "used_gb": 3.17,
         "total_gb": 7.87,
-        "percent": 40.6,
-        "available_gb": 4.68
+        "percent": 40.3,
+        "available_gb": 4.7
       },
       "swap": {
         "used_mb": 1553.2,
@@ -29,9 +29,9 @@
         "percent": 75.8
       },
       "load": {
-        "1min": 0.79,
-        "5min": 1.06,
-        "15min": 1.14,
+        "1min": 1.17,
+        "5min": 1.34,
+        "15min": 1.24,
         "cores": 4
       },
       "disks": [
@@ -45,10 +45,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 1925.3
+        "read_mb": 0.2,
+        "write_mb": 1958.7
       },
-      "temperature_c": 56,
+      "temperature_c": 58,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 343,
-        "running": 1,
-        "sleeping": 248,
-        "threads": 1196
+        "total": 347,
+        "running": 2,
+        "sleeping": 250,
+        "threads": 1200
       },
-      "uptime": "11 days, 15:24:53",
+      "uptime": "11 days, 16:25:02",
       "containers": [
         {
           "name": "gallery backend",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 15 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 16 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 15 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 16 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 15 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 16 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,23 +143,23 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 4.9,
-        "user": 5.6,
+        "total": 3.9,
+        "user": 5.4,
         "system": 1.0,
-        "idle": 92.9,
-        "iowait": 0.4
+        "idle": 93.3,
+        "iowait": 0.3
       },
       "percpu": [
-        4.1,
-        6.1,
-        1.9,
-        8.2
+        4.4,
+        5.8,
+        3.6,
+        2.8
       ],
       "ram": {
-        "used_gb": 3.17,
+        "used_gb": 3.16,
         "total_gb": 7.87,
-        "percent": 40.2,
-        "available_gb": 4.71
+        "percent": 40.1,
+        "available_gb": 4.72
       },
       "swap": {
         "used_mb": 166.2,
@@ -167,9 +167,9 @@
         "percent": 4.1
       },
       "load": {
-        "1min": 0.23,
-        "5min": 0.3,
-        "15min": 0.51,
+        "1min": 0.26,
+        "5min": 0.32,
+        "15min": 0.63,
         "cores": 4
       },
       "disks": [
@@ -178,21 +178,21 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 72.7,
-          "free_gb": 38.1,
+          "free_gb": 38.0,
           "percent": 62.3
         },
         {
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.3,
-          "free_gb": 748.0,
-          "percent": 13.2
+          "used_gb": 121.4,
+          "free_gb": 747.8,
+          "percent": 13.3
         }
       ],
       "disk_io": {
-        "read_mb": 1081.0,
-        "write_mb": 1693.4
+        "read_mb": 963.4,
+        "write_mb": 1683.3
       },
       "temperature_c": 56,
       "network": {
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 573,
+        "total": 574,
         "running": 0,
-        "sleeping": 478,
-        "threads": 3339
+        "sleeping": 480,
+        "threads": 3340
       },
-      "uptime": "11 days, 15:24:53",
+      "uptime": "11 days, 16:25:03",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 15 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 16 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,22 +257,22 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 11.4,
-        "user": 9.5,
+        "total": 19.3,
+        "user": 9.3,
         "system": 3.7,
-        "idle": 86.7,
+        "idle": 86.9,
         "iowait": 0.0
       },
       "percpu": [
-        10.1,
-        10.4,
-        13.1,
-        12.0
+        20.1,
+        19.6,
+        21.1,
+        16.5
       ],
       "ram": {
         "used_gb": 1.8,
         "total_gb": 7.64,
-        "percent": 23.6,
+        "percent": 23.5,
         "available_gb": 5.84
       },
       "swap": {
@@ -281,9 +281,9 @@
         "percent": 0.6
       },
       "load": {
-        "1min": 0.95,
-        "5min": 0.95,
-        "15min": 0.79,
+        "1min": 0.4,
+        "5min": 0.67,
+        "15min": 0.74,
         "cores": 4
       },
       "disks": [
@@ -297,10 +297,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.5,
-        "write_mb": 471.7
+        "read_mb": 0.3,
+        "write_mb": 479.9
       },
-      "temperature_c": 37,
+      "temperature_c": 38,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -311,10 +311,10 @@
       "processes": {
         "total": 265,
         "running": 0,
-        "sleeping": 169,
+        "sleeping": 168,
         "threads": 938
       },
-      "uptime": "11 days, 15:24:57",
+      "uptime": "11 days, 16:25:07",
       "containers": [
         {
           "name": "cadvisor",
@@ -322,11 +322,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 15 hours grafana/grafana:latest"
+          "status": "Up 16 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 15 hours prom/prometheus:latest"
+          "status": "Up 16 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -378,45 +378,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Buddha (Peel Session)",
-      "artist": "The Auteurs",
-      "album": "B-Sides: 1992-1996",
-      "genre": "Pop",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/6fc71cd2995303b73be3273a-1782774472.jpg",
-      "duration": 261,
-      "elapsed": 88
+      "title": "John Peel 2004-09-08",
+      "artist": "John Peel (R1)",
+      "album": "from Sky+",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/ca5e58733ba7cee8cce1008b",
+      "duration": 7057,
+      "elapsed": 1339
     },
     "playing_next": {
-      "title": "Swans (John Peel Session)",
-      "artist": "Finitribe"
+      "title": "Mentally Murdered",
+      "artist": "Napalm Death"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "04 Black Soul",
-        "artist": "Burning Spear - Man In The Hills",
-        "played_at": 1783868843
+        "title": "Sitting & Watching",
+        "artist": "Sly & Robbie",
+        "played_at": 1783871156
       },
       {
-        "title": "Double Barrel",
-        "artist": "Dave & Ansel Collins",
-        "played_at": 1783868676
+        "title": "I've Got You Babe",
+        "artist": "Lucky Dube",
+        "played_at": 1783870901
       },
       {
-        "title": "TRACK07",
-        "artist": "",
-        "played_at": 1783868396
+        "title": "Monkey Man (Live)",
+        "artist": "Toots and The Maytals",
+        "played_at": 1783870628
       },
       {
-        "title": "This Ain't Havana",
-        "artist": "Ramones",
-        "played_at": 1783868260
+        "title": "Is That What You Fought The War For?",
+        "artist": "Stiff Little Fingers",
+        "played_at": 1783870420
       },
       {
-        "title": "Locked Down",
-        "artist": "Turbonegro",
-        "played_at": 1783868062
+        "title": "No Particular Place To Go",
+        "artist": "The Toy Dolls",
+        "played_at": 1783870251
       }
     ]
   }
