@@ -1,37 +1,37 @@
 {
-  "updated": "2026-07-12 01:12",
+  "updated": "2026-07-12 02:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 14.9,
-        "user": 13.6,
-        "system": 2.8,
-        "idle": 67.5,
-        "iowait": 15.4
+        "total": 15.7,
+        "user": 12.3,
+        "system": 2.1,
+        "idle": 84.9,
+        "iowait": 0.3
       },
       "percpu": [
-        98.5,
-        96.0,
-        80.6,
-        11.4
+        18.8,
+        12.1,
+        15.0,
+        17.2
       ],
       "ram": {
-        "used_gb": 2.74,
+        "used_gb": 3.11,
         "total_gb": 7.87,
-        "percent": 34.8,
-        "available_gb": 5.14
+        "percent": 39.4,
+        "available_gb": 4.77
       },
       "swap": {
-        "used_mb": 1552.3,
+        "used_mb": 1578.2,
         "total_mb": 2048.0,
-        "percent": 75.8
+        "percent": 77.1
       },
       "load": {
-        "1min": 4.03,
-        "5min": 3.68,
-        "15min": 3.12,
+        "1min": 1.32,
+        "5min": 1.54,
+        "15min": 2.52,
         "cores": 4
       },
       "disks": [
@@ -39,14 +39,14 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 52.0,
-          "free_gb": 58.7,
-          "percent": 44.6
+          "used_gb": 47.5,
+          "free_gb": 63.2,
+          "percent": 40.7
         }
       ],
       "disk_io": {
-        "read_mb": 12.8,
-        "write_mb": 15244.8
+        "read_mb": 75402.7,
+        "write_mb": 47327.8
       },
       "temperature_c": 61,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 350,
+        "total": 347,
         "running": 1,
         "sleeping": 252,
-        "threads": 1205
+        "threads": 1196
       },
-      "uptime": "11 days, 0:24:58",
+      "uptime": "11 days, 1:25:16",
       "containers": [
         {
           "name": "gallery backend",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 24 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 38 minutes (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 24 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 38 minutes (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 24 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 38 minutes jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,17 +143,17 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 8.5,
-        "user": 7.2,
-        "system": 1.2,
-        "idle": 91.0,
-        "iowait": 0.5
+        "total": 3.9,
+        "user": 5.5,
+        "system": 1.1,
+        "idle": 93.1,
+        "iowait": 0.3
       },
       "percpu": [
-        8.3,
-        10.6,
-        10.4,
-        6.8
+        2.5,
+        5.1,
+        7.0,
+        1.8
       ],
       "ram": {
         "used_gb": 3.08,
@@ -167,9 +167,9 @@
         "percent": 4.0
       },
       "load": {
-        "1min": 0.43,
-        "5min": 0.83,
-        "15min": 0.9,
+        "1min": 0.17,
+        "5min": 0.27,
+        "15min": 0.36,
         "cores": 4
       },
       "disks": [
@@ -178,23 +178,23 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 72.7,
-          "free_gb": 38.1,
+          "free_gb": 38.0,
           "percent": 62.3
         },
         {
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.3,
-          "free_gb": 748.0,
-          "percent": 13.2
+          "used_gb": 121.4,
+          "free_gb": 747.8,
+          "percent": 13.3
         }
       ],
       "disk_io": {
-        "read_mb": 4653.7,
-        "write_mb": 1277.1
+        "read_mb": 749.5,
+        "write_mb": 1346.7
       },
-      "temperature_c": 56,
+      "temperature_c": 57,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 572,
-        "running": 1,
-        "sleeping": 476,
-        "threads": 3332
+        "total": 579,
+        "running": 0,
+        "sleeping": 479,
+        "threads": 3341
       },
-      "uptime": "11 days, 0:24:58",
+      "uptime": "11 days, 1:25:16",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 10 minutes ghcr.io/azuracast/azuracast:stable"
+          "status": "Up About an hour ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 78.9,
-        "user": 69.2,
-        "system": 14.8,
-        "idle": 14.0,
-        "iowait": 0.1
+        "total": 34.1,
+        "user": 25.2,
+        "system": 6.5,
+        "idle": 64.3,
+        "iowait": 0.0
       },
       "percpu": [
-        95.7,
-        99.6,
-        97.2,
-        100.0
+        41.5,
+        34.2,
+        30.3,
+        30.6
       ],
       "ram": {
-        "used_gb": 1.81,
+        "used_gb": 1.88,
         "total_gb": 7.64,
-        "percent": 23.6,
-        "available_gb": 5.83
+        "percent": 24.7,
+        "available_gb": 5.75
       },
       "swap": {
         "used_mb": 3.2,
@@ -281,9 +281,9 @@
         "percent": 0.6
       },
       "load": {
-        "1min": 7.11,
-        "5min": 6.1,
-        "15min": 3.63,
+        "1min": 2.23,
+        "5min": 2.23,
+        "15min": 1.91,
         "cores": 4
       },
       "disks": [
@@ -297,10 +297,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 7505.0,
-        "write_mb": 470.6
+        "read_mb": 3330.6,
+        "write_mb": 4854.9
       },
-      "temperature_c": 48,
+      "temperature_c": 40,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -309,12 +309,12 @@
         }
       },
       "processes": {
-        "total": 273,
-        "running": 2,
+        "total": 268,
+        "running": 0,
         "sleeping": 172,
-        "threads": 952
+        "threads": 945
       },
-      "uptime": "11 days, 0:25:03",
+      "uptime": "11 days, 1:25:20",
       "containers": [
         {
           "name": "cadvisor",
@@ -322,11 +322,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 24 hours grafana/grafana:latest"
+          "status": "Up 55 minutes grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 24 hours prom/prometheus:latest"
+          "status": "Up 55 minutes prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -378,45 +378,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "I Can't Believe",
-      "artist": "Toots and the Maytals",
-      "album": "A Reggae Collection",
-      "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/3cf0e20cc0f36c71dc87e7c4-1782764488.jpg",
-      "duration": 212,
-      "elapsed": 52
+      "title": "John Peel 010704 128K",
+      "artist": "Gary",
+      "album": "",
+      "genre": "Blues",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/5fcb5579f466fa6e3c66d6a7",
+      "duration": 7207,
+      "elapsed": 1603
     },
     "playing_next": {
-      "title": "Memories of the Ghetto",
-      "artist": "Augustus Pablo"
+      "title": "Summer In Siam",
+      "artist": "The Pogues"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "dust to dust / return of the roughnecks",
-        "artist": "chameleons",
-        "played_at": 1783814881
+        "title": "20. #31 - Pulp - Underwear.mp3",
+        "artist": "John Peel Festive Fifty 1995",
+        "played_at": 1783816910
       },
       {
-        "title": "09. solid foundation",
-        "artist": "",
-        "played_at": 1783814548
+        "title": "Straight To Your Heart [Peel Session]",
+        "artist": "Loop",
+        "played_at": 1783816313
       },
       {
-        "title": "John Peel 2004-07-15",
-        "artist": "John Peel (R1)",
-        "played_at": 1783813388
+        "title": "63 #03.Love Will Tear Us Apart-Joy Division",
+        "artist": "John Peel Festive Fifty 1980",
+        "played_at": 1783816105
       },
       {
-        "title": "John Peel 20021114",
-        "artist": "",
-        "played_at": 1783806158
+        "title": "Crisis Of Mine (version)",
+        "artist": "The Undertones",
+        "played_at": 1783815894
       },
       {
-        "title": "07-fever",
-        "artist": "",
-        "played_at": 1783806006
+        "title": "Joy In The Morning",
+        "artist": "Dennis Brown",
+        "played_at": 1783815694
       }
     ]
   }
