@@ -1,37 +1,37 @@
 {
-  "updated": "2026-07-13 03:12",
+  "updated": "2026-07-13 04:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 14.7,
+        "total": 13.9,
         "user": 12.4,
         "system": 2.2,
-        "idle": 84.8,
-        "iowait": 0.4
+        "idle": 85.0,
+        "iowait": 0.1
       },
       "percpu": [
-        16.5,
-        9.9,
-        15.8,
-        17.6
+        13.0,
+        12.8,
+        15.9,
+        14.4
       ],
       "ram": {
-        "used_gb": 3.04,
+        "used_gb": 3.05,
         "total_gb": 7.87,
-        "percent": 38.7,
-        "available_gb": 4.83
+        "percent": 38.8,
+        "available_gb": 4.82
       },
       "swap": {
-        "used_mb": 1573.7,
+        "used_mb": 1572.7,
         "total_mb": 2048.0,
         "percent": 76.8
       },
       "load": {
-        "1min": 1.12,
-        "5min": 1.15,
-        "15min": 1.25,
+        "1min": 1.13,
+        "5min": 1.34,
+        "15min": 1.31,
         "cores": 4
       },
       "disks": [
@@ -45,10 +45,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 48.0,
-        "write_mb": 1857.0
+        "read_mb": 32.5,
+        "write_mb": 1853.2
       },
-      "temperature_c": 56,
+      "temperature_c": 57,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 342,
+        "total": 340,
         "running": 1,
         "sleeping": 246,
-        "threads": 1197
+        "threads": 1195
       },
-      "uptime": "12 days, 2:25:33",
+      "uptime": "12 days, 3:24:40",
       "containers": [
         {
           "name": "gallery backend",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 2 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 3 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 2 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 3 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 2 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 3 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,33 +143,33 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 3.6,
-        "user": 5.4,
-        "system": 1.1,
-        "idle": 93.1,
+        "total": 5.4,
+        "user": 7.6,
+        "system": 1.3,
+        "idle": 90.6,
         "iowait": 0.4
       },
       "percpu": [
-        6.2,
-        2.7,
-        1.5,
-        5.5
+        5.3,
+        6.3,
+        6.5,
+        4.7
       ],
       "ram": {
-        "used_gb": 3.05,
+        "used_gb": 3.3,
         "total_gb": 7.87,
-        "percent": 38.8,
-        "available_gb": 4.82
+        "percent": 41.9,
+        "available_gb": 4.58
       },
       "swap": {
-        "used_mb": 168.2,
+        "used_mb": 180.2,
         "total_mb": 4096.0,
-        "percent": 4.1
+        "percent": 4.4
       },
       "load": {
-        "1min": 0.67,
-        "5min": 1.39,
-        "15min": 1.33,
+        "1min": 0.23,
+        "5min": 0.76,
+        "15min": 0.83,
         "cores": 4
       },
       "disks": [
@@ -178,23 +178,23 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 72.7,
-          "free_gb": 38.0,
+          "free_gb": 38.1,
           "percent": 62.3
         },
         {
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.4,
-          "free_gb": 747.8,
-          "percent": 13.3
+          "used_gb": 121.3,
+          "free_gb": 747.9,
+          "percent": 13.2
         }
       ],
       "disk_io": {
-        "read_mb": 1217.9,
-        "write_mb": 1906.3
+        "read_mb": 673.6,
+        "write_mb": 1202.3
       },
-      "temperature_c": 55,
+      "temperature_c": 58,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 572,
+        "total": 579,
         "running": 0,
-        "sleeping": 477,
-        "threads": 3320
+        "sleeping": 479,
+        "threads": 3326
       },
-      "uptime": "12 days, 2:25:33",
+      "uptime": "12 days, 3:24:41",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 2 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 3 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 13.4,
-        "user": 9.2,
-        "system": 3.9,
-        "idle": 86.8,
-        "iowait": 0.0
+        "total": 13.5,
+        "user": 9.0,
+        "system": 3.7,
+        "idle": 87.1,
+        "iowait": 0.1
       },
       "percpu": [
-        14.4,
-        12.6,
-        12.5,
-        14.2
+        13.4,
+        14.7,
+        13.4,
+        12.9
       ],
       "ram": {
-        "used_gb": 1.82,
+        "used_gb": 1.85,
         "total_gb": 7.64,
-        "percent": 23.8,
-        "available_gb": 5.82
+        "percent": 24.2,
+        "available_gb": 5.79
       },
       "swap": {
         "used_mb": 3.2,
@@ -281,9 +281,9 @@
         "percent": 0.6
       },
       "load": {
-        "1min": 0.39,
-        "5min": 0.88,
-        "15min": 1.25,
+        "1min": 0.66,
+        "5min": 0.72,
+        "15min": 0.68,
         "cores": 4
       },
       "disks": [
@@ -291,14 +291,14 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
-          "used_gb": 31.7,
+          "used_gb": 31.8,
           "free_gb": 77.7,
           "percent": 27.5
         }
       ],
       "disk_io": {
-        "read_mb": 1.6,
-        "write_mb": 441.9
+        "read_mb": 53.7,
+        "write_mb": 484.6
       },
       "temperature_c": 37,
       "network": {
@@ -309,12 +309,12 @@
         }
       },
       "processes": {
-        "total": 265,
-        "running": 0,
+        "total": 266,
+        "running": 1,
         "sleeping": 169,
-        "threads": 935
+        "threads": 936
       },
-      "uptime": "12 days, 2:25:37",
+      "uptime": "12 days, 3:24:44",
       "containers": [
         {
           "name": "cadvisor",
@@ -322,11 +322,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 2 hours grafana/grafana:latest"
+          "status": "Up 3 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 2 hours prom/prometheus:latest"
+          "status": "Up 3 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -378,45 +378,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "A Career In Indierock",
-      "artist": "Turbonegro",
-      "album": "Helta Skelta",
-      "genre": "Punk",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/65a545562599bbdc88cf5498-1782761877.jpg",
-      "duration": 1476,
-      "elapsed": 730
+      "title": "underdog session 2024-04-05",
+      "artist": "",
+      "album": "",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/420a794061fbfcd9851500c8",
+      "duration": 3855,
+      "elapsed": 1476
     },
     "playing_next": {
-      "title": "I A Rebel Soul",
-      "artist": "Aswad"
+      "title": "The Donegal Express/The Hen And The Cock Are In Carrickmacross",
+      "artist": "The Pogues"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "the queen is dead",
-        "artist": "John Peel Festive Fifty 1986",
-        "played_at": 1783907656
+        "title": "peel sessions - 19 - a13 trunk road to the sea",
+        "artist": "John Peel",
+        "played_at": 1783910712
       },
       {
-        "title": "Better By Far",
-        "artist": "Caravan",
-        "played_at": 1783907391
+        "title": "Dont Trouble Trouble",
+        "artist": "Toots and The Maytals",
+        "played_at": 1783910545
       },
       {
-        "title": "Sweetest Name",
-        "artist": "",
-        "played_at": 1783907149
+        "title": "Ababa Jan Hoi",
+        "artist": "Dennis Brown",
+        "played_at": 1783910338
       },
       {
-        "title": "02-run dem down",
-        "artist": "wailing souls",
-        "played_at": 1783906958
+        "title": "Party Favor",
+        "artist": "Nina Nastasia",
+        "played_at": 1783910229
       },
       {
-        "title": "Toots & The Maytals - Turn it Up",
-        "artist": "08",
-        "played_at": 1783906756
+        "title": "Strato-streak",
+        "artist": "Fu Manchu",
+        "played_at": 1783909990
       }
     ]
   }
