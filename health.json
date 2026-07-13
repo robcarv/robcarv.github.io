@@ -1,20 +1,20 @@
 {
-  "updated": "2026-07-13 10:12",
+  "updated": "2026-07-13 11:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 12.6,
-        "user": 12.8,
-        "system": 2.3,
-        "idle": 84.3,
-        "iowait": 0.2
+        "total": 14.2,
+        "user": 12.4,
+        "system": 1.5,
+        "idle": 85.8,
+        "iowait": 0.3
       },
       "percpu": [
-        11.2,
-        25.3,
-        5.6,
+        13.6,
+        24.2,
+        11.7,
         8.6
       ],
       "ram": {
@@ -29,9 +29,9 @@
         "percent": 76.5
       },
       "load": {
-        "1min": 1.2,
-        "5min": 1.33,
-        "15min": 1.26,
+        "1min": 0.84,
+        "5min": 0.85,
+        "15min": 1.0,
         "cores": 4
       },
       "disks": [
@@ -45,10 +45,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.1,
-        "write_mb": 1935.6
+        "read_mb": 4.6,
+        "write_mb": 1994.4
       },
-      "temperature_c": 56,
+      "temperature_c": 57,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 341,
+        "total": 342,
         "running": 1,
         "sleeping": 247,
-        "threads": 1194
+        "threads": 1196
       },
-      "uptime": "12 days, 9:25:14",
+      "uptime": "12 days, 10:25:18",
       "containers": [
         {
           "name": "gallery backend",
@@ -102,19 +102,19 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 9 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 10 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 9 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 10 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 9 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 10 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
-          "status": "Up 11 days gallery-jandapress:local-arm64"
+          "status": "Up 12 days gallery-jandapress:local-arm64"
         },
         {
           "name": "Dashy",
@@ -122,11 +122,11 @@
         },
         {
           "name": "gallery redis",
-          "status": "Up 11 days (healthy) redis:7-alpine"
+          "status": "Up 12 days (healthy) redis:7-alpine"
         },
         {
           "name": "gallery postgres",
-          "status": "Up 11 days (healthy) postgres:16-alpine"
+          "status": "Up 12 days (healthy) postgres:16-alpine"
         },
         {
           "name": "prowlarr",
@@ -143,33 +143,33 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 6.7,
-        "user": 5.7,
+        "total": 3.6,
+        "user": 5.6,
         "system": 1.1,
-        "idle": 92.6,
+        "idle": 92.9,
         "iowait": 0.5
       },
       "percpu": [
-        6.7,
-        7.8,
-        5.8,
-        9.1
+        3.7,
+        5.3,
+        3.4,
+        3.4
       ],
       "ram": {
-        "used_gb": 3.05,
+        "used_gb": 3.04,
         "total_gb": 7.87,
-        "percent": 38.7,
+        "percent": 38.6,
         "available_gb": 4.83
       },
       "swap": {
-        "used_mb": 260.1,
+        "used_mb": 271.2,
         "total_mb": 4096.0,
-        "percent": 6.4
+        "percent": 6.6
       },
       "load": {
-        "1min": 0.98,
-        "5min": 1.11,
-        "15min": 0.93,
+        "1min": 0.52,
+        "5min": 0.79,
+        "15min": 0.81,
         "cores": 4
       },
       "disks": [
@@ -185,14 +185,14 @@
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.3,
-          "free_gb": 747.9,
-          "percent": 13.2
+          "used_gb": 121.4,
+          "free_gb": 747.8,
+          "percent": 13.3
         }
       ],
       "disk_io": {
-        "read_mb": 668.0,
-        "write_mb": 1179.5
+        "read_mb": 1012.3,
+        "write_mb": 1590.3
       },
       "temperature_c": 55,
       "network": {
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 569,
+        "total": 575,
         "running": 0,
-        "sleeping": 477,
-        "threads": 3317
+        "sleeping": 479,
+        "threads": 3323
       },
-      "uptime": "12 days, 9:25:15",
+      "uptime": "12 days, 10:25:19",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 9 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 10 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 13.8,
-        "user": 9.3,
-        "system": 3.9,
+        "total": 13.1,
+        "user": 9.4,
+        "system": 3.8,
         "idle": 86.7,
         "iowait": 0.0
       },
       "percpu": [
-        13.1,
-        14.3,
-        14.2,
-        13.6
+        13.3,
+        13.2,
+        13.0,
+        12.9
       ],
       "ram": {
-        "used_gb": 1.85,
+        "used_gb": 1.81,
         "total_gb": 7.64,
-        "percent": 24.3,
-        "available_gb": 5.78
+        "percent": 23.7,
+        "available_gb": 5.82
       },
       "swap": {
         "used_mb": 3.2,
@@ -281,9 +281,9 @@
         "percent": 0.6
       },
       "load": {
-        "1min": 1.94,
-        "5min": 1.0,
-        "15min": 0.88,
+        "1min": 1.46,
+        "5min": 1.04,
+        "15min": 0.79,
         "cores": 4
       },
       "disks": [
@@ -292,15 +292,15 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
           "used_gb": 31.8,
-          "free_gb": 77.7,
+          "free_gb": 77.6,
           "percent": 27.6
         }
       ],
       "disk_io": {
-        "read_mb": 1.0,
-        "write_mb": 465.1
+        "read_mb": 4.4,
+        "write_mb": 471.1
       },
-      "temperature_c": 37,
+      "temperature_c": 38,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -309,12 +309,12 @@
         }
       },
       "processes": {
-        "total": 266,
+        "total": 267,
         "running": 0,
         "sleeping": 169,
-        "threads": 939
+        "threads": 940
       },
-      "uptime": "12 days, 9:25:18",
+      "uptime": "12 days, 10:25:22",
       "containers": [
         {
           "name": "cadvisor",
@@ -322,11 +322,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 9 hours grafana/grafana:latest"
+          "status": "Up 10 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 9 hours prom/prometheus:latest"
+          "status": "Up 10 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -378,45 +378,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Father in the Forest",
-      "artist": "Matisyahu",
-      "album": "Shake Off the Dust... ARISE",
-      "genre": "Reggae",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/446eebfc0d30bf77e27fdf86-1782763768.jpg",
-      "duration": 299,
-      "elapsed": 221
+      "title": "John Peel 011002 128K",
+      "artist": "Niag",
+      "album": "",
+      "genre": "Blues",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/2044ec37c9d10d99d5bcc7af",
+      "duration": 7246,
+      "elapsed": 1472
     },
     "playing_next": {
-      "title": "Amen",
-      "artist": "Peter Tosh (featuring the Skatalites, the Upsetters)"
+      "title": "(unklar)",
+      "artist": "The Damned"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "01 - Shine Eye Gal",
-        "artist": "Black Uhuru",
-        "played_at": 1783933254
+        "title": "Birdland - See No Evil",
+        "artist": "Various",
+        "played_at": 1783935921
       },
       {
-        "title": "billiard player song",
-        "artist": "Shellac",
-        "played_at": 1783932694
+        "title": "Jailbait",
+        "artist": "Motorhead",
+        "played_at": 1783935693
       },
       {
-        "title": "27. #24-The Imposter - Pills and Soap.mp3",
-        "artist": "John Peel Festive Fifty 1983",
-        "played_at": 1783932473
+        "title": "King of the arena dub",
+        "artist": "King Tubby",
+        "played_at": 1783935496
       },
       {
-        "title": "Humanity Dub",
-        "artist": "Yabby You",
-        "played_at": 1783932250
+        "title": "I Want Everything",
+        "artist": "Turbonegro",
+        "played_at": 1783935328
       },
       {
-        "title": "harmless - demo",
-        "artist": "helmet - aftertaste demos",
-        "played_at": 1783932080
+        "title": "Don't Go",
+        "artist": "Ramones",
+        "played_at": 1783935159
       }
     ]
   }
