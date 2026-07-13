@@ -1,27 +1,27 @@
 {
-  "updated": "2026-07-13 06:12",
+  "updated": "2026-07-13 07:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 16.1,
-        "user": 12.9,
-        "system": 2.5,
-        "idle": 83.9,
+        "total": 13.2,
+        "user": 12.1,
+        "system": 1.4,
+        "idle": 86.3,
         "iowait": 0.1
       },
       "percpu": [
-        18.8,
+        13.2,
+        15.5,
         14.3,
-        15.8,
-        15.8
+        10.7
       ],
       "ram": {
-        "used_gb": 3.09,
+        "used_gb": 3.05,
         "total_gb": 7.87,
-        "percent": 39.2,
-        "available_gb": 4.78
+        "percent": 38.8,
+        "available_gb": 4.82
       },
       "swap": {
         "used_mb": 1570.7,
@@ -29,9 +29,9 @@
         "percent": 76.7
       },
       "load": {
-        "1min": 1.22,
-        "5min": 1.38,
-        "15min": 1.31,
+        "1min": 0.69,
+        "5min": 1.02,
+        "15min": 1.15,
         "cores": 4
       },
       "disks": [
@@ -45,10 +45,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 47.8,
-        "write_mb": 1906.5
+        "read_mb": 60.3,
+        "write_mb": 1889.6
       },
-      "temperature_c": 57,
+      "temperature_c": 56,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 345,
+        "total": 342,
         "running": 1,
-        "sleeping": 252,
-        "threads": 1201
+        "sleeping": 248,
+        "threads": 1195
       },
-      "uptime": "12 days, 5:24:51",
+      "uptime": "12 days, 6:24:57",
       "containers": [
         {
           "name": "gallery backend",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 5 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 6 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 5 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 6 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 5 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 6 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,33 +143,33 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 6.1,
-        "user": 5.4,
-        "system": 1.2,
-        "idle": 92.5,
-        "iowait": 0.9
+        "total": 5.8,
+        "user": 5.3,
+        "system": 1.0,
+        "idle": 93.2,
+        "iowait": 0.4
       },
       "percpu": [
-        5.2,
-        6.7,
-        5.9,
-        8.5
+        5.7,
+        5.0,
+        6.6,
+        7.2
       ],
       "ram": {
-        "used_gb": 3.08,
+        "used_gb": 3.01,
         "total_gb": 7.87,
-        "percent": 39.2,
-        "available_gb": 4.79
+        "percent": 38.2,
+        "available_gb": 4.86
       },
       "swap": {
-        "used_mb": 228.0,
+        "used_mb": 243.1,
         "total_mb": 4096.0,
-        "percent": 5.6
+        "percent": 5.9
       },
       "load": {
-        "1min": 0.22,
-        "5min": 0.29,
-        "15min": 0.48,
+        "1min": 0.21,
+        "5min": 0.32,
+        "15min": 0.41,
         "cores": 4
       },
       "disks": [
@@ -185,14 +185,14 @@
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.5,
-          "free_gb": 747.7,
+          "used_gb": 121.4,
+          "free_gb": 747.9,
           "percent": 13.3
         }
       ],
       "disk_io": {
-        "read_mb": 1423.4,
-        "write_mb": 2041.6
+        "read_mb": 737.3,
+        "write_mb": 1582.6
       },
       "temperature_c": 54,
       "network": {
@@ -208,11 +208,11 @@
         "sleeping": 479,
         "threads": 3320
       },
-      "uptime": "12 days, 5:24:52",
+      "uptime": "12 days, 6:24:57",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 5 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 6 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 13.2,
+        "total": 13.0,
         "user": 9.3,
         "system": 3.8,
-        "idle": 86.6,
-        "iowait": 0.1
+        "idle": 86.8,
+        "iowait": 0.0
       },
       "percpu": [
-        13.1,
-        13.7,
         12.3,
-        14.1
+        13.9,
+        12.7,
+        13.6
       ],
       "ram": {
-        "used_gb": 1.82,
+        "used_gb": 1.8,
         "total_gb": 7.64,
-        "percent": 23.8,
-        "available_gb": 5.82
+        "percent": 23.6,
+        "available_gb": 5.84
       },
       "swap": {
         "used_mb": 3.2,
@@ -281,9 +281,9 @@
         "percent": 0.6
       },
       "load": {
-        "1min": 1.12,
-        "5min": 1.04,
-        "15min": 0.88,
+        "1min": 0.71,
+        "5min": 0.77,
+        "15min": 0.75,
         "cores": 4
       },
       "disks": [
@@ -293,12 +293,12 @@
           "size_gb": 115.3,
           "used_gb": 31.8,
           "free_gb": 77.7,
-          "percent": 27.5
+          "percent": 27.6
         }
       ],
       "disk_io": {
-        "read_mb": 1.0,
-        "write_mb": 478.4
+        "read_mb": 0.5,
+        "write_mb": 442.3
       },
       "temperature_c": 36,
       "network": {
@@ -309,12 +309,12 @@
         }
       },
       "processes": {
-        "total": 266,
+        "total": 265,
         "running": 0,
         "sleeping": 169,
-        "threads": 938
+        "threads": 937
       },
-      "uptime": "12 days, 5:24:55",
+      "uptime": "12 days, 6:25:01",
       "containers": [
         {
           "name": "cadvisor",
@@ -322,11 +322,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 5 hours grafana/grafana:latest"
+          "status": "Up 6 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 5 hours prom/prometheus:latest"
+          "status": "Up 6 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -384,7 +384,7 @@
       "genre": "",
       "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/3379e214223ba89513a821b3",
       "duration": 7172,
-      "elapsed": 3053
+      "elapsed": 6658
     },
     "playing_next": {
       "title": "Hunting Song [20.06.70]",
