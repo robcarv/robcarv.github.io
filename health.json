@@ -1,21 +1,21 @@
 {
-  "updated": "2026-07-13 09:12",
+  "updated": "2026-07-13 10:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 14.1,
-        "user": 12.3,
-        "system": 1.8,
-        "idle": 85.4,
-        "iowait": 0.3
+        "total": 12.6,
+        "user": 12.8,
+        "system": 2.3,
+        "idle": 84.3,
+        "iowait": 0.2
       },
       "percpu": [
-        9.4,
-        11.7,
-        11.4,
-        30.6
+        11.2,
+        25.3,
+        5.6,
+        8.6
       ],
       "ram": {
         "used_gb": 3.06,
@@ -24,14 +24,14 @@
         "available_gb": 4.81
       },
       "swap": {
-        "used_mb": 1570.7,
+        "used_mb": 1567.7,
         "total_mb": 2048.0,
-        "percent": 76.7
+        "percent": 76.5
       },
       "load": {
-        "1min": 0.83,
-        "5min": 0.9,
-        "15min": 1.02,
+        "1min": 1.2,
+        "5min": 1.33,
+        "15min": 1.26,
         "cores": 4
       },
       "disks": [
@@ -45,10 +45,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 283.6,
-        "write_mb": 2176.5
+        "read_mb": 0.1,
+        "write_mb": 1935.6
       },
-      "temperature_c": 58,
+      "temperature_c": 56,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 344,
-        "running": 2,
-        "sleeping": 248,
-        "threads": 1197
+        "total": 341,
+        "running": 1,
+        "sleeping": 247,
+        "threads": 1194
       },
-      "uptime": "12 days, 8:25:10",
+      "uptime": "12 days, 9:25:14",
       "containers": [
         {
           "name": "gallery backend",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 8 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 9 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 8 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 9 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 8 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 9 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,33 +143,33 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 6.2,
+        "total": 6.7,
         "user": 5.7,
-        "system": 1.2,
-        "idle": 92.5,
-        "iowait": 0.6
+        "system": 1.1,
+        "idle": 92.6,
+        "iowait": 0.5
       },
       "percpu": [
-        5.8,
+        6.7,
         7.8,
-        5.2,
-        7.8
+        5.8,
+        9.1
       ],
       "ram": {
-        "used_gb": 3.06,
+        "used_gb": 3.05,
         "total_gb": 7.87,
-        "percent": 38.8,
-        "available_gb": 4.82
+        "percent": 38.7,
+        "available_gb": 4.83
       },
       "swap": {
-        "used_mb": 256.1,
+        "used_mb": 260.1,
         "total_mb": 4096.0,
-        "percent": 6.3
+        "percent": 6.4
       },
       "load": {
-        "1min": 0.35,
-        "5min": 0.43,
-        "15min": 0.58,
+        "1min": 0.98,
+        "5min": 1.11,
+        "15min": 0.93,
         "cores": 4
       },
       "disks": [
@@ -185,14 +185,14 @@
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.4,
+          "used_gb": 121.3,
           "free_gb": 747.9,
-          "percent": 13.3
+          "percent": 13.2
         }
       ],
       "disk_io": {
-        "read_mb": 828.9,
-        "write_mb": 1541.5
+        "read_mb": 668.0,
+        "write_mb": 1179.5
       },
       "temperature_c": 55,
       "network": {
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 573,
-        "running": 1,
-        "sleeping": 476,
-        "threads": 3321
+        "total": 569,
+        "running": 0,
+        "sleeping": 477,
+        "threads": 3317
       },
-      "uptime": "12 days, 8:25:10",
+      "uptime": "12 days, 9:25:15",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 8 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 9 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 11.8,
+        "total": 13.8,
         "user": 9.3,
-        "system": 3.7,
-        "idle": 86.8,
-        "iowait": 0.1
+        "system": 3.9,
+        "idle": 86.7,
+        "iowait": 0.0
       },
       "percpu": [
-        10.4,
-        10.4,
-        11.1,
-        15.9
+        13.1,
+        14.3,
+        14.2,
+        13.6
       ],
       "ram": {
-        "used_gb": 1.84,
+        "used_gb": 1.85,
         "total_gb": 7.64,
-        "percent": 24.0,
-        "available_gb": 5.8
+        "percent": 24.3,
+        "available_gb": 5.78
       },
       "swap": {
         "used_mb": 3.2,
@@ -281,9 +281,9 @@
         "percent": 0.6
       },
       "load": {
-        "1min": 0.65,
-        "5min": 0.6,
-        "15min": 0.66,
+        "1min": 1.94,
+        "5min": 1.0,
+        "15min": 0.88,
         "cores": 4
       },
       "disks": [
@@ -292,13 +292,13 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
           "used_gb": 31.8,
-          "free_gb": 77.6,
+          "free_gb": 77.7,
           "percent": 27.6
         }
       ],
       "disk_io": {
-        "read_mb": 1.2,
-        "write_mb": 468.5
+        "read_mb": 1.0,
+        "write_mb": 465.1
       },
       "temperature_c": 37,
       "network": {
@@ -309,12 +309,12 @@
         }
       },
       "processes": {
-        "total": 262,
+        "total": 266,
         "running": 0,
         "sleeping": 169,
-        "threads": 934
+        "threads": 939
       },
-      "uptime": "12 days, 8:25:14",
+      "uptime": "12 days, 9:25:18",
       "containers": [
         {
           "name": "cadvisor",
@@ -322,11 +322,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 8 hours grafana/grafana:latest"
+          "status": "Up 9 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 8 hours prom/prometheus:latest"
+          "status": "Up 9 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -378,45 +378,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Lou",
-      "artist": "Adam & The Ants",
-      "album": "The Peel Sessions",
-      "genre": "New Wave",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/1fe8cc373b5271c9ee527319-1782774995.jpg",
-      "duration": 244,
-      "elapsed": 120
+      "title": "Father in the Forest",
+      "artist": "Matisyahu",
+      "album": "Shake Off the Dust... ARISE",
+      "genre": "Reggae",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/446eebfc0d30bf77e27fdf86-1782763768.jpg",
+      "duration": 299,
+      "elapsed": 221
     },
     "playing_next": {
-      "title": "Kitty",
-      "artist": "The Pogues"
+      "title": "Amen",
+      "artist": "Peter Tosh (featuring the Skatalites, the Upsetters)"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Summer Babe [Winter Version]",
-        "artist": "Pavement",
-        "played_at": 1783930043
+        "title": "01 - Shine Eye Gal",
+        "artist": "Black Uhuru",
+        "played_at": 1783933254
       },
       {
-        "title": "Star City Russia peel session 94",
-        "artist": "John Peel",
-        "played_at": 1783929693
+        "title": "billiard player song",
+        "artist": "Shellac",
+        "played_at": 1783932694
       },
       {
-        "title": "John Peel Festive Fifty 1985 Part 2 44_16",
-        "artist": "Niag  ",
-        "played_at": 1783926887
+        "title": "27. #24-The Imposter - Pills and Soap.mp3",
+        "artist": "John Peel Festive Fifty 1983",
+        "played_at": 1783932473
       },
       {
-        "title": "Why I Die",
-        "artist": "Tanz Der Youth",
-        "played_at": 1783926677
+        "title": "Humanity Dub",
+        "artist": "Yabby You",
+        "played_at": 1783932250
       },
       {
-        "title": "Bare Faced Cheek",
-        "artist": "The Toy Dolls",
-        "played_at": 1783926626
+        "title": "harmless - demo",
+        "artist": "helmet - aftertaste demos",
+        "played_at": 1783932080
       }
     ]
   }
