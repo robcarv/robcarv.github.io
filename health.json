@@ -1,37 +1,37 @@
 {
-  "updated": "2026-07-13 01:12",
-  "status": "warn",
+  "updated": "2026-07-13 02:12",
+  "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 19.0,
-        "user": 13.2,
-        "system": 2.7,
-        "idle": 74.8,
-        "iowait": 8.8
+        "total": 13.1,
+        "user": 12.1,
+        "system": 1.4,
+        "idle": 86.0,
+        "iowait": 0.5
       },
       "percpu": [
-        21.6,
-        15.7,
-        25.6,
-        16.7
+        12.8,
+        12.5,
+        18.0,
+        13.5
       ],
       "ram": {
-        "used_gb": 2.87,
+        "used_gb": 3.06,
         "total_gb": 7.87,
-        "percent": 36.4,
-        "available_gb": 5.01
+        "percent": 38.8,
+        "available_gb": 4.82
       },
       "swap": {
-        "used_mb": 1533.2,
+        "used_mb": 1582.7,
         "total_mb": 2048.0,
-        "percent": 74.9
+        "percent": 77.3
       },
       "load": {
-        "1min": 4.28,
-        "5min": 3.44,
-        "15min": 2.57,
+        "1min": 0.91,
+        "5min": 0.79,
+        "15min": 1.17,
         "cores": 4
       },
       "disks": [
@@ -39,16 +39,16 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 52.4,
-          "free_gb": 58.3,
-          "percent": 44.9
+          "used_gb": 47.6,
+          "free_gb": 63.1,
+          "percent": 40.8
         }
       ],
       "disk_io": {
-        "read_mb": 21.2,
-        "write_mb": 15976.3
+        "read_mb": 74266.6,
+        "write_mb": 45946.3
       },
-      "temperature_c": 58,
+      "temperature_c": 56,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 349,
-        "running": 2,
+        "total": 345,
+        "running": 1,
         "sleeping": 249,
-        "threads": 1206
+        "threads": 1199
       },
-      "uptime": "12 days, 0:25:13",
+      "uptime": "12 days, 1:25:29",
       "containers": [
         {
           "name": "gallery backend",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 24 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 41 minutes (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 24 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 41 minutes (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 24 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 41 minutes jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,23 +143,23 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 4.0,
-        "user": 6.0,
+        "total": 3.1,
+        "user": 5.4,
         "system": 1.1,
-        "idle": 92.3,
-        "iowait": 0.5
+        "idle": 80.0,
+        "iowait": 13.5
       },
       "percpu": [
-        2.5,
-        5.1,
-        4.3,
-        5.7
+        72.7,
+        20.6,
+        2.6,
+        61.1
       ],
       "ram": {
-        "used_gb": 2.99,
+        "used_gb": 3.01,
         "total_gb": 7.87,
-        "percent": 38.0,
-        "available_gb": 4.88
+        "percent": 38.2,
+        "available_gb": 4.87
       },
       "swap": {
         "used_mb": 166.2,
@@ -167,9 +167,9 @@
         "percent": 4.1
       },
       "load": {
-        "1min": 0.86,
-        "5min": 0.68,
-        "15min": 0.65,
+        "1min": 2.09,
+        "5min": 1.27,
+        "15min": 0.85,
         "cores": 4
       },
       "disks": [
@@ -185,16 +185,16 @@
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.3,
-          "free_gb": 747.9,
-          "percent": 13.2
+          "used_gb": 121.4,
+          "free_gb": 747.8,
+          "percent": 13.3
         }
       ],
       "disk_io": {
-        "read_mb": 5226.2,
-        "write_mb": 1759.7
+        "read_mb": 1123.2,
+        "write_mb": 1758.9
       },
-      "temperature_c": 55,
+      "temperature_c": 56,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 575,
+        "total": 581,
         "running": 0,
-        "sleeping": 478,
-        "threads": 3321
+        "sleeping": 479,
+        "threads": 3331
       },
-      "uptime": "12 days, 0:25:13",
+      "uptime": "12 days, 1:25:30",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 10 minutes ghcr.io/azuracast/azuracast:stable"
+          "status": "Up About an hour ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -255,25 +255,25 @@
       "services": "AzuraCast, DuckDNS, Media Server"
     },
     "Pi4": {
-      "status": "warn",
+      "status": "ok",
       "cpu": {
-        "total": 90.6,
-        "user": 72.4,
-        "system": 13.7,
-        "idle": 11.9,
-        "iowait": 0.1
+        "total": 22.9,
+        "user": 17.4,
+        "system": 5.3,
+        "idle": 75.1,
+        "iowait": 0.0
       },
       "percpu": [
-        98.9,
-        99.6,
-        100.0,
-        97.3
+        24.9,
+        21.7,
+        23.2,
+        22.0
       ],
       "ram": {
-        "used_gb": 1.82,
+        "used_gb": 1.95,
         "total_gb": 7.64,
-        "percent": 23.8,
-        "available_gb": 5.82
+        "percent": 25.5,
+        "available_gb": 5.69
       },
       "swap": {
         "used_mb": 3.2,
@@ -281,9 +281,9 @@
         "percent": 0.6
       },
       "load": {
-        "1min": 7.15,
-        "5min": 6.53,
-        "15min": 4.05,
+        "1min": 0.74,
+        "5min": 1.06,
+        "15min": 1.38,
         "cores": 4
       },
       "disks": [
@@ -292,15 +292,15 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
           "used_gb": 31.7,
-          "free_gb": 77.7,
+          "free_gb": 77.8,
           "percent": 27.5
         }
       ],
       "disk_io": {
-        "read_mb": 8482.1,
-        "write_mb": 499.0
+        "read_mb": 2252.7,
+        "write_mb": 4203.8
       },
-      "temperature_c": 44,
+      "temperature_c": 39,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -309,12 +309,12 @@
         }
       },
       "processes": {
-        "total": 273,
-        "running": 2,
-        "sleeping": 173,
-        "threads": 950
+        "total": 268,
+        "running": 0,
+        "sleeping": 172,
+        "threads": 949
       },
-      "uptime": "12 days, 0:25:18",
+      "uptime": "12 days, 1:25:34",
       "containers": [
         {
           "name": "cadvisor",
@@ -322,11 +322,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 24 hours grafana/grafana:latest"
+          "status": "Up 56 minutes grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 24 hours prom/prometheus:latest"
+          "status": "Up 56 minutes prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -378,45 +378,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "The wasteoid",
-      "artist": "Fu Manchu",
-      "album": "California crossing",
-      "genre": "Stoner rock",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/3d0bb40424f2e1b4c9ba0bf3-1782762078.jpg",
-      "duration": 235,
-      "elapsed": 108
+      "title": "Loose",
+      "artist": "The Birthday Party",
+      "album": "The John Peel Sessions",
+      "genre": "No Wave",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/d2323943cf1d1361c9b63a29-1782770745.jpg",
+      "duration": 216,
+      "elapsed": 117
     },
     "playing_next": {
-      "title": "King of the arena dub",
-      "artist": "King Tubby"
+      "title": "oh ah la la",
+      "artist": "freddie mcgregor"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "At The Edge",
-        "artist": "Stiff Little Fingers",
-        "played_at": 1783901279
+        "title": "Pay Day",
+        "artist": "Black Uhuru",
+        "played_at": 1783904813
       },
       {
-        "title": "06 - Ninth Degree",
-        "artist": "Hula",
-        "played_at": 1783900939
+        "title": "Roadblock",
+        "artist": "Rancid",
+        "played_at": 1783904697
       },
       {
-        "title": "John Peel 20030211",
-        "artist": "",
-        "played_at": 1783898663
+        "title": "Holy Mountain Zion",
+        "artist": "Culture",
+        "played_at": 1783904455
       },
       {
-        "title": "Julie Ocean",
-        "artist": "The Undertones",
-        "played_at": 1783898452
+        "title": "Got A Lot Of Livin' To Do",
+        "artist": "The Pogues",
+        "played_at": 1783904309
       },
       {
-        "title": "Tuff We Tuff",
-        "artist": "Aswad",
-        "played_at": 1783898229
+        "title": "02 #49 - the verve - all in the mind.mp3",
+        "artist": "John Peel Festive Fifty 1992",
+        "played_at": 1783904055
       }
     ]
   }
