@@ -1,27 +1,27 @@
 {
-  "updated": "2026-07-14 18:12",
+  "updated": "2026-07-14 19:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 15.9,
-        "user": 12.5,
-        "system": 2.6,
-        "idle": 84.4,
+        "total": 12.5,
+        "user": 12.1,
+        "system": 2.2,
+        "idle": 85.2,
         "iowait": 0.2
       },
       "percpu": [
-        25.8,
-        10.8,
-        16.2,
-        11.7
+        5.6,
+        7.5,
+        25.4,
+        12.0
       ],
       "ram": {
-        "used_gb": 3.11,
+        "used_gb": 3.15,
         "total_gb": 7.87,
-        "percent": 39.5,
-        "available_gb": 4.76
+        "percent": 40.0,
+        "available_gb": 4.72
       },
       "swap": {
         "used_mb": 1642.1,
@@ -29,9 +29,9 @@
         "percent": 80.2
       },
       "load": {
-        "1min": 1.38,
-        "5min": 1.54,
-        "15min": 1.45,
+        "1min": 1.51,
+        "5min": 1.45,
+        "15min": 1.43,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.4,
-        "write_mb": 1959.2
+        "read_mb": 0.2,
+        "write_mb": 2001.9
       },
       "temperature_c": 57,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 369,
-        "running": 1,
-        "sleeping": 249,
-        "threads": 1245
+        "total": 348,
+        "running": 0,
+        "sleeping": 250,
+        "threads": 1226
       },
-      "uptime": "13 days, 17:24:40",
+      "uptime": "13 days, 18:24:46",
       "containers": [
         {
           "name": "gallery backend",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 17 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 18 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 17 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 18 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 17 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 18 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,33 +143,33 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 8.7,
-        "user": 7.9,
-        "system": 1.3,
-        "idle": 90.3,
-        "iowait": 0.5
+        "total": 10.5,
+        "user": 6.6,
+        "system": 1.1,
+        "idle": 91.9,
+        "iowait": 0.4
       },
       "percpu": [
-        9.9,
-        6.1,
-        10.0,
-        11.6
+        8.2,
+        14.4,
+        9.1,
+        12.4
       ],
       "ram": {
-        "used_gb": 3.34,
+        "used_gb": 3.2,
         "total_gb": 7.87,
-        "percent": 42.4,
-        "available_gb": 4.54
+        "percent": 40.7,
+        "available_gb": 4.67
       },
       "swap": {
-        "used_mb": 309.3,
+        "used_mb": 308.3,
         "total_mb": 4096.0,
-        "percent": 7.6
+        "percent": 7.5
       },
       "load": {
-        "1min": 0.29,
-        "5min": 0.44,
-        "15min": 0.62,
+        "1min": 0.9,
+        "5min": 1.26,
+        "15min": 1.24,
         "cores": 4
       },
       "disks": [
@@ -185,16 +185,16 @@
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.3,
+          "used_gb": 121.4,
           "free_gb": 747.9,
-          "percent": 13.2
+          "percent": 13.3
         }
       ],
       "disk_io": {
-        "read_mb": 695.2,
-        "write_mb": 1254.7
+        "read_mb": 865.3,
+        "write_mb": 1758.6
       },
-      "temperature_c": 59,
+      "temperature_c": 56,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 578,
-        "running": 2,
-        "sleeping": 480,
-        "threads": 3331
+        "total": 573,
+        "running": 0,
+        "sleeping": 477,
+        "threads": 3325
       },
-      "uptime": "13 days, 17:24:41",
+      "uptime": "13 days, 18:24:47",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 17 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 18 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 19.0,
-        "user": 10.8,
-        "system": 4.5,
-        "idle": 84.5,
-        "iowait": 0.0
+        "total": 16.6,
+        "user": 10.9,
+        "system": 4.8,
+        "idle": 84.1,
+        "iowait": 0.1
       },
       "percpu": [
-        13.3,
-        18.0,
-        21.3,
-        23.2
+        15.1,
+        16.2,
+        19.1,
+        16.5
       ],
       "ram": {
-        "used_gb": 2.33,
+        "used_gb": 2.28,
         "total_gb": 7.64,
-        "percent": 30.5,
-        "available_gb": 5.31
+        "percent": 29.8,
+        "available_gb": 5.36
       },
       "swap": {
         "used_mb": 5.5,
@@ -281,9 +281,9 @@
         "percent": 1.1
       },
       "load": {
-        "1min": 0.99,
-        "5min": 1.09,
-        "15min": 1.02,
+        "1min": 1.44,
+        "5min": 0.94,
+        "15min": 0.96,
         "cores": 4
       },
       "disks": [
@@ -291,16 +291,16 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
-          "used_gb": 33.0,
+          "used_gb": 33.1,
           "free_gb": 76.4,
-          "percent": 28.6
+          "percent": 28.7
         }
       ],
       "disk_io": {
-        "read_mb": 19.8,
-        "write_mb": 562.1
+        "read_mb": 2.3,
+        "write_mb": 532.6
       },
-      "temperature_c": 39,
+      "temperature_c": 38,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -309,24 +309,24 @@
         }
       },
       "processes": {
-        "total": 292,
+        "total": 293,
         "running": 0,
         "sleeping": 195,
-        "threads": 1063
+        "threads": 1062
       },
-      "uptime": "13 days, 17:24:45",
+      "uptime": "13 days, 18:24:50",
       "containers": [
         {
           "name": "politicosaas app 1",
-          "status": "Up 19 hours politicosaas-app"
+          "status": "Up 20 hours politicosaas-app"
         },
         {
           "name": "politicosaas postgres 1",
-          "status": "Up 19 hours (healthy) postgres:15-alpine"
+          "status": "Up 20 hours (healthy) postgres:15-alpine"
         },
         {
           "name": "politicosaas meilisearch 1",
-          "status": "Up 19 hours getmeili/meilisearch:v1.12"
+          "status": "Up 20 hours getmeili/meilisearch:v1.12"
         },
         {
           "name": "cadvisor",
@@ -334,11 +334,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 17 hours grafana/grafana:latest"
+          "status": "Up 18 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 17 hours prom/prometheus:latest"
+          "status": "Up 18 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -390,45 +390,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Bla Bla Bla [2nd Version][*]",
-      "artist": "Toots & the Maytals",
-      "album": "That's My Number",
-      "genre": "Reggae",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/f48660c91d47d0245e5ed8d5-1782755626.jpg",
-      "duration": 208,
-      "elapsed": 4
+      "title": "06. John Peel Show 19-02-80 (2)",
+      "artist": "",
+      "album": "",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/059fd176b18c61a7eea65439",
+      "duration": 1822,
+      "elapsed": 388
     },
     "playing_next": {
-      "title": "Liberation",
-      "artist": "Bunny Wailer"
+      "title": "Hear River Jordan Roll",
+      "artist": "A3"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "The Chicken Wire",
-        "artist": "James - 1st Peel Session",
-        "played_at": 1784048949
+        "title": "Lay-By",
+        "artist": "Barbel",
+        "played_at": 1784052109
       },
       {
-        "title": "Love and Peace",
-        "artist": "King Tubby's / Yabby U",
-        "played_at": 1784048794
+        "title": "Skinhead Moonstomp",
+        "artist": "Symarip",
+        "played_at": 1784051926
       },
       {
-        "title": "You're Gonna Kill That Girl",
-        "artist": "The Ramones",
-        "played_at": 1784048616
+        "title": "Tennaislyn",
+        "artist": "Ras Michael & Jazzboe Abubaka",
+        "played_at": 1784051782
       },
       {
-        "title": "you gonna get yours",
-        "artist": "John Peel Festive Fifty 1987",
-        "played_at": 1784048373
+        "title": "Warn The Nation",
+        "artist": "Yabby You & The Prophets",
+        "played_at": 1784051639
       },
       {
-        "title": "29 - sabres of paradise - wilmot",
-        "artist": "John Peel Festive Fifty 1994",
-        "played_at": 1784047894
+        "title": "Train to Skaville",
+        "artist": "The Ethiopians",
+        "played_at": 1784051462
       }
     ]
   }
