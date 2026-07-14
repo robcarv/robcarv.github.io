@@ -1,37 +1,37 @@
 {
-  "updated": "2026-07-14 02:12",
+  "updated": "2026-07-14 03:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 14.1,
-        "user": 12.5,
-        "system": 2.2,
-        "idle": 84.8,
+        "total": 11.9,
+        "user": 11.9,
+        "system": 1.3,
+        "idle": 86.5,
         "iowait": 0.2
       },
       "percpu": [
-        11.7,
-        16.9,
-        15.2,
-        13.2
+        10.8,
+        12.4,
+        12.9,
+        12.0
       ],
       "ram": {
-        "used_gb": 3.01,
+        "used_gb": 2.97,
         "total_gb": 7.87,
-        "percent": 38.2,
-        "available_gb": 4.87
+        "percent": 37.8,
+        "available_gb": 4.9
       },
       "swap": {
-        "used_mb": 1676.1,
+        "used_mb": 1660.1,
         "total_mb": 2048.0,
-        "percent": 81.8
+        "percent": 81.1
       },
       "load": {
-        "1min": 1.74,
-        "5min": 1.6,
-        "15min": 2.05,
+        "1min": 1.27,
+        "5min": 1.12,
+        "15min": 1.14,
         "cores": 4
       },
       "disks": [
@@ -45,10 +45,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 75307.8,
-        "write_mb": 48832.6
+        "read_mb": 99.4,
+        "write_mb": 2074.0
       },
-      "temperature_c": 57,
+      "temperature_c": 58,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 353,
-        "running": 1,
-        "sleeping": 258,
-        "threads": 1227
+        "total": 344,
+        "running": 0,
+        "sleeping": 252,
+        "threads": 1219
       },
-      "uptime": "13 days, 1:25:27",
+      "uptime": "13 days, 2:25:32",
       "containers": [
         {
           "name": "gallery backend",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 37 minutes (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 2 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 37 minutes (healthy) bellamy/wallos:latest"
+          "status": "Up 2 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 37 minutes jc21/nginx-proxy-manager:latest"
+          "status": "Up 2 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,23 +143,23 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 5.6,
+        "total": 3.7,
         "user": 5.8,
-        "system": 1.1,
-        "idle": 92.8,
-        "iowait": 0.4
+        "system": 0.9,
+        "idle": 92.7,
+        "iowait": 0.5
       },
       "percpu": [
-        4.0,
-        5.1,
-        6.1,
-        8.6
+        5.5,
+        4.1,
+        4.1,
+        3.4
       ],
       "ram": {
-        "used_gb": 3.06,
+        "used_gb": 3.05,
         "total_gb": 7.87,
-        "percent": 38.9,
-        "available_gb": 4.81
+        "percent": 38.7,
+        "available_gb": 4.83
       },
       "swap": {
         "used_mb": 172.1,
@@ -167,9 +167,9 @@
         "percent": 4.2
       },
       "load": {
-        "1min": 0.32,
-        "5min": 0.39,
-        "15min": 0.52,
+        "1min": 0.3,
+        "5min": 0.34,
+        "15min": 0.39,
         "cores": 4
       },
       "disks": [
@@ -185,16 +185,16 @@
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.5,
-          "free_gb": 747.7,
+          "used_gb": 121.4,
+          "free_gb": 747.8,
           "percent": 13.3
         }
       ],
       "disk_io": {
-        "read_mb": 1175.7,
-        "write_mb": 1689.3
+        "read_mb": 1297.4,
+        "write_mb": 1917.7
       },
-      "temperature_c": 56,
+      "temperature_c": 54,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 573,
+        "total": 575,
         "running": 0,
-        "sleeping": 479,
-        "threads": 3320
+        "sleeping": 477,
+        "threads": 3325
       },
-      "uptime": "13 days, 1:25:28",
+      "uptime": "13 days, 2:25:33",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up About an hour ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 2 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 37.5,
-        "user": 26.9,
-        "system": 7.7,
-        "idle": 61.1,
+        "total": 15.4,
+        "user": 11.6,
+        "system": 4.6,
+        "idle": 83.5,
         "iowait": 0.0
       },
       "percpu": [
-        71.8,
-        63.7,
-        71.7,
-        79.5
+        16.9,
+        15.7,
+        14.3,
+        14.9
       ],
       "ram": {
-        "used_gb": 2.2,
+        "used_gb": 2.12,
         "total_gb": 7.64,
-        "percent": 28.8,
-        "available_gb": 5.44
+        "percent": 27.8,
+        "available_gb": 5.52
       },
       "swap": {
         "used_mb": 3.2,
@@ -281,9 +281,9 @@
         "percent": 0.6
       },
       "load": {
-        "1min": 1.72,
-        "5min": 2.23,
-        "15min": 2.29,
+        "1min": 1.26,
+        "5min": 1.19,
+        "15min": 1.39,
         "cores": 4
       },
       "disks": [
@@ -297,10 +297,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 6226.6,
-        "write_mb": 6162.7
+        "read_mb": 1.2,
+        "write_mb": 491.9
       },
-      "temperature_c": 39,
+      "temperature_c": 37,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -309,24 +309,24 @@
         }
       },
       "processes": {
-        "total": 295,
-        "running": 1,
-        "sleeping": 197,
-        "threads": 1066
+        "total": 292,
+        "running": 0,
+        "sleeping": 195,
+        "threads": 1052
       },
-      "uptime": "13 days, 1:25:33",
+      "uptime": "13 days, 2:25:37",
       "containers": [
         {
           "name": "politicosaas app 1",
-          "status": "Up 3 hours politicosaas-app"
+          "status": "Up 4 hours politicosaas-app"
         },
         {
           "name": "politicosaas postgres 1",
-          "status": "Up 3 hours (healthy) postgres:15-alpine"
+          "status": "Up 4 hours (healthy) postgres:15-alpine"
         },
         {
           "name": "politicosaas meilisearch 1",
-          "status": "Up 3 hours getmeili/meilisearch:v1.12"
+          "status": "Up 4 hours getmeili/meilisearch:v1.12"
         },
         {
           "name": "cadvisor",
@@ -334,11 +334,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 53 minutes grafana/grafana:latest"
+          "status": "Up 2 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 53 minutes prom/prometheus:latest"
+          "status": "Up 2 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -396,7 +396,7 @@
       "genre": "",
       "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/a5b5ab797d41cd32b88083be",
       "duration": 7172,
-      "elapsed": 2275
+      "elapsed": 5880
     },
     "playing_next": {
       "title": "Free Again",
