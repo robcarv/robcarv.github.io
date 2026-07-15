@@ -1,27 +1,27 @@
 {
-  "updated": "2026-07-15 22:12",
+  "updated": "2026-07-15 23:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 5.6,
+        "total": 4.9,
         "user": 4.1,
         "system": 1.3,
-        "idle": 94.1,
-        "iowait": 0.3
+        "idle": 94.4,
+        "iowait": 0.1
       },
       "percpu": [
-        4.3,
-        7.8,
-        5.5,
-        4.8
+        5.2,
+        6.9,
+        5.2,
+        4.3
       ],
       "ram": {
         "used_gb": 3.21,
         "total_gb": 7.87,
-        "percent": 40.7,
-        "available_gb": 4.67
+        "percent": 40.8,
+        "available_gb": 4.66
       },
       "swap": {
         "used_mb": 1646.1,
@@ -29,9 +29,9 @@
         "percent": 80.4
       },
       "load": {
-        "1min": 0.45,
-        "5min": 0.49,
-        "15min": 0.54,
+        "1min": 0.5,
+        "5min": 0.61,
+        "15min": 0.64,
         "cores": 4
       },
       "disks": [
@@ -45,10 +45,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.1,
-        "write_mb": 1583.9
+        "read_mb": 0.8,
+        "write_mb": 1662.4
       },
-      "temperature_c": 58,
+      "temperature_c": 56,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 351,
-        "running": 0,
-        "sleeping": 250,
-        "threads": 1229
+        "total": 341,
+        "running": 1,
+        "sleeping": 249,
+        "threads": 1217
       },
-      "uptime": "14 days, 21:25:08",
+      "uptime": "14 days, 22:25:14",
       "containers": [
         {
           "name": "gallery backend",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 21 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 22 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 21 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 22 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 21 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 22 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,23 +143,23 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 3.7,
-        "user": 5.3,
+        "total": 4.0,
+        "user": 5.6,
         "system": 1.0,
-        "idle": 93.2,
-        "iowait": 0.4
+        "idle": 86.0,
+        "iowait": 7.3
       },
       "percpu": [
-        1.8,
-        2.8,
-        7.3,
-        3.8
+        100.0,
+        100.0,
+        100.0,
+        11.9
       ],
       "ram": {
-        "used_gb": 3.11,
+        "used_gb": 3.15,
         "total_gb": 7.87,
-        "percent": 39.5,
-        "available_gb": 4.76
+        "percent": 40.0,
+        "available_gb": 4.72
       },
       "swap": {
         "used_mb": 257.9,
@@ -167,9 +167,9 @@
         "percent": 6.3
       },
       "load": {
-        "1min": 0.38,
-        "5min": 0.75,
-        "15min": 0.76,
+        "1min": 0.87,
+        "5min": 0.53,
+        "15min": 0.56,
         "cores": 4
       },
       "disks": [
@@ -185,14 +185,14 @@
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.5,
+          "used_gb": 121.4,
           "free_gb": 747.8,
           "percent": 13.3
         }
       ],
       "disk_io": {
-        "read_mb": 596.0,
-        "write_mb": 1182.8
+        "read_mb": 552.0,
+        "write_mb": 1149.4
       },
       "temperature_c": 55,
       "network": {
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 574,
+        "total": 575,
         "running": 0,
-        "sleeping": 477,
-        "threads": 3318
+        "sleeping": 478,
+        "threads": 3320
       },
-      "uptime": "14 days, 21:25:09",
+      "uptime": "14 days, 22:25:15",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 21 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 22 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 15.0,
-        "user": 10.6,
-        "system": 4.4,
-        "idle": 84.8,
+        "total": 16.0,
+        "user": 10.7,
+        "system": 4.6,
+        "idle": 84.5,
         "iowait": 0.1
       },
       "percpu": [
-        15.5,
-        14.5,
-        15.1,
-        15.1
+        15.2,
+        15.9,
+        15.3,
+        17.5
       ],
       "ram": {
-        "used_gb": 2.29,
+        "used_gb": 2.26,
         "total_gb": 7.64,
-        "percent": 30.0,
-        "available_gb": 5.34
+        "percent": 29.6,
+        "available_gb": 5.38
       },
       "swap": {
         "used_mb": 5.0,
@@ -281,9 +281,9 @@
         "percent": 1.0
       },
       "load": {
-        "1min": 1.17,
-        "5min": 0.86,
-        "15min": 0.86,
+        "1min": 1.32,
+        "5min": 1.06,
+        "15min": 1.03,
         "cores": 4
       },
       "disks": [
@@ -297,8 +297,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.8,
-        "write_mb": 498.0
+        "read_mb": 0.3,
+        "write_mb": 480.3
       },
       "temperature_c": 38,
       "network": {
@@ -309,24 +309,24 @@
         }
       },
       "processes": {
-        "total": 290,
+        "total": 288,
         "running": 0,
         "sleeping": 195,
-        "threads": 1059
+        "threads": 1060
       },
-      "uptime": "14 days, 21:25:12",
+      "uptime": "14 days, 22:25:18",
       "containers": [
         {
           "name": "politicosaas app 1",
-          "status": "Up 24 hours politicosaas-app"
+          "status": "Up 25 hours politicosaas-app"
         },
         {
           "name": "politicosaas postgres 1",
-          "status": "Up 24 hours (healthy) postgres:15-alpine"
+          "status": "Up 25 hours (healthy) postgres:15-alpine"
         },
         {
           "name": "politicosaas meilisearch 1",
-          "status": "Up 24 hours getmeili/meilisearch:v1.12"
+          "status": "Up 25 hours getmeili/meilisearch:v1.12"
         },
         {
           "name": "cadvisor",
@@ -334,11 +334,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 21 hours grafana/grafana:latest"
+          "status": "Up 22 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 21 hours prom/prometheus:latest"
+          "status": "Up 22 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -386,50 +386,6 @@
     }
   },
   "radio": {
-    "station": "dublincalling",
-    "is_online": true,
-    "is_live": false,
-    "now_playing": {
-      "title": "John Peel 2003-06-05",
-      "artist": "John Peel (R1)",
-      "album": "from RA",
-      "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/3ca29934a45a1bee37dc6ce5",
-      "duration": 7083,
-      "elapsed": 3625
-    },
-    "playing_next": {
-      "title": "Kitty",
-      "artist": "The Pogues"
-    },
-    "listeners": 0,
-    "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
-    "history": [
-      {
-        "title": "African Teacher",
-        "artist": "Burning Spear",
-        "played_at": 1784146094
-      },
-      {
-        "title": "Solid Foundation (Disco Cork Mix)",
-        "artist": "The Congos",
-        "played_at": 1784145727
-      },
-      {
-        "title": "oh yeah",
-        "artist": "John Peel Festive Fifty 1996",
-        "played_at": 1784145438
-      },
-      {
-        "title": "The Sweetest Thing",
-        "artist": "Camera Obscura",
-        "played_at": 1784145167
-      },
-      {
-        "title": "Spellbound",
-        "artist": "Siouxsie and the Banshees",
-        "played_at": 1784144971
-      }
-    ]
+    "error": "The read operation timed out"
   }
 }
