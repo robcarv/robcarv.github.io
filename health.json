@@ -1,27 +1,27 @@
 {
-  "updated": "2026-07-16 21:12",
+  "updated": "2026-07-16 22:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 5.3,
-        "user": 4.2,
-        "system": 1.4,
-        "idle": 94.0,
-        "iowait": 0.2
+        "total": 7.2,
+        "user": 4.7,
+        "system": 2.2,
+        "idle": 91.9,
+        "iowait": 0.9
       },
       "percpu": [
-        6.9,
-        5.7,
-        5.9,
-        4.6
+        7.5,
+        8.2,
+        7.8,
+        8.7
       ],
       "ram": {
-        "used_gb": 3.06,
+        "used_gb": 3.2,
         "total_gb": 7.87,
-        "percent": 38.9,
-        "available_gb": 4.81
+        "percent": 40.6,
+        "available_gb": 4.68
       },
       "swap": {
         "used_mb": 1546.0,
@@ -29,9 +29,9 @@
         "percent": 75.5
       },
       "load": {
-        "1min": 0.6,
-        "5min": 0.67,
-        "15min": 0.73,
+        "1min": 0.75,
+        "5min": 0.62,
+        "15min": 0.63,
         "cores": 4
       },
       "disks": [
@@ -39,16 +39,16 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 48.0,
+          "used_gb": 48.1,
           "free_gb": 62.7,
           "percent": 41.2
         }
       ],
       "disk_io": {
-        "read_mb": 24.4,
-        "write_mb": 1864.1
+        "read_mb": 3.1,
+        "write_mb": 1939.3
       },
-      "temperature_c": 58,
+      "temperature_c": 56,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 342,
-        "running": 0,
-        "sleeping": 250,
-        "threads": 1215
+        "total": 357,
+        "running": 1,
+        "sleeping": 252,
+        "threads": 1231
       },
-      "uptime": "15 days, 20:25:02",
+      "uptime": "15 days, 21:25:08",
       "containers": [
         {
           "name": "gallery backend",
@@ -70,11 +70,11 @@
         },
         {
           "name": "kavita",
-          "status": "Up 10 days lscr.io/linuxserver/kavita:latest"
+          "status": "Up 11 days lscr.io/linuxserver/kavita:latest"
         },
         {
           "name": "subscription bot",
-          "status": "Up 9 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 10 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "cadvisor",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 20 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 21 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 20 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 21 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 20 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 21 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,23 +143,23 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 3.9,
+        "total": 3.7,
         "user": 6.2,
         "system": 1.0,
-        "idle": 92.3,
-        "iowait": 0.4
+        "idle": 78.4,
+        "iowait": 14.4
       },
       "percpu": [
-        2.6,
-        2.5,
-        9.2,
-        2.6
+        100.0,
+        2.7,
+        7.9,
+        74.2
       ],
       "ram": {
-        "used_gb": 3.11,
+        "used_gb": 3.15,
         "total_gb": 7.87,
-        "percent": 39.4,
-        "available_gb": 4.77
+        "percent": 40.0,
+        "available_gb": 4.72
       },
       "swap": {
         "used_mb": 215.8,
@@ -167,9 +167,9 @@
         "percent": 5.3
       },
       "load": {
-        "1min": 0.27,
-        "5min": 0.3,
-        "15min": 0.36,
+        "1min": 1.06,
+        "5min": 0.94,
+        "15min": 0.85,
         "cores": 4
       },
       "disks": [
@@ -185,14 +185,14 @@
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.4,
-          "free_gb": 747.8,
+          "used_gb": 121.6,
+          "free_gb": 747.7,
           "percent": 13.3
         }
       ],
       "disk_io": {
-        "read_mb": 1036.7,
-        "write_mb": 1613.6
+        "read_mb": 939.1,
+        "write_mb": 1457.0
       },
       "temperature_c": 55,
       "network": {
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 571,
+        "total": 576,
         "running": 0,
-        "sleeping": 478,
-        "threads": 3316
+        "sleeping": 479,
+        "threads": 3321
       },
-      "uptime": "15 days, 20:25:03",
+      "uptime": "15 days, 21:25:09",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 20 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 21 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 21.8,
-        "user": 11.0,
-        "system": 4.7,
-        "idle": 84.2,
-        "iowait": 0.0
+        "total": 15.5,
+        "user": 10.7,
+        "system": 4.6,
+        "idle": 84.5,
+        "iowait": 0.1
       },
       "percpu": [
-        20.8,
-        23.8,
-        20.7,
-        21.9
+        14.9,
+        15.3,
+        16.5,
+        15.7
       ],
       "ram": {
-        "used_gb": 2.32,
+        "used_gb": 2.39,
         "total_gb": 7.64,
-        "percent": 30.4,
-        "available_gb": 5.32
+        "percent": 31.3,
+        "available_gb": 5.25
       },
       "swap": {
         "used_mb": 5.0,
@@ -281,9 +281,9 @@
         "percent": 1.0
       },
       "load": {
-        "1min": 1.66,
-        "5min": 1.45,
-        "15min": 1.22,
+        "1min": 0.78,
+        "5min": 1.05,
+        "15min": 1.0,
         "cores": 4
       },
       "disks": [
@@ -297,10 +297,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1.7,
-        "write_mb": 503.1
+        "read_mb": 1.9,
+        "write_mb": 514.7
       },
-      "temperature_c": 39,
+      "temperature_c": 38,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -309,24 +309,24 @@
         }
       },
       "processes": {
-        "total": 293,
+        "total": 292,
         "running": 0,
         "sleeping": 195,
-        "threads": 1066
+        "threads": 1064
       },
-      "uptime": "15 days, 20:25:06",
+      "uptime": "15 days, 21:25:13",
       "containers": [
         {
           "name": "politicosaas app 1",
-          "status": "Up 47 hours politicosaas-app"
+          "status": "Up 2 days politicosaas-app"
         },
         {
           "name": "politicosaas postgres 1",
-          "status": "Up 47 hours (healthy) postgres:15-alpine"
+          "status": "Up 2 days (healthy) postgres:15-alpine"
         },
         {
           "name": "politicosaas meilisearch 1",
-          "status": "Up 47 hours getmeili/meilisearch:v1.12"
+          "status": "Up 2 days getmeili/meilisearch:v1.12"
         },
         {
           "name": "cadvisor",
@@ -334,11 +334,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 20 hours grafana/grafana:latest"
+          "status": "Up 21 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 20 hours prom/prometheus:latest"
+          "status": "Up 21 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -386,50 +386,6 @@
     }
   },
   "radio": {
-    "station": "dublincalling",
-    "is_online": true,
-    "is_live": false,
-    "now_playing": {
-      "title": "Sound Of The City Night",
-      "artist": "The Pogues",
-      "album": "Just Look Them Straight In The Eye And Say...Poguemahone!! - The Pogues Box Set (CD5)",
-      "genre": "Folk Rock",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/9918114cd974b0f39e741032-1782776254.jpg",
-      "duration": 217,
-      "elapsed": 85
-    },
-    "playing_next": {
-      "title": "Hot Kiss",
-      "artist": "Juliette & The Licks"
-    },
-    "listeners": 0,
-    "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
-    "history": [
-      {
-        "title": "Shoop",
-        "artist": "Salt-N-Pepa",
-        "played_at": 1784232419
-      },
-      {
-        "title": "You Are My Angel",
-        "artist": "Horace Andy",
-        "played_at": 1784232233
-      },
-      {
-        "title": "Them Not Me",
-        "artist": "Motorhead",
-        "played_at": 1784232069
-      },
-      {
-        "title": "Since I feel for you",
-        "artist": "Johnny Clarke",
-        "played_at": 1784231868
-      },
-      {
-        "title": "I've Got The Fire",
-        "artist": "Iron Maiden",
-        "played_at": 1784231697
-      }
-    ]
+    "error": "The read operation timed out"
   }
 }
