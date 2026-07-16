@@ -1,27 +1,27 @@
 {
-  "updated": "2026-07-16 09:12",
+  "updated": "2026-07-16 10:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 7.7,
+        "total": 7.8,
         "user": 4.9,
-        "system": 2.3,
-        "idle": 92.5,
-        "iowait": 0.1
+        "system": 2.6,
+        "idle": 89.3,
+        "iowait": 2.7
       },
       "percpu": [
-        6.9,
-        6.4,
-        5.9,
-        11.8
+        14.4,
+        17.4,
+        14.0,
+        14.0
       ],
       "ram": {
-        "used_gb": 2.89,
+        "used_gb": 2.9,
         "total_gb": 7.87,
         "percent": 36.8,
-        "available_gb": 4.98
+        "available_gb": 4.97
       },
       "swap": {
         "used_mb": 1653.1,
@@ -29,9 +29,9 @@
         "percent": 80.7
       },
       "load": {
-        "1min": 0.89,
-        "5min": 0.76,
-        "15min": 0.66,
+        "1min": 1.45,
+        "5min": 1.28,
+        "15min": 1.22,
         "cores": 4
       },
       "disks": [
@@ -40,15 +40,15 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 48.0,
-          "free_gb": 62.8,
+          "free_gb": 62.7,
           "percent": 41.1
         }
       ],
       "disk_io": {
-        "read_mb": 277.8,
-        "write_mb": 2191.5
+        "read_mb": 0.6,
+        "write_mb": 2008.2
       },
-      "temperature_c": 57,
+      "temperature_c": 58,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 343,
-        "running": 2,
-        "sleeping": 249,
-        "threads": 1222
+        "total": 352,
+        "running": 1,
+        "sleeping": 250,
+        "threads": 1231
       },
-      "uptime": "15 days, 8:25:27",
+      "uptime": "15 days, 9:25:32",
       "containers": [
         {
           "name": "gallery backend",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 8 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 9 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 8 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 9 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 8 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 9 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,23 +143,23 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 4.2,
-        "user": 6.0,
-        "system": 1.0,
+        "total": 4.6,
+        "user": 6.2,
+        "system": 0.9,
         "idle": 92.5,
-        "iowait": 0.4
+        "iowait": 0.3
       },
       "percpu": [
-        1.2,
-        3.7,
-        7.2,
-        6.1
+        7.4,
+        2.0,
+        4.5,
+        6.2
       ],
       "ram": {
-        "used_gb": 3.12,
+        "used_gb": 3.1,
         "total_gb": 7.87,
-        "percent": 39.6,
-        "available_gb": 4.76
+        "percent": 39.3,
+        "available_gb": 4.78
       },
       "swap": {
         "used_mb": 212.8,
@@ -167,9 +167,9 @@
         "percent": 5.2
       },
       "load": {
-        "1min": 0.66,
-        "5min": 0.75,
-        "15min": 0.6,
+        "1min": 0.85,
+        "5min": 0.47,
+        "15min": 0.49,
         "cores": 4
       },
       "disks": [
@@ -178,7 +178,7 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 72.7,
-          "free_gb": 38.1,
+          "free_gb": 38.0,
           "percent": 62.3
         },
         {
@@ -186,13 +186,13 @@
           "device": "/dev/sda1",
           "size_gb": 915.8,
           "used_gb": 121.7,
-          "free_gb": 747.5,
+          "free_gb": 747.6,
           "percent": 13.3
         }
       ],
       "disk_io": {
-        "read_mb": 1121.5,
-        "write_mb": 1997.7
+        "read_mb": 1220.8,
+        "write_mb": 1901.1
       },
       "temperature_c": 55,
       "network": {
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 573,
-        "running": 0,
-        "sleeping": 478,
-        "threads": 3317
+        "total": 569,
+        "running": 1,
+        "sleeping": 477,
+        "threads": 3313
       },
-      "uptime": "15 days, 8:25:28",
+      "uptime": "15 days, 9:25:32",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 8 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 9 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -258,16 +258,16 @@
       "status": "ok",
       "cpu": {
         "total": 13.8,
-        "user": 10.6,
+        "user": 11.3,
         "system": 4.6,
-        "idle": 84.7,
-        "iowait": 0.1
+        "idle": 83.9,
+        "iowait": 0.0
       },
       "percpu": [
+        14.9,
+        13.2,
         13.8,
-        13.7,
-        14.7,
-        13.3
+        13.5
       ],
       "ram": {
         "used_gb": 2.34,
@@ -281,9 +281,9 @@
         "percent": 1.0
       },
       "load": {
-        "1min": 0.52,
-        "5min": 0.85,
-        "15min": 1.04,
+        "1min": 0.71,
+        "5min": 0.81,
+        "15min": 0.8,
         "cores": 4
       },
       "disks": [
@@ -297,10 +297,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.5,
-        "write_mb": 498.3
+        "read_mb": 0.3,
+        "write_mb": 528.8
       },
-      "temperature_c": 38,
+      "temperature_c": 39,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -309,24 +309,24 @@
         }
       },
       "processes": {
-        "total": 289,
+        "total": 292,
         "running": 0,
         "sleeping": 195,
-        "threads": 1060
+        "threads": 1066
       },
-      "uptime": "15 days, 8:25:31",
+      "uptime": "15 days, 9:25:36",
       "containers": [
         {
           "name": "politicosaas app 1",
-          "status": "Up 35 hours politicosaas-app"
+          "status": "Up 36 hours politicosaas-app"
         },
         {
           "name": "politicosaas postgres 1",
-          "status": "Up 35 hours (healthy) postgres:15-alpine"
+          "status": "Up 36 hours (healthy) postgres:15-alpine"
         },
         {
           "name": "politicosaas meilisearch 1",
-          "status": "Up 35 hours getmeili/meilisearch:v1.12"
+          "status": "Up 36 hours getmeili/meilisearch:v1.12"
         },
         {
           "name": "cadvisor",
@@ -334,11 +334,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 8 hours grafana/grafana:latest"
+          "status": "Up 9 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 8 hours prom/prometheus:latest"
+          "status": "Up 9 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -390,21 +390,26 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Battle March",
-      "artist": "The Pogues",
-      "album": "Just Look Them Straight In The Eye And Say...Poguemahone!! - The Pogues Box Set (CD3)",
-      "genre": "Folk Rock",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/41120b294251162464692db4-1782776282.jpg",
-      "duration": 142,
-      "elapsed": 98
+      "title": "John Peel 1991-01-27",
+      "artist": "John Peel (R1)",
+      "album": "",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/19b507e865384e29f6f73996",
+      "duration": 11036,
+      "elapsed": 3563
     },
     "playing_next": {
-      "title": "John Peel 1991-01-27",
-      "artist": "John Peel (R1)"
+      "title": "Time Rough",
+      "artist": "Toots And The Maytals"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
+      {
+        "title": "Battle March",
+        "artist": "The Pogues",
+        "played_at": 1784189477
+      },
       {
         "title": "Poor Marcus",
         "artist": "Johnny Clarke",
@@ -424,11 +429,6 @@
         "title": "Widdle Binky Boo",
         "artist": "Zander Schloss",
         "played_at": 1784188034
-      },
-      {
-        "title": "back side of the moon (tranquility lunar orbit)",
-        "artist": "Unknown",
-        "played_at": 1784187435
       }
     ]
   }
