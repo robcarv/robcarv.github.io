@@ -1,37 +1,37 @@
 {
-  "updated": "2026-07-16 01:12",
-  "status": "warn",
+  "updated": "2026-07-16 02:12",
+  "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 8.9,
-        "user": 5.9,
-        "system": 3.5,
-        "idle": 88.0,
-        "iowait": 1.9
+        "total": 7.3,
+        "user": 5.1,
+        "system": 2.5,
+        "idle": 91.6,
+        "iowait": 0.4
       },
       "percpu": [
-        13.7,
-        8.5,
-        9.8,
-        9.0
+        9.5,
+        7.4,
+        6.1,
+        8.7
       ],
       "ram": {
-        "used_gb": 2.82,
+        "used_gb": 2.86,
         "total_gb": 7.87,
-        "percent": 35.8,
-        "available_gb": 5.05
+        "percent": 36.3,
+        "available_gb": 5.02
       },
       "swap": {
-        "used_mb": 1646.1,
+        "used_mb": 1665.1,
         "total_mb": 2048.0,
-        "percent": 80.4
+        "percent": 81.3
       },
       "load": {
-        "1min": 2.17,
-        "5min": 2.37,
-        "15min": 2.04,
+        "1min": 0.9,
+        "5min": 1.06,
+        "15min": 1.51,
         "cores": 4
       },
       "disks": [
@@ -39,16 +39,16 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 52.0,
-          "free_gb": 58.7,
-          "percent": 44.6
+          "used_gb": 47.9,
+          "free_gb": 62.8,
+          "percent": 41.1
         }
       ],
       "disk_io": {
-        "read_mb": 883.0,
-        "write_mb": 14955.6
+        "read_mb": 75798.1,
+        "write_mb": 49038.0
       },
-      "temperature_c": 57,
+      "temperature_c": 58,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 352,
-        "running": 1,
-        "sleeping": 252,
-        "threads": 1229
+        "total": 344,
+        "running": 2,
+        "sleeping": 251,
+        "threads": 1222
       },
-      "uptime": "15 days, 0:24:49",
+      "uptime": "15 days, 1:25:27",
       "containers": [
         {
           "name": "gallery backend",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 24 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 39 minutes (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 24 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 39 minutes (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 24 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 39 minutes jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,23 +143,23 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 8.1,
-        "user": 6.0,
+        "total": 5.5,
+        "user": 5.9,
         "system": 1.0,
-        "idle": 92.6,
-        "iowait": 0.4
+        "idle": 80.0,
+        "iowait": 13.0
       },
       "percpu": [
-        6.3,
-        7.0,
-        10.8,
-        9.7
+        9.2,
+        55.9,
+        57.1,
+        5.1
       ],
       "ram": {
-        "used_gb": 3.19,
+        "used_gb": 3.12,
         "total_gb": 7.87,
-        "percent": 40.5,
-        "available_gb": 4.69
+        "percent": 39.7,
+        "available_gb": 4.75
       },
       "swap": {
         "used_mb": 215.8,
@@ -167,9 +167,9 @@
         "percent": 5.3
       },
       "load": {
-        "1min": 0.19,
-        "5min": 0.49,
-        "15min": 0.79,
+        "1min": 3.03,
+        "5min": 1.31,
+        "15min": 0.84,
         "cores": 4
       },
       "disks": [
@@ -191,10 +191,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 5325.5,
-        "write_mb": 1933.4
+        "read_mb": 719.9,
+        "write_mb": 1192.0
       },
-      "temperature_c": 56,
+      "temperature_c": 53,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 571,
+        "total": 573,
         "running": 0,
-        "sleeping": 478,
-        "threads": 3308
+        "sleeping": 476,
+        "threads": 3316
       },
-      "uptime": "15 days, 0:24:50",
+      "uptime": "15 days, 1:25:28",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 9 minutes ghcr.io/azuracast/azuracast:stable"
+          "status": "Up About an hour ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -255,25 +255,25 @@
       "services": "AzuraCast, DuckDNS, Media Server"
     },
     "Pi4": {
-      "status": "warn",
+      "status": "ok",
       "cpu": {
-        "total": 96.6,
-        "user": 75.5,
-        "system": 17.0,
-        "idle": 5.3,
+        "total": 36.8,
+        "user": 26.5,
+        "system": 7.7,
+        "idle": 61.8,
         "iowait": 0.0
       },
       "percpu": [
-        94.8,
-        94.8,
-        99.6,
-        98.7
+        39.2,
+        34.8,
+        37.5,
+        36.0
       ],
       "ram": {
-        "used_gb": 2.3,
+        "used_gb": 2.38,
         "total_gb": 7.64,
-        "percent": 30.1,
-        "available_gb": 5.34
+        "percent": 31.1,
+        "available_gb": 5.26
       },
       "swap": {
         "used_mb": 5.0,
@@ -281,9 +281,9 @@
         "percent": 1.0
       },
       "load": {
-        "1min": 8.2,
-        "5min": 6.46,
-        "15min": 3.69,
+        "1min": 2.65,
+        "5min": 2.4,
+        "15min": 2.27,
         "cores": 4
       },
       "disks": [
@@ -292,15 +292,15 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
           "used_gb": 33.2,
-          "free_gb": 76.2,
+          "free_gb": 76.3,
           "percent": 28.8
         }
       ],
       "disk_io": {
-        "read_mb": 7433.7,
-        "write_mb": 471.5
+        "read_mb": 3481.5,
+        "write_mb": 4676.1
       },
-      "temperature_c": 46,
+      "temperature_c": 38,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -309,24 +309,24 @@
         }
       },
       "processes": {
-        "total": 299,
-        "running": 2,
-        "sleeping": 199,
-        "threads": 1073
+        "total": 294,
+        "running": 0,
+        "sleeping": 198,
+        "threads": 1074
       },
-      "uptime": "15 days, 0:24:54",
+      "uptime": "15 days, 1:25:32",
       "containers": [
         {
           "name": "politicosaas app 1",
-          "status": "Up 27 hours politicosaas-app"
+          "status": "Up 28 hours politicosaas-app"
         },
         {
           "name": "politicosaas postgres 1",
-          "status": "Up 27 hours (healthy) postgres:15-alpine"
+          "status": "Up 28 hours (healthy) postgres:15-alpine"
         },
         {
           "name": "politicosaas meilisearch 1",
-          "status": "Up 27 hours getmeili/meilisearch:v1.12"
+          "status": "Up 28 hours getmeili/meilisearch:v1.12"
         },
         {
           "name": "cadvisor",
@@ -334,11 +334,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 24 hours grafana/grafana:latest"
+          "status": "Up 56 minutes grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 24 hours prom/prometheus:latest"
+          "status": "Up 56 minutes prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -390,21 +390,26 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Big Nothing",
-      "artist": "The MacManus Gang",
-      "album": "Straight To Hell...Returns - Straight To Hell OST",
-      "genre": "Folk Rock",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/d7cc38fb7143220fd4f15c18-1782776209.jpg",
-      "duration": 346,
-      "elapsed": 181
+      "title": "John Peel 2003-05-15",
+      "artist": "John Peel (R1)",
+      "album": "from RA",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/7cc23a52dc6dcceb7af911e7",
+      "duration": 7082,
+      "elapsed": 3469
     },
     "playing_next": {
-      "title": "John Peel 2003-05-15",
-      "artist": "John Peel (R1)"
+      "title": "Falling Away (Bonus Track)",
+      "artist": "Good Charlotte"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
+      {
+        "title": "Big Nothing",
+        "artist": "The MacManus Gang",
+        "played_at": 1784160557
+      },
       {
         "title": "Dog Days Are Over",
         "artist": "Florence + The Machine",
@@ -424,11 +429,6 @@
         "title": "Time Slipping",
         "artist": "Pauline Murray and the Invisible Girls",
         "played_at": 1784159733
-      },
-      {
-        "title": "08.Young Generation",
-        "artist": "",
-        "played_at": 1784159548
       }
     ]
   }
