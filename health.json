@@ -1,37 +1,37 @@
 {
-  "updated": "2026-07-17 00:12",
-  "status": "ok",
+  "updated": "2026-07-17 01:12",
+  "status": "warn",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 5.5,
-        "user": 4.4,
-        "system": 1.5,
-        "idle": 93.9,
-        "iowait": 0.2
+        "total": 9.6,
+        "user": 5.7,
+        "system": 2.2,
+        "idle": 78.7,
+        "iowait": 13.1
       },
       "percpu": [
-        6.6,
-        5.8,
-        6.1,
-        5.3
+        44.6,
+        36.6,
+        52.9,
+        47.0
       ],
       "ram": {
-        "used_gb": 3.17,
+        "used_gb": 3.05,
         "total_gb": 7.87,
-        "percent": 40.2,
-        "available_gb": 4.71
+        "percent": 38.7,
+        "available_gb": 4.83
       },
       "swap": {
-        "used_mb": 1546.0,
+        "used_mb": 1571.0,
         "total_mb": 2048.0,
-        "percent": 75.5
+        "percent": 76.7
       },
       "load": {
-        "1min": 0.48,
-        "5min": 0.59,
-        "15min": 0.67,
+        "1min": 3.0,
+        "5min": 2.6,
+        "15min": 2.03,
         "cores": 4
       },
       "disks": [
@@ -39,14 +39,14 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 48.0,
-          "free_gb": 62.7,
-          "percent": 41.2
+          "used_gb": 51.8,
+          "free_gb": 58.9,
+          "percent": 44.4
         }
       ],
       "disk_io": {
-        "read_mb": 6.4,
-        "write_mb": 1936.8
+        "read_mb": 2878.2,
+        "write_mb": 14719.9
       },
       "temperature_c": 57,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 344,
+        "total": 351,
         "running": 0,
-        "sleeping": 250,
-        "threads": 1217
+        "sleeping": 255,
+        "threads": 1225
       },
-      "uptime": "15 days, 23:25:17",
+      "uptime": "16 days, 0:25:14",
       "containers": [
         {
           "name": "gallery backend",
@@ -74,7 +74,7 @@
         },
         {
           "name": "subscription bot",
-          "status": "Up 12 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 13 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "cadvisor",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 23 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 24 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 23 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 24 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 23 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 24 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,23 +143,23 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 5.8,
-        "user": 6.4,
-        "system": 1.1,
+        "total": 3.9,
+        "user": 6.2,
+        "system": 1.0,
         "idle": 92.1,
-        "iowait": 0.4
+        "iowait": 0.7
       },
       "percpu": [
-        6.9,
-        4.2,
-        5.2,
-        8.2
+        9.1,
+        1.5,
+        2.4,
+        3.7
       ],
       "ram": {
-        "used_gb": 3.11,
+        "used_gb": 3.07,
         "total_gb": 7.87,
-        "percent": 39.6,
-        "available_gb": 4.76
+        "percent": 38.9,
+        "available_gb": 4.81
       },
       "swap": {
         "used_mb": 215.8,
@@ -167,9 +167,9 @@
         "percent": 5.3
       },
       "load": {
-        "1min": 0.43,
-        "5min": 0.58,
-        "15min": 0.53,
+        "1min": 0.25,
+        "5min": 0.56,
+        "15min": 0.82,
         "cores": 4
       },
       "disks": [
@@ -185,14 +185,14 @@
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.4,
-          "free_gb": 747.8,
+          "used_gb": 121.5,
+          "free_gb": 747.7,
           "percent": 13.3
         }
       ],
       "disk_io": {
-        "read_mb": 1000.0,
-        "write_mb": 1664.6
+        "read_mb": 5265.9,
+        "write_mb": 1856.3
       },
       "temperature_c": 56,
       "network": {
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 573,
+        "total": 571,
         "running": 0,
-        "sleeping": 478,
-        "threads": 3319
+        "sleeping": 477,
+        "threads": 3305
       },
-      "uptime": "15 days, 23:25:17",
+      "uptime": "16 days, 0:25:15",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 23 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 10 minutes ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -255,35 +255,35 @@
       "services": "AzuraCast, DuckDNS, Media Server"
     },
     "Pi4": {
-      "status": "ok",
+      "status": "warn",
       "cpu": {
-        "total": 16.2,
-        "user": 11.1,
-        "system": 4.7,
-        "idle": 83.9,
+        "total": 87.6,
+        "user": 71.3,
+        "system": 16.3,
+        "idle": 10.8,
         "iowait": 0.1
       },
       "percpu": [
-        17.4,
-        16.5,
-        16.1,
-        15.2
+        16.3,
+        16.4,
+        16.6,
+        16.5
       ],
       "ram": {
-        "used_gb": 2.28,
+        "used_gb": 2.35,
         "total_gb": 7.64,
-        "percent": 29.8,
-        "available_gb": 5.36
+        "percent": 30.8,
+        "available_gb": 5.28
       },
       "swap": {
-        "used_mb": 5.0,
+        "used_mb": 6.5,
         "total_mb": 512.0,
-        "percent": 1.0
+        "percent": 1.3
       },
       "load": {
-        "1min": 0.77,
-        "5min": 0.79,
-        "15min": 0.85,
+        "1min": 7.16,
+        "5min": 6.19,
+        "15min": 3.69,
         "cores": 4
       },
       "disks": [
@@ -291,16 +291,16 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
-          "used_gb": 33.2,
+          "used_gb": 33.3,
           "free_gb": 76.2,
           "percent": 28.8
         }
       ],
       "disk_io": {
-        "read_mb": 176.9,
-        "write_mb": 691.7
+        "read_mb": 6856.9,
+        "write_mb": 508.8
       },
-      "temperature_c": 39,
+      "temperature_c": 47,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -309,12 +309,12 @@
         }
       },
       "processes": {
-        "total": 292,
-        "running": 0,
-        "sleeping": 195,
-        "threads": 1065
+        "total": 299,
+        "running": 2,
+        "sleeping": 198,
+        "threads": 1077
       },
-      "uptime": "15 days, 23:25:21",
+      "uptime": "16 days, 0:25:21",
       "containers": [
         {
           "name": "politicosaas app 1",
@@ -334,11 +334,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 23 hours grafana/grafana:latest"
+          "status": "Up 24 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 23 hours prom/prometheus:latest"
+          "status": "Up 24 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -390,45 +390,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "32.Octopussy-The Wedding Present",
-      "artist": "John Peel Festive Fifty 1991",
-      "album": "John Peel Festive Fifty 1991",
-      "genre": "Alternative",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/f5cbc622d64b4efb021c564a",
-      "duration": 377,
-      "elapsed": 285
+      "title": "if i were a rich man",
+      "artist": "Barbel",
+      "album": "Peel Session #2",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/a1e81300c3f5ae7bd7ea5597",
+      "duration": 212,
+      "elapsed": 68
     },
     "playing_next": {
-      "title": "It Must Be True Love",
-      "artist": "Toots and The Maytals"
+      "title": "10.Government Administrator-The Eggs",
+      "artist": "John Peel Festive Fifty 1993"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "The Old Main Drag",
-        "artist": "The Pogues",
-        "played_at": 1784243047
+        "title": "The Magnificent Seven (Remastered)",
+        "artist": "The Clash",
+        "played_at": 1784246764
       },
       {
-        "title": "John Peel 011023 128K",
-        "artist": "Niag",
-        "played_at": 1784235835
+        "title": "Nowt Can Compare To Sunderland Fine Fare",
+        "artist": "The Toy Dolls",
+        "played_at": 1784246588
       },
       {
-        "title": "Gold Lion",
-        "artist": "Yeah Yeah Yeahs",
-        "played_at": 1784235611
+        "title": "Don't Trouble Trouble",
+        "artist": "Toots & The Maytals",
+        "played_at": 1784246350
       },
       {
-        "title": "Ambush At Mystery Rock",
-        "artist": "Joe Strummer",
-        "played_at": 1784235399
+        "title": "face up",
+        "artist": "John Peel Festive Fifty 1985",
+        "played_at": 1784246040
       },
       {
-        "title": "Euro Trash Girl",
-        "artist": "Chicks On Speed",
-        "played_at": 1784235157
+        "title": "paco",
+        "artist": "Shellac",
+        "played_at": 1784245674
       }
     ]
   }
