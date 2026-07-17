@@ -1,24 +1,24 @@
 {
-  "updated": "2026-07-17 13:12",
+  "updated": "2026-07-17 14:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 6.5,
-        "user": 4.9,
-        "system": 2.5,
-        "idle": 90.5,
-        "iowait": 1.8
+        "total": 5.4,
+        "user": 4.6,
+        "system": 1.9,
+        "idle": 93.2,
+        "iowait": 0.2
       },
       "percpu": [
-        10.7,
-        6.5,
-        11.8,
-        13.2
+        6.1,
+        5.6,
+        5.1,
+        6.0
       ],
       "ram": {
-        "used_gb": 3.2,
+        "used_gb": 3.21,
         "total_gb": 7.87,
         "percent": 40.7,
         "available_gb": 4.67
@@ -29,9 +29,9 @@
         "percent": 77.0
       },
       "load": {
-        "1min": 1.19,
-        "5min": 1.05,
-        "15min": 0.88,
+        "1min": 0.89,
+        "5min": 1.27,
+        "15min": 1.31,
         "cores": 4
       },
       "disks": [
@@ -40,15 +40,15 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
           "used_gb": 48.1,
-          "free_gb": 62.7,
+          "free_gb": 62.6,
           "percent": 41.2
         }
       ],
       "disk_io": {
-        "read_mb": 1.1,
-        "write_mb": 1801.5
+        "read_mb": 3.0,
+        "write_mb": 4558.2
       },
-      "temperature_c": 56,
+      "temperature_c": 58,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 345,
+        "total": 349,
         "running": 0,
-        "sleeping": 249,
-        "threads": 1219
+        "sleeping": 252,
+        "threads": 1223
       },
-      "uptime": "16 days, 12:24:42",
+      "uptime": "16 days, 13:24:50",
       "containers": [
         {
           "name": "gallery backend",
@@ -74,7 +74,7 @@
         },
         {
           "name": "subscription bot",
-          "status": "Up 25 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 26 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "cadvisor",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 12 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 13 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 12 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 13 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 12 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 13 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,23 +143,23 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 9.6,
-        "user": 7.8,
-        "system": 1.2,
-        "idle": 90.5,
-        "iowait": 0.4
+        "total": 10.0,
+        "user": 8.0,
+        "system": 1.3,
+        "idle": 89.5,
+        "iowait": 1.1
       },
       "percpu": [
-        12.2,
-        9.7,
-        7.3,
-        10.1
+        11.9,
+        13.1,
+        6.7,
+        26.3
       ],
       "ram": {
-        "used_gb": 3.31,
+        "used_gb": 3.25,
         "total_gb": 7.87,
-        "percent": 42.1,
-        "available_gb": 4.56
+        "percent": 41.2,
+        "available_gb": 4.63
       },
       "swap": {
         "used_mb": 214.8,
@@ -167,9 +167,9 @@
         "percent": 5.2
       },
       "load": {
-        "1min": 1.28,
-        "5min": 1.63,
-        "15min": 1.41,
+        "1min": 0.85,
+        "5min": 1.1,
+        "15min": 0.95,
         "cores": 4
       },
       "disks": [
@@ -186,15 +186,15 @@
           "device": "/dev/sda1",
           "size_gb": 915.8,
           "used_gb": 121.5,
-          "free_gb": 747.7,
+          "free_gb": 747.8,
           "percent": 13.3
         }
       ],
       "disk_io": {
-        "read_mb": 551.6,
-        "write_mb": 1236.6
+        "read_mb": 763.0,
+        "write_mb": 3975.9
       },
-      "temperature_c": 56,
+      "temperature_c": 55,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 576,
+        "total": 581,
         "running": 0,
-        "sleeping": 479,
-        "threads": 3317
+        "sleeping": 480,
+        "threads": 3323
       },
-      "uptime": "16 days, 12:24:42",
+      "uptime": "16 days, 13:24:50",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 12 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 13 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 14.8,
+        "total": 16.8,
         "user": 10.8,
-        "system": 4.6,
-        "idle": 84.4,
-        "iowait": 0.0
+        "system": 4.5,
+        "idle": 84.5,
+        "iowait": 0.1
       },
       "percpu": [
-        14.9,
-        15.8,
-        15.0,
-        13.5
+        16.8,
+        17.1,
+        16.2,
+        17.1
       ],
       "ram": {
-        "used_gb": 2.34,
+        "used_gb": 2.35,
         "total_gb": 7.64,
-        "percent": 30.6,
-        "available_gb": 5.3
+        "percent": 30.7,
+        "available_gb": 5.29
       },
       "swap": {
         "used_mb": 6.5,
@@ -281,9 +281,9 @@
         "percent": 1.3
       },
       "load": {
-        "1min": 0.89,
-        "5min": 1.1,
-        "15min": 1.11,
+        "1min": 1.05,
+        "5min": 0.97,
+        "15min": 0.94,
         "cores": 4
       },
       "disks": [
@@ -297,10 +297,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.2,
-        "write_mb": 481.5
+        "read_mb": 28.9,
+        "write_mb": 3172.8
       },
-      "temperature_c": 38,
+      "temperature_c": 39,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -309,12 +309,12 @@
         }
       },
       "processes": {
-        "total": 289,
+        "total": 290,
         "running": 0,
         "sleeping": 195,
-        "threads": 1063
+        "threads": 1065
       },
-      "uptime": "16 days, 12:24:46",
+      "uptime": "16 days, 13:24:54",
       "containers": [
         {
           "name": "politicosaas app 1",
@@ -334,11 +334,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 12 hours grafana/grafana:latest"
+          "status": "Up 13 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 12 hours prom/prometheus:latest"
+          "status": "Up 13 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -386,50 +386,6 @@
     }
   },
   "radio": {
-    "station": "dublincalling",
-    "is_online": true,
-    "is_live": false,
-    "now_playing": {
-      "title": "128 kbps Part 1",
-      "artist": "John Peel 19910112",
-      "album": "",
-      "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/87a8d5355c6b10b7c4014f98",
-      "duration": 5187,
-      "elapsed": 2835
-    },
-    "playing_next": {
-      "title": "Serious Time",
-      "artist": "The Heptones"
-    },
-    "listeners": 0,
-    "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
-    "history": [
-      {
-        "title": "Modern Slavery",
-        "artist": "Wailing Souls",
-        "played_at": 1784287301
-      },
-      {
-        "title": "Fat She Fat",
-        "artist": "John Holt",
-        "played_at": 1784287077
-      },
-      {
-        "title": "Johnny Was (Sexy Bongo)",
-        "artist": "The Pogues",
-        "played_at": 1784286873
-      },
-      {
-        "title": "Cats Caravan 31-05-01",
-        "artist": "John Peel",
-        "played_at": 1784279646
-      },
-      {
-        "title": "Chill Out",
-        "artist": "Black Uhuru",
-        "played_at": 1784279354
-      }
-    ]
+    "error": "The read operation timed out"
   }
 }
