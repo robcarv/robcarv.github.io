@@ -1,27 +1,27 @@
 {
-  "updated": "2026-07-18 18:12",
+  "updated": "2026-07-18 19:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 6.1,
-        "user": 4.9,
-        "system": 1.7,
-        "idle": 93.2,
-        "iowait": 0.1
+        "total": 4.5,
+        "user": 4.4,
+        "system": 1.4,
+        "idle": 93.8,
+        "iowait": 0.3
       },
       "percpu": [
-        6.2,
-        4.8,
-        7.8,
-        6.2
+        5.1,
+        4.3,
+        5.1,
+        4.4
       ],
       "ram": {
-        "used_gb": 3.17,
+        "used_gb": 3.16,
         "total_gb": 7.87,
-        "percent": 40.3,
-        "available_gb": 4.7
+        "percent": 40.1,
+        "available_gb": 4.72
       },
       "swap": {
         "used_mb": 1547.6,
@@ -29,9 +29,9 @@
         "percent": 75.6
       },
       "load": {
-        "1min": 1.25,
-        "5min": 1.07,
-        "15min": 1.11,
+        "1min": 0.43,
+        "5min": 0.48,
+        "15min": 0.68,
         "cores": 4
       },
       "disks": [
@@ -41,14 +41,14 @@
           "size_gb": 116.7,
           "used_gb": 48.1,
           "free_gb": 62.6,
-          "percent": 41.2
+          "percent": 41.3
         }
       ],
       "disk_io": {
-        "read_mb": 0.2,
-        "write_mb": 1411.4
+        "read_mb": 158.8,
+        "write_mb": 1660.7
       },
-      "temperature_c": 56,
+      "temperature_c": 57,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 366,
-        "running": 1,
-        "sleeping": 249,
-        "threads": 1233
+        "total": 345,
+        "running": 0,
+        "sleeping": 250,
+        "threads": 1213
       },
-      "uptime": "17 days, 17:25:19",
+      "uptime": "17 days, 18:25:30",
       "containers": [
         {
           "name": "gallery backend",
@@ -102,15 +102,15 @@
         },
         {
           "name": "uptime kuma",
-          "status": "Up 17 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 18 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 17 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 18 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 17 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 18 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -143,17 +143,17 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 3.6,
-        "user": 5.4,
+        "total": 2.7,
+        "user": 5.1,
         "system": 1.0,
-        "idle": 93.2,
-        "iowait": 0.3
+        "idle": 74.2,
+        "iowait": 19.7
       },
       "percpu": [
-        2.1,
-        3.6,
-        4.0,
-        6.0
+        49.1,
+        99.9,
+        100.0,
+        85.9
       ],
       "ram": {
         "used_gb": 2.97,
@@ -162,14 +162,14 @@
         "available_gb": 4.91
       },
       "swap": {
-        "used_mb": 215.8,
+        "used_mb": 213.8,
         "total_mb": 4096.0,
-        "percent": 5.3
+        "percent": 5.2
       },
       "load": {
-        "1min": 0.11,
-        "5min": 0.49,
-        "15min": 0.59,
+        "1min": 3.44,
+        "5min": 1.3,
+        "15min": 1.0,
         "cores": 4
       },
       "disks": [
@@ -185,16 +185,16 @@
           "mount": "/",
           "device": "/dev/sda1",
           "size_gb": 915.8,
-          "used_gb": 121.5,
-          "free_gb": 747.7,
+          "used_gb": 121.6,
+          "free_gb": 747.6,
           "percent": 13.3
         }
       ],
       "disk_io": {
-        "read_mb": 722.8,
-        "write_mb": 1274.8
+        "read_mb": 790.8,
+        "write_mb": 1564.0
       },
-      "temperature_c": 55,
+      "temperature_c": 54,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 573,
+        "total": 570,
         "running": 0,
-        "sleeping": 479,
-        "threads": 3318
+        "sleeping": 472,
+        "threads": 3314
       },
-      "uptime": "17 days, 17:25:20",
+      "uptime": "17 days, 18:25:31",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 17 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 18 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -257,23 +257,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 15.1,
+        "total": 13.1,
         "user": 10.6,
         "system": 4.6,
         "idle": 84.7,
-        "iowait": 0.1
+        "iowait": 0.0
       },
       "percpu": [
-        14.8,
-        14.4,
-        14.4,
-        16.7
+        13.1,
+        13.6,
+        12.2,
+        13.9
       ],
       "ram": {
-        "used_gb": 2.32,
+        "used_gb": 2.3,
         "total_gb": 7.64,
-        "percent": 30.4,
-        "available_gb": 5.32
+        "percent": 30.1,
+        "available_gb": 5.34
       },
       "swap": {
         "used_mb": 6.5,
@@ -281,9 +281,9 @@
         "percent": 1.3
       },
       "load": {
-        "1min": 1.83,
-        "5min": 1.52,
-        "15min": 1.23,
+        "1min": 1.13,
+        "5min": 0.93,
+        "15min": 1.01,
         "cores": 4
       },
       "disks": [
@@ -297,10 +297,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 41.7,
-        "write_mb": 533.0
+        "read_mb": 2.1,
+        "write_mb": 514.0
       },
-      "temperature_c": 36,
+      "temperature_c": 37,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -309,12 +309,12 @@
         }
       },
       "processes": {
-        "total": 293,
+        "total": 292,
         "running": 0,
         "sleeping": 195,
-        "threads": 1059
+        "threads": 1060
       },
-      "uptime": "17 days, 17:25:24",
+      "uptime": "17 days, 18:25:34",
       "containers": [
         {
           "name": "politicosaas app 1",
@@ -334,11 +334,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 17 hours grafana/grafana:latest"
+          "status": "Up 18 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 17 hours prom/prometheus:latest"
+          "status": "Up 18 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
@@ -390,45 +390,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "walking jerusalem",
-      "artist": "dub syndicate",
-      "album": "echomania",
-      "genre": "Reggae",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/ac2f69c17da388feebcc1584-1782756997.jpg",
-      "duration": 262,
-      "elapsed": 210
+      "title": "John Peel 2003-04-10",
+      "artist": "John Peel (R1)",
+      "album": "from RA",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/ce4d72af78548396f99274d9",
+      "duration": 7083,
+      "elapsed": 1609
     },
     "playing_next": {
-      "title": "Im Tipping",
-      "artist": "Junior Delgado"
+      "title": "The Mistle Thrush",
+      "artist": "The Pogues"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Rockaway Beach",
-        "artist": "Ramones",
-        "played_at": 1784394429
+        "title": "(Gun Fever) Blam Blam Fever",
+        "artist": "The Valentines",
+        "played_at": 1784396607
       },
       {
-        "title": "Intro Rap",
-        "artist": "Peter Tosh",
-        "played_at": 1784394392
+        "title": "She's A Run Around",
+        "artist": "The Undertones",
+        "played_at": 1784396499
       },
       {
-        "title": "Funky Kingston",
-        "artist": "Toots & the Maytals",
-        "played_at": 1784394082
+        "title": "Twist And Shout [*]",
+        "artist": "The Cramps",
+        "played_at": 1784396347
       },
       {
-        "title": "Guns of Navarone",
-        "artist": "Skatalites (The)",
-        "played_at": 1784393795
+        "title": "Hot Kiss",
+        "artist": "Juliette & The Licks",
+        "played_at": 1784396182
       },
       {
-        "title": "I Wanna Riot",
-        "artist": "Rancid",
-        "played_at": 1784393608
+        "title": "Poor Marcus",
+        "artist": "U Roy",
+        "played_at": 1784396020
       }
     ]
   }
