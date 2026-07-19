@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-19 01:14",
+  "updated": "2026-07-19 02:13",
   "status": "warn",
   "nodes": {
     "Pi501": {
@@ -93,25 +93,25 @@
       "services": "AzuraCast, DuckDNS, Media Server"
     },
     "Pi4": {
-      "status": "warn",
+      "status": "ok",
       "cpu": {
-        "total": 98.7,
-        "user": 80.7,
-        "system": 12.5,
-        "idle": 5.4,
-        "iowait": 0.1
+        "total": 16.1,
+        "user": 10.8,
+        "system": 4.8,
+        "idle": 84.3,
+        "iowait": 0.0
       },
       "percpu": [
-        94.1,
-        99.3,
-        98.3,
-        99.0
+        16.6,
+        15.9,
+        16.7,
+        15.5
       ],
       "ram": {
-        "used_gb": 1.72,
+        "used_gb": 1.87,
         "total_gb": 7.64,
-        "percent": 22.6,
-        "available_gb": 5.92
+        "percent": 24.5,
+        "available_gb": 5.77
       },
       "swap": {
         "used_mb": 0.0,
@@ -119,9 +119,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 6.16,
-        "5min": 6.59,
-        "15min": 4.73,
+        "1min": 1.29,
+        "5min": 1.3,
+        "15min": 1.33,
         "cores": 4
       },
       "disks": [
@@ -135,10 +135,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 0.0
+        "read_mb": 1628.0,
+        "write_mb": 3542.7
       },
-      "temperature_c": 43,
+      "temperature_c": 36,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -149,74 +149,74 @@
       "processes": {
         "total": 297,
         "running": 0,
-        "sleeping": 201,
-        "threads": 1017
+        "sleeping": 202,
+        "threads": 1030
       },
-      "uptime": "0:21:12",
+      "uptime": "1:20:58",
       "containers": [
         {
           "name": "politicosaas app 1",
-          "status": "Up 21 minutes politicosaas-app"
+          "status": "Up About an hour politicosaas-app"
         },
         {
           "name": "politicosaas postgres 1",
-          "status": "Up 21 minutes (healthy) postgres:15-alpine"
+          "status": "Up About an hour (healthy) postgres:15-alpine"
         },
         {
           "name": "politicosaas meilisearch 1",
-          "status": "Up 21 minutes getmeili/meilisearch:v1.12"
+          "status": "Up About an hour getmeili/meilisearch:v1.12"
         },
         {
           "name": "cadvisor",
-          "status": "Up 21 minutes (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up About an hour (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "cve grafana",
-          "status": "Up 21 minutes grafana/grafana:latest"
+          "status": "Up 57 minutes grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 21 minutes prom/prometheus:latest"
+          "status": "Up 57 minutes prom/prometheus:latest"
         },
         {
           "name": "changedetection",
-          "status": "Up 21 minutes ghcr.io/dgtlmoon/changedetection.io"
+          "status": "Up About an hour ghcr.io/dgtlmoon/changedetection.io"
         },
         {
           "name": "changedetection browser chrome 1",
-          "status": "Up 21 minutes seleniarm/standalone-chromium:latest"
+          "status": "Up About an hour seleniarm/standalone-chromium:latest"
         },
         {
           "name": "changedetection playwright chrome 1",
-          "status": "Up 21 minutes browserless/chrome:latest"
+          "status": "Up About an hour browserless/chrome:latest"
         },
         {
           "name": "Dashy",
-          "status": "Up 21 minutes (healthy) lissy93/dashy:4.x"
+          "status": "Up About an hour (healthy) lissy93/dashy:4.x"
         },
         {
           "name": "glances monitoring 1",
-          "status": "Up 21 minutes nicolargo/glances:latest"
+          "status": "Up About an hour nicolargo/glances:latest"
         },
         {
           "name": "cve report",
-          "status": "Up 21 minutes nginx:alpine"
+          "status": "Up About an hour nginx:alpine"
         },
         {
           "name": "cve alertmanager",
-          "status": "Up 21 minutes prom/alertmanager:latest"
+          "status": "Up About an hour prom/alertmanager:latest"
         },
         {
           "name": "cve pushgateway",
-          "status": "Up 21 minutes prom/pushgateway:latest"
+          "status": "Up About an hour prom/pushgateway:latest"
         },
         {
           "name": "portainer",
-          "status": "Up 21 minutes portainer/portainer-ce:lts"
+          "status": "Up About an hour portainer/portainer-ce:lts"
         },
         {
           "name": "duplicati 241",
-          "status": "Up 21 minutes duplicati/duplicati"
+          "status": "Up About an hour duplicati/duplicati"
         }
       ],
       "container_count": 16,
