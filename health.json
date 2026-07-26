@@ -1,27 +1,27 @@
 {
-  "updated": "2026-07-26 13:12",
+  "updated": "2026-07-26 14:12",
   "status": "ok",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 5.6,
-        "user": 3.8,
-        "system": 1.7,
-        "idle": 92.6,
-        "iowait": 1.8
+        "total": 4.3,
+        "user": 4.1,
+        "system": 1.3,
+        "idle": 94.3,
+        "iowait": 0.2
       },
       "percpu": [
-        5.6,
-        12.1,
         4.8,
-        7.1
+        3.9,
+        4.4,
+        4.5
       ],
       "ram": {
-        "used_gb": 2.46,
+        "used_gb": 2.52,
         "total_gb": 7.87,
-        "percent": 31.2,
-        "available_gb": 5.41
+        "percent": 32.0,
+        "available_gb": 5.35
       },
       "swap": {
         "used_mb": 169.4,
@@ -29,9 +29,9 @@
         "percent": 8.3
       },
       "load": {
-        "1min": 0.4,
-        "5min": 0.62,
-        "15min": 0.85,
+        "1min": 0.2,
+        "5min": 0.86,
+        "15min": 1.21,
         "cores": 4
       },
       "disks": [
@@ -39,16 +39,16 @@
           "mount": "/",
           "device": "/dev/mmcblk0p2",
           "size_gb": 116.7,
-          "used_gb": 49.4,
-          "free_gb": 61.3,
+          "used_gb": 49.5,
+          "free_gb": 61.2,
           "percent": 42.4
         }
       ],
       "disk_io": {
-        "read_mb": 0.3,
-        "write_mb": 2172.8
+        "read_mb": 2.2,
+        "write_mb": 4942.1
       },
-      "temperature_c": 50,
+      "temperature_c": 51,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -57,84 +57,84 @@
         }
       },
       "processes": {
-        "total": 333,
-        "running": 0,
-        "sleeping": 240,
-        "threads": 1071
+        "total": 337,
+        "running": 1,
+        "sleeping": 242,
+        "threads": 1080
       },
-      "uptime": "3 days, 5:37:21",
+      "uptime": "3 days, 6:37:41",
       "containers": [
         {
           "name": "gallery worker",
-          "status": "Up 2 hours gallery-downloader-worker"
+          "status": "Up 3 hours gallery-downloader-worker"
         },
         {
           "name": "gallery backend",
-          "status": "Up 2 hours (healthy) gallery-downloader-backend"
+          "status": "Up 3 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "kavita",
-          "status": "Up 2 hours lscr.io/linuxserver/kavita:latest"
+          "status": "Up 3 hours lscr.io/linuxserver/kavita:latest"
         },
         {
           "name": "subscription bot",
-          "status": "Up 2 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 3 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "cadvisor",
-          "status": "Up 2 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 3 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "watchtower",
-          "status": "Up 2 hours (healthy) containrrr/watchtower"
+          "status": "Up 3 hours (healthy) containrrr/watchtower"
         },
         {
           "name": "psclient",
-          "status": "Up 2 hours packetstream/psclient:latest"
+          "status": "Up 3 hours packetstream/psclient:latest"
         },
         {
           "name": "gallery frontend",
-          "status": "Up 2 hours gallery-downloader-frontend"
+          "status": "Up 3 hours gallery-downloader-frontend"
         },
         {
           "name": "glances monitoring 1",
-          "status": "Up 2 hours nicolargo/glances:latest"
+          "status": "Up 3 hours nicolargo/glances:latest"
         },
         {
           "name": "uptime kuma",
-          "status": "Up 2 hours (healthy) louislam/uptime-kuma:latest"
+          "status": "Up 3 hours (healthy) louislam/uptime-kuma:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 2 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 3 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 2 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 3 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
-          "status": "Up 2 hours gallery-jandapress:local-arm64"
+          "status": "Up 3 hours gallery-jandapress:local-arm64"
         },
         {
           "name": "Dashy",
-          "status": "Up 2 hours (healthy) lissy93/dashy:4.x"
+          "status": "Up 3 hours (healthy) lissy93/dashy:4.x"
         },
         {
           "name": "gallery redis",
-          "status": "Up 2 hours (healthy) redis:7-alpine"
+          "status": "Up 3 hours (healthy) redis:7-alpine"
         },
         {
           "name": "gallery postgres",
-          "status": "Up 2 hours (healthy) postgres:16-alpine"
+          "status": "Up 3 hours (healthy) postgres:16-alpine"
         },
         {
           "name": "prowlarr",
-          "status": "Up 2 hours lscr.io/linuxserver/prowlarr:latest"
+          "status": "Up 3 hours lscr.io/linuxserver/prowlarr:latest"
         },
         {
           "name": "portainer agent",
-          "status": "Up 2 hours portainer/agent:latest"
+          "status": "Up 3 hours portainer/agent:latest"
         }
       ],
       "container_count": 18,
@@ -143,23 +143,23 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 8.9,
-        "user": 7.9,
-        "system": 1.1,
-        "idle": 90.7,
-        "iowait": 0.3
+        "total": 6.4,
+        "user": 6.0,
+        "system": 1.0,
+        "idle": 92.6,
+        "iowait": 0.4
       },
       "percpu": [
-        10.0,
-        8.6,
-        7.6,
-        10.9
+        6.9,
+        6.6,
+        8.0,
+        5.5
       ],
       "ram": {
-        "used_gb": 2.94,
+        "used_gb": 2.97,
         "total_gb": 7.87,
-        "percent": 37.3,
-        "available_gb": 4.93
+        "percent": 37.7,
+        "available_gb": 4.9
       },
       "swap": {
         "used_mb": 42.6,
@@ -167,9 +167,9 @@
         "percent": 1.0
       },
       "load": {
-        "1min": 0.23,
-        "5min": 0.34,
-        "15min": 0.49,
+        "1min": 1.28,
+        "5min": 0.9,
+        "15min": 0.8,
         "cores": 4
       },
       "disks": [
@@ -191,10 +191,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1006.9,
-        "write_mb": 1647.7
+        "read_mb": 1062.4,
+        "write_mb": 4284.2
       },
-      "temperature_c": 46,
+      "temperature_c": 47,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -203,16 +203,16 @@
         }
       },
       "processes": {
-        "total": 569,
+        "total": 570,
         "running": 0,
-        "sleeping": 474,
-        "threads": 3274
+        "sleeping": 472,
+        "threads": 3277
       },
-      "uptime": "3 days, 5:37:21",
+      "uptime": "3 days, 6:37:41",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 12 hours ghcr.io/azuracast/azuracast:stable"
+          "status": "Up 13 hours ghcr.io/azuracast/azuracast:stable"
         },
         {
           "name": "duckdns",
@@ -253,23 +253,23 @@
     "Pi4": {
       "status": "ok",
       "cpu": {
-        "total": 11.2,
-        "user": 10.9,
-        "system": 4.6,
-        "idle": 84.3,
-        "iowait": 0.0
+        "total": 12.7,
+        "user": 5.5,
+        "system": 2.3,
+        "idle": 92.1,
+        "iowait": 0.1
       },
       "percpu": [
-        10.6,
-        10.9,
-        11.9,
-        11.6
+        12.9,
+        12.8,
+        11.6,
+        13.4
       ],
       "ram": {
-        "used_gb": 1.81,
+        "used_gb": 1.8,
         "total_gb": 7.64,
-        "percent": 23.7,
-        "available_gb": 5.83
+        "percent": 23.6,
+        "available_gb": 5.84
       },
       "swap": {
         "used_mb": 0.0,
@@ -277,9 +277,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 2.5,
-        "5min": 1.42,
-        "15min": 1.26,
+        "1min": 0.33,
+        "5min": 0.45,
+        "15min": 0.62,
         "cores": 4
       },
       "disks": [
@@ -288,15 +288,15 @@
           "device": "/dev/mmcblk0p2",
           "size_gb": 115.3,
           "used_gb": 33.7,
-          "free_gb": 75.8,
+          "free_gb": 75.7,
           "percent": 29.2
         }
       ],
       "disk_io": {
-        "read_mb": 4.3,
-        "write_mb": 444.2
+        "read_mb": 239.1,
+        "write_mb": 3212.7
       },
-      "temperature_c": 30,
+      "temperature_c": 33,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -305,76 +305,76 @@
         }
       },
       "processes": {
-        "total": 295,
+        "total": 300,
         "running": 0,
-        "sleeping": 200,
-        "threads": 1043
+        "sleeping": 201,
+        "threads": 1053
       },
-      "uptime": "2:13:05",
+      "uptime": "3:13:24",
       "containers": [
         {
           "name": "politicosaas app 1",
-          "status": "Up 2 hours politicosaas-app"
+          "status": "Up 3 hours politicosaas-app"
         },
         {
           "name": "politicosaas postgres 1",
-          "status": "Up 2 hours (healthy) postgres:15-alpine"
+          "status": "Up 3 hours (healthy) postgres:15-alpine"
         },
         {
           "name": "politicosaas meilisearch 1",
-          "status": "Up 2 hours getmeili/meilisearch:v1.12"
+          "status": "Up 3 hours getmeili/meilisearch:v1.12"
         },
         {
           "name": "cadvisor",
-          "status": "Up 2 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 3 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "cve grafana",
-          "status": "Up 2 hours grafana/grafana:latest"
+          "status": "Up 3 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 2 hours prom/prometheus:latest"
+          "status": "Up 3 hours prom/prometheus:latest"
         },
         {
           "name": "changedetection",
-          "status": "Up 2 hours ghcr.io/dgtlmoon/changedetection.io"
+          "status": "Up 3 hours ghcr.io/dgtlmoon/changedetection.io"
         },
         {
           "name": "changedetection browser chrome 1",
-          "status": "Up 2 hours seleniarm/standalone-chromium:latest"
+          "status": "Up 3 hours seleniarm/standalone-chromium:latest"
         },
         {
           "name": "changedetection playwright chrome 1",
-          "status": "Up 2 hours browserless/chrome:latest"
+          "status": "Up 3 hours browserless/chrome:latest"
         },
         {
           "name": "Dashy",
-          "status": "Up 2 hours (healthy) lissy93/dashy:4.x"
+          "status": "Up 3 hours (healthy) lissy93/dashy:4.x"
         },
         {
           "name": "glances monitoring 1",
-          "status": "Up 2 hours nicolargo/glances:latest"
+          "status": "Up 3 hours nicolargo/glances:latest"
         },
         {
           "name": "cve report",
-          "status": "Up 2 hours nginx:alpine"
+          "status": "Up 3 hours nginx:alpine"
         },
         {
           "name": "cve alertmanager",
-          "status": "Up 2 hours prom/alertmanager:latest"
+          "status": "Up 3 hours prom/alertmanager:latest"
         },
         {
           "name": "cve pushgateway",
-          "status": "Up 2 hours prom/pushgateway:latest"
+          "status": "Up 3 hours prom/pushgateway:latest"
         },
         {
           "name": "portainer",
-          "status": "Up 2 hours portainer/portainer-ce:lts"
+          "status": "Up 3 hours portainer/portainer-ce:lts"
         },
         {
           "name": "duplicati 241",
-          "status": "Up 2 hours duplicati/duplicati"
+          "status": "Up 3 hours duplicati/duplicati"
         }
       ],
       "container_count": 16,
@@ -392,7 +392,7 @@
       "genre": "Blues",
       "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/d219a871eae38b5a402bab28",
       "duration": 7223,
-      "elapsed": 2426
+      "elapsed": 6045
     },
     "playing_next": {
       "title": "South Australia (Traditional) (Bonus track)",
