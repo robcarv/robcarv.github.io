@@ -1,21 +1,21 @@
 {
-  "updated": "2026-07-29 23:12",
+  "updated": "2026-07-30 00:12",
   "status": "warn",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 5.0,
-        "user": 4.0,
-        "system": 0.9,
-        "idle": 94.7,
+        "total": 6.2,
+        "user": 3.0,
+        "system": 2.2,
+        "idle": 94.0,
         "iowait": 0.4
       },
       "percpu": [
-        4.9,
-        7.1,
-        4.2,
-        5.3
+        7.2,
+        6.8,
+        6.5,
+        5.7
       ],
       "ram": {
         "used_gb": 2.75,
@@ -24,14 +24,14 @@
         "available_gb": 5.12
       },
       "swap": {
-        "used_mb": 308.4,
+        "used_mb": 307.4,
         "total_mb": 2048.0,
-        "percent": 15.1
+        "percent": 15.0
       },
       "load": {
-        "1min": 0.69,
-        "5min": 0.67,
-        "15min": 0.89,
+        "1min": 0.89,
+        "5min": 1.07,
+        "15min": 0.96,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 498.4,
-        "write_mb": 2553.8
+        "read_mb": 18.0,
+        "write_mb": 1766.2
       },
       "temperature_c": 52,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 312,
-        "running": 1,
-        "sleeping": 215,
-        "threads": 947
+        "total": 303,
+        "running": 0,
+        "sleeping": 213,
+        "threads": 935
       },
-      "uptime": "6 days, 15:37:35",
+      "uptime": "6 days, 16:37:42",
       "containers": [
         {
           "name": "gallery worker",
@@ -98,7 +98,7 @@
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 22 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 23 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -127,33 +127,33 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 5.0,
-        "user": 1.3,
-        "system": 3.4,
-        "idle": 78.7,
-        "iowait": 16.4
+        "total": 2.4,
+        "user": 1.5,
+        "system": 0.9,
+        "idle": 96.9,
+        "iowait": 0.7
       },
       "percpu": [
-        13.0,
-        23.5,
-        24.4,
-        24.4
+        4.1,
+        3.3,
+        2.8,
+        2.7
       ],
       "ram": {
-        "used_gb": 1.74,
+        "used_gb": 1.7,
         "total_gb": 7.87,
-        "percent": 22.1,
-        "available_gb": 6.13
+        "percent": 21.6,
+        "available_gb": 6.17
       },
       "swap": {
-        "used_mb": 52.6,
+        "used_mb": 51.6,
         "total_mb": 4096.0,
         "percent": 1.3
       },
       "load": {
-        "1min": 2.13,
-        "5min": 1.11,
-        "15min": 0.55,
+        "1min": 0.3,
+        "5min": 0.31,
+        "15min": 0.71,
         "cores": 4
       },
       "disks": [
@@ -175,10 +175,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 4478.2,
-        "write_mb": 426.3
+        "read_mb": 206570.4,
+        "write_mb": 1338.6
       },
-      "temperature_c": 47,
+      "temperature_c": 46,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -189,10 +189,10 @@
       "processes": {
         "total": 238,
         "running": 0,
-        "sleeping": 143,
+        "sleeping": 142,
         "threads": 855
       },
-      "uptime": "6 days, 15:37:36",
+      "uptime": "6 days, 16:37:43",
       "containers": [
         {
           "name": "uptime kuma",
@@ -266,27 +266,27 @@
       "containers": [
         {
           "name": "politicosaas app 1",
-          "status": "Up 12 hours politicosaas-app"
+          "status": "Up 13 hours politicosaas-app"
         },
         {
           "name": "politicosaas postgres 1",
-          "status": "Up 12 hours (healthy) postgres:15-alpine"
+          "status": "Up 13 hours (healthy) postgres:15-alpine"
         },
         {
           "name": "politicosaas meilisearch 1",
-          "status": "Up 12 hours getmeili/meilisearch:v1.12"
+          "status": "Up 13 hours getmeili/meilisearch:v1.12"
         },
         {
           "name": "cadvisor",
-          "status": "Up 12 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 13 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "portainer",
-          "status": "Up 12 hours portainer/portainer-ce:lts"
+          "status": "Up 13 hours portainer/portainer-ce:lts"
         },
         {
           "name": "duplicati 241",
-          "status": "Up 12 hours duplicati/duplicati"
+          "status": "Up 13 hours duplicati/duplicati"
         }
       ],
       "container_count": 6,
