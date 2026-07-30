@@ -1,26 +1,26 @@
 {
-  "updated": "2026-07-30 07:12",
+  "updated": "2026-07-30 08:12",
   "status": "warn",
   "nodes": {
     "Pi501": {
       "status": "ok",
       "cpu": {
-        "total": 5.6,
-        "user": 4.3,
-        "system": 1.2,
-        "idle": 94.2,
+        "total": 5.2,
+        "user": 4.2,
+        "system": 1.0,
+        "idle": 94.7,
         "iowait": 0.2
       },
       "percpu": [
-        5.9,
-        5.5,
+        7.1,
+        6.3,
         6.0,
-        5.3
+        6.6
       ],
       "ram": {
         "used_gb": 2.82,
         "total_gb": 7.87,
-        "percent": 35.8,
+        "percent": 35.9,
         "available_gb": 5.05
       },
       "swap": {
@@ -29,9 +29,9 @@
         "percent": 17.6
       },
       "load": {
-        "1min": 0.46,
-        "5min": 0.41,
-        "15min": 0.5,
+        "1min": 0.37,
+        "5min": 0.64,
+        "15min": 0.81,
         "cores": 4
       },
       "disks": [
@@ -41,14 +41,14 @@
           "size_gb": 116.7,
           "used_gb": 52.2,
           "free_gb": 58.5,
-          "percent": 44.7
+          "percent": 44.8
         }
       ],
       "disk_io": {
-        "read_mb": 73.9,
-        "write_mb": 1260.5
+        "read_mb": 27.5,
+        "write_mb": 1429.1
       },
-      "temperature_c": 50,
+      "temperature_c": 49,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 306,
-        "running": 1,
-        "sleeping": 212,
-        "threads": 946
+        "total": 303,
+        "running": 0,
+        "sleeping": 210,
+        "threads": 943
       },
-      "uptime": "6 days, 23:37:45",
+      "uptime": "7 days, 0:37:55",
       "containers": [
         {
           "name": "gallery worker",
@@ -98,7 +98,7 @@
         },
         {
           "name": "ngninx app 1",
-          "status": "Up 6 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 7 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "gallery jandapress",
@@ -127,23 +127,23 @@
     "Pi5": {
       "status": "ok",
       "cpu": {
-        "total": 1.0,
-        "user": 0.6,
-        "system": 0.4,
-        "idle": 98.8,
-        "iowait": 0.1
+        "total": 6.0,
+        "user": 3.6,
+        "system": 2.2,
+        "idle": 91.4,
+        "iowait": 2.6
       },
       "percpu": [
-        4.5,
-        4.2,
-        3.9,
-        4.0
+        7.8,
+        8.3,
+        9.6,
+        8.4
       ],
       "ram": {
-        "used_gb": 1.98,
+        "used_gb": 1.8,
         "total_gb": 7.87,
-        "percent": 25.2,
-        "available_gb": 5.89
+        "percent": 22.9,
+        "available_gb": 6.07
       },
       "swap": {
         "used_mb": 51.6,
@@ -151,9 +151,9 @@
         "percent": 1.3
       },
       "load": {
-        "1min": 0.05,
-        "5min": 0.16,
-        "15min": 0.23,
+        "1min": 0.66,
+        "5min": 1.57,
+        "15min": 1.26,
         "cores": 4
       },
       "disks": [
@@ -175,10 +175,10 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1472.0,
-        "write_mb": 1768.4
+        "read_mb": 42987.0,
+        "write_mb": 1269.8
       },
-      "temperature_c": 45,
+      "temperature_c": 47,
       "network": {
         "eth0": {
           "sent_mb": 0.0,
@@ -187,12 +187,12 @@
         }
       },
       "processes": {
-        "total": 232,
+        "total": 241,
         "running": 0,
         "sleeping": 139,
-        "threads": 849
+        "threads": 858
       },
-      "uptime": "6 days, 23:37:45",
+      "uptime": "7 days, 0:37:55",
       "containers": [
         {
           "name": "uptime kuma",
@@ -266,27 +266,27 @@
       "containers": [
         {
           "name": "politicosaas app 1",
-          "status": "Up 20 hours politicosaas-app"
+          "status": "Up 21 hours politicosaas-app"
         },
         {
           "name": "politicosaas postgres 1",
-          "status": "Up 20 hours (healthy) postgres:15-alpine"
+          "status": "Up 21 hours (healthy) postgres:15-alpine"
         },
         {
           "name": "politicosaas meilisearch 1",
-          "status": "Up 20 hours getmeili/meilisearch:v1.12"
+          "status": "Up 21 hours getmeili/meilisearch:v1.12"
         },
         {
           "name": "cadvisor",
-          "status": "Up 20 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 21 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "portainer",
-          "status": "Up 20 hours portainer/portainer-ce:lts"
+          "status": "Up 21 hours portainer/portainer-ce:lts"
         },
         {
           "name": "duplicati 241",
-          "status": "Up 20 hours duplicati/duplicati"
+          "status": "Up 21 hours duplicati/duplicati"
         }
       ],
       "container_count": 6,
