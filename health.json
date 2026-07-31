@@ -1,27 +1,27 @@
 {
-  "updated": "2026-07-31 11:51",
+  "updated": "2026-07-31 12:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 7.1,
-        "user": 4.0,
-        "system": 2.2,
-        "idle": 92.8,
+        "total": 5.7,
+        "user": 3.8,
+        "system": 1.4,
+        "idle": 94.2,
         "iowait": 0.0
       },
       "percpu": [
-        9.0,
-        6.4,
-        6.9,
-        6.2
+        6.7,
+        6.0,
+        5.1,
+        5.4
       ],
       "ram": {
-        "used_gb": 3.22,
+        "used_gb": 3.31,
         "total_gb": 7.76,
-        "percent": 41.5,
-        "available_gb": 4.53
+        "percent": 42.7,
+        "available_gb": 4.44
       },
       "swap": {
         "used_mb": 192.2,
@@ -29,9 +29,9 @@
         "percent": 10.2
       },
       "load": {
-        "1min": 0.98,
-        "5min": 1.2,
-        "15min": 1.22,
+        "1min": 0.28,
+        "5min": 0.3,
+        "15min": 0.55,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1.1,
-        "write_mb": 18.8
+        "read_mb": 218.0,
+        "write_mb": 1548.1
       },
       "temperature_c": null,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 315,
+        "total": 310,
         "running": 1,
-        "sleeping": 239,
-        "threads": 1162
+        "sleeping": 236,
+        "threads": 1155
       },
-      "uptime": "1 day, 19:09:45",
+      "uptime": "1 day, 19:30:41",
       "containers": [
         {
           "name": "cadvisor",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 13 minutes grafana/grafana:latest"
+          "status": "Up 34 minutes grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 13 minutes prom/prometheus:latest"
+          "status": "Up 34 minutes prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -147,20 +147,20 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 1.4,
-        "user": 0.9,
-        "system": 0.4,
-        "idle": 98.6,
+        "total": 0.6,
+        "user": 0.4,
+        "system": 0.1,
+        "idle": 99.4,
         "iowait": 0.0
       },
       "percpu": [
-        1.5,
-        1.3
+        0.6,
+        0.6
       ],
       "ram": {
         "used_gb": 0.55,
         "total_gb": 1.92,
-        "percent": 28.8,
+        "percent": 28.9,
         "available_gb": 1.37
       },
       "swap": {
@@ -186,80 +186,80 @@
       ],
       "disk_io": {
         "read_mb": 0.0,
-        "write_mb": 4.3
+        "write_mb": 18.8
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 0.2,
-          "recv_mb": 0.2,
+          "sent_mb": 13.9,
+          "recv_mb": 14.9,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 0.0,
-          "recv_mb": 0.0,
+          "sent_mb": 1.7,
+          "recv_mb": 1.4,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
-          "sent_mb": 0.0,
-          "recv_mb": 0.0,
+          "sent_mb": 0.2,
+          "recv_mb": 0.6,
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 0.0,
-          "recv_mb": 0.0,
+          "sent_mb": 1.0,
+          "recv_mb": 1.0,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 0.1,
-          "recv_mb": 0.1,
+          "sent_mb": 11.3,
+          "recv_mb": 10.9,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 0.0,
-          "recv_mb": 0.0,
-          "speed_kbps": 10240000.0
-        },
-        "veth8e6cce8": {
-          "sent_mb": 0.0,
-          "recv_mb": 0.0,
-          "speed_kbps": 10240000.0
-        },
-        "vethb50e10b": {
           "sent_mb": 0.1,
           "recv_mb": 0.1,
           "speed_kbps": 10240000.0
         },
+        "veth8e6cce8": {
+          "sent_mb": 0.3,
+          "recv_mb": 0.1,
+          "speed_kbps": 10240000.0
+        },
+        "vethb50e10b": {
+          "sent_mb": 11.3,
+          "recv_mb": 11.1,
+          "speed_kbps": 10240000.0
+        },
         "veth97c2608": {
-          "sent_mb": 0.0,
-          "recv_mb": 0.0,
+          "sent_mb": 1.2,
+          "recv_mb": 0.8,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
-          "sent_mb": 0.0,
-          "recv_mb": 0.0,
+          "sent_mb": 0.9,
+          "recv_mb": 1.0,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 126,
+        "total": 125,
         "running": 0,
         "sleeping": 69,
         "threads": 288
       },
-      "uptime": "1 day, 19:08:53",
+      "uptime": "1 day, 19:29:49",
       "containers": [
         {
           "name": "glances",
-          "status": "Up 20 minutes nicolargo/glances:latest"
+          "status": "Up 41 minutes nicolargo/glances:latest"
         },
         {
           "name": "psclient",
-          "status": "Up About an hour packetstream/psclient:latest"
+          "status": "Up 2 hours packetstream/psclient:latest"
         },
         {
           "name": "watchtower",
-          "status": "Up About an hour (healthy) containrrr/watchtower:latest"
+          "status": "Up 2 hours (healthy) containrrr/watchtower:latest"
         },
         {
           "name": "portainer agent",
@@ -274,21 +274,21 @@
       "cpu": {
         "total": 2.5,
         "user": 2.0,
-        "system": 0.5,
+        "system": 0.4,
         "idle": 97.5,
         "iowait": 0.0
       },
       "percpu": [
-        2.2,
-        2.5,
-        2.0,
-        3.4
+        2.7,
+        2.6,
+        2.4,
+        2.6
       ],
       "ram": {
-        "used_gb": 1.32,
+        "used_gb": 1.31,
         "total_gb": 3.82,
-        "percent": 34.5,
-        "available_gb": 2.5
+        "percent": 34.2,
+        "available_gb": 2.52
       },
       "swap": {
         "used_mb": 382.3,
@@ -296,9 +296,9 @@
         "percent": 20.2
       },
       "load": {
-        "1min": 0.02,
-        "5min": 0.03,
-        "15min": 0.01,
+        "1min": 0.07,
+        "5min": 0.06,
+        "15min": 0.02,
         "cores": 4
       },
       "disks": [
@@ -313,23 +313,23 @@
       ],
       "disk_io": {
         "read_mb": 0.0,
-        "write_mb": 5.8
+        "write_mb": 63.3
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 0.1,
-          "recv_mb": 0.1,
+          "sent_mb": 6.5,
+          "recv_mb": 39.0,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 0.0,
-          "recv_mb": 0.0,
+          "sent_mb": 0.1,
+          "recv_mb": 0.8,
           "speed_kbps": 10240000.0
         },
         "br-3052d87b6d75": {
-          "sent_mb": 0.0,
-          "recv_mb": 1.0,
+          "sent_mb": 1.6,
+          "recv_mb": 40.5,
           "speed_kbps": 10240000.0
         },
         "vethd276a7a": {
@@ -338,27 +338,27 @@
           "speed_kbps": 10240000.0
         },
         "vethabd24f3": {
-          "sent_mb": 0.0,
-          "recv_mb": 1.0,
+          "sent_mb": 1.6,
+          "recv_mb": 40.9,
           "speed_kbps": 10240000.0
         },
         "veth50973ba": {
-          "sent_mb": 0.0,
-          "recv_mb": 0.0,
+          "sent_mb": 0.1,
+          "recv_mb": 0.8,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 475,
+        "total": 474,
         "running": 0,
         "sleeping": 398,
         "threads": 2908
       },
-      "uptime": "21:05:35",
+      "uptime": "21:26:31",
       "containers": [
         {
           "name": "glances",
-          "status": "Up 20 minutes nicolargo/glances:latest"
+          "status": "Up 41 minutes nicolargo/glances:latest"
         },
         {
           "name": "portainer agent",
@@ -388,7 +388,7 @@
       "genre": "",
       "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/0c4159792324bd17fb674df1",
       "duration": 7170,
-      "elapsed": 2987
+      "elapsed": 4244
     },
     "playing_next": {
       "title": "Atrocity Vendor",
