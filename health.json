@@ -1,27 +1,27 @@
 {
-  "updated": "2026-08-02 01:12",
+  "updated": "2026-08-02 02:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 7.6,
-        "user": 4.4,
-        "system": 2.2,
-        "idle": 92.3,
-        "iowait": 0.1
+        "total": 4.9,
+        "user": 2.5,
+        "system": 1.8,
+        "idle": 95.1,
+        "iowait": 0.0
       },
       "percpu": [
-        8.8,
-        7.4,
-        6.9,
-        7.5
+        5.7,
+        4.8,
+        4.5,
+        4.6
       ],
       "ram": {
-        "used_gb": 3.41,
+        "used_gb": 3.09,
         "total_gb": 7.76,
-        "percent": 44.0,
-        "available_gb": 4.34
+        "percent": 39.9,
+        "available_gb": 4.66
       },
       "swap": {
         "used_mb": 354.4,
@@ -29,9 +29,9 @@
         "percent": 18.8
       },
       "load": {
-        "1min": 0.86,
-        "5min": 0.99,
-        "15min": 1.08,
+        "1min": 0.2,
+        "5min": 0.32,
+        "15min": 0.55,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 25517.3,
-        "write_mb": 19547.5
+        "read_mb": 5.8,
+        "write_mb": 1054.5
       },
       "temperature_c": null,
       "network": {
@@ -57,20 +57,20 @@
         }
       },
       "processes": {
-        "total": 318,
-        "running": 2,
-        "sleeping": 240,
-        "threads": 1154
+        "total": 304,
+        "running": 3,
+        "sleeping": 231,
+        "threads": 1128
       },
-      "uptime": "3 days, 8:30:23",
+      "uptime": "3 days, 9:30:24",
       "containers": [
         {
           "name": "gallery backend",
-          "status": "Up 2 hours (healthy) gallery-downloader-backend"
+          "status": "Up 3 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "subscription bot",
-          "status": "Up 37 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 38 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "cadvisor",
@@ -82,19 +82,19 @@
         },
         {
           "name": "gallery frontend",
-          "status": "Up 2 hours gallery-downloader-frontend"
+          "status": "Up 3 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery worker",
-          "status": "Up 2 hours gallery-downloader-worker"
+          "status": "Up 3 hours gallery-downloader-worker"
         },
         {
           "name": "gallery postgres",
-          "status": "Up 2 hours (healthy) postgres:16-alpine"
+          "status": "Up 3 hours (healthy) postgres:16-alpine"
         },
         {
           "name": "gallery redis",
-          "status": "Up 2 hours (healthy) redis:7-alpine"
+          "status": "Up 3 hours (healthy) redis:7-alpine"
         },
         {
           "name": "politicosaas app 1",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 11 minutes grafana/grafana:latest"
+          "status": "Up About an hour grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 11 minutes prom/prometheus:latest"
+          "status": "Up About an hour prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -160,7 +160,7 @@
       "ram": {
         "used_gb": 0.58,
         "total_gb": 1.92,
-        "percent": 30.0,
+        "percent": 30.3,
         "available_gb": 1.34
       },
       "swap": {
@@ -169,9 +169,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.07,
-        "5min": 0.14,
-        "15min": 0.09,
+        "1min": 0.0,
+        "5min": 0.01,
+        "15min": 0.0,
         "cores": 2
       },
       "disks": [
@@ -186,13 +186,13 @@
       ],
       "disk_io": {
         "read_mb": 0.0,
-        "write_mb": 51.7
+        "write_mb": 46.7
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 45.8,
-          "recv_mb": 48.7,
+          "sent_mb": 34.8,
+          "recv_mb": 37.7,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 5.6,
-          "recv_mb": 5.6,
+          "sent_mb": 2.9,
+          "recv_mb": 3.0,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 34.9,
-          "recv_mb": 34.1,
+          "sent_mb": 27.1,
+          "recv_mb": 26.1,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 2.1,
-          "recv_mb": 2.3,
+          "sent_mb": 1.5,
+          "recv_mb": 1.6,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,40 +226,40 @@
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 34.9,
-          "recv_mb": 34.5,
+          "sent_mb": 27.1,
+          "recv_mb": 26.5,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
           "sent_mb": 4.1,
-          "recv_mb": 2.9,
+          "recv_mb": 2.8,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
-          "sent_mb": 3.4,
-          "recv_mb": 3.6,
+          "sent_mb": 1.4,
+          "recv_mb": 1.5,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 126,
+        "total": 123,
         "running": 0,
         "sleeping": 69,
-        "threads": 291
+        "threads": 288
       },
-      "uptime": "3 days, 8:29:31",
+      "uptime": "3 days, 9:29:32",
       "containers": [
         {
           "name": "glances",
-          "status": "Up 38 hours nicolargo/glances:latest"
+          "status": "Up 39 hours nicolargo/glances:latest"
         },
         {
           "name": "psclient",
-          "status": "Up 39 hours packetstream/psclient:latest"
+          "status": "Up 40 hours packetstream/psclient:latest"
         },
         {
           "name": "watchtower",
-          "status": "Up 39 hours (healthy) containrrr/watchtower:latest"
+          "status": "Up 40 hours (healthy) containrrr/watchtower:latest"
         },
         {
           "name": "portainer agent",
@@ -272,17 +272,17 @@
     "VM400": {
       "status": "ok",
       "cpu": {
-        "total": 3.8,
-        "user": 2.9,
-        "system": 0.8,
-        "idle": 96.2,
+        "total": 3.4,
+        "user": 2.6,
+        "system": 0.7,
+        "idle": 96.6,
         "iowait": 0.0
       },
       "percpu": [
-        4.0,
         3.7,
-        3.8,
-        3.8
+        3.2,
+        3.3,
+        3.3
       ],
       "ram": {
         "used_gb": 1.28,
@@ -296,9 +296,9 @@
         "percent": 27.1
       },
       "load": {
-        "1min": 0.17,
-        "5min": 0.15,
-        "15min": 0.15,
+        "1min": 0.09,
+        "5min": 0.09,
+        "15min": 0.09,
         "cores": 4
       },
       "disks": [
@@ -312,24 +312,24 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1220.4,
-        "write_mb": 4401.3
+        "read_mb": 0.0,
+        "write_mb": 203.9
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 428.6,
-          "recv_mb": 104.6,
+          "sent_mb": 4.9,
+          "recv_mb": 58.9,
           "speed_kbps": 0.0
         },
         "docker0": {
           "sent_mb": 0.3,
-          "recv_mb": 2.6,
+          "recv_mb": 2.4,
           "speed_kbps": 10240000.0
         },
         "br-3052d87b6d75": {
           "sent_mb": 4.4,
-          "recv_mb": 114.5,
+          "recv_mb": 114.9,
           "speed_kbps": 10240000.0
         },
         "vethd276a7a": {
@@ -339,26 +339,26 @@
         },
         "vethabd24f3": {
           "sent_mb": 4.4,
-          "recv_mb": 115.6,
+          "recv_mb": 116.0,
           "speed_kbps": 10240000.0
         },
         "veth50973ba": {
           "sent_mb": 0.3,
-          "recv_mb": 2.6,
+          "recv_mb": 2.5,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 473,
+        "total": 472,
         "running": 0,
         "sleeping": 397,
-        "threads": 2909
+        "threads": 2907
       },
-      "uptime": "2 days, 10:26:13",
+      "uptime": "2 days, 11:26:14",
       "containers": [
         {
           "name": "glances",
-          "status": "Up 38 hours nicolargo/glances:latest"
+          "status": "Up 39 hours nicolargo/glances:latest"
         },
         {
           "name": "portainer agent",
@@ -382,21 +382,31 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Into The Tunnel (John Peel Session 02/91)",
-      "artist": "The House Of Love",
-      "album": "The House Of Love In Session",
-      "genre": "Alternative",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/bfc117058390eeaeec1a7f26",
-      "duration": 656,
-      "elapsed": 214
+      "title": "John Peel 2002-08-01",
+      "artist": "John Peel (R1)",
+      "album": "from RA",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/197ba452c95011a60eedf8fc",
+      "duration": 7172,
+      "elapsed": 3073
     },
     "playing_next": {
-      "title": "my baby",
-      "artist": "the mighty diamonds"
+      "title": "Love To Hate",
+      "artist": "Slayer"
     },
     "listeners": 2,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
+      {
+        "title": "Interlude: The Fifth Chamber",
+        "artist": "Good Charlotte",
+        "played_at": 1785633579
+      },
+      {
+        "title": "Into The Tunnel (John Peel Session 02/91)",
+        "artist": "The House Of Love",
+        "played_at": 1785632923
+      },
       {
         "title": "50 - 11 - Joy Division - Dead Souls",
         "artist": "John Peel Festive Fifty 1981",
@@ -411,16 +421,6 @@
         "title": "Lana Del Rey Announces Stove Companion Album Spyda",
         "artist": "",
         "played_at": 1785632446
-      },
-      {
-        "title": "04 - Suburban Relapse",
-        "artist": "Siouxsie and the Banshees",
-        "played_at": 1785632265
-      },
-      {
-        "title": "40. #11 robert wyatt - shipbuilding.mp3",
-        "artist": "John Peel Festive Fifty All Time 2000",
-        "played_at": 1785632084
       }
     ]
   }
