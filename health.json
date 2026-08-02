@@ -1,27 +1,27 @@
 {
-  "updated": "2026-08-02 16:12",
+  "updated": "2026-08-02 17:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 4.4,
-        "user": 2.2,
-        "system": 1.7,
-        "idle": 95.6,
+        "total": 4.9,
+        "user": 2.3,
+        "system": 1.9,
+        "idle": 95.1,
         "iowait": 0.0
       },
       "percpu": [
-        5.1,
-        4.3,
-        4.1,
-        4.3
+        5.8,
+        4.9,
+        4.6,
+        4.4
       ],
       "ram": {
-        "used_gb": 3.11,
+        "used_gb": 3.15,
         "total_gb": 7.76,
-        "percent": 40.1,
-        "available_gb": 4.65
+        "percent": 40.7,
+        "available_gb": 4.6
       },
       "swap": {
         "used_mb": 354.4,
@@ -29,9 +29,9 @@
         "percent": 18.8
       },
       "load": {
-        "1min": 1.11,
-        "5min": 0.84,
-        "15min": 0.66,
+        "1min": 0.92,
+        "5min": 0.81,
+        "15min": 0.7,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 744.2,
-        "write_mb": 1630.7
+        "read_mb": 15.5,
+        "write_mb": 957.4
       },
       "temperature_c": null,
       "network": {
@@ -57,16 +57,16 @@
         }
       },
       "processes": {
-        "total": 303,
+        "total": 323,
         "running": 1,
-        "sleeping": 231,
-        "threads": 1132
+        "sleeping": 238,
+        "threads": 1155
       },
-      "uptime": "3 days, 23:30:40",
+      "uptime": "4 days, 0:30:41",
       "containers": [
         {
           "name": "gallery backend",
-          "status": "Up 17 hours (healthy) gallery-downloader-backend"
+          "status": "Up 18 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "subscription bot",
@@ -82,19 +82,19 @@
         },
         {
           "name": "gallery frontend",
-          "status": "Up 17 hours gallery-downloader-frontend"
+          "status": "Up 18 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery worker",
-          "status": "Up 17 hours gallery-downloader-worker"
+          "status": "Up 18 hours gallery-downloader-worker"
         },
         {
           "name": "gallery postgres",
-          "status": "Up 17 hours (healthy) postgres:16-alpine"
+          "status": "Up 18 hours (healthy) postgres:16-alpine"
         },
         {
           "name": "gallery redis",
-          "status": "Up 17 hours (healthy) redis:7-alpine"
+          "status": "Up 18 hours (healthy) redis:7-alpine"
         },
         {
           "name": "politicosaas app 1",
@@ -114,31 +114,31 @@
         },
         {
           "name": "wallos",
-          "status": "Up 3 days (healthy) bellamy/wallos:latest"
+          "status": "Up 4 days (healthy) bellamy/wallos:latest"
         },
         {
           "name": "nginx pm",
-          "status": "Up 3 days jc21/nginx-proxy-manager:latest"
+          "status": "Up 4 days jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "Dashy",
-          "status": "Up 3 days (healthy) lissy93/dashy:4.x"
+          "status": "Up 4 days (healthy) lissy93/dashy:4.x"
         },
         {
           "name": "cve report",
-          "status": "Up 3 days nginx:alpine"
+          "status": "Up 4 days nginx:alpine"
         },
         {
           "name": "cve grafana",
-          "status": "Up 15 hours grafana/grafana:latest"
+          "status": "Up 16 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 15 hours prom/prometheus:latest"
+          "status": "Up 16 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
-          "status": "Up 3 days prom/alertmanager:latest"
+          "status": "Up 4 days prom/alertmanager:latest"
         }
       ],
       "container_count": 19,
@@ -147,20 +147,20 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 0.5,
-        "user": 0.3,
+        "total": 0.6,
+        "user": 0.4,
         "system": 0.1,
-        "idle": 99.5,
+        "idle": 99.4,
         "iowait": 0.0
       },
       "percpu": [
-        0.5,
-        0.5
+        0.6,
+        0.6
       ],
       "ram": {
         "used_gb": 0.58,
         "total_gb": 1.92,
-        "percent": 30.3,
+        "percent": 30.4,
         "available_gb": 1.34
       },
       "swap": {
@@ -185,19 +185,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 46.5
+        "read_mb": 356.1,
+        "write_mb": 780.1
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 18.2,
-          "recv_mb": 21.7,
+          "sent_mb": 28.2,
+          "recv_mb": 34.2,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 4.1,
-          "recv_mb": 3.1,
+          "sent_mb": 4.2,
+          "recv_mb": 3.2,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 1.9,
-          "recv_mb": 2.0,
+          "sent_mb": 7.7,
+          "recv_mb": 7.9,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 13.0,
-          "recv_mb": 12.1,
+          "sent_mb": 16.8,
+          "recv_mb": 15.8,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 0.8,
-          "recv_mb": 0.9,
+          "sent_mb": 1.6,
+          "recv_mb": 2.0,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,18 +226,18 @@
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 13.0,
-          "recv_mb": 12.3,
+          "sent_mb": 16.8,
+          "recv_mb": 16.1,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 2.8,
+          "sent_mb": 2.9,
           "recv_mb": 1.7,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
-          "sent_mb": 1.1,
-          "recv_mb": 1.2,
+          "sent_mb": 6.0,
+          "recv_mb": 6.1,
           "speed_kbps": 10240000.0
         }
       },
@@ -247,7 +247,7 @@
         "sleeping": 69,
         "threads": 290
       },
-      "uptime": "3 days, 23:29:47",
+      "uptime": "4 days, 0:29:49",
       "containers": [
         {
           "name": "glances",
@@ -272,32 +272,32 @@
     "VM400": {
       "status": "ok",
       "cpu": {
-        "total": 3.8,
+        "total": 3.7,
         "user": 2.8,
         "system": 0.8,
-        "idle": 96.2,
+        "idle": 96.3,
         "iowait": 0.0
       },
       "percpu": [
-        4.0,
-        3.7,
+        3.9,
+        3.8,
         3.6,
-        3.8
+        3.6
       ],
       "ram": {
-        "used_gb": 1.25,
+        "used_gb": 1.26,
         "total_gb": 3.82,
-        "percent": 32.8,
-        "available_gb": 2.57
+        "percent": 33.1,
+        "available_gb": 2.56
       },
       "swap": {
-        "used_mb": 512.0,
+        "used_mb": 511.8,
         "total_mb": 1888.0,
         "percent": 27.1
       },
       "load": {
-        "1min": 0.1,
-        "5min": 0.12,
+        "1min": 0.06,
+        "5min": 0.1,
         "15min": 0.09,
         "cores": 4
       },
@@ -312,14 +312,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 192.5
+        "read_mb": 8.7,
+        "write_mb": 194.9
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 5.1,
-          "recv_mb": 133.8,
+          "sent_mb": 6.5,
+          "recv_mb": 92.9,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -329,7 +329,7 @@
         },
         "br-3052d87b6d75": {
           "sent_mb": 4.4,
-          "recv_mb": 114.7,
+          "recv_mb": 116.2,
           "speed_kbps": 10240000.0
         },
         "vethd276a7a": {
@@ -339,7 +339,7 @@
         },
         "vethabd24f3": {
           "sent_mb": 4.4,
-          "recv_mb": 115.8,
+          "recv_mb": 117.3,
           "speed_kbps": 10240000.0
         },
         "veth50973ba": {
@@ -349,12 +349,12 @@
         }
       },
       "processes": {
-        "total": 477,
+        "total": 475,
         "running": 0,
-        "sleeping": 399,
-        "threads": 2914
+        "sleeping": 398,
+        "threads": 2912
       },
-      "uptime": "3 days, 1:26:30",
+      "uptime": "3 days, 2:26:31",
       "containers": [
         {
           "name": "glances",
@@ -382,45 +382,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Ellen Burstyn to Receive Venice s Golden Lion for",
+      "title": "RADIO 1  02 02 88  JOHN PEEL PART 2",
       "artist": "",
       "album": "",
-      "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/cfa898e90925ce0222b1a4a1",
-      "duration": 34,
-      "elapsed": 27
+      "genre": "Other",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/e266a2b0564952ac83c3cdb1",
+      "duration": 3804,
+      "elapsed": 472
     },
     "playing_next": {
-      "title": "i'm not satisfied",
-      "artist": "keith hudson"
+      "title": "Payback",
+      "artist": "Slayer"
     },
     "listeners": 2,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "As 10 melhores bandas de Metal Alternativo segundo",
+        "title": "46.Motorway To Roswell-Pixies",
+        "artist": "John Peel Festive Fifty 1991",
+        "played_at": 1785690003
+      },
+      {
+        "title": "Toots & The Maytals - Chatty, chatty",
+        "artist": "02",
+        "played_at": 1785689751
+      },
+      {
+        "title": "Correio Braziliense",
         "artist": "",
-        "played_at": 1785687111
+        "played_at": 1785689743
       },
       {
-        "title": "04-kingdom rise kingdom fail",
-        "artist": "wailing souls",
-        "played_at": 1785686869
-      },
-      {
-        "title": "How the Iran-Backed Houthis Cornered Saudi Arabia",
+        "title": "Trump s HHS abandons threat to withhold Medicare a",
         "artist": "",
-        "played_at": 1785686855
+        "played_at": 1785689728
       },
       {
-        "title": "Brasil seria 2º país com maiores tarifas dos EUA s",
-        "artist": "",
-        "played_at": 1785686833
-      },
-      {
-        "title": "555 Dub Street",
-        "artist": "Augustus Pablo",
-        "played_at": 1785686673
+        "title": "No Money",
+        "artist": "The Boys",
+        "played_at": 1785689622
       }
     ]
   }
