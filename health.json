@@ -1,27 +1,27 @@
 {
-  "updated": "2026-08-02 04:12",
+  "updated": "2026-08-02 05:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 4.9,
+        "total": 4.8,
         "user": 2.3,
         "system": 1.9,
-        "idle": 95.0,
+        "idle": 95.2,
         "iowait": 0.0
       },
       "percpu": [
         5.7,
-        5.1,
+        4.7,
         4.4,
-        4.7
+        4.5
       ],
       "ram": {
-        "used_gb": 3.11,
+        "used_gb": 3.1,
         "total_gb": 7.76,
         "percent": 40.0,
-        "available_gb": 4.65
+        "available_gb": 4.66
       },
       "swap": {
         "used_mb": 354.4,
@@ -29,9 +29,9 @@
         "percent": 18.8
       },
       "load": {
-        "1min": 1.04,
-        "5min": 0.92,
-        "15min": 0.78,
+        "1min": 1.07,
+        "5min": 0.93,
+        "15min": 0.83,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.8,
-        "write_mb": 977.7
+        "read_mb": 6.9,
+        "write_mb": 1001.3
       },
       "temperature_c": null,
       "network": {
@@ -57,20 +57,20 @@
         }
       },
       "processes": {
-        "total": 303,
-        "running": 1,
-        "sleeping": 231,
-        "threads": 1129
+        "total": 373,
+        "running": 2,
+        "sleeping": 232,
+        "threads": 1200
       },
-      "uptime": "3 days, 11:30:27",
+      "uptime": "3 days, 12:30:28",
       "containers": [
         {
           "name": "gallery backend",
-          "status": "Up 5 hours (healthy) gallery-downloader-backend"
+          "status": "Up 6 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "subscription bot",
-          "status": "Up 40 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 41 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "cadvisor",
@@ -82,19 +82,19 @@
         },
         {
           "name": "gallery frontend",
-          "status": "Up 5 hours gallery-downloader-frontend"
+          "status": "Up 6 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery worker",
-          "status": "Up 5 hours gallery-downloader-worker"
+          "status": "Up 6 hours gallery-downloader-worker"
         },
         {
           "name": "gallery postgres",
-          "status": "Up 5 hours (healthy) postgres:16-alpine"
+          "status": "Up 6 hours (healthy) postgres:16-alpine"
         },
         {
           "name": "gallery redis",
-          "status": "Up 5 hours (healthy) redis:7-alpine"
+          "status": "Up 6 hours (healthy) redis:7-alpine"
         },
         {
           "name": "politicosaas app 1",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 3 hours grafana/grafana:latest"
+          "status": "Up 4 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 3 hours prom/prometheus:latest"
+          "status": "Up 4 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -147,21 +147,21 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 0.5,
-        "user": 0.3,
+        "total": 0.7,
+        "user": 0.4,
         "system": 0.1,
-        "idle": 99.5,
+        "idle": 99.3,
         "iowait": 0.0
       },
       "percpu": [
-        0.5,
-        0.5
+        0.6,
+        0.7
       ],
       "ram": {
-        "used_gb": 0.57,
+        "used_gb": 0.58,
         "total_gb": 1.92,
-        "percent": 29.7,
-        "available_gb": 1.35
+        "percent": 30.3,
+        "available_gb": 1.34
       },
       "swap": {
         "used_mb": 0.8,
@@ -185,19 +185,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 46.7
+        "read_mb": 0.1,
+        "write_mb": 44.8
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 28.3,
-          "recv_mb": 31.3,
+          "sent_mb": 628.9,
+          "recv_mb": 600.4,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 5.2,
-          "recv_mb": 4.2,
+          "sent_mb": 5.9,
+          "recv_mb": 4.9,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 7.8,
-          "recv_mb": 7.9,
+          "sent_mb": 2.1,
+          "recv_mb": 2.3,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 16.2,
-          "recv_mb": 15.1,
+          "sent_mb": 590.2,
+          "recv_mb": 602.7,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 6.9,
-          "recv_mb": 7.0,
+          "sent_mb": 1.4,
+          "recv_mb": 1.6,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,40 +226,40 @@
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 16.2,
-          "recv_mb": 15.4,
+          "sent_mb": 590.2,
+          "recv_mb": 605.3,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 3.9,
-          "recv_mb": 2.7,
+          "sent_mb": 4.6,
+          "recv_mb": 3.4,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
-          "sent_mb": 0.9,
-          "recv_mb": 1.1,
+          "sent_mb": 0.7,
+          "recv_mb": 0.8,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 124,
+        "total": 127,
         "running": 0,
         "sleeping": 69,
-        "threads": 289
+        "threads": 292
       },
-      "uptime": "3 days, 11:29:34",
+      "uptime": "3 days, 12:29:35",
       "containers": [
         {
           "name": "glances",
-          "status": "Up 41 hours nicolargo/glances:latest"
+          "status": "Up 42 hours nicolargo/glances:latest"
         },
         {
           "name": "psclient",
-          "status": "Up 42 hours packetstream/psclient:latest"
+          "status": "Up 43 hours packetstream/psclient:latest"
         },
         {
           "name": "watchtower",
-          "status": "Up 42 hours (healthy) containrrr/watchtower:latest"
+          "status": "Up 43 hours (healthy) containrrr/watchtower:latest"
         },
         {
           "name": "portainer agent",
@@ -279,16 +279,16 @@
         "iowait": 0.0
       },
       "percpu": [
-        3.7,
-        3.5,
+        3.8,
         3.4,
-        3.5
+        3.4,
+        3.3
       ],
       "ram": {
-        "used_gb": 1.27,
+        "used_gb": 1.3,
         "total_gb": 3.82,
-        "percent": 33.2,
-        "available_gb": 2.55
+        "percent": 34.1,
+        "available_gb": 2.52
       },
       "swap": {
         "used_mb": 512.3,
@@ -296,9 +296,9 @@
         "percent": 27.1
       },
       "load": {
-        "1min": 0.16,
-        "5min": 0.13,
-        "15min": 0.1,
+        "1min": 0.15,
+        "5min": 0.11,
+        "15min": 0.09,
         "cores": 4
       },
       "disks": [
@@ -312,14 +312,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.2,
-        "write_mb": 200.3
+        "read_mb": 0.3,
+        "write_mb": 195.5
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 5.2,
-          "recv_mb": 82.1,
+          "sent_mb": 5.1,
+          "recv_mb": 94.0,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -329,7 +329,7 @@
         },
         "br-3052d87b6d75": {
           "sent_mb": 4.5,
-          "recv_mb": 114.9,
+          "recv_mb": 114.8,
           "speed_kbps": 10240000.0
         },
         "vethd276a7a": {
@@ -339,7 +339,7 @@
         },
         "vethabd24f3": {
           "sent_mb": 4.5,
-          "recv_mb": 116.0,
+          "recv_mb": 115.9,
           "speed_kbps": 10240000.0
         },
         "veth50973ba": {
@@ -349,16 +349,16 @@
         }
       },
       "processes": {
-        "total": 473,
+        "total": 476,
         "running": 0,
-        "sleeping": 397,
-        "threads": 2908
+        "sleeping": 399,
+        "threads": 2912
       },
-      "uptime": "2 days, 13:26:16",
+      "uptime": "2 days, 14:26:17",
       "containers": [
         {
           "name": "glances",
-          "status": "Up 41 hours nicolargo/glances:latest"
+          "status": "Up 42 hours nicolargo/glances:latest"
         },
         {
           "name": "portainer agent",
@@ -382,45 +382,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "11-Rose Of Cimarron-Poco",
-      "artist": "John Peel Festive Fifty 1976",
-      "album": "John Peel Festive Fifty 1976",
-      "genre": "Folk Rock",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/35cbebd42584450fbd0d6351",
-      "duration": 404,
-      "elapsed": 244
+      "title": "Human Disease",
+      "artist": "Slayer",
+      "album": "B-Sides & Rarities",
+      "genre": "Thrash Metal",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/dbe6397ad9360a72b4a74b7e-1785430970.jpg",
+      "duration": 266,
+      "elapsed": 9
     },
     "playing_next": {
-      "title": "27 mr apollo (symonds on sunday 09-03-1969)",
-      "artist": ""
+      "title": "The Battle March Medley",
+      "artist": "The Pogues"
     },
     "listeners": 2,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Live Up, Live Up",
-        "artist": "Horace Andy",
-        "played_at": 1785643467
-      },
-      {
-        "title": "Fidel Castro",
-        "artist": "Skatalites (The)",
-        "played_at": 1785642995
-      },
-      {
-        "title": "Jah Feeling",
-        "artist": "Burning Spear",
-        "played_at": 1785642736
-      },
-      {
-        "title": "Pulsar",
-        "artist": "Scientist",
-        "played_at": 1785642548
-      },
-      {
-        "title": "Pesquisa BTG Nexus  no 2º turno  Lula tem 47  e Fl",
+        "title": "TRACK09",
         "artist": "",
-        "played_at": 1785642531
+        "played_at": 1785647227
+      },
+      {
+        "title": "11 #40 - Electronic - Get the Message.mp3",
+        "artist": "John Peel Festive Fifty 1991",
+        "played_at": 1785646909
+      },
+      {
+        "title": "Wrathchild",
+        "artist": "Iron Maiden",
+        "played_at": 1785646734
+      },
+      {
+        "title": "She's Gone",
+        "artist": "Half Pint",
+        "played_at": 1785646500
+      },
+      {
+        "title": "Rivers Of Babylon",
+        "artist": "U Roy",
+        "played_at": 1785646199
       }
     ]
   }
