@@ -1,27 +1,27 @@
 {
-  "updated": "2026-08-02 05:12",
+  "updated": "2026-08-02 06:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 4.8,
-        "user": 2.3,
-        "system": 1.9,
-        "idle": 95.2,
+        "total": 4.5,
+        "user": 2.2,
+        "system": 1.7,
+        "idle": 95.5,
         "iowait": 0.0
       },
       "percpu": [
-        5.7,
-        4.7,
-        4.4,
-        4.5
+        5.2,
+        4.5,
+        4.1,
+        4.2
       ],
       "ram": {
-        "used_gb": 3.1,
+        "used_gb": 3.12,
         "total_gb": 7.76,
-        "percent": 40.0,
-        "available_gb": 4.66
+        "percent": 40.2,
+        "available_gb": 4.64
       },
       "swap": {
         "used_mb": 354.4,
@@ -29,9 +29,9 @@
         "percent": 18.8
       },
       "load": {
-        "1min": 1.07,
-        "5min": 0.93,
-        "15min": 0.83,
+        "1min": 0.78,
+        "5min": 0.86,
+        "15min": 0.72,
         "cores": 4
       },
       "disks": [
@@ -41,12 +41,12 @@
           "size_gb": 61.2,
           "used_gb": 33.4,
           "free_gb": 25.1,
-          "percent": 54.6
+          "percent": 54.7
         }
       ],
       "disk_io": {
-        "read_mb": 6.9,
-        "write_mb": 1001.3
+        "read_mb": 87.9,
+        "write_mb": 954.3
       },
       "temperature_c": null,
       "network": {
@@ -57,20 +57,20 @@
         }
       },
       "processes": {
-        "total": 373,
+        "total": 306,
         "running": 2,
         "sleeping": 232,
-        "threads": 1200
+        "threads": 1133
       },
-      "uptime": "3 days, 12:30:28",
+      "uptime": "3 days, 13:30:29",
       "containers": [
         {
           "name": "gallery backend",
-          "status": "Up 6 hours (healthy) gallery-downloader-backend"
+          "status": "Up 7 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "subscription bot",
-          "status": "Up 41 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 42 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "cadvisor",
@@ -82,19 +82,19 @@
         },
         {
           "name": "gallery frontend",
-          "status": "Up 6 hours gallery-downloader-frontend"
+          "status": "Up 7 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery worker",
-          "status": "Up 6 hours gallery-downloader-worker"
+          "status": "Up 7 hours gallery-downloader-worker"
         },
         {
           "name": "gallery postgres",
-          "status": "Up 6 hours (healthy) postgres:16-alpine"
+          "status": "Up 7 hours (healthy) postgres:16-alpine"
         },
         {
           "name": "gallery redis",
-          "status": "Up 6 hours (healthy) redis:7-alpine"
+          "status": "Up 7 hours (healthy) redis:7-alpine"
         },
         {
           "name": "politicosaas app 1",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 4 hours grafana/grafana:latest"
+          "status": "Up 5 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 4 hours prom/prometheus:latest"
+          "status": "Up 5 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -147,20 +147,20 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 0.7,
+        "total": 0.5,
         "user": 0.4,
         "system": 0.1,
-        "idle": 99.3,
+        "idle": 99.5,
         "iowait": 0.0
       },
       "percpu": [
-        0.6,
-        0.7
+        0.5,
+        0.5
       ],
       "ram": {
         "used_gb": 0.58,
         "total_gb": 1.92,
-        "percent": 30.3,
+        "percent": 30.2,
         "available_gb": 1.34
       },
       "swap": {
@@ -169,9 +169,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.0,
-        "5min": 0.0,
-        "15min": 0.0,
+        "1min": 0.14,
+        "5min": 0.09,
+        "15min": 0.03,
         "cores": 2
       },
       "disks": [
@@ -185,19 +185,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.1,
-        "write_mb": 44.8
+        "read_mb": 0.0,
+        "write_mb": 44.9
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 628.9,
-          "recv_mb": 600.4,
+          "sent_mb": 35.9,
+          "recv_mb": 39.1,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 5.9,
-          "recv_mb": 4.9,
+          "sent_mb": 5.8,
+          "recv_mb": 4.7,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 2.1,
-          "recv_mb": 2.3,
+          "sent_mb": 3.4,
+          "recv_mb": 3.5,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 590.2,
-          "recv_mb": 602.7,
+          "sent_mb": 27.7,
+          "recv_mb": 26.2,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 1.4,
-          "recv_mb": 1.6,
+          "sent_mb": 0.7,
+          "recv_mb": 0.7,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,40 +226,40 @@
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 590.2,
-          "recv_mb": 605.3,
+          "sent_mb": 27.7,
+          "recv_mb": 26.6,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 4.6,
-          "recv_mb": 3.4,
+          "sent_mb": 4.5,
+          "recv_mb": 3.3,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
-          "sent_mb": 0.7,
-          "recv_mb": 0.8,
+          "sent_mb": 2.8,
+          "recv_mb": 2.9,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 127,
+        "total": 124,
         "running": 0,
         "sleeping": 69,
-        "threads": 292
+        "threads": 289
       },
-      "uptime": "3 days, 12:29:35",
+      "uptime": "3 days, 13:29:36",
       "containers": [
         {
           "name": "glances",
-          "status": "Up 42 hours nicolargo/glances:latest"
+          "status": "Up 43 hours nicolargo/glances:latest"
         },
         {
           "name": "psclient",
-          "status": "Up 43 hours packetstream/psclient:latest"
+          "status": "Up 44 hours packetstream/psclient:latest"
         },
         {
           "name": "watchtower",
-          "status": "Up 43 hours (healthy) containrrr/watchtower:latest"
+          "status": "Up 44 hours (healthy) containrrr/watchtower:latest"
         },
         {
           "name": "portainer agent",
@@ -272,23 +272,23 @@
     "VM400": {
       "status": "ok",
       "cpu": {
-        "total": 3.5,
-        "user": 2.7,
-        "system": 0.7,
-        "idle": 96.5,
-        "iowait": 0.0
+        "total": 4.5,
+        "user": 3.3,
+        "system": 1.0,
+        "idle": 94.6,
+        "iowait": 0.8
       },
       "percpu": [
-        3.8,
-        3.4,
-        3.4,
-        3.3
+        5.2,
+        5.4,
+        5.4,
+        5.4
       ],
       "ram": {
-        "used_gb": 1.3,
+        "used_gb": 1.24,
         "total_gb": 3.82,
-        "percent": 34.1,
-        "available_gb": 2.52
+        "percent": 32.5,
+        "available_gb": 2.58
       },
       "swap": {
         "used_mb": 512.3,
@@ -296,9 +296,9 @@
         "percent": 27.1
       },
       "load": {
-        "1min": 0.15,
-        "5min": 0.11,
-        "15min": 0.09,
+        "1min": 0.08,
+        "5min": 0.08,
+        "15min": 0.13,
         "cores": 4
       },
       "disks": [
@@ -312,14 +312,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.3,
-        "write_mb": 195.5
+        "read_mb": 209.3,
+        "write_mb": 104087.7
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 5.1,
-          "recv_mb": 94.0,
+          "sent_mb": 87.1,
+          "recv_mb": 35084.0,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -329,7 +329,7 @@
         },
         "br-3052d87b6d75": {
           "sent_mb": 4.5,
-          "recv_mb": 114.8,
+          "recv_mb": 114.9,
           "speed_kbps": 10240000.0
         },
         "vethd276a7a": {
@@ -349,16 +349,16 @@
         }
       },
       "processes": {
-        "total": 476,
+        "total": 474,
         "running": 0,
-        "sleeping": 399,
-        "threads": 2912
+        "sleeping": 398,
+        "threads": 2910
       },
-      "uptime": "2 days, 14:26:17",
+      "uptime": "2 days, 15:26:18",
       "containers": [
         {
           "name": "glances",
-          "status": "Up 42 hours nicolargo/glances:latest"
+          "status": "Up 43 hours nicolargo/glances:latest"
         },
         {
           "name": "portainer agent",
@@ -382,45 +382,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Human Disease",
-      "artist": "Slayer",
-      "album": "B-Sides & Rarities",
-      "genre": "Thrash Metal",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/dbe6397ad9360a72b4a74b7e-1785430970.jpg",
-      "duration": 266,
-      "elapsed": 9
+      "title": "Beam Down",
+      "artist": "Scientist",
+      "album": "Scientist Meets The Space Invaders",
+      "genre": "Dub",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/8d59f74bb62e0be60b5845d8-1785426179.jpg",
+      "duration": 195,
+      "elapsed": 102
     },
     "playing_next": {
-      "title": "The Battle March Medley",
-      "artist": "The Pogues"
+      "title": "musicology",
+      "artist": "keith hudson"
     },
     "listeners": 2,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "TRACK09",
+        "title": "Upcoming games   July 2026",
         "artist": "",
-        "played_at": 1785647227
+        "played_at": 1785651032
       },
       {
-        "title": "11 #40 - Electronic - Get the Message.mp3",
-        "artist": "John Peel Festive Fifty 1991",
-        "played_at": 1785646909
+        "title": "05-act of affection",
+        "artist": "wailing souls",
+        "played_at": 1785650870
       },
       {
-        "title": "Wrathchild",
-        "artist": "Iron Maiden",
-        "played_at": 1785646734
+        "title": "Jah Jah know",
+        "artist": "Rastafari elders",
+        "played_at": 1785650470
       },
       {
-        "title": "She's Gone",
-        "artist": "Half Pint",
-        "played_at": 1785646500
+        "title": "Imperial",
+        "artist": "Primal scream",
+        "played_at": 1785650350
       },
       {
-        "title": "Rivers Of Babylon",
-        "artist": "U Roy",
-        "played_at": 1785646199
+        "title": "Tongues(Peel Session)",
+        "artist": "Jawbox",
+        "played_at": 1785650112
       }
     ]
   }
