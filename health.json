@@ -1,27 +1,27 @@
 {
-  "updated": "2026-08-02 19:12",
+  "updated": "2026-08-02 20:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 4.2,
-        "user": 2.1,
-        "system": 1.5,
-        "idle": 95.8,
+        "total": 5.1,
+        "user": 2.3,
+        "system": 2.1,
+        "idle": 94.8,
         "iowait": 0.0
       },
       "percpu": [
+        6.2,
         5.1,
-        4.0,
-        3.9,
-        3.9
+        4.4,
+        5.0
       ],
       "ram": {
         "used_gb": 3.12,
         "total_gb": 7.76,
         "percent": 40.2,
-        "available_gb": 4.63
+        "available_gb": 4.64
       },
       "swap": {
         "used_mb": 354.4,
@@ -29,9 +29,9 @@
         "percent": 18.8
       },
       "load": {
-        "1min": 0.46,
-        "5min": 0.34,
-        "15min": 0.32,
+        "1min": 0.91,
+        "5min": 0.95,
+        "15min": 0.91,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.8,
-        "write_mb": 977.2
+        "read_mb": 0.4,
+        "write_mb": 966.7
       },
       "temperature_c": null,
       "network": {
@@ -57,16 +57,16 @@
         }
       },
       "processes": {
-        "total": 306,
+        "total": 315,
         "running": 1,
         "sleeping": 234,
-        "threads": 1135
+        "threads": 1144
       },
-      "uptime": "4 days, 2:30:44",
+      "uptime": "4 days, 3:30:45",
       "containers": [
         {
           "name": "gallery backend",
-          "status": "Up 20 hours (healthy) gallery-downloader-backend"
+          "status": "Up 21 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "subscription bot",
@@ -82,19 +82,19 @@
         },
         {
           "name": "gallery frontend",
-          "status": "Up 20 hours gallery-downloader-frontend"
+          "status": "Up 21 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery worker",
-          "status": "Up 20 hours gallery-downloader-worker"
+          "status": "Up 21 hours gallery-downloader-worker"
         },
         {
           "name": "gallery postgres",
-          "status": "Up 20 hours (healthy) postgres:16-alpine"
+          "status": "Up 21 hours (healthy) postgres:16-alpine"
         },
         {
           "name": "gallery redis",
-          "status": "Up 20 hours (healthy) redis:7-alpine"
+          "status": "Up 21 hours (healthy) redis:7-alpine"
         },
         {
           "name": "politicosaas app 1",
@@ -110,7 +110,7 @@
         },
         {
           "name": "duckdns",
-          "status": "Up 2 days linuxserver/duckdns:latest"
+          "status": "Up 3 days linuxserver/duckdns:latest"
         },
         {
           "name": "wallos",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 18 hours grafana/grafana:latest"
+          "status": "Up 19 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 18 hours prom/prometheus:latest"
+          "status": "Up 19 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -148,7 +148,7 @@
       "status": "ok",
       "cpu": {
         "total": 0.5,
-        "user": 0.4,
+        "user": 0.3,
         "system": 0.1,
         "idle": 99.5,
         "iowait": 0.0
@@ -160,7 +160,7 @@
       "ram": {
         "used_gb": 0.58,
         "total_gb": 1.92,
-        "percent": 30.1,
+        "percent": 30.2,
         "available_gb": 1.34
       },
       "swap": {
@@ -170,7 +170,7 @@
       },
       "load": {
         "1min": 0.0,
-        "5min": 0.0,
+        "5min": 0.02,
         "15min": 0.0,
         "cores": 2
       },
@@ -185,19 +185,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 47.1
+        "read_mb": 1.4,
+        "write_mb": 45.2
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 40.1,
-          "recv_mb": 42.9,
+          "sent_mb": 27.3,
+          "recv_mb": 30.7,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 4.1,
-          "recv_mb": 3.1,
+          "sent_mb": 4.2,
+          "recv_mb": 3.2,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 2.1,
-          "recv_mb": 2.2,
+          "sent_mb": 1.2,
+          "recv_mb": 1.3,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 34.0,
-          "recv_mb": 33.2,
+          "sent_mb": 22.5,
+          "recv_mb": 21.6,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 1.1,
-          "recv_mb": 1.3,
+          "sent_mb": 0.5,
+          "recv_mb": 0.5,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,28 +226,28 @@
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 34.0,
-          "recv_mb": 33.6,
+          "sent_mb": 22.5,
+          "recv_mb": 21.9,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 2.8,
-          "recv_mb": 1.6,
+          "sent_mb": 2.9,
+          "recv_mb": 1.7,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
-          "sent_mb": 0.9,
-          "recv_mb": 1.1,
+          "sent_mb": 0.8,
+          "recv_mb": 0.9,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 125,
-        "running": 0,
+        "total": 123,
+        "running": 1,
         "sleeping": 69,
-        "threads": 290
+        "threads": 288
       },
-      "uptime": "4 days, 2:29:51",
+      "uptime": "4 days, 3:29:52",
       "containers": [
         {
           "name": "glances",
@@ -263,7 +263,7 @@
         },
         {
           "name": "portainer agent",
-          "status": "Up 2 days portainer/agent:2.39.5"
+          "status": "Up 3 days portainer/agent:2.39.5"
         }
       ],
       "container_count": 4,
@@ -279,15 +279,15 @@
         "iowait": 0.0
       },
       "percpu": [
+        3.9,
         3.8,
-        3.7,
-        3.8,
+        3.5,
         3.6
       ],
       "ram": {
-        "used_gb": 1.26,
+        "used_gb": 1.27,
         "total_gb": 3.82,
-        "percent": 33.0,
+        "percent": 33.1,
         "available_gb": 2.56
       },
       "swap": {
@@ -296,9 +296,9 @@
         "percent": 27.1
       },
       "load": {
-        "1min": 0.1,
-        "5min": 0.12,
-        "15min": 0.09,
+        "1min": 0.04,
+        "5min": 0.08,
+        "15min": 0.08,
         "cores": 4
       },
       "disks": [
@@ -312,14 +312,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 211.4
+        "read_mb": 0.8,
+        "write_mb": 203.4
       },
       "temperature_c": null,
       "network": {
         "ens18": {
           "sent_mb": 5.0,
-          "recv_mb": 92.6,
+          "recv_mb": 119.3,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -329,7 +329,7 @@
         },
         "br-3052d87b6d75": {
           "sent_mb": 4.3,
-          "recv_mb": 114.8,
+          "recv_mb": 114.7,
           "speed_kbps": 10240000.0
         },
         "vethd276a7a": {
@@ -354,7 +354,7 @@
         "sleeping": 398,
         "threads": 2911
       },
-      "uptime": "3 days, 4:26:33",
+      "uptime": "3 days, 5:26:34",
       "containers": [
         {
           "name": "glances",
@@ -362,7 +362,7 @@
         },
         {
           "name": "portainer agent",
-          "status": "Up 2 days portainer/agent:2.39.5"
+          "status": "Up 3 days portainer/agent:2.39.5"
         },
         {
           "name": "azuracast",
@@ -382,45 +382,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Safeas",
-      "artist": "Captain Beefheart & His Magic Band",
-      "album": "Peel Sessions",
-      "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/d724204fc1092f755742c894",
-      "duration": 276,
-      "elapsed": 227
+      "title": "John Peel 010906 128K",
+      "artist": "Niag",
+      "album": "",
+      "genre": "Blues",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/fd26ad6598ef28c39ba66d6b",
+      "duration": 7208,
+      "elapsed": 635
     },
     "playing_next": {
-      "title": "Moon Hop",
-      "artist": "Derrick Morgan"
+      "title": "Tormentor",
+      "artist": "Slayer"
     },
     "listeners": 2,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "07.F-Oldin' Money-The Fall",
-        "artist": "John Peel Festive Fifty 1999",
-        "played_at": 1785697564
+        "title": "16.Soon-My Bloody Valentine",
+        "artist": "John Peel Festive Fifty All Time 2000",
+        "played_at": 1785700506
       },
       {
-        "title": "Gypsy Woman",
-        "artist": "The Uniques",
-        "played_at": 1785697348
+        "title": "11 - h foundation - laika",
+        "artist": "{40}",
+        "played_at": 1785700026
       },
       {
-        "title": "Capo",
-        "artist": "The Upsetters",
-        "played_at": 1785697163
+        "title": "Don´t Say Motherfucker, Motherfucker",
+        "artist": "Turbonegro",
+        "played_at": 1785699895
       },
       {
-        "title": "Whindersson pede desculpas a Luísa Sonza após repe",
+        "title": "Filmagens da 5ª temporada de  Reacher  já têm data",
         "artist": "",
-        "played_at": 1785697137
+        "played_at": 1785699868
       },
       {
-        "title": "l",
-        "artist": "Emergency services rushing to incident on R139",
-        "played_at": 1785697122
+        "title": "The star-studded World Cup semifinals kick off wit",
+        "artist": "",
+        "played_at": 1785699851
       }
     ]
   }
