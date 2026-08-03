@@ -1,27 +1,27 @@
 {
-  "updated": "2026-08-02 23:12",
+  "updated": "2026-08-03 00:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 4.7,
-        "user": 2.2,
-        "system": 1.8,
-        "idle": 95.3,
+        "total": 4.8,
+        "user": 2.3,
+        "system": 1.9,
+        "idle": 95.1,
         "iowait": 0.0
       },
       "percpu": [
-        5.6,
+        5.8,
+        4.7,
         4.5,
-        4.4,
         4.4
       ],
       "ram": {
-        "used_gb": 3.13,
+        "used_gb": 3.16,
         "total_gb": 7.76,
-        "percent": 40.4,
-        "available_gb": 4.62
+        "percent": 40.7,
+        "available_gb": 4.6
       },
       "swap": {
         "used_mb": 354.4,
@@ -29,9 +29,9 @@
         "percent": 18.8
       },
       "load": {
-        "1min": 0.77,
-        "5min": 0.95,
-        "15min": 0.9,
+        "1min": 1.1,
+        "5min": 0.9,
+        "15min": 0.83,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1.5,
-        "write_mb": 946.3
+        "read_mb": 5.4,
+        "write_mb": 941.4
       },
       "temperature_c": null,
       "network": {
@@ -57,16 +57,16 @@
         }
       },
       "processes": {
-        "total": 319,
+        "total": 305,
         "running": 1,
-        "sleeping": 233,
-        "threads": 1148
+        "sleeping": 232,
+        "threads": 1134
       },
-      "uptime": "4 days, 6:30:48",
+      "uptime": "4 days, 7:30:49",
       "containers": [
         {
           "name": "gallery backend",
-          "status": "Up 24 hours (healthy) gallery-downloader-backend"
+          "status": "Up 25 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "subscription bot",
@@ -74,27 +74,27 @@
         },
         {
           "name": "cadvisor",
-          "status": "Up 2 days (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 3 days (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "kavita",
-          "status": "Up 2 days lscr.io/linuxserver/kavita:latest"
+          "status": "Up 3 days lscr.io/linuxserver/kavita:latest"
         },
         {
           "name": "gallery frontend",
-          "status": "Up 24 hours gallery-downloader-frontend"
+          "status": "Up 25 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery worker",
-          "status": "Up 24 hours gallery-downloader-worker"
+          "status": "Up 25 hours gallery-downloader-worker"
         },
         {
           "name": "gallery postgres",
-          "status": "Up 24 hours (healthy) postgres:16-alpine"
+          "status": "Up 25 hours (healthy) postgres:16-alpine"
         },
         {
           "name": "gallery redis",
-          "status": "Up 24 hours (healthy) redis:7-alpine"
+          "status": "Up 25 hours (healthy) redis:7-alpine"
         },
         {
           "name": "politicosaas app 1",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 22 hours grafana/grafana:latest"
+          "status": "Up 23 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 22 hours prom/prometheus:latest"
+          "status": "Up 23 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -160,7 +160,7 @@
       "ram": {
         "used_gb": 0.57,
         "total_gb": 1.92,
-        "percent": 29.7,
+        "percent": 29.6,
         "available_gb": 1.35
       },
       "swap": {
@@ -185,19 +185,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 44.6
+        "read_mb": 3.9,
+        "write_mb": 51.8
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 27.5,
-          "recv_mb": 30.4,
+          "sent_mb": 54.4,
+          "recv_mb": 56.4,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 4.4,
-          "recv_mb": 3.5,
+          "sent_mb": 4.7,
+          "recv_mb": 3.7,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 3.2,
-          "recv_mb": 3.5,
+          "sent_mb": 8.7,
+          "recv_mb": 9.0,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 20.3,
-          "recv_mb": 19.3,
+          "sent_mb": 40.6,
+          "recv_mb": 39.8,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 2.7,
-          "recv_mb": 3.0,
+          "sent_mb": 8.1,
+          "recv_mb": 8.4,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,28 +226,28 @@
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 20.3,
-          "recv_mb": 19.6,
+          "sent_mb": 40.6,
+          "recv_mb": 40.2,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 3.1,
-          "recv_mb": 2.0,
+          "sent_mb": 3.5,
+          "recv_mb": 2.2,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
-          "sent_mb": 0.5,
+          "sent_mb": 0.6,
           "recv_mb": 0.7,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 126,
+        "total": 123,
         "running": 0,
         "sleeping": 69,
-        "threads": 291
+        "threads": 288
       },
-      "uptime": "4 days, 6:29:55",
+      "uptime": "4 days, 7:29:57",
       "containers": [
         {
           "name": "glances",
@@ -279,16 +279,16 @@
         "iowait": 0.0
       },
       "percpu": [
-        3.7,
         3.9,
-        3.7,
+        3.8,
+        3.6,
         3.6
       ],
       "ram": {
-        "used_gb": 1.25,
+        "used_gb": 1.31,
         "total_gb": 3.82,
-        "percent": 32.8,
-        "available_gb": 2.57
+        "percent": 34.3,
+        "available_gb": 2.51
       },
       "swap": {
         "used_mb": 511.8,
@@ -296,9 +296,9 @@
         "percent": 27.1
       },
       "load": {
-        "1min": 0.11,
-        "5min": 0.13,
-        "15min": 0.1,
+        "1min": 0.09,
+        "5min": 0.1,
+        "15min": 0.09,
         "cores": 4
       },
       "disks": [
@@ -312,14 +312,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 207.8
+        "read_mb": 3.9,
+        "write_mb": 205.1
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 5.0,
-          "recv_mb": 128.9,
+          "sent_mb": 5.1,
+          "recv_mb": 103.1,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -329,7 +329,7 @@
         },
         "br-3052d87b6d75": {
           "sent_mb": 4.3,
-          "recv_mb": 114.7,
+          "recv_mb": 114.8,
           "speed_kbps": 10240000.0
         },
         "vethd276a7a": {
@@ -339,7 +339,7 @@
         },
         "vethabd24f3": {
           "sent_mb": 4.3,
-          "recv_mb": 115.8,
+          "recv_mb": 115.9,
           "speed_kbps": 10240000.0
         },
         "veth50973ba": {
@@ -349,12 +349,12 @@
         }
       },
       "processes": {
-        "total": 475,
+        "total": 476,
         "running": 0,
-        "sleeping": 398,
-        "threads": 2911
+        "sleeping": 399,
+        "threads": 2914
       },
-      "uptime": "3 days, 8:26:38",
+      "uptime": "3 days, 9:26:39",
       "containers": [
         {
           "name": "glances",
@@ -382,45 +382,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "16 - Hay!fever-Arab Strap",
-      "artist": "John Peel Festive Fifty 1997",
-      "album": "John Peel Festive Fifty 1997",
-      "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/a90ca891cce2ac153cd743f7",
-      "duration": 342,
-      "elapsed": 114
+      "title": "Do The Reggae",
+      "artist": "Toots And The Maytals",
+      "album": "Don't Trouble",
+      "genre": "Reggae",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/3e9f554db745d37fbd192c7e-1785425370.jpg",
+      "duration": 188,
+      "elapsed": 30
     },
     "playing_next": {
-      "title": "ballboy - all the records on the radio are shite",
-      "artist": "41 #10"
+      "title": "The Five-Star Weekend review   Jennifer Garner s e",
+      "artist": ""
     },
     "listeners": 2,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "napalm death - (1988.03.08.) - the peel sessions ii - 03 - stigmatised",
-        "artist": "Napalm Death",
-        "played_at": 1785712195
+        "title": "It was written down",
+        "artist": "Toots & The Maytals",
+        "played_at": 1785715716
       },
       {
-        "title": "Speed of Light",
-        "artist": "Iron Maiden",
-        "played_at": 1785711896
+        "title": "Medley: The Recruiting Sergeant/The Rocky Road To Dublin/The Galway Races (Tradi",
+        "artist": "The Pogues",
+        "played_at": 1785715477
       },
       {
-        "title": "Mood For Ska",
-        "artist": "Skatalites",
-        "played_at": 1785711704
+        "title": "Killing Fields",
+        "artist": "Slayer",
+        "played_at": 1785715242
       },
       {
-        "title": "28 #23.Little Britain-Dreadzone",
-        "artist": "John Peel Festive Fifty 1995",
-        "played_at": 1785711472
+        "title": "Disco For Rodents",
+        "artist": "Bearsuit",
+        "played_at": 1785715133
       },
       {
-        "title": "24 Hours",
-        "artist": "Joy Division",
-        "played_at": 1785711224
+        "title": "TGT",
+        "artist": "Aphex Twin",
+        "played_at": 1785714829
       }
     ]
   }
