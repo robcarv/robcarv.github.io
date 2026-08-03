@@ -1,27 +1,27 @@
 {
-  "updated": "2026-08-03 11:12",
+  "updated": "2026-08-03 12:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 4.9,
-        "user": 2.3,
-        "system": 2.0,
-        "idle": 95.0,
+        "total": 4.3,
+        "user": 2.2,
+        "system": 1.6,
+        "idle": 95.7,
         "iowait": 0.0
       },
       "percpu": [
-        5.7,
-        4.9,
-        4.6,
-        4.6
+        5.1,
+        4.3,
+        3.8,
+        4.1
       ],
       "ram": {
-        "used_gb": 3.19,
+        "used_gb": 3.18,
         "total_gb": 7.76,
-        "percent": 41.2,
-        "available_gb": 4.56
+        "percent": 41.1,
+        "available_gb": 4.57
       },
       "swap": {
         "used_mb": 353.7,
@@ -29,9 +29,9 @@
         "percent": 18.7
       },
       "load": {
-        "1min": 1.0,
-        "5min": 0.97,
-        "15min": 0.94,
+        "1min": 0.36,
+        "5min": 0.37,
+        "15min": 0.44,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.9,
-        "write_mb": 971.6
+        "read_mb": 0.0,
+        "write_mb": 961.0
       },
       "temperature_c": null,
       "network": {
@@ -62,15 +62,15 @@
         "sleeping": 233,
         "threads": 1132
       },
-      "uptime": "4 days, 18:31:02",
+      "uptime": "4 days, 19:31:03",
       "containers": [
         {
           "name": "gallery backend",
-          "status": "Up 36 hours (healthy) gallery-downloader-backend"
+          "status": "Up 37 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "subscription bot",
-          "status": "Up 2 days (healthy) subscription-bot-subscription-bot"
+          "status": "Up 3 days (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "cadvisor",
@@ -82,19 +82,19 @@
         },
         {
           "name": "gallery frontend",
-          "status": "Up 36 hours gallery-downloader-frontend"
+          "status": "Up 37 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery worker",
-          "status": "Up 36 hours gallery-downloader-worker"
+          "status": "Up 37 hours gallery-downloader-worker"
         },
         {
           "name": "gallery postgres",
-          "status": "Up 36 hours (healthy) postgres:16-alpine"
+          "status": "Up 37 hours (healthy) postgres:16-alpine"
         },
         {
           "name": "gallery redis",
-          "status": "Up 36 hours (healthy) redis:7-alpine"
+          "status": "Up 37 hours (healthy) redis:7-alpine"
         },
         {
           "name": "politicosaas app 1",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 10 hours grafana/grafana:latest"
+          "status": "Up 11 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 10 hours prom/prometheus:latest"
+          "status": "Up 11 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -147,20 +147,20 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 0.5,
-        "user": 0.3,
+        "total": 0.6,
+        "user": 0.4,
         "system": 0.1,
-        "idle": 99.5,
+        "idle": 99.4,
         "iowait": 0.0
       },
       "percpu": [
-        0.5,
-        0.5
+        0.6,
+        0.6
       ],
       "ram": {
         "used_gb": 0.58,
         "total_gb": 1.92,
-        "percent": 30.3,
+        "percent": 30.4,
         "available_gb": 1.34
       },
       "swap": {
@@ -169,8 +169,8 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.0,
-        "5min": 0.01,
+        "1min": 0.01,
+        "5min": 0.0,
         "15min": 0.0,
         "cores": 2
       },
@@ -186,18 +186,18 @@
       ],
       "disk_io": {
         "read_mb": 0.0,
-        "write_mb": 46.0
+        "write_mb": 45.5
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 78.4,
-          "recv_mb": 80.2,
+          "sent_mb": 108.7,
+          "recv_mb": 109.3,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 10.6,
-          "recv_mb": 9.3,
+          "sent_mb": 8.6,
+          "recv_mb": 7.4,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 8.0,
-          "recv_mb": 8.2,
+          "sent_mb": 4.9,
+          "recv_mb": 5.1,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 59.3,
-          "recv_mb": 58.3,
+          "sent_mb": 93.6,
+          "recv_mb": 92.6,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 2.6,
-          "recv_mb": 2.8,
+          "sent_mb": 2.0,
+          "recv_mb": 2.2,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,28 +226,28 @@
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 59.3,
-          "recv_mb": 58.9,
+          "sent_mb": 93.6,
+          "recv_mb": 93.5,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 9.3,
-          "recv_mb": 7.9,
+          "sent_mb": 7.3,
+          "recv_mb": 6.0,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
-          "sent_mb": 5.4,
-          "recv_mb": 5.6,
+          "sent_mb": 2.9,
+          "recv_mb": 3.1,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 126,
+        "total": 125,
         "running": 0,
-        "sleeping": 70,
-        "threads": 296
+        "sleeping": 69,
+        "threads": 290
       },
-      "uptime": "4 days, 18:30:09",
+      "uptime": "4 days, 19:30:10",
       "containers": [
         {
           "name": "glances",
@@ -279,16 +279,16 @@
         "iowait": 0.0
       },
       "percpu": [
-        4.0,
-        3.7,
+        3.8,
         3.6,
-        3.6
+        3.8,
+        3.7
       ],
       "ram": {
-        "used_gb": 1.28,
+        "used_gb": 1.29,
         "total_gb": 3.82,
-        "percent": 33.6,
-        "available_gb": 2.54
+        "percent": 33.7,
+        "available_gb": 2.53
       },
       "swap": {
         "used_mb": 511.8,
@@ -296,9 +296,9 @@
         "percent": 27.1
       },
       "load": {
-        "1min": 0.14,
-        "5min": 0.2,
-        "15min": 0.31,
+        "1min": 0.19,
+        "5min": 0.17,
+        "15min": 0.14,
         "cores": 4
       },
       "disks": [
@@ -313,13 +313,13 @@
       ],
       "disk_io": {
         "read_mb": 0.0,
-        "write_mb": 210.4
+        "write_mb": 196.7
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 5.1,
-          "recv_mb": 93.5,
+          "sent_mb": 5.0,
+          "recv_mb": 110.4,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -349,12 +349,12 @@
         }
       },
       "processes": {
-        "total": 475,
-        "running": 0,
-        "sleeping": 398,
-        "threads": 2914
+        "total": 476,
+        "running": 1,
+        "sleeping": 399,
+        "threads": 2915
       },
-      "uptime": "3 days, 20:26:51",
+      "uptime": "3 days, 21:26:52",
       "containers": [
         {
           "name": "glances",
@@ -382,45 +382,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "COLOSSUS (Official Video)",
-      "artist": "19.IDLES",
-      "album": "",
-      "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/086301a544a01bd6fb49bca8-1785439661.jpg",
-      "duration": 345,
-      "elapsed": 198
+      "title": "45. #06 - Sex Pistols - Pretty Vacant.mp3",
+      "artist": "John Peel Festive Fifty 1978",
+      "album": "John Peel Festive Fifty 1978",
+      "genre": "Alternative & Punk",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/5e13c1ca11db1d43436207c4",
+      "duration": 197,
+      "elapsed": 15
     },
     "playing_next": {
-      "title": "Knocking on Heaven's Door [Peel Session]",
-      "artist": "Cat Power"
+      "title": "it's easy to get bored - demo",
+      "artist": "helmet - aftertaste demos"
     },
     "listeners": 2,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "white elephant - 02pierced all over",
-        "artist": "head of david",
-        "played_at": 1785755097
+        "title": "Interlude",
+        "artist": "Matisyahu",
+        "played_at": 1785759144
       },
       {
-        "title": "25 - mazzy star - fade into you",
-        "artist": "{26}",
-        "played_at": 1785754810
+        "title": "St. Louis Blues",
+        "artist": "Jack Rose",
+        "played_at": 1785758869
       },
       {
-        "title": "Top Of The Pops",
-        "artist": "The Rezillos",
-        "played_at": 1785754632
+        "title": "cinerama - careless",
+        "artist": "38 #13",
+        "played_at": 1785758681
       },
       {
-        "title": "Pearl",
-        "artist": "Babes In Toyland",
-        "played_at": 1785754512
+        "title": "Revolution",
+        "artist": "Toots and the Maytals",
+        "played_at": 1785758467
       },
       {
-        "title": "Presença ilustre  Steve Harris assiste à apresenta",
-        "artist": "",
-        "played_at": 1785754491
+        "title": "54-46 Was My Number [Single 1968]",
+        "artist": "Toots & the Maytals",
+        "played_at": 1785758266
       }
     ]
   }
