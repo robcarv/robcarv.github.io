@@ -1,27 +1,27 @@
 {
-  "updated": "2026-08-03 21:12",
+  "updated": "2026-08-03 22:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 4.6,
-        "user": 2.2,
-        "system": 1.8,
-        "idle": 95.4,
+        "total": 5.3,
+        "user": 2.4,
+        "system": 2.1,
+        "idle": 94.7,
         "iowait": 0.0
       },
       "percpu": [
-        5.5,
-        4.6,
-        4.3,
-        4.2
+        6.5,
+        5.1,
+        4.7,
+        4.9
       ],
       "ram": {
-        "used_gb": 3.19,
+        "used_gb": 3.18,
         "total_gb": 7.76,
-        "percent": 41.2,
-        "available_gb": 4.56
+        "percent": 41.1,
+        "available_gb": 4.57
       },
       "swap": {
         "used_mb": 353.7,
@@ -29,9 +29,9 @@
         "percent": 18.7
       },
       "load": {
-        "1min": 0.91,
-        "5min": 1.01,
-        "15min": 0.96,
+        "1min": 0.8,
+        "5min": 0.73,
+        "15min": 0.78,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.7,
-        "write_mb": 913.4
+        "read_mb": 3.1,
+        "write_mb": 979.1
       },
       "temperature_c": null,
       "network": {
@@ -57,16 +57,16 @@
         }
       },
       "processes": {
-        "total": 307,
-        "running": 1,
+        "total": 302,
+        "running": 0,
         "sleeping": 230,
-        "threads": 1136
+        "threads": 1129
       },
-      "uptime": "5 days, 4:30:13",
+      "uptime": "5 days, 5:30:14",
       "containers": [
         {
           "name": "gallery backend",
-          "status": "Up 46 hours (healthy) gallery-downloader-backend"
+          "status": "Up 47 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "subscription bot",
@@ -82,31 +82,31 @@
         },
         {
           "name": "gallery frontend",
-          "status": "Up 46 hours gallery-downloader-frontend"
+          "status": "Up 47 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery worker",
-          "status": "Up 46 hours gallery-downloader-worker"
+          "status": "Up 47 hours gallery-downloader-worker"
         },
         {
           "name": "gallery postgres",
-          "status": "Up 46 hours (healthy) postgres:16-alpine"
+          "status": "Up 47 hours (healthy) postgres:16-alpine"
         },
         {
           "name": "gallery redis",
-          "status": "Up 46 hours (healthy) redis:7-alpine"
+          "status": "Up 47 hours (healthy) redis:7-alpine"
         },
         {
           "name": "politicosaas app 1",
-          "status": "Up 3 days politicosaas-app"
+          "status": "Up 4 days politicosaas-app"
         },
         {
           "name": "politicosaas postgres 1",
-          "status": "Up 3 days (healthy) postgres:15-alpine"
+          "status": "Up 4 days (healthy) postgres:15-alpine"
         },
         {
           "name": "politicosaas meilisearch 1",
-          "status": "Up 3 days getmeili/meilisearch:v1.12"
+          "status": "Up 4 days getmeili/meilisearch:v1.12"
         },
         {
           "name": "duckdns",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 20 hours grafana/grafana:latest"
+          "status": "Up 21 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 20 hours prom/prometheus:latest"
+          "status": "Up 21 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -147,21 +147,21 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 0.6,
-        "user": 0.4,
+        "total": 0.5,
+        "user": 0.3,
         "system": 0.1,
-        "idle": 99.4,
+        "idle": 99.5,
         "iowait": 0.0
       },
       "percpu": [
-        0.6,
-        0.6
+        0.5,
+        0.5
       ],
       "ram": {
-        "used_gb": 0.57,
+        "used_gb": 0.58,
         "total_gb": 1.92,
-        "percent": 29.9,
-        "available_gb": 1.35
+        "percent": 30.4,
+        "available_gb": 1.34
       },
       "swap": {
         "used_mb": 0.8,
@@ -186,18 +186,18 @@
       ],
       "disk_io": {
         "read_mb": 0.0,
-        "write_mb": 50.1
+        "write_mb": 47.5
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 152.0,
-          "recv_mb": 152.2,
+          "sent_mb": 28.3,
+          "recv_mb": 31.3,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 4.5,
-          "recv_mb": 3.5,
+          "sent_mb": 3.8,
+          "recv_mb": 3.2,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 6.3,
-          "recv_mb": 6.5,
+          "sent_mb": 7.4,
+          "recv_mb": 7.6,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 138.7,
-          "recv_mb": 137.2,
+          "sent_mb": 17.4,
+          "recv_mb": 16.3,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 3.1,
-          "recv_mb": 3.3,
+          "sent_mb": 2.7,
+          "recv_mb": 3.0,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,18 +226,18 @@
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 138.7,
-          "recv_mb": 138.3,
+          "sent_mb": 17.4,
+          "recv_mb": 16.6,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 3.2,
-          "recv_mb": 2.0,
+          "sent_mb": 2.5,
+          "recv_mb": 1.7,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
-          "sent_mb": 3.3,
-          "recv_mb": 3.4,
+          "sent_mb": 4.7,
+          "recv_mb": 4.9,
           "speed_kbps": 10240000.0
         }
       },
@@ -247,7 +247,7 @@
         "sleeping": 69,
         "threads": 290
       },
-      "uptime": "5 days, 4:29:20",
+      "uptime": "5 days, 5:29:21",
       "containers": [
         {
           "name": "glances",
@@ -272,23 +272,23 @@
     "VM400": {
       "status": "ok",
       "cpu": {
-        "total": 3.6,
-        "user": 2.7,
-        "system": 0.7,
-        "idle": 96.4,
+        "total": 3.7,
+        "user": 2.8,
+        "system": 0.8,
+        "idle": 96.3,
         "iowait": 0.0
       },
       "percpu": [
-        3.8,
+        3.7,
+        3.7,
         3.6,
-        3.5,
-        3.5
+        3.6
       ],
       "ram": {
-        "used_gb": 1.41,
+        "used_gb": 1.39,
         "total_gb": 3.82,
-        "percent": 37.0,
-        "available_gb": 2.41
+        "percent": 36.4,
+        "available_gb": 2.43
       },
       "swap": {
         "used_mb": 511.8,
@@ -296,9 +296,9 @@
         "percent": 27.1
       },
       "load": {
-        "1min": 0.25,
-        "5min": 0.16,
-        "15min": 0.11,
+        "1min": 0.14,
+        "5min": 0.11,
+        "15min": 0.09,
         "cores": 4
       },
       "disks": [
@@ -312,14 +312,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 4.8,
-        "write_mb": 210.2
+        "read_mb": 1.0,
+        "write_mb": 204.3
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 5.0,
-          "recv_mb": 66.6,
+          "sent_mb": 4.9,
+          "recv_mb": 111.8,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -328,8 +328,8 @@
           "speed_kbps": 10240000.0
         },
         "br-3052d87b6d75": {
-          "sent_mb": 4.4,
-          "recv_mb": 114.8,
+          "sent_mb": 4.3,
+          "recv_mb": 114.7,
           "speed_kbps": 10240000.0
         },
         "vethd276a7a": {
@@ -338,8 +338,8 @@
           "speed_kbps": 10240000.0
         },
         "vethabd24f3": {
-          "sent_mb": 4.4,
-          "recv_mb": 115.9,
+          "sent_mb": 4.3,
+          "recv_mb": 115.8,
           "speed_kbps": 10240000.0
         },
         "veth50973ba": {
@@ -349,12 +349,12 @@
         }
       },
       "processes": {
-        "total": 474,
+        "total": 472,
         "running": 0,
-        "sleeping": 399,
-        "threads": 2913
+        "sleeping": 398,
+        "threads": 2910
       },
-      "uptime": "4 days, 6:26:02",
+      "uptime": "4 days, 7:26:03",
       "containers": [
         {
           "name": "glances",
@@ -382,45 +382,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "49 - 12 - The Damned - New Rose",
-      "artist": "John Peel Festive Fifty 1981",
-      "album": "John Peel Festive Fifty 1981",
-      "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/c04c43d0a660692405e412e9",
-      "duration": 182,
-      "elapsed": 34
+      "title": "33. #18-New Order - Your Silent Face.mp3",
+      "artist": "John Peel Festive Fifty 1983",
+      "album": "John Peel Festive Fifty 1983",
+      "genre": "Electronica/Dance",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/0b02fced111c9c7bcec74a33",
+      "duration": 359,
+      "elapsed": 212
     },
     "playing_next": {
-      "title": "63 #03.Love Will Tear Us Apart-Joy Division",
-      "artist": "John Peel Festive Fifty 1980"
+      "title": "Attack In The Aftermath",
+      "artist": "Bolt Thrower"
     },
     "listeners": 2,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "04 fullon-Lianne Hall & Pico",
-        "artist": "John Peel",
-        "played_at": 1785791259
+        "title": "Hold Some More",
+        "artist": "African Head Charge",
+        "played_at": 1785794538
       },
       {
-        "title": "gatepass to your heart",
-        "artist": "freddie mcgregor",
-        "played_at": 1785791036
+        "title": "35. #16 - David Bowie - Heroes.mp3",
+        "artist": "John Peel Festive Fifty 1978",
+        "played_at": 1785794324
       },
       {
-        "title": "Struggle",
-        "artist": "Toots and The Maytals",
-        "played_at": 1785790823
+        "title": "00.12",
+        "artist": "Yabby U",
+        "played_at": 1785794144
       },
       {
-        "title": "Got To Be There",
-        "artist": "Toots & The Maytals",
-        "played_at": 1785790640
+        "title": "44. #07 - The Specials - Gangsters.mp3",
+        "artist": "John Peel Festive Fifty 1979",
+        "played_at": 1785793978
       },
       {
-        "title": "If I Should Fall From Grace With God",
-        "artist": "The Pogues",
-        "played_at": 1785790502
+        "title": "Criminal Minds",
+        "artist": "The Ruts",
+        "played_at": 1785793876
       }
     ]
   }
