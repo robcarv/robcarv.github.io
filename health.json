@@ -1,27 +1,27 @@
 {
-  "updated": "2026-08-04 09:12",
+  "updated": "2026-08-04 10:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 5.2,
-        "user": 2.4,
-        "system": 2.0,
-        "idle": 94.8,
+        "total": 4.8,
+        "user": 2.2,
+        "system": 1.9,
+        "idle": 95.2,
         "iowait": 0.0
       },
       "percpu": [
-        6.1,
-        5.2,
+        5.5,
         4.6,
-        4.8
+        4.6,
+        4.5
       ],
       "ram": {
-        "used_gb": 3.18,
+        "used_gb": 3.19,
         "total_gb": 7.76,
-        "percent": 41.0,
-        "available_gb": 4.58
+        "percent": 41.2,
+        "available_gb": 4.56
       },
       "swap": {
         "used_mb": 353.7,
@@ -29,9 +29,9 @@
         "percent": 18.7
       },
       "load": {
-        "1min": 1.09,
-        "5min": 0.9,
-        "15min": 0.84,
+        "1min": 0.76,
+        "5min": 0.83,
+        "15min": 0.88,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.8,
-        "write_mb": 971.8
+        "read_mb": 1.0,
+        "write_mb": 895.1
       },
       "temperature_c": null,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 354,
+        "total": 303,
         "running": 0,
         "sleeping": 230,
-        "threads": 1185
+        "threads": 1134
       },
-      "uptime": "5 days, 16:30:26",
+      "uptime": "5 days, 17:30:27",
       "containers": [
         {
           "name": "gallery backend",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 8 hours grafana/grafana:latest"
+          "status": "Up 9 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 8 hours prom/prometheus:latest"
+          "status": "Up 9 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -147,21 +147,21 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 0.5,
-        "user": 0.3,
+        "total": 0.6,
+        "user": 0.4,
         "system": 0.1,
-        "idle": 99.5,
+        "idle": 99.4,
         "iowait": 0.0
       },
       "percpu": [
-        0.5,
-        0.5
+        0.6,
+        0.6
       ],
       "ram": {
-        "used_gb": 0.57,
+        "used_gb": 0.59,
         "total_gb": 1.92,
-        "percent": 29.7,
-        "available_gb": 1.35
+        "percent": 30.9,
+        "available_gb": 1.33
       },
       "swap": {
         "used_mb": 0.8,
@@ -185,19 +185,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 46.1
+        "read_mb": 198.7,
+        "write_mb": 754.9
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 30.1,
-          "recv_mb": 33.3,
+          "sent_mb": 84.9,
+          "recv_mb": 87.3,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 4.4,
-          "recv_mb": 3.4,
+          "sent_mb": 4.1,
+          "recv_mb": 3.1,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 4.1,
-          "recv_mb": 4.2,
+          "sent_mb": 11.2,
+          "recv_mb": 11.3,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 22.5,
-          "recv_mb": 21.2,
+          "sent_mb": 68.6,
+          "recv_mb": 67.7,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 0.7,
-          "recv_mb": 0.8,
+          "sent_mb": 5.6,
+          "recv_mb": 5.8,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,28 +226,28 @@
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 22.5,
-          "recv_mb": 21.5,
+          "sent_mb": 68.6,
+          "recv_mb": 68.2,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 3.1,
-          "recv_mb": 1.9,
+          "sent_mb": 2.8,
+          "recv_mb": 1.6,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
-          "sent_mb": 3.4,
-          "recv_mb": 3.5,
+          "sent_mb": 5.7,
+          "recv_mb": 5.8,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 126,
+        "total": 125,
         "running": 0,
-        "sleeping": 70,
-        "threads": 296
+        "sleeping": 69,
+        "threads": 290
       },
-      "uptime": "5 days, 16:29:33",
+      "uptime": "5 days, 17:29:34",
       "containers": [
         {
           "name": "glances",
@@ -255,11 +255,11 @@
         },
         {
           "name": "psclient",
-          "status": "Up 3 days packetstream/psclient:latest"
+          "status": "Up 4 days packetstream/psclient:latest"
         },
         {
           "name": "watchtower",
-          "status": "Up 3 days (healthy) containrrr/watchtower:latest"
+          "status": "Up 4 days (healthy) containrrr/watchtower:latest"
         },
         {
           "name": "portainer agent",
@@ -272,7 +272,7 @@
     "VM400": {
       "status": "ok",
       "cpu": {
-        "total": 3.6,
+        "total": 3.7,
         "user": 2.8,
         "system": 0.8,
         "idle": 96.3,
@@ -281,13 +281,13 @@
       "percpu": [
         3.8,
         3.7,
-        3.6,
-        3.6
+        3.7,
+        3.7
       ],
       "ram": {
-        "used_gb": 1.28,
+        "used_gb": 1.29,
         "total_gb": 3.82,
-        "percent": 33.5,
+        "percent": 33.6,
         "available_gb": 2.54
       },
       "swap": {
@@ -296,9 +296,9 @@
         "percent": 27.1
       },
       "load": {
-        "1min": 0.11,
-        "5min": 0.1,
-        "15min": 0.09,
+        "1min": 0.15,
+        "5min": 0.12,
+        "15min": 0.1,
         "cores": 4
       },
       "disks": [
@@ -312,14 +312,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 197.0
+        "read_mb": 3.8,
+        "write_mb": 230.7
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 4.7,
-          "recv_mb": 54.7,
+          "sent_mb": 5.1,
+          "recv_mb": 108.8,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -329,7 +329,7 @@
         },
         "br-3052d87b6d75": {
           "sent_mb": 4.3,
-          "recv_mb": 114.7,
+          "recv_mb": 114.8,
           "speed_kbps": 10240000.0
         },
         "vethd276a7a": {
@@ -339,7 +339,7 @@
         },
         "vethabd24f3": {
           "sent_mb": 4.3,
-          "recv_mb": 115.8,
+          "recv_mb": 115.9,
           "speed_kbps": 10240000.0
         },
         "veth50973ba": {
@@ -352,9 +352,9 @@
         "total": 474,
         "running": 0,
         "sleeping": 398,
-        "threads": 2913
+        "threads": 2912
       },
-      "uptime": "4 days, 18:26:16",
+      "uptime": "4 days, 19:26:17",
       "containers": [
         {
           "name": "glances",
@@ -382,45 +382,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "John Peel 21-06-01",
-      "artist": "John Peel",
-      "album": "Cat's Caravan",
-      "genre": "Other",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/ab02e7343f67632e8103d784",
-      "duration": 7233,
-      "elapsed": 7127
+      "title": "John Peel 010731 128K",
+      "artist": "Niag",
+      "album": "",
+      "genre": "Blues",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/8f3e5f969e07633049fd1854",
+      "duration": 7210,
+      "elapsed": 367
     },
     "playing_next": {
-      "title": "Cult",
-      "artist": "slayer"
+      "title": "Black Serenade (Alternate Version)",
+      "artist": "Slayer"
     },
     "listeners": 2,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "30 - Motorcity-Age Of Chance",
-        "artist": "John Peel Festive Fifty 1985",
-        "played_at": 1785827407
+        "title": "cumbolo",
+        "artist": "culture",
+        "played_at": 1785837741
       },
       {
-        "title": "44.Went To Town-Rooney",
-        "artist": "John Peel Festive Fifty 1998",
-        "played_at": 1785827284
+        "title": "Feel The Spirit",
+        "artist": "Wailing Souls",
+        "played_at": 1785837441
       },
       {
-        "title": "Confronto entre policiais e caminhoneiros marcam f",
+        "title": "Can't Break Dub",
+        "artist": "Midnight Rock Crew/Roots Radics",
+        "played_at": 1785837233
+      },
+      {
+        "title": "José Estêvão defende a geração de empregos na Bahi",
         "artist": "",
-        "played_at": 1785827267
+        "played_at": 1785837205
       },
       {
-        "title": "Man On The Edge",
-        "artist": "Iron Maiden",
-        "played_at": 1785827018
-      },
-      {
-        "title": "Live in Love",
-        "artist": "Mighty Diamonds",
-        "played_at": 1785826789
+        "title": "eye know",
+        "artist": "17 #34 de la soul",
+        "played_at": 1785836987
       }
     ]
   }
