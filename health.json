@@ -1,27 +1,27 @@
 {
-  "updated": "2026-08-04 10:12",
+  "updated": "2026-08-04 10:47",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 4.8,
-        "user": 2.2,
+        "total": 5.2,
+        "user": 2.6,
         "system": 1.9,
-        "idle": 95.2,
-        "iowait": 0.0
+        "idle": 94.8,
+        "iowait": 0.1
       },
       "percpu": [
-        5.5,
-        4.6,
-        4.6,
-        4.5
+        6.1,
+        5.1,
+        5.0,
+        4.7
       ],
       "ram": {
-        "used_gb": 3.19,
+        "used_gb": 3.38,
         "total_gb": 7.76,
-        "percent": 41.2,
-        "available_gb": 4.56
+        "percent": 43.5,
+        "available_gb": 4.38
       },
       "swap": {
         "used_mb": 353.7,
@@ -29,9 +29,9 @@
         "percent": 18.7
       },
       "load": {
-        "1min": 0.76,
-        "5min": 0.83,
-        "15min": 0.88,
+        "1min": 0.97,
+        "5min": 0.92,
+        "15min": 0.8,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1.0,
-        "write_mb": 895.1
+        "read_mb": 470.9,
+        "write_mb": 861.5
       },
       "temperature_c": null,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 303,
+        "total": 308,
         "running": 0,
-        "sleeping": 230,
-        "threads": 1134
+        "sleeping": 236,
+        "threads": 1150
       },
-      "uptime": "5 days, 17:30:27",
+      "uptime": "5 days, 18:05:14",
       "containers": [
         {
           "name": "gallery backend",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 9 hours grafana/grafana:latest"
+          "status": "Up 10 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 9 hours prom/prometheus:latest"
+          "status": "Up 10 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -147,20 +147,20 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 0.6,
-        "user": 0.4,
+        "total": 0.5,
+        "user": 0.3,
         "system": 0.1,
-        "idle": 99.4,
+        "idle": 99.5,
         "iowait": 0.0
       },
       "percpu": [
-        0.6,
-        0.6
+        0.5,
+        0.5
       ],
       "ram": {
         "used_gb": 0.59,
         "total_gb": 1.92,
-        "percent": 30.9,
+        "percent": 31.0,
         "available_gb": 1.33
       },
       "swap": {
@@ -169,9 +169,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.0,
-        "5min": 0.0,
-        "15min": 0.0,
+        "1min": 0.16,
+        "5min": 0.03,
+        "15min": 0.01,
         "cores": 2
       },
       "disks": [
@@ -185,69 +185,69 @@
         }
       ],
       "disk_io": {
-        "read_mb": 198.7,
-        "write_mb": 754.9
+        "read_mb": 0.6,
+        "write_mb": 28.0
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 84.9,
-          "recv_mb": 87.3,
+          "sent_mb": 16.1,
+          "recv_mb": 17.8,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 4.1,
-          "recv_mb": 3.1,
+          "sent_mb": 2.6,
+          "recv_mb": 2.1,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
-          "sent_mb": 0.4,
-          "recv_mb": 1.5,
+          "sent_mb": 0.3,
+          "recv_mb": 1.0,
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 11.2,
-          "recv_mb": 11.3,
+          "sent_mb": 2.8,
+          "recv_mb": 2.9,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 68.6,
-          "recv_mb": 67.7,
+          "sent_mb": 11.0,
+          "recv_mb": 10.4,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 5.6,
-          "recv_mb": 5.8,
+          "sent_mb": 0.8,
+          "recv_mb": 0.9,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
-          "sent_mb": 0.9,
-          "recv_mb": 0.3,
+          "sent_mb": 0.5,
+          "recv_mb": 0.2,
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 68.6,
-          "recv_mb": 68.2,
+          "sent_mb": 11.0,
+          "recv_mb": 10.6,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 2.8,
-          "recv_mb": 1.6,
+          "sent_mb": 1.8,
+          "recv_mb": 1.1,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
-          "sent_mb": 5.7,
-          "recv_mb": 5.8,
+          "sent_mb": 2.0,
+          "recv_mb": 2.1,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 125,
+        "total": 121,
         "running": 0,
         "sleeping": 69,
-        "threads": 290
+        "threads": 286
       },
-      "uptime": "5 days, 17:29:34",
+      "uptime": "5 days, 18:04:21",
       "containers": [
         {
           "name": "glances",
@@ -272,23 +272,23 @@
     "VM400": {
       "status": "ok",
       "cpu": {
-        "total": 3.7,
-        "user": 2.8,
+        "total": 3.9,
+        "user": 2.9,
         "system": 0.8,
-        "idle": 96.3,
+        "idle": 96.1,
         "iowait": 0.0
       },
       "percpu": [
-        3.8,
+        3.9,
         3.7,
-        3.7,
-        3.7
+        4.0,
+        4.0
       ],
       "ram": {
-        "used_gb": 1.29,
+        "used_gb": 1.45,
         "total_gb": 3.82,
-        "percent": 33.6,
-        "available_gb": 2.54
+        "percent": 37.8,
+        "available_gb": 2.38
       },
       "swap": {
         "used_mb": 511.8,
@@ -296,9 +296,9 @@
         "percent": 27.1
       },
       "load": {
-        "1min": 0.15,
-        "5min": 0.12,
-        "15min": 0.1,
+        "1min": 0.18,
+        "5min": 0.15,
+        "15min": 0.12,
         "cores": 4
       },
       "disks": [
@@ -312,24 +312,24 @@
         }
       ],
       "disk_io": {
-        "read_mb": 3.8,
-        "write_mb": 230.7
+        "read_mb": 7.5,
+        "write_mb": 120.8
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 5.1,
-          "recv_mb": 108.8,
+          "sent_mb": 3.5,
+          "recv_mb": 38.8,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 0.3,
-          "recv_mb": 2.4,
+          "sent_mb": 0.2,
+          "recv_mb": 1.6,
           "speed_kbps": 10240000.0
         },
         "br-3052d87b6d75": {
-          "sent_mb": 4.3,
-          "recv_mb": 114.8,
+          "sent_mb": 2.5,
+          "recv_mb": 66.5,
           "speed_kbps": 10240000.0
         },
         "vethd276a7a": {
@@ -338,23 +338,23 @@
           "speed_kbps": 10240000.0
         },
         "vethabd24f3": {
-          "sent_mb": 4.3,
-          "recv_mb": 115.9,
+          "sent_mb": 2.5,
+          "recv_mb": 67.1,
           "speed_kbps": 10240000.0
         },
         "veth50973ba": {
-          "sent_mb": 0.3,
-          "recv_mb": 2.5,
+          "sent_mb": 0.2,
+          "recv_mb": 1.6,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
         "total": 474,
-        "running": 0,
-        "sleeping": 398,
-        "threads": 2912
+        "running": 1,
+        "sleeping": 399,
+        "threads": 2917
       },
-      "uptime": "4 days, 19:26:17",
+      "uptime": "4 days, 20:01:03",
       "containers": [
         {
           "name": "glances",
@@ -388,7 +388,7 @@
       "genre": "Blues",
       "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/8f3e5f969e07633049fd1854",
       "duration": 7210,
-      "elapsed": 367
+      "elapsed": 2454
     },
     "playing_next": {
       "title": "Black Serenade (Alternate Version)",
