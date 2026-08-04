@@ -1,27 +1,27 @@
 {
-  "updated": "2026-08-04 03:12",
+  "updated": "2026-08-04 04:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 4.5,
+        "total": 4.9,
         "user": 2.3,
-        "system": 1.6,
-        "idle": 95.5,
-        "iowait": 0.1
+        "system": 1.9,
+        "idle": 95.1,
+        "iowait": 0.0
       },
       "percpu": [
-        5.4,
-        4.6,
-        3.9,
-        4.2
+        5.6,
+        4.8,
+        4.4,
+        5.0
       ],
       "ram": {
-        "used_gb": 3.19,
+        "used_gb": 3.18,
         "total_gb": 7.76,
-        "percent": 41.1,
-        "available_gb": 4.57
+        "percent": 41.0,
+        "available_gb": 4.58
       },
       "swap": {
         "used_mb": 353.7,
@@ -29,9 +29,9 @@
         "percent": 18.7
       },
       "load": {
-        "1min": 0.7,
-        "5min": 0.44,
-        "15min": 0.39,
+        "1min": 0.89,
+        "5min": 0.8,
+        "15min": 0.72,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 2.5,
-        "write_mb": 1010.5
+        "read_mb": 0.8,
+        "write_mb": 975.8
       },
       "temperature_c": null,
       "network": {
@@ -62,7 +62,7 @@
         "sleeping": 232,
         "threads": 1133
       },
-      "uptime": "5 days, 10:30:19",
+      "uptime": "5 days, 11:30:21",
       "containers": [
         {
           "name": "gallery backend",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 2 hours grafana/grafana:latest"
+          "status": "Up 3 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 2 hours prom/prometheus:latest"
+          "status": "Up 3 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -147,21 +147,21 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 0.6,
-        "user": 0.4,
+        "total": 0.5,
+        "user": 0.3,
         "system": 0.1,
-        "idle": 99.4,
+        "idle": 99.5,
         "iowait": 0.0
       },
       "percpu": [
-        0.6,
-        0.6
+        0.5,
+        0.5
       ],
       "ram": {
-        "used_gb": 0.58,
+        "used_gb": 0.57,
         "total_gb": 1.92,
-        "percent": 30.1,
-        "available_gb": 1.34
+        "percent": 29.7,
+        "available_gb": 1.35
       },
       "swap": {
         "used_mb": 0.8,
@@ -169,8 +169,8 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.0,
-        "5min": 0.0,
+        "1min": 0.01,
+        "5min": 0.01,
         "15min": 0.0,
         "cores": 2
       },
@@ -191,13 +191,13 @@
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 47.0,
-          "recv_mb": 48.8,
+          "sent_mb": 53.6,
+          "recv_mb": 55.8,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 4.4,
-          "recv_mb": 3.7,
+          "sent_mb": 4.0,
+          "recv_mb": 3.1,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 15.0,
-          "recv_mb": 15.6,
+          "sent_mb": 7.3,
+          "recv_mb": 7.3,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 27.2,
-          "recv_mb": 26.0,
+          "sent_mb": 42.3,
+          "recv_mb": 41.3,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 12.9,
-          "recv_mb": 13.8,
+          "sent_mb": 1.4,
+          "recv_mb": 1.5,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,28 +226,28 @@
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 27.2,
-          "recv_mb": 26.4,
+          "sent_mb": 42.3,
+          "recv_mb": 41.8,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 3.1,
-          "recv_mb": 2.2,
+          "sent_mb": 2.7,
+          "recv_mb": 1.6,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
-          "sent_mb": 2.1,
-          "recv_mb": 2.2,
+          "sent_mb": 5.9,
+          "recv_mb": 6.0,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 126,
+        "total": 125,
         "running": 0,
         "sleeping": 69,
-        "threads": 291
+        "threads": 290
       },
-      "uptime": "5 days, 10:29:27",
+      "uptime": "5 days, 11:29:28",
       "containers": [
         {
           "name": "glances",
@@ -272,23 +272,23 @@
     "VM400": {
       "status": "ok",
       "cpu": {
-        "total": 3.6,
+        "total": 3.5,
         "user": 2.7,
-        "system": 0.8,
-        "idle": 96.4,
+        "system": 0.7,
+        "idle": 96.5,
         "iowait": 0.0
       },
       "percpu": [
+        3.6,
         3.7,
-        3.6,
-        3.6,
-        3.6
+        3.5,
+        3.4
       ],
       "ram": {
-        "used_gb": 1.34,
+        "used_gb": 1.32,
         "total_gb": 3.82,
-        "percent": 35.1,
-        "available_gb": 2.48
+        "percent": 34.5,
+        "available_gb": 2.51
       },
       "swap": {
         "used_mb": 511.8,
@@ -296,9 +296,9 @@
         "percent": 27.1
       },
       "load": {
-        "1min": 0.18,
-        "5min": 0.14,
-        "15min": 0.1,
+        "1min": 0.31,
+        "5min": 0.17,
+        "15min": 0.11,
         "cores": 4
       },
       "disks": [
@@ -312,14 +312,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.5,
-        "write_mb": 200.8
+        "read_mb": 0.0,
+        "write_mb": 196.5
       },
       "temperature_c": null,
       "network": {
         "ens18": {
           "sent_mb": 4.7,
-          "recv_mb": 63.9,
+          "recv_mb": 64.0,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -328,7 +328,7 @@
           "speed_kbps": 10240000.0
         },
         "br-3052d87b6d75": {
-          "sent_mb": 4.3,
+          "sent_mb": 4.4,
           "recv_mb": 114.7,
           "speed_kbps": 10240000.0
         },
@@ -338,7 +338,7 @@
           "speed_kbps": 10240000.0
         },
         "vethabd24f3": {
-          "sent_mb": 4.3,
+          "sent_mb": 4.4,
           "recv_mb": 115.8,
           "speed_kbps": 10240000.0
         },
@@ -349,12 +349,12 @@
         }
       },
       "processes": {
-        "total": 475,
+        "total": 474,
         "running": 0,
         "sleeping": 398,
-        "threads": 2914
+        "threads": 2913
       },
-      "uptime": "4 days, 12:26:09",
+      "uptime": "4 days, 13:26:10",
       "containers": [
         {
           "name": "glances",
@@ -388,7 +388,7 @@
       "genre": "",
       "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/2cfcb0a21494ad866dac0e51",
       "duration": 19357,
-      "elapsed": 7121
+      "elapsed": 10723
     },
     "playing_next": {
       "title": "Die By The Sword",
