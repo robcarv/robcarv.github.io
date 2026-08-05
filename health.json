@@ -1,37 +1,37 @@
 {
-  "updated": "2026-08-05 22:12",
+  "updated": "2026-08-05 23:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 5.5,
+        "total": 5.1,
         "user": 2.4,
-        "system": 2.2,
-        "idle": 94.5,
+        "system": 2.0,
+        "idle": 94.8,
         "iowait": 0.0
       },
       "percpu": [
-        6.5,
-        5.4,
-        5.0,
-        5.2
+        6.0,
+        4.9,
+        4.8,
+        5.0
       ],
       "ram": {
-        "used_gb": 3.17,
+        "used_gb": 3.18,
         "total_gb": 7.76,
-        "percent": 40.8,
-        "available_gb": 4.59
+        "percent": 41.0,
+        "available_gb": 4.57
       },
       "swap": {
-        "used_mb": 417.7,
+        "used_mb": 416.9,
         "total_mb": 1888.0,
         "percent": 22.1
       },
       "load": {
-        "1min": 0.77,
-        "5min": 0.95,
-        "15min": 0.98,
+        "1min": 0.33,
+        "5min": 0.4,
+        "15min": 0.66,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 3.7,
-        "write_mb": 1022.9
+        "read_mb": 8.5,
+        "write_mb": 989.5
       },
       "temperature_c": null,
       "network": {
@@ -57,16 +57,16 @@
         }
       },
       "processes": {
-        "total": 302,
+        "total": 306,
         "running": 0,
-        "sleeping": 230,
-        "threads": 1138
+        "sleeping": 232,
+        "threads": 1142
       },
-      "uptime": "7 days, 5:31:07",
+      "uptime": "7 days, 6:31:08",
       "containers": [
         {
           "name": "gallery backend",
-          "status": "Up 3 days (healthy) gallery-downloader-backend"
+          "status": "Up 4 days (healthy) gallery-downloader-backend"
         },
         {
           "name": "subscription bot",
@@ -82,19 +82,19 @@
         },
         {
           "name": "gallery frontend",
-          "status": "Up 3 days gallery-downloader-frontend"
+          "status": "Up 4 days gallery-downloader-frontend"
         },
         {
           "name": "gallery worker",
-          "status": "Up 3 days gallery-downloader-worker"
+          "status": "Up 4 days gallery-downloader-worker"
         },
         {
           "name": "gallery postgres",
-          "status": "Up 3 days (healthy) postgres:16-alpine"
+          "status": "Up 4 days (healthy) postgres:16-alpine"
         },
         {
           "name": "gallery redis",
-          "status": "Up 3 days (healthy) redis:7-alpine"
+          "status": "Up 4 days (healthy) redis:7-alpine"
         },
         {
           "name": "politicosaas app 1",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 21 hours grafana/grafana:latest"
+          "status": "Up 22 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 21 hours prom/prometheus:latest"
+          "status": "Up 22 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -160,7 +160,7 @@
       "ram": {
         "used_gb": 0.59,
         "total_gb": 1.92,
-        "percent": 30.6,
+        "percent": 30.9,
         "available_gb": 1.33
       },
       "swap": {
@@ -186,13 +186,13 @@
       ],
       "disk_io": {
         "read_mb": 0.0,
-        "write_mb": 45.3
+        "write_mb": 48.3
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 53.9,
-          "recv_mb": 56.4,
+          "sent_mb": 36.6,
+          "recv_mb": 39.5,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 1.7,
-          "recv_mb": 1.8,
+          "sent_mb": 1.5,
+          "recv_mb": 1.6,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 47.7,
-          "recv_mb": 46.7,
+          "sent_mb": 31.1,
+          "recv_mb": 30.0,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 1.2,
-          "recv_mb": 1.3,
+          "sent_mb": 0.9,
+          "recv_mb": 1.0,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,28 +226,28 @@
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 47.7,
-          "recv_mb": 47.2,
+          "sent_mb": 31.1,
+          "recv_mb": 30.4,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
           "sent_mb": 3.2,
-          "recv_mb": 1.9,
+          "recv_mb": 2.0,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
-          "sent_mb": 0.5,
-          "recv_mb": 0.6,
+          "sent_mb": 0.6,
+          "recv_mb": 0.7,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 124,
+        "total": 126,
         "running": 0,
         "sleeping": 69,
-        "threads": 289
+        "threads": 291
       },
-      "uptime": "7 days, 5:30:15",
+      "uptime": "7 days, 6:30:16",
       "containers": [
         {
           "name": "glances",
@@ -282,13 +282,13 @@
         3.8,
         3.7,
         3.5,
-        3.6
+        3.5
       ],
       "ram": {
-        "used_gb": 1.28,
+        "used_gb": 1.29,
         "total_gb": 3.82,
-        "percent": 33.6,
-        "available_gb": 2.54
+        "percent": 33.8,
+        "available_gb": 2.53
       },
       "swap": {
         "used_mb": 511.5,
@@ -296,9 +296,9 @@
         "percent": 27.1
       },
       "load": {
-        "1min": 0.12,
-        "5min": 0.11,
-        "15min": 0.09,
+        "1min": 0.03,
+        "5min": 0.1,
+        "15min": 0.08,
         "cores": 4
       },
       "disks": [
@@ -313,13 +313,13 @@
       ],
       "disk_io": {
         "read_mb": 0.0,
-        "write_mb": 190.6
+        "write_mb": 186.4
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 5.3,
-          "recv_mb": 116.0,
+          "sent_mb": 5.0,
+          "recv_mb": 107.5,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -328,8 +328,8 @@
           "speed_kbps": 10240000.0
         },
         "br-3052d87b6d75": {
-          "sent_mb": 4.3,
-          "recv_mb": 115.0,
+          "sent_mb": 4.4,
+          "recv_mb": 114.7,
           "speed_kbps": 10240000.0
         },
         "vethd276a7a": {
@@ -338,8 +338,8 @@
           "speed_kbps": 10240000.0
         },
         "vethabd24f3": {
-          "sent_mb": 4.3,
-          "recv_mb": 116.1,
+          "sent_mb": 4.4,
+          "recv_mb": 115.8,
           "speed_kbps": 10240000.0
         },
         "veth50973ba": {
@@ -349,12 +349,12 @@
         }
       },
       "processes": {
-        "total": 473,
+        "total": 474,
         "running": 0,
         "sleeping": 398,
         "threads": 2912
       },
-      "uptime": "6 days, 7:26:57",
+      "uptime": "6 days, 8:26:58",
       "containers": [
         {
           "name": "glances",
@@ -382,45 +382,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Collision [Peel Session]",
-      "artist": "Loop",
-      "album": "Wolf Flow [Peel Session 87-90]",
-      "genre": "Space-Rock",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/fa0d017a7fe93e4ecc5016e5-1785454205.jpg",
-      "duration": 327,
-      "elapsed": 61
+      "title": "The Nomad",
+      "artist": "Iron Maiden",
+      "album": "Brave New World",
+      "genre": "Heavy Metal",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/7995db3355d1eb4d0fd35a3b-1785439614.jpg",
+      "duration": 545,
+      "elapsed": 162
     },
     "playing_next": {
-      "title": "06 - Natural Reggae Beat",
-      "artist": "Black Uhuru"
+      "title": "Requiem for a Hit",
+      "artist": "Miss Kittin/Laurence Williams"
     },
     "listeners": 2,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "22 going on 23",
-        "artist": "07 #44 butthole surfers",
-        "played_at": 1785967653
+        "title": "Funky Kingston",
+        "artist": "Toots and The Maytals",
+        "played_at": 1785971125
       },
       {
-        "title": "The Click",
-        "artist": "Good Charlotte",
-        "played_at": 1785967443
+        "title": "3.John-Mu-Ziq",
+        "artist": "John Peel",
+        "played_at": 1785970710
       },
       {
-        "title": "Men We Yadd",
-        "artist": "Burning Spear",
-        "played_at": 1785967194
+        "title": "Precious, Precious",
+        "artist": "Toots & The Maytals",
+        "played_at": 1785970471
       },
       {
-        "title": "EV battery recycling has an economics problem  Col",
-        "artist": "",
-        "played_at": 1785967178
+        "title": "Knife And Fork Dubwise",
+        "artist": "King Tubby Meets Roots Radics",
+        "played_at": 1785970273
       },
       {
-        "title": "47.Beautiful Son-Hole",
-        "artist": "John Peel Festive Fifty 1993",
-        "played_at": 1785967010
+        "title": "Boys From The County Hell",
+        "artist": "The Pogues",
+        "played_at": 1785970106
       }
     ]
   }
