@@ -1,24 +1,24 @@
 {
-  "updated": "2026-08-05 17:12",
+  "updated": "2026-08-05 18:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 4.4,
-        "user": 2.2,
-        "system": 1.7,
-        "idle": 95.5,
+        "total": 4.8,
+        "user": 2.3,
+        "system": 1.9,
+        "idle": 95.1,
         "iowait": 0.0
       },
       "percpu": [
-        5.0,
-        4.3,
-        4.2,
-        4.3
+        6.0,
+        4.8,
+        4.4,
+        4.4
       ],
       "ram": {
-        "used_gb": 3.22,
+        "used_gb": 3.21,
         "total_gb": 7.76,
         "percent": 41.5,
         "available_gb": 4.54
@@ -29,9 +29,9 @@
         "percent": 22.1
       },
       "load": {
-        "1min": 0.34,
-        "5min": 0.32,
-        "15min": 0.45,
+        "1min": 1.01,
+        "5min": 0.97,
+        "15min": 0.88,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 4.8,
-        "write_mb": 976.4
+        "read_mb": 0.2,
+        "write_mb": 1014.4
       },
       "temperature_c": null,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 303,
+        "total": 417,
         "running": 0,
         "sleeping": 232,
-        "threads": 1138
+        "threads": 1252
       },
-      "uptime": "7 days, 0:31:02",
+      "uptime": "7 days, 1:31:03",
       "containers": [
         {
           "name": "gallery backend",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 16 hours grafana/grafana:latest"
+          "status": "Up 17 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 16 hours prom/prometheus:latest"
+          "status": "Up 17 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -147,21 +147,21 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 0.6,
-        "user": 0.4,
+        "total": 0.5,
+        "user": 0.3,
         "system": 0.1,
-        "idle": 99.4,
+        "idle": 99.5,
         "iowait": 0.0
       },
       "percpu": [
-        0.6,
-        0.6
+        0.5,
+        0.5
       ],
       "ram": {
-        "used_gb": 0.59,
+        "used_gb": 0.58,
         "total_gb": 1.92,
-        "percent": 30.9,
-        "available_gb": 1.33
+        "percent": 30.2,
+        "available_gb": 1.34
       },
       "swap": {
         "used_mb": 0.8,
@@ -169,9 +169,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.08,
-        "5min": 0.02,
-        "15min": 0.01,
+        "1min": 0.0,
+        "5min": 0.0,
+        "15min": 0.0,
         "cores": 2
       },
       "disks": [
@@ -185,19 +185,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1.5,
-        "write_mb": 55.9
+        "read_mb": 0.3,
+        "write_mb": 46.7
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 98.1,
-          "recv_mb": 99.6,
+          "sent_mb": 29.1,
+          "recv_mb": 32.3,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 4.7,
-          "recv_mb": 3.6,
+          "sent_mb": 4.6,
+          "recv_mb": 3.5,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 1.8,
-          "recv_mb": 2.0,
+          "sent_mb": 2.4,
+          "recv_mb": 2.6,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 90.9,
-          "recv_mb": 89.2,
+          "sent_mb": 22.8,
+          "recv_mb": 21.7,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 0.9,
-          "recv_mb": 1.0,
+          "sent_mb": 1.2,
+          "recv_mb": 1.3,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,28 +226,28 @@
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 90.9,
-          "recv_mb": 89.9,
+          "sent_mb": 22.8,
+          "recv_mb": 22.0,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 3.4,
+          "sent_mb": 3.3,
           "recv_mb": 2.1,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
-          "sent_mb": 0.9,
-          "recv_mb": 1.1,
+          "sent_mb": 1.2,
+          "recv_mb": 1.4,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 125,
+        "total": 124,
         "running": 0,
         "sleeping": 69,
-        "threads": 290
+        "threads": 289
       },
-      "uptime": "7 days, 0:30:09",
+      "uptime": "7 days, 1:30:10",
       "containers": [
         {
           "name": "glances",
@@ -279,16 +279,16 @@
         "iowait": 0.0
       },
       "percpu": [
-        3.9,
         3.7,
-        3.7,
-        3.5
+        3.6,
+        3.8,
+        3.6
       ],
       "ram": {
         "used_gb": 1.28,
         "total_gb": 3.82,
-        "percent": 33.4,
-        "available_gb": 2.55
+        "percent": 33.6,
+        "available_gb": 2.54
       },
       "swap": {
         "used_mb": 511.5,
@@ -296,9 +296,9 @@
         "percent": 27.1
       },
       "load": {
-        "1min": 0.11,
-        "5min": 0.11,
-        "15min": 0.09,
+        "1min": 0.66,
+        "5min": 0.81,
+        "15min": 0.58,
         "cores": 4
       },
       "disks": [
@@ -308,18 +308,18 @@
           "size_gb": 45.4,
           "used_gb": 9.6,
           "free_gb": 33.9,
-          "percent": 21.1
+          "percent": 21.0
         }
       ],
       "disk_io": {
-        "read_mb": 0.1,
-        "write_mb": 195.0
+        "read_mb": 0.2,
+        "write_mb": 209.2
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 5.0,
-          "recv_mb": 107.5,
+          "sent_mb": 5.1,
+          "recv_mb": 96.7,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -349,12 +349,12 @@
         }
       },
       "processes": {
-        "total": 477,
+        "total": 474,
         "running": 0,
-        "sleeping": 399,
-        "threads": 2917
+        "sleeping": 398,
+        "threads": 2912
       },
-      "uptime": "6 days, 2:26:51",
+      "uptime": "6 days, 3:26:53",
       "containers": [
         {
           "name": "glances",
@@ -382,45 +382,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "The Edge Of Darkness",
-      "artist": "Iron Maiden",
-      "album": "The X Factor",
-      "genre": "Heavy Metal",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/026df75b40673c8ced8b0d7f-1785439305.jpg",
-      "duration": 397,
-      "elapsed": 37
+      "title": "13 #01 - Motors - Dancing The Night Away.mp3",
+      "artist": "John Peel Festive Fifty 1977",
+      "album": "John Peel Festive Fifty 1977",
+      "genre": "Alternative & Punk",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/23d53e71e072b3415da7ca86",
+      "duration": 192,
+      "elapsed": 139
     },
     "playing_next": {
-      "title": "Lily Allen downsizes several venues on North Ameri",
-      "artist": ""
+      "title": "Dummy Discards a Heart",
+      "artist": "Deerhoof"
     },
     "listeners": 2,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Monkey Man (With No Doubt)",
-        "artist": "Toots And The Maytals",
-        "played_at": 1785949725
+        "title": "36 #15.Good Fruit-Hefner",
+        "artist": "John Peel Festive Fifty 2000",
+        "played_at": 1785953231
       },
       {
-        "title": "Louie Louie",
-        "artist": "Toots & The Maytals",
-        "played_at": 1785949459
+        "title": "I Just Wanna Live",
+        "artist": "Good Charlotte",
+        "played_at": 1785953068
       },
       {
-        "title": "Streets Of Sorrow/Birmingham Six",
-        "artist": "The Pogues",
-        "played_at": 1785949183
+        "title": "South Kerry store sells lotto ticket worth  1 mill",
+        "artist": "",
+        "played_at": 1785953063
       },
       {
-        "title": "Supremist",
-        "artist": "slayer",
-        "played_at": 1785948954
+        "title": "Boards of Canada-Happy Cycling",
+        "artist": "John Peel",
+        "played_at": 1785952590
       },
       {
-        "title": "Soul & Power",
-        "artist": "The Heptones",
-        "played_at": 1785948780
+        "title": "40-Dark Star-Grateful Dead",
+        "artist": "John Peel Festive Fifty 1976",
+        "played_at": 1785952279
       }
     ]
   }
