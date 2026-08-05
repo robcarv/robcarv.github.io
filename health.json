@@ -1,27 +1,27 @@
 {
-  "updated": "2026-08-05 01:12",
+  "updated": "2026-08-05 02:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 6.7,
-        "user": 3.7,
-        "system": 2.1,
-        "idle": 93.2,
-        "iowait": 0.1
+        "total": 5.4,
+        "user": 2.3,
+        "system": 2.2,
+        "idle": 94.6,
+        "iowait": 0.0
       },
       "percpu": [
-        7.9,
-        6.7,
-        6.1,
-        6.5
+        6.2,
+        5.2,
+        4.9,
+        5.2
       ],
       "ram": {
-        "used_gb": 3.27,
+        "used_gb": 3.18,
         "total_gb": 7.76,
-        "percent": 42.2,
-        "available_gb": 4.49
+        "percent": 41.1,
+        "available_gb": 4.57
       },
       "swap": {
         "used_mb": 418.4,
@@ -29,9 +29,9 @@
         "percent": 22.2
       },
       "load": {
-        "1min": 0.94,
-        "5min": 1.07,
-        "15min": 1.06,
+        "1min": 0.73,
+        "5min": 0.86,
+        "15min": 0.91,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 26543.7,
-        "write_mb": 20441.4
+        "read_mb": 158.8,
+        "write_mb": 989.6
       },
       "temperature_c": null,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 306,
+        "total": 304,
         "running": 0,
-        "sleeping": 235,
-        "threads": 1147
+        "sleeping": 232,
+        "threads": 1138
       },
-      "uptime": "6 days, 8:30:44",
+      "uptime": "6 days, 9:30:45",
       "containers": [
         {
           "name": "gallery backend",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 11 minutes grafana/grafana:latest"
+          "status": "Up About an hour grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 11 minutes prom/prometheus:latest"
+          "status": "Up About an hour prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -147,20 +147,20 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 0.5,
-        "user": 0.3,
+        "total": 0.6,
+        "user": 0.4,
         "system": 0.1,
-        "idle": 99.5,
+        "idle": 99.4,
         "iowait": 0.0
       },
       "percpu": [
-        0.5,
-        0.5
+        0.6,
+        0.6
       ],
       "ram": {
         "used_gb": 0.59,
         "total_gb": 1.92,
-        "percent": 30.6,
+        "percent": 31.0,
         "available_gb": 1.33
       },
       "swap": {
@@ -169,7 +169,7 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.01,
+        "1min": 0.0,
         "5min": 0.01,
         "15min": 0.0,
         "cores": 2
@@ -185,19 +185,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.1,
-        "write_mb": 48.7
+        "read_mb": 28.0,
+        "write_mb": 866.6
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 46.3,
-          "recv_mb": 48.6,
+          "sent_mb": 43.2,
+          "recv_mb": 51.6,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 4.2,
-          "recv_mb": 3.3,
+          "sent_mb": 5.1,
+          "recv_mb": 4.0,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 2.6,
-          "recv_mb": 2.7,
+          "sent_mb": 2.1,
+          "recv_mb": 2.2,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 39.7,
-          "recv_mb": 38.5,
+          "sent_mb": 36.4,
+          "recv_mb": 35.2,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 1.8,
-          "recv_mb": 2.0,
+          "sent_mb": 1.5,
+          "recv_mb": 1.6,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,28 +226,28 @@
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 39.7,
-          "recv_mb": 39.0,
+          "sent_mb": 36.4,
+          "recv_mb": 35.7,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 3.0,
-          "recv_mb": 1.8,
+          "sent_mb": 3.8,
+          "recv_mb": 2.6,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
-          "sent_mb": 0.8,
-          "recv_mb": 0.9,
+          "sent_mb": 0.6,
+          "recv_mb": 0.7,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 125,
+        "total": 127,
         "running": 0,
         "sleeping": 70,
-        "threads": 295
+        "threads": 297
       },
-      "uptime": "6 days, 8:29:51",
+      "uptime": "6 days, 9:29:52",
       "containers": [
         {
           "name": "glances",
@@ -272,22 +272,22 @@
     "VM400": {
       "status": "ok",
       "cpu": {
-        "total": 3.8,
-        "user": 2.9,
-        "system": 0.8,
-        "idle": 96.2,
+        "total": 3.6,
+        "user": 2.7,
+        "system": 0.7,
+        "idle": 96.4,
         "iowait": 0.0
       },
       "percpu": [
-        4.0,
-        3.9,
         3.7,
+        3.5,
+        3.5,
         3.5
       ],
       "ram": {
         "used_gb": 1.3,
         "total_gb": 3.82,
-        "percent": 34.1,
+        "percent": 34.0,
         "available_gb": 2.52
       },
       "swap": {
@@ -296,9 +296,9 @@
         "percent": 27.1
       },
       "load": {
-        "1min": 0.21,
-        "5min": 0.14,
-        "15min": 0.1,
+        "1min": 0.08,
+        "5min": 0.08,
+        "15min": 0.08,
         "cores": 4
       },
       "disks": [
@@ -312,14 +312,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1223.6,
-        "write_mb": 4340.1
+        "read_mb": 0.7,
+        "write_mb": 205.2
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 429.4,
-          "recv_mb": 101.5,
+          "sent_mb": 4.9,
+          "recv_mb": 86.0,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -339,7 +339,7 @@
         },
         "vethabd24f3": {
           "sent_mb": 4.3,
-          "recv_mb": 115.8,
+          "recv_mb": 115.7,
           "speed_kbps": 10240000.0
         },
         "veth50973ba": {
@@ -349,12 +349,12 @@
         }
       },
       "processes": {
-        "total": 477,
+        "total": 473,
         "running": 0,
-        "sleeping": 400,
-        "threads": 2915
+        "sleeping": 398,
+        "threads": 2912
       },
-      "uptime": "5 days, 10:26:34",
+      "uptime": "5 days, 11:26:35",
       "containers": [
         {
           "name": "glances",
@@ -382,45 +382,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Feds demand autonomous vehicle companies stop inte",
+      "title": "2. LONDON  18 07 67  PERFUMED GARDEN with JOHN PEEL",
       "artist": "",
       "album": "",
       "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/a463bc3abc9219c4b255b365",
-      "duration": 11,
-      "elapsed": 2
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/7a15dd545f9176101ee0128f",
+      "duration": 5422,
+      "elapsed": 2094
     },
     "playing_next": {
-      "title": "Oh Jah",
-      "artist": "06"
+      "title": "Catatonic",
+      "artist": "slayer"
     },
     "listeners": 2,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Threshold",
-        "artist": "Dead Can Dance",
-        "played_at": 1785892123
+        "title": "Citadel",
+        "artist": "The Comsat Angels",
+        "played_at": 1785893683
       },
       {
-        "title": "Thief Is In The Vineyard",
+        "title": "Know Yourself",
+        "artist": "Horace Andy",
+        "played_at": 1785893419
+      },
+      {
+        "title": "13 jam",
         "artist": "",
-        "played_at": 1785891929
+        "played_at": 1785893351
       },
       {
-        "title": "Casa de ex-prefeito de Cabedelo  na PB  é assaltad",
-        "artist": "",
-        "played_at": 1785891898
+        "title": "living too late",
+        "artist": "36 #15 the fall",
+        "played_at": 1785893080
       },
       {
-        "title": "On The Off Beat",
-        "artist": "African Head Charge",
-        "played_at": 1785891706
-      },
-      {
-        "title": "Backout",
-        "artist": "Roots Radics",
-        "played_at": 1785891487
+        "title": "50-I Think I Need Help-Farmers Boys",
+        "artist": "John Peel Festive Fifty 1982",
+        "played_at": 1785892955
       }
     ]
   }
