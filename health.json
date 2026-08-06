@@ -1,37 +1,37 @@
 {
-  "updated": "2026-08-06 16:12",
+  "updated": "2026-08-06 17:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 5.2,
+        "total": 5.0,
         "user": 2.3,
-        "system": 2.1,
-        "idle": 94.8,
+        "system": 2.0,
+        "idle": 95.0,
         "iowait": 0.0
       },
       "percpu": [
-        6.3,
+        5.7,
         4.9,
-        4.7,
+        4.5,
         4.9
       ],
       "ram": {
-        "used_gb": 3.27,
+        "used_gb": 3.26,
         "total_gb": 7.76,
-        "percent": 42.2,
+        "percent": 42.1,
         "available_gb": 4.49
       },
       "swap": {
-        "used_mb": 414.2,
+        "used_mb": 413.9,
         "total_mb": 1888.0,
         "percent": 21.9
       },
       "load": {
-        "1min": 0.48,
-        "5min": 0.48,
-        "15min": 0.7,
+        "1min": 0.28,
+        "5min": 0.38,
+        "15min": 0.58,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.5,
-        "write_mb": 994.6
+        "read_mb": 9.0,
+        "write_mb": 967.1
       },
       "temperature_c": null,
       "network": {
@@ -62,7 +62,7 @@
         "sleeping": 230,
         "threads": 1132
       },
-      "uptime": "7 days, 23:30:27",
+      "uptime": "8 days, 0:30:28",
       "containers": [
         {
           "name": "gallery backend",
@@ -114,31 +114,31 @@
         },
         {
           "name": "wallos",
-          "status": "Up 7 days (healthy) bellamy/wallos:latest"
+          "status": "Up 8 days (healthy) bellamy/wallos:latest"
         },
         {
           "name": "nginx pm",
-          "status": "Up 7 days jc21/nginx-proxy-manager:latest"
+          "status": "Up 8 days jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "Dashy",
-          "status": "Up 7 days (healthy) lissy93/dashy:4.x"
+          "status": "Up 8 days (healthy) lissy93/dashy:4.x"
         },
         {
           "name": "cve report",
-          "status": "Up 7 days nginx:alpine"
+          "status": "Up 8 days nginx:alpine"
         },
         {
           "name": "cve grafana",
-          "status": "Up 15 hours grafana/grafana:latest"
+          "status": "Up 16 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 15 hours prom/prometheus:latest"
+          "status": "Up 16 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
-          "status": "Up 7 days prom/alertmanager:latest"
+          "status": "Up 8 days prom/alertmanager:latest"
         }
       ],
       "container_count": 19,
@@ -147,21 +147,21 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 0.5,
-        "user": 0.3,
+        "total": 0.6,
+        "user": 0.4,
         "system": 0.1,
-        "idle": 99.5,
+        "idle": 99.4,
         "iowait": 0.0
       },
       "percpu": [
-        0.5,
-        0.5
+        0.6,
+        0.6
       ],
       "ram": {
-        "used_gb": 0.59,
+        "used_gb": 0.6,
         "total_gb": 1.92,
-        "percent": 30.7,
-        "available_gb": 1.33
+        "percent": 31.3,
+        "available_gb": 1.32
       },
       "swap": {
         "used_mb": 1.0,
@@ -169,9 +169,9 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 0.27,
-        "5min": 0.16,
-        "15min": 0.06,
+        "1min": 0.03,
+        "5min": 0.06,
+        "15min": 0.01,
         "cores": 2
       },
       "disks": [
@@ -185,19 +185,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 46.0
+        "read_mb": 2.4,
+        "write_mb": 49.3
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 41.8,
-          "recv_mb": 43.9,
+          "sent_mb": 107.8,
+          "recv_mb": 107.3,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 11.6,
-          "recv_mb": 10.7,
+          "sent_mb": 4.1,
+          "recv_mb": 3.2,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 6.1,
-          "recv_mb": 6.5,
+          "sent_mb": 16.5,
+          "recv_mb": 17.2,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 24.1,
-          "recv_mb": 23.1,
+          "sent_mb": 84.6,
+          "recv_mb": 83.9,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 3.8,
-          "recv_mb": 4.4,
+          "sent_mb": 7.9,
+          "recv_mb": 9.1,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,28 +226,28 @@
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 24.1,
-          "recv_mb": 23.4,
+          "sent_mb": 84.6,
+          "recv_mb": 84.6,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 10.3,
-          "recv_mb": 9.2,
+          "sent_mb": 2.8,
+          "recv_mb": 1.7,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
-          "sent_mb": 2.2,
-          "recv_mb": 2.4,
+          "sent_mb": 8.6,
+          "recv_mb": 8.8,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 125,
+        "total": 124,
         "running": 0,
         "sleeping": 69,
-        "threads": 290
+        "threads": 289
       },
-      "uptime": "7 days, 23:29:34",
+      "uptime": "8 days, 0:29:35",
       "containers": [
         {
           "name": "glances",
@@ -279,15 +279,15 @@
         "iowait": 0.0
       },
       "percpu": [
-        3.8,
-        3.7,
+        3.9,
         3.6,
+        3.8,
         3.6
       ],
       "ram": {
         "used_gb": 1.34,
         "total_gb": 3.82,
-        "percent": 35.0,
+        "percent": 34.9,
         "available_gb": 2.49
       },
       "swap": {
@@ -296,9 +296,9 @@
         "percent": 27.0
       },
       "load": {
-        "1min": 0.13,
-        "5min": 0.14,
-        "15min": 0.15,
+        "1min": 0.08,
+        "5min": 0.1,
+        "15min": 0.09,
         "cores": 4
       },
       "disks": [
@@ -312,14 +312,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.2,
-        "write_mb": 190.6
+        "read_mb": 0.1,
+        "write_mb": 199.4
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 4.9,
-          "recv_mb": 74.1,
+          "sent_mb": 5.1,
+          "recv_mb": 108.3,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -328,7 +328,7 @@
           "speed_kbps": 10240000.0
         },
         "br-3052d87b6d75": {
-          "sent_mb": 4.3,
+          "sent_mb": 4.4,
           "recv_mb": 114.7,
           "speed_kbps": 10240000.0
         },
@@ -338,8 +338,8 @@
           "speed_kbps": 10240000.0
         },
         "vethabd24f3": {
-          "sent_mb": 4.3,
-          "recv_mb": 115.7,
+          "sent_mb": 4.4,
+          "recv_mb": 115.8,
           "speed_kbps": 10240000.0
         },
         "veth50973ba": {
@@ -351,10 +351,10 @@
       "processes": {
         "total": 475,
         "running": 0,
-        "sleeping": 398,
-        "threads": 2913
+        "sleeping": 399,
+        "threads": 2919
       },
-      "uptime": "7 days, 1:26:16",
+      "uptime": "7 days, 2:26:17",
       "containers": [
         {
           "name": "glances",
@@ -382,45 +382,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Just Like You",
-      "artist": "Viagra boys",
-      "album": "Street Worms",
-      "genre": "Indie",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/6d98a5912905f1e595cd7c2d-1785460094.jpg",
-      "duration": 331,
-      "elapsed": 259
+      "title": "Rub Dub",
+      "artist": "Keith Hudson",
+      "album": "Brand",
+      "genre": "Reggae",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/33321ba433af0db9c9bfaac8-1785429205.jpg",
+      "duration": 229,
+      "elapsed": 119
     },
     "playing_next": {
-      "title": "Green Is The Colour",
-      "artist": "Pink Floyd"
+      "title": "Boyz II Men Headlines 2026 Tour of Australia and N",
+      "artist": ""
     },
     "listeners": 2,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "David Jonsson  the London rising star handpicked t",
+        "title": "01 Being Boiled (Peel Session)",
         "artist": "",
-        "played_at": 1786032452
+        "played_at": 1786035961
       },
       {
-        "title": "i got a catholic block",
-        "artist": "14 #37 sonic youth",
-        "played_at": 1786032245
+        "title": "Tanker Attacks Risk Overplaying Iran s Hand  Analy",
+        "artist": "",
+        "played_at": 1786035951
       },
       {
-        "title": "Reborn",
-        "artist": "Toots & The Maytals",
-        "played_at": 1786032107
+        "title": "34. #17 new order - ceremony.mp3",
+        "artist": "John Peel Festive Fifty All Time 2000",
+        "played_at": 1786035675
       },
       {
-        "title": "Mama's Love",
-        "artist": "Dennis Brown",
-        "played_at": 1786031894
+        "title": "25 super",
+        "artist": "",
+        "played_at": 1786035614
       },
       {
-        "title": "Hallowed Be Thy Name",
-        "artist": "Iron Maiden",
-        "played_at": 1786031465
+        "title": "New book from former journalist and tour guide Har",
+        "artist": "",
+        "played_at": 1786035607
       }
     ]
   }
