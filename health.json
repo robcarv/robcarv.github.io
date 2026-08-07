@@ -1,20 +1,20 @@
 {
-  "updated": "2026-08-07 21:12",
+  "updated": "2026-08-07 22:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 5.0,
-        "user": 2.3,
-        "system": 2.0,
-        "idle": 95.0,
+        "total": 4.7,
+        "user": 2.4,
+        "system": 1.8,
+        "idle": 95.2,
         "iowait": 0.0
       },
       "percpu": [
-        6.1,
-        5.0,
-        4.5,
+        5.5,
+        4.6,
+        4.3,
         4.6
       ],
       "ram": {
@@ -24,14 +24,14 @@
         "available_gb": 4.49
       },
       "swap": {
-        "used_mb": 503.6,
+        "used_mb": 501.4,
         "total_mb": 1888.0,
-        "percent": 26.7
+        "percent": 26.6
       },
       "load": {
-        "1min": 0.78,
-        "5min": 0.91,
-        "15min": 0.77,
+        "1min": 1.11,
+        "5min": 0.86,
+        "15min": 0.66,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.3,
-        "write_mb": 954.0
+        "read_mb": 434.3,
+        "write_mb": 1054.1
       },
       "temperature_c": null,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 300,
+        "total": 303,
         "running": 0,
-        "sleeping": 228,
-        "threads": 1135
+        "sleeping": 230,
+        "threads": 1138
       },
-      "uptime": "9 days, 4:30:57",
+      "uptime": "9 days, 5:30:58",
       "containers": [
         {
           "name": "gallery backend",
@@ -98,15 +98,15 @@
         },
         {
           "name": "politicosaas app 1",
-          "status": "Up 7 days politicosaas-app"
+          "status": "Up 8 days politicosaas-app"
         },
         {
           "name": "politicosaas postgres 1",
-          "status": "Up 7 days (healthy) postgres:15-alpine"
+          "status": "Up 8 days (healthy) postgres:15-alpine"
         },
         {
           "name": "politicosaas meilisearch 1",
-          "status": "Up 7 days getmeili/meilisearch:v1.12"
+          "status": "Up 8 days getmeili/meilisearch:v1.12"
         },
         {
           "name": "duckdns",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 20 hours grafana/grafana:latest"
+          "status": "Up 21 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 20 hours prom/prometheus:latest"
+          "status": "Up 21 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -147,21 +147,21 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 0.5,
-        "user": 0.3,
+        "total": 0.6,
+        "user": 0.4,
         "system": 0.1,
-        "idle": 99.5,
+        "idle": 99.4,
         "iowait": 0.0
       },
       "percpu": [
-        0.5,
-        0.5
+        0.6,
+        0.6
       ],
       "ram": {
-        "used_gb": 0.72,
+        "used_gb": 0.74,
         "total_gb": 1.92,
-        "percent": 37.6,
-        "available_gb": 1.2
+        "percent": 38.6,
+        "available_gb": 1.18
       },
       "swap": {
         "used_mb": 1.0,
@@ -185,19 +185,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 43.5
+        "read_mb": 2.0,
+        "write_mb": 52.1
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 62.7,
-          "recv_mb": 64.7,
+          "sent_mb": 72.4,
+          "recv_mb": 75.6,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 4.8,
-          "recv_mb": 3.8,
+          "sent_mb": 12.9,
+          "recv_mb": 11.1,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 3.8,
-          "recv_mb": 4.1,
+          "sent_mb": 5.3,
+          "recv_mb": 5.4,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 53.6,
-          "recv_mb": 52.6,
+          "sent_mb": 54.8,
+          "recv_mb": 53.4,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 3.0,
-          "recv_mb": 3.3,
+          "sent_mb": 0.6,
+          "recv_mb": 0.6,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,28 +226,28 @@
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 53.6,
-          "recv_mb": 53.2,
+          "sent_mb": 54.8,
+          "recv_mb": 54.0,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 3.5,
-          "recv_mb": 2.3,
+          "sent_mb": 11.6,
+          "recv_mb": 9.8,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
-          "sent_mb": 0.8,
-          "recv_mb": 0.9,
+          "sent_mb": 4.7,
+          "recv_mb": 4.9,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 126,
+        "total": 125,
         "running": 0,
         "sleeping": 69,
-        "threads": 291
+        "threads": 290
       },
-      "uptime": "9 days, 4:30:05",
+      "uptime": "9 days, 5:30:06",
       "containers": [
         {
           "name": "glances",
@@ -272,22 +272,22 @@
     "VM400": {
       "status": "ok",
       "cpu": {
-        "total": 3.7,
+        "total": 3.8,
         "user": 2.8,
         "system": 0.8,
-        "idle": 96.3,
+        "idle": 96.2,
         "iowait": 0.0
       },
       "percpu": [
-        3.8,
-        3.7,
-        3.7,
+        3.9,
+        4.0,
+        3.6,
         3.5
       ],
       "ram": {
         "used_gb": 1.25,
         "total_gb": 3.82,
-        "percent": 32.6,
+        "percent": 32.7,
         "available_gb": 2.58
       },
       "swap": {
@@ -296,9 +296,9 @@
         "percent": 28.4
       },
       "load": {
-        "1min": 0.11,
-        "5min": 0.14,
-        "15min": 0.1,
+        "1min": 0.13,
+        "5min": 0.12,
+        "15min": 0.09,
         "cores": 4
       },
       "disks": [
@@ -312,14 +312,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.8,
-        "write_mb": 200.6
+        "read_mb": 4.2,
+        "write_mb": 212.8
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 4.9,
-          "recv_mb": 62.2,
+          "sent_mb": 5.1,
+          "recv_mb": 100.9,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -328,7 +328,7 @@
           "speed_kbps": 10240000.0
         },
         "br-3052d87b6d75": {
-          "sent_mb": 4.3,
+          "sent_mb": 4.4,
           "recv_mb": 114.7,
           "speed_kbps": 10240000.0
         },
@@ -338,7 +338,7 @@
           "speed_kbps": 10240000.0
         },
         "vethabd24f3": {
-          "sent_mb": 4.3,
+          "sent_mb": 4.4,
           "recv_mb": 115.8,
           "speed_kbps": 10240000.0
         },
@@ -351,10 +351,10 @@
       "processes": {
         "total": 474,
         "running": 0,
-        "sleeping": 398,
-        "threads": 2912
+        "sleeping": 399,
+        "threads": 2917
       },
-      "uptime": "8 days, 6:26:47",
+      "uptime": "8 days, 7:26:48",
       "containers": [
         {
           "name": "glances",
@@ -382,45 +382,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Sat Up On The Gully",
-      "artist": "Yabby You",
-      "album": "Fleeing From The City",
-      "genre": "Reggae",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/388029b666e5caf6ae399be6-1785430614.jpg",
-      "duration": 249,
-      "elapsed": 159
+      "title": "John Peel 2004-08-19",
+      "artist": "John Peel (R1)",
+      "album": "from Sky+",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/492c16187600a717124752e9",
+      "duration": 7055,
+      "elapsed": 626
     },
     "playing_next": {
-      "title": "05 spanish castle magic 05 of 05",
-      "artist": ""
+      "title": "The Battle March (Medley) (Bonus track)",
+      "artist": "The Pogues"
     },
     "listeners": 2,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "SpaceX launches new V3 Starlink satellites but suf",
+        "title": "Quem foi Olivia Guedes Penteado  apelidada de Noss",
         "artist": "",
-        "played_at": 1786136998
+        "played_at": 1786140116
       },
       {
-        "title": "Nothing s good-looking Watch 3 Pro smartwatch is j",
-        "artist": "",
-        "played_at": 1786136966
+        "title": "napalm death - (1988.03.08.) - the peel sessions ii - 01 - multinational corpora",
+        "artist": "Napalm Death",
+        "played_at": 1786140055
       },
       {
-        "title": "Karol G Creates Tropicoqueta-Themed Cocktail for H",
-        "artist": "",
-        "played_at": 1786136952
+        "title": "28-Sultans of Swing-Dire Straits",
+        "artist": "John Peel Festive Fifty 1978",
+        "played_at": 1786139713
       },
       {
-        "title": "Ruth Negga  Eleanor McEvoy and more to explore Tri",
+        "title": "Michigan s explosive outbreak of diarrheal parasit",
         "artist": "",
-        "played_at": 1786136932
+        "played_at": 1786139702
       },
       {
-        "title": "Suede announce  Coming Up  30th anniversary reissu",
-        "artist": "",
-        "played_at": 1786136907
+        "title": "It's You",
+        "artist": "Toots & the Maytals",
+        "played_at": 1786139577
       }
     ]
   }
