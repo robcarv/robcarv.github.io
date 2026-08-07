@@ -1,37 +1,37 @@
 {
-  "updated": "2026-08-07 00:12",
+  "updated": "2026-08-07 01:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 5.3,
-        "user": 2.5,
-        "system": 2.1,
-        "idle": 94.6,
+        "total": 6.5,
+        "user": 3.7,
+        "system": 2.0,
+        "idle": 93.3,
         "iowait": 0.1
       },
       "percpu": [
+        7.6,
+        6.8,
         6.3,
-        5.1,
-        5.0,
-        5.2
+        6.0
       ],
       "ram": {
-        "used_gb": 3.28,
+        "used_gb": 3.21,
         "total_gb": 7.76,
-        "percent": 42.4,
-        "available_gb": 4.47
+        "percent": 41.4,
+        "available_gb": 4.54
       },
       "swap": {
-        "used_mb": 413.9,
+        "used_mb": 538.6,
         "total_mb": 1888.0,
-        "percent": 21.9
+        "percent": 28.5
       },
       "load": {
-        "1min": 0.77,
-        "5min": 0.95,
-        "15min": 0.9,
+        "1min": 0.79,
+        "5min": 1.0,
+        "15min": 0.98,
         "cores": 4
       },
       "disks": [
@@ -39,14 +39,14 @@
           "mount": "/",
           "device": "/dev/mapper/ubuntu--vg-ubuntu--lv",
           "size_gb": 61.2,
-          "used_gb": 34.2,
+          "used_gb": 34.3,
           "free_gb": 24.3,
           "percent": 56.0
         }
       ],
       "disk_io": {
-        "read_mb": 6.4,
-        "write_mb": 1062.6
+        "read_mb": 27493.3,
+        "write_mb": 20960.4
       },
       "temperature_c": null,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 314,
+        "total": 306,
         "running": 0,
-        "sleeping": 230,
-        "threads": 1146
+        "sleeping": 234,
+        "threads": 1143
       },
-      "uptime": "8 days, 7:30:35",
+      "uptime": "8 days, 8:30:37",
       "containers": [
         {
           "name": "gallery backend",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 23 hours grafana/grafana:latest"
+          "status": "Up 11 minutes grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 23 hours prom/prometheus:latest"
+          "status": "Up 11 minutes prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -160,7 +160,7 @@
       "ram": {
         "used_gb": 0.73,
         "total_gb": 1.92,
-        "percent": 37.9,
+        "percent": 38.0,
         "available_gb": 1.19
       },
       "swap": {
@@ -185,19 +185,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 5.2,
-        "write_mb": 50.5
+        "read_mb": 0.5,
+        "write_mb": 48.2
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 288.6,
-          "recv_mb": 283.3,
+          "sent_mb": 193.5,
+          "recv_mb": 192.8,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 12.9,
-          "recv_mb": 11.2,
+          "sent_mb": 8.3,
+          "recv_mb": 6.9,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 8.5,
-          "recv_mb": 8.5,
+          "sent_mb": 3.1,
+          "recv_mb": 3.2,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 259.8,
-          "recv_mb": 261.2,
+          "sent_mb": 179.4,
+          "recv_mb": 177.5,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 1.8,
-          "recv_mb": 1.9,
+          "sent_mb": 1.0,
+          "recv_mb": 1.1,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,28 +226,28 @@
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 259.8,
-          "recv_mb": 262.4,
+          "sent_mb": 179.4,
+          "recv_mb": 178.9,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 11.6,
-          "recv_mb": 9.9,
+          "sent_mb": 7.0,
+          "recv_mb": 5.5,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
-          "sent_mb": 6.7,
-          "recv_mb": 6.9,
+          "sent_mb": 2.1,
+          "recv_mb": 2.3,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 124,
+        "total": 126,
         "running": 0,
         "sleeping": 69,
-        "threads": 289
+        "threads": 291
       },
-      "uptime": "8 days, 7:29:42",
+      "uptime": "8 days, 8:29:45",
       "containers": [
         {
           "name": "glances",
@@ -272,23 +272,23 @@
     "VM400": {
       "status": "ok",
       "cpu": {
-        "total": 3.7,
-        "user": 2.8,
+        "total": 3.8,
+        "user": 2.9,
         "system": 0.8,
-        "idle": 96.3,
+        "idle": 96.2,
         "iowait": 0.0
       },
       "percpu": [
+        4.0,
         3.7,
-        3.6,
-        3.7,
-        3.6
+        3.9,
+        3.8
       ],
       "ram": {
-        "used_gb": 1.31,
+        "used_gb": 1.3,
         "total_gb": 3.82,
-        "percent": 34.3,
-        "available_gb": 2.51
+        "percent": 33.9,
+        "available_gb": 2.53
       },
       "swap": {
         "used_mb": 510.5,
@@ -296,9 +296,9 @@
         "percent": 27.0
       },
       "load": {
-        "1min": 0.24,
-        "5min": 0.14,
-        "15min": 0.1,
+        "1min": 0.31,
+        "5min": 0.17,
+        "15min": 0.11,
         "cores": 4
       },
       "disks": [
@@ -312,14 +312,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 3.1,
-        "write_mb": 205.7
+        "read_mb": 1665.2,
+        "write_mb": 5200.8
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 5.0,
-          "recv_mb": 63.9,
+          "sent_mb": 432.0,
+          "recv_mb": 130.0,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -329,7 +329,7 @@
         },
         "br-3052d87b6d75": {
           "sent_mb": 4.4,
-          "recv_mb": 114.8,
+          "recv_mb": 114.7,
           "speed_kbps": 10240000.0
         },
         "vethd276a7a": {
@@ -339,7 +339,7 @@
         },
         "vethabd24f3": {
           "sent_mb": 4.4,
-          "recv_mb": 115.9,
+          "recv_mb": 115.8,
           "speed_kbps": 10240000.0
         },
         "veth50973ba": {
@@ -349,12 +349,12 @@
         }
       },
       "processes": {
-        "total": 474,
+        "total": 475,
         "running": 0,
-        "sleeping": 398,
-        "threads": 2912
+        "sleeping": 399,
+        "threads": 2916
       },
-      "uptime": "7 days, 9:26:25",
+      "uptime": "7 days, 10:26:27",
       "containers": [
         {
           "name": "glances",
@@ -382,45 +382,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Walk Like an Egyptian",
-      "artist": "The Bangles",
-      "album": "The Best Of The Bangles",
+      "title": "6 apr 1989, Rockradio",
+      "artist": "John Peel",
+      "album": "",
       "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/05ae1eace0e6db0f7eba53ec-1785434566.jpg",
-      "duration": 205,
-      "elapsed": 188
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/5aa8f66afe7e30cf9692d9b9",
+      "duration": 1295,
+      "elapsed": 565
     },
     "playing_next": {
-      "title": "Seek Shelter In Hell",
-      "artist": "The Varukers"
+      "title": "50-Damaged Goods-Gang Of Four",
+      "artist": "John Peel Festive Fifty 1980"
     },
     "listeners": 2,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Shine (4/21/91)",
-        "artist": "Slowdive",
-        "played_at": 1786061041
-      },
-      {
-        "title": "Chains Of Misery",
-        "artist": "Iron Maiden",
-        "played_at": 1786060824
-      },
-      {
-        "title": "John Peel 011120 128K",
-        "artist": "Niag",
-        "played_at": 1786053610
-      },
-      {
-        "title": "Six Times",
-        "artist": "The Skids",
-        "played_at": 1786053485
-      },
-      {
-        "title": "TelevisaUnivision Posts Q2 Loss Despite Boost From",
+        "title": "The Guardian US",
         "artist": "",
-        "played_at": 1786053457
+        "played_at": 1786064572
+      },
+      {
+        "title": "Houthis do Iêmen anunciam  embargo marítimo  à Ará",
+        "artist": "",
+        "played_at": 1786064556
+      },
+      {
+        "title": "When I laugh",
+        "artist": "Toots & The Maytals",
+        "played_at": 1786064431
+      },
+      {
+        "title": "Gojira drummer Mario pulls out of US tour due to",
+        "artist": "",
+        "played_at": 1786064407
+      },
+      {
+        "title": "Our country is the mission   more than 100 ex-Nas",
+        "artist": "",
+        "played_at": 1786064377
       }
     ]
   }
