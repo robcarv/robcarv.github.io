@@ -1,27 +1,27 @@
 {
-  "updated": "2026-08-06 23:12",
+  "updated": "2026-08-07 00:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 5.5,
-        "user": 2.4,
-        "system": 2.3,
-        "idle": 94.5,
-        "iowait": 0.0
+        "total": 5.3,
+        "user": 2.5,
+        "system": 2.1,
+        "idle": 94.6,
+        "iowait": 0.1
       },
       "percpu": [
-        6.6,
-        5.2,
-        4.9,
-        5.3
+        6.3,
+        5.1,
+        5.0,
+        5.2
       ],
       "ram": {
-        "used_gb": 3.26,
+        "used_gb": 3.28,
         "total_gb": 7.76,
-        "percent": 42.0,
-        "available_gb": 4.5
+        "percent": 42.4,
+        "available_gb": 4.47
       },
       "swap": {
         "used_mb": 413.9,
@@ -29,9 +29,9 @@
         "percent": 21.9
       },
       "load": {
-        "1min": 1.14,
-        "5min": 0.97,
-        "15min": 0.98,
+        "1min": 0.77,
+        "5min": 0.95,
+        "15min": 0.9,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 3.2,
-        "write_mb": 1023.7
+        "read_mb": 6.4,
+        "write_mb": 1062.6
       },
       "temperature_c": null,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 306,
+        "total": 314,
         "running": 0,
         "sleeping": 230,
-        "threads": 1138
+        "threads": 1146
       },
-      "uptime": "8 days, 6:30:34",
+      "uptime": "8 days, 7:30:35",
       "containers": [
         {
           "name": "gallery backend",
@@ -74,11 +74,11 @@
         },
         {
           "name": "cadvisor",
-          "status": "Up 6 days (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 7 days (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "kavita",
-          "status": "Up 6 days lscr.io/linuxserver/kavita:latest"
+          "status": "Up 7 days lscr.io/linuxserver/kavita:latest"
         },
         {
           "name": "gallery frontend",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 22 hours grafana/grafana:latest"
+          "status": "Up 23 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 22 hours prom/prometheus:latest"
+          "status": "Up 23 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -147,21 +147,21 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 0.5,
-        "user": 0.3,
+        "total": 0.6,
+        "user": 0.4,
         "system": 0.1,
-        "idle": 99.5,
+        "idle": 99.4,
         "iowait": 0.0
       },
       "percpu": [
-        0.5,
-        0.5
+        0.6,
+        0.6
       ],
       "ram": {
-        "used_gb": 0.61,
+        "used_gb": 0.73,
         "total_gb": 1.92,
-        "percent": 31.9,
-        "available_gb": 1.31
+        "percent": 37.9,
+        "available_gb": 1.19
       },
       "swap": {
         "used_mb": 1.0,
@@ -169,9 +169,9 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 0.19,
-        "5min": 0.15,
-        "15min": 0.06,
+        "1min": 0.0,
+        "5min": 0.0,
+        "15min": 0.0,
         "cores": 2
       },
       "disks": [
@@ -181,23 +181,23 @@
           "size_gb": 33.6,
           "used_gb": 5.9,
           "free_gb": 26.2,
-          "percent": 17.5
+          "percent": 17.6
         }
       ],
       "disk_io": {
-        "read_mb": 0.3,
-        "write_mb": 47.8
+        "read_mb": 5.2,
+        "write_mb": 50.5
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 31.2,
-          "recv_mb": 33.8,
+          "sent_mb": 288.6,
+          "recv_mb": 283.3,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 5.9,
-          "recv_mb": 4.8,
+          "sent_mb": 12.9,
+          "recv_mb": 11.2,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 7.7,
-          "recv_mb": 7.9,
+          "sent_mb": 8.5,
+          "recv_mb": 8.5,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 18.1,
-          "recv_mb": 17.2,
+          "sent_mb": 259.8,
+          "recv_mb": 261.2,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 6.2,
-          "recv_mb": 6.5,
+          "sent_mb": 1.8,
+          "recv_mb": 1.9,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,28 +226,28 @@
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 18.1,
-          "recv_mb": 17.5,
+          "sent_mb": 259.8,
+          "recv_mb": 262.4,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 4.6,
-          "recv_mb": 3.3,
+          "sent_mb": 11.6,
+          "recv_mb": 9.9,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
-          "sent_mb": 1.5,
-          "recv_mb": 1.6,
+          "sent_mb": 6.7,
+          "recv_mb": 6.9,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 127,
+        "total": 124,
         "running": 0,
-        "sleeping": 70,
-        "threads": 297
+        "sleeping": 69,
+        "threads": 289
       },
-      "uptime": "8 days, 6:29:41",
+      "uptime": "8 days, 7:29:42",
       "containers": [
         {
           "name": "glances",
@@ -272,23 +272,23 @@
     "VM400": {
       "status": "ok",
       "cpu": {
-        "total": 3.6,
+        "total": 3.7,
         "user": 2.8,
-        "system": 0.7,
-        "idle": 96.4,
+        "system": 0.8,
+        "idle": 96.3,
         "iowait": 0.0
       },
       "percpu": [
-        3.8,
-        3.8,
-        3.5,
-        3.5
+        3.7,
+        3.6,
+        3.7,
+        3.6
       ],
       "ram": {
-        "used_gb": 1.34,
+        "used_gb": 1.31,
         "total_gb": 3.82,
-        "percent": 35.1,
-        "available_gb": 2.48
+        "percent": 34.3,
+        "available_gb": 2.51
       },
       "swap": {
         "used_mb": 510.5,
@@ -296,9 +296,9 @@
         "percent": 27.0
       },
       "load": {
-        "1min": 0.15,
+        "1min": 0.24,
         "5min": 0.14,
-        "15min": 0.16,
+        "15min": 0.1,
         "cores": 4
       },
       "disks": [
@@ -312,14 +312,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 196.4
+        "read_mb": 3.1,
+        "write_mb": 205.7
       },
       "temperature_c": null,
       "network": {
         "ens18": {
           "sent_mb": 5.0,
-          "recv_mb": 64.0,
+          "recv_mb": 63.9,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -352,9 +352,9 @@
         "total": 474,
         "running": 0,
         "sleeping": 398,
-        "threads": 2913
+        "threads": 2912
       },
-      "uptime": "7 days, 8:26:24",
+      "uptime": "7 days, 9:26:25",
       "containers": [
         {
           "name": "glances",
@@ -382,21 +382,36 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "John Peel 011120 128K",
-      "artist": "Niag",
-      "album": "",
-      "genre": "Blues",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/35c85d831ace043179a2ad70",
-      "duration": 7213,
-      "elapsed": 4338
+      "title": "Walk Like an Egyptian",
+      "artist": "The Bangles",
+      "album": "The Best Of The Bangles",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/05ae1eace0e6db0f7eba53ec-1785434566.jpg",
+      "duration": 205,
+      "elapsed": 188
     },
     "playing_next": {
-      "title": "Chains Of Misery",
-      "artist": "Iron Maiden"
+      "title": "Seek Shelter In Hell",
+      "artist": "The Varukers"
     },
     "listeners": 2,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
+      {
+        "title": "Shine (4/21/91)",
+        "artist": "Slowdive",
+        "played_at": 1786061041
+      },
+      {
+        "title": "Chains Of Misery",
+        "artist": "Iron Maiden",
+        "played_at": 1786060824
+      },
+      {
+        "title": "John Peel 011120 128K",
+        "artist": "Niag",
+        "played_at": 1786053610
+      },
       {
         "title": "Six Times",
         "artist": "The Skids",
@@ -406,21 +421,6 @@
         "title": "TelevisaUnivision Posts Q2 Loss Despite Boost From",
         "artist": "",
         "played_at": 1786053457
-      },
-      {
-        "title": "Standing In the Way of Control",
-        "artist": "Gossip",
-        "played_at": 1786053203
-      },
-      {
-        "title": "Heads A Roll Dub",
-        "artist": "Yabby You",
-        "played_at": 1786053034
-      },
-      {
-        "title": "08.Rollin' & Scratchin'-Daft Punk",
-        "artist": "John Peel Festive Fifty 1997",
-        "played_at": 1786052586
       }
     ]
   }
