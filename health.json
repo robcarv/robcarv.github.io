@@ -1,27 +1,27 @@
 {
-  "updated": "2026-08-08 10:12",
+  "updated": "2026-08-08 11:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 5.6,
-        "user": 2.5,
-        "system": 2.3,
-        "idle": 94.4,
+        "total": 4.3,
+        "user": 2.2,
+        "system": 1.6,
+        "idle": 95.7,
         "iowait": 0.0
       },
       "percpu": [
-        6.8,
         5.2,
-        5.1,
-        5.4
+        4.3,
+        3.9,
+        3.9
       ],
       "ram": {
         "used_gb": 3.29,
         "total_gb": 7.76,
         "percent": 42.4,
-        "available_gb": 4.47
+        "available_gb": 4.46
       },
       "swap": {
         "used_mb": 496.1,
@@ -29,9 +29,9 @@
         "percent": 26.3
       },
       "load": {
-        "1min": 0.99,
-        "5min": 0.98,
-        "15min": 1.0,
+        "1min": 0.92,
+        "5min": 0.87,
+        "15min": 0.68,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 10.8,
-        "write_mb": 1007.7
+        "read_mb": 0.9,
+        "write_mb": 959.1
       },
       "temperature_c": null,
       "network": {
@@ -59,10 +59,10 @@
       "processes": {
         "total": 302,
         "running": 0,
-        "sleeping": 230,
-        "threads": 1135
+        "sleeping": 229,
+        "threads": 1136
       },
-      "uptime": "9 days, 17:30:11",
+      "uptime": "9 days, 18:30:13",
       "containers": [
         {
           "name": "gallery backend",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 9 hours grafana/grafana:latest"
+          "status": "Up 10 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 9 hours prom/prometheus:latest"
+          "status": "Up 10 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -155,13 +155,13 @@
       },
       "percpu": [
         0.5,
-        0.6
+        0.5
       ],
       "ram": {
-        "used_gb": 0.73,
+        "used_gb": 0.74,
         "total_gb": 1.92,
-        "percent": 38.2,
-        "available_gb": 1.19
+        "percent": 38.4,
+        "available_gb": 1.18
       },
       "swap": {
         "used_mb": 1.0,
@@ -170,8 +170,8 @@
       },
       "load": {
         "1min": 0.0,
-        "5min": 0.01,
-        "15min": 0.03,
+        "5min": 0.0,
+        "15min": 0.0,
         "cores": 2
       },
       "disks": [
@@ -185,19 +185,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 7.8,
-        "write_mb": 97.4
+        "read_mb": 0.0,
+        "write_mb": 45.3
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 93.4,
-          "recv_mb": 99.1,
+          "sent_mb": 31.5,
+          "recv_mb": 34.1,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 5.2,
-          "recv_mb": 4.1,
+          "sent_mb": 4.7,
+          "recv_mb": 3.7,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 69.9,
-          "recv_mb": 69.1,
+          "sent_mb": 6.6,
+          "recv_mb": 6.7,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 19.6,
-          "recv_mb": 18.4,
+          "sent_mb": 20.7,
+          "recv_mb": 19.7,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 1.0,
-          "recv_mb": 1.2,
+          "sent_mb": 2.0,
+          "recv_mb": 2.2,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,32 +226,32 @@
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 19.6,
-          "recv_mb": 18.8,
+          "sent_mb": 20.7,
+          "recv_mb": 20.0,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 3.9,
-          "recv_mb": 2.7,
+          "sent_mb": 3.4,
+          "recv_mb": 2.2,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
-          "sent_mb": 68.8,
-          "recv_mb": 68.5,
+          "sent_mb": 4.5,
+          "recv_mb": 4.7,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 124,
+        "total": 126,
         "running": 0,
         "sleeping": 69,
-        "threads": 289
+        "threads": 291
       },
-      "uptime": "9 days, 17:29:19",
+      "uptime": "9 days, 18:29:20",
       "containers": [
         {
           "name": "glances",
-          "status": "Up 7 days nicolargo/glances:latest"
+          "status": "Up 8 days nicolargo/glances:latest"
         },
         {
           "name": "psclient",
@@ -280,15 +280,15 @@
       },
       "percpu": [
         3.9,
-        3.9,
+        3.8,
         3.7,
-        3.4
+        3.5
       ],
       "ram": {
-        "used_gb": 1.47,
+        "used_gb": 1.45,
         "total_gb": 3.82,
-        "percent": 38.5,
-        "available_gb": 2.35
+        "percent": 38.0,
+        "available_gb": 2.37
       },
       "swap": {
         "used_mb": 536.6,
@@ -296,9 +296,9 @@
         "percent": 28.4
       },
       "load": {
-        "1min": 0.23,
-        "5min": 0.16,
-        "15min": 0.14,
+        "1min": 0.14,
+        "5min": 0.12,
+        "15min": 0.09,
         "cores": 4
       },
       "disks": [
@@ -312,14 +312,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 193.8
+        "read_mb": 7.7,
+        "write_mb": 280.9
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 4.8,
-          "recv_mb": 64.3,
+          "sent_mb": 4.9,
+          "recv_mb": 75.5,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -328,8 +328,8 @@
           "speed_kbps": 10240000.0
         },
         "br-3052d87b6d75": {
-          "sent_mb": 4.2,
-          "recv_mb": 112.8,
+          "sent_mb": 4.4,
+          "recv_mb": 114.7,
           "speed_kbps": 10240000.0
         },
         "vethd276a7a": {
@@ -338,8 +338,8 @@
           "speed_kbps": 10240000.0
         },
         "vethabd24f3": {
-          "sent_mb": 4.2,
-          "recv_mb": 113.8,
+          "sent_mb": 4.4,
+          "recv_mb": 115.8,
           "speed_kbps": 10240000.0
         },
         "veth50973ba": {
@@ -349,16 +349,16 @@
         }
       },
       "processes": {
-        "total": 481,
-        "running": 7,
-        "sleeping": 399,
-        "threads": 2919
+        "total": 477,
+        "running": 0,
+        "sleeping": 400,
+        "threads": 2916
       },
-      "uptime": "8 days, 19:26:01",
+      "uptime": "8 days, 20:26:02",
       "containers": [
         {
           "name": "glances",
-          "status": "Up 7 days nicolargo/glances:latest"
+          "status": "Up 8 days nicolargo/glances:latest"
         },
         {
           "name": "portainer agent",
@@ -382,45 +382,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Cats Caravan 24-05-01",
-      "artist": "John Peel",
-      "album": "",
-      "genre": "Blues",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/dcd77e8e3a2cf8f5b954e228",
-      "duration": 7214,
-      "elapsed": 4962
+      "title": "Having It",
+      "artist": "The Cortinas",
+      "album": "John Peel - The Punk Sessions",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/ffc3bdf6ce4f29fbda50e3d7-1785451434.jpg",
+      "duration": 128,
+      "elapsed": 13
     },
     "playing_next": {
-      "title": "Crush Me (John Peel Session 08/92)",
-      "artist": "The House Of Love"
+      "title": "sinsemilla",
+      "artist": "Black Uhuru"
     },
     "listeners": 2,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "What's Your Name",
-        "artist": "Acid Mothers Temple",
-        "played_at": 1786178592
+        "title": "Guns Before Butter",
+        "artist": "Gang of Four",
+        "played_at": 1786187249
       },
       {
-        "title": "Listen!",
-        "artist": "Generation X",
-        "played_at": 1786178398
+        "title": "between the wars",
+        "artist": "31. #40 billy bragg",
+        "played_at": 1786187095
       },
       {
-        "title": "Ozzy Osbourne s Hometown of Birmingham to Honor Si",
+        "title": "08.Cannonball-The Breeders",
+        "artist": "John Peel Festive Fifty 1993",
+        "played_at": 1786186873
+      },
+      {
+        "title": "hang ten",
+        "artist": "34 #17 the soup dragons",
+        "played_at": 1786186735
+      },
+      {
+        "title": "Mãe  acho que vou morrer   o lado sombrio da febr",
         "artist": "",
-        "played_at": 1786178383
-      },
-      {
-        "title": "Joy",
-        "artist": "PJ Harvey",
-        "played_at": 1786178063
-      },
-      {
-        "title": "I Bagsy Yours",
-        "artist": "Echo & The Bunnymen",
-        "played_at": 1786177896
+        "played_at": 1786186718
       }
     ]
   }
