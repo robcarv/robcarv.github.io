@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08 20:12",
+  "updated": "2026-08-08 21:12",
   "status": "ok",
   "nodes": {
     "VM100": {
@@ -13,9 +13,9 @@
       },
       "percpu": [
         5.9,
-        5.0,
         4.6,
-        4.6
+        4.5,
+        5.2
       ],
       "ram": {
         "used_gb": 3.27,
@@ -29,9 +29,9 @@
         "percent": 26.3
       },
       "load": {
-        "1min": 1.1,
-        "5min": 1.09,
-        "15min": 1.1,
+        "1min": 1.13,
+        "5min": 1.13,
+        "15min": 1.16,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.6,
-        "write_mb": 955.9
+        "read_mb": 0.3,
+        "write_mb": 954.2
       },
       "temperature_c": null,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 302,
+        "total": 301,
         "running": 0,
         "sleeping": 230,
-        "threads": 1136
+        "threads": 1134
       },
-      "uptime": "10 days, 3:30:22",
+      "uptime": "10 days, 4:30:23",
       "containers": [
         {
           "name": "gallery backend",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 19 hours grafana/grafana:latest"
+          "status": "Up 20 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 19 hours prom/prometheus:latest"
+          "status": "Up 20 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -160,7 +160,7 @@
       "ram": {
         "used_gb": 0.73,
         "total_gb": 1.92,
-        "percent": 38.2,
+        "percent": 38.0,
         "available_gb": 1.19
       },
       "swap": {
@@ -169,9 +169,9 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 0.0,
-        "5min": 0.0,
-        "15min": 0.0,
+        "1min": 0.08,
+        "5min": 0.02,
+        "15min": 0.01,
         "cores": 2
       },
       "disks": [
@@ -186,18 +186,18 @@
       ],
       "disk_io": {
         "read_mb": 0.0,
-        "write_mb": 45.4
+        "write_mb": 47.8
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 44.9,
-          "recv_mb": 48.6,
+          "sent_mb": 47.6,
+          "recv_mb": 50.7,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 16.9,
-          "recv_mb": 15.3,
+          "sent_mb": 7.2,
+          "recv_mb": 5.4,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 8.8,
-          "recv_mb": 8.9,
+          "sent_mb": 7.4,
+          "recv_mb": 7.5,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 20.3,
-          "recv_mb": 19.4,
+          "sent_mb": 33.6,
+          "recv_mb": 32.9,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 0.9,
-          "recv_mb": 1.0,
+          "sent_mb": 1.7,
+          "recv_mb": 1.8,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,28 +226,28 @@
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 20.3,
-          "recv_mb": 19.7,
+          "sent_mb": 33.6,
+          "recv_mb": 33.3,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 15.6,
-          "recv_mb": 13.9,
+          "sent_mb": 5.9,
+          "recv_mb": 4.0,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
-          "sent_mb": 7.9,
-          "recv_mb": 8.1,
+          "sent_mb": 5.7,
+          "recv_mb": 5.9,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 125,
+        "total": 124,
         "running": 0,
-        "sleeping": 69,
-        "threads": 291
+        "sleeping": 70,
+        "threads": 297
       },
-      "uptime": "10 days, 3:29:30",
+      "uptime": "10 days, 4:29:31",
       "containers": [
         {
           "name": "glances",
@@ -272,22 +272,22 @@
     "VM400": {
       "status": "ok",
       "cpu": {
-        "total": 3.6,
+        "total": 3.7,
         "user": 2.8,
         "system": 0.8,
         "idle": 96.3,
         "iowait": 0.0
       },
       "percpu": [
+        4.0,
         3.7,
-        3.7,
-        3.7,
+        3.5,
         3.6
       ],
       "ram": {
-        "used_gb": 1.29,
+        "used_gb": 1.3,
         "total_gb": 3.82,
-        "percent": 33.9,
+        "percent": 34.0,
         "available_gb": 2.53
       },
       "swap": {
@@ -296,9 +296,9 @@
         "percent": 28.4
       },
       "load": {
-        "1min": 0.15,
-        "5min": 0.1,
-        "15min": 0.09,
+        "1min": 0.16,
+        "5min": 0.13,
+        "15min": 0.1,
         "cores": 4
       },
       "disks": [
@@ -312,14 +312,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 191.6
+        "read_mb": 0.4,
+        "write_mb": 194.9
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 4.8,
-          "recv_mb": 56.5,
+          "sent_mb": 4.9,
+          "recv_mb": 92.4,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -328,7 +328,7 @@
           "speed_kbps": 10240000.0
         },
         "br-3052d87b6d75": {
-          "sent_mb": 4.2,
+          "sent_mb": 4.3,
           "recv_mb": 114.7,
           "speed_kbps": 10240000.0
         },
@@ -338,7 +338,7 @@
           "speed_kbps": 10240000.0
         },
         "vethabd24f3": {
-          "sent_mb": 4.2,
+          "sent_mb": 4.3,
           "recv_mb": 115.8,
           "speed_kbps": 10240000.0
         },
@@ -349,12 +349,12 @@
         }
       },
       "processes": {
-        "total": 473,
+        "total": 476,
         "running": 0,
-        "sleeping": 398,
-        "threads": 2912
+        "sleeping": 399,
+        "threads": 2920
       },
-      "uptime": "9 days, 5:26:12",
+      "uptime": "9 days, 6:26:13",
       "containers": [
         {
           "name": "glances",
@@ -382,45 +382,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "John Peel 20001205",
-      "artist": "",
-      "album": "",
-      "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/cb7f695fe75ed65cd59c04ea",
-      "duration": 7230,
-      "elapsed": 5151
+      "title": "no exit",
+      "artist": "noxagt",
+      "album": "7 inch",
+      "genre": "Other",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/0945bcb61a762fe6bb45cc79",
+      "duration": 327,
+      "elapsed": 278
     },
     "playing_next": {
-      "title": "Just Tell Me [Single 1969]",
-      "artist": "Toots & the Maytals"
+      "title": "New David Bowie Collection to Feature Unreleased S",
+      "artist": ""
     },
     "listeners": 2,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Churchill's Speech",
+        "title": "Uh Huh Her",
+        "artist": "Harvey, PJ [LIVE]",
+        "played_at": 1786223079
+      },
+      {
+        "title": "Moonlight Lover",
+        "artist": "Joya Landis",
+        "played_at": 1786222938
+      },
+      {
+        "title": "2 A.M.",
         "artist": "Iron Maiden",
-        "played_at": 1786214736
+        "played_at": 1786222605
       },
       {
-        "title": "This Is Madness",
-        "artist": "Jeffrey Lewis",
-        "played_at": 1786214703
+        "title": "Fast Cars",
+        "artist": "Buzzcocks",
+        "played_at": 1786222472
       },
       {
-        "title": "Glen Hansard  Oscar-winning Irish singer-songwrite",
-        "artist": "",
-        "played_at": 1786214690
-      },
-      {
-        "title": "07 pass the ball jim",
-        "artist": "",
-        "played_at": 1786214615
-      },
-      {
-        "title": "45. #06 - Ash - Kung Fu.mp3",
-        "artist": "John Peel Festive Fifty 1995",
-        "played_at": 1786214478
+        "title": "37 #29.Love Song-The Damned",
+        "artist": "John Peel Festive Fifty 1980",
+        "played_at": 1786222342
       }
     ]
   }
