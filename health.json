@@ -1,27 +1,27 @@
 {
-  "updated": "2026-08-09 10:12",
+  "updated": "2026-08-09 11:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 5.2,
+        "total": 5.0,
         "user": 2.3,
-        "system": 2.1,
-        "idle": 94.8,
+        "system": 2.0,
+        "idle": 95.0,
         "iowait": 0.0
       },
       "percpu": [
-        6.2,
-        5.2,
-        4.4,
-        5.0
+        5.7,
+        4.9,
+        4.5,
+        5.1
       ],
       "ram": {
-        "used_gb": 3.22,
+        "used_gb": 3.23,
         "total_gb": 7.76,
-        "percent": 41.5,
-        "available_gb": 4.54
+        "percent": 41.6,
+        "available_gb": 4.53
       },
       "swap": {
         "used_mb": 579.8,
@@ -29,9 +29,9 @@
         "percent": 30.7
       },
       "load": {
-        "1min": 1.01,
-        "5min": 0.64,
-        "15min": 0.81,
+        "1min": 1.04,
+        "5min": 0.93,
+        "15min": 0.85,
         "cores": 4
       },
       "disks": [
@@ -41,12 +41,12 @@
           "size_gb": 61.2,
           "used_gb": 34.5,
           "free_gb": 24.1,
-          "percent": 56.3
+          "percent": 56.4
         }
       ],
       "disk_io": {
-        "read_mb": 2.1,
-        "write_mb": 974.9
+        "read_mb": 2.5,
+        "write_mb": 961.6
       },
       "temperature_c": null,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 304,
+        "total": 311,
         "running": 0,
-        "sleeping": 231,
-        "threads": 1144
+        "sleeping": 237,
+        "threads": 1151
       },
-      "uptime": "10 days, 17:30:38",
+      "uptime": "10 days, 18:30:39",
       "containers": [
         {
           "name": "gallery backend",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 9 hours grafana/grafana:latest"
+          "status": "Up 10 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 9 hours prom/prometheus:latest"
+          "status": "Up 10 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -147,20 +147,20 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 0.5,
+        "total": 0.7,
         "user": 0.4,
-        "system": 0.1,
-        "idle": 99.5,
+        "system": 0.2,
+        "idle": 99.3,
         "iowait": 0.0
       },
       "percpu": [
-        0.5,
-        0.5
+        0.7,
+        0.8
       ],
       "ram": {
         "used_gb": 0.73,
         "total_gb": 1.92,
-        "percent": 37.9,
+        "percent": 38.1,
         "available_gb": 1.19
       },
       "swap": {
@@ -169,8 +169,8 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 0.0,
-        "5min": 0.0,
+        "1min": 0.03,
+        "5min": 0.03,
         "15min": 0.0,
         "cores": 2
       },
@@ -185,19 +185,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 46.8
+        "read_mb": 93.8,
+        "write_mb": 807.6
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 62.8,
-          "recv_mb": 65.1,
+          "sent_mb": 307.4,
+          "recv_mb": 307.0,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 4.5,
-          "recv_mb": 3.6,
+          "sent_mb": 4.6,
+          "recv_mb": 3.5,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 4.6,
-          "recv_mb": 4.6,
+          "sent_mb": 4.4,
+          "recv_mb": 4.4,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 53.4,
-          "recv_mb": 52.3,
+          "sent_mb": 291.7,
+          "recv_mb": 289.8,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 1.3,
-          "recv_mb": 1.4,
+          "sent_mb": 1.5,
+          "recv_mb": 1.7,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,18 +226,18 @@
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 53.4,
-          "recv_mb": 52.9,
+          "sent_mb": 291.7,
+          "recv_mb": 292.4,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 3.2,
+          "sent_mb": 3.3,
           "recv_mb": 2.1,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
-          "sent_mb": 3.3,
-          "recv_mb": 3.4,
+          "sent_mb": 2.8,
+          "recv_mb": 2.9,
           "speed_kbps": 10240000.0
         }
       },
@@ -247,11 +247,11 @@
         "sleeping": 69,
         "threads": 290
       },
-      "uptime": "10 days, 17:29:45",
+      "uptime": "10 days, 18:29:46",
       "containers": [
         {
           "name": "glances",
-          "status": "Up 8 days nicolargo/glances:latest"
+          "status": "Up 9 days nicolargo/glances:latest"
         },
         {
           "name": "psclient",
@@ -279,16 +279,16 @@
         "iowait": 0.0
       },
       "percpu": [
-        3.9,
+        3.8,
         3.7,
-        3.5,
-        3.7
+        3.8,
+        3.6
       ],
       "ram": {
-        "used_gb": 1.26,
+        "used_gb": 1.3,
         "total_gb": 3.82,
-        "percent": 32.9,
-        "available_gb": 2.57
+        "percent": 33.9,
+        "available_gb": 2.53
       },
       "swap": {
         "used_mb": 536.6,
@@ -296,9 +296,9 @@
         "percent": 28.4
       },
       "load": {
-        "1min": 0.28,
-        "5min": 0.19,
-        "15min": 0.12,
+        "1min": 0.1,
+        "5min": 0.09,
+        "15min": 0.09,
         "cores": 4
       },
       "disks": [
@@ -312,14 +312,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 201.3
+        "read_mb": 9.3,
+        "write_mb": 204.2
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 5.0,
-          "recv_mb": 79.4,
+          "sent_mb": 5.1,
+          "recv_mb": 96.7,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -328,7 +328,7 @@
           "speed_kbps": 10240000.0
         },
         "br-3052d87b6d75": {
-          "sent_mb": 4.3,
+          "sent_mb": 4.4,
           "recv_mb": 114.7,
           "speed_kbps": 10240000.0
         },
@@ -338,7 +338,7 @@
           "speed_kbps": 10240000.0
         },
         "vethabd24f3": {
-          "sent_mb": 4.3,
+          "sent_mb": 4.4,
           "recv_mb": 115.8,
           "speed_kbps": 10240000.0
         },
@@ -349,16 +349,16 @@
         }
       },
       "processes": {
-        "total": 473,
+        "total": 477,
         "running": 0,
-        "sleeping": 400,
-        "threads": 2912
+        "sleeping": 399,
+        "threads": 2917
       },
-      "uptime": "9 days, 19:26:27",
+      "uptime": "9 days, 20:26:28",
       "containers": [
         {
           "name": "glances",
-          "status": "Up 8 days nicolargo/glances:latest"
+          "status": "Up 9 days nicolargo/glances:latest"
         },
         {
           "name": "portainer agent",
@@ -382,45 +382,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Reduction",
-      "artist": "Material",
-      "album": "Dance-Punk Essentials",
-      "genre": "Alternative",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/cfeca2b47716f9b090f525f2-1785460003.jpg",
-      "duration": 331,
-      "elapsed": 19
+      "title": "17 - Johnny Cool Man",
+      "artist": "Toots & the maytals",
+      "album": "The very best of",
+      "genre": "Ska",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/691d3e2050aeb6a0f6f4e00a-1785426654.jpg",
+      "duration": 194,
+      "elapsed": 2
     },
     "playing_next": {
-      "title": "Hoobastank aportará no Brasil no mês de novembro",
-      "artist": ""
+      "title": "Mate Of The Bloke Who Set Up The PA",
+      "artist": "Half Man Half Biscuit"
     },
     "listeners": 2,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "If You Wanna Go",
-        "artist": "Freddie Mcgregor",
-        "played_at": 1786270103
-      },
-      {
-        "title": "Our Singer",
-        "artist": "Pavement",
-        "played_at": 1786269913
-      },
-      {
-        "title": "Charli XCX    If You Take Away The Music  Then Wha",
+        "title": "Elanor Moss    Fixer",
         "artist": "",
-        "played_at": 1786269884
+        "played_at": 1786273915
       },
       {
-        "title": "Stay Alive",
+        "title": "Casal é preso com carga de anabolizantes  perfumes",
         "artist": "",
-        "played_at": 1786269669
+        "played_at": 1786273884
       },
       {
-        "title": "Great Kings Of Africa",
-        "artist": "Dennis Brown",
-        "played_at": 1786269421
+        "title": "Olivia Rodrigo  Abortion Bans Are  Pro-Control  No",
+        "artist": "",
+        "played_at": 1786273865
+      },
+      {
+        "title": "Ataque de cachorro da raça pit bull provoca briga",
+        "artist": "",
+        "played_at": 1786273839
+      },
+      {
+        "title": "Android  5 jogos grátis em alta para baixar na Pla",
+        "artist": "",
+        "played_at": 1786273833
       }
     ]
   }
