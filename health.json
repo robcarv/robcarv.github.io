@@ -1,27 +1,27 @@
 {
-  "updated": "2026-08-09 06:12",
+  "updated": "2026-08-09 07:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 5.1,
-        "user": 2.3,
-        "system": 2.0,
-        "idle": 94.9,
+        "total": 4.8,
+        "user": 2.2,
+        "system": 1.8,
+        "idle": 95.2,
         "iowait": 0.0
       },
       "percpu": [
-        6.1,
+        5.8,
         4.6,
-        4.8,
-        5.0
+        4.2,
+        4.6
       ],
       "ram": {
         "used_gb": 3.22,
         "total_gb": 7.76,
-        "percent": 41.5,
-        "available_gb": 4.54
+        "percent": 41.6,
+        "available_gb": 4.53
       },
       "swap": {
         "used_mb": 579.8,
@@ -29,9 +29,9 @@
         "percent": 30.7
       },
       "load": {
-        "1min": 1.18,
-        "5min": 1.09,
-        "15min": 1.09,
+        "1min": 1.04,
+        "5min": 1.02,
+        "15min": 0.97,
         "cores": 4
       },
       "disks": [
@@ -39,14 +39,14 @@
           "mount": "/",
           "device": "/dev/mapper/ubuntu--vg-ubuntu--lv",
           "size_gb": 61.2,
-          "used_gb": 34.4,
+          "used_gb": 34.5,
           "free_gb": 24.1,
           "percent": 56.3
         }
       ],
       "disk_io": {
-        "read_mb": 207.7,
-        "write_mb": 988.2
+        "read_mb": 2.5,
+        "write_mb": 991.0
       },
       "temperature_c": null,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 302,
+        "total": 303,
         "running": 0,
         "sleeping": 230,
-        "threads": 1141
+        "threads": 1143
       },
-      "uptime": "10 days, 13:30:33",
+      "uptime": "10 days, 14:30:35",
       "containers": [
         {
           "name": "gallery backend",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 5 hours grafana/grafana:latest"
+          "status": "Up 6 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 5 hours prom/prometheus:latest"
+          "status": "Up 6 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -147,15 +147,15 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 0.5,
-        "user": 0.3,
+        "total": 0.6,
+        "user": 0.4,
         "system": 0.1,
-        "idle": 99.5,
+        "idle": 99.4,
         "iowait": 0.0
       },
       "percpu": [
-        0.5,
-        0.5
+        0.6,
+        0.6
       ],
       "ram": {
         "used_gb": 0.74,
@@ -169,8 +169,8 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 0.07,
-        "5min": 0.02,
+        "1min": 0.0,
+        "5min": 0.0,
         "15min": 0.0,
         "cores": 2
       },
@@ -185,18 +185,18 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 45.6
+        "read_mb": 0.5,
+        "write_mb": 51.4
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 62.6,
-          "recv_mb": 65.4,
+          "sent_mb": 148.1,
+          "recv_mb": 149.9,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 5.3,
+          "sent_mb": 5.4,
           "recv_mb": 4.0,
           "speed_kbps": 10240000.0
         },
@@ -206,13 +206,13 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 7.2,
-          "recv_mb": 7.1,
+          "sent_mb": 4.7,
+          "recv_mb": 4.8,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 50.8,
-          "recv_mb": 49.3,
+          "sent_mb": 137.2,
+          "recv_mb": 134.7,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
@@ -226,28 +226,28 @@
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 50.8,
-          "recv_mb": 49.9,
+          "sent_mb": 137.2,
+          "recv_mb": 135.7,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 4.0,
+          "sent_mb": 4.1,
           "recv_mb": 2.5,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
-          "sent_mb": 5.9,
-          "recv_mb": 5.9,
+          "sent_mb": 3.5,
+          "recv_mb": 3.6,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 124,
+        "total": 123,
         "running": 0,
         "sleeping": 69,
-        "threads": 290
+        "threads": 289
       },
-      "uptime": "10 days, 13:29:41",
+      "uptime": "10 days, 14:29:42",
       "containers": [
         {
           "name": "glances",
@@ -272,23 +272,23 @@
     "VM400": {
       "status": "ok",
       "cpu": {
-        "total": 4.5,
-        "user": 3.2,
-        "system": 1.0,
-        "idle": 94.5,
-        "iowait": 1.1
+        "total": 3.7,
+        "user": 2.8,
+        "system": 0.8,
+        "idle": 96.3,
+        "iowait": 0.0
       },
       "percpu": [
-        5.4,
-        5.5,
-        5.4,
-        5.8
+        3.9,
+        3.7,
+        3.6,
+        3.4
       ],
       "ram": {
-        "used_gb": 1.22,
+        "used_gb": 1.27,
         "total_gb": 3.82,
-        "percent": 31.8,
-        "available_gb": 2.61
+        "percent": 33.3,
+        "available_gb": 2.55
       },
       "swap": {
         "used_mb": 536.6,
@@ -296,9 +296,9 @@
         "percent": 28.4
       },
       "load": {
-        "1min": 0.12,
-        "5min": 0.18,
-        "15min": 0.32,
+        "1min": 0.19,
+        "5min": 0.11,
+        "15min": 0.09,
         "cores": 4
       },
       "disks": [
@@ -312,14 +312,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 31.5,
-        "write_mb": 103075.7
+        "read_mb": 63.1,
+        "write_mb": 197.2
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 86.2,
-          "recv_mb": 34680.8,
+          "sent_mb": 4.9,
+          "recv_mb": 68.5,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -349,12 +349,12 @@
         }
       },
       "processes": {
-        "total": 474,
+        "total": 477,
         "running": 0,
-        "sleeping": 398,
-        "threads": 2912
+        "sleeping": 399,
+        "threads": 2916
       },
-      "uptime": "9 days, 15:26:23",
+      "uptime": "9 days, 16:26:24",
       "containers": [
         {
           "name": "glances",
@@ -382,45 +382,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "John Peel 2004-07-07",
-      "artist": "John Peel (R1)",
-      "album": "from Sky+",
+      "title": "b1 - ampul",
+      "artist": "2-5bz",
+      "album": "",
       "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/a847d25e9ce5ef4f2b0cc81a",
-      "duration": 7161,
-      "elapsed": 6249
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/24dc3c775e44e2489800d787",
+      "duration": 320,
+      "elapsed": 2
     },
     "playing_next": {
-      "title": "Twilight Zone",
-      "artist": "Iron Maiden"
+      "title": "Hot Cars",
+      "artist": "Turbonegro"
     },
     "listeners": 2,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Warrior",
-        "artist": "Matisyahu",
-        "played_at": 1786249257
-      },
-      {
-        "title": "Casos de sarampo já estão em quatro distritos de S",
+        "title": "Por que tantos músicos estão cantando em sofás  Um",
         "artist": "",
-        "played_at": 1786249223
+        "played_at": 1786259524
       },
       {
-        "title": "Trump returns to correspondents  dinner 3 months a",
+        "title": "Anthony Hopkins Signed by Decca Classics  First Al",
         "artist": "",
-        "played_at": 1786249210
+        "played_at": 1786259475
       },
       {
-        "title": "In The Name Of God",
-        "artist": "Slayer",
-        "played_at": 1786248992
+        "title": "Lumen anuncia sua 2ª edição com programação dedica",
+        "artist": "",
+        "played_at": 1786259452
       },
       {
-        "title": "squarepusher - my red hot car",
-        "artist": "31 #20",
-        "played_at": 1786248694
+        "title": "Glen Hansard  Oscar-Winning  Once  Musician  Dead",
+        "artist": "",
+        "played_at": 1786259439
+      },
+      {
+        "title": "The Tights- Cracked",
+        "artist": "",
+        "played_at": 1786259242
       }
     ]
   }
