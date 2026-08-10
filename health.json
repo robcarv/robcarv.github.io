@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-10 16:12",
+  "updated": "2026-08-10 17:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 4.3,
-        "user": 2.4,
-        "system": 1.4,
-        "idle": 95.5,
-        "iowait": 0.2
+        "total": 4.5,
+        "user": 2.7,
+        "system": 1.3,
+        "idle": 95.0,
+        "iowait": 0.5
       },
       "percpu": [
+        5.5,
+        4.7,
         4.9,
-        4.8,
-        4.1,
-        4.2
+        4.8
       ],
       "ram": {
-        "used_gb": 3.39,
+        "used_gb": 3.38,
         "total_gb": 7.76,
-        "percent": 43.7,
+        "percent": 43.6,
         "available_gb": 4.37
       },
       "swap": {
@@ -29,9 +29,9 @@
         "percent": 30.4
       },
       "load": {
-        "1min": 0.92,
-        "5min": 0.72,
-        "15min": 0.6,
+        "1min": 0.36,
+        "5min": 0.36,
+        "15min": 0.35,
         "cores": 4
       },
       "disks": [
@@ -40,13 +40,13 @@
           "device": "/dev/mapper/ubuntu--vg-ubuntu--lv",
           "size_gb": 61.2,
           "used_gb": 34.6,
-          "free_gb": 23.9,
+          "free_gb": 24.0,
           "percent": 56.5
         }
       ],
       "disk_io": {
-        "read_mb": 1.1,
-        "write_mb": 971.6
+        "read_mb": 5.0,
+        "write_mb": 1004.4
       },
       "temperature_c": null,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 338,
+        "total": 336,
         "running": 0,
-        "sleeping": 228,
-        "threads": 1176
+        "sleeping": 230,
+        "threads": 1174
       },
-      "uptime": "11 days, 23:30:11",
+      "uptime": "12 days, 0:30:12",
       "containers": [
         {
           "name": "gallery backend",
@@ -114,31 +114,31 @@
         },
         {
           "name": "wallos",
-          "status": "Up 11 days (healthy) bellamy/wallos:latest"
+          "status": "Up 12 days (healthy) bellamy/wallos:latest"
         },
         {
           "name": "nginx pm",
-          "status": "Up 11 days jc21/nginx-proxy-manager:latest"
+          "status": "Up 12 days jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "Dashy",
-          "status": "Up 11 days (healthy) lissy93/dashy:4.x"
+          "status": "Up 12 days (healthy) lissy93/dashy:4.x"
         },
         {
           "name": "cve report",
-          "status": "Up 11 days nginx:alpine"
+          "status": "Up 12 days nginx:alpine"
         },
         {
           "name": "cve grafana",
-          "status": "Up 15 hours grafana/grafana:latest"
+          "status": "Up 16 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 15 hours prom/prometheus:latest"
+          "status": "Up 16 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
-          "status": "Up 11 days prom/alertmanager:latest"
+          "status": "Up 12 days prom/alertmanager:latest"
         }
       ],
       "container_count": 19,
@@ -148,19 +148,19 @@
       "status": "ok",
       "cpu": {
         "total": 0.5,
-        "user": 0.4,
+        "user": 0.3,
         "system": 0.1,
         "idle": 99.5,
         "iowait": 0.0
       },
       "percpu": [
         0.5,
-        0.6
+        0.5
       ],
       "ram": {
         "used_gb": 0.74,
         "total_gb": 1.92,
-        "percent": 38.5,
+        "percent": 38.4,
         "available_gb": 1.18
       },
       "swap": {
@@ -169,8 +169,8 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 0.0,
-        "5min": 0.0,
+        "1min": 0.01,
+        "5min": 0.02,
         "15min": 0.0,
         "cores": 2
       },
@@ -185,19 +185,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 48.5
+        "read_mb": 1.1,
+        "write_mb": 53.7
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 30.1,
-          "recv_mb": 32.4,
+          "sent_mb": 50.6,
+          "recv_mb": 52.5,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 4.3,
-          "recv_mb": 3.3,
+          "sent_mb": 4.4,
+          "recv_mb": 3.4,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 2.7,
-          "recv_mb": 3.0,
+          "sent_mb": 2.2,
+          "recv_mb": 2.5,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 23.5,
-          "recv_mb": 22.5,
+          "sent_mb": 43.8,
+          "recv_mb": 42.8,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 2.5,
-          "recv_mb": 2.8,
+          "sent_mb": 2.0,
+          "recv_mb": 2.4,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,13 +226,13 @@
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 23.5,
-          "recv_mb": 22.9,
+          "sent_mb": 43.8,
+          "recv_mb": 43.2,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 3.0,
-          "recv_mb": 1.8,
+          "sent_mb": 3.1,
+          "recv_mb": 1.9,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
@@ -244,10 +244,10 @@
       "processes": {
         "total": 125,
         "running": 0,
-        "sleeping": 69,
-        "threads": 291
+        "sleeping": 70,
+        "threads": 296
       },
-      "uptime": "11 days, 23:29:19",
+      "uptime": "12 days, 0:29:20",
       "containers": [
         {
           "name": "glances",
@@ -279,16 +279,16 @@
         "iowait": 0.0
       },
       "percpu": [
+        3.9,
         3.8,
-        3.7,
-        3.6,
+        3.5,
         3.6
       ],
       "ram": {
-        "used_gb": 1.27,
+        "used_gb": 1.42,
         "total_gb": 3.82,
-        "percent": 33.2,
-        "available_gb": 2.55
+        "percent": 37.1,
+        "available_gb": 2.4
       },
       "swap": {
         "used_mb": 536.4,
@@ -296,9 +296,9 @@
         "percent": 28.4
       },
       "load": {
-        "1min": 0.7,
-        "5min": 0.75,
-        "15min": 0.47,
+        "1min": 0.21,
+        "5min": 0.17,
+        "15min": 0.18,
         "cores": 4
       },
       "disks": [
@@ -313,13 +313,13 @@
       ],
       "disk_io": {
         "read_mb": 0.0,
-        "write_mb": 188.7
+        "write_mb": 193.7
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 4.9,
-          "recv_mb": 70.3,
+          "sent_mb": 4.8,
+          "recv_mb": 64.0,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -328,8 +328,8 @@
           "speed_kbps": 10240000.0
         },
         "br-3052d87b6d75": {
-          "sent_mb": 4.3,
-          "recv_mb": 112.8,
+          "sent_mb": 4.4,
+          "recv_mb": 114.7,
           "speed_kbps": 10240000.0
         },
         "vethd276a7a": {
@@ -338,23 +338,23 @@
           "speed_kbps": 10240000.0
         },
         "vethabd24f3": {
-          "sent_mb": 4.3,
-          "recv_mb": 113.8,
+          "sent_mb": 4.4,
+          "recv_mb": 115.8,
           "speed_kbps": 10240000.0
         },
         "veth50973ba": {
           "sent_mb": 0.3,
-          "recv_mb": 2.4,
+          "recv_mb": 2.5,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 476,
+        "total": 475,
         "running": 0,
-        "sleeping": 400,
-        "threads": 2914
+        "sleeping": 398,
+        "threads": 2913
       },
-      "uptime": "11 days, 1:26:01",
+      "uptime": "11 days, 2:26:02",
       "containers": [
         {
           "name": "glances",
@@ -388,7 +388,7 @@
       "genre": "",
       "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/752cfc2abaebbdb27279139f",
       "duration": 7230,
-      "elapsed": 1537
+      "elapsed": 5138
     },
     "playing_next": {
       "title": "Spinal column",
