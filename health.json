@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09 23:12",
+  "updated": "2026-08-10 00:12",
   "status": "ok",
   "nodes": {
     "VM100": {
@@ -13,14 +13,14 @@
       },
       "percpu": [
         4.4,
-        3.8,
         3.7,
-        3.4
+        3.5,
+        3.6
       ],
       "ram": {
         "used_gb": 3.38,
         "total_gb": 7.76,
-        "percent": 43.6,
+        "percent": 43.5,
         "available_gb": 4.38
       },
       "swap": {
@@ -29,9 +29,9 @@
         "percent": 30.5
       },
       "load": {
-        "1min": 0.21,
-        "5min": 0.34,
-        "15min": 0.31,
+        "1min": 0.4,
+        "5min": 0.31,
+        "15min": 0.28,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1.9,
-        "write_mb": 957.3
+        "read_mb": 15.2,
+        "write_mb": 987.0
       },
       "temperature_c": null,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 299,
+        "total": 303,
         "running": 0,
-        "sleeping": 228,
-        "threads": 1139
+        "sleeping": 230,
+        "threads": 1143
       },
-      "uptime": "11 days, 6:30:52",
+      "uptime": "11 days, 7:30:53",
       "containers": [
         {
           "name": "gallery backend",
@@ -74,11 +74,11 @@
         },
         {
           "name": "cadvisor",
-          "status": "Up 9 days (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 10 days (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "kavita",
-          "status": "Up 9 days lscr.io/linuxserver/kavita:latest"
+          "status": "Up 10 days lscr.io/linuxserver/kavita:latest"
         },
         {
           "name": "gallery frontend",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 22 hours grafana/grafana:latest"
+          "status": "Up 23 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 22 hours prom/prometheus:latest"
+          "status": "Up 23 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -158,10 +158,10 @@
         0.6
       ],
       "ram": {
-        "used_gb": 0.73,
+        "used_gb": 0.75,
         "total_gb": 1.92,
-        "percent": 37.8,
-        "available_gb": 1.2
+        "percent": 38.8,
+        "available_gb": 1.18
       },
       "swap": {
         "used_mb": 1.0,
@@ -169,9 +169,9 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 0.0,
-        "5min": 0.0,
-        "15min": 0.0,
+        "1min": 0.32,
+        "5min": 0.09,
+        "15min": 0.03,
         "cores": 2
       },
       "disks": [
@@ -185,19 +185,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 47.1
+        "read_mb": 2.2,
+        "write_mb": 52.8
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 59.2,
-          "recv_mb": 61.1,
+          "sent_mb": 67.0,
+          "recv_mb": 67.9,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 14.9,
-          "recv_mb": 14.3,
+          "sent_mb": 7.0,
+          "recv_mb": 6.3,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 9.3,
-          "recv_mb": 9.0,
+          "sent_mb": 10.4,
+          "recv_mb": 10.5,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 34.6,
-          "recv_mb": 33.9,
+          "sent_mb": 48.4,
+          "recv_mb": 48.0,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 0.8,
-          "recv_mb": 0.9,
+          "sent_mb": 2.0,
+          "recv_mb": 2.2,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,28 +226,28 @@
           "speed_kbps": 10240000.0
         },
         "vethb50e10b": {
-          "sent_mb": 34.6,
-          "recv_mb": 34.2,
+          "sent_mb": 48.4,
+          "recv_mb": 48.5,
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 13.6,
-          "recv_mb": 13.0,
+          "sent_mb": 5.7,
+          "recv_mb": 4.9,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
           "sent_mb": 8.4,
-          "recv_mb": 8.5,
+          "recv_mb": 8.6,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 124,
+        "total": 125,
         "running": 0,
         "sleeping": 69,
-        "threads": 290
+        "threads": 291
       },
-      "uptime": "11 days, 6:29:59",
+      "uptime": "11 days, 7:30:01",
       "containers": [
         {
           "name": "glances",
@@ -272,23 +272,23 @@
     "VM400": {
       "status": "ok",
       "cpu": {
-        "total": 3.8,
-        "user": 2.9,
+        "total": 3.7,
+        "user": 2.8,
         "system": 0.8,
-        "idle": 96.2,
+        "idle": 96.3,
         "iowait": 0.0
       },
       "percpu": [
-        4.0,
-        3.8,
-        3.8,
-        3.7
+        3.7,
+        3.9,
+        3.6,
+        3.6
       ],
       "ram": {
-        "used_gb": 1.27,
+        "used_gb": 1.24,
         "total_gb": 3.82,
-        "percent": 33.3,
-        "available_gb": 2.55
+        "percent": 32.4,
+        "available_gb": 2.59
       },
       "swap": {
         "used_mb": 536.6,
@@ -296,9 +296,9 @@
         "percent": 28.4
       },
       "load": {
-        "1min": 0.08,
-        "5min": 0.1,
-        "15min": 0.09,
+        "1min": 0.22,
+        "5min": 0.13,
+        "15min": 0.1,
         "cores": 4
       },
       "disks": [
@@ -312,14 +312,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 210.3
+        "read_mb": 14.7,
+        "write_mb": 216.9
       },
       "temperature_c": null,
       "network": {
         "ens18": {
           "sent_mb": 5.1,
-          "recv_mb": 108.3,
+          "recv_mb": 105.7,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -351,10 +351,10 @@
       "processes": {
         "total": 475,
         "running": 0,
-        "sleeping": 400,
+        "sleeping": 398,
         "threads": 2914
       },
-      "uptime": "10 days, 8:26:42",
+      "uptime": "10 days, 9:26:43",
       "containers": [
         {
           "name": "glances",
@@ -382,45 +382,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Mighty Diamonds - I wish you well",
-      "artist": "Mighty Diamonds",
-      "album": "Never get weary",
-      "genre": "Reggae",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/9490cfc966ee245026f84c1c-1785428283.jpg",
-      "duration": 228,
-      "elapsed": 17
+      "title": "The Money Will Roll Right In (session)",
+      "artist": "THE BEATINGS",
+      "album": "Lamacq live session (18th Jun 2002)",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/8018808ef416b56b2c4065bc",
+      "duration": 115,
+      "elapsed": 104
     },
     "playing_next": {
-      "title": "Kevin Feige Feels Like a  Gigantic Loser and Failu",
+      "title": "Birdfy  8217 s solar-powered smart feeder is down",
       "artist": ""
     },
     "listeners": 2,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "One Eye Enos",
-        "artist": "Toots And The Maytals",
-        "played_at": 1786316972
+        "title": "Country Road",
+        "artist": "Toots & The Maytals",
+        "played_at": 1786320460
       },
       {
-        "title": "Whats the Truth",
-        "artist": "SOB",
-        "played_at": 1786316838
+        "title": "This Is Pop?",
+        "artist": "XTC",
+        "played_at": 1786320303
       },
       {
-        "title": "06 loneliness",
+        "title": "Japan Mounts Rescues in Buildings That Collapsed A",
         "artist": "",
-        "played_at": 1786316768
+        "played_at": 1786320289
       },
       {
-        "title": "theme from ligament",
-        "artist": "ligament",
-        "played_at": 1786316291
+        "title": "03-Green Fields Of France-The Men They Couldn't Hang",
+        "artist": "John Peel Festive Fifty 1984",
+        "played_at": 1786320138
       },
       {
-        "title": "La La Land  Poster Fixes Ryan Gosling s Flat Hand",
-        "artist": "",
-        "played_at": 1786316247
+        "title": "Liberate The Illiterate (A Mong Among Mingers)",
+        "artist": "Biffy Clyro",
+        "played_at": 1786319773
       }
     ]
   }
