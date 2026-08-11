@@ -1,21 +1,21 @@
 {
-  "updated": "2026-08-11 06:12",
+  "updated": "2026-08-11 07:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 3.8,
+        "total": 3.9,
         "user": 2.2,
         "system": 1.3,
-        "idle": 96.2,
+        "idle": 96.0,
         "iowait": 0.0
       },
       "percpu": [
         4.6,
+        3.7,
         3.9,
-        3.4,
-        3.4
+        3.6
       ],
       "ram": {
         "used_gb": 3.25,
@@ -24,14 +24,14 @@
         "available_gb": 4.5
       },
       "swap": {
-        "used_mb": 646.1,
+        "used_mb": 632.8,
         "total_mb": 1888.0,
-        "percent": 34.2
+        "percent": 33.5
       },
       "load": {
-        "1min": 0.29,
-        "5min": 0.27,
-        "15min": 0.31,
+        "1min": 0.17,
+        "5min": 0.28,
+        "15min": 0.27,
         "cores": 4
       },
       "disks": [
@@ -39,14 +39,14 @@
           "mount": "/",
           "device": "/dev/mapper/ubuntu--vg-ubuntu--lv",
           "size_gb": 61.2,
-          "used_gb": 34.6,
+          "used_gb": 34.7,
           "free_gb": 23.9,
           "percent": 56.7
         }
       ],
       "disk_io": {
-        "read_mb": 0.6,
-        "write_mb": 951.9
+        "read_mb": 534.7,
+        "write_mb": 1706.7
       },
       "temperature_c": null,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 301,
+        "total": 302,
         "running": 0,
-        "sleeping": 228,
-        "threads": 1136
+        "sleeping": 230,
+        "threads": 1137
       },
-      "uptime": "12 days, 13:30:27",
+      "uptime": "12 days, 14:30:28",
       "containers": [
         {
           "name": "gallery backend",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 5 hours grafana/grafana:latest"
+          "status": "Up 6 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 5 hours prom/prometheus:latest"
+          "status": "Up 6 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -158,10 +158,10 @@
         0.6
       ],
       "ram": {
-        "used_gb": 0.63,
+        "used_gb": 0.6,
         "total_gb": 1.92,
-        "percent": 32.6,
-        "available_gb": 1.29
+        "percent": 31.1,
+        "available_gb": 1.32
       },
       "swap": {
         "used_mb": 1.0,
@@ -186,18 +186,18 @@
       ],
       "disk_io": {
         "read_mb": 0.0,
-        "write_mb": 47.0
+        "write_mb": 97.7
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 211.3,
-          "recv_mb": 207.5,
+          "sent_mb": 56.0,
+          "recv_mb": 60.1,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 6.8,
-          "recv_mb": 5.6,
+          "sent_mb": 5.2,
+          "recv_mb": 4.1,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 2.5,
-          "recv_mb": 2.8,
+          "sent_mb": 3.0,
+          "recv_mb": 3.2,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 196.2,
-          "recv_mb": 196.7,
+          "sent_mb": 48.1,
+          "recv_mb": 46.6,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 2.3,
-          "recv_mb": 2.6,
+          "sent_mb": 2.8,
+          "recv_mb": 3.0,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,8 +226,8 @@
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 5.5,
-          "recv_mb": 4.2,
+          "sent_mb": 3.9,
+          "recv_mb": 2.6,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
@@ -236,18 +236,18 @@
           "speed_kbps": 10240000.0
         },
         "veth9dabb06": {
-          "sent_mb": 196.2,
-          "recv_mb": 197.9,
+          "sent_mb": 48.1,
+          "recv_mb": 47.1,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 122,
+        "total": 125,
         "running": 0,
         "sleeping": 69,
-        "threads": 288
+        "threads": 291
       },
-      "uptime": "12 days, 13:29:34",
+      "uptime": "12 days, 14:29:35",
       "containers": [
         {
           "name": "glances",
@@ -272,33 +272,33 @@
     "VM400": {
       "status": "ok",
       "cpu": {
-        "total": 4.7,
-        "user": 3.5,
-        "system": 1.1,
-        "idle": 94.4,
-        "iowait": 0.9
+        "total": 4.0,
+        "user": 3.0,
+        "system": 0.8,
+        "idle": 96.0,
+        "iowait": 0.0
       },
       "percpu": [
-        5.9,
-        5.2,
-        5.5,
-        5.8
+        4.0,
+        3.9,
+        4.1,
+        3.9
       ],
       "ram": {
-        "used_gb": 1.59,
+        "used_gb": 1.61,
         "total_gb": 3.82,
-        "percent": 41.7,
-        "available_gb": 2.23
+        "percent": 42.0,
+        "available_gb": 2.22
       },
       "swap": {
-        "used_mb": 84.2,
+        "used_mb": 69.9,
         "total_mb": 1888.0,
-        "percent": 4.5
+        "percent": 3.7
       },
       "load": {
-        "1min": 1.08,
-        "5min": 0.9,
-        "15min": 0.7,
+        "1min": 0.12,
+        "5min": 0.15,
+        "15min": 0.17,
         "cores": 4
       },
       "disks": [
@@ -312,14 +312,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 201.5,
-        "write_mb": 103369.0
+        "read_mb": 929.0,
+        "write_mb": 901.9
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 86.1,
-          "recv_mb": 34691.3,
+          "sent_mb": 5.1,
+          "recv_mb": 94.1,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -349,16 +349,16 @@
         }
       },
       "processes": {
-        "total": 467,
+        "total": 469,
         "running": 0,
         "sleeping": 393,
-        "threads": 2919
+        "threads": 2920
       },
-      "uptime": "11 days, 15:26:16",
+      "uptime": "11 days, 16:26:18",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 12 hours ghcr.io/azuracast/azuracast:latest"
+          "status": "Up 13 hours ghcr.io/azuracast/azuracast:latest"
         },
         {
           "name": "glances",
@@ -382,45 +382,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "I Need - 1996 Remastered Version",
-      "artist": "Buzzcocks",
-      "album": "Another Music In A Different Kitchen",
-      "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/85eed2fa5b24201243535394-1785433922.jpg",
-      "duration": 162,
-      "elapsed": 92
+      "title": "Legs",
+      "artist": "P J Harvey; PJ Harvey - John Peel's Birthday Party",
+      "album": "John Peel BBC Live Improv Theatre(01-04-99); John Peel's birthday party, 01.04.1999",
+      "genre": "Other",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/f74f186bf36ce00ea4b191d6",
+      "duration": 210,
+      "elapsed": 87
     },
     "playing_next": {
-      "title": "Calls for Dublin City Council to acquire historic",
+      "title": "Rob Reiner Receives Posthumous Emmy Nomination for",
       "artist": ""
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "here comes your man",
-        "artist": "14 #37 the pixies",
-        "played_at": 1786428413
-      },
-      {
-        "title": "Graphcoa vê mercado ocidental como prioridade e es",
+        "title": "Leila do Vôlei e Michelle Bolsonaro são as favorit",
         "artist": "",
-        "played_at": 1786428395
+        "played_at": 1786432246
       },
       {
-        "title": "Stab Your Back (Peel Session)",
-        "artist": "Damned, The",
-        "played_at": 1786428334
-      },
-      {
-        "title": "Eight and a half years ago  my life changed immea",
+        "title": "Yo La Tengo announce 2026 Hanukkah run at Bowery B",
         "artist": "",
-        "played_at": 1786428316
+        "played_at": 1786432234
       },
       {
-        "title": "Navigator",
-        "artist": "The Pogues",
-        "played_at": 1786428061
+        "title": "Fan Club",
+        "artist": "The Damned",
+        "played_at": 1786432054
+      },
+      {
+        "title": "Milei chama Alexandre de Moraes de  lixo careca  e",
+        "artist": "",
+        "played_at": 1786432027
+      },
+      {
+        "title": "Taliban declares war on smartphones",
+        "artist": "",
+        "played_at": 1786432011
       }
     ]
   }
