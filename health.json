@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12 15:12",
+  "updated": "2026-08-12 16:12",
   "status": "ok",
   "nodes": {
     "VM100": {
@@ -12,15 +12,15 @@
         "iowait": 0.0
       },
       "percpu": [
-        3.2,
+        3.0,
+        2.9,
         2.7,
-        2.7,
-        2.7
+        2.5
       ],
       "ram": {
-        "used_gb": 3.24,
+        "used_gb": 3.23,
         "total_gb": 7.76,
-        "percent": 41.8,
+        "percent": 41.7,
         "available_gb": 4.52
       },
       "swap": {
@@ -29,9 +29,9 @@
         "percent": 32.7
       },
       "load": {
-        "1min": 0.1,
-        "5min": 0.11,
-        "15min": 0.11,
+        "1min": 0.24,
+        "5min": 0.19,
+        "15min": 0.13,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.3,
-        "write_mb": 981.0
+        "read_mb": 1.4,
+        "write_mb": 940.0
       },
       "temperature_c": null,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 300,
+        "total": 303,
         "running": 0,
-        "sleeping": 228,
-        "threads": 1142
+        "sleeping": 230,
+        "threads": 1145
       },
-      "uptime": "13 days, 22:31:04",
+      "uptime": "13 days, 23:31:05",
       "containers": [
         {
           "name": "gallery backend",
@@ -130,11 +130,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 14 hours grafana/grafana:latest"
+          "status": "Up 15 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 14 hours prom/prometheus:latest"
+          "status": "Up 15 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
@@ -149,7 +149,7 @@
       "cpu": {
         "total": 0.6,
         "user": 0.4,
-        "system": 0.2,
+        "system": 0.1,
         "idle": 99.4,
         "iowait": 0.0
       },
@@ -158,10 +158,10 @@
         0.6
       ],
       "ram": {
-        "used_gb": 0.61,
+        "used_gb": 0.59,
         "total_gb": 1.92,
-        "percent": 31.7,
-        "available_gb": 1.31
+        "percent": 30.8,
+        "available_gb": 1.33
       },
       "swap": {
         "used_mb": 0.8,
@@ -169,9 +169,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.0,
-        "5min": 0.0,
-        "15min": 0.0,
+        "1min": 0.05,
+        "5min": 0.04,
+        "15min": 0.01,
         "cores": 2
       },
       "disks": [
@@ -186,18 +186,18 @@
       ],
       "disk_io": {
         "read_mb": 0.3,
-        "write_mb": 51.0
+        "write_mb": 46.8
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 93.4,
-          "recv_mb": 94.4,
+          "sent_mb": 28.6,
+          "recv_mb": 31.5,
           "speed_kbps": 0.0
         },
         "docker0": {
           "sent_mb": 5.3,
-          "recv_mb": 3.9,
+          "recv_mb": 4.1,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 2.9,
-          "recv_mb": 3.1,
+          "sent_mb": 1.0,
+          "recv_mb": 1.1,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 84.4,
-          "recv_mb": 83.4,
+          "sent_mb": 23.2,
+          "recv_mb": 22.2,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 2.7,
-          "recv_mb": 2.9,
+          "sent_mb": 0.8,
+          "recv_mb": 0.8,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -227,7 +227,7 @@
         },
         "veth97c2608": {
           "sent_mb": 4.0,
-          "recv_mb": 2.4,
+          "recv_mb": 2.6,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
@@ -236,18 +236,18 @@
           "speed_kbps": 10240000.0
         },
         "veth9dabb06": {
-          "sent_mb": 84.4,
-          "recv_mb": 84.1,
+          "sent_mb": 23.2,
+          "recv_mb": 22.5,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 126,
+        "total": 124,
         "running": 0,
-        "sleeping": 70,
-        "threads": 297
+        "sleeping": 69,
+        "threads": 290
       },
-      "uptime": "13 days, 22:30:12",
+      "uptime": "13 days, 23:30:13",
       "containers": [
         {
           "name": "glances",
@@ -272,23 +272,23 @@
     "VM400": {
       "status": "ok",
       "cpu": {
-        "total": 3.6,
+        "total": 3.8,
         "user": 2.8,
         "system": 0.8,
-        "idle": 96.3,
+        "idle": 96.2,
         "iowait": 0.0
       },
       "percpu": [
         3.8,
-        3.5,
-        3.6,
-        3.7
+        3.7,
+        4.0,
+        3.6
       ],
       "ram": {
         "used_gb": 1.63,
         "total_gb": 3.82,
-        "percent": 42.5,
-        "available_gb": 2.2
+        "percent": 42.7,
+        "available_gb": 2.19
       },
       "swap": {
         "used_mb": 61.0,
@@ -296,8 +296,8 @@
         "percent": 3.2
       },
       "load": {
-        "1min": 0.06,
-        "5min": 0.11,
+        "1min": 0.07,
+        "5min": 0.1,
         "15min": 0.09,
         "cores": 4
       },
@@ -312,14 +312,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 26.6,
-        "write_mb": 178.5
+        "read_mb": 1.8,
+        "write_mb": 178.6
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 5.0,
-          "recv_mb": 61.9,
+          "sent_mb": 4.9,
+          "recv_mb": 35.9,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -329,7 +329,7 @@
         },
         "br-3052d87b6d75": {
           "sent_mb": 0.3,
-          "recv_mb": 1.0,
+          "recv_mb": 0.9,
           "speed_kbps": 10240000.0
         },
         "vethd276a7a": {
@@ -354,11 +354,11 @@
         "sleeping": 393,
         "threads": 2921
       },
-      "uptime": "13 days, 0:26:54",
+      "uptime": "13 days, 1:26:55",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 45 hours ghcr.io/azuracast/azuracast:latest"
+          "status": "Up 46 hours ghcr.io/azuracast/azuracast:latest"
         },
         {
           "name": "glances",
@@ -388,7 +388,7 @@
       "genre": "",
       "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/17b6b3c6d8baa2dbffbae4da",
       "duration": 7082,
-      "elapsed": 2808
+      "elapsed": 6409
     },
     "playing_next": {
       "title": "Fiesta",
