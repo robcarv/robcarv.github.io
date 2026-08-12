@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12 16:12",
+  "updated": "2026-08-12 17:12",
   "status": "ok",
   "nodes": {
     "VM100": {
@@ -12,10 +12,10 @@
         "iowait": 0.0
       },
       "percpu": [
-        3.0,
-        2.9,
-        2.7,
-        2.5
+        3.1,
+        2.8,
+        2.8,
+        2.4
       ],
       "ram": {
         "used_gb": 3.23,
@@ -29,9 +29,9 @@
         "percent": 32.7
       },
       "load": {
-        "1min": 0.24,
-        "5min": 0.19,
-        "15min": 0.13,
+        "1min": 0.06,
+        "5min": 0.17,
+        "15min": 0.16,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1.4,
-        "write_mb": 940.0
+        "read_mb": 10.3,
+        "write_mb": 973.6
       },
       "temperature_c": null,
       "network": {
@@ -57,12 +57,12 @@
         }
       },
       "processes": {
-        "total": 303,
+        "total": 300,
         "running": 0,
-        "sleeping": 230,
-        "threads": 1145
+        "sleeping": 228,
+        "threads": 1142
       },
-      "uptime": "13 days, 23:31:05",
+      "uptime": "14 days, 0:31:06",
       "containers": [
         {
           "name": "gallery backend",
@@ -114,31 +114,31 @@
         },
         {
           "name": "wallos",
-          "status": "Up 13 days (healthy) bellamy/wallos:latest"
+          "status": "Up 2 weeks (healthy) bellamy/wallos:latest"
         },
         {
           "name": "nginx pm",
-          "status": "Up 13 days jc21/nginx-proxy-manager:latest"
+          "status": "Up 2 weeks jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "Dashy",
-          "status": "Up 13 days (healthy) lissy93/dashy:4.x"
+          "status": "Up 2 weeks (healthy) lissy93/dashy:4.x"
         },
         {
           "name": "cve report",
-          "status": "Up 13 days nginx:alpine"
+          "status": "Up 2 weeks nginx:alpine"
         },
         {
           "name": "cve grafana",
-          "status": "Up 15 hours grafana/grafana:latest"
+          "status": "Up 16 hours grafana/grafana:latest"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 15 hours prom/prometheus:latest"
+          "status": "Up 16 hours prom/prometheus:latest"
         },
         {
           "name": "cve alertmanager",
-          "status": "Up 13 days prom/alertmanager:latest"
+          "status": "Up 2 weeks prom/alertmanager:latest"
         }
       ],
       "container_count": 19,
@@ -158,10 +158,10 @@
         0.6
       ],
       "ram": {
-        "used_gb": 0.59,
+        "used_gb": 0.61,
         "total_gb": 1.92,
-        "percent": 30.8,
-        "available_gb": 1.33
+        "percent": 32.0,
+        "available_gb": 1.31
       },
       "swap": {
         "used_mb": 0.8,
@@ -169,9 +169,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.05,
-        "5min": 0.04,
-        "15min": 0.01,
+        "1min": 0.07,
+        "5min": 0.02,
+        "15min": 0.0,
         "cores": 2
       },
       "disks": [
@@ -185,19 +185,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.3,
-        "write_mb": 46.8
+        "read_mb": 1.2,
+        "write_mb": 51.1
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 28.6,
-          "recv_mb": 31.5,
+          "sent_mb": 58.9,
+          "recv_mb": 61.1,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 5.3,
-          "recv_mb": 4.1,
+          "sent_mb": 4.2,
+          "recv_mb": 3.2,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 1.0,
-          "recv_mb": 1.1,
+          "sent_mb": 2.0,
+          "recv_mb": 2.2,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 23.2,
-          "recv_mb": 22.2,
+          "sent_mb": 52.9,
+          "recv_mb": 51.3,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 0.8,
-          "recv_mb": 0.8,
+          "sent_mb": 1.8,
+          "recv_mb": 2.0,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,8 +226,8 @@
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 4.0,
-          "recv_mb": 2.6,
+          "sent_mb": 2.9,
+          "recv_mb": 1.8,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
@@ -236,18 +236,18 @@
           "speed_kbps": 10240000.0
         },
         "veth9dabb06": {
-          "sent_mb": 23.2,
-          "recv_mb": 22.5,
+          "sent_mb": 52.9,
+          "recv_mb": 51.9,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 124,
+        "total": 125,
         "running": 0,
         "sleeping": 69,
-        "threads": 290
+        "threads": 291
       },
-      "uptime": "13 days, 23:30:13",
+      "uptime": "14 days, 0:30:14",
       "containers": [
         {
           "name": "glances",
@@ -272,23 +272,23 @@
     "VM400": {
       "status": "ok",
       "cpu": {
-        "total": 3.8,
+        "total": 3.7,
         "user": 2.8,
         "system": 0.8,
-        "idle": 96.2,
+        "idle": 96.3,
         "iowait": 0.0
       },
       "percpu": [
-        3.8,
         3.7,
-        4.0,
-        3.6
+        3.7,
+        3.8,
+        3.7
       ],
       "ram": {
-        "used_gb": 1.63,
+        "used_gb": 1.65,
         "total_gb": 3.82,
-        "percent": 42.7,
-        "available_gb": 2.19
+        "percent": 43.1,
+        "available_gb": 2.18
       },
       "swap": {
         "used_mb": 61.0,
@@ -296,9 +296,9 @@
         "percent": 3.2
       },
       "load": {
-        "1min": 0.07,
-        "5min": 0.1,
-        "15min": 0.09,
+        "1min": 0.14,
+        "5min": 0.37,
+        "15min": 0.51,
         "cores": 4
       },
       "disks": [
@@ -312,14 +312,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1.8,
-        "write_mb": 178.6
+        "read_mb": 1.6,
+        "write_mb": 185.5
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 4.9,
-          "recv_mb": 35.9,
+          "sent_mb": 5.1,
+          "recv_mb": 95.7,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -352,13 +352,13 @@
         "total": 469,
         "running": 0,
         "sleeping": 393,
-        "threads": 2921
+        "threads": 2922
       },
-      "uptime": "13 days, 1:26:55",
+      "uptime": "13 days, 2:26:56",
       "containers": [
         {
           "name": "azuracast",
-          "status": "Up 46 hours ghcr.io/azuracast/azuracast:latest"
+          "status": "Up 47 hours ghcr.io/azuracast/azuracast:latest"
         },
         {
           "name": "glances",
@@ -382,45 +382,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "John Peel 2003-04-24",
-      "artist": "John Peel (R1)",
-      "album": "from RA",
-      "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/17b6b3c6d8baa2dbffbae4da",
-      "duration": 7082,
-      "elapsed": 6409
+      "title": "John Peel 011108 128K",
+      "artist": "Niag",
+      "album": "",
+      "genre": "Blues",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/d9989102b84fcfa702e6f07d",
+      "duration": 7221,
+      "elapsed": 584
     },
     "playing_next": {
-      "title": "Fiesta",
+      "title": "Jb 57",
       "artist": "The Pogues"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Elon Musk says Grok Imagine will make  historicall",
+        "title": "We go back a long way with Martin  and there s al",
         "artist": "",
-        "played_at": 1786544744
+        "played_at": 1786554182
       },
       {
-        "title": "Election voting advice from AI chatbots  inaccurat",
+        "title": "Quem é Rodri  capitão da Espanha e eleito o melhor",
         "artist": "",
-        "played_at": 1786544715
+        "played_at": 1786554170
       },
       {
-        "title": "Death Squad",
-        "artist": "Dr. & the Crippens",
-        "played_at": 1786544611
-      },
-      {
-        "title": "Como entrada da Arábia Saudita em ataques no Iraqu",
+        "title": "Hal Williams   227  Star and  Sanford and Son  Reg",
         "artist": "",
-        "played_at": 1786544596
+        "played_at": 1786554114
       },
       {
-        "title": "the sun [peel session '92]",
-        "artist": "flaming lips",
-        "played_at": 1786544378
+        "title": "Marrocos investe US  6 bilhões na Copa do Mundo de",
+        "artist": "",
+        "played_at": 1786554094
+      },
+      {
+        "title": "LISTEN  What s Fueling the Box Office Rebound and",
+        "artist": "",
+        "played_at": 1786554055
       }
     ]
   }
