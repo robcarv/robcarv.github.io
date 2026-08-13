@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13 17:12",
+  "updated": "2026-08-13 18:12",
   "status": "ok",
   "nodes": {
     "VM100": {
@@ -7,15 +7,15 @@
       "cpu": {
         "total": 5.8,
         "user": 4.2,
-        "system": 1.2,
+        "system": 1.3,
         "idle": 94.2,
         "iowait": 0.0
       },
       "percpu": [
-        6.2,
-        6.0,
+        6.1,
+        5.7,
         5.6,
-        5.5
+        5.8
       ],
       "ram": {
         "used_gb": 3.29,
@@ -29,9 +29,9 @@
         "percent": 42.4
       },
       "load": {
-        "1min": 0.23,
-        "5min": 0.18,
-        "15min": 0.12,
+        "1min": 0.05,
+        "5min": 0.05,
+        "15min": 0.07,
         "cores": 4
       },
       "disks": [
@@ -40,13 +40,13 @@
           "device": "/dev/mapper/ubuntu--vg-ubuntu--lv",
           "size_gb": 61.2,
           "used_gb": 36.6,
-          "free_gb": 22.0,
+          "free_gb": 21.9,
           "percent": 59.8
         }
       ],
       "disk_io": {
-        "read_mb": 640.1,
-        "write_mb": 2003.2
+        "read_mb": 0.3,
+        "write_mb": 1093.0
       },
       "temperature_c": null,
       "network": {
@@ -57,20 +57,20 @@
         }
       },
       "processes": {
-        "total": 314,
+        "total": 316,
         "running": 0,
-        "sleeping": 242,
-        "threads": 1267
+        "sleeping": 244,
+        "threads": 1269
       },
-      "uptime": "15 days, 0:30:31",
+      "uptime": "15 days, 1:30:32",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 18 hours (healthy) netdata/netdata:stable"
+          "status": "Up 19 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "pve exporter",
-          "status": "Up 21 hours prompve/prometheus-pve-exporter:3.3.0"
+          "status": "Up 22 hours prompve/prometheus-pve-exporter:3.3.0"
         },
         {
           "name": "gallery backend",
@@ -138,7 +138,7 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 16 hours grafana/grafana:latest"
+          "status": "Up 17 hours grafana/grafana:latest"
         }
       ],
       "container_count": 19,
@@ -149,19 +149,19 @@
       "cpu": {
         "total": 2.5,
         "user": 1.8,
-        "system": 0.5,
+        "system": 0.6,
         "idle": 97.5,
         "iowait": 0.0
       },
       "percpu": [
-        2.5,
-        2.5
+        2.6,
+        2.4
       ],
       "ram": {
-        "used_gb": 0.72,
+        "used_gb": 0.73,
         "total_gb": 1.92,
-        "percent": 37.5,
-        "available_gb": 1.2
+        "percent": 37.9,
+        "available_gb": 1.19
       },
       "swap": {
         "used_mb": 1.3,
@@ -169,9 +169,9 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 0.05,
-        "5min": 0.04,
-        "15min": 0.01,
+        "1min": 0.01,
+        "5min": 0.02,
+        "15min": 0.18,
         "cores": 2
       },
       "disks": [
@@ -185,19 +185,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 2.1,
-        "write_mb": 97.0
+        "read_mb": 0.0,
+        "write_mb": 87.4
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 75.6,
-          "recv_mb": 44.5,
+          "sent_mb": 130.8,
+          "recv_mb": 99.6,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 5.4,
-          "recv_mb": 5.1,
+          "sent_mb": 6.1,
+          "recv_mb": 4.7,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 1.4,
-          "recv_mb": 1.6,
+          "sent_mb": 5.6,
+          "recv_mb": 5.7,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 32.9,
-          "recv_mb": 31.7,
+          "sent_mb": 83.6,
+          "recv_mb": 81.8,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 1.2,
-          "recv_mb": 1.3,
+          "sent_mb": 5.3,
+          "recv_mb": 5.5,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,8 +226,8 @@
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 4.1,
-          "recv_mb": 2.9,
+          "sent_mb": 4.8,
+          "recv_mb": 2.5,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
@@ -236,22 +236,22 @@
           "speed_kbps": 10240000.0
         },
         "veth9dabb06": {
-          "sent_mb": 32.9,
-          "recv_mb": 32.1,
+          "sent_mb": 83.6,
+          "recv_mb": 82.6,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 132,
+        "total": 134,
         "running": 0,
         "sleeping": 77,
-        "threads": 385
+        "threads": 387
       },
-      "uptime": "15 days, 0:29:39",
+      "uptime": "15 days, 1:29:40",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 18 hours (healthy) netdata/netdata:stable"
+          "status": "Up 19 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "glances",
@@ -283,15 +283,15 @@
         "iowait": 0.0
       },
       "percpu": [
-        5.3,
+        5.1,
+        5.0,
         4.9,
-        4.9,
-        4.7
+        4.9
       ],
       "ram": {
         "used_gb": 1.63,
         "total_gb": 3.82,
-        "percent": 42.6,
+        "percent": 42.7,
         "available_gb": 2.19
       },
       "swap": {
@@ -300,9 +300,9 @@
         "percent": 12.3
       },
       "load": {
-        "1min": 0.14,
-        "5min": 0.17,
-        "15min": 0.17,
+        "1min": 0.31,
+        "5min": 0.2,
+        "15min": 0.13,
         "cores": 4
       },
       "disks": [
@@ -316,14 +316,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1.2,
-        "write_mb": 228.2
+        "read_mb": 0.8,
+        "write_mb": 224.1
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 41.3,
-          "recv_mb": 111.9,
+          "sent_mb": 41.0,
+          "recv_mb": 119.0,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -353,20 +353,20 @@
         }
       },
       "processes": {
-        "total": 477,
-        "running": 1,
-        "sleeping": 402,
-        "threads": 3016
+        "total": 476,
+        "running": 0,
+        "sleeping": 401,
+        "threads": 3013
       },
-      "uptime": "14 days, 2:26:21",
+      "uptime": "14 days, 3:26:22",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 18 hours (healthy) netdata/netdata:stable"
+          "status": "Up 19 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "azuracast",
-          "status": "Up 2 days ghcr.io/azuracast/azuracast:latest"
+          "status": "Up 3 days ghcr.io/azuracast/azuracast:latest"
         },
         {
           "name": "glances",
@@ -390,45 +390,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "38. #13. billy bragg - between the wars",
-      "artist": "John Peel Festive Fifty 1984",
-      "album": "John Peel Festive Fifty 1984",
-      "genre": "Alternative & Punk",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/1741f6cb717ab408b0bd7513",
-      "duration": 149,
-      "elapsed": 12
+      "title": "John Peel 2004-08-25",
+      "artist": "John Peel (R1)",
+      "album": "from Sky+",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/9e99ba55c0d9a3eda3ae8278",
+      "duration": 7053,
+      "elapsed": 2246
     },
     "playing_next": {
-      "title": "Necrophiliac",
-      "artist": "Slayer"
+      "title": "Spellbound",
+      "artist": "Siouxsie and the Banshees"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Andy LaRocque Calls Exit from King Diamond a Mutua",
+        "title": "Achieving In Dub",
+        "artist": "Yabby You",
+        "played_at": 1786642283
+      },
+      {
+        "title": "Adms  de páginas de fãs conciliam rotina pessoal",
         "artist": "",
-        "played_at": 1786641116
+        "played_at": 1786642251
       },
       {
-        "title": "The Donegal Express/The Hen And The Cock Are In Carrickmacross",
-        "artist": "The Pogues",
-        "played_at": 1786640890
+        "title": "Pitbull Sets Guinness World Record for Most  Bald",
+        "artist": "",
+        "played_at": 1786642238
       },
       {
-        "title": "Adelleda",
-        "artist": "Alexisonfire",
-        "played_at": 1786640545
+        "title": "Is It A Dream? (Peel Session)",
+        "artist": "Damned, The",
+        "played_at": 1786642032
       },
       {
-        "title": "i know you got soul",
-        "artist": "15 #36 eric b and rakim",
-        "played_at": 1786640249
-      },
-      {
-        "title": "floorshow (john peel session 1982); Good Things (john peel session 1982)",
-        "artist": "The Sisters of Mercy",
-        "played_at": 1786640035
+        "title": "Running Free",
+        "artist": "Iron Maiden",
+        "played_at": 1786641557
       }
     ]
   }
