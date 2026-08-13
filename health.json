@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13 15:12",
+  "updated": "2026-08-13 16:12",
   "status": "ok",
   "nodes": {
     "VM100": {
@@ -7,21 +7,21 @@
       "cpu": {
         "total": 5.8,
         "user": 4.2,
-        "system": 1.3,
+        "system": 1.2,
         "idle": 94.2,
         "iowait": 0.0
       },
       "percpu": [
-        6.3,
-        5.8,
-        5.5,
-        5.6
+        6.0,
+        5.7,
+        5.6,
+        5.7
       ],
       "ram": {
-        "used_gb": 3.31,
+        "used_gb": 3.29,
         "total_gb": 7.76,
-        "percent": 42.6,
-        "available_gb": 4.45
+        "percent": 42.4,
+        "available_gb": 4.46
       },
       "swap": {
         "used_mb": 800.8,
@@ -29,9 +29,9 @@
         "percent": 42.4
       },
       "load": {
-        "1min": 0.24,
-        "5min": 1.08,
-        "15min": 2.0,
+        "1min": 0.07,
+        "5min": 0.14,
+        "15min": 0.11,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.3,
-        "write_mb": 1176.8
+        "read_mb": 1.3,
+        "write_mb": 1081.4
       },
       "temperature_c": null,
       "network": {
@@ -57,20 +57,20 @@
         }
       },
       "processes": {
-        "total": 312,
+        "total": 316,
         "running": 0,
-        "sleeping": 241,
-        "threads": 1265
+        "sleeping": 243,
+        "threads": 1269
       },
-      "uptime": "14 days, 22:30:29",
+      "uptime": "14 days, 23:30:30",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 16 hours (healthy) netdata/netdata:stable"
+          "status": "Up 17 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "pve exporter",
-          "status": "Up 19 hours prompve/prometheus-pve-exporter:3.3.0"
+          "status": "Up 20 hours prompve/prometheus-pve-exporter:3.3.0"
         },
         {
           "name": "gallery backend",
@@ -138,7 +138,7 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 14 hours grafana/grafana:latest"
+          "status": "Up 15 hours grafana/grafana:latest"
         }
       ],
       "container_count": 19,
@@ -147,21 +147,21 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 2.4,
+        "total": 2.5,
         "user": 1.8,
-        "system": 0.5,
-        "idle": 97.6,
+        "system": 0.6,
+        "idle": 97.5,
         "iowait": 0.0
       },
       "percpu": [
-        2.4,
-        2.4
+        2.6,
+        2.5
       ],
       "ram": {
-        "used_gb": 0.73,
+        "used_gb": 0.72,
         "total_gb": 1.92,
-        "percent": 37.8,
-        "available_gb": 1.19
+        "percent": 37.5,
+        "available_gb": 1.2
       },
       "swap": {
         "used_mb": 1.3,
@@ -169,9 +169,9 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 0.0,
-        "5min": 0.02,
-        "15min": 0.01,
+        "1min": 0.02,
+        "5min": 0.01,
+        "15min": 0.0,
         "cores": 2
       },
       "disks": [
@@ -185,39 +185,39 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 88.3
+        "read_mb": 36.3,
+        "write_mb": 80.2
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 70.1,
-          "recv_mb": 38.2,
+          "sent_mb": 141.0,
+          "recv_mb": 108.6,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 4.3,
-          "recv_mb": 4.0,
+          "sent_mb": 4.6,
+          "recv_mb": 4.3,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
           "sent_mb": 0.4,
-          "recv_mb": 2.2,
+          "recv_mb": 2.3,
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 3.8,
-          "recv_mb": 4.1,
+          "sent_mb": 1.9,
+          "recv_mb": 2.1,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 26.0,
-          "recv_mb": 25.1,
+          "sent_mb": 98.0,
+          "recv_mb": 95.8,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 3.6,
-          "recv_mb": 3.9,
+          "sent_mb": 1.7,
+          "recv_mb": 1.8,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,8 +226,8 @@
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 3.0,
-          "recv_mb": 1.8,
+          "sent_mb": 3.3,
+          "recv_mb": 2.1,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
@@ -236,22 +236,22 @@
           "speed_kbps": 10240000.0
         },
         "veth9dabb06": {
-          "sent_mb": 26.0,
-          "recv_mb": 25.4,
+          "sent_mb": 98.0,
+          "recv_mb": 96.6,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 132,
+        "total": 133,
         "running": 0,
         "sleeping": 77,
-        "threads": 385
+        "threads": 386
       },
-      "uptime": "14 days, 22:29:37",
+      "uptime": "14 days, 23:29:38",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 16 hours (healthy) netdata/netdata:stable"
+          "status": "Up 17 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "glances",
@@ -276,20 +276,20 @@
     "VM400": {
       "status": "ok",
       "cpu": {
-        "total": 5.0,
+        "total": 4.9,
         "user": 3.7,
-        "system": 1.1,
-        "idle": 95.0,
+        "system": 1.0,
+        "idle": 95.1,
         "iowait": 0.0
       },
       "percpu": [
-        5.2,
+        5.1,
         5.0,
-        4.9,
+        4.8,
         4.8
       ],
       "ram": {
-        "used_gb": 1.64,
+        "used_gb": 1.63,
         "total_gb": 3.82,
         "percent": 42.8,
         "available_gb": 2.19
@@ -300,9 +300,9 @@
         "percent": 12.3
       },
       "load": {
-        "1min": 0.25,
-        "5min": 0.2,
-        "15min": 0.14,
+        "1min": 0.14,
+        "5min": 0.77,
+        "15min": 0.87,
         "cores": 4
       },
       "disks": [
@@ -316,14 +316,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 9.2,
-        "write_mb": 224.4
+        "read_mb": 1.1,
+        "write_mb": 228.3
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 41.1,
-          "recv_mb": 107.7,
+          "sent_mb": 41.2,
+          "recv_mb": 110.6,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -353,16 +353,16 @@
         }
       },
       "processes": {
-        "total": 477,
+        "total": 476,
         "running": 0,
-        "sleeping": 401,
+        "sleeping": 402,
         "threads": 3014
       },
-      "uptime": "14 days, 0:26:19",
+      "uptime": "14 days, 1:26:20",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 16 hours (healthy) netdata/netdata:stable"
+          "status": "Up 17 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "azuracast",
@@ -390,45 +390,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "23. #28-Cocteau Twins - Peppermint Pig.mp3",
-      "artist": "John Peel Festive Fifty 1983",
-      "album": "John Peel Festive Fifty 1983",
-      "genre": "Alternative & Punk",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/8785b57f95a3a8a53adcd54a",
-      "duration": 204,
-      "elapsed": 129
+      "title": "Back To Dungaree High",
+      "artist": "Turbonegro",
+      "album": "Apocalypse Dudes",
+      "genre": "Punk",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/48943260de079ba4588d551c-1785438592.jpg",
+      "duration": 176,
+      "elapsed": 21
     },
     "playing_next": {
-      "title": "Spinning (Official Video)",
-      "artist": "35.Julia Holter"
+      "title": "China s economy grows 4 3  in Q2  slowest since la",
+      "artist": ""
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Body Of An American",
-        "artist": "The Pogues",
-        "played_at": 1786633546
+        "title": "Water Underground (Official Video)",
+        "artist": "84.Real Estate",
+        "played_at": 1786637308
       },
       {
-        "title": "jawbone - hi-di-hi",
-        "artist": "41 #10",
-        "played_at": 1786633330
+        "title": "We Don't Want No LSD Tonight",
+        "artist": "Jeffrey Lewis",
+        "played_at": 1786637051
       },
       {
-        "title": "10 filmes e séries com Anne Hathaway para você ass",
+        "title": "39 #27.Wasted Life-Stiff Little Fingers",
+        "artist": "John Peel Festive Fifty 1980",
+        "played_at": 1786636846
+      },
+      {
+        "title": "20 - the darkness vs sfb - i believe in a thing called love",
+        "artist": "31",
+        "played_at": 1786636431
+      },
+      {
+        "title": "Lewis Hamilton assume namoro com Kim Kardashian em",
         "artist": "",
-        "played_at": 1786633325
-      },
-      {
-        "title": "45 - hole - doll parts",
-        "artist": "{06}",
-        "played_at": 1786633119
-      },
-      {
-        "title": "In Britain  Europe  the USA  almost everywhere   m",
-        "artist": "",
-        "played_at": 1786633103
+        "played_at": 1786636401
       }
     ]
   }
