@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-13 13:12",
+  "updated": "2026-08-13 14:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 5.9,
+        "total": 5.8,
         "user": 4.2,
-        "system": 1.3,
-        "idle": 94.1,
+        "system": 1.2,
+        "idle": 94.2,
         "iowait": 0.0
       },
       "percpu": [
-        6.3,
+        6.2,
         5.9,
-        5.7,
-        5.7
+        5.5,
+        5.5
       ],
       "ram": {
-        "used_gb": 3.3,
+        "used_gb": 3.29,
         "total_gb": 7.76,
-        "percent": 42.5,
+        "percent": 42.4,
         "available_gb": 4.46
       },
       "swap": {
@@ -29,9 +29,9 @@
         "percent": 42.4
       },
       "load": {
-        "1min": 0.27,
-        "5min": 0.24,
-        "15min": 0.15,
+        "1min": 0.12,
+        "5min": 0.14,
+        "15min": 0.11,
         "cores": 4
       },
       "disks": [
@@ -39,14 +39,14 @@
           "mount": "/",
           "device": "/dev/mapper/ubuntu--vg-ubuntu--lv",
           "size_gb": 61.2,
-          "used_gb": 36.5,
+          "used_gb": 36.6,
           "free_gb": 22.0,
-          "percent": 59.7
+          "percent": 59.8
         }
       ],
       "disk_io": {
-        "read_mb": 2.0,
-        "write_mb": 1146.0
+        "read_mb": 3.9,
+        "write_mb": 1058.6
       },
       "temperature_c": null,
       "network": {
@@ -57,20 +57,20 @@
         }
       },
       "processes": {
-        "total": 315,
+        "total": 314,
         "running": 0,
         "sleeping": 243,
         "threads": 1267
       },
-      "uptime": "14 days, 20:30:27",
+      "uptime": "14 days, 21:30:28",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 14 hours (healthy) netdata/netdata:stable"
+          "status": "Up 15 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "pve exporter",
-          "status": "Up 17 hours prompve/prometheus-pve-exporter:3.3.0"
+          "status": "Up 18 hours prompve/prometheus-pve-exporter:3.3.0"
         },
         {
           "name": "gallery backend",
@@ -138,7 +138,7 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 12 hours grafana/grafana:latest"
+          "status": "Up 13 hours grafana/grafana:latest"
         }
       ],
       "container_count": 19,
@@ -147,21 +147,21 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 2.4,
+        "total": 2.5,
         "user": 1.8,
-        "system": 0.5,
-        "idle": 97.6,
+        "system": 0.6,
+        "idle": 97.5,
         "iowait": 0.0
       },
       "percpu": [
         2.5,
-        2.4
+        2.5
       ],
       "ram": {
-        "used_gb": 0.74,
+        "used_gb": 0.73,
         "total_gb": 1.92,
-        "percent": 38.4,
-        "available_gb": 1.18
+        "percent": 38.0,
+        "available_gb": 1.19
       },
       "swap": {
         "used_mb": 1.3,
@@ -169,8 +169,8 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 0.0,
-        "5min": 0.0,
+        "1min": 0.04,
+        "5min": 0.01,
         "15min": 0.0,
         "cores": 2
       },
@@ -185,19 +185,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.3,
-        "write_mb": 93.4
+        "read_mb": 0.2,
+        "write_mb": 84.9
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 127.8,
-          "recv_mb": 94.7,
+          "sent_mb": 152.0,
+          "recv_mb": 118.5,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 7.4,
-          "recv_mb": 7.0,
+          "sent_mb": 5.9,
+          "recv_mb": 5.5,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 5.6,
-          "recv_mb": 5.8,
+          "sent_mb": 7.5,
+          "recv_mb": 7.8,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 77.4,
-          "recv_mb": 76.5,
+          "sent_mb": 101.0,
+          "recv_mb": 99.6,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 5.4,
-          "recv_mb": 5.6,
+          "sent_mb": 7.3,
+          "recv_mb": 7.6,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,8 +226,8 @@
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 6.1,
-          "recv_mb": 4.8,
+          "sent_mb": 4.5,
+          "recv_mb": 3.3,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
@@ -236,22 +236,22 @@
           "speed_kbps": 10240000.0
         },
         "veth9dabb06": {
-          "sent_mb": 77.4,
-          "recv_mb": 77.2,
+          "sent_mb": 101.0,
+          "recv_mb": 100.5,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 134,
+        "total": 132,
         "running": 0,
         "sleeping": 77,
-        "threads": 387
+        "threads": 385
       },
-      "uptime": "14 days, 20:29:35",
+      "uptime": "14 days, 21:29:36",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 14 hours (healthy) netdata/netdata:stable"
+          "status": "Up 15 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "glances",
@@ -277,21 +277,21 @@
       "status": "ok",
       "cpu": {
         "total": 4.9,
-        "user": 3.6,
-        "system": 1.0,
+        "user": 3.7,
+        "system": 1.1,
         "idle": 95.1,
         "iowait": 0.0
       },
       "percpu": [
-        5.2,
-        4.8,
+        5.1,
         4.9,
-        4.6
+        4.8,
+        4.9
       ],
       "ram": {
-        "used_gb": 1.63,
+        "used_gb": 1.62,
         "total_gb": 3.82,
-        "percent": 42.6,
+        "percent": 42.4,
         "available_gb": 2.2
       },
       "swap": {
@@ -300,9 +300,9 @@
         "percent": 12.3
       },
       "load": {
-        "1min": 0.07,
-        "5min": 0.1,
-        "15min": 0.09,
+        "1min": 0.17,
+        "5min": 0.25,
+        "15min": 0.42,
         "cores": 4
       },
       "disks": [
@@ -316,14 +316,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1.2,
-        "write_mb": 226.3
+        "read_mb": 0.8,
+        "write_mb": 232.0
       },
       "temperature_c": null,
       "network": {
         "ens18": {
           "sent_mb": 41.3,
-          "recv_mb": 74.6,
+          "recv_mb": 54.3,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -348,21 +348,21 @@
         },
         "veth30a40b3": {
           "sent_mb": 0.3,
-          "recv_mb": 1.2,
+          "recv_mb": 1.3,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 477,
+        "total": 476,
         "running": 0,
         "sleeping": 401,
         "threads": 3014
       },
-      "uptime": "13 days, 22:26:17",
+      "uptime": "13 days, 23:26:18",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 14 hours (healthy) netdata/netdata:stable"
+          "status": "Up 15 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "azuracast",
@@ -390,21 +390,26 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "John Peel 20001205",
-      "artist": "",
-      "album": "",
+      "title": "All The People I Like Are Those That Are Dead",
+      "artist": "Felt",
+      "album": "Andy Kershaw Session (11-09-1986)",
       "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/cb7f695fe75ed65cd59c04ea",
-      "duration": 7230,
-      "elapsed": 3812
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/736bc3febb631ef75df6bb0f-1785447981.jpg",
+      "duration": 191,
+      "elapsed": 186
     },
     "playing_next": {
-      "title": "All The People I Like Are Those That Are Dead",
-      "artist": "Felt"
+      "title": "HP fined 1 4 billion rupees for  cartelization  of",
+      "artist": ""
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
+      {
+        "title": "John Peel 20001205",
+        "artist": "",
+        "played_at": 1786622929
+      },
       {
         "title": "Inglaterra vence a França em jogo de 10 gols e fic",
         "artist": "",
@@ -424,11 +429,6 @@
         "title": "Karol G faz da turnê  Viajando Por El Mundo Tropit",
         "artist": "",
         "played_at": 1786622451
-      },
-      {
-        "title": "Slow Days",
-        "artist": "BALLBOY",
-        "played_at": 1786622227
       }
     ]
   }
