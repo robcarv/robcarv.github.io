@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-13 09:12",
+  "updated": "2026-08-13 10:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
         "total": 5.8,
-        "user": 4.3,
+        "user": 4.2,
         "system": 1.2,
         "idle": 94.2,
         "iowait": 0.0
       },
       "percpu": [
-        6.2,
+        6.1,
         5.8,
-        5.5,
-        5.7
+        5.7,
+        5.5
       ],
       "ram": {
-        "used_gb": 3.28,
+        "used_gb": 3.29,
         "total_gb": 7.76,
-        "percent": 42.3,
+        "percent": 42.4,
         "available_gb": 4.47
       },
       "swap": {
@@ -29,9 +29,9 @@
         "percent": 42.5
       },
       "load": {
-        "1min": 0.11,
-        "5min": 0.12,
-        "15min": 0.17,
+        "1min": 0.57,
+        "5min": 0.26,
+        "15min": 0.19,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 17.7,
-        "write_mb": 1153.2
+        "read_mb": 0.9,
+        "write_mb": 1064.6
       },
       "temperature_c": null,
       "network": {
@@ -62,15 +62,15 @@
         "sleeping": 241,
         "threads": 1266
       },
-      "uptime": "14 days, 16:30:23",
+      "uptime": "14 days, 17:30:24",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 10 hours (healthy) netdata/netdata:stable"
+          "status": "Up 11 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "pve exporter",
-          "status": "Up 13 hours prompve/prometheus-pve-exporter:3.3.0"
+          "status": "Up 14 hours prompve/prometheus-pve-exporter:3.3.0"
         },
         {
           "name": "gallery backend",
@@ -138,7 +138,7 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 8 hours grafana/grafana:latest"
+          "status": "Up 9 hours grafana/grafana:latest"
         }
       ],
       "container_count": 19,
@@ -147,15 +147,15 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 2.6,
+        "total": 2.5,
         "user": 1.8,
         "system": 0.6,
-        "idle": 97.4,
+        "idle": 97.5,
         "iowait": 0.0
       },
       "percpu": [
-        2.6,
-        2.6
+        2.5,
+        2.4
       ],
       "ram": {
         "used_gb": 0.72,
@@ -185,19 +185,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1.6,
-        "write_mb": 87.9
+        "read_mb": 0.0,
+        "write_mb": 87.2
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 168.0,
-          "recv_mb": 133.9,
+          "sent_mb": 80.1,
+          "recv_mb": 48.6,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 4.3,
-          "recv_mb": 4.0,
+          "sent_mb": 6.1,
+          "recv_mb": 5.8,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 2.2,
-          "recv_mb": 2.4,
+          "sent_mb": 2.4,
+          "recv_mb": 2.6,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 123.4,
-          "recv_mb": 122.0,
+          "sent_mb": 35.9,
+          "recv_mb": 34.6,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 1.9,
-          "recv_mb": 2.1,
+          "sent_mb": 2.2,
+          "recv_mb": 2.3,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,8 +226,8 @@
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 3.0,
-          "recv_mb": 1.7,
+          "sent_mb": 4.8,
+          "recv_mb": 3.5,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
@@ -236,8 +236,8 @@
           "speed_kbps": 10240000.0
         },
         "veth9dabb06": {
-          "sent_mb": 123.4,
-          "recv_mb": 123.1,
+          "sent_mb": 35.9,
+          "recv_mb": 35.0,
           "speed_kbps": 10240000.0
         }
       },
@@ -247,11 +247,11 @@
         "sleeping": 77,
         "threads": 386
       },
-      "uptime": "14 days, 16:29:31",
+      "uptime": "14 days, 17:29:32",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 10 hours (healthy) netdata/netdata:stable"
+          "status": "Up 11 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "glances",
@@ -259,11 +259,11 @@
         },
         {
           "name": "psclient",
-          "status": "Up 12 days packetstream/psclient:latest"
+          "status": "Up 13 days packetstream/psclient:latest"
         },
         {
           "name": "watchtower",
-          "status": "Up 12 days (healthy) containrrr/watchtower:latest"
+          "status": "Up 13 days (healthy) containrrr/watchtower:latest"
         },
         {
           "name": "portainer agent",
@@ -284,9 +284,9 @@
       },
       "percpu": [
         5.3,
-        4.9,
-        4.9,
-        4.9
+        5.0,
+        4.8,
+        5.0
       ],
       "ram": {
         "used_gb": 1.64,
@@ -300,9 +300,9 @@
         "percent": 12.3
       },
       "load": {
-        "1min": 0.23,
-        "5min": 1.48,
-        "15min": 1.18,
+        "1min": 0.11,
+        "5min": 0.12,
+        "15min": 0.15,
         "cores": 4
       },
       "disks": [
@@ -316,14 +316,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 10.8,
-        "write_mb": 283.3
+        "read_mb": 0.9,
+        "write_mb": 234.4
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 41.0,
-          "recv_mb": 95.5,
+          "sent_mb": 41.1,
+          "recv_mb": 111.4,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -353,16 +353,16 @@
         }
       },
       "processes": {
-        "total": 475,
+        "total": 477,
         "running": 0,
         "sleeping": 401,
-        "threads": 3013
+        "threads": 3014
       },
-      "uptime": "13 days, 18:26:13",
+      "uptime": "13 days, 19:26:14",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 10 hours (healthy) netdata/netdata:stable"
+          "status": "Up 11 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "azuracast",
@@ -390,45 +390,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "47. #04 - Ash - Girl From Mars.mp3",
-      "artist": "John Peel Festive Fifty 1995",
-      "album": "John Peel Festive Fifty 1995",
-      "genre": "Alternative & Punk",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/53e5eaa90dfb3476382a07e7",
-      "duration": 209,
-      "elapsed": 120
+      "title": "John Peel 2004-07-21",
+      "artist": "John Peel (R1)",
+      "album": "from Sky+",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/77bea024b3522e47ee75e81a",
+      "duration": 7176,
+      "elapsed": 1950
     },
     "playing_next": {
-      "title": "04citiz",
-      "artist": ""
+      "title": "Super-Electric",
+      "artist": "Stereolab"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "breaking hands",
-        "artist": "03 #48 the gun club",
-        "played_at": 1786611960
+        "title": "merry blues ft manu chao",
+        "artist": "toots and the maytals",
+        "played_at": 1786613759
       },
       {
-        "title": "Almost Made It (J.Peel Session 1985)",
-        "artist": "The Shop Assistants",
-        "played_at": 1786611844
+        "title": "Mother Russia",
+        "artist": "Iron Maiden",
+        "played_at": 1786613431
       },
       {
-        "title": "Teddy Picker",
-        "artist": "Arctic Monkeys",
-        "played_at": 1786611682
+        "title": "Phil the fluter",
+        "artist": "The Upsetters",
+        "played_at": 1786613242
       },
       {
-        "title": "Homem é preso em flagrante por venda ilegal de rem",
+        "title": "In Time [20.06.70]",
+        "artist": "Pentangle",
+        "played_at": 1786612973
+      },
+      {
+        "title": "Por que PF vai investigar repasses de Vorcaro para",
         "artist": "",
-        "played_at": 1786611660
-      },
-      {
-        "title": "What Are You Going To Do With Your Life; What Are You Going To Do With",
-        "artist": "Echo & The Bunnymen",
-        "played_at": 1786611314
+        "played_at": 1786612949
       }
     ]
   }
