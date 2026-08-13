@@ -1,37 +1,37 @@
 {
-  "updated": "2026-08-13 10:12",
+  "updated": "2026-08-13 11:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 5.8,
+        "total": 5.7,
         "user": 4.2,
         "system": 1.2,
         "idle": 94.2,
         "iowait": 0.0
       },
       "percpu": [
-        6.1,
+        6.0,
         5.8,
         5.7,
-        5.5
+        5.6
       ],
       "ram": {
-        "used_gb": 3.29,
+        "used_gb": 3.28,
         "total_gb": 7.76,
         "percent": 42.4,
         "available_gb": 4.47
       },
       "swap": {
-        "used_mb": 801.5,
+        "used_mb": 800.8,
         "total_mb": 1888.0,
-        "percent": 42.5
+        "percent": 42.4
       },
       "load": {
-        "1min": 0.57,
-        "5min": 0.26,
-        "15min": 0.19,
+        "1min": 0.04,
+        "5min": 0.05,
+        "15min": 0.06,
         "cores": 4
       },
       "disks": [
@@ -40,13 +40,13 @@
           "device": "/dev/mapper/ubuntu--vg-ubuntu--lv",
           "size_gb": 61.2,
           "used_gb": 36.5,
-          "free_gb": 22.0,
-          "percent": 59.7
+          "free_gb": 22.1,
+          "percent": 59.6
         }
       ],
       "disk_io": {
-        "read_mb": 0.9,
-        "write_mb": 1064.6
+        "read_mb": 3.6,
+        "write_mb": 1227.6
       },
       "temperature_c": null,
       "network": {
@@ -57,20 +57,20 @@
         }
       },
       "processes": {
-        "total": 314,
+        "total": 316,
         "running": 0,
-        "sleeping": 241,
-        "threads": 1266
+        "sleeping": 243,
+        "threads": 1268
       },
-      "uptime": "14 days, 17:30:24",
+      "uptime": "14 days, 18:30:25",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 11 hours (healthy) netdata/netdata:stable"
+          "status": "Up 12 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "pve exporter",
-          "status": "Up 14 hours prompve/prometheus-pve-exporter:3.3.0"
+          "status": "Up 15 hours prompve/prometheus-pve-exporter:3.3.0"
         },
         {
           "name": "gallery backend",
@@ -138,7 +138,7 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 9 hours grafana/grafana:latest"
+          "status": "Up 10 hours grafana/grafana:latest"
         }
       ],
       "container_count": 19,
@@ -154,13 +154,13 @@
         "iowait": 0.0
       },
       "percpu": [
-        2.5,
+        2.6,
         2.4
       ],
       "ram": {
         "used_gb": 0.72,
         "total_gb": 1.92,
-        "percent": 37.7,
+        "percent": 37.5,
         "available_gb": 1.2
       },
       "swap": {
@@ -170,8 +170,8 @@
       },
       "load": {
         "1min": 0.0,
-        "5min": 0.0,
-        "15min": 0.0,
+        "5min": 0.01,
+        "15min": 0.23,
         "cores": 2
       },
       "disks": [
@@ -185,19 +185,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 87.2
+        "read_mb": 10.2,
+        "write_mb": 100.1
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 80.1,
-          "recv_mb": 48.6,
+          "sent_mb": 82.6,
+          "recv_mb": 51.1,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 6.1,
-          "recv_mb": 5.8,
+          "sent_mb": 5.3,
+          "recv_mb": 4.9,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 2.4,
-          "recv_mb": 2.6,
+          "sent_mb": 1.2,
+          "recv_mb": 1.3,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 35.9,
-          "recv_mb": 34.6,
+          "sent_mb": 40.3,
+          "recv_mb": 39.1,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 2.2,
-          "recv_mb": 2.3,
+          "sent_mb": 1.0,
+          "recv_mb": 1.1,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,8 +226,8 @@
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 4.8,
-          "recv_mb": 3.5,
+          "sent_mb": 4.0,
+          "recv_mb": 2.7,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
@@ -236,26 +236,26 @@
           "speed_kbps": 10240000.0
         },
         "veth9dabb06": {
-          "sent_mb": 35.9,
-          "recv_mb": 35.0,
+          "sent_mb": 40.3,
+          "recv_mb": 39.5,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 133,
+        "total": 132,
         "running": 0,
         "sleeping": 77,
-        "threads": 386
+        "threads": 385
       },
-      "uptime": "14 days, 17:29:32",
+      "uptime": "14 days, 18:29:33",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 11 hours (healthy) netdata/netdata:stable"
+          "status": "Up 12 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "glances",
-          "status": "Up 12 days nicolargo/glances:latest"
+          "status": "Up 13 days nicolargo/glances:latest"
         },
         {
           "name": "psclient",
@@ -283,16 +283,16 @@
         "iowait": 0.0
       },
       "percpu": [
-        5.3,
-        5.0,
-        4.8,
-        5.0
+        5.2,
+        5.1,
+        4.9,
+        4.7
       ],
       "ram": {
-        "used_gb": 1.64,
+        "used_gb": 1.65,
         "total_gb": 3.82,
-        "percent": 42.9,
-        "available_gb": 2.18
+        "percent": 43.1,
+        "available_gb": 2.17
       },
       "swap": {
         "used_mb": 232.6,
@@ -300,9 +300,9 @@
         "percent": 12.3
       },
       "load": {
-        "1min": 0.11,
-        "5min": 0.12,
-        "15min": 0.15,
+        "1min": 0.14,
+        "5min": 0.11,
+        "15min": 0.09,
         "cores": 4
       },
       "disks": [
@@ -316,14 +316,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.9,
-        "write_mb": 234.4
+        "read_mb": 0.6,
+        "write_mb": 232.9
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 41.1,
-          "recv_mb": 111.4,
+          "sent_mb": 40.9,
+          "recv_mb": 90.5,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -333,7 +333,7 @@
         },
         "br-3052d87b6d75": {
           "sent_mb": 0.3,
-          "recv_mb": 0.8,
+          "recv_mb": 0.9,
           "speed_kbps": 10240000.0
         },
         "vethd276a7a": {
@@ -353,16 +353,16 @@
         }
       },
       "processes": {
-        "total": 477,
+        "total": 475,
         "running": 0,
         "sleeping": 401,
-        "threads": 3014
+        "threads": 3012
       },
-      "uptime": "13 days, 19:26:14",
+      "uptime": "13 days, 20:26:15",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 11 hours (healthy) netdata/netdata:stable"
+          "status": "Up 12 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "azuracast",
@@ -370,7 +370,7 @@
         },
         {
           "name": "glances",
-          "status": "Up 12 days nicolargo/glances:latest"
+          "status": "Up 13 days nicolargo/glances:latest"
         },
         {
           "name": "portainer agent",
@@ -396,7 +396,7 @@
       "genre": "",
       "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/77bea024b3522e47ee75e81a",
       "duration": 7176,
-      "elapsed": 1950
+      "elapsed": 5551
     },
     "playing_next": {
       "title": "Super-Electric",
