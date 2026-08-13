@@ -1,21 +1,21 @@
 {
-  "updated": "2026-08-12 23:12",
+  "updated": "2026-08-13 00:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 13.5,
-        "user": 10.8,
-        "system": 2.4,
-        "idle": 86.4,
+        "total": 5.7,
+        "user": 4.2,
+        "system": 1.2,
+        "idle": 94.2,
         "iowait": 0.0
       },
       "percpu": [
-        13.9,
-        13.5,
-        13.4,
-        13.3
+        5.9,
+        6.1,
+        5.5,
+        5.6
       ],
       "ram": {
         "used_gb": 3.31,
@@ -29,9 +29,9 @@
         "percent": 40.7
       },
       "load": {
-        "1min": 0.25,
-        "5min": 0.21,
-        "15min": 0.34,
+        "1min": 0.54,
+        "5min": 0.33,
+        "15min": 0.22,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 40.0,
-        "write_mb": 1846.3
+        "read_mb": 185.4,
+        "write_mb": 1123.9
       },
       "temperature_c": null,
       "network": {
@@ -57,20 +57,20 @@
         }
       },
       "processes": {
-        "total": 312,
+        "total": 316,
         "running": 0,
-        "sleeping": 241,
-        "threads": 1262
+        "sleeping": 243,
+        "threads": 1265
       },
-      "uptime": "14 days, 6:30:13",
+      "uptime": "14 days, 7:30:14",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 18 minutes (healthy) netdata/netdata:stable"
+          "status": "Up About an hour (healthy) netdata/netdata:stable"
         },
         {
           "name": "pve exporter",
-          "status": "Up 3 hours prompve/prometheus-pve-exporter:3.3.0"
+          "status": "Up 4 hours prompve/prometheus-pve-exporter:3.3.0"
         },
         {
           "name": "gallery backend",
@@ -82,11 +82,11 @@
         },
         {
           "name": "cadvisor",
-          "status": "Up 12 days (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 13 days (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "kavita",
-          "status": "Up 12 days lscr.io/linuxserver/kavita:latest"
+          "status": "Up 13 days lscr.io/linuxserver/kavita:latest"
         },
         {
           "name": "gallery frontend",
@@ -138,7 +138,7 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 22 hours grafana/grafana:latest"
+          "status": "Up 23 hours grafana/grafana:latest"
         }
       ],
       "container_count": 19,
@@ -147,21 +147,21 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 6.7,
-        "user": 5.2,
-        "system": 1.3,
-        "idle": 93.3,
+        "total": 2.4,
+        "user": 1.7,
+        "system": 0.5,
+        "idle": 97.6,
         "iowait": 0.0
       },
       "percpu": [
-        6.7,
-        6.7
+        2.4,
+        2.4
       ],
       "ram": {
-        "used_gb": 0.69,
+        "used_gb": 0.71,
         "total_gb": 1.92,
-        "percent": 36.1,
-        "available_gb": 1.23
+        "percent": 36.8,
+        "available_gb": 1.21
       },
       "swap": {
         "used_mb": 1.0,
@@ -169,9 +169,9 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 0.05,
-        "5min": 0.04,
-        "15min": 0.06,
+        "1min": 0.02,
+        "5min": 0.05,
+        "15min": 0.01,
         "cores": 2
       },
       "disks": [
@@ -185,19 +185,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 180.1,
-        "write_mb": 297.5
+        "read_mb": 5.7,
+        "write_mb": 101.3
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 137.3,
-          "recv_mb": 48.0,
+          "sent_mb": 98.1,
+          "recv_mb": 65.9,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 4.4,
-          "recv_mb": 4.1,
+          "sent_mb": 4.2,
+          "recv_mb": 3.9,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 4.4,
-          "recv_mb": 4.8,
+          "sent_mb": 2.6,
+          "recv_mb": 2.8,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 25.5,
-          "recv_mb": 24.6,
+          "sent_mb": 54.7,
+          "recv_mb": 53.6,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 4.2,
-          "recv_mb": 4.6,
+          "sent_mb": 2.4,
+          "recv_mb": 2.6,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,8 +226,8 @@
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 3.1,
-          "recv_mb": 1.9,
+          "sent_mb": 2.9,
+          "recv_mb": 1.6,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
@@ -236,8 +236,8 @@
           "speed_kbps": 10240000.0
         },
         "veth9dabb06": {
-          "sent_mb": 25.5,
-          "recv_mb": 24.9,
+          "sent_mb": 54.7,
+          "recv_mb": 54.1,
           "speed_kbps": 10240000.0
         }
       },
@@ -245,13 +245,13 @@
         "total": 133,
         "running": 0,
         "sleeping": 77,
-        "threads": 385
+        "threads": 386
       },
-      "uptime": "14 days, 6:29:21",
+      "uptime": "14 days, 7:29:22",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 18 minutes (healthy) netdata/netdata:stable"
+          "status": "Up About an hour (healthy) netdata/netdata:stable"
         },
         {
           "name": "glances",
@@ -276,33 +276,33 @@
     "VM400": {
       "status": "ok",
       "cpu": {
-        "total": 8.1,
-        "user": 6.0,
-        "system": 1.9,
-        "idle": 91.9,
+        "total": 4.9,
+        "user": 3.7,
+        "system": 1.1,
+        "idle": 95.1,
         "iowait": 0.0
       },
       "percpu": [
-        8.2,
-        8.1,
-        8.0,
-        8.0
+        5.4,
+        4.9,
+        4.8,
+        4.6
       ],
       "ram": {
-        "used_gb": 1.81,
+        "used_gb": 1.85,
         "total_gb": 3.82,
-        "percent": 47.3,
-        "available_gb": 2.01
+        "percent": 48.5,
+        "available_gb": 1.97
       },
       "swap": {
-        "used_mb": 98.6,
+        "used_mb": 100.8,
         "total_mb": 1888.0,
-        "percent": 5.2
+        "percent": 5.3
       },
       "load": {
-        "1min": 0.13,
-        "5min": 0.11,
-        "15min": 0.11,
+        "1min": 0.3,
+        "5min": 0.4,
+        "15min": 0.54,
         "cores": 4
       },
       "disks": [
@@ -316,14 +316,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 248.3,
-        "write_mb": 439.4
+        "read_mb": 30.2,
+        "write_mb": 240.7
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 108.6,
-          "recv_mb": 68.4,
+          "sent_mb": 41.2,
+          "recv_mb": 80.7,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -333,7 +333,7 @@
         },
         "br-3052d87b6d75": {
           "sent_mb": 0.3,
-          "recv_mb": 1.2,
+          "recv_mb": 0.8,
           "speed_kbps": 10240000.0
         },
         "vethd276a7a": {
@@ -348,21 +348,21 @@
         },
         "veth30a40b3": {
           "sent_mb": 0.3,
-          "recv_mb": 1.2,
+          "recv_mb": 0.9,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 474,
+        "total": 478,
         "running": 0,
-        "sleeping": 401,
-        "threads": 3011
+        "sleeping": 402,
+        "threads": 3019
       },
-      "uptime": "13 days, 8:26:03",
+      "uptime": "13 days, 9:26:04",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 18 minutes (healthy) netdata/netdata:stable"
+          "status": "Up About an hour (healthy) netdata/netdata:stable"
         },
         {
           "name": "azuracast",
@@ -390,45 +390,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "John Peel 20030129",
-      "artist": "",
-      "album": "",
+      "title": "John Peel 2003-05-15",
+      "artist": "John Peel (R1)",
+      "album": "from RA",
       "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/bf7cccc0a2dbe93014abe711",
-      "duration": 7230,
-      "elapsed": 6921
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/7142ce86ae8b0aeecf0782cf",
+      "duration": 7082,
+      "elapsed": 2551
     },
     "playing_next": {
-      "title": "EUA querem enviar funcionários ao Brasil para ques",
-      "artist": ""
+      "title": "sharp as a needle",
+      "artist": "34 #17 barmy army"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Fear Of The Dark",
-        "artist": "Iron Maiden",
-        "played_at": 1786568977
+        "title": "a prayer",
+        "artist": "freddie mcgregor",
+        "played_at": 1786577162
       },
       {
-        "title": "Thousands Are Sailing",
-        "artist": "The Pogues",
-        "played_at": 1786568652
-      },
-      {
-        "title": "Teimladau",
-        "artist": "Anhrefn",
-        "played_at": 1786568383
-      },
-      {
-        "title": "Reggae Got Soul Medley",
-        "artist": "Toots & The Maytalls",
-        "played_at": 1786568218
-      },
-      {
-        "title": "Opinion  New Jersey pizza  the fuel of world champ",
+        "title": "Bolívia diz que Petrobras pode retornar à produção",
         "artist": "",
-        "played_at": 1786568204
+        "played_at": 1786577128
+      },
+      {
+        "title": "Microsoft tests Windows Search without all the ads",
+        "artist": "",
+        "played_at": 1786577101
+      },
+      {
+        "title": "Bruce Campbell to Bring  Ernie   Emma  on Nationwi",
+        "artist": "",
+        "played_at": 1786577058
+      },
+      {
+        "title": "Mallory Hawk    Four O Clocks",
+        "artist": "",
+        "played_at": 1786577020
       }
     ]
   }
