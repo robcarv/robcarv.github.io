@@ -1,27 +1,27 @@
 {
-  "updated": "2026-08-14 06:12",
+  "updated": "2026-08-14 07:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 5.8,
+        "total": 5.9,
         "user": 4.2,
         "system": 1.3,
-        "idle": 94.2,
+        "idle": 94.1,
         "iowait": 0.0
       },
       "percpu": [
+        6.3,
         6.0,
-        5.9,
-        5.8,
+        5.7,
         5.6
       ],
       "ram": {
-        "used_gb": 3.02,
+        "used_gb": 3.05,
         "total_gb": 7.76,
-        "percent": 39.0,
-        "available_gb": 4.73
+        "percent": 39.3,
+        "available_gb": 4.71
       },
       "swap": {
         "used_mb": 1074.5,
@@ -30,7 +30,7 @@
       },
       "load": {
         "1min": 0.2,
-        "5min": 0.12,
+        "5min": 0.17,
         "15min": 0.12,
         "cores": 4
       },
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1.5,
-        "write_mb": 1086.1
+        "read_mb": 31.5,
+        "write_mb": 1164.1
       },
       "temperature_c": null,
       "network": {
@@ -57,20 +57,20 @@
         }
       },
       "processes": {
-        "total": 314,
+        "total": 315,
         "running": 0,
         "sleeping": 244,
-        "threads": 1266
+        "threads": 1269
       },
-      "uptime": "15 days, 13:30:44",
+      "uptime": "15 days, 14:30:45",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 31 hours (healthy) netdata/netdata:stable"
+          "status": "Up 32 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "pve exporter",
-          "status": "Up 34 hours prompve/prometheus-pve-exporter:3.3.0"
+          "status": "Up 35 hours prompve/prometheus-pve-exporter:3.3.0"
         },
         {
           "name": "gallery backend",
@@ -138,7 +138,7 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 5 hours grafana/grafana:latest"
+          "status": "Up 6 hours grafana/grafana:latest"
         }
       ],
       "container_count": 19,
@@ -149,19 +149,19 @@
       "cpu": {
         "total": 2.5,
         "user": 1.8,
-        "system": 0.5,
+        "system": 0.6,
         "idle": 97.5,
         "iowait": 0.0
       },
       "percpu": [
-        2.4,
+        2.6,
         2.5
       ],
       "ram": {
         "used_gb": 0.73,
         "total_gb": 1.92,
-        "percent": 37.7,
-        "available_gb": 1.2
+        "percent": 37.8,
+        "available_gb": 1.19
       },
       "swap": {
         "used_mb": 1.3,
@@ -169,9 +169,9 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 0.1,
-        "5min": 0.03,
-        "15min": 0.01,
+        "1min": 0.22,
+        "5min": 0.06,
+        "15min": 0.02,
         "cores": 2
       },
       "disks": [
@@ -179,45 +179,45 @@
           "mount": "/",
           "device": "/dev/mapper/ubuntu--vg-ubuntu--lv",
           "size_gb": 33.6,
-          "used_gb": 7.1,
+          "used_gb": 7.2,
           "free_gb": 24.9,
           "percent": 21.3
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 94.4
+        "read_mb": 9.5,
+        "write_mb": 98.9
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 83.8,
-          "recv_mb": 51.8,
+          "sent_mb": 78.7,
+          "recv_mb": 46.8,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 7.8,
-          "recv_mb": 7.5,
+          "sent_mb": 4.8,
+          "recv_mb": 4.4,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
           "sent_mb": 0.4,
-          "recv_mb": 2.2,
+          "recv_mb": 2.3,
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 1.4,
-          "recv_mb": 1.6,
+          "sent_mb": 5.6,
+          "recv_mb": 5.9,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 38.8,
-          "recv_mb": 37.7,
+          "sent_mb": 32.6,
+          "recv_mb": 31.5,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 1.2,
-          "recv_mb": 1.3,
+          "sent_mb": 5.3,
+          "recv_mb": 5.8,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,8 +226,8 @@
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 6.5,
-          "recv_mb": 5.3,
+          "sent_mb": 3.5,
+          "recv_mb": 2.2,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
@@ -236,22 +236,22 @@
           "speed_kbps": 10240000.0
         },
         "veth9dabb06": {
-          "sent_mb": 38.8,
-          "recv_mb": 38.1,
+          "sent_mb": 32.6,
+          "recv_mb": 31.9,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 131,
+        "total": 134,
         "running": 0,
         "sleeping": 77,
-        "threads": 384
+        "threads": 387
       },
-      "uptime": "15 days, 13:29:52",
+      "uptime": "15 days, 14:29:53",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 31 hours (healthy) netdata/netdata:stable"
+          "status": "Up 32 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "glances",
@@ -276,22 +276,22 @@
     "VM400": {
       "status": "ok",
       "cpu": {
-        "total": 5.8,
-        "user": 4.2,
-        "system": 1.3,
-        "idle": 93.3,
-        "iowait": 0.9
+        "total": 5.0,
+        "user": 3.8,
+        "system": 1.1,
+        "idle": 94.9,
+        "iowait": 0.0
       },
       "percpu": [
-        7.0,
-        6.8,
-        6.5,
-        6.6
+        5.4,
+        5.1,
+        4.9,
+        4.8
       ],
       "ram": {
         "used_gb": 1.62,
         "total_gb": 3.82,
-        "percent": 42.4,
+        "percent": 42.3,
         "available_gb": 2.2
       },
       "swap": {
@@ -300,9 +300,9 @@
         "percent": 12.3
       },
       "load": {
-        "1min": 0.09,
-        "5min": 0.29,
-        "15min": 0.7,
+        "1min": 0.24,
+        "5min": 0.15,
+        "15min": 0.11,
         "cores": 4
       },
       "disks": [
@@ -316,14 +316,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 20.2,
-        "write_mb": 99565.1
+        "read_mb": 225.9,
+        "write_mb": 229.7
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 120.1,
-          "recv_mb": 33437.1,
+          "sent_mb": 40.8,
+          "recv_mb": 78.2,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -353,16 +353,16 @@
         }
       },
       "processes": {
-        "total": 479,
+        "total": 477,
         "running": 0,
-        "sleeping": 401,
-        "threads": 3017
+        "sleeping": 402,
+        "threads": 3019
       },
-      "uptime": "14 days, 15:26:34",
+      "uptime": "14 days, 16:26:35",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 31 hours (healthy) netdata/netdata:stable"
+          "status": "Up 32 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "azuracast",
@@ -390,45 +390,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "9 nov 1993, Radio Mafia",
-      "artist": "John Peel",
+      "title": "RADIO 1  24 12 79  JOHN PEEL",
+      "artist": "",
       "album": "",
       "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/d55f32aa6a967e3a6d3203d3",
-      "duration": 2971,
-      "elapsed": 2227
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/38b4d6c6f2eb26f2b793c89e",
+      "duration": 1669,
+      "elapsed": 1348
     },
     "playing_next": {
-      "title": "Outro",
-      "artist": "Matisyahu"
+      "title": "Nw3",
+      "artist": "The Pogues"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Gracie Abrams Shares Two Bonus  Daughter From Hell",
-        "artist": "",
-        "played_at": 1786685724
+        "title": "Suzanne",
+        "artist": "Moose",
+        "played_at": 1786690001
       },
       {
-        "title": "33. #18 - Spiritualized - Ladies & Gentlemen We Are Floating In Space.mp3",
-        "artist": "John Peel Festive Fifty 1997",
-        "played_at": 1786685503
+        "title": "Track 10",
+        "artist": "Man or Astro-Man?",
+        "played_at": 1786689750
       },
       {
-        "title": "a million miles",
-        "artist": "43 #08 the wedding present",
-        "played_at": 1786685283
+        "title": "andy kershaw outro",
+        "artist": "10",
+        "played_at": 1786689741
       },
       {
-        "title": "Kemi declares war on net zero   and what remains o",
-        "artist": "",
-        "played_at": 1786685258
+        "title": "Exhume To Consume [Peel Sessions 16.12.90]",
+        "artist": "Carcass",
+        "played_at": 1786689502
       },
       {
-        "title": "Videomonitoramento será utilizado pela primeira ve",
-        "artist": "",
-        "played_at": 1786685224
+        "title": "Don't Delete My Frog (session)",
+        "artist": "HYPERKINAKO",
+        "played_at": 1786689379
       }
     ]
   }
