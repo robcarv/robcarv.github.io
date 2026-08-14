@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-14 19:12",
+  "updated": "2026-08-14 20:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
         "total": 5.9,
-        "user": 4.2,
+        "user": 4.3,
         "system": 1.3,
         "idle": 94.1,
         "iowait": 0.0
       },
       "percpu": [
         6.1,
-        6.0,
+        5.9,
         5.8,
-        5.9
+        5.7
       ],
       "ram": {
         "used_gb": 3.11,
         "total_gb": 7.76,
-        "percent": 40.1,
+        "percent": 40.2,
         "available_gb": 4.64
       },
       "swap": {
@@ -29,9 +29,9 @@
         "percent": 52.6
       },
       "load": {
-        "1min": 0.39,
-        "5min": 0.35,
-        "15min": 0.93,
+        "1min": 0.08,
+        "5min": 0.13,
+        "15min": 0.15,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1.0,
-        "write_mb": 1206.7
+        "read_mb": 0.7,
+        "write_mb": 1084.5
       },
       "temperature_c": null,
       "network": {
@@ -57,20 +57,20 @@
         }
       },
       "processes": {
-        "total": 313,
+        "total": 316,
         "running": 0,
-        "sleeping": 241,
-        "threads": 1267
+        "sleeping": 243,
+        "threads": 1271
       },
-      "uptime": "16 days, 2:30:59",
+      "uptime": "16 days, 3:31:00",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 44 hours (healthy) netdata/netdata:stable"
+          "status": "Up 45 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "pve exporter",
-          "status": "Up 47 hours prompve/prometheus-pve-exporter:3.3.0"
+          "status": "Up 2 days prompve/prometheus-pve-exporter:3.3.0"
         },
         {
           "name": "gallery backend",
@@ -138,7 +138,7 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 18 hours grafana/grafana:latest"
+          "status": "Up 19 hours grafana/grafana:latest"
         }
       ],
       "container_count": 19,
@@ -147,21 +147,21 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 2.5,
+        "total": 2.4,
         "user": 1.8,
-        "system": 0.6,
+        "system": 0.5,
         "idle": 97.5,
         "iowait": 0.0
       },
       "percpu": [
-        2.6,
-        2.4
+        2.4,
+        2.5
       ],
       "ram": {
-        "used_gb": 0.74,
+        "used_gb": 0.72,
         "total_gb": 1.92,
-        "percent": 38.3,
-        "available_gb": 1.18
+        "percent": 37.7,
+        "available_gb": 1.2
       },
       "swap": {
         "used_mb": 1.3,
@@ -169,9 +169,9 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 0.01,
-        "5min": 0.08,
-        "15min": 0.08,
+        "1min": 0.04,
+        "5min": 0.03,
+        "15min": 0.0,
         "cores": 2
       },
       "disks": [
@@ -185,19 +185,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.2,
-        "write_mb": 95.6
+        "read_mb": 3.0,
+        "write_mb": 97.0
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 80.5,
-          "recv_mb": 48.9,
+          "sent_mb": 90.5,
+          "recv_mb": 58.8,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 6.3,
-          "recv_mb": 5.7,
+          "sent_mb": 4.3,
+          "recv_mb": 4.0,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 1.4,
-          "recv_mb": 1.6,
+          "sent_mb": 1.8,
+          "recv_mb": 2.2,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 37.1,
-          "recv_mb": 36.1,
+          "sent_mb": 48.4,
+          "recv_mb": 47.0,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 1.2,
-          "recv_mb": 1.4,
+          "sent_mb": 1.6,
+          "recv_mb": 2.0,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,8 +226,8 @@
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 5.0,
-          "recv_mb": 3.5,
+          "sent_mb": 3.0,
+          "recv_mb": 1.8,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
@@ -236,22 +236,22 @@
           "speed_kbps": 10240000.0
         },
         "veth9dabb06": {
-          "sent_mb": 37.1,
-          "recv_mb": 36.5,
+          "sent_mb": 48.4,
+          "recv_mb": 47.4,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 135,
+        "total": 133,
         "running": 0,
-        "sleeping": 78,
-        "threads": 394
+        "sleeping": 77,
+        "threads": 387
       },
-      "uptime": "16 days, 2:30:06",
+      "uptime": "16 days, 3:30:08",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 44 hours (healthy) netdata/netdata:stable"
+          "status": "Up 45 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "glances",
@@ -276,20 +276,20 @@
     "VM400": {
       "status": "ok",
       "cpu": {
-        "total": 4.9,
+        "total": 5.0,
         "user": 3.7,
         "system": 1.1,
-        "idle": 95.1,
+        "idle": 95.0,
         "iowait": 0.0
       },
       "percpu": [
         5.1,
         5.1,
-        4.7,
-        4.7
+        4.9,
+        4.9
       ],
       "ram": {
-        "used_gb": 1.69,
+        "used_gb": 1.68,
         "total_gb": 3.82,
         "percent": 44.1,
         "available_gb": 2.14
@@ -300,9 +300,9 @@
         "percent": 12.3
       },
       "load": {
-        "1min": 0.04,
-        "5min": 0.11,
-        "15min": 0.13,
+        "1min": 0.14,
+        "5min": 0.16,
+        "15min": 0.43,
         "cores": 4
       },
       "disks": [
@@ -316,14 +316,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 220.4
+        "read_mb": 13.2,
+        "write_mb": 227.6
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 40.6,
-          "recv_mb": 66.3,
+          "sent_mb": 40.7,
+          "recv_mb": 101.4,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -358,11 +358,11 @@
         "sleeping": 401,
         "threads": 3014
       },
-      "uptime": "15 days, 4:26:49",
+      "uptime": "15 days, 5:26:50",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 44 hours (healthy) netdata/netdata:stable"
+          "status": "Up 45 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "azuracast",
@@ -390,45 +390,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "John Peel 20020101",
-      "artist": "",
+      "title": "Rock radio (missing end, unknown date, 26 min)",
+      "artist": "John Peel",
       "album": "",
       "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/458818a9ec21c8dc78f47bbb",
-      "duration": 7230,
-      "elapsed": 5815
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/85db53855119e8bfb62cb986",
+      "duration": 1582,
+      "elapsed": 273
     },
     "playing_next": {
-      "title": "Babylon Forever",
-      "artist": "Turbonegro"
+      "title": "San Francisco orders Apple  Google to remove nudif",
+      "artist": ""
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Fires Rage in Spain and France  Forcing Thousands",
+        "title": "Troque de celular com o Meli  smartphones Motorola",
         "artist": "",
-        "played_at": 1786728946
+        "played_at": 1786738096
       },
       {
-        "title": "Love Is The Answer",
-        "artist": "The Congos",
-        "played_at": 1786728681
+        "title": "the d4 - get loose",
+        "artist": "04 #47",
+        "played_at": 1786737957
       },
       {
-        "title": "33.Goddess On A Highway=Mercury Rev",
-        "artist": "John Peel Festive Fifty 1998",
-        "played_at": 1786728459
+        "title": "Beam Down",
+        "artist": "Scientist",
+        "played_at": 1786737765
       },
       {
-        "title": "01 intro",
+        "title": "Song 2 - 2012 Remaster",
+        "artist": "Blur",
+        "played_at": 1786737643
+      },
+      {
+        "title": "Google is renaming NotebookLM to Gemini Notebook",
         "artist": "",
-        "played_at": 1786728397
-      },
-      {
-        "title": "Independence Day",
-        "artist": "The Comsat Angels",
-        "played_at": 1786728195
+        "played_at": 1786737614
       }
     ]
   }
