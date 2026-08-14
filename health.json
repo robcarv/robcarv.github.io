@@ -1,37 +1,37 @@
 {
-  "updated": "2026-08-14 13:12",
+  "updated": "2026-08-14 14:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 5.9,
+        "total": 5.8,
         "user": 4.2,
         "system": 1.3,
-        "idle": 94.1,
+        "idle": 94.2,
         "iowait": 0.0
       },
       "percpu": [
-        6.2,
+        6.3,
         5.8,
-        5.8,
-        5.9
+        5.5,
+        5.6
       ],
       "ram": {
-        "used_gb": 3.05,
+        "used_gb": 3.06,
         "total_gb": 7.76,
-        "percent": 39.3,
-        "available_gb": 4.71
+        "percent": 39.4,
+        "available_gb": 4.7
       },
       "swap": {
-        "used_mb": 1073.8,
+        "used_mb": 1073.3,
         "total_mb": 1888.0,
-        "percent": 56.9
+        "percent": 56.8
       },
       "load": {
-        "1min": 0.21,
-        "5min": 0.25,
-        "15min": 0.2,
+        "1min": 0.1,
+        "5min": 0.12,
+        "15min": 0.15,
         "cores": 4
       },
       "disks": [
@@ -45,8 +45,8 @@
         }
       ],
       "disk_io": {
-        "read_mb": 1.8,
-        "write_mb": 1131.5
+        "read_mb": 5.8,
+        "write_mb": 1068.9
       },
       "temperature_c": null,
       "network": {
@@ -57,20 +57,20 @@
         }
       },
       "processes": {
-        "total": 314,
+        "total": 315,
         "running": 0,
-        "sleeping": 241,
-        "threads": 1269
+        "sleeping": 244,
+        "threads": 1270
       },
-      "uptime": "15 days, 20:30:51",
+      "uptime": "15 days, 21:30:52",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 38 hours (healthy) netdata/netdata:stable"
+          "status": "Up 39 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "pve exporter",
-          "status": "Up 41 hours prompve/prometheus-pve-exporter:3.3.0"
+          "status": "Up 42 hours prompve/prometheus-pve-exporter:3.3.0"
         },
         {
           "name": "gallery backend",
@@ -138,7 +138,7 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 12 hours grafana/grafana:latest"
+          "status": "Up 13 hours grafana/grafana:latest"
         }
       ],
       "container_count": 19,
@@ -147,21 +147,21 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 2.4,
+        "total": 2.5,
         "user": 1.8,
         "system": 0.5,
-        "idle": 97.6,
+        "idle": 97.5,
         "iowait": 0.0
       },
       "percpu": [
-        2.4,
+        2.5,
         2.4
       ],
       "ram": {
-        "used_gb": 0.73,
+        "used_gb": 0.74,
         "total_gb": 1.92,
-        "percent": 38.0,
-        "available_gb": 1.19
+        "percent": 38.5,
+        "available_gb": 1.18
       },
       "swap": {
         "used_mb": 1.3,
@@ -169,8 +169,8 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 0.02,
-        "5min": 0.03,
+        "1min": 0.0,
+        "5min": 0.0,
         "15min": 0.0,
         "cores": 2
       },
@@ -186,18 +186,18 @@
       ],
       "disk_io": {
         "read_mb": 0.0,
-        "write_mb": 90.1
+        "write_mb": 89.1
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 68.8,
-          "recv_mb": 37.3,
+          "sent_mb": 99.5,
+          "recv_mb": 67.5,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 5.1,
-          "recv_mb": 4.7,
+          "sent_mb": 4.7,
+          "recv_mb": 4.3,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 0.7,
-          "recv_mb": 0.8,
+          "sent_mb": 2.2,
+          "recv_mb": 2.4,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 27.7,
-          "recv_mb": 26.6,
+          "sent_mb": 56.6,
+          "recv_mb": 55.3,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 0.5,
-          "recv_mb": 0.6,
+          "sent_mb": 2.0,
+          "recv_mb": 2.2,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,8 +226,8 @@
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 3.8,
-          "recv_mb": 2.5,
+          "sent_mb": 3.4,
+          "recv_mb": 2.1,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
@@ -236,22 +236,22 @@
           "speed_kbps": 10240000.0
         },
         "veth9dabb06": {
-          "sent_mb": 27.7,
-          "recv_mb": 27.0,
+          "sent_mb": 56.6,
+          "recv_mb": 55.9,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 133,
+        "total": 132,
         "running": 0,
         "sleeping": 77,
-        "threads": 386
+        "threads": 385
       },
-      "uptime": "15 days, 20:29:59",
+      "uptime": "15 days, 21:30:00",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 38 hours (healthy) netdata/netdata:stable"
+          "status": "Up 39 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "glances",
@@ -276,23 +276,23 @@
     "VM400": {
       "status": "ok",
       "cpu": {
-        "total": 4.9,
-        "user": 3.6,
+        "total": 5.0,
+        "user": 3.7,
         "system": 1.1,
-        "idle": 95.1,
+        "idle": 95.0,
         "iowait": 0.0
       },
       "percpu": [
-        5.0,
-        4.8,
-        4.8,
-        4.8
+        5.3,
+        4.9,
+        4.9,
+        4.9
       ],
       "ram": {
-        "used_gb": 1.59,
+        "used_gb": 1.65,
         "total_gb": 3.82,
-        "percent": 41.5,
-        "available_gb": 2.24
+        "percent": 43.2,
+        "available_gb": 2.17
       },
       "swap": {
         "used_mb": 232.6,
@@ -300,9 +300,9 @@
         "percent": 12.3
       },
       "load": {
-        "1min": 0.14,
-        "5min": 0.21,
-        "15min": 0.53,
+        "1min": 0.04,
+        "5min": 0.1,
+        "15min": 0.13,
         "cores": 4
       },
       "disks": [
@@ -316,14 +316,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 215.0
+        "read_mb": 0.6,
+        "write_mb": 226.4
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 40.9,
-          "recv_mb": 37.7,
+          "sent_mb": 41.0,
+          "recv_mb": 117.0,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -333,7 +333,7 @@
         },
         "br-3052d87b6d75": {
           "sent_mb": 0.3,
-          "recv_mb": 1.0,
+          "recv_mb": 0.9,
           "speed_kbps": 10240000.0
         },
         "vethd276a7a": {
@@ -348,21 +348,21 @@
         },
         "veth30a40b3": {
           "sent_mb": 0.3,
-          "recv_mb": 1.1,
+          "recv_mb": 0.9,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 476,
+        "total": 478,
         "running": 0,
-        "sleeping": 402,
+        "sleeping": 401,
         "threads": 3015
       },
-      "uptime": "14 days, 22:26:41",
+      "uptime": "14 days, 23:26:42",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 38 hours (healthy) netdata/netdata:stable"
+          "status": "Up 39 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "azuracast",
@@ -390,45 +390,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Rain Street",
-      "artist": "The Pogues",
-      "album": "Hell's Ditch (2005 Remastered & Expanded)",
-      "genre": "Folk Rock",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/d2ca4da67aad733f9bac3c07-1785431273.jpg",
-      "duration": 240,
-      "elapsed": 28
+      "title": "John Peel 010718 128K",
+      "artist": "Niag",
+      "album": "",
+      "genre": "Blues",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/8349455a9f81616bf4e1967e",
+      "duration": 7223,
+      "elapsed": 1010
     },
     "playing_next": {
-      "title": "Fear Of The Dark (Live)",
-      "artist": "Iron Maiden"
+      "title": "Truecaller clashes with India s telecom regulator",
+      "artist": ""
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "John Peel 2003-01-16",
-        "artist": "John Peel (R1)",
-        "played_at": 1786706054
+        "title": "Nadsat Comes Easy",
+        "artist": "Turbonegro",
+        "played_at": 1786715486
       },
       {
-        "title": "BUTTHOLE SURFERS  Remember When Their Name Was Sho",
+        "title": "Em virada histórica  Argentina vence Inglaterra po",
         "artist": "",
-        "played_at": 1786706013
+        "played_at": 1786715464
       },
       {
-        "title": "Seattle",
-        "artist": "Jeffrey Lewis",
-        "played_at": 1786705845
+        "title": "Don't Make Fun of Daddys Voice (John Peel)",
+        "artist": "Morrissey",
+        "played_at": 1786715290
       },
       {
-        "title": "The Land We Belong",
-        "artist": "Culture",
-        "played_at": 1786705668
-      },
-      {
-        "title": "Race  school  gender  the makeup of Andy Burnham s",
+        "title": "Gelato Shop Employee Didn t Realize She Served Axl",
         "artist": "",
-        "played_at": 1786705639
+        "played_at": 1786715280
+      },
+      {
+        "title": "secondhand daylight - 04 - talk to the body",
+        "artist": "magazine",
+        "played_at": 1786715066
       }
     ]
   }
