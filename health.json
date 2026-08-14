@@ -1,21 +1,21 @@
 {
-  "updated": "2026-08-14 09:12",
+  "updated": "2026-08-14 10:12",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
         "total": 5.8,
-        "user": 4.3,
+        "user": 4.2,
         "system": 1.3,
-        "idle": 94.1,
+        "idle": 94.2,
         "iowait": 0.0
       },
       "percpu": [
-        6.2,
         6.1,
-        5.6,
-        5.6
+        6.0,
+        5.7,
+        5.4
       ],
       "ram": {
         "used_gb": 3.04,
@@ -29,9 +29,9 @@
         "percent": 56.9
       },
       "load": {
-        "1min": 0.16,
-        "5min": 0.18,
-        "15min": 0.17,
+        "1min": 0.04,
+        "5min": 0.12,
+        "15min": 0.14,
         "cores": 4
       },
       "disks": [
@@ -40,13 +40,13 @@
           "device": "/dev/mapper/ubuntu--vg-ubuntu--lv",
           "size_gb": 61.2,
           "used_gb": 36.8,
-          "free_gb": 21.8,
-          "percent": 60.1
+          "free_gb": 21.7,
+          "percent": 60.2
         }
       ],
       "disk_io": {
-        "read_mb": 12.1,
-        "write_mb": 1202.1
+        "read_mb": 0.6,
+        "write_mb": 1087.9
       },
       "temperature_c": null,
       "network": {
@@ -57,20 +57,20 @@
         }
       },
       "processes": {
-        "total": 315,
+        "total": 313,
         "running": 0,
-        "sleeping": 241,
-        "threads": 1269
+        "sleeping": 242,
+        "threads": 1267
       },
-      "uptime": "15 days, 16:30:47",
+      "uptime": "15 days, 17:30:48",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 34 hours (healthy) netdata/netdata:stable"
+          "status": "Up 35 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "pve exporter",
-          "status": "Up 37 hours prompve/prometheus-pve-exporter:3.3.0"
+          "status": "Up 38 hours prompve/prometheus-pve-exporter:3.3.0"
         },
         {
           "name": "gallery backend",
@@ -138,7 +138,7 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 8 hours grafana/grafana:latest"
+          "status": "Up 9 hours grafana/grafana:latest"
         }
       ],
       "container_count": 19,
@@ -155,12 +155,12 @@
       },
       "percpu": [
         2.5,
-        2.5
+        2.6
       ],
       "ram": {
         "used_gb": 0.72,
         "total_gb": 1.92,
-        "percent": 37.4,
+        "percent": 37.6,
         "available_gb": 1.2
       },
       "swap": {
@@ -169,8 +169,8 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 0.04,
-        "5min": 0.02,
+        "1min": 0.02,
+        "5min": 0.01,
         "15min": 0.0,
         "cores": 2
       },
@@ -185,19 +185,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 8.0,
-        "write_mb": 138.4
+        "read_mb": 0.1,
+        "write_mb": 90.9
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 111.6,
-          "recv_mb": 81.1,
+          "sent_mb": 85.9,
+          "recv_mb": 54.7,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 4.5,
-          "recv_mb": 4.1,
+          "sent_mb": 6.8,
+          "recv_mb": 6.3,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 2.3,
-          "recv_mb": 2.5,
+          "sent_mb": 4.1,
+          "recv_mb": 4.4,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 68.3,
-          "recv_mb": 67.3,
+          "sent_mb": 39.5,
+          "recv_mb": 37.8,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 2.1,
-          "recv_mb": 2.2,
+          "sent_mb": 3.9,
+          "recv_mb": 4.2,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,8 +226,8 @@
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 3.2,
-          "recv_mb": 1.9,
+          "sent_mb": 5.5,
+          "recv_mb": 4.1,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
@@ -236,8 +236,8 @@
           "speed_kbps": 10240000.0
         },
         "veth9dabb06": {
-          "sent_mb": 68.3,
-          "recv_mb": 67.8,
+          "sent_mb": 39.5,
+          "recv_mb": 38.3,
           "speed_kbps": 10240000.0
         }
       },
@@ -247,11 +247,11 @@
         "sleeping": 77,
         "threads": 385
       },
-      "uptime": "15 days, 16:29:55",
+      "uptime": "15 days, 17:29:56",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 34 hours (healthy) netdata/netdata:stable"
+          "status": "Up 35 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "glances",
@@ -259,11 +259,11 @@
         },
         {
           "name": "psclient",
-          "status": "Up 13 days packetstream/psclient:latest"
+          "status": "Up 2 weeks packetstream/psclient:latest"
         },
         {
           "name": "watchtower",
-          "status": "Up 13 days (healthy) containrrr/watchtower:latest"
+          "status": "Up 2 weeks (healthy) containrrr/watchtower:latest"
         },
         {
           "name": "portainer agent",
@@ -278,21 +278,21 @@
       "cpu": {
         "total": 4.9,
         "user": 3.7,
-        "system": 1.1,
+        "system": 1.0,
         "idle": 95.1,
         "iowait": 0.0
       },
       "percpu": [
-        5.2,
+        5.1,
         4.9,
-        4.7,
-        4.9
+        4.9,
+        4.8
       ],
       "ram": {
-        "used_gb": 1.63,
+        "used_gb": 1.6,
         "total_gb": 3.82,
-        "percent": 42.6,
-        "available_gb": 2.19
+        "percent": 41.8,
+        "available_gb": 2.23
       },
       "swap": {
         "used_mb": 232.6,
@@ -300,9 +300,9 @@
         "percent": 12.3
       },
       "load": {
-        "1min": 0.1,
-        "5min": 0.11,
-        "15min": 0.09,
+        "1min": 0.13,
+        "5min": 0.17,
+        "15min": 0.12,
         "cores": 4
       },
       "disks": [
@@ -316,14 +316,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.0,
-        "write_mb": 224.2
+        "read_mb": 9.6,
+        "write_mb": 281.5
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 40.8,
-          "recv_mb": 66.6,
+          "sent_mb": 41.2,
+          "recv_mb": 89.9,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -333,7 +333,7 @@
         },
         "br-3052d87b6d75": {
           "sent_mb": 0.3,
-          "recv_mb": 1.1,
+          "recv_mb": 1.0,
           "speed_kbps": 10240000.0
         },
         "vethd276a7a": {
@@ -348,21 +348,21 @@
         },
         "veth30a40b3": {
           "sent_mb": 0.3,
-          "recv_mb": 1.1,
+          "recv_mb": 1.0,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 477,
+        "total": 479,
         "running": 0,
-        "sleeping": 401,
-        "threads": 3014
+        "sleeping": 402,
+        "threads": 3017
       },
-      "uptime": "14 days, 18:26:37",
+      "uptime": "14 days, 19:26:38",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 34 hours (healthy) netdata/netdata:stable"
+          "status": "Up 35 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "azuracast",
@@ -390,45 +390,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "John Peel 20030130",
-      "artist": "",
-      "album": "",
-      "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/0c7ae609361ff01096691572",
-      "duration": 7230,
-      "elapsed": 5616
+      "title": "2 Minutes To Midnight",
+      "artist": "Iron Maiden",
+      "album": "Somewhere Back In Time (The Best Of 1980-1989)",
+      "genre": "Heavy Metal",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/268633da1035114a90205a00-1785439099.jpg",
+      "duration": 360,
+      "elapsed": 35
     },
     "playing_next": {
-      "title": "Sit Down By The Fire",
-      "artist": "The Pogues"
+      "title": "Ministry Announce Final Album and Farewell Tour",
+      "artist": ""
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Deep Inside [Peel Session]",
-        "artist": "Cat Power",
-        "played_at": 1786693009
+        "title": "Dark Secret Girl",
+        "artist": "Turbonegro",
+        "played_at": 1786702207
       },
       {
-        "title": "Don't Look in the Freezer",
-        "artist": "Dr. & the Crippens",
-        "played_at": 1786692924
+        "title": "Girl U Want (2009 Remaster)",
+        "artist": "Devo",
+        "played_at": 1786702030
       },
       {
-        "title": "Blood Brothers",
-        "artist": "Iron Maiden",
-        "played_at": 1786692493
-      },
-      {
-        "title": "Morre Jennifer Finch  baixista do L7 e pioneira do",
+        "title": "We hear your voices   inside the Church of Englan",
         "artist": "",
-        "played_at": 1786692474
+        "played_at": 1786702001
       },
       {
-        "title": "18 - Kings Cross-Cinerama",
-        "artist": "John Peel Festive Fifty 1999",
-        "played_at": 1786692280
+        "title": "dead",
+        "artist": "08 #43 the pixies",
+        "played_at": 1786701851
+      },
+      {
+        "title": "Lições de um naufrágio",
+        "artist": "",
+        "played_at": 1786701821
       }
     ]
   }
