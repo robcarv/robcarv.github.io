@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14 11:12",
+  "updated": "2026-08-14 12:12",
   "status": "ok",
   "nodes": {
     "VM100": {
@@ -12,26 +12,26 @@
         "iowait": 0.0
       },
       "percpu": [
-        6.1,
+        6.2,
         5.7,
-        5.8,
-        5.5
+        5.5,
+        5.6
       ],
       "ram": {
-        "used_gb": 3.04,
+        "used_gb": 3.03,
         "total_gb": 7.76,
-        "percent": 39.1,
-        "available_gb": 4.72
+        "percent": 39.0,
+        "available_gb": 4.73
       },
       "swap": {
-        "used_mb": 1074.0,
+        "used_mb": 1073.8,
         "total_mb": 1888.0,
         "percent": 56.9
       },
       "load": {
-        "1min": 0.13,
-        "5min": 0.11,
-        "15min": 0.12,
+        "1min": 0.21,
+        "5min": 0.3,
+        "15min": 1.08,
         "cores": 4
       },
       "disks": [
@@ -40,13 +40,13 @@
           "device": "/dev/mapper/ubuntu--vg-ubuntu--lv",
           "size_gb": 61.2,
           "used_gb": 36.8,
-          "free_gb": 21.8,
+          "free_gb": 21.7,
           "percent": 60.1
         }
       ],
       "disk_io": {
-        "read_mb": 1.0,
-        "write_mb": 1111.5
+        "read_mb": 0.8,
+        "write_mb": 1055.3
       },
       "temperature_c": null,
       "network": {
@@ -57,20 +57,20 @@
         }
       },
       "processes": {
-        "total": 315,
+        "total": 316,
         "running": 0,
-        "sleeping": 242,
-        "threads": 1272
+        "sleeping": 244,
+        "threads": 1270
       },
-      "uptime": "15 days, 18:30:49",
+      "uptime": "15 days, 19:30:50",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 36 hours (healthy) netdata/netdata:stable"
+          "status": "Up 37 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "pve exporter",
-          "status": "Up 39 hours prompve/prometheus-pve-exporter:3.3.0"
+          "status": "Up 40 hours prompve/prometheus-pve-exporter:3.3.0"
         },
         {
           "name": "gallery backend",
@@ -78,7 +78,7 @@
         },
         {
           "name": "subscription bot",
-          "status": "Up 13 days (healthy) subscription-bot-subscription-bot"
+          "status": "Up 2 weeks (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "cadvisor",
@@ -138,7 +138,7 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 10 hours grafana/grafana:latest"
+          "status": "Up 11 hours grafana/grafana:latest"
         }
       ],
       "container_count": 19,
@@ -147,20 +147,20 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 2.4,
+        "total": 2.5,
         "user": 1.8,
-        "system": 0.5,
-        "idle": 97.6,
+        "system": 0.6,
+        "idle": 97.5,
         "iowait": 0.0
       },
       "percpu": [
-        2.4,
+        2.6,
         2.4
       ],
       "ram": {
-        "used_gb": 0.73,
+        "used_gb": 0.72,
         "total_gb": 1.92,
-        "percent": 37.8,
+        "percent": 37.5,
         "available_gb": 1.2
       },
       "swap": {
@@ -169,9 +169,9 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 0.0,
-        "5min": 0.01,
-        "15min": 0.0,
+        "1min": 0.02,
+        "5min": 0.08,
+        "15min": 0.08,
         "cores": 2
       },
       "disks": [
@@ -186,18 +186,18 @@
       ],
       "disk_io": {
         "read_mb": 0.0,
-        "write_mb": 86.7
+        "write_mb": 88.7
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 77.8,
-          "recv_mb": 46.3,
+          "sent_mb": 82.3,
+          "recv_mb": 50.9,
           "speed_kbps": 0.0
         },
         "docker0": {
-          "sent_mb": 5.1,
-          "recv_mb": 4.7,
+          "sent_mb": 19.8,
+          "recv_mb": 19.1,
           "speed_kbps": 10240000.0
         },
         "veth04a6314": {
@@ -206,18 +206,18 @@
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 6.4,
-          "recv_mb": 6.7,
+          "sent_mb": 0.7,
+          "recv_mb": 0.9,
           "speed_kbps": 10240000.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 30.3,
-          "recv_mb": 29.2,
+          "sent_mb": 26.6,
+          "recv_mb": 25.5,
           "speed_kbps": 10240000.0
         },
         "vethfdc7c41": {
-          "sent_mb": 6.2,
-          "recv_mb": 6.6,
+          "sent_mb": 0.5,
+          "recv_mb": 0.6,
           "speed_kbps": 10240000.0
         },
         "veth8e6cce8": {
@@ -226,8 +226,8 @@
           "speed_kbps": 10240000.0
         },
         "veth97c2608": {
-          "sent_mb": 3.7,
-          "recv_mb": 2.5,
+          "sent_mb": 18.4,
+          "recv_mb": 17.1,
           "speed_kbps": 10240000.0
         },
         "veth5c9f2f3": {
@@ -236,22 +236,22 @@
           "speed_kbps": 10240000.0
         },
         "veth9dabb06": {
-          "sent_mb": 30.3,
-          "recv_mb": 29.6,
+          "sent_mb": 26.6,
+          "recv_mb": 25.9,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
         "total": 134,
-        "running": 1,
-        "sleeping": 76,
+        "running": 0,
+        "sleeping": 77,
         "threads": 387
       },
-      "uptime": "15 days, 18:29:57",
+      "uptime": "15 days, 19:29:58",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 36 hours (healthy) netdata/netdata:stable"
+          "status": "Up 37 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "glances",
@@ -276,23 +276,23 @@
     "VM400": {
       "status": "ok",
       "cpu": {
-        "total": 5.0,
-        "user": 3.7,
-        "system": 1.1,
-        "idle": 95.0,
+        "total": 4.9,
+        "user": 3.6,
+        "system": 1.0,
+        "idle": 95.1,
         "iowait": 0.0
       },
       "percpu": [
-        5.3,
-        4.8,
+        5.1,
         5.0,
-        4.9
+        4.9,
+        4.5
       ],
       "ram": {
-        "used_gb": 1.59,
+        "used_gb": 1.61,
         "total_gb": 3.82,
-        "percent": 41.7,
-        "available_gb": 2.23
+        "percent": 42.1,
+        "available_gb": 2.21
       },
       "swap": {
         "used_mb": 232.6,
@@ -300,9 +300,9 @@
         "percent": 12.3
       },
       "load": {
-        "1min": 0.15,
-        "5min": 0.18,
-        "15min": 0.3,
+        "1min": 0.11,
+        "5min": 0.15,
+        "15min": 0.14,
         "cores": 4
       },
       "disks": [
@@ -316,14 +316,14 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.6,
-        "write_mb": 238.0
+        "read_mb": 0.8,
+        "write_mb": 223.2
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 41.3,
-          "recv_mb": 124.9,
+          "sent_mb": 40.8,
+          "recv_mb": 64.7,
           "speed_kbps": 0.0
         },
         "docker0": {
@@ -333,7 +333,7 @@
         },
         "br-3052d87b6d75": {
           "sent_mb": 0.3,
-          "recv_mb": 0.9,
+          "recv_mb": 1.0,
           "speed_kbps": 10240000.0
         },
         "vethd276a7a": {
@@ -348,7 +348,7 @@
         },
         "veth30a40b3": {
           "sent_mb": 0.3,
-          "recv_mb": 0.9,
+          "recv_mb": 1.1,
           "speed_kbps": 10240000.0
         }
       },
@@ -358,11 +358,11 @@
         "sleeping": 401,
         "threads": 3016
       },
-      "uptime": "14 days, 20:26:39",
+      "uptime": "14 days, 21:26:40",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 36 hours (healthy) netdata/netdata:stable"
+          "status": "Up 37 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "azuracast",
@@ -390,21 +390,31 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Seattle",
-      "artist": "Jeffrey Lewis",
-      "album": "Peel Session-07-31-02",
-      "genre": "Indie",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/b04f39d85752370b80a3c68b-1785451782.jpg",
-      "duration": 167,
-      "elapsed": 118
+      "title": "John Peel 2003-01-16",
+      "artist": "John Peel (R1)",
+      "album": "from RA",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/47d5c2c8d6f06c10338434a4",
+      "duration": 7083,
+      "elapsed": 3510
     },
     "playing_next": {
-      "title": "BUTTHOLE SURFERS  Remember When Their Name Was Sho",
-      "artist": ""
+      "title": "Rain Street",
+      "artist": "The Pogues"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
+      {
+        "title": "BUTTHOLE SURFERS  Remember When Their Name Was Sho",
+        "artist": "",
+        "played_at": 1786706013
+      },
+      {
+        "title": "Seattle",
+        "artist": "Jeffrey Lewis",
+        "played_at": 1786705845
+      },
       {
         "title": "The Land We Belong",
         "artist": "Culture",
@@ -419,16 +429,6 @@
         "title": "Why Worry",
         "artist": "All American Rejects",
         "played_at": 1786705374
-      },
-      {
-        "title": "Fear and hope in Utah in the shadow of America s l",
-        "artist": "",
-        "played_at": 1786705360
-      },
-      {
-        "title": "What makes a woman a witch  Financial independence",
-        "artist": "",
-        "played_at": 1786705333
       }
     ]
   }
