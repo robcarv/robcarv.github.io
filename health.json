@@ -1,27 +1,27 @@
 {
-  "updated": "2026-08-15 02:12",
+  "updated": "2026-08-15 03:13",
   "status": "ok",
   "nodes": {
     "VM100": {
       "status": "ok",
       "cpu": {
-        "total": 6.0,
-        "user": 4.4,
+        "total": 6.1,
+        "user": 4.5,
         "system": 1.3,
-        "idle": 94.0,
+        "idle": 93.8,
         "iowait": 0.0
       },
       "percpu": [
+        6.6,
         6.2,
-        6.1,
-        6.0,
-        5.9
+        5.9,
+        6.0
       ],
       "ram": {
-        "used_gb": 2.24,
+        "used_gb": 2.39,
         "total_gb": 7.76,
-        "percent": 28.9,
-        "available_gb": 5.51
+        "percent": 30.8,
+        "available_gb": 5.37
       },
       "swap": {
         "used_mb": 0.2,
@@ -29,9 +29,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.04,
-        "5min": 0.14,
-        "15min": 0.16,
+        "1min": 0.15,
+        "5min": 0.23,
+        "15min": 0.2,
         "cores": 4
       },
       "disks": [
@@ -39,14 +39,14 @@
           "mount": "/",
           "device": "/dev/mapper/ubuntu--vg-ubuntu--lv",
           "size_gb": 61.2,
-          "used_gb": 37.4,
+          "used_gb": 37.3,
           "free_gb": 21.2,
-          "percent": 61.1
+          "percent": 61.0
         }
       ],
       "disk_io": {
-        "read_mb": 211.6,
-        "write_mb": 777.4
+        "read_mb": 332.7,
+        "write_mb": 953.9
       },
       "temperature_c": null,
       "network": {
@@ -57,88 +57,88 @@
         }
       },
       "processes": {
-        "total": 311,
+        "total": 314,
         "running": 1,
-        "sleeping": 240,
-        "threads": 1263
+        "sleeping": 242,
+        "threads": 1270
       },
-      "uptime": "3:42:16",
+      "uptime": "4:42:18",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 4 hours (healthy) netdata/netdata:stable"
+          "status": "Up 5 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "pve exporter",
-          "status": "Up 4 hours prompve/prometheus-pve-exporter:3.3.0"
+          "status": "Up 5 hours prompve/prometheus-pve-exporter:3.3.0"
         },
         {
           "name": "gallery backend",
-          "status": "Up 4 hours (healthy) gallery-downloader-backend"
+          "status": "Up 5 hours (healthy) gallery-downloader-backend"
         },
         {
           "name": "subscription bot",
-          "status": "Up 4 hours (healthy) subscription-bot-subscription-bot"
+          "status": "Up 5 hours (healthy) subscription-bot-subscription-bot"
         },
         {
           "name": "cadvisor",
-          "status": "Up 4 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
+          "status": "Up 5 hours (healthy) gcr.io/cadvisor/cadvisor:latest"
         },
         {
           "name": "kavita",
-          "status": "Up 4 hours lscr.io/linuxserver/kavita:latest"
+          "status": "Up 5 hours lscr.io/linuxserver/kavita:latest"
         },
         {
           "name": "gallery frontend",
-          "status": "Up 4 hours gallery-downloader-frontend"
+          "status": "Up 5 hours gallery-downloader-frontend"
         },
         {
           "name": "gallery worker",
-          "status": "Up 4 hours gallery-downloader-worker"
+          "status": "Up 5 hours gallery-downloader-worker"
         },
         {
           "name": "gallery postgres",
-          "status": "Up 4 hours (healthy) postgres:16-alpine"
+          "status": "Up 5 hours (healthy) postgres:16-alpine"
         },
         {
           "name": "gallery redis",
-          "status": "Up 4 hours (healthy) redis:7-alpine"
+          "status": "Up 5 hours (healthy) redis:7-alpine"
         },
         {
           "name": "politicosaas app 1",
-          "status": "Up 4 hours politicosaas-app"
+          "status": "Up 5 hours politicosaas-app"
         },
         {
           "name": "politicosaas postgres 1",
-          "status": "Up 4 hours (healthy) postgres:15-alpine"
+          "status": "Up 5 hours (healthy) postgres:15-alpine"
         },
         {
           "name": "politicosaas meilisearch 1",
-          "status": "Up 4 hours getmeili/meilisearch:v1.12"
+          "status": "Up 5 hours getmeili/meilisearch:v1.12"
         },
         {
           "name": "duckdns",
-          "status": "Up 4 hours linuxserver/duckdns:latest"
+          "status": "Up 5 hours linuxserver/duckdns:latest"
         },
         {
           "name": "wallos",
-          "status": "Up 4 hours (healthy) bellamy/wallos:latest"
+          "status": "Up 5 hours (healthy) bellamy/wallos:latest"
         },
         {
           "name": "nginx pm",
-          "status": "Up 4 hours jc21/nginx-proxy-manager:latest"
+          "status": "Up 5 hours jc21/nginx-proxy-manager:latest"
         },
         {
           "name": "Dashy",
-          "status": "Up 4 hours (healthy) lissy93/dashy:4.x"
+          "status": "Up 5 hours (healthy) lissy93/dashy:4.x"
         },
         {
           "name": "cve report",
-          "status": "Up 4 hours nginx:alpine"
+          "status": "Up 5 hours nginx:alpine"
         },
         {
           "name": "cve grafana",
-          "status": "Up About an hour grafana/grafana:latest"
+          "status": "Up 2 hours grafana/grafana:latest"
         }
       ],
       "container_count": 19,
@@ -147,15 +147,15 @@
     "VM200": {
       "status": "ok",
       "cpu": {
-        "total": 2.2,
-        "user": 1.6,
-        "system": 0.5,
-        "idle": 97.8,
+        "total": 2.5,
+        "user": 1.8,
+        "system": 0.6,
+        "idle": 97.5,
         "iowait": 0.0
       },
       "percpu": [
-        2.3,
-        2.2
+        2.5,
+        2.5
       ],
       "ram": {
         "used_gb": 0.64,
@@ -169,8 +169,8 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.0,
-        "5min": 0.0,
+        "1min": 0.08,
+        "5min": 0.03,
         "15min": 0.0,
         "cores": 2
       },
@@ -185,34 +185,34 @@
         }
       ],
       "disk_io": {
-        "read_mb": 0.4,
-        "write_mb": 88.8
+        "read_mb": 0.0,
+        "write_mb": 89.6
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 68.0,
-          "recv_mb": 36.6,
+          "sent_mb": 172.0,
+          "recv_mb": 143.5,
           "speed_kbps": 0.0
         },
         "br-153d01b2fe21": {
-          "sent_mb": 26.2,
-          "recv_mb": 25.0,
+          "sent_mb": 28.1,
+          "recv_mb": 26.9,
           "speed_kbps": 10240000.0
         },
         "br-cb6badbbb095": {
-          "sent_mb": 2.4,
-          "recv_mb": 2.4,
+          "sent_mb": 1.5,
+          "recv_mb": 1.7,
           "speed_kbps": 10240000.0
         },
         "docker0": {
-          "sent_mb": 4.1,
-          "recv_mb": 3.8,
+          "sent_mb": 110.0,
+          "recv_mb": 105.1,
           "speed_kbps": 10240000.0
         },
         "vethbf664b6": {
-          "sent_mb": 1.2,
-          "recv_mb": 1.3,
+          "sent_mb": 1.0,
+          "recv_mb": 1.1,
           "speed_kbps": 10240000.0
         },
         "veth4f601e3": {
@@ -221,13 +221,13 @@
           "speed_kbps": 10240000.0
         },
         "veth010f873": {
-          "sent_mb": 1.2,
-          "recv_mb": 1.3,
+          "sent_mb": 0.5,
+          "recv_mb": 0.7,
           "speed_kbps": 10240000.0
         },
         "veth5b08343": {
-          "sent_mb": 2.8,
-          "recv_mb": 1.6,
+          "sent_mb": 108.7,
+          "recv_mb": 104.5,
           "speed_kbps": 10240000.0
         },
         "veth0730d6f": {
@@ -236,38 +236,38 @@
           "speed_kbps": 10240000.0
         },
         "vethc05263f": {
-          "sent_mb": 26.2,
-          "recv_mb": 25.3,
+          "sent_mb": 28.1,
+          "recv_mb": 27.3,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 131,
+        "total": 132,
         "running": 0,
         "sleeping": 74,
-        "threads": 392
+        "threads": 394
       },
-      "uptime": "3:44:04",
+      "uptime": "4:44:06",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 4 hours (healthy) netdata/netdata:stable"
+          "status": "Up 5 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "glances",
-          "status": "Up 4 hours nicolargo/glances:latest"
+          "status": "Up 5 hours nicolargo/glances:latest"
         },
         {
           "name": "psclient",
-          "status": "Up 4 hours packetstream/psclient:latest"
+          "status": "Up 5 hours packetstream/psclient:latest"
         },
         {
           "name": "watchtower",
-          "status": "Up 4 hours (healthy) containrrr/watchtower:latest"
+          "status": "Up 5 hours (healthy) containrrr/watchtower:latest"
         },
         {
           "name": "portainer agent",
-          "status": "Up 4 hours portainer/agent:2.39.5"
+          "status": "Up 5 hours portainer/agent:2.39.5"
         }
       ],
       "container_count": 5,
@@ -277,7 +277,7 @@
       "status": "ok",
       "cpu": {
         "total": 4.9,
-        "user": 3.7,
+        "user": 3.6,
         "system": 1.1,
         "idle": 95.1,
         "iowait": 0.0
@@ -285,14 +285,14 @@
       "percpu": [
         5.2,
         4.8,
-        4.9,
+        4.8,
         4.8
       ],
       "ram": {
-        "used_gb": 1.66,
+        "used_gb": 1.69,
         "total_gb": 3.82,
-        "percent": 43.5,
-        "available_gb": 2.16
+        "percent": 44.1,
+        "available_gb": 2.14
       },
       "swap": {
         "used_mb": 0.5,
@@ -300,9 +300,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.04,
-        "5min": 0.09,
-        "15min": 0.15,
+        "1min": 0.07,
+        "5min": 0.12,
+        "15min": 0.09,
         "cores": 4
       },
       "disks": [
@@ -316,19 +316,19 @@
         }
       ],
       "disk_io": {
-        "read_mb": 4.3,
-        "write_mb": 239.5
+        "read_mb": 696.4,
+        "write_mb": 1059.2
       },
       "temperature_c": null,
       "network": {
         "ens18": {
-          "sent_mb": 41.0,
-          "recv_mb": 107.5,
+          "sent_mb": 40.4,
+          "recv_mb": 85.6,
           "speed_kbps": 0.0
         },
         "br-3052d87b6d75": {
           "sent_mb": 0.3,
-          "recv_mb": 1.3,
+          "recv_mb": 0.8,
           "speed_kbps": 10240000.0
         },
         "docker0": {
@@ -348,37 +348,37 @@
         },
         "veth4addfff": {
           "sent_mb": 0.3,
-          "recv_mb": 1.3,
+          "recv_mb": 0.9,
           "speed_kbps": 10240000.0
         }
       },
       "processes": {
-        "total": 476,
+        "total": 475,
         "running": 0,
-        "sleeping": 399,
-        "threads": 3049
+        "sleeping": 398,
+        "threads": 3048
       },
-      "uptime": "3:43:42",
+      "uptime": "4:43:44",
       "containers": [
         {
           "name": "netdata agent",
-          "status": "Up 4 hours (healthy) netdata/netdata:stable"
+          "status": "Up 5 hours (healthy) netdata/netdata:stable"
         },
         {
           "name": "azuracast",
-          "status": "Up 4 hours ghcr.io/azuracast/azuracast:latest"
+          "status": "Up 5 hours ghcr.io/azuracast/azuracast:latest"
         },
         {
           "name": "glances",
-          "status": "Up 4 hours nicolargo/glances:latest"
+          "status": "Up 5 hours nicolargo/glances:latest"
         },
         {
           "name": "portainer agent",
-          "status": "Up 4 hours portainer/agent:2.39.5"
+          "status": "Up 5 hours portainer/agent:2.39.5"
         },
         {
           "name": "azuracast updater",
-          "status": "Up 4 hours (healthy) ghcr.io/azuracast/updater:latest"
+          "status": "Up 5 hours (healthy) ghcr.io/azuracast/updater:latest"
         }
       ],
       "container_count": 5,
@@ -390,21 +390,26 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Automatic Eyes (session)",
-      "artist": "ECHOBOY",
-      "album": "Wing Ding",
+      "title": "John Peel 20021210",
+      "artist": "",
+      "album": "",
       "genre": "",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/9ba80a551d621caa832a7a67",
-      "duration": 289,
-      "elapsed": 24
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/d21650e11836d5f3cc968104",
+      "duration": 7230,
+      "elapsed": 3337
     },
     "playing_next": {
-      "title": "John Peel 20021210",
-      "artist": ""
+      "title": "Revelations",
+      "artist": "Iron Maiden"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
+      {
+        "title": "Automatic Eyes (session)",
+        "artist": "ECHOBOY",
+        "played_at": 1786759958
+      },
       {
         "title": "Make Out, Fall Out, Make Up",
         "artist": "Love is All",
@@ -424,11 +429,6 @@
         "title": "25.Stanley Kubrick-Mogwai",
         "artist": "John Peel Festive Fifty 1999",
         "played_at": 1786759155
-      },
-      {
-        "title": "A guerra do Irã está quase acabando  A guerra do I",
-        "artist": "",
-        "played_at": 1786759133
       }
     ]
   }
