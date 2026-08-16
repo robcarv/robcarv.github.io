@@ -7,7 +7,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <title>Robert Carvalho · QA Automation Engineer</title>
-<meta name="description" content="QA Automation Engineer at IBM. Homelab enthusiast with 3 Raspberry Pis, TrueNAS storage, and 55+ Docker services.">
+<meta name="description" content="QA Automation Engineer at IBM. Homelab enthusiast running TrueNAS SCALE, Proxmox VE and 3 VMs with 30+ Docker services.">
 <meta property="og:title" content="Robert Carvalho · Portfolio">
 <meta property="og:description" content="QA Automation Engineer | Homelab | Open Source">
 <meta property="og:type" content="website">
@@ -678,8 +678,8 @@ main{margin-left:var(--sidebar-w);min-height:100vh;padding-bottom:60px}
         <i class="las la-beer section-icon"></i>
         <span class="section-tag">SUPPORT</span>
       </div>
-      <h2 class="section-title">Help me buy beer<br>&amp; Raspberry Pis</h2>
-      <p style="color:var(--muted);font-size:.85rem;margin-bottom:1.5rem">If you find my projects useful, consider supporting my homelab addiction. Every bit helps keep the Pis running and the beer cold.</p>
+      <h2 class="section-title">Help me buy beer<br>&amp; keep the servers running</h2>
+      <p style="color:var(--muted);font-size:.85rem;margin-bottom:1.5rem">If you find my projects useful, consider supporting my homelab addiction. Every bit helps keep the servers humming and the beer cold.</p>
       <div class="expertise-grid">
         <a href="https://buymeacoffee.com/robcarv" target="_blank" class="expertise-card" style="text-decoration:none">
           <span style="font-size:2.5rem">☕</span>
@@ -810,7 +810,7 @@ function sidebarToggleRadio() {
 // ============================================================
 // CONFIG — static files only
 // ============================================================
-const PI_ORDER = ['Pi501','Pi5','Pi4'];
+const PI_ORDER = ['TrueNAS','Proxmox','VM100','VM200','VM400'];
 let healthData = null;
 let allNews = [];
 let newsFilter = 'All';
@@ -848,7 +848,7 @@ function renderHomelab(nodes, updated) {
     const status=nodeStatus(n);
     const load=n.load, loadStr=load?`${fmtNum1(load['1min'])}/${fmtNum1(load['5min'])}/${fmtNum1(load['15min'])}`:'?';
     const diskInfo=(n.disks||[]).filter((d,i,a)=>a.findIndex(x=>x.device===d.device)===i).map(d=>`${d.device}: ${fmtGb(d.used_gb)} / ${fmtGb(d.size_gb)} (${fmtPct(d.percent)})`).join('<br>');
-    const netInfo=n.network?Object.entries(n.network).map(([iface,net])=>`${iface}: ${fmtInt(net.recv_mb)}MB↓ ${fmtInt(net.sent_mb)}MB↑`).join('<br>'):'';
+    const netInfo=n.network?Object.entries(n.network).filter(([i])=>!i.startsWith('veth')&&!i.startsWith('br-')&&i!=='docker0').map(([iface,net])=>`${iface}: ${fmtInt(net.recv_kbps)}↓ ${fmtInt(net.sent_kbps)}↑ kbps`).join('<br>'):'';
     const containerPreview=(n.containers||[]).slice(0,8).map(c=>c.name.replace(/_/g,' ')).join(', ');
     return `<div class="card animate-in" onclick="this.classList.toggle('expanded')">
       <div class="card-header"><div><div class="card-title">${name}</div><div class="card-sub">${n.services||''} · ${temp}</div></div>
@@ -861,7 +861,7 @@ function renderHomelab(nodes, updated) {
       <div class="expand-detail"><div style="margin-top:.5rem;font-size:.68rem;color:var(--muted);line-height:1.6">
       Load: ${loadStr} (${load?.cores||'?'} cores)<br>
       Procs: ${n.processes?.total||'?'} total, ${n.processes?.running||'?'} running, ${n.processes?.threads||'?'} threads<br>
-      Disk I/O: ${fmtInt(n.disk_io?.read_mb||0)}MB read / ${fmtInt(n.disk_io?.write_mb||0)}MB write<br>
+      Disk I/O: ${fmtInt(n.disk_io?.read_kib||0)} KiB/s read / ${fmtInt(n.disk_io?.write_kib||0)} KiB/s write<br>
       ${diskInfo?diskInfo+'<br>':''}${netInfo?netInfo+'<br>':''}
       Containers (${n.container_count||0}): ${containerPreview||'none'}
       ${n.uptime?'<br>Uptime: '+n.uptime:''}
