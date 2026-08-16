@@ -7,7 +7,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <title>Robert Carvalho · Engenheiro de Automação QA</title>
-<meta name="description" content="Engenheiro de Automação QA at IBM. Homelab enthusiast with 3 Raspberry Pis, TrueNAS storage, and 55+ Docker services.">
+<meta name="description" content="Engenheiro de Automação QA at IBM. Homelab enthusiast running TrueNAS SCALE, Proxmox VE and 3 VMs with 30+ Docker services.">
 <meta property="og:title" content="Robert Carvalho · Engenheiro de Automação QA">
 <meta property="og:description" content="Engenheiro de Automação QA at IBM. Homelab enthusiast.">
 <meta property="og:type" content="website">
@@ -223,7 +223,7 @@ footer .footer-links a:hover{color:#fff}
 <section class="section" id="projects"><div class="container">
   <h2 class="section-title"><span class="icon">🚀</span>Projetos</h2>
   <div class="grid grid-2">
-    <div class="project-card"><h4>Homelab Cluster</h4><p>3 Raspberry Pis + TrueNAS, 55+ Docker services, automated CI/CD</p><div class="links"><a href="https://github.com/robcarv/backup_raspberry" target="_blank">GitHub</a></div></div>
+    <div class="project-card"><h4>Homelab Cluster</h4><p>TrueNAS SCALE + Proxmox VE, 3 VMs, 30+ Docker services, automated CI/CD</p><div class="links"><a href="https://github.com/robcarv/backup_raspberry" target="_blank">GitHub</a></div></div>
     <div class="project-card"><h4>Gallery Downloader</h4><p>Self-hosted media downloader with Go backend + React frontend</p><div class="links"><a href="https://github.com/robcarv/backup_raspberry/tree/mangadownloader-v4" target="_blank">GitHub</a></div></div>
     <div class="project-card"><h4>News Collector Bot</h4><p>Automated RSS news collection, summarization and portfolio publishing</p><div class="links"><a href="https://github.com/robcarv/news_colletector" target="_blank">GitHub</a></div></div>
     <div class="project-card"><h4>Dashy Dashboard</h4><p>Self-hosted service dashboard for homelab monitoring</p><div class="links"><a href="https://github.com/robcarv/dashy-config" target="_blank">GitHub</a></div></div>
@@ -249,7 +249,7 @@ footer .footer-links a:hover{color:#fff}
 // ============================================================
 // CONFIG — static files only, NO live API
 // ============================================================
-const PI_ORDER = ['Pi501','Pi5','Pi4'];
+const PI_ORDER = ['TrueNAS','Proxmox','VM100','VM200','VM400'];
 const REFRESH_INTERVAL = 60;
 let refreshTimer = null;
 let countdownValue = REFRESH_INTERVAL;
@@ -304,7 +304,7 @@ function renderHomelab(nodes, updated) {
       `${d.device}: ${fmtGb(d.used_gb)} / ${fmtGb(d.size_gb)} (${fmtPct(d.percent)})`
     ).join('<br>');
     const netInfo  = n.network ? Object.entries(n.network).map(([iface,net]) =>
-      `${iface}: ${fmtInt(net.recv_mb)}MB↓ ${fmtInt(net.sent_mb)}MB↑`
+      `${iface}: ${fmtInt(net.recv_kbps)}↓ ${fmtInt(net.sent_kbps)}↑ kbps`
     ).join('<br>') : '';
     const containerPreview = (n.containers||[]).slice(0,8).map(c=>c.name.replace(/_/g,' ')).join(', ');
 
@@ -332,7 +332,7 @@ function renderHomelab(nodes, updated) {
         <div style="margin-top:.5rem;font-size:.68rem;color:var(--text-muted);line-height:1.6">
           Load: ${loadStr} (${load?.cores||'?'} cores)<br>
           Procs: ${n.processes?.total||'?'} total, ${n.processes?.running||'?'} running, ${n.processes?.threads||'?'} threads<br>
-          Disk I/O: ${fmtInt(n.disk_io?.read_mb||0)}MB read / ${fmtInt(n.disk_io?.write_mb||0)}MB write<br>
+          Disk I/O: ${fmtInt(n.disk_io?.read_kib||0)} KiB/s read / ${fmtInt(n.disk_io?.write_kib||0)} KiB/s write<br>
           ${diskInfo ? diskInfo+'<br>' : ''}
           ${netInfo ? netInfo+'<br>' : ''}
           Containers (${n.container_count||0}): ${containerPreview||'none'}

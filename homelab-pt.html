@@ -156,6 +156,7 @@ async function loadData() {
 const fmtGb = v => Number(v).toFixed(1)+'GB';
 const fmtPct = v => Math.round(v)+'%';
 const fmtMb = v => Math.round(v)+'MB';
+const fmtInt = v => Math.round(Number(v)||0);
 const fmtTemp = v => v ? v+'°C' : '?°C';
 const colorByPct = (v, hi=80, mid=60) => v>hi?'red':v>mid?'yellow':'green';
 const gaugeOffset = (pct) => { const r=32,c=2*Math.PI*r; return c-(pct/100)*c; }
@@ -175,7 +176,36 @@ function render() {
   const container = document.getElementById('dashboard-content');
   let html = '';
 
-  for (const [name, n] of Object.entries(d.nodes)) {
+  // --- Visão geral da arquitetura ---
+  html += `
+  <div class="pi-section animate-in">
+    <div class="pi-header"><h2>Arquitetura</h2><div class="pi-meta"><span>Proxmox VE · TrueNAS SCALE · 3 VMs</span></div></div>
+    <div class="grid grid-4" style="margin-bottom:1rem">
+      <div class="card" style="text-align:center">
+        <div class="card-title">💾 Storage</div>
+        <div class="card-value" style="font-size:1.2rem;color:var(--cyan)">TrueNAS</div>
+        <div class="card-sub">Pool NVMe · NFS/SMB</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div class="card-title">🖥️ Hypervisor</div>
+        <div class="card-value" style="font-size:1.2rem;color:var(--purple)">Proxmox VE</div>
+        <div class="card-sub">Hospeda as VMs abaixo</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div class="card-title">📦 VMs</div>
+        <div class="card-value" style="font-size:1.2rem;color:var(--blue)">3 ativas</div>
+        <div class="card-sub">services · security · radio</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div class="card-title">📡 Monitoramento</div>
+        <div class="card-value" style="font-size:1.2rem;color:var(--green)">Netdata</div>
+        <div class="card-sub">Todos os nodes · porta 19999</div>
+      </div>
+    </div>
+  </div>`;
+
+  for (const name of ['TrueNAS','Proxmox','VM100','VM200','VM400']) {
+    const n = d.nodes[name];
     if (!n || n.status==='fail') {
       html += `<div class="pi-section animate-in"><div class="pi-header"><h2>${name}</h2><span class="badge badge-fail"><span class="dot dot-fail"></span>Offline</span></div></div>`;
       continue;
@@ -189,12 +219,13 @@ function render() {
     const net = n.network||{};
     const diskIO = n.disk_io||{};
     const procs = n.processes||{};
+    const roleIcon = {storage:'💾', hypervisor:'🖥️', vm:'📦'}[n.role]||'🖥️';
 
     html += `
     <div class="pi-section animate-in">
       <div class="pi-header">
         <span class="dot dot-${n.status}"></span>
-        <h2>${name}</h2>
+        <h2>${roleIcon} ${name}</h2>
         <span class="badge badge-${n.status}">${n.status.toUpperCase()}</span>
         <div class="pi-meta">
           <span>${n.services||''}</span>
@@ -267,16 +298,16 @@ function render() {
             <div class="metric-label"><span>${d.mount} (${d.device})</span><span>${d.used_gb} / ${d.size_gb} GB</span></div>
             <div class="metric-bar"><div class="metric-fill ${colorByPct(d.percent,90,75)}" style="width:${d.percent||0}%"></div></div>
           </div>`).join('')}
-          ${diskIO?.read_mb ? `<div style="font-size:.7rem;color:var(--muted);margin-top:.5rem">I/O: ${fmtMb(diskIO.read_mb)} read · ${fmtMb(diskIO.write_mb)} write</div>` : ''}
+          ${diskIO?.read_kib != null ? `<div style="font-size:.7rem;color:var(--muted);margin-top:.5rem">I/O: ${fmtInt(diskIO.read_kib)} KiB/s read · ${fmtInt(diskIO.write_kib)} KiB/s write</div>` : ''}
         </div>` : ''}
 
         <!-- Network -->
         ${Object.keys(net).length ? `
         <div class="card">
           <div class="card-title">Network</div>
-          ${Object.entries(net).map(([iface, nw])=>`
+          ${Object.entries(net).filter(([iface])=>!iface.startsWith('veth')&&!iface.startsWith('br-')&&iface!=='docker0').map(([iface, nw])=>`
           <div class="metric">
-            <div class="metric-label"><span>${iface}</span><span>↓${fmtMb(nw.recv_mb)} ↑${fmtMb(nw.sent_mb)}</span></div>
+            <div class="metric-label"><span>${iface}</span><span>↓${fmtInt(nw.recv_kbps)} ↑${fmtInt(nw.sent_kbps)} kbps</span></div>
           </div>`).join('')}
         </div>` : ''}
 
