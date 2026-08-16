@@ -3,6 +3,22 @@
 > **URL:** https://robcarv.github.io
 > **Stack:** HTML5 + CSS3 + Vanilla JS — zero dependencies, zero build step
 > **Data sources:** `health.json` (Hermes cron via Netdata) · `news.json` (NewsBot, com audio per-article) · `experience.json` (static, editable)
+> **GitHub:** https://github.com/robcarv
+
+---
+
+## GitHub Repositories (robcarv)
+
+| Repo | Descricao | Visibilidade |
+|------|-----------|--------------|
+| [robcarv.github.io](https://github.com/robcarv/robcarv.github.io) | Este portfolio (HTML estatico, GitHub Pages) | Publico |
+| [news_colletector](https://github.com/robcarv/news_colletector) | NewsBot — coletor RSS + TTS (Edge-TTS) + Telegram + portfolio (branch v4) | Publico |
+| [azura-cast-customizations](https://github.com/robcarv/azura-cast-customizations) | Customizacoes da radio Dublin Calling (CSS/JS branding) | Publico |
+| [dashy-homelab](https://github.com/robcarv/dashy-homelab) | Config do dashboard Dashy do homelab | Publico |
+| [homelab-docs](https://github.com/robcarv/homelab-docs) | Documentacao central do homelab (credenciais, servicos, planos) | Privado |
+| [backup_raspberry](https://github.com/robcarv/backup_raspberry) | Gallery Downloader v4 (Go/Gin + React, 6 containers) — branch mangadownloader-v4 | Privado |
+
+Fork/estudo: awesome-selfhosted, LMDS, watchtower, bettercap, linkedin-skill-assessments-quizzes.
 
 ---
 
