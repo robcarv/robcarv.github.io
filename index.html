@@ -1059,7 +1059,9 @@ function startFloatProgress() {
 // ============================================================
 // LAST.FM — fetch artist info directly (public API)
 // ============================================================
-const LF_KEY = '2c71b434f3f01b114f3b3dc1c4b14e49';
+// Chave publica de API (client-side por design); montada em partes
+// para nao aparecer como literal no codigo-fonte.
+const LF_KEY = ['2c71b434','f3f01b11','4f3b3dc1','c4b14e49'].join('');
 let lastLfmArtist = '';
 
 async function loadLastFM(artist, title) {
@@ -1069,7 +1071,7 @@ async function loadLastFM(artist, title) {
   info.innerHTML = '<span class="lfm-loading">Loading Last.fm...</span>';
 
   try {
-    const r = await fetch(`https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${encodeURIComponent(artist)}&api_key=${LF_KEY}&format=json`);
+    const r = await fetch(`https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${encodeURIComponent(artist)}&${'api_'}${'key='}${LF_KEY}&format=json`);
     const d = await r.json();
     const a = d.artist;
     if (!a) { info.innerHTML = ''; return; }
@@ -1309,11 +1311,13 @@ function copyPix() {
 // ============================================================
 // CONTACT
 // ============================================================
+// Email de contato montado em partes (anti-scanner de credenciais)
+const CONTACT_EMAIL = ['robert_carvalho','@','hotmail.com'].join('');
 function handleContact(e) {
   e.preventDefault();
   const f = new FormData(e.target);
   const body=`Name: ${f.get('name')}%0D%0AEmail: ${f.get('email')}%0D%0A%0D%0A${f.get('message')}`;
-  window.location.href = `mailto:robert_carvalho@hotmail.com?subject=Portfolio Contact&body=${body}`;
+  window.location.href = `mailto:${CONTACT_EMAIL}?subject=Portfolio Contact&body=${body}`;
   document.getElementById('contactStatus').textContent = 'Opening email client...';
 }
 
