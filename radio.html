@@ -141,7 +141,7 @@ a.ext:hover{text-decoration:underline}
 
   <!-- History -->
   <section class="pi-section">
-    <div class="pi-header"><h2>Recently Played</h2><span class="pi-meta">collected from AzuraCast every 5 min</span></div>
+    <div class="pi-header"><h2>Recently Played</h2><span class="pi-meta">collected from AzuraCast every 30 min</span></div>
     <div class="card" style="padding:.4rem .75rem" id="history-list"><div class="loading">Loading history...</div></div>
   </section>
 
@@ -157,8 +157,11 @@ a.ext:hover{text-decoration:underline}
 // ============================================================
 // STATE
 // ============================================================
-let radio = null;          // radio.json (enriched, updated on track change)
+let radio = null;          // radio.json (enriched, updated no deploy — track change)
 let history = null;        // radio_history.json items
+let live = null;           // snapshot ao vivo da API (poll 30s) — hero nunca fica stale
+let renderedShId = null;   // sh_id do track exibido no hero
+let active = null;         // {dur, played_at|elBase+elAt} p/ progresso contínuo
 let countdown = 60, timer = null;
 const AUDIO = document.getElementById('radioAudio');
 const DEF_STREAM = 'https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3';
@@ -226,26 +229,40 @@ function renderSummary() {
     <div class="card"><div class="card-title">Tracks' total length</div><div class="card-value">${fmtDur(airtime)}</div>
       <div class="card-sub">${items.length} logged tracks</div></div>
     <div class="card"><div class="card-title">Oldest logged</div><div class="card-value" style="font-size:1.1rem;padding-top:.4rem">${oldest?dayLabel(oldest)+' · '+fmtClock(oldest):'—'}</div>
-      <div class="card-sub">history grows every 5 min</div></div>`;
+      <div class="card-sub">history grows every 30 min</div></div>`;
 }
 
 // ============================================================
-// RENDER — now playing hero
+// RENDER — now playing hero (live-first, enrichment do radio.json)
 // ============================================================
+function heroNp() {
+  // radio.json enriquecido quando o sh_id bate com o live (ou antes do 1º poll)
+  const fnp = radio?.now_playing || null;
+  if (fnp && (!live || String(live.sh_id) === String(fnp.sh_id)))
+    return { np: fnp, lfm: fnp.lastfm || null, listenUrl: radio.listen_url || DEF_STREAM, liveOnly: false };
+  // track trocou e o radio.json ainda é o antigo (deploy a cada 30 min) → live cru
+  if (live) return { np: live, lfm: null, listenUrl: live.listenUrl || DEF_STREAM, liveOnly: true };
+  return fnp ? { np: fnp, lfm: fnp.lastfm || null, listenUrl: radio.listen_url || DEF_STREAM, liveOnly: false } : null;
+}
+
 function npElapsed() {
-  const np = radio?.now_playing;
-  if (!np) return 0;
-  if (np.played_at) return Math.min(Math.max(Date.now()/1000 - np.played_at, 0), np.duration||0);
-  return np.elapsed||0;
+  if (!active?.dur) return 0;
+  let e;
+  if (active.played_at) e = Date.now()/1000 - active.played_at;
+  else e = (active.elBase||0) + (Date.now() - (active.elAt||Date.now()))/1000;
+  return Math.min(Math.max(e, 0), active.dur);
 }
 
 function renderNowPlaying() {
   const el = document.getElementById('now-playing');
-  if (!radio?.now_playing) { el.innerHTML = '<div class="empty">Nothing playing right now — station may be offline.</div>'; return; }
-  const np = radio.now_playing, lf = np.lastfm;
+  const hv = heroNp();
+  if (!hv) { el.innerHTML = '<div class="empty">Nothing playing right now — station may be offline.</div>'; renderedShId = null; return; }
+  const np = hv.np, lf = hv.lfm;
   const art = np.art || lf?.art || '';
   const played = np.is_request ? '<span class="chip chip-req">🎧 Request</span>' : '';
   const dur = Number(np.duration)||0;
+  renderedShId = String(np.sh_id || '');
+  active = dur ? { dur, played_at: np.played_at || null, elBase: np.played_at ? null : (np.elapsed||0), elAt: Date.now() } : null;
   const elp = npElapsed();
   const sim = (lf?.similar||[]).map(s=>`<a href="https://www.last.fm/music/${encodeURIComponent(s)}" target="_blank" rel="noopener">${esc(s)}</a>`).join('');
   el.innerHTML = `
@@ -263,15 +280,16 @@ function renderNowPlaying() {
       </div>` : ''}
       <div style="font-size:.72rem;color:var(--muted)">Started at ${fmtClock(np.played_at||Math.floor(Date.now()/1000))}${np.sh_id?' · track #'+esc(np.sh_id):''}</div>
       <div class="hero-actions">
-        <button class="btn accent radio-play-btn" id="heroPlayBtn" onclick="toggleRadio('${esc(radio.listen_url||DEF_STREAM)}', this)">▶ Listen live</button>
+        <button class="btn accent radio-play-btn" id="heroPlayBtn" onclick="toggleRadio('${esc(hv.listenUrl)}', this)">▶ Listen live</button>
         <a class="btn" href="https://dublincalling.duckdns.org/public/dublincalling" target="_blank" rel="noopener">Public page ↗</a>
         <a class="btn" href="https://t.me/dublinccalling" target="_blank" rel="noopener">💬 Request a song</a>
         ${lf?.url?`<a class="btn" href="${esc(lf.url)}" target="_blank" rel="noopener">Last.fm ↗</a>`:''}
       </div>
-      ${lf?.bio ? `<p class="bio-text" style="margin-top:1rem">${esc(lf.bio)}</p>` : ''}
-      ${lf ? `<div style="margin-top:.6rem;font-size:.7rem;color:var(--muted)">
+      ${hv.liveOnly ? `<p class="bio-text" style="margin-top:1rem">Track just changed — Last.fm details sync on the next data update (≤ 30 min).</p>`
+        : lf?.bio ? `<p class="bio-text" style="margin-top:1rem">${esc(lf.bio)}</p>` : ''}
+      ${!hv.liveOnly && lf ? `<div style="margin-top:.6rem;font-size:.7rem;color:var(--muted)">
         ${lf.playcount?`<span>▶ ${Number(lf.playcount).toLocaleString()} plays on Last.fm</span>`:''}${lf.playcount&&lf.listeners?' · ':''}${lf.listeners?`${Number(lf.listeners).toLocaleString()} listeners`:''}</div>` : ''}
-      ${sim?`<div class="sim-artists" style="margin-top:.6rem">${sim}</div>`:''}
+      ${!hv.liveOnly && sim?`<div class="sim-artists" style="margin-top:.6rem">${sim}</div>`:''}
     </div>
   </div>`;
   // hero play button class state
@@ -281,8 +299,11 @@ function renderNowPlaying() {
 
 function renderUpNext() {
   const el = document.getElementById('up-next');
-  const nx = radio?.playing_next;
+  const nx = live?.next || radio?.playing_next || null;
   if (!nx?.artist && !nx?.title) { el.innerHTML = '<div class="empty">No info on what plays next.</div>'; return; }
+  const sig = (nx.artist||'') + '|' + (nx.title||'');
+  if (el.dataset.sig === sig) return;   // sem rebuild se não mudou
+  el.dataset.sig = sig;
   el.innerHTML = `<div class="card" style="display:flex;align-items:center;gap:1rem">
     ${artHtml(nx.art, nx.artist, 'now-art-sm')}
     <div style="min-width:0"><div class="card-title" style="margin-bottom:.2rem">Up next</div>
@@ -296,7 +317,7 @@ function renderUpNext() {
 // ============================================================
 function renderHistory() {
   const el = document.getElementById('history-list');
-  if (!history || !history.length) { el.innerHTML = '<div class="empty">No tracks logged yet — the collector updates every 5 minutes.</div>'; return; }
+  if (!history || !history.length) { el.innerHTML = '<div class="empty">No tracks logged yet — the collector updates every 30 minutes.</div>'; return; }
   const list = history.slice(0, 120);
   let curDay = null, html = '';
   for (const it of list) {
@@ -347,12 +368,11 @@ function renderTopArtists() {
 // LIVE TICK (progress clock + listeners)
 // ============================================================
 function tickClock() {
-  const np = radio?.now_playing, dur = Number(np?.duration)||0;
-  if (!dur) return;
+  if (!active?.dur) return;
   const elp = npElapsed();
   const fill = document.getElementById('np-fill');
   const e = document.getElementById('np-elp');
-  if (fill) fill.style.width = Math.min(elp/dur*100, 100) + '%';
+  if (fill) fill.style.width = Math.min(elp/active.dur*100, 100) + '%';
   if (e) e.textContent = fmtDur(elp);
 }
 
@@ -361,23 +381,36 @@ async function pollLive() {
     const r = await fetch('https://dublincalling.duckdns.org/api/nowplaying');
     if (!r.ok) return;
     const s = (await r.json())[0];
-    if (!s?.now_playing?.song) return;
+    const np = s?.now_playing, song = np?.song;
+    if (!song) return;
     // listeners badge
     const ll = document.getElementById('live-listeners');
     if (ll) ll.textContent = s.listeners?.current ?? 0;
+    // snapshot live (hero nunca fica stale entre deploys de 30 min)
+    const nxt = s.playing_next?.song || null;
+    const sn = {
+      sh_id: String(np.sh_id || ''), artist: song.artist || '', title: song.title || '',
+      album: song.album || '', genre: song.genre || '', art: song.art || '',
+      duration: Number(np.duration)||0, elapsed: Number(np.elapsed)||0,
+      played_at: np.played_at || null, playlist: np.playlist || '', is_request: !!np.is_request,
+      next: nxt ? { artist: nxt.artist||'', title: nxt.title||'', art: nxt.art||'' } : null,
+      listenUrl: s.station?.listen_url || DEF_STREAM,
+    };
+    const changed = renderedShId !== sn.sh_id;
+    live = sn;
     // nav bar (same as homelab.html)
-    const np = s.now_playing;
     const nav = document.getElementById('navRadio');
     if (nav) {
-      const rem = Math.max((np.duration||0) - (np.elapsed||0), 0);
+      const rem = Math.max(sn.duration - sn.elapsed, 0);
       const mins = Math.floor(rem/60), secs = String(Math.floor(rem%60)).padStart(2,'0');
       nav.innerHTML = `
         <span class="nav-radio-dot ${s.live?.is_live?'live':''}"></span>
-        <span class="nav-radio-text"><strong>${esc(np.song?.artist||'?')}</strong> — ${esc(np.song?.title||'?')}</span>
+        <span class="nav-radio-text"><strong>${esc(sn.artist||'?')}</strong> — ${esc(sn.title||'?')}</span>
         <span class="nav-radio-time">-${mins}:${secs}</span>
-        <button onclick="toggleRadio('${esc(s.station?.listen_url||DEF_STREAM)}', this)" class="radio-play-btn" id="navPlayBtn">▶</button>`;
+        <button onclick="toggleRadio('${esc(sn.listenUrl)}', this)" class="radio-play-btn" id="navPlayBtn">▶</button>`;
       syncPlayBtns();
     }
+    if (changed) { renderNowPlaying(); renderUpNext(); }   // hero re-usa radio.json se o sh_id bater
   } catch(e) {}
 }
 
@@ -405,6 +438,7 @@ async function refreshAll() {
   document.getElementById('countdown').textContent = 'Refreshing...';
   radio = await loadJSON('radio.json');
   history = (await loadJSON('radio_history.json'))?.items || null;
+  if (!live) renderedShId = String(radio?.now_playing?.sh_id || '');  // 1º render usa o arquivo
   renderBadges();
   renderSummary();
   renderNowPlaying();
@@ -412,7 +446,7 @@ async function refreshAll() {
   renderHistory();
   renderTopArtists();
   const updated = radio?.updated ? new Date(radio.updated*1000).toLocaleString() : 'never';
-  document.getElementById('updated-label').textContent = `Data updated at ${updated} · collector polls AzuraCast every 5 min`;
+  document.getElementById('updated-label').textContent = `Data files updated ${updated} · now playing is LIVE (AzuraCast poll 30s) · history & enrichment sync every 30 min`;
   countdown = 60; updateCountdown();
 }
 function updateCountdown() { document.getElementById('countdown').textContent = `Auto-refresh in ${countdown}s`; }
