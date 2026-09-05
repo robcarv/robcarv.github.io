@@ -85,11 +85,27 @@ nav{position:sticky;top:0;z-index:50;background:rgba(10,10,15,.9);backdrop-filte
 .top-bar-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--purple));border-radius:2px}
 .top-tags{font-size:.62rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
 .top-count{font-size:.75rem;color:#a5b4fc;font-weight:600;flex-shrink:0}
+.artist-f{cursor:help;border-bottom:1px dotted rgba(165,180,252,.5)}
 .loading{color:var(--muted);padding:2rem;text-align:center}
 .empty{color:var(--muted);font-size:.85rem;padding:1rem;text-align:center}
 a.ext{color:var(--accent);text-decoration:none;font-size:.75rem;margin-left:auto}
 a.ext:hover{text-decoration:underline}
-@media(max-width:820px){.now-card{grid-template-columns:1fr}.now-art{width:100%;height:auto;aspect-ratio:1/1}.container{padding:0 1rem}.card-value{font-size:1.4rem}}
+/* Popup de curiosidades (hover) */
+#artist-pop{position:fixed;z-index:999;width:330px;max-width:92vw;max-height:70vh;overflow:auto;
+  background:#14141c;border:1px solid #2a2a3a;border-radius:14px;padding:1rem;
+  box-shadow:0 12px 40px rgba(0,0,0,.6);display:none;pointer-events:none}
+#artist-pop.show{display:block;animation:fadeIn .15s ease-out}
+.pop-head{display:flex;gap:.8rem;align-items:center;margin-bottom:.6rem}
+.pop-art{width:52px;height:52px;border-radius:10px;object-fit:cover;background:#1e1e2a;flex-shrink:0}
+.pop-name{font-size:1rem;font-weight:700;color:#fff;line-height:1.2}
+.pop-name a{color:inherit;text-decoration:none}.pop-name a:hover{color:#a5b4fc}
+.pop-sub{font-size:.68rem;color:var(--muted)}
+.pop-stats{display:flex;gap:.5rem;margin:.4rem 0;flex-wrap:wrap}
+.pop-bio{font-size:.74rem;color:var(--muted);line-height:1.5;margin-top:.5rem;
+  display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.pop-sim{margin-top:.6rem;font-size:.68rem;color:var(--muted)}
+.pop-sim a{color:#a5b4fc;text-decoration:none}.pop-sim a:hover{text-decoration:underline}
+@media(max-width:820px){.now-card{grid-template-columns:1fr}.now-art{width:100%;height:auto;aspect-ratio:1/1}.container{padding:0 1rem}.card-value{font-size:1.4rem}#artist-pop{width:280px}}
 </style>
 </head>
 <body>
@@ -107,6 +123,7 @@ a.ext:hover{text-decoration:underline}
   <div class="nav-radio" id="navRadio"><span class="nav-radio-dot"></span><span class="nav-radio-text">Loading radio...</span></div>
 </nav>
 <audio id="radioAudio" preload="none" style="display:none"></audio>
+<div id="artist-pop" role="tooltip"></div>
 
 <div class="container">
 
@@ -141,7 +158,7 @@ a.ext:hover{text-decoration:underline}
 
   <!-- History -->
   <section class="pi-section">
-    <div class="pi-header"><h2>Recently Played</h2><span class="pi-meta">collected from AzuraCast every 30 min</span></div>
+    <div class="pi-header"><h2>Recently Played</h2><span class="pi-meta">collected every 30 min · hover an artist name for 24h facts</span></div>
     <div class="card" style="padding:.4rem .75rem" id="history-list"><div class="loading">Loading history...</div></div>
   </section>
 
@@ -160,6 +177,7 @@ a.ext:hover{text-decoration:underline}
 let radio = null;          // radio.json (enriched, updated no deploy — track change)
 let history = null;        // radio_history.json items
 let live = null;           // snapshot ao vivo da API (poll 30s) — hero nunca fica stale
+let factsMap = {};         // radio_artists.json: nome -> curiosidades (hover popup)
 let renderedShId = null;   // sh_id do track exibido no hero
 let active = null;         // {dur, played_at|elBase+elAt} p/ progresso contínuo
 let countdown = 60, timer = null;
@@ -324,11 +342,12 @@ function renderHistory() {
     const k = dayKey(it.played_at*1000);
     if (k !== curDay) { curDay = k; html += `<div class="day-group">${dayLabel(it.played_at)}</div>`; }
     const meta = [it.genre, it.playlist && it.playlist!=='default' ? it.playlist : null].filter(Boolean).join(' · ');
+    const f = !!it.artist && !!factsMap[it.artist];
     html += `
-    <div class="hist-row">
+    <div class="hist-row" data-artist="${esc(it.artist||'')}" ${f?'data-facts="1"':''}>
       ${artHtml(it.art, it.artist, 'now-art-sm')}
       <div class="hist-main">
-        <div class="hist-artist">${esc(it.artist||'—')} <span style="color:var(--muted);font-weight:400">— ${esc(it.title||'')}</span></div>
+        <div class="hist-artist${f?' artist-f':''}">${esc(it.artist||'—')} <span style="color:var(--muted);font-weight:400">— ${esc(it.title||'')}</span></div>
         ${(it.album||meta)?`<div class="hist-title">${esc(it.album||'')}${it.album&&meta?' · ':''}${esc(meta)}</div>`:''}
       </div>
       ${it.lfm?.url?`<a class="ext" href="${esc(it.lfm.url)}" target="_blank" rel="noopener" title="Open on Last.fm">↗</a>`:''}
@@ -350,19 +369,86 @@ function renderTopArtists() {
   const top = Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,8);
   if (!top.length) { el.innerHTML = '<div class="empty">No artist data yet.</div>'; return; }
   const max = top[0][1];
-  el.innerHTML = top.map(([artist, n], i) => `
-    <div class="top-row">
+  el.innerHTML = top.map(([artist, n], i) => {
+    const hasF = !!factsMap[artist];
+    return `
+    <div class="top-row" data-artist="${esc(artist)}" ${hasF?'data-facts="1"':''}>
       <span class="top-rank">${i+1}</span>
       ${artHtml(meta[artist].art, artist, 'now-art-sm')}
       <div class="top-main">
-        <div class="hist-artist">${esc(artist)}</div>
+        <div class="hist-artist${hasF?' artist-f':''}">${esc(artist)}</div>
         <div class="top-bar"><div class="top-bar-fill" style="width:${(n/max*100).toFixed(0)}%"></div></div>
         <div class="top-tags">${esc((meta[artist].tags||[]).slice(0,4).join(' · '))}</div>
       </div>
       ${meta[artist].url?`<a class="ext" href="${esc(meta[artist].url)}" target="_blank" rel="noopener">↗</a>`:''}
       <span class="top-count">${n}×</span>
-    </div>`).join('');
+    </div>`;}).join('');
 }
+
+// ============================================================
+// FACTS POPUP (hover — curiosidades do artista, radio_artists.json)
+// Nota XSS: conteudo via esc()/textContent (ver nota no topo do script).
+// ============================================================
+const popEl = document.getElementById('artist-pop');
+let popTimer = null;
+
+function fmtBig(n) { n = Number(n); return n ? n.toLocaleString('en-US') : ''; }
+
+function showArtistPop(name, x, y) {
+  const a = factsMap[name];
+  if (!a) return;
+  const lf = a.lfm || {};
+  const tags = (lf.tags||[]).map(t=>`<span class="chip chip-genre" style="margin:1px">${esc(t)}</span>`).join('');
+  const sim = (lf.similar||[]).map(s=>`<a href="https://www.last.fm/music/${encodeURIComponent(s)}" target="_blank" rel="noopener">${esc(s)}</a>`).join(' · ');
+  const lfUrl = lf.url ? `https://www.last.fm/music/${encodeURIComponent(name)}` : '';
+  popEl.innerHTML = `
+    <div class="pop-head">
+      ${artHtml(a.art || '', a.name, 'pop-art')}
+      <div style="min-width:0">
+        <div class="pop-name">${lfUrl?`<a href="${esc(lfUrl)}" target="_blank" rel="noopener">${esc(a.name)}</a>`:esc(a.name)}</div>
+        <div class="pop-sub">${a.plays24h}× in the last 24h · last played ${fmtClock(a.last_seen)}</div>
+      </div>
+    </div>
+    ${lf.playcount||lf.listeners?`<div class="pop-stats">
+      ${lf.playcount?`<span class="chip">▶ ${fmtBig(lf.playcount)} plays</span>`:''}
+      ${lf.listeners?`<span class="chip">👂 ${fmtBig(lf.listeners)} listeners</span>`:''}
+    </div>`:''}
+    ${tags?`<div style="margin-top:.2rem">${tags}</div>`:''}
+    ${lf.bio?`<p class="pop-bio">${esc(lf.bio)}</p>`:''}
+    ${sim?`<div class="pop-sim">Similar: ${sim}</div>`:''}`;
+  popEl.classList.add('show');
+  placePop(x, y);
+}
+
+function hideArtistPop() { popEl.classList.remove('show'); }
+
+function placePop(x, y) {
+  const r = popEl.getBoundingClientRect();
+  let px = x + 14, py = y + 14;
+  if (px + r.width > innerWidth - 8) px = x - r.width - 14;
+  if (py + r.height > innerHeight - 8) py = Math.max(8, y - r.height - 14);
+  popEl.style.left = px + 'px';
+  popEl.style.top = py + 'px';
+}
+
+document.addEventListener('mouseover', e => {
+  const row = e.target.closest('[data-artist]');
+  if (!row) return;
+  clearTimeout(popTimer);
+  showArtistPop(row.dataset.artist, e.clientX, e.clientY);
+});
+document.addEventListener('mouseout', e => {
+  if (e.target.closest && e.target.closest('[data-artist]')) {
+    clearTimeout(popTimer);
+    popTimer = setTimeout(hideArtistPop, 60);
+  }
+});
+window.addEventListener('scroll', hideArtistPop, true);
+window.addEventListener('resize', hideArtistPop);
+document.addEventListener('mousemove', e => {
+  const row = e.target.closest && e.target.closest('[data-artist]');
+  if (row && popEl.classList.contains('show')) placePop(e.clientX, e.clientY);
+});
 
 // ============================================================
 // LIVE TICK (progress clock + listeners)
@@ -438,6 +524,9 @@ async function refreshAll() {
   document.getElementById('countdown').textContent = 'Refreshing...';
   radio = await loadJSON('radio.json');
   history = (await loadJSON('radio_history.json'))?.items || null;
+  const fa = await loadJSON('radio_artists.json');   // curiosidades 24h (hover)
+  factsMap = {};
+  (fa?.items || []).forEach(a => { factsMap[a.name] = a; });
   if (!live) renderedShId = String(radio?.now_playing?.sh_id || '');  // 1º render usa o arquivo
   renderBadges();
   renderSummary();
