@@ -127,7 +127,29 @@ a.ext:hover{text-decoration:underline}
   <!-- Summary stats -->
   <div class="grid grid-4" id="summary-row" style="margin-bottom:1.5rem"></div>
 
-  <div id="page-content"><div class="loading">Loading radio data...</div></div>
+  <!-- Now Playing -->
+  <section class="pi-section">
+    <div class="pi-header"><h2>▶ Now Playing</h2><span class="pi-meta" id="updated-label"></span></div>
+    <div id="now-playing"><div class="loading">Loading radio data...</div></div>
+  </section>
+
+  <!-- Up Next -->
+  <section class="pi-section">
+    <div class="pi-header"><h2>Up Next</h2></div>
+    <div id="up-next"></div>
+  </section>
+
+  <!-- History -->
+  <section class="pi-section">
+    <div class="pi-header"><h2>Recently Played</h2><span class="pi-meta">collected from AzuraCast every 5 min</span></div>
+    <div class="card" style="padding:.4rem .75rem" id="history-list"><div class="loading">Loading history...</div></div>
+  </section>
+
+  <!-- Top artists -->
+  <section class="pi-section">
+    <div class="pi-header"><h2>Top Artists</h2><span class="pi-meta">from logged history</span></div>
+    <div class="card" style="padding:.4rem .75rem" id="top-artists"><div class="loading">Loading artists...</div></div>
+  </section>
 
 </div>
 
