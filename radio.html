@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>Dublin Calling Radio · Robert Carvalho</title>
+<style>
+:root{--bg:#0a0a0f;--card:#111118;--border:#1e1e2a;--text:#e4e4eb;--muted:#8888a0;--accent:#6366f1;--purple:#a855f7;--green:#22c55e;--yellow:#eab308;--red:#ef4444;--blue:#3b82f6;--cyan:#06b6d4;--orange:#f97316}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;min-height:100vh;overflow-x:hidden}
+.container{max-width:1400px;margin:0 auto;padding:0 2rem}
+nav{position:sticky;top:0;z-index:50;background:rgba(10,10,15,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-weight:700;font-size:1.1rem;color:#fff;text-decoration:none;display:flex;align-items:center;gap:.5rem}
+.nav-links{display:flex;gap:1.25rem;align-items:center}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.85rem;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-radio{max-width:1400px;margin:0 auto;padding:0 2rem 5px;display:flex;align-items:center;gap:.6rem;font-size:.7rem;color:var(--muted)}
+.nav-radio-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;background:var(--green)}.nav-radio-dot.live{background:var(--red);animation:pulse 1.5s infinite}
+.nav-radio-text{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.nav-radio-text strong{color:#fff;font-weight:500}
+.nav-radio-time{font-size:.65rem;color:var(--muted);flex-shrink:0}
+.radio-play-btn{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--accent);background:rgba(99,102,241,.1);color:var(--accent);font-size:.6rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;padding:0}
+.radio-play-btn:hover{background:rgba(99,102,241,.25)}.radio-play-btn.playing{background:var(--accent);color:#fff}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;animation:pulse 2s infinite}
+.dot-ok{background:var(--green);box-shadow:0 0 8px rgba(34,197,94,.5)}.dot-warn{background:var(--yellow);box-shadow:0 0 8px rgba(234,179,8,.5)}.dot-fail{background:var(--red);box-shadow:0 0 8px rgba(239,68,68,.5)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.animate-in{animation:fadeIn .5s ease-out forwards}
+.header{text-align:center;padding:2.5rem 0 1.5rem}
+.header h1{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:.25rem}
+.header p{color:var(--muted);font-size:.9rem}
+.header .badge-row{display:flex;gap:.5rem;justify-content:center;margin-top:1rem;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:100px;font-size:.72rem;font-weight:600}
+.badge-ok{background:rgba(34,197,94,.1);color:var(--green);border:1px solid rgba(34,197,94,.2)}
+.badge-warn{background:rgba(234,179,8,.1);color:var(--yellow);border:1px solid rgba(234,179,8,.2)}
+.badge-info{background:rgba(59,130,246,.1);color:var(--blue);border:1px solid rgba(59,130,246,.2)}
+.badge-red{background:rgba(239,68,68,.1);color:var(--red);border:1px solid rgba(239,68,68,.2)}
+.pi-section{margin-bottom:2.5rem}
+.pi-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
+.pi-header h2{font-size:1.3rem;font-weight:700;color:#fff}
+.pi-header .pi-meta{font-size:.78rem;color:var(--muted);margin-left:auto;display:flex;gap:1rem}
+.grid{display:grid;gap:.75rem}
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.grid-4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.25rem;transition:border-color .2s}
+.card:hover{border-color:#2a2a3a}
+.card-title{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600;margin-bottom:.75rem}
+.card-value{font-size:1.8rem;font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.1}
+.card-sub{font-size:.72rem;color:var(--muted);margin-top:.25rem}
+.refresh-bar{display:flex;align-items:center;justify-content:center;gap:1rem;padding:.75rem;background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:2rem}
+.refresh-bar span{font-size:.78rem;color:var(--muted)}
+.btn{background:var(--card);border:1px solid var(--border);color:var(--muted);padding:6px 14px;border-radius:8px;font-size:.78rem;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:.4rem;text-decoration:none}
+.btn:hover{border-color:var(--accent);color:#fff}.btn.accent{background:var(--accent);color:#fff;border-color:var(--accent)}
+/* Now playing hero */
+.now-card{display:grid;grid-template-columns:300px 1fr;gap:1.5rem;align-items:center}
+.now-art{width:300px;height:300px;border-radius:14px;object-fit:cover;background:linear-gradient(135deg,#1e1e2a,#111118);border:1px solid var(--border)}
+.now-art.ph{display:flex;align-items:center;justify-content:center;font-size:6rem;font-weight:800;color:#2a2a3a}
+.now-art-sm{width:44px;height:44px;border-radius:8px;object-fit:cover;background:#1e1e2a;flex-shrink:0}
+.artist-name{font-size:1.6rem;font-weight:800;color:#fff;letter-spacing:-.01em}
+.track-title{font-size:1.15rem;color:var(--text);margin:.15rem 0 .4rem}
+.now-meta{font-size:.8rem;color:var(--muted);margin-bottom:.9rem}
+.chip{display:inline-block;padding:2px 10px;border-radius:100px;font-size:.65rem;font-weight:500;margin:2px 4px 2px 0;background:rgba(99,102,241,.12);color:#a5b4fc;border:1px solid rgba(99,102,241,.25)}
+.chip-genre{background:rgba(6,182,212,.1);color:#67e8f9;border-color:rgba(6,182,212,.2)}
+.chip-req{background:rgba(234,179,8,.1);color:#fde047;border-color:rgba(234,179,8,.25)}
+.progress-wrap{margin:1rem 0}
+.progress{height:6px;background:rgba(255,255,255,.07);border-radius:4px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--purple));border-radius:4px;transition:width .5s linear;width:0}
+.time-row{display:flex;justify-content:space-between;font-size:.72rem;color:var(--muted);margin-top:.35rem;font-variant-numeric:tabular-nums}
+.hero-actions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
+.bio-text{font-size:.8rem;color:var(--muted);line-height:1.55;max-height:4.6em;overflow:hidden;position:relative}
+.sim-artists a{color:#a5b4fc;text-decoration:none;font-size:.75rem;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);padding:2px 10px;border-radius:100px;display:inline-block;margin:2px}
+.sim-artists a:hover{background:rgba(99,102,241,.25)}
+/* History */
+.hist-row{display:flex;align-items:center;gap:1rem;padding:.6rem .75rem;border-bottom:1px solid rgba(255,255,255,.03);transition:background .15s;border-radius:8px}
+.hist-row:hover{background:rgba(255,255,255,.03)}
+.hist-main{flex:1;min-width:0}
+.hist-artist{font-size:.85rem;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hist-title{font-size:.75rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hist-time{font-size:.68rem;color:var(--muted);text-align:right;flex-shrink:0;font-variant-numeric:tabular-nums}
+.day-group{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin:1.1rem 0 .4rem;padding-left:.5rem}
+.top-row{display:flex;align-items:center;gap:.9rem;padding:.55rem .75rem;border-bottom:1px solid rgba(255,255,255,.03)}
+.top-rank{width:1.4rem;font-weight:800;color:var(--muted);font-size:.8rem;text-align:center;flex-shrink:0}
+.top-main{flex:1;min-width:0}
+.top-bar{height:3px;background:rgba(99,102,241,.25);border-radius:2px;margin-top:3px}
+.top-bar-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--purple));border-radius:2px}
+.top-tags{font-size:.62rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.top-count{font-size:.75rem;color:#a5b4fc;font-weight:600;flex-shrink:0}
+.loading{color:var(--muted);padding:2rem;text-align:center}
+.empty{color:var(--muted);font-size:.85rem;padding:1rem;text-align:center}
+a.ext{color:var(--accent);text-decoration:none;font-size:.75rem;margin-left:auto}
+a.ext:hover{text-decoration:underline}
+@media(max-width:820px){.now-card{grid-template-columns:1fr}.now-art{width:100%;height:auto;aspect-ratio:1/1}.container{padding:0 1rem}.card-value{font-size:1.4rem}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="dot dot-ok"></span>Robert Carvalho</a>
+    <div class="nav-links">
+      <a href="index.html">← Portfolio</a>
+      <a href="homelab.html">Homelab</a>
+      <a href="radio.html" class="active">📻 Radio</a>
+      <a href="#" onclick="location.reload()">↻ Refresh</a>
+    </div>
+  </div>
+  <div class="nav-radio" id="navRadio"><span class="nav-radio-dot"></span><span class="nav-radio-text">Loading radio...</span></div>
+</nav>
+<audio id="radioAudio" preload="none" style="display:none"></audio>
+
+<div class="container">
+
+  <div class="header">
+    <h1>📻 Dublin Calling</h1>
+    <p>24/7 internet radio · Auto DJ archives &amp; live shows</p>
+    <div class="badge-row" id="status-badges"></div>
+  </div>
+
+  <div class="refresh-bar">
+    <span id="countdown">Auto-refresh in 60s</span>
+    <button class="btn" onclick="refreshAll()">↻ Refresh Now</button>
+    <label style="display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--muted)">
+      <input type="checkbox" id="autoToggle" checked onchange="toggleAuto()"> Auto
+    </label>
+  </div>
+
+  <!-- Summary stats -->
+  <div class="grid grid-4" id="summary-row" style="margin-bottom:1.5rem"></div>
+
+  <div id="page-content"><div class="loading">Loading radio data...</div></div>
+
+</div>
+
+<script>
+// ============================================================
+// STATE
+// ============================================================
+let radio = null;          // radio.json (enriched, updated on track change)
+let history = null;        // radio_history.json items
+let countdown = 60, timer = null;
+const AUDIO = document.getElementById('radioAudio');
+const DEF_STREAM = 'https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3';
+
+// ============================================================
+// HELPERS
+// ============================================================
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+// Nota XSS: todo innerHTML/outerHTML abaixo interpola SOMENTE valores via esc()
+// (dados de música vindos de AzuraCast/Last.fm — artistas/títulos/URLs).
+// Nada é injetado cru; esc() neutraliza aspas/chevrões antes de entrar no HTML.
+const fmtDur = sec => { sec = Math.max(0, Math.floor(Number(sec)||0)); const h=Math.floor(sec/3600), m=Math.floor(sec%3600/60), s=sec%60;
+  return h ? `${h}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}` : `${m}:${String(s).padStart(2,'0')}`; };
+const fmtClock = ts => { const d=new Date(ts*1000); return d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}); };
+const dayLabel = ts => { const d=new Date(ts*1000), n=new Date(), y=new Date(n); y.setDate(n.getDate()-1);
+  const k = d.toDateString();
+  if (k===n.toDateString()) return 'Today';
+  if (k===y.toDateString()) return 'Yesterday';
+  return d.toLocaleDateString([], {weekday:'short', day:'numeric', month:'short'}); };
+const dayKey = ts => new Date(ts*1000).toDateString();
+const artHtml = (url, artist, cls) => url
+  ? `<img class="${cls}" src="${esc(url)}" alt="" loading="lazy" data-art="${esc(artist)}" data-cls="${cls}" onerror="artFail(this)">`
+  : phArt(artist, cls);
+function phArt(artist, cls) { return `<div class="${cls} ph">${esc((artist||'?').trim().charAt(0).toUpperCase()||'♪')}</div>`; }
+function artFail(img) {
+  const d = document.createElement('div');
+  d.className = (img.dataset.cls || '') + ' ph';
+  d.textContent = ((img.dataset.art || '?').trim().charAt(0) || '♪').toUpperCase();
+  img.replaceWith(d);
+}
+
+// ============================================================
+// LOAD
+// ============================================================
+async function loadJSON(url) {
+  try { const r = await fetch(url + (url.includes('?') ? '&' : '?') + '_=' + Date.now()); if (!r.ok) throw 0; return await r.json(); }
+  catch(e) { return null; }
+}
+
+// ============================================================
+// RENDER — badges + summary
+// ============================================================
+function renderBadges() {
+  const el = document.getElementById('status-badges');
+  if (!radio) { el.innerHTML = '<span class="badge badge-warn"><span class="dot dot-warn"></span>OFFLINE</span>'; return; }
+  const live = radio.is_live;
+  el.innerHTML = `
+    ${radio.is_online
+      ? `<span class="badge badge-ok"><span class="dot ${live?'dot-fail':'dot-ok'}"></span>${live?'LIVE':'ON AIR · AUTO DJ'}</span>`
+      : `<span class="badge badge-red"><span class="dot dot-fail"></span>OFFLINE</span>`}
+    <span class="badge badge-info">👂 <span id="live-listeners">${radio.listeners||0}</span> listeners</span>
+    <span class="badge" style="background:rgba(168,85,247,.1);color:var(--purple);border-color:rgba(168,85,247,.2)">🎵 ${esc(radio.now_playing?.playlist||'')||'Auto DJ'}</span>`;
+}
+
+function renderSummary() {
+  const items = history || [];
+  const artists = new Set(items.map(i=>i.artist).filter(Boolean));
+  const airtime = items.reduce((a,i)=>a+(Number(i.duration)||0),0);
+  const oldest = items.length ? Math.min(...items.map(i=>i.played_at||0)) : null;
+  document.getElementById('summary-row').innerHTML = `
+    <div class="card"><div class="card-title">Tracks logged</div><div class="card-value">${items.length}</div>
+      <div class="card-sub">since collector started</div></div>
+    <div class="card"><div class="card-title">Unique artists</div><div class="card-value">${artists.size}</div>
+      <div class="card-sub">from logged history</div></div>
+    <div class="card"><div class="card-title">Tracks' total length</div><div class="card-value">${fmtDur(airtime)}</div>
+      <div class="card-sub">${items.length} logged tracks</div></div>
+    <div class="card"><div class="card-title">Oldest logged</div><div class="card-value" style="font-size:1.1rem;padding-top:.4rem">${oldest?dayLabel(oldest)+' · '+fmtClock(oldest):'—'}</div>
+      <div class="card-sub">history grows every 5 min</div></div>`;
+}
+
+// ============================================================
+// RENDER — now playing hero
+// ============================================================
+function npElapsed() {
+  const np = radio?.now_playing;
+  if (!np) return 0;
+  if (np.played_at) return Math.min(Math.max(Date.now()/1000 - np.played_at, 0), np.duration||0);
+  return np.elapsed||0;
+}
+
+function renderNowPlaying() {
+  const el = document.getElementById('now-playing');
+  if (!radio?.now_playing) { el.innerHTML = '<div class="empty">Nothing playing right now — station may be offline.</div>'; return; }
+  const np = radio.now_playing, lf = np.lastfm;
+  const art = np.art || lf?.art || '';
+  const played = np.is_request ? '<span class="chip chip-req">🎧 Request</span>' : '';
+  const dur = Number(np.duration)||0;
+  const elp = npElapsed();
+  const sim = (lf?.similar||[]).map(s=>`<a href="https://www.last.fm/music/${encodeURIComponent(s)}" target="_blank" rel="noopener">${esc(s)}</a>`).join('');
+  el.innerHTML = `
+  <div class="card now-card">
+    <div>${artHtml(art, np.artist, 'now-art')}</div>
+    <div>
+      <div class="artist-name">${esc(np.artist||'Unknown')}</div>
+      <div class="track-title">${esc(np.title||'')}</div>
+      <div class="now-meta">${esc(np.album||'')}${np.album&&np.genre?' · ':''}${esc(np.genre||'')}</div>
+      <div>${np.genre?'<span class="chip chip-genre">'+esc(np.genre)+'</span>':''}${played}</div>
+      ${dur ? `
+      <div class="progress-wrap">
+        <div class="progress"><div class="progress-fill" id="np-fill" style="width:${Math.min(elp/dur*100,100)}%"></div></div>
+        <div class="time-row"><span id="np-elp">${fmtDur(elp)}</span><span>−${fmtDur(Math.max(dur-elp,0))}</span><span>${fmtDur(dur)}</span></div>
+      </div>` : ''}
+      <div style="font-size:.72rem;color:var(--muted)">Started at ${fmtClock(np.played_at||Math.floor(Date.now()/1000))}${np.sh_id?' · track #'+esc(np.sh_id):''}</div>
+      <div class="hero-actions">
+        <button class="btn accent radio-play-btn" id="heroPlayBtn" onclick="toggleRadio('${esc(radio.listen_url||DEF_STREAM)}', this)">▶ Listen live</button>
+        <a class="btn" href="https://dublincalling.duckdns.org/public/dublincalling" target="_blank" rel="noopener">Public page ↗</a>
+        <a class="btn" href="https://t.me/dublinccalling" target="_blank" rel="noopener">💬 Request a song</a>
+        ${lf?.url?`<a class="btn" href="${esc(lf.url)}" target="_blank" rel="noopener">Last.fm ↗</a>`:''}
+      </div>
+      ${lf?.bio ? `<p class="bio-text" style="margin-top:1rem">${esc(lf.bio)}</p>` : ''}
+      ${lf ? `<div style="margin-top:.6rem;font-size:.7rem;color:var(--muted)">
+        ${lf.playcount?`<span>▶ ${Number(lf.playcount).toLocaleString()} plays on Last.fm</span>`:''}${lf.playcount&&lf.listeners?' · ':''}${lf.listeners?`${Number(lf.listeners).toLocaleString()} listeners`:''}</div>` : ''}
+      ${sim?`<div class="sim-artists" style="margin-top:.6rem">${sim}</div>`:''}
+    </div>
+  </div>`;
+  // hero play button class state
+  const hb = document.getElementById('heroPlayBtn');
+  if (hb && AUDIO && !AUDIO.paused) hb.classList.add('playing');
+}
+
+function renderUpNext() {
+  const el = document.getElementById('up-next');
+  const nx = radio?.playing_next;
+  if (!nx?.artist && !nx?.title) { el.innerHTML = '<div class="empty">No info on what plays next.</div>'; return; }
+  el.innerHTML = `<div class="card" style="display:flex;align-items:center;gap:1rem">
+    ${artHtml(nx.art, nx.artist, 'now-art-sm')}
+    <div style="min-width:0"><div class="card-title" style="margin-bottom:.2rem">Up next</div>
+      <div class="hist-artist">${esc(nx.artist||'')}</div>
+      <div class="hist-title">${esc(nx.title||'')}</div></div>
+  </div>`;
+}
+
+// ============================================================
+// RENDER — history (grouped by day) + top artists
+// ============================================================
+function renderHistory() {
+  const el = document.getElementById('history-list');
+  if (!history || !history.length) { el.innerHTML = '<div class="empty">No tracks logged yet — the collector updates every 5 minutes.</div>'; return; }
+  const list = history.slice(0, 120);
+  let curDay = null, html = '';
+  for (const it of list) {
+    const k = dayKey(it.played_at*1000);
+    if (k !== curDay) { curDay = k; html += `<div class="day-group">${dayLabel(it.played_at)}</div>`; }
+    const meta = [it.genre, it.playlist && it.playlist!=='default' ? it.playlist : null].filter(Boolean).join(' · ');
+    html += `
+    <div class="hist-row">
+      ${artHtml(it.art, it.artist, 'now-art-sm')}
+      <div class="hist-main">
+        <div class="hist-artist">${esc(it.artist||'—')} <span style="color:var(--muted);font-weight:400">— ${esc(it.title||'')}</span></div>
+        ${(it.album||meta)?`<div class="hist-title">${esc(it.album||'')}${it.album&&meta?' · ':''}${esc(meta)}</div>`:''}
+      </div>
+      ${it.lfm?.url?`<a class="ext" href="${esc(it.lfm.url)}" target="_blank" rel="noopener" title="Open on Last.fm">↗</a>`:''}
+      <div class="hist-time">${fmtClock(it.played_at)}<br>${it.duration?fmtDur(it.duration):''}</div>
+    </div>`;
+  }
+  el.innerHTML = html;
+}
+
+function renderTopArtists() {
+  const el = document.getElementById('top-artists');
+  const counts = {};
+  const meta = {};
+  for (const it of (history||[])) {
+    if (!it.artist) continue;
+    counts[it.artist] = (counts[it.artist]||0) + 1;
+    meta[it.artist] = meta[it.artist] || { art: it.art, tags: it.lfm?.tags||[], url: it.lfm?.url||'' };
+  }
+  const top = Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  if (!top.length) { el.innerHTML = '<div class="empty">No artist data yet.</div>'; return; }
+  const max = top[0][1];
+  el.innerHTML = top.map(([artist, n], i) => `
+    <div class="top-row">
+      <span class="top-rank">${i+1}</span>
+      ${artHtml(meta[artist].art, artist, 'now-art-sm')}
+      <div class="top-main">
+        <div class="hist-artist">${esc(artist)}</div>
+        <div class="top-bar"><div class="top-bar-fill" style="width:${(n/max*100).toFixed(0)}%"></div></div>
+        <div class="top-tags">${esc((meta[artist].tags||[]).slice(0,4).join(' · '))}</div>
+      </div>
+      ${meta[artist].url?`<a class="ext" href="${esc(meta[artist].url)}" target="_blank" rel="noopener">↗</a>`:''}
+      <span class="top-count">${n}×</span>
+    </div>`).join('');
+}
+
+// ============================================================
+// LIVE TICK (progress clock + listeners)
+// ============================================================
+function tickClock() {
+  const np = radio?.now_playing, dur = Number(np?.duration)||0;
+  if (!dur) return;
+  const elp = npElapsed();
+  const fill = document.getElementById('np-fill');
+  const e = document.getElementById('np-elp');
+  if (fill) fill.style.width = Math.min(elp/dur*100, 100) + '%';
+  if (e) e.textContent = fmtDur(elp);
+}
+
+async function pollLive() {
+  try {
+    const r = await fetch('https://dublincalling.duckdns.org/api/nowplaying');
+    if (!r.ok) return;
+    const s = (await r.json())[0];
+    if (!s?.now_playing?.song) return;
+    // listeners badge
+    const ll = document.getElementById('live-listeners');
+    if (ll) ll.textContent = s.listeners?.current ?? 0;
+    // nav bar (same as homelab.html)
+    const np = s.now_playing;
+    const nav = document.getElementById('navRadio');
+    if (nav) {
+      const rem = Math.max((np.duration||0) - (np.elapsed||0), 0);
+      const mins = Math.floor(rem/60), secs = String(Math.floor(rem%60)).padStart(2,'0');
+      nav.innerHTML = `
+        <span class="nav-radio-dot ${s.live?.is_live?'live':''}"></span>
+        <span class="nav-radio-text"><strong>${esc(np.song?.artist||'?')}</strong> — ${esc(np.song?.title||'?')}</span>
+        <span class="nav-radio-time">-${mins}:${secs}</span>
+        <button onclick="toggleRadio('${esc(s.station?.listen_url||DEF_STREAM)}', this)" class="radio-play-btn" id="navPlayBtn">▶</button>`;
+      syncPlayBtns();
+    }
+  } catch(e) {}
+}
+
+// ============================================================
+// PLAYER
+// ============================================================
+function syncPlayBtns() {
+  document.querySelectorAll('.radio-play-btn').forEach(b => {
+    if (AUDIO && !AUDIO.paused && AUDIO.src) b.classList.add('playing');
+    else b.classList.remove('playing');
+  });
+}
+function toggleRadio(url, btn) {
+  if (AUDIO.src && !AUDIO.paused) { AUDIO.pause(); }
+  else { AUDIO.src = url; AUDIO.load(); AUDIO.play().catch(e => console.warn(e)); }
+  syncPlayBtns();
+}
+AUDIO.addEventListener('play', syncPlayBtns);
+AUDIO.addEventListener('pause', syncPlayBtns);
+
+// ============================================================
+// MAIN RENDER + REFRESH
+// ============================================================
+async function refreshAll() {
+  document.getElementById('countdown').textContent = 'Refreshing...';
+  radio = await loadJSON('radio.json');
+  history = (await loadJSON('radio_history.json'))?.items || null;
+  renderBadges();
+  renderSummary();
+  renderNowPlaying();
+  renderUpNext();
+  renderHistory();
+  renderTopArtists();
+  const updated = radio?.updated ? new Date(radio.updated*1000).toLocaleString() : 'never';
+  document.getElementById('updated-label').textContent = `Data updated at ${updated} · collector polls AzuraCast every 5 min`;
+  countdown = 60; updateCountdown();
+}
+function updateCountdown() { document.getElementById('countdown').textContent = `Auto-refresh in ${countdown}s`; }
+function toggleAuto() { if (document.getElementById('autoToggle').checked) startTimer(); else stopTimer(); }
+function startTimer() { stopTimer(); timer = setInterval(() => { countdown--; updateCountdown(); if (countdown<=0) refreshAll(); }, 1000); }
+function stopTimer() { if (timer) { clearInterval(timer); timer = null; } }
+
+// clock tick for smooth progress
+setInterval(tickClock, 1000);
+setInterval(pollLive, 30000);
+setTimeout(pollLive, 2000);
+
+(async function init() {
+  await refreshAll();
+  startTimer();
+})();
+</script>
+</body>
+</html>
