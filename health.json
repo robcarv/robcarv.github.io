@@ -1,23 +1,23 @@
 {
-  "updated": "2026-11-05 20:13",
+  "updated": "2026-11-05 21:13",
   "status": "ok",
   "nodes": {
     "TrueNAS": {
       "role": "storage",
       "cpu": {
-        "total": 7.3,
-        "user": 3.5,
-        "system": 2.9,
+        "total": 10.4,
+        "user": 5.5,
+        "system": 3.4,
         "iowait": 0.9,
-        "idle": 92.7
+        "idle": 89.6
       },
       "status": "ok",
       "percpu": [],
       "ram": {
-        "used_gb": 7.57,
+        "used_gb": 7.66,
         "total_gb": 15.39,
-        "percent": 49.2,
-        "available_gb": 7.81
+        "percent": 49.8,
+        "available_gb": 7.73
       },
       "swap": {
         "used_mb": 0,
@@ -25,9 +25,9 @@
         "percent": 0
       },
       "load": {
-        "1min": 0.12,
-        "5min": 0.25,
-        "15min": 0.38,
+        "1min": 1.36,
+        "5min": 0.72,
+        "15min": 0.52,
         "cores": 0
       },
       "disks": [
@@ -36,7 +36,7 @@
           "device": "/",
           "size_gb": 2541.9,
           "used_gb": 39.9,
-          "free_gb": 2502.0,
+          "free_gb": 2501.9,
           "percent": 1.6
         },
         {
@@ -44,13 +44,13 @@
           "device": "/var/lib/netdata",
           "size_gb": 4429.5,
           "used_gb": 1927.5,
-          "free_gb": 2502.0,
+          "free_gb": 2501.9,
           "percent": 43.5
         }
       ],
       "disk_io": {
-        "read_kib": 25.9,
-        "write_kib": 1284.1
+        "read_kib": 139.3,
+        "write_kib": 608.9
       },
       "temperature_c": 27.8,
       "network": {
@@ -59,36 +59,36 @@
           "sent_kbps": 0
         },
         "enp1s0": {
-          "recv_kbps": 97.1,
-          "sent_kbps": 1272.6
+          "recv_kbps": 3125.0,
+          "sent_kbps": 17685.4
         },
         "enp2s0": {
-          "recv_kbps": 2.7,
+          "recv_kbps": 11.8,
           "sent_kbps": 0.0
         },
         "veth0e12642": {
-          "recv_kbps": 1124.2,
-          "sent_kbps": 4.3
+          "recv_kbps": 1641.0,
+          "sent_kbps": 8.8
         },
         "veth10d9235": {
           "recv_kbps": 0,
           "sent_kbps": 0
         },
         "veth213558a": {
-          "recv_kbps": 44.7,
-          "sent_kbps": 8.6
+          "recv_kbps": 45.1,
+          "sent_kbps": 8.7
         },
         "veth29b9e2d": {
-          "recv_kbps": 99.3,
-          "sent_kbps": 10.0
+          "recv_kbps": 96.7,
+          "sent_kbps": 8.1
         },
         "veth3454951": {
           "recv_kbps": 0,
           "sent_kbps": 0
         },
         "veth3d68903": {
-          "recv_kbps": 0.1,
-          "sent_kbps": 0.1
+          "recv_kbps": 0.2,
+          "sent_kbps": 0.2
         },
         "veth3e4cdc3": {
           "recv_kbps": 0,
@@ -111,8 +111,8 @@
           "sent_kbps": 0
         },
         "veth6e3f18b": {
-          "recv_kbps": 8.6,
-          "sent_kbps": 44.7
+          "recv_kbps": 8.7,
+          "sent_kbps": 45.1
         },
         "veth846990c": {
           "recv_kbps": 0,
@@ -123,29 +123,29 @@
           "sent_kbps": 0
         },
         "vethb1a970a": {
-          "recv_kbps": 6.1,
-          "sent_kbps": 4.1
+          "recv_kbps": 4.5,
+          "sent_kbps": 2.8
         },
         "vethb515433": {
-          "recv_kbps": 0.4,
-          "sent_kbps": 0.3
+          "recv_kbps": 0.5,
+          "sent_kbps": 0.4
         },
         "vethbb8ec36": {
-          "recv_kbps": 6.9,
-          "sent_kbps": 71.5
+          "recv_kbps": 6.0,
+          "sent_kbps": 68.4
         },
         "vethdffbe36": {
-          "recv_kbps": 0.3,
-          "sent_kbps": 0.4
+          "recv_kbps": 0.2,
+          "sent_kbps": 0.2
         }
       },
       "processes": {
-        "total": 374,
+        "total": 372,
         "running": 1,
-        "sleeping": 373,
+        "sleeping": 371,
         "threads": 0
       },
-      "uptime": "6d 03:22",
+      "uptime": "6d 04:22",
       "containers": [],
       "container_count": 0,
       "services": "TrueNAS SCALE — Storage (NVMe pool)"
@@ -153,19 +153,19 @@
     "Proxmox": {
       "role": "hypervisor",
       "cpu": {
-        "total": 4.3,
+        "total": 5.5,
         "user": 0.1,
-        "system": 0.3,
+        "system": 0.4,
         "iowait": 0.0,
-        "idle": 95.7
+        "idle": 94.5
       },
       "status": "ok",
       "percpu": [],
       "ram": {
-        "used_gb": 15.8,
+        "used_gb": 15.81,
         "total_gb": 27.15,
         "percent": 58.2,
-        "available_gb": 11.02
+        "available_gb": 11.01
       },
       "swap": {
         "used_mb": 0.0,
@@ -173,9 +173,9 @@
         "percent": 0.0
       },
       "load": {
-        "1min": 0.71,
-        "5min": 0.75,
-        "15min": 0.71,
+        "1min": 0.72,
+        "5min": 0.72,
+        "15min": 0.78,
         "cores": 0
       },
       "disks": [
@@ -192,7 +192,7 @@
           "device": "/mnt/pve/backup/proxmox",
           "size_gb": 2974.9,
           "used_gb": 472.9,
-          "free_gb": 2502.0,
+          "free_gb": 2501.9,
           "percent": 15.9
         },
         {
@@ -200,23 +200,23 @@
           "device": "/mnt/pve/trunas",
           "size_gb": 2521.4,
           "used_gb": 19.4,
-          "free_gb": 2502.0,
+          "free_gb": 2501.9,
           "percent": 0.8
         }
       ],
       "disk_io": {
-        "read_kib": 18.2,
-        "write_kib": 3100.2
+        "read_kib": 47.2,
+        "write_kib": 3131.7
       },
       "temperature_c": 20.0,
       "network": {
         "nic0": {
-          "recv_kbps": 212.1,
-          "sent_kbps": 167.6
+          "recv_kbps": 15862.6,
+          "sent_kbps": 3115.1
         },
         "vmbr0": {
-          "recv_kbps": 13.3,
-          "sent_kbps": 86.2
+          "recv_kbps": 13.1,
+          "sent_kbps": 83.6
         },
         "wlp2s0": {
           "recv_kbps": 0,
@@ -229,7 +229,7 @@
         "sleeping": 205,
         "threads": 0
       },
-      "uptime": "6d 03:29",
+      "uptime": "6d 04:29",
       "containers": [
         {
           "name": "services vm (VM 100)",
@@ -258,33 +258,33 @@
     "VM100": {
       "role": "vm",
       "cpu": {
-        "total": 19.3,
-        "user": 15.2,
-        "system": 3.0,
+        "total": 21.8,
+        "user": 16.4,
+        "system": 4.2,
         "iowait": 0.3,
-        "idle": 80.7
+        "idle": 78.2
       },
       "status": "ok",
       "percpu": [
-        20.2,
-        19.7,
-        18.3,
-        18.4
+        19.4,
+        20.5,
+        28.7,
+        17.7
       ],
       "ram": {
-        "used_gb": 3.22,
+        "used_gb": 3.23,
         "total_gb": 7.76,
-        "percent": 41.5,
-        "available_gb": 4.3
+        "percent": 41.6,
+        "available_gb": 4.29
       },
       "swap": {
-        "used_mb": 888,
+        "used_mb": 887.2,
         "total_mb": 1888.0,
         "percent": 47.0
       },
       "load": {
         "1min": 0.15,
-        "5min": 0.22,
+        "5min": 0.23,
         "15min": 0.29,
         "cores": 4
       },
@@ -316,17 +316,17 @@
       ],
       "disk_io": {
         "read_kib": 0.0,
-        "write_kib": 1443.9
+        "write_kib": 1548.4
       },
       "temperature_c": null,
       "network": {
         "docker0": {
-          "recv_kbps": 0.5,
-          "sent_kbps": 0.6
+          "recv_kbps": 0.4,
+          "sent_kbps": 0.5
         },
         "ens18": {
-          "recv_kbps": 14.1,
-          "sent_kbps": 14.3
+          "recv_kbps": 13943.8,
+          "sent_kbps": 3493.7
         },
         "veth0414f2c": {
           "recv_kbps": 0,
@@ -341,16 +341,16 @@
           "sent_kbps": 1.1
         },
         "veth15fe834": {
-          "recv_kbps": 1.3,
-          "sent_kbps": 38.9
+          "recv_kbps": 1.6,
+          "sent_kbps": 39.1
         },
         "veth34ebb27": {
           "recv_kbps": 0,
           "sent_kbps": 0
         },
         "veth45202bc": {
-          "recv_kbps": 0.9,
-          "sent_kbps": 1.3
+          "recv_kbps": 2.1,
+          "sent_kbps": 0.8
         },
         "veth5e86206": {
           "recv_kbps": 0,
@@ -361,8 +361,8 @@
           "sent_kbps": 0
         },
         "veth6238ac6": {
-          "recv_kbps": 0.6,
-          "sent_kbps": 0.6
+          "recv_kbps": 0.5,
+          "sent_kbps": 0.5
         },
         "veth65fed54": {
           "recv_kbps": 0,
@@ -381,8 +381,8 @@
           "sent_kbps": 0
         },
         "veth76a0512": {
-          "recv_kbps": 0.8,
-          "sent_kbps": 1.0
+          "recv_kbps": 0,
+          "sent_kbps": 0
         },
         "veth76c635a": {
           "recv_kbps": 0,
@@ -397,8 +397,8 @@
           "sent_kbps": 0
         },
         "veth91bff9d": {
-          "recv_kbps": 1.2,
-          "sent_kbps": 1.2
+          "recv_kbps": 1.1,
+          "sent_kbps": 0.8
         },
         "veth9aa7fc9": {
           "recv_kbps": 0,
@@ -409,12 +409,12 @@
           "sent_kbps": 0
         },
         "vethd38901e": {
-          "recv_kbps": 0.1,
-          "sent_kbps": 0.1
+          "recv_kbps": 0,
+          "sent_kbps": 0
         },
         "vethe18bd6b": {
-          "recv_kbps": 8.5,
-          "sent_kbps": 4.5
+          "recv_kbps": 21.5,
+          "sent_kbps": 11.0
         },
         "vethe341d78": {
           "recv_kbps": 0,
@@ -425,8 +425,8 @@
           "sent_kbps": 0
         },
         "vethf4946bf": {
-          "recv_kbps": 0.6,
-          "sent_kbps": 0.6
+          "recv_kbps": 0,
+          "sent_kbps": 0
         },
         "vethf5c0f54": {
           "recv_kbps": 0,
@@ -438,12 +438,12 @@
         }
       },
       "processes": {
-        "total": 285,
-        "running": 3,
+        "total": 284,
+        "running": 1,
         "sleeping": 282,
         "threads": 0
       },
-      "uptime": "3d 05:50",
+      "uptime": "3d 06:50",
       "containers": [
         {
           "name": "duckdns",
@@ -527,11 +527,11 @@
         },
         {
           "name": "cve grafana",
-          "status": "Up 19 hours"
+          "status": "Up 20 hours"
         },
         {
           "name": "cve prometheus",
-          "status": "Up 19 hours"
+          "status": "Up 20 hours"
         },
         {
           "name": "cve alertmanager",
@@ -548,21 +548,21 @@
     "VM200": {
       "role": "vm",
       "cpu": {
-        "total": 1.3,
-        "user": 0.2,
+        "total": 1.5,
+        "user": 0.3,
         "system": 0.7,
         "iowait": 0,
-        "idle": 98.7
+        "idle": 98.5
       },
       "status": "ok",
       "percpu": [
-        1.7,
-        0.7
+        2.3,
+        1.3
       ],
       "ram": {
         "used_gb": 0.5,
         "total_gb": 1.92,
-        "percent": 26.2,
+        "percent": 26.3,
         "available_gb": 1.34
       },
       "swap": {
@@ -571,9 +571,9 @@
         "percent": 0.1
       },
       "load": {
-        "1min": 0,
-        "5min": 0.02,
-        "15min": 0,
+        "1min": 0.42,
+        "5min": 0.18,
+        "15min": 0.05,
         "cores": 2
       },
       "disks": [
@@ -591,30 +591,30 @@
           "size_gb": 33.6,
           "used_gb": 8.9,
           "free_gb": 23.2,
-          "percent": 26.4
+          "percent": 26.5
         }
       ],
       "disk_io": {
-        "read_kib": 0.0,
-        "write_kib": 18.7
+        "read_kib": 18.7,
+        "write_kib": 41.1
       },
       "temperature_c": null,
       "network": {
         "docker0": {
-          "recv_kbps": 2.6,
-          "sent_kbps": 3.3
+          "recv_kbps": 0,
+          "sent_kbps": 0
         },
         "ens18": {
-          "recv_kbps": 37.9,
-          "sent_kbps": 30.9
+          "recv_kbps": 9.2,
+          "sent_kbps": 2.2
         },
         "veth2dd9f43": {
-          "recv_kbps": 3.0,
-          "sent_kbps": 3.3
+          "recv_kbps": 0,
+          "sent_kbps": 0
         },
         "veth37843f7": {
-          "recv_kbps": 24.9,
-          "sent_kbps": 23.4
+          "recv_kbps": 0,
+          "sent_kbps": 0
         },
         "veth5cc132a": {
           "recv_kbps": 0,
@@ -629,8 +629,8 @@
           "sent_kbps": 0
         },
         "vethce17750": {
-          "recv_kbps": 1.1,
-          "sent_kbps": 0.8
+          "recv_kbps": 0.7,
+          "sent_kbps": 0.4
         }
       },
       "processes": {
@@ -639,7 +639,7 @@
         "sleeping": 70,
         "threads": 0
       },
-      "uptime": "6d 03:25",
+      "uptime": "6d 04:25",
       "containers": [
         {
           "name": "glances",
@@ -660,24 +660,24 @@
     "VM400": {
       "role": "vm",
       "cpu": {
-        "total": 3.4,
-        "user": 2.3,
-        "system": 0.8,
+        "total": 3.1,
+        "user": 2.1,
+        "system": 0.7,
         "iowait": 0,
-        "idle": 96.6
+        "idle": 96.9
       },
       "status": "ok",
       "percpu": [
-        5.1,
-        4.0,
-        2.0,
-        2.0
+        4.4,
+        2.3,
+        3.0,
+        2.7
       ],
       "ram": {
-        "used_gb": 1.02,
+        "used_gb": 1.03,
         "total_gb": 3.82,
-        "percent": 26.6,
-        "available_gb": 2.71
+        "percent": 26.9,
+        "available_gb": 2.7
       },
       "swap": {
         "used_mb": 612.8,
@@ -685,9 +685,9 @@
         "percent": 32.5
       },
       "load": {
-        "1min": 0.11,
-        "5min": 0.12,
-        "15min": 0.09,
+        "1min": 0.18,
+        "5min": 0.15,
+        "15min": 0.1,
         "cores": 4
       },
       "disks": [
@@ -710,7 +710,7 @@
       ],
       "disk_io": {
         "read_kib": 0.0,
-        "write_kib": 50.3
+        "write_kib": 89.2
       },
       "temperature_c": null,
       "network": {
@@ -719,12 +719,12 @@
           "sent_kbps": 0
         },
         "ens18": {
-          "recv_kbps": 6.9,
-          "sent_kbps": 0
+          "recv_kbps": 29.2,
+          "sent_kbps": 11.4
         },
         "veth1362d9f": {
-          "recv_kbps": 0,
-          "sent_kbps": 0
+          "recv_kbps": 6.7,
+          "sent_kbps": 1.9
         },
         "vetha007ef7": {
           "recv_kbps": 0,
@@ -736,12 +736,12 @@
         }
       },
       "processes": {
-        "total": 396,
+        "total": 397,
         "running": 1,
-        "sleeping": 395,
+        "sleeping": 396,
         "threads": 0
       },
-      "uptime": "6d 03:25",
+      "uptime": "6d 04:25",
       "containers": [
         {
           "name": "azuracast",
@@ -779,45 +779,45 @@
     "is_online": true,
     "is_live": false,
     "now_playing": {
-      "title": "Cassette One Side B",
-      "artist": "BBC Radio 1",
-      "album": "John Peel Party 40 October 1979",
-      "genre": "Other",
-      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/fcbe042d0d365336ae638f39-1785450400.jpg",
-      "duration": 2796,
-      "elapsed": 2329
+      "title": "Cats Caravan Festive Fifty 1980",
+      "artist": "John Peel",
+      "album": "",
+      "genre": "",
+      "art": "https://dublincalling.duckdns.org/api/station/dublincalling/art/2699f7f43f1da6b194825944",
+      "duration": 3725,
+      "elapsed": 2518
     },
     "playing_next": {
-      "title": "Gone Bad",
-      "artist": "Mighty Diamonds"
+      "title": "Love You 'Till The End",
+      "artist": "The Pogues"
     },
     "listeners": 0,
     "listen_url": "https://dublincalling.duckdns.org/listen/dublincalling/radio.mp3",
     "history": [
       {
-        "title": "Heated Rivalry  Is First TV Series Soundtrack in",
+        "title": "M50 and Phibsborough collisions add to growing del",
         "artist": "",
-        "played_at": 1793907241
+        "played_at": 1793910663
       },
       {
-        "title": "The Sun And The Moon",
-        "artist": "The Pogues",
-        "played_at": 1793907041
-      },
-      {
-        "title": "Earthquake Shake",
-        "artist": "King Tubby Meets Roots Radics",
-        "played_at": 1793906836
-      },
-      {
-        "title": "Jennie s Law  expected to be enacted today in lan",
+        "title": "Kisser  Germaine Dunes  Buck Meek  share debut sin",
         "artist": "",
-        "played_at": 1793906823
+        "played_at": 1793910644
       },
       {
-        "title": "Dos Rosa  Churrasco on Fire  rodeios  Hungria  o q",
+        "title": "Madonna responds to success of  Confessions II",
         "artist": "",
-        "played_at": 1793906787
+        "played_at": 1793910610
+      },
+      {
+        "title": "Welcome To The Black Parade [Official Music Video] [HD]",
+        "artist": "My Chemical Romance",
+        "played_at": 1793910298
+      },
+      {
+        "title": "Some parents on benefits to get up to  4 500 for c",
+        "artist": "",
+        "played_at": 1793910286
       }
     ]
   }
